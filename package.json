@@ -1,9 +1,19 @@
 {
-    "name": "TrailMaps",
-    "description": "Long distance hiking trail maps",
-    "version": "0.0.1",
-    "private": true,
-    "dependencies": {
-        "express": "3.x"
-    }
+  "name": "TrailMaps",
+  "version": "0.0.1",
+  "description": "Maps for long-distance hiking trails",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": "",
+  "author": "Eric Lee",
+  "license": "MIT",
+
+  "dependencies": {
+    "express": "3.0.6",
+    "jade": "*",
+    "less-middleware": "*"
+  }
 }
