@@ -1,5 +1,18 @@
 
 // http://brianstoner.com/blog/testing-in-nodejs-with-mocha/
+// http://jacobmumm.com/2012/09/11/single-page-apps-with-node-and-angular/
+// http://brianstoner.com/blog/testing-in-nodejs-with-mocha/
+// http://coenraets.org/blog/2012/10/creating-a-rest-api-using-node-js-express-and-mongodb/
+// http://coenraets.org/blog/2012/10/nodecellar-sample-application-with-backbone-js-twitter-bootstrap-node-js-express-and-mongodb/
+// http://howtonode.org/testing-private-state-and-mocking-deps
+// http://docs.nodejitsu.com/articles/getting-started/how-to-debug-nodejs-applications
+// http://webdevchecklist.com/
+
+// https://github.com/Kronuz/SublimeCodeIntel
+// http://www.jetbrains.com/webstorm/
+// https://github.com/ajaxorg/cloud9
+// https://github.com/joyent/node/wiki/Using-Eclipse-as-Node-Applications-Debugger
+// https://github.com/jhnns/rewire
 
 /**
  * Module dependencies.
