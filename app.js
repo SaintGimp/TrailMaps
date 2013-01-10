@@ -1,3 +1,4 @@
+'use strict';
 
 // http://brianstoner.com/blog/testing-in-nodejs-with-mocha/
 // http://jacobmumm.com/2012/09/11/single-page-apps-with-node-and-angular/

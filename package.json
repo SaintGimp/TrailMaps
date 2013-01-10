@@ -5,7 +5,7 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "test": "make test"
+    "test": "mocha"
   },
   "repository": "",
   "author": "Eric Lee",
@@ -15,6 +15,7 @@
     "express": "3.0.6",
     "jade": "*",
     "less-middleware": "*",
-    "should": "*"
+    "should": "*",
+    "grunt-simple-mocha": "*"
   }
 }
