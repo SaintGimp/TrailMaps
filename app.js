@@ -20,8 +20,6 @@
  */
 
 var express = require('express'),
-  routes = require('./routes'),
-  api = require('./routes/api'),
   path = require('path');
 
 var app = module.exports = express();
@@ -50,13 +48,10 @@ app.configure('production', function(){
 });
 
 // Routes
-
-app.get('/', routes.index);
-app.get('/partials/:name', routes.partials);
+var routes = require('./routes')(app);
 
 // JSON API
-
-app.get('/api/name', api.name);
+var api = require('./routes/api')(app);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
