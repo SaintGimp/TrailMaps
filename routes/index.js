@@ -1,20 +1,13 @@
+/**
+ * In Node, you can require a folder as in require('./somefolder').
+ * Node by default will look in that folder for a file with the name index.js
+ * and if it exists it will use it as a module. If the folder contains other files
+ * with exports then require them in the index.js file to export all the functionality
+ * through the 1 index.js file. That is what this index file is doing. It is exposing all
+ * routes defined in all the files in the routes directory by requiring those files.
+*/
 
-/*
- * GET home page.
- */
+var app = require ("../server").app;
 
-module.exports = function(app){
-	app.get('/', exports.index);
-    app.get('/partials/:name', exports.partials);
-
-	return exports;
-};
-
-exports.index = function(req, res){
-  res.render('index');
-};
-
-exports.partials = function (req, res) {
-  var name = req.params.name;
-  res.render('partials/' + name);
-};
+require('./api')(app);
+require('./home')(app);

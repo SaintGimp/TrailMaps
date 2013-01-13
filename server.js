@@ -15,6 +15,19 @@
 // https://github.com/joyent/node/wiki/Using-Eclipse-as-Node-Applications-Debugger
 // https://github.com/jhnns/rewire
 
+// Tutorials:
+// http://phuu.net/2012/09/13/node-js-in-real-life-part-1.html
+// http://tech.flurry.com/regression-testing-api-services-with-restify
+// http://www.hacksparrow.com/express-js-tutorial.html
+// http://coenraets.org/blog/2012/10/creating-a-rest-api-using-node-js-express-and-mongodb/
+// http://javascriptplayground.com/blog/2012/04/node-js-a-todo-app-with-express
+// http://www.smartjava.org/content/tutorial-nodejs-and-expressjs-part-i-routers
+// http://chrislarson.me/content/chris-larson/beginners-guide-nodejs-socketio-and-express-framework-installation
+// http://quickleft.com/blog/getting-started-with-express-in-node
+// http://www.nodebeginner.org/
+
+
+
 /**
  * Module dependencies.
  */
@@ -22,7 +35,7 @@
 var express = require('express'),
   path = require('path');
 
-var app = module.exports = express();
+var app = exports.app = express();
 
 // Configuration
 
@@ -48,16 +61,9 @@ app.configure('production', function(){
 });
 
 // Routes
-var routes = require('./routes')(app);
-
-// JSON API
-var api = require('./routes/api')(app);
-
-// redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
+require('./routes');
 
 // Start server
-
 app.listen(app.get('port'), function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
