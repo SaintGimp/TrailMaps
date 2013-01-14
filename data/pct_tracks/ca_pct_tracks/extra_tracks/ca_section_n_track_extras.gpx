@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="MapSource 6.15.11" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+  <metadata>
+    <link href="http://www.garmin.com">
+      <text>Garmin International</text>
+    </link>
+    <time>2010-12-11T06:55:06Z</time>
+    <bounds maxlat="41.0125950" maxlon="-121.4171110" minlat="40.1951750" minlon="-121.6529570"/>
+  </metadata>
+
+  <trk>
+    <name>CA Sec N - Burney Falls</name>
+    <extensions>
+      <gpxx:TrackExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+        <gpxx:DisplayColor>White</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="41.0125950" lon="-121.6509790">
+        <ele>900.4610000</ele>
+        <time>2008-07-08T14:31:45Z</time>
+      </trkpt>
+      <trkpt lat="41.0123740" lon="-121.6510300">
+        <ele>901.8730000</ele>
+        <time>2008-07-08T14:31:59Z</time>
+      </trkpt>
+      <trkpt lat="41.0122170" lon="-121.6510770">
+        <ele>902.8310000</ele>
+        <time>2008-07-08T14:32:35Z</time>
+      </trkpt>
+      <trkpt lat="41.0120680" lon="-121.6511530">
+        <ele>902.0960000</ele>
+        <time>2008-07-08T14:32:49Z</time>
+      </trkpt>
+      <trkpt lat="41.0119390" lon="-121.6513540">
+        <ele>900.8950000</ele>
+        <time>2008-07-08T14:33:15Z</time>
+      </trkpt>
+      <trkpt lat="41.0117840" lon="-121.6515990">
+        <ele>900.5580000</ele>
+        <time>2008-07-08T14:33:30Z</time>
+      </trkpt>
+      <trkpt lat="41.0116180" lon="-121.6516680">
+        <ele>900.6310000</ele>
+        <time>2008-07-08T14:33:40Z</time>
+      </trkpt>
+      <trkpt lat="41.0114520" lon="-121.6516100">
+        <ele>900.2360000</ele>
+        <time>2008-07-08T14:33:49Z</time>
+      </trkpt>
+      <trkpt lat="41.0112900" lon="-121.6516890">
+        <ele>899.5580000</ele>
+        <time>2008-07-08T14:34:00Z</time>
+      </trkpt>
+      <trkpt lat="41.0111610" lon="-121.6517680">
+        <ele>899.0220000</ele>
+        <time>2008-07-08T14:34:08Z</time>
+      </trkpt>
+      <trkpt lat="41.0109520" lon="-121.6518060">
+        <ele>897.7280000</ele>
+        <time>2008-07-08T14:34:23Z</time>
+      </trkpt>
+      <trkpt lat="41.0107250" lon="-121.6519180">
+        <ele>887.0200000</ele>
+        <time>2008-07-08T14:49:19Z</time>
+      </trkpt>
+      <trkpt lat="41.0107230" lon="-121.6521750">
+        <ele>887.7430000</ele>
+        <time>2008-07-08T14:49:43Z</time>
+      </trkpt>
+      <trkpt lat="41.0106920" lon="-121.6524530">
+        <ele>885.3020000</ele>
+        <time>2008-07-08T14:50:36Z</time>
+      </trkpt>
+      <trkpt lat="41.0106840" lon="-121.6525940">
+        <ele>890.9990000</ele>
+        <time>2008-07-08T14:51:34Z</time>
+      </trkpt>
+      <trkpt lat="41.0107200" lon="-121.6527720">
+        <ele>892.9940000</ele>
+        <time>2008-07-08T14:51:48Z</time>
+      </trkpt>
+      <trkpt lat="41.0106520" lon="-121.6529490">
+        <ele>893.8580000</ele>
+        <time>2008-07-08T14:51:59Z</time>
+      </trkpt>
+      <trkpt lat="41.0106500" lon="-121.6529570">
+        <ele>890.8280000</ele>
+        <time>2008-07-08T14:52:36Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+
+  <trk>
+    <name>CA Sec N - Carter Creek Trail</name>
+    <extensions>
+      <gpxx:TrackExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+        <gpxx:DisplayColor>White</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="40.1951750" lon="-121.4174200">
+        <ele>2023.4570000</ele>
+        <time>2010-07-20T19:48:07Z</time>
+      </trkpt>
+      <trkpt lat="40.1953000" lon="-121.4173520">
+        <ele>2022.2190000</ele>
+        <time>2010-07-20T19:48:31Z</time>
+      </trkpt>
+      <trkpt lat="40.1954410" lon="-121.4172800">
+        <ele>2019.9910000</ele>
+        <time>2010-07-20T19:48:45Z</time>
+      </trkpt>
+      <trkpt lat="40.1955810" lon="-121.4172710">
+        <ele>2017.0940000</ele>
+        <time>2010-07-20T19:48:59Z</time>
+      </trkpt>
+      <trkpt lat="40.1957190" lon="-121.4172400">
+        <ele>2015.1780000</ele>
+        <time>2010-07-20T19:49:11Z</time>
+      </trkpt>
+      <trkpt lat="40.1958530" lon="-121.4172020">
+        <ele>2011.7780000</ele>
+        <time>2010-07-20T19:49:23Z</time>
+      </trkpt>
+      <trkpt lat="40.1959930" lon="-121.4171850">
+        <ele>2009.5330000</ele>
+        <time>2010-07-20T19:49:35Z</time>
+      </trkpt>
+      <trkpt lat="40.1961320" lon="-121.4171540">
+        <ele>2007.3770000</ele>
+        <time>2010-07-20T19:49:47Z</time>
+      </trkpt>
+      <trkpt lat="40.1962640" lon="-121.4171110">
+        <ele>2005.7220000</ele>
+        <time>2010-07-20T19:49:59Z</time>
+      </trkpt>
+      <trkpt lat="40.1964230" lon="-121.4171380">
+        <ele>2004.0890000</ele>
+        <time>2010-07-20T19:50:11Z</time>
+      </trkpt>
+      <trkpt lat="40.1965640" lon="-121.4171390">
+        <ele>2002.6220000</ele>
+        <time>2010-07-20T19:50:23Z</time>
+      </trkpt>
+      <trkpt lat="40.1967110" lon="-121.4171830">
+        <ele>2001.3150000</ele>
+        <time>2010-07-20T19:50:35Z</time>
+      </trkpt>
+      <trkpt lat="40.1968430" lon="-121.4172680">
+        <ele>1999.9740000</ele>
+        <time>2010-07-20T19:50:47Z</time>
+      </trkpt>
+      <trkpt lat="40.1969770" lon="-121.4173560">
+        <ele>1999.0150000</ele>
+        <time>2010-07-20T19:50:59Z</time>
+      </trkpt>
+      <trkpt lat="40.1971220" lon="-121.4174280">
+        <ele>1998.5100000</ele>
+        <time>2010-07-20T19:51:11Z</time>
+      </trkpt>
+      <trkpt lat="40.1972550" lon="-121.4175320">
+        <ele>1997.5650000</ele>
+        <time>2010-07-20T19:51:23Z</time>
+      </trkpt>
+      <trkpt lat="40.1973840" lon="-121.4176040">
+        <ele>1996.7300000</ele>
+        <time>2010-07-20T19:51:33Z</time>
+      </trkpt>
+      <trkpt lat="40.1975120" lon="-121.4177110">
+        <ele>1995.3590000</ele>
+        <time>2010-07-20T19:51:45Z</time>
+      </trkpt>
+      <trkpt lat="40.1976310" lon="-121.4178290">
+        <ele>1993.6460000</ele>
+        <time>2010-07-20T19:51:59Z</time>
+      </trkpt>
+      <trkpt lat="40.1977560" lon="-121.4179380">
+        <ele>1993.9980000</ele>
+        <time>2010-07-20T19:52:09Z</time>
+      </trkpt>
+      <trkpt lat="40.1978750" lon="-121.4180670">
+        <ele>1993.3890000</ele>
+        <time>2010-07-20T19:52:23Z</time>
+      </trkpt>
+      <trkpt lat="40.1979940" lon="-121.4181920">
+        <ele>1993.2000000</ele>
+        <time>2010-07-20T19:52:35Z</time>
+      </trkpt>
+      <trkpt lat="40.1981430" lon="-121.4182340">
+        <ele>1992.3730000</ele>
+        <time>2010-07-20T19:52:47Z</time>
+      </trkpt>
+      <trkpt lat="40.1982820" lon="-121.4182490">
+        <ele>1991.3320000</ele>
+        <time>2010-07-20T19:53:01Z</time>
+      </trkpt>
+      <trkpt lat="40.1984260" lon="-121.4182470">
+        <ele>1990.4940000</ele>
+        <time>2010-07-20T19:53:13Z</time>
+      </trkpt>
+      <trkpt lat="40.1985610" lon="-121.4182940">
+        <ele>1990.0850000</ele>
+        <time>2010-07-20T19:53:25Z</time>
+      </trkpt>
+      <trkpt lat="40.1987100" lon="-121.4183400">
+        <ele>1988.9930000</ele>
+        <time>2010-07-20T19:53:37Z</time>
+      </trkpt>
+      <trkpt lat="40.1988340" lon="-121.4184310">
+        <ele>1988.9390000</ele>
+        <time>2010-07-20T19:53:49Z</time>
+      </trkpt>
+      <trkpt lat="40.1989670" lon="-121.4185020">
+        <ele>1988.4270000</ele>
+        <time>2010-07-20T19:54:01Z</time>
+      </trkpt>
+      <trkpt lat="40.1990950" lon="-121.4185790">
+        <ele>1987.0420000</ele>
+        <time>2010-07-20T19:54:13Z</time>
+      </trkpt>
+      <trkpt lat="40.1991920" lon="-121.4187070">
+        <ele>1987.0530000</ele>
+        <time>2010-07-20T19:54:25Z</time>
+      </trkpt>
+      <trkpt lat="40.1993030" lon="-121.4187960">
+        <ele>1985.8380000</ele>
+        <time>2010-07-20T19:54:37Z</time>
+      </trkpt>
+      <trkpt lat="40.1994580" lon="-121.4188350">
+        <ele>1984.8920000</ele>
+        <time>2010-07-20T19:54:49Z</time>
+      </trkpt>
+      <trkpt lat="40.1995960" lon="-121.4188680">
+        <ele>1983.8850000</ele>
+        <time>2010-07-20T19:55:01Z</time>
+      </trkpt>
+      <trkpt lat="40.1997350" lon="-121.4188930">
+        <ele>1983.8890000</ele>
+        <time>2010-07-20T19:55:15Z</time>
+      </trkpt>
+      <trkpt lat="40.1998820" lon="-121.4189400">
+        <ele>1983.4110000</ele>
+        <time>2010-07-20T19:55:29Z</time>
+      </trkpt>
+      <trkpt lat="40.2000350" lon="-121.4189840">
+        <ele>1982.6380000</ele>
+        <time>2010-07-20T19:55:43Z</time>
+      </trkpt>
+      <trkpt lat="40.2001910" lon="-121.4189700">
+        <ele>1982.8580000</ele>
+        <time>2010-07-20T19:55:57Z</time>
+      </trkpt>
+      <trkpt lat="40.2003310" lon="-121.4189670">
+        <ele>1982.6020000</ele>
+        <time>2010-07-20T19:56:13Z</time>
+      </trkpt>
+      <trkpt lat="40.2004890" lon="-121.4189780">
+        <ele>1982.2910000</ele>
+        <time>2010-07-20T19:57:47Z</time>
+      </trkpt>
+      <trkpt lat="40.2006400" lon="-121.4190080">
+        <ele>1982.4400000</ele>
+        <time>2010-07-20T19:58:01Z</time>
+      </trkpt>
+      <trkpt lat="40.2007850" lon="-121.4189600">
+        <ele>1981.0060000</ele>
+        <time>2010-07-20T19:58:13Z</time>
+      </trkpt>
+      <trkpt lat="40.2009370" lon="-121.4189870">
+        <ele>1980.1480000</ele>
+        <time>2010-07-20T19:58:25Z</time>
+      </trkpt>
+      <trkpt lat="40.2010210" lon="-121.4188590">
+        <ele>1978.8910000</ele>
+        <time>2010-07-20T19:58:45Z</time>
+      </trkpt>
+      <trkpt lat="40.2011260" lon="-121.4187730">
+        <ele>1978.8370000</ele>
+        <time>2010-07-20T20:00:15Z</time>
+      </trkpt>
+      <trkpt lat="40.2011740" lon="-121.4187140">
+        <ele>1977.5570000</ele>
+        <time>2010-07-20T20:00:21Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+
+  <trk>
+    <name>CA Sec N - Subway</name>
+    <extensions>
+      <gpxx:TrackExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+        <gpxx:DisplayColor>White</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="40.6810480" lon="-121.4184240">
+        <ele>1322.3070000</ele>
+        <time>2008-07-06T17:20:27Z</time>
+      </trkpt>
+      <trkpt lat="40.6812160" lon="-121.4185140">
+        <ele>1321.9540000</ele>
+        <time>2008-07-06T17:20:37Z</time>
+      </trkpt>
+      <trkpt lat="40.6814290" lon="-121.4185570">
+        <ele>1321.3610000</ele>
+        <time>2008-07-06T17:20:55Z</time>
+      </trkpt>
+      <trkpt lat="40.6816350" lon="-121.4186500">
+        <ele>1319.6420000</ele>
+        <time>2008-07-06T17:21:16Z</time>
+      </trkpt>
+      <trkpt lat="40.6818130" lon="-121.4188280">
+        <ele>1319.0750000</ele>
+        <time>2008-07-06T17:21:34Z</time>
+      </trkpt>
+      <trkpt lat="40.6819620" lon="-121.4189810">
+        <ele>1318.7100000</ele>
+        <time>2008-07-06T17:21:51Z</time>
+      </trkpt>
+      <trkpt lat="40.6820670" lon="-121.4191080">
+        <ele>1318.6200000</ele>
+        <time>2008-07-06T17:22:03Z</time>
+      </trkpt>
+      <trkpt lat="40.6822350" lon="-121.4191800">
+        <ele>1318.5980000</ele>
+        <time>2008-07-06T17:22:18Z</time>
+      </trkpt>
+      <trkpt lat="40.6824170" lon="-121.4191940">
+        <ele>1318.4580000</ele>
+        <time>2008-07-06T17:22:33Z</time>
+      </trkpt>
+      <trkpt lat="40.6826020" lon="-121.4193430">
+        <ele>1317.5470000</ele>
+        <time>2008-07-06T17:22:53Z</time>
+      </trkpt>
+      <trkpt lat="40.6827310" lon="-121.4194190">
+        <ele>1317.1620000</ele>
+        <time>2008-07-06T17:23:05Z</time>
+      </trkpt>
+      <trkpt lat="40.6829200" lon="-121.4193670">
+        <ele>1317.2950000</ele>
+        <time>2008-07-06T17:23:22Z</time>
+      </trkpt>
+      <trkpt lat="40.6833790" lon="-121.4195230">
+        <ele>1317.6980000</ele>
+        <time>2008-07-06T17:24:55Z</time>
+      </trkpt>
+      <trkpt lat="40.6834650" lon="-121.4196760">
+        <ele>1317.8080000</ele>
+        <time>2008-07-06T17:25:08Z</time>
+      </trkpt>
+      <trkpt lat="40.6835770" lon="-121.4198420">
+        <ele>1317.7730000</ele>
+        <time>2008-07-06T17:25:21Z</time>
+      </trkpt>
+      <trkpt lat="40.6837630" lon="-121.4199430">
+        <ele>1316.7870000</ele>
+        <time>2008-07-06T17:25:32Z</time>
+      </trkpt>
+      <trkpt lat="40.6838880" lon="-121.4200550">
+        <ele>1317.5880000</ele>
+        <time>2008-07-06T17:25:45Z</time>
+      </trkpt>
+      <trkpt lat="40.6839790" lon="-121.4202210">
+        <ele>1317.9930000</ele>
+        <time>2008-07-06T17:25:59Z</time>
+      </trkpt>
+      <trkpt lat="40.6841300" lon="-121.4203200">
+        <ele>1317.6620000</ele>
+        <time>2008-07-06T17:26:16Z</time>
+      </trkpt>
+      <trkpt lat="40.6842490" lon="-121.4202210">
+        <ele>1316.8530000</ele>
+        <time>2008-07-06T17:26:30Z</time>
+      </trkpt>
+      <trkpt lat="40.6844730" lon="-121.4202390">
+        <ele>1318.0520000</ele>
+        <time>2008-07-06T17:26:50Z</time>
+      </trkpt>
+      <trkpt lat="40.6846430" lon="-121.4203680">
+        <ele>1316.5150000</ele>
+        <time>2008-07-06T17:27:05Z</time>
+      </trkpt>
+      <trkpt lat="40.6848180" lon="-121.4201940">
+        <ele>1317.8590000</ele>
+        <time>2008-07-06T17:29:39Z</time>
+      </trkpt>
+      <trkpt lat="40.6847960" lon="-121.4199440">
+        <ele>1317.2510000</ele>
+        <time>2008-07-06T17:29:52Z</time>
+      </trkpt>
+      <trkpt lat="40.6847700" lon="-121.4197460">
+        <ele>1317.6800000</ele>
+        <time>2008-07-06T17:30:06Z</time>
+      </trkpt>
+      <trkpt lat="40.6848800" lon="-121.4196610">
+        <ele>1316.8680000</ele>
+        <time>2008-07-06T17:30:17Z</time>
+      </trkpt>
+      <trkpt lat="40.6850890" lon="-121.4194000">
+        <ele>1317.4600000</ele>
+        <time>2008-07-06T17:30:38Z</time>
+      </trkpt>
+      <trkpt lat="40.6852550" lon="-121.4193080">
+        <ele>1318.6370000</ele>
+        <time>2008-07-06T17:31:07Z</time>
+      </trkpt>
+      <trkpt lat="40.6854130" lon="-121.4193070">
+        <ele>1318.3910000</ele>
+        <time>2008-07-06T17:33:04Z</time>
+      </trkpt>
+      <trkpt lat="40.6855730" lon="-121.4193260">
+        <ele>1318.2660000</ele>
+        <time>2008-07-06T17:33:19Z</time>
+      </trkpt>
+      <trkpt lat="40.6857490" lon="-121.4194110">
+        <ele>1319.2260000</ele>
+        <time>2008-07-06T17:33:34Z</time>
+      </trkpt>
+      <trkpt lat="40.6858850" lon="-121.4191930">
+        <ele>1321.6980000</ele>
+        <time>2008-07-06T17:34:19Z</time>
+      </trkpt>
+      <trkpt lat="40.6860590" lon="-121.4190230">
+        <ele>1322.6420000</ele>
+        <time>2008-07-06T17:34:38Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+
+</gpx>

@@ -7,6 +7,8 @@
         "prompt": false,
         "it": false,
         "describe": false,
+        "before": false,
+        "beforeEach": false,
         "angular": false
     },
 

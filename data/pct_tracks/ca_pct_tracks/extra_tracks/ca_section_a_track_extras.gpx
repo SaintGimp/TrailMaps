@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="MapSource 6.15.11" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+  <metadata>
+    <link href="http://www.garmin.com">
+      <text>Garmin International</text>
+    </link>
+    <time>2010-12-12T17:47:41Z</time>
+    <bounds maxlat="32.9803480" maxlon="-116.5222560" minlat="32.9778120" minlon="-116.5269230"/>
+  </metadata>
+
+  <trk>
+    <name>CA Sec A - Sunrise Trail</name>
+    <extensions>
+      <gpxx:TrackExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+        <gpxx:DisplayColor>White</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="32.9778810" lon="-116.5269230">
+        <ele>1520.9820000</ele>
+        <time>2007-11-11T18:07:31Z</time>
+      </trkpt>
+      <trkpt lat="32.9778120" lon="-116.5267620">
+        <ele>1523.9260000</ele>
+        <time>2007-11-11T18:07:55Z</time>
+      </trkpt>
+      <trkpt lat="32.9778340" lon="-116.5264590">
+        <ele>1521.4530000</ele>
+        <time>2007-11-11T18:08:16Z</time>
+      </trkpt>
+      <trkpt lat="32.9779650" lon="-116.5262140">
+        <ele>1523.0980000</ele>
+        <time>2007-11-11T18:08:36Z</time>
+      </trkpt>
+      <trkpt lat="32.9780070" lon="-116.5258990">
+        <ele>1522.3370000</ele>
+        <time>2007-11-11T18:08:57Z</time>
+      </trkpt>
+      <trkpt lat="32.9779620" lon="-116.5255890">
+        <ele>1524.9690000</ele>
+        <time>2007-11-11T18:09:17Z</time>
+      </trkpt>
+      <trkpt lat="32.9779490" lon="-116.5253760">
+        <ele>1525.6790000</ele>
+        <time>2007-11-11T18:09:30Z</time>
+      </trkpt>
+      <trkpt lat="32.9779550" lon="-116.5251810">
+        <ele>1525.9560000</ele>
+        <time>2007-11-11T18:09:42Z</time>
+      </trkpt>
+      <trkpt lat="32.9781520" lon="-116.5248830">
+        <ele>1524.4960000</ele>
+        <time>2007-11-11T18:10:08Z</time>
+      </trkpt>
+      <trkpt lat="32.9782710" lon="-116.5247680">
+        <ele>1524.1140000</ele>
+        <time>2007-11-11T18:10:20Z</time>
+      </trkpt>
+      <trkpt lat="32.9783740" lon="-116.5246210">
+        <ele>1523.5820000</ele>
+        <time>2007-11-11T18:10:32Z</time>
+      </trkpt>
+      <trkpt lat="32.9786390" lon="-116.5245390">
+        <ele>1523.4220000</ele>
+        <time>2007-11-11T18:10:53Z</time>
+      </trkpt>
+      <trkpt lat="32.9787290" lon="-116.5243850">
+        <ele>1525.3340000</ele>
+        <time>2007-11-11T18:11:05Z</time>
+      </trkpt>
+      <trkpt lat="32.9787300" lon="-116.5241500">
+        <ele>1524.8560000</ele>
+        <time>2007-11-11T18:11:20Z</time>
+      </trkpt>
+      <trkpt lat="32.9786990" lon="-116.5239770">
+        <ele>1524.5110000</ele>
+        <time>2007-11-11T18:11:31Z</time>
+      </trkpt>
+      <trkpt lat="32.9788790" lon="-116.5238250">
+        <ele>1525.2310000</ele>
+        <time>2007-11-11T18:11:51Z</time>
+      </trkpt>
+      <trkpt lat="32.9790530" lon="-116.5238010">
+        <ele>1526.6330000</ele>
+        <time>2007-11-11T18:12:05Z</time>
+      </trkpt>
+      <trkpt lat="32.9791620" lon="-116.5236940">
+        <ele>1526.7100000</ele>
+        <time>2007-11-11T18:12:16Z</time>
+      </trkpt>
+      <trkpt lat="32.9791280" lon="-116.5234150">
+        <ele>1527.4300000</ele>
+        <time>2007-11-11T18:12:35Z</time>
+      </trkpt>
+      <trkpt lat="32.9791040" lon="-116.5232440">
+        <ele>1526.7600000</ele>
+        <time>2007-11-11T18:12:47Z</time>
+      </trkpt>
+      <trkpt lat="32.9791290" lon="-116.5230220">
+        <ele>1526.6190000</ele>
+        <time>2007-11-11T18:13:00Z</time>
+      </trkpt>
+      <trkpt lat="32.9792240" lon="-116.5228840">
+        <ele>1526.4000000</ele>
+        <time>2007-11-11T18:13:12Z</time>
+      </trkpt>
+      <trkpt lat="32.9793510" lon="-116.5228110">
+        <ele>1526.2330000</ele>
+        <time>2007-11-11T18:13:23Z</time>
+      </trkpt>
+      <trkpt lat="32.9794830" lon="-116.5226990">
+        <ele>1525.7260000</ele>
+        <time>2007-11-11T18:13:35Z</time>
+      </trkpt>
+      <trkpt lat="32.9796660" lon="-116.5226780">
+        <ele>1526.3060000</ele>
+        <time>2007-11-11T18:13:49Z</time>
+      </trkpt>
+      <trkpt lat="32.9799150" lon="-116.5226730">
+        <ele>1529.6150000</ele>
+        <time>2007-11-11T18:14:09Z</time>
+      </trkpt>
+      <trkpt lat="32.9800130" lon="-116.5225530">
+        <ele>1529.3840000</ele>
+        <time>2007-11-11T18:14:20Z</time>
+      </trkpt>
+      <trkpt lat="32.9803080" lon="-116.5225050">
+        <ele>1529.5660000</ele>
+        <time>2007-11-11T18:14:43Z</time>
+      </trkpt>
+      <trkpt lat="32.9803480" lon="-116.5222560">
+        <ele>1528.7130000</ele>
+        <time>2007-11-11T18:15:04Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+
+</gpx>
