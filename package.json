@@ -20,5 +20,6 @@
     "grunt-contrib-jshint": "~0.1.0",
     "grunt-simple-mocha": "*",
     "xml2js": "*",
+    "dict": "*",
   }
 }
