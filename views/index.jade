@@ -1,19 +1,7 @@
 extends layout
 
 block body
-  div(ng-controller='AppCtrl')
-    h2 Hello {{name}}
-    ul.menu
-      li
-        a(href='view1') view1
-      li
-        a(href='view2') view2
-
-    div(ng-view)
-
-    div
-      | Angular seed app: v
-      span(app-version)
+  iv(id='map_canvas')
 
   script(src='js/lib/angular/angular.js')
   script(src='js/app.js')
@@ -21,3 +9,8 @@ block body
   script(src='js/controllers.js')
   script(src='js/filters.js')
   script(src='js/directives.js')
+
+
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
+  script(src='http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0')
+  script(src='js/bingmaps.js')
