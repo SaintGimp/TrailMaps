@@ -1,3 +1,5 @@
+/*global Microsoft: false*/
+
 function MapControl() {
     var me = this;
 
@@ -25,7 +27,11 @@ function MapControl() {
             credentials: "AiiVGjRyDyDynh0IbGjn7u4ee-6U9F-ZyjnRj5wYEFp_J6kq5HGcMfdd-TYE_6xF",
             center: new Microsoft.Maps.Location(me.defaultLatitude, me.defaultLongitude),
             mapTypeId: Microsoft.Maps.MapTypeId.aerial,
-            zoom: me.defaultZoomLevel
+            zoom: me.defaultZoomLevel,
+            enableClickableLogo: false,
+            enableSearchLogo: false,
+            inertiaIntensity: 0.5,
+            tileBuffer: 2
         });
 
         Microsoft.Maps.Events.addHandler(me.bingMap, 'viewchange', me.onViewChange);
@@ -53,12 +59,12 @@ function MapControl() {
     };
 
     this.loadTrack = function (trackBounds) {
-        var trackUrl = 'home/GetTrack' + me.buildUrlParameters(trackBounds);
+        var trackUrl = 'api/trails/pct' + me.buildUrlParameters(trackBounds);
 
         $.getJSON(trackUrl, null, function (data) {
             var vertices = [];
-            $.each(data.Points, function (i, point) {
-                vertices.push(new Microsoft.Maps.Location(point.Latitude, point.Longitude));
+            $.each(data.points, function (i, point) {
+                vertices.push(new Microsoft.Maps.Location(point.lat, point.lon));
             });
 
             var polyLine = new Microsoft.Maps.Polyline(vertices, null);
@@ -110,7 +116,7 @@ function MapControl() {
         
         var zoom = me.bingMap.getZoom();
         
-        return '?north=' + north + '&south=' + south + '&east=' + east + '&west=' + west + "&zoomLevel=" + zoom;
+        return '?north=' + north + '&south=' + south + '&east=' + east + '&west=' + west + "&zoom=" + zoom;
     };
 
     this.onViewChange = function () {

@@ -1,9 +1,39 @@
-doctype5
-html(ng-app="myApp")
+doctype 5
+html(lang='en')
   head
-    meta(charset='utf8')
+    meta(charset='utf-8')
     base(href='/')
-    title Angular Express Seed App
-    link(rel='stylesheet', href='/stylesheets/app.css')
+    title Trail Maps
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='Trail maps')
+    meta(name='author', content='Eric Lee (saintgimp@hotmail.com)')
+
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='bootstrap/css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='stylesheets/app.css')
+
+    // [if lt IE 9]
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    // [endif]
+
   body
+    .navbar.navbar-inverse.navbar-fixed-top
+        .navbar-inner
+          .container
+            a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.brand(href='#') Trail Maps
+            .nav-collapse.collapse
+              ul.nav
+                li.active
+                  a(href='#') Home
+                li
+                  a(href='#about') About
+                li
+                  a(href='#contact') Contact
     block body
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
+    script(src='bootstrap/js/bootstrap.min.js')

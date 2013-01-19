@@ -5,14 +5,7 @@
  var tracks = require("../domain/tracks.js");
 
 module.exports = function(app) {
-  app.get('/api/name', exports.name);
   app.get('/api/trails/:name', exports.trails);
-};
-
-exports.name = function (req, res) {
-  res.json({
-    name: 'Bob'
-  });
 };
 
 exports.trails = function (req, res) {
@@ -25,6 +18,6 @@ exports.trails = function (req, res) {
     zoom: req.query.zoom
   };
   tracks.getData(options, function(err, data) {
-    res.json(data);
+    res.json({points: data});
   });
 };

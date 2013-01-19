@@ -25,8 +25,13 @@
 // http://chrislarson.me/content/chris-larson/beginners-guide-nodejs-socketio-and-express-framework-installation
 // http://quickleft.com/blog/getting-started-with-express-in-node
 // http://www.nodebeginner.org/
+// http://dailyjs.com/2010/11/01/node-tutorial/
 
-http://brianstoner.com/blog/testing-in-nodejs-with-mocha/
+//http://brianstoner.com/blog/testing-in-nodejs-with-mocha/
+
+// http://naltatis.github.com/jade-syntax-docs/
+
+// https://github.com/taitems/Aristo-jQuery-UI-Theme
 
 /**
  * Module dependencies.
