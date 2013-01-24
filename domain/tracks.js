@@ -1,55 +1,44 @@
-var fs = require("fs");
-var dict = require("dict");
-var trackDictionary = dict();
+var MongoClient = require('mongodb').MongoClient;
 
-exports.numberOfTracksLoaded = 0;
+var db;
+var maxZoomLevel = 16;
 
-var loadTrack = function(name, callback){
-  var self = this;
-  var data;
-
-  function pointFilter(options, point) {
-    return point.lat >= options.south &&
-      point.lat <= options.north &&
-      point.lon >= options.west &&
-      point.lon <= options.east &&
-      point.minZoom <= options.zoom;
-  }
-
-  function load(fileName, callback) {
-    fs.readFile(fileName, 'utf8', function (err, text) {
-      data = JSON.parse(text);
-      callback(err);
-    });
-    exports.numberOfTracksLoaded++;
-  }
-
-  function getPoints(options) {
-    var filterWithOptions = pointFilter.bind(undefined, options);
-    return data.points.filter(filterWithOptions);
-    // TODO: we can transform the points to remove data that the client doesn't need
-    // by using Array.map. Probably elsewhere.
-  }
-
-  load("./data/" + name + ".json", function(err) {
-    callback(err);
-  });
-
-  return {
-    getPoints: getPoints,
+function query(options, callback) {
+  var zoom = options.zoom > maxZoomLevel ? maxZoomLevel : options.zoom;
+  var collectionName = options.name + zoom;
+  var searchTerms = {
+   "loc": {
+    "$within": {
+       "$box": [[parseFloat(options.west), parseFloat(options.south)], [parseFloat(options.east), parseFloat(options.north)]]
+     }
+   }
   };
-};
+  var projection = { _id: 0, loc: 1 };
+  db.collection(collectionName).find(searchTerms, projection).sort({ _id: 1 }).toArray(function (err, documents) {
+    if (err) { console.dir(err); }
+    callback(err, documents);
+  });
+}
+
+function connectAndQuery(options, callback) {
+  MongoClient.connect('mongodb://localhost/TrailMaps', function(err, connectedDb) {
+    if (err) {
+      callback(err, null);
+      return;
+    }
+    db = connectedDb;
+    exports.numberOfConnections++;
+    query(options, callback);
+  });
+}
 
 exports.getData = function(options, callback) {
-  var track = trackDictionary.get(options.name);
-  if (track) {
-    callback(null, track.getPoints(options));
-  }
-  else
+  if (db)
   {
-    track = loadTrack(options.name, function(err) {
-      callback(err, track.getPoints(options));
-    });
-    trackDictionary.set(options.name, track);
+    query(options, callback);
+  } else {
+    connectAndQuery(options, callback);
   }
 };
+
+exports.numberOfConnections = 0;

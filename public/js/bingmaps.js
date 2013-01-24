@@ -23,19 +23,23 @@ function MapControl() {
 
     this.initialize = function () {
         // http://msdn.microsoft.com/en-us/library/gg427609.aspx
-        me.bingMap = new Microsoft.Maps.Map(document.getElementById("map_canvas"), {
-            credentials: "AiiVGjRyDyDynh0IbGjn7u4ee-6U9F-ZyjnRj5wYEFp_J6kq5HGcMfdd-TYE_6xF",
-            center: new Microsoft.Maps.Location(me.defaultLatitude, me.defaultLongitude),
-            mapTypeId: Microsoft.Maps.MapTypeId.aerial,
-            zoom: me.defaultZoomLevel,
-            enableClickableLogo: false,
-            enableSearchLogo: false,
-            inertiaIntensity: 0.5,
-            tileBuffer: 2
-        });
+        Microsoft.Maps.loadModule('Microsoft.Maps.Themes.BingTheme', { callback: function() {
+            me.bingMap = new Microsoft.Maps.Map(document.getElementById("map_canvas"), {
+                credentials: "AiiVGjRyDyDynh0IbGjn7u4ee-6U9F-ZyjnRj5wYEFp_J6kq5HGcMfdd-TYE_6xF",
+                center: new Microsoft.Maps.Location(me.defaultLatitude, me.defaultLongitude),
+                mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+                zoom: me.defaultZoomLevel,
+                enableClickableLogo: false,
+                enableSearchLogo: false,
+                inertiaIntensity: 0.5,
+                tileBuffer: 1,
+                showBreadcrumb: false,
+                theme: new Microsoft.Maps.Themes.BingTheme()
+            });
 
-        Microsoft.Maps.Events.addHandler(me.bingMap, 'viewchange', me.onViewChange);
-        Microsoft.Maps.Events.addHandler(me.bingMap, 'viewchangeend', me.onViewChangeEnd);
+            Microsoft.Maps.Events.addHandler(me.bingMap, 'viewchange', me.onViewChange);
+            Microsoft.Maps.Events.addHandler(me.bingMap, 'viewchangeend', me.onViewChangeEnd);
+        }});
     };
 
     this.loadData = function () {
@@ -47,15 +51,23 @@ function MapControl() {
     };
 
     this.calculateScrollBounds = function () {
+        // The map bounds adjusts the center if height gets too big so we get the map center directly
+        var mapCenter = me.bingMap.getCenter();
         var mapBounds = me.bingMap.getBounds();
         var scrollBoundsSize = mapBounds.width * me.scrollBoundsMultiple;
-        me.scrollBounds = new Microsoft.Maps.LocationRect(mapBounds.center, scrollBoundsSize, scrollBoundsSize);
+        // We get weird behavior when west goes past -180 and wraps around to +180. We should
+        // probably build a custom rect in that case that's constrained to west < east, but this
+        // will do for now.
+        scrollBoundsSize = Math.min(scrollBoundsSize, 60);
+        me.scrollBounds = new Microsoft.Maps.LocationRect(mapCenter, scrollBoundsSize, scrollBoundsSize);
     };
 
     this.calculateTrackBounds = function () {
+        var mapCenter = me.bingMap.getCenter();
         var mapBounds = me.bingMap.getBounds();
         var trackBoundsSize = mapBounds.width * me.trackBoundsMultiple;
-        return new Microsoft.Maps.LocationRect(mapBounds.center, trackBoundsSize, trackBoundsSize);
+        trackBoundsSize = Math.min(trackBoundsSize, 60);
+        return new Microsoft.Maps.LocationRect(mapCenter, trackBoundsSize, trackBoundsSize);
     };
 
     this.loadTrack = function (trackBounds) {
@@ -64,7 +76,7 @@ function MapControl() {
         $.getJSON(trackUrl, null, function (data) {
             var vertices = [];
             $.each(data.points, function (i, point) {
-                vertices.push(new Microsoft.Maps.Location(point.lat, point.lon));
+                vertices.push(new Microsoft.Maps.Location(point.loc[1], point.loc[0]));
             });
 
             var polyLine = new Microsoft.Maps.Polyline(vertices, null);
@@ -102,17 +114,8 @@ function MapControl() {
     this.buildUrlParameters = function (trackBounds) {
         var north = trackBounds.getNorth();
         var south = trackBounds.getSouth();
-
-        // HACK: the bounds could expand past the -180/+180 line and wrap around. We
-        // don't handle that well on the server right now so fix it here.
         var east = trackBounds.getEast();
-        if (east < -120) {
-            east = -110;
-        }
         var west = trackBounds.getWest();
-        if (west > -110) {
-            west = -180;
-        }
         
         var zoom = me.bingMap.getZoom();
         

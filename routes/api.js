@@ -18,6 +18,7 @@ exports.trails = function (req, res) {
     zoom: req.query.zoom
   };
   tracks.getData(options, function(err, data) {
+    if (err) { throw new Error(err); }
     res.json({points: data});
   });
 };

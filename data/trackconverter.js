@@ -1,5 +1,6 @@
 var fs = require("fs"),
-  xml2js = require('xml2js');
+  xml2js = require('xml2js'),
+  mongoClient = require('mongodb').MongoClient;
 
 var parser = new xml2js.Parser();
 
@@ -55,9 +56,7 @@ var parseGpsData = function(err, data) {
   {
     parsedPoint = parsedPoints[x];
     trackPoint = {
-      seq: pointCounter++,
-      lat: parseFloat(parsedPoint.$.lat),
-      lon: parseFloat(parsedPoint.$.lon),
+      loc: [parseFloat(parsedPoint.$.lon), parseFloat(parsedPoint.$.lat)] // MongoDB likes longitude first
     };
     track.points.push(trackPoint);
   }
@@ -74,15 +73,24 @@ for (var x = 0; x < files.length; x++)
 
 // Set minimum zoom level for each point
 var stride = 1;
-for (var zoomLevel = 15; zoomLevel >= 1; zoomLevel--)
+var collections = [];
+var collection = [];
+for (var zoomLevel = 16; zoomLevel >= 1; zoomLevel--)
 {
   for (var x = 0; x < track.points.length; x += stride)
   {
-    track.points[x].minZoom = zoomLevel;
+    collection.push(track.points[x]);
   }
+  collections.push({ data: collection, zoomLevel: zoomLevel });
+  collection = [];
   stride *= 2;
 }
 
-fs.writeFileSync(__dirname + "/../data/pct.json", JSON.stringify(track), "utf8");
-
-console.log("Loaded " + track.points.length + " points, saved to data/pct.json");
+mongoClient.connect("mongodb://localhost:27017/TrailMaps", function(err, db) {
+  if (err) { return console.dir(err); }
+  collections.forEach(function (collection){
+    db.collection("pct" + collection.zoomLevel).insert(collection.data, {w:0});
+    db.collection("pct" + collection.zoomLevel).ensureIndex({loc: "2d"}, {w:0});
+  });
+  console.log("Finished");
+});
