@@ -2,7 +2,8 @@
  * Serve JSON to our AngularJS client
  */
 
- var tracks = require("../domain/tracks.js");
+var dataService = require("../domain/dataService.js");
+var tracks = require("../domain/tracks.js")(dataService);
 
 module.exports = function(app) {
   app.get('/api/trails/:name', exports.trails);
@@ -17,6 +18,7 @@ exports.trails = function (req, res) {
     west: req.query.west,
     zoom: req.query.zoom
   };
+  
   tracks.getData(options, function(err, data) {
     if (err) { throw new Error(err); }
     res.json({points: data});

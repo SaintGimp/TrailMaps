@@ -1,9 +1,14 @@
-var MongoClient = require('mongodb').MongoClient;
+var dataService;
 
-var db;
+module.exports = function(dataServiceToUse)
+{
+  dataService = dataServiceToUse;
+  return exports;
+};
+
 var maxZoomLevel = 16;
 
-function query(options, callback) {
+exports.getData = function(options, callback) {
   var zoom = options.zoom > maxZoomLevel ? maxZoomLevel : options.zoom;
   var collectionName = options.name + zoom;
   var searchTerms = {
@@ -14,31 +19,9 @@ function query(options, callback) {
    }
   };
   var projection = { _id: 0, loc: 1 };
-  db.collection(collectionName).find(searchTerms, projection).sort({ _id: 1 }).toArray(function (err, documents) {
-    if (err) { console.dir(err); }
+  var sortOrder = { _id: 1 };
+  
+  dataService.findArray(collectionName, searchTerms, projection, sortOrder, function (err, documents) {
     callback(err, documents);
   });
-}
-
-function connectAndQuery(options, callback) {
-  MongoClient.connect('mongodb://localhost/TrailMaps', function(err, connectedDb) {
-    if (err) {
-      callback(err, null);
-      return;
-    }
-    db = connectedDb;
-    exports.numberOfConnections++;
-    query(options, callback);
-  });
-}
-
-exports.getData = function(options, callback) {
-  if (db)
-  {
-    query(options, callback);
-  } else {
-    connectAndQuery(options, callback);
-  }
 };
-
-exports.numberOfConnections = 0;

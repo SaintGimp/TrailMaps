@@ -1,92 +1,67 @@
 var should = require('should');
-var tracks = require('../domain/tracks');
+var fakeDataService = require('./fakeDataService');
+var tracks = require('../domain/tracks')(fakeDataService);
 
 describe('Getting track data', function() {
   var trackData;
 
-  describe('when requesting the entire track at minimum zoom', function() {
+  describe('when requesting track data', function() {
     before(function(done){
-      var options = {name: "pct", north: 50, south: 32, east: -110, west: -125, zoom: 1};
+      var options = {name: "pct", north: 50, south: 32, east: -110, west: -125, zoom: 5};
       tracks.getData(options, function(err, data) {
         trackData = data;
         done();
       });
     });
 
-    it('should get the entire minimum zoom track', function() {
-      trackData.should.have.length(7);
-    });
-  });
-
-  describe('when requesting only part of the track at maximum zoom', function() {
-    before(function(done){
-      var options = {name: "pct", north: 32.590200, south: 32.590100, east: -116.467300, west: -116.467600, zoom: 16};
-      tracks.getData(options, function(err, data) {
-        should.not.exist(err);
-        should.exist(data);
-        trackData = data;
-        done();
-      });
-    });
-
-    it('should get part of the track', function() {
+    it('should get track data from the service', function() {
       trackData.should.have.length(2);
     });
 
-    it('should filter out east/west data', function() {
-      trackData.forEach(function(point) {
-        point.loc[0].should.be.within(-116.467600, -116.467300);
-      });
+    it('should get data from the collection corresponding to the trail name', function() {
+      fakeDataService.getLastCall().collectionName.should.match(/pct.*/);
     });
 
-    it('should filter out north/south data', function() {
-      trackData.forEach(function(point) {
-        point.loc[1].should.be.within(32.590100, 32.590200);
-      });
+    it('should get data from the collection corresponding to the zoom level', function() {
+      fakeDataService.getLastCall().collectionName.should.match(/.*5/);
+    });
+
+    it('should get data for the specified geographic area', function() {
+      fakeDataService.getLastCall().searchTerms.loc.$within.$box[0][0].should.equal(-125);
+      fakeDataService.getLastCall().searchTerms.loc.$within.$box[0][1].should.equal(32);
+      fakeDataService.getLastCall().searchTerms.loc.$within.$box[1][0].should.equal(-110);
+      fakeDataService.getLastCall().searchTerms.loc.$within.$box[1][1].should.equal(50);
     });
   });
 
   describe('when requesting more than the maximum zoom', function() {
-    var maximumZoomData, moreThanMaximumZoomData;
-
     before(function(done){
-      var options = {name: "pct", north: 32.590200, south: 32.590100, east: -116.467300, west: -116.467600, zoom: 16};
+      var options = {name: "pct", north: 50, south: 32, east: -110, west: -125, zoom: 20};
       tracks.getData(options, function(err, data) {
-        maximumZoomData = data;
-        options.zoom = 20;
-        tracks.getData(options, function(err, data) {
-          moreThanMaximumZoomData = data;
-          done();
-        });
+        trackData = data;
+        done();
       });
     });
 
-    it('should get the maximum zoom data', function() {
-      moreThanMaximumZoomData.should.eql(maximumZoomData);
+    it('should get data from the the collection corresponding to the maximum available zoom level', function() {
+      fakeDataService.getLastCall().collectionName.should.match(/.*16/);
     });
   });
 
-  describe('when requesting track data multiple times', function() {
-    var secondTrackData;
+  describe('when encountering an error', function() {
+    var errorFromCall;
 
     before(function(done){
-      var options = {name: "pct", north: 50, south: 32, east: -110, west: -125, zoom: 1};
+      fakeDataService.shouldErrorOnNextCall = true;
+      var options = {name: "pct", north: 50, south: 32, east: -110, west: -125, zoom: 20};
       tracks.getData(options, function(err, data) {
-        trackData = data;
-        tracks.getData(options, function(err, data) {
-          secondTrackData = data;
-          done();
-        });
+        errorFromCall = err;
+        done();
       });
     });
 
-    it('should return data each time', function() {
-      trackData.should.have.length(7);
-      secondTrackData.should.have.length(7);
-    });
-
-    it('should connect to the database only once', function() {
-      tracks.numberOfConnections.should.equal(1);
+    it('should get data from the the collection corresponding to the maximum available zoom level', function() {
+      should.exist(errorFromCall);
     });
   });
 });
