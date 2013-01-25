@@ -7,11 +7,11 @@ module.exports = function(dataServiceToUse)
 };
 
 // TODO: pull this from the data store
-var maxDetailevel = 16;
+var maxDetailevel = 14;
 
 exports.getData = function(options, callback) {
   var effectiveDetailLevel = Math.min(options.detailLevel, maxDetailevel);
-  var collectionName = options.name + "_track" + effectiveDetailLevel;
+  var collectionName = options.name + "_waypoints" + effectiveDetailLevel;
   var searchTerms = {
    "loc": {
     "$within": {
@@ -19,7 +19,7 @@ exports.getData = function(options, callback) {
      }
    }
   };
-  var projection = { _id: 0, loc: 1 };
+  var projection = { _id: 0, loc: 1, distance: 1 };
   var sortOrder = { _id: 1 };
   
   dataService.findArray(collectionName, searchTerms, projection, sortOrder, function (err, documents) {

@@ -41,10 +41,7 @@ var files = [
   "data/pct_tracks/wa_pct_tracks/wa_section_l_track.gpx"
 ];
 
-var track = {
-  name: "Pacific Crest Trail",
-  points: []
-};
+var track = [];
 
 var pointCounter = 0;
 var trackPoint;
@@ -58,7 +55,7 @@ var parseGpsData = function(err, data) {
     trackPoint = {
       loc: [parseFloat(parsedPoint.$.lon), parseFloat(parsedPoint.$.lat)] // MongoDB likes longitude first
     };
-    track.points.push(trackPoint);
+    track.push(trackPoint);
   }
 };
 
@@ -77,20 +74,21 @@ var collections = [];
 var collection = [];
 for (var zoomLevel = 16; zoomLevel >= 1; zoomLevel--)
 {
-  for (var x = 0; x < track.points.length; x += stride)
+  for (var x = 0; x < track.length; x += stride)
   {
-    collection.push(track.points[x]);
+    collection.push(track[x]);
   }
   collections.push({ data: collection, zoomLevel: zoomLevel });
   collection = [];
   stride *= 2;
 }
 
-mongoClient.connect("mongodb://localhost:27017/TrailMaps", function(err, db) {
+mongoClient.connect("mongodb://localhost/TrailMaps", function(err, db) {
   if (err) { return console.dir(err); }
   collections.forEach(function (collection){
-    db.collection("pct" + collection.zoomLevel).insert(collection.data, {w:0});
-    db.collection("pct" + collection.zoomLevel).ensureIndex({loc: "2d"}, {w:0});
+    var collectionName = "pct_track" + collection.zoomLevel;
+    db.collection(collectionName).insert(collection.data, {w:0});
+    db.collection(collectionName).ensureIndex({loc: "2d"}, {w:0});
   });
   console.log("Finished");
 });

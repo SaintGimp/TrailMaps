@@ -18,7 +18,6 @@ function MapControl() {
     this.previousPolyLine = null;
     this.scrollBounds = null;
     this.previousWaypointCollection = null;
-    this.waypointZoomLimit = 1;
     
 
     this.initialize = function () {
@@ -42,14 +41,6 @@ function MapControl() {
         }});
     };
 
-    this.loadData = function () {
-        me.calculateScrollBounds();
-        var trackBounds = me.calculateTrackBounds();
-
-        me.loadTrack(trackBounds);
-        me.loadWaypoints(trackBounds);
-    };
-
     this.calculateScrollBounds = function () {
         // The map bounds adjusts the center if height gets too big so we get the map center directly
         var mapCenter = me.bingMap.getCenter();
@@ -70,45 +61,56 @@ function MapControl() {
         return new Microsoft.Maps.LocationRect(mapCenter, trackBoundsSize, trackBoundsSize);
     };
 
-    this.loadTrack = function (trackBounds) {
-        var trackUrl = 'api/trails/pct' + me.buildUrlParameters(trackBounds);
-
-        $.getJSON(trackUrl, null, function (data) {
-            var vertices = [];
-            $.each(data.points, function (i, point) {
-                vertices.push(new Microsoft.Maps.Location(point.loc[1], point.loc[0]));
-            });
-
-            var polyLine = new Microsoft.Maps.Polyline(vertices, null);
-
-            // First add new track, then remove old track
-            me.bingMap.entities.push(polyLine);
-            if (me.previousPolyLine) {
-                me.bingMap.entities.remove(me.previousPolyLine);
-            }
-            me.previousPolyLine = polyLine;
+    this.loadTrack = function(data) {
+        var vertices = [];
+        $.each(data.track, function (i, point) {
+            vertices.push(new Microsoft.Maps.Location(point.loc[1], point.loc[0]));
         });
+
+        var polyLine = new Microsoft.Maps.Polyline(vertices, null);
+
+        // First add new track, then remove old track
+        me.bingMap.entities.push(polyLine);
+        if (me.previousPolyLine) {
+            me.bingMap.entities.remove(me.previousPolyLine);
+        }
+        me.previousPolyLine = polyLine;
     };
 
-    this.loadWaypoints = function (trackBounds) {
-        var newWaypointCollection = null;
-        if (me.bingMap.getZoom() >= me.waypointZoomLimit) {
-            var waypointsUrl = 'home/GetWaypointList' + me.buildUrlParameters(trackBounds);
-            newWaypointCollection = new Microsoft.Maps.EntityCollection({ visible: true });
+    this.loadWaypoints = function (data) {
+        var newWaypointCollection = new Microsoft.Maps.EntityCollection({ visible: true });
+        $.each(data.waypoints, function (i, waypoint) {
+            var location = new Microsoft.Maps.Location(waypoint.loc[1], waypoint.loc[0]);
+            var options = {
+                icon: '/images/mile_marker.png',
+                htmlContent: '<div><img src="/images/mile_marker.png"><span class="waypoint_text">' + waypoint.distance + '</span></div>',
+                //text: waypoint.distance.toString(),
+                typeName: 'labelPin',
+                height: 25,
+                width: 75,
+                anchor: new Microsoft.Maps.Point(12, 12),
+                //textOffset: new Microsoft.Maps.Point(24, 5)
+            };
+            newWaypointCollection.push(new Microsoft.Maps.Pushpin(location, options));
+        });
 
-            $.getJSON(waypointsUrl, null, function (data) {
-                $.each(data.Waypoints, function (i, waypoint) {
-                    var location = new Microsoft.Maps.Location(waypoint.Latitude, waypoint.Longitude);
-                    newWaypointCollection.push(new Microsoft.Maps.Pushpin(location, { icon: 'Content/mile_marker.png', text: waypoint.Text, typeName: 'labelPin', height: 25, width: 25, anchor: new Microsoft.Maps.Point(12, 12), textOffset: new Microsoft.Maps.Point(24, 5) }));
-                });
-            });
-
-            me.bingMap.entities.push(newWaypointCollection);
-        }
+        me.bingMap.entities.push(newWaypointCollection);
         if (me.previousWaypointCollection) {
             me.bingMap.entities.remove(me.previousWaypointCollection);
         }
         me.previousWaypointCollection = newWaypointCollection;
+    };
+
+    this.loadTrail = function () {
+        me.calculateScrollBounds();
+        var trackBounds = me.calculateTrackBounds();
+
+        var trailUrl = 'api/trails/pct' + me.buildUrlParameters(trackBounds);
+
+        $.getJSON(trailUrl, null, function (data) {
+            me.loadTrack(data);
+            me.loadWaypoints(data);
+        });
     };
 
     this.buildUrlParameters = function (trackBounds) {
@@ -117,20 +119,20 @@ function MapControl() {
         var east = trackBounds.getEast();
         var west = trackBounds.getWest();
         
-        var zoom = me.bingMap.getZoom();
+        var detail = me.bingMap.getZoom();
         
-        return '?north=' + north + '&south=' + south + '&east=' + east + '&west=' + west + "&zoom=" + zoom;
+        return '?north=' + north + '&south=' + south + '&east=' + east + '&west=' + west + "&detail=" + detail;
     };
 
     this.onViewChange = function () {
         if (me.needToLoadNewData()) {
-            me.loadData();
+            me.loadTrail();
         }
     };
 
     this.onViewChangeEnd = function () {
         if (me.needToLoadNewData()) {
-            me.loadData();
+            me.loadTrail();
         }
     };
 

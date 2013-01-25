@@ -2,8 +2,9 @@ var MongoClient = require('mongodb').MongoClient;
 var db;
 
 function query(collectionName, searchTerms, projection, sort, callback) {
-  db.collection(collectionName).find(searchTerms, projection).sort(sort).toArray(function (err, documents) {
+  db.collection(collectionName).find(searchTerms, projection).limit(2000).sort(sort).toArray(function (err, documents) {
     if (err) { console.dir(err); }
+    console.log("Loaded " + documents.length + " track points.");
     callback(err, documents);
   });
 }

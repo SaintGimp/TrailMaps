@@ -4,6 +4,7 @@
 
 var dataService = require("../domain/dataService.js");
 var tracks = require("../domain/tracks.js")(dataService);
+var waypoints = require("../domain/waypoints.js")(dataService);
 
 module.exports = function(app) {
   app.get('/api/trails/:name', exports.trails);
@@ -16,11 +17,17 @@ exports.trails = function (req, res) {
     south: req.query.south,
     east: req.query.east,
     west: req.query.west,
-    zoom: req.query.zoom
+    detailLevel: req.query.detail
   };
-  
-  tracks.getData(options, function(err, data) {
+
+  tracks.getData(options, function(err, trackData) {
     if (err) { throw new Error(err); }
-    res.json({points: data});
+    waypoints.getData(options, function(err, waypointData) {
+      if (err) { throw new Error(err); }
+      res.json({
+        track: trackData,
+        waypoints: waypointData
+      });
+    });
   });
 };
