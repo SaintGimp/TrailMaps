@@ -9,7 +9,7 @@ module.exports = function(dataServiceToUse)
 // TODO: pull this from the data store
 var maxDetailevel = 16;
 
-exports.getData = function(options, callback) {
+exports.findByArea = function(options, callback) {
   var effectiveDetailLevel = Math.min(options.detailLevel, maxDetailevel);
   var collectionName = options.name + "_track" + effectiveDetailLevel;
   var searchTerms = {

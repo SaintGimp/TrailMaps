@@ -2,13 +2,13 @@ var should = require('should');
 var fakeDataService = require('./fakeDataService');
 var tracks = require('../domain/tracks')(fakeDataService);
 
-describe('Getting track data', function() {
+describe('Finding track data by area', function() {
   var trackData;
 
-  describe('when requesting track data', function() {
+  describe('when finding track data', function() {
     before(function(done){
       var options = {name: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 5};
-      tracks.getData(options, function(err, data) {
+      tracks.findByArea(options, function(err, data) {
         trackData = data;
         done();
       });
@@ -37,7 +37,7 @@ describe('Getting track data', function() {
   describe('when requesting more than the maximum detail', function() {
     before(function(done){
       var options = {name: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 20};
-      tracks.getData(options, function(err, data) {
+      tracks.findByArea(options, function(err, data) {
         trackData = data;
         done();
       });
@@ -54,7 +54,7 @@ describe('Getting track data', function() {
     before(function(done){
       fakeDataService.shouldErrorOnNextCall = true;
       var options = {name: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 20};
-      tracks.getData(options, function(err, data) {
+      tracks.findByArea(options, function(err, data) {
         errorFromCall = err;
         done();
       });

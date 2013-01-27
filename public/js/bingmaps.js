@@ -83,7 +83,7 @@ function MapControl() {
             var location = new Microsoft.Maps.Location(waypoint.loc[1], waypoint.loc[0]);
             var options = {
                 icon: '/images/mile_marker.png',
-                htmlContent: '<div><img src="/images/mile_marker.png"><span class="waypoint_text">' + waypoint.distance + '</span></div>',
+                htmlContent: '<div><img src="/images/mile_marker.png"><span class="waypoint_text">' + waypoint.name + '</span></div>',
                 //text: waypoint.distance.toString(),
                 typeName: 'labelPin',
                 height: 25,
@@ -153,10 +153,25 @@ function MapControl() {
 
         return !me.scrollBounds.contains(me.bingMap.getBounds().center);
     };
+
+    this.setCenterAndZoom = function(location, zoom) {
+        var options = me.bingMap.getOptions();
+        options.center = new Microsoft.Maps.Location(location[1], location[0]);
+        options.zoom = zoom;
+        me.bingMap.setView(options);
+    };
 }
 
 var mapControl = new MapControl();
 
 $(function () {
     mapControl.initialize();
+
+    $('#searchForm').submit(function() {
+        var url = "/api/trails/pct/milemarkers/" + $('.search-query').val();
+        $.getJSON(url, function(result) {
+            mapControl.setCenterAndZoom(result.loc, 16);
+        });
+        return false;
+    });
 });

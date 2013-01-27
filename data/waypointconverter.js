@@ -24,15 +24,10 @@ var parseWaypointData = function(err, data) {
     // There are other POI waypoints in the file - skip them for now
     if (parsedPoint.name[0].match(/^(?:\d{4}|\d{4}-\d)$/)) {
       waypoint = {
-        loc: [parseFloat(parsedPoint.$.lon), parseFloat(parsedPoint.$.lat)], // MongoDB likes longitude first
-        distance: parseFloat(parsedPoint.name[0].replace('-', '.'))
+        name: parsedPoint.name[0].replace('-', '.'),
+        loc: [parseFloat(parsedPoint.$.lon), parseFloat(parsedPoint.$.lat)] // MongoDB likes longitude first
       };
-      if (waypoint.distance >= 0) {
-        waypoints.push(waypoint);
-      } else {
-        console.log("Bad waypoint: ");
-        console.log(waypoint);
-      }
+      waypoints.push(waypoint);
     }
   }
 };
@@ -65,6 +60,7 @@ mongoClient.connect("mongodb://localhost/TrailMaps", function(err, db) {
   if (err) { return console.dir(err); }
   collections.forEach(function (collection){
     var collectionName = "pct_waypoints" + collection.zoomLevel;
+    db.collection(collectionName).drop();
     db.collection(collectionName).insert(collection.data, {w:0});
     db.collection(collectionName).ensureIndex({loc: "2d"}, {w:0});
   });
