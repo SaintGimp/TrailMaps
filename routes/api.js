@@ -7,13 +7,13 @@ var tracks = require("../domain/tracks.js")(dataService);
 var waypoints = require("../domain/waypoints.js")(dataService);
 
 module.exports = function(app) {
-  app.get('/api/trails/:trailName/milemarkers/:mileMarkerName', exports.mileMarkers);
+  app.get('/api/trails/:trailName/milemarkers/:mile', exports.mileMarkers);
   app.get('/api/trails/:trailName', exports.trails);
 };
 
 exports.trails = function (req, res) {
   var options = {
-    name: req.params.trailName,
+    trailName: req.params.trailName,
     north: req.query.north,
     south: req.query.south,
     east: req.query.east,
@@ -36,9 +36,9 @@ exports.trails = function (req, res) {
 exports.mileMarkers = function (req, res) {
   var options = {
     trailName: req.params.trailName,
-    waypointName: req.params.mileMarkerName
+    mile: parseFloat(req.params.mile)
   };
-  waypoints.findByExactName(options, function(err, waypoint) {
+  waypoints.findByValue(options, function(err, waypoint) {
     if (err) { throw new Error(err); }
     res.json(waypoint);
   });

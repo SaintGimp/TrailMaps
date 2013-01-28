@@ -29,8 +29,6 @@ exports.findArray = function(collectionName, searchTerms, projection, sort, call
 };
 
 function queryOne(collectionName, searchTerms, projection, sort, callback) {
-  console.log(collectionName);
-  console.log(searchTerms);
   db.collection(collectionName).findOne(searchTerms, projection, function (err, document) {
     if (err) { console.dir(err); }
     callback(err, document);

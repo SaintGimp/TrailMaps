@@ -9,9 +9,13 @@ module.exports = function(dataServiceToUse)
 // TODO: pull this from the data store
 var maxDetailevel = 14;
 
+function makeCollectionName(trailName, detailLevel) {
+  return trailName + "_milemarkers" + detailLevel;
+}
+
 exports.findByArea = function(options, callback) {
   var effectiveDetailLevel = Math.min(options.detailLevel, maxDetailevel);
-  var collectionName = options.name + "_waypoints" + effectiveDetailLevel;
+  var collectionName = makeCollectionName(options.trailName, effectiveDetailLevel);
   var searchTerms = {
    "loc": {
     "$within": {
@@ -19,7 +23,7 @@ exports.findByArea = function(options, callback) {
      }
    }
   };
-  var projection = { _id: 0, loc: 1, name: 1 };
+  var projection = { _id: 0, loc: 1, mile: 1 };
   var sortOrder = { _id: 1 };
   
   dataService.findArray(collectionName, searchTerms, projection, sortOrder, function (err, documents) {
@@ -27,10 +31,10 @@ exports.findByArea = function(options, callback) {
   });
 };
 
-exports.findByExactName = function(options, callback) {
-  var collectionName = options.trailName + "_waypoints" + maxDetailevel;
-  var searchTerms = { name: options.waypointName };
-  var projection = { _id: 0, loc: 1, name: 1 };
+exports.findByValue = function(options, callback) {
+  var collectionName = makeCollectionName(options.trailName, maxDetailevel);
+  var searchTerms = { mile: options.mile };
+  var projection = { _id: 0, loc: 1, mile: 1 };
   var sortOrder = { _id: 1 };
   
   dataService.findOne(collectionName, searchTerms, projection, sortOrder, function (err, document) {

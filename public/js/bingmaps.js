@@ -83,7 +83,7 @@ function MapControl() {
             var location = new Microsoft.Maps.Location(waypoint.loc[1], waypoint.loc[0]);
             var options = {
                 icon: '/images/mile_marker.png',
-                htmlContent: '<div><img src="/images/mile_marker.png"><span class="waypoint_text">' + waypoint.name + '</span></div>',
+                htmlContent: '<div><img src="/images/mile_marker.png"><span class="waypoint_text">' + waypoint.mile + '</span></div>',
                 //text: waypoint.distance.toString(),
                 typeName: 'labelPin',
                 height: 25,
@@ -168,7 +168,7 @@ $(function () {
     mapControl.initialize();
 
     $('#searchForm').submit(function() {
-        var url = "/api/trails/pct/milemarkers/" + $('.search-query').val();
+        var url = "/api/trails/pct/milemarkers/" + $('#searchBox').val();
         $.getJSON(url, function(result) {
             mapControl.setCenterAndZoom(result.loc, 16);
         });

@@ -7,7 +7,7 @@ describe('Finding waypoints by area', function() {
 
   describe('when finding waypoints', function() {
     before(function(done){
-      var options = {name: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 5};
+      var options = {trailName: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 5};
       waypoints.findByArea(options, function(err, data) {
         waypointData = data;
         done();
@@ -19,7 +19,7 @@ describe('Finding waypoints by area', function() {
     });
 
     it('should get data from the collection corresponding to the trail name', function() {
-      fakeDataService.getLastCall().collectionName.should.match(/^pct_waypoints\d+$/);
+      fakeDataService.getLastCall().collectionName.should.match(/^pct_milemarkers\d+$/);
     });
 
     it('should get data from the collection corresponding to the detail level', function() {
@@ -36,7 +36,7 @@ describe('Finding waypoints by area', function() {
 
   describe('when requesting more than the maximum detail', function() {
     before(function(done){
-      var options = {name: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 20};
+      var options = {trailName: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 20};
       waypoints.findByArea(options, function(err, data) {
         waypointData = data;
         done();
@@ -53,7 +53,7 @@ describe('Finding waypoints by area', function() {
 
     before(function(done){
       fakeDataService.shouldErrorOnNextCall = true;
-      var options = {name: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 20};
+      var options = {trailName: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 20};
       waypoints.findByArea(options, function(err, data) {
         errorFromCall = err;
         done();
@@ -66,13 +66,13 @@ describe('Finding waypoints by area', function() {
   });
 });
 
-describe('Finding a waypoint by exact name', function() {
+describe('Finding a waypoint by value', function() {
   var foundWaypoint;
 
   describe('when finding a waypoint', function() {
     before(function(done){
-      var options = {trailName: "pct", waypointName: "1234"};
-      waypoints.findByExactName(options, function(err, waypoint) {
+      var options = {trailName: "pct", mile: 1234};
+      waypoints.findByValue(options, function(err, waypoint) {
         foundWaypoint = waypoint;
         done();
       });
@@ -83,15 +83,15 @@ describe('Finding a waypoint by exact name', function() {
     });
 
     it('should get the waypoint from the collection corresponding to the trail name', function() {
-      fakeDataService.getLastCall().collectionName.should.match(/^pct_waypoints\d+$/);
+      fakeDataService.getLastCall().collectionName.should.match(/^pct_milemarkers\d+$/);
     });
 
     it('should get the waypoint from the maximum detail level collection', function() {
       fakeDataService.getLastCall().collectionName.should.match(/.*14$/);
     });
 
-    it('should get the waypoint by name', function() {
-      fakeDataService.getLastCall().searchTerms.name.should.equal("1234");
+    it('should get the waypoint by value', function() {
+      fakeDataService.getLastCall().searchTerms.mile.should.equal(1234);
     });
   });
 });
