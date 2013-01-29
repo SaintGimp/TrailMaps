@@ -1,7 +1,8 @@
 var fs = require("fs"),
   xml2js = require('xml2js'),
   mongoClient = require('mongodb').MongoClient,
-  async = require('async');
+  async = require('async'),
+  dataService = require("../domain/dataService.js");
 
 var parser = new xml2js.Parser();
 
@@ -86,7 +87,7 @@ function buildCollections(mileMarkers, callback) {
 
 function connect(callback) {
   console.log('Connecting to database');
-  mongoClient.connect("mongodb://localhost/TrailMaps", callback);
+  dataService.db(callback);
 }
 
 function writeCollection(db, collection, callback)

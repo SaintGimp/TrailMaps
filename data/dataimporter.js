@@ -2,10 +2,11 @@ var trackImporter = require('./trackimporter.js');
 var mileMarkerImporter = require('./milemarkerimporter.js');
 var mongoClient = require('mongodb').MongoClient;
 var async = require('async');
+var dataService = require("../domain/dataService.js");
 
 function connect(callback) {
   console.log('Connecting to database');
-  mongoClient.connect("mongodb://localhost/TrailMaps", callback);
+  dataService.db(callback);
 }
 
 function getCollectionNames(db, callback) {
