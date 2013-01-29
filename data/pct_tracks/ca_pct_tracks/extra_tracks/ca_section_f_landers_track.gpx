@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="MapSource 6.16.3" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+  <metadata>
+    <link href="http://www.garmin.com">
+      <text>Garmin International</text>
+    </link>
+    <time>2013-01-26T23:34:03Z</time>
+    <bounds maxlat="35.455202478915453" maxlon="-118.31292126327753" minlat="35.45165735296905" minlon="-118.31374260596931"/>
+  </metadata>
+
+  <trk>
+    <name>CA Sec F - Landers</name>
+    <trkseg>
+      <trkpt lat="35.45165735296905" lon="-118.31344932317734">
+        <ele>1921.8099999999999</ele>
+        <time>2012-05-26T01:18:21Z</time>
+      </trkpt>
+      <trkpt lat="35.451804958283901" lon="-118.31352844834328">
+        <ele>1920.8499999999999</ele>
+        <time>2012-05-26T01:20:20Z</time>
+      </trkpt>
+      <trkpt lat="35.451948037371039" lon="-118.31350254826248">
+        <ele>1920.3699999999999</ele>
+        <time>2012-05-26T01:20:31Z</time>
+      </trkpt>
+      <trkpt lat="35.452098911628127" lon="-118.31345502287149">
+        <ele>1919.4100000000001</ele>
+        <time>2012-05-26T01:20:44Z</time>
+      </trkpt>
+      <trkpt lat="35.452240314334631" lon="-118.31340355798602">
+        <ele>1917.97</ele>
+        <time>2012-05-26T01:20:56Z</time>
+      </trkpt>
+      <trkpt lat="35.45237559825182" lon="-118.31334102898836">
+        <ele>1917.01</ele>
+        <time>2012-05-26T01:21:07Z</time>
+      </trkpt>
+      <trkpt lat="35.452537788078189" lon="-118.31327405758202">
+        <ele>1914.5999999999999</ele>
+        <time>2012-05-26T01:21:20Z</time>
+      </trkpt>
+      <trkpt lat="35.452679358422756" lon="-118.3131886459887">
+        <ele>1913.1600000000001</ele>
+        <time>2012-05-26T01:21:34Z</time>
+      </trkpt>
+      <trkpt lat="35.452807182446122" lon="-118.31311756744981">
+        <ele>1912.2</ele>
+        <time>2012-05-26T01:21:45Z</time>
+      </trkpt>
+      <trkpt lat="35.452969875186682" lon="-118.31304087303579">
+        <ele>1912.2</ele>
+        <time>2012-05-26T01:21:58Z</time>
+      </trkpt>
+      <trkpt lat="35.453123180195689" lon="-118.31298085860908">
+        <ele>1910.28</ele>
+        <time>2012-05-26T01:22:10Z</time>
+      </trkpt>
+      <trkpt lat="35.453278999775648" lon="-118.31293165683746">
+        <ele>1908.8299999999999</ele>
+        <time>2012-05-26T01:22:23Z</time>
+      </trkpt>
+      <trkpt lat="35.453441441059113" lon="-118.31294464878738">
+        <ele>1907.8699999999999</ele>
+        <time>2012-05-26T01:22:36Z</time>
+      </trkpt>
+      <trkpt lat="35.453601870685816" lon="-118.31296660937369">
+        <ele>1906.9100000000001</ele>
+        <time>2012-05-26T01:22:49Z</time>
+      </trkpt>
+      <trkpt lat="35.453749308362603" lon="-118.31299100071192">
+        <ele>1905.95</ele>
+        <time>2012-05-26T01:23:01Z</time>
+      </trkpt>
+      <trkpt lat="35.4538928065449" lon="-118.31305193714797">
+        <ele>1905.47</ele>
+        <time>2012-05-26T01:23:14Z</time>
+      </trkpt>
+      <trkpt lat="35.454017613083124" lon="-118.31315981224179">
+        <ele>1904.03</ele>
+        <time>2012-05-26T01:23:25Z</time>
+      </trkpt>
+      <trkpt lat="35.454115765169263" lon="-118.31325377337635">
+        <ele>1902.5899999999999</ele>
+        <time>2012-05-26T01:23:35Z</time>
+      </trkpt>
+      <trkpt lat="35.454222047701478" lon="-118.31339090131223">
+        <ele>1901.1400000000001</ele>
+        <time>2012-05-26T01:23:47Z</time>
+      </trkpt>
+      <trkpt lat="35.454315841197968" lon="-118.31351730041206">
+        <ele>1900.1800000000001</ele>
+        <time>2012-05-26T01:23:59Z</time>
+      </trkpt>
+      <trkpt lat="35.454434109851718" lon="-118.3136223256588">
+        <ele>1898.74</ele>
+        <time>2012-05-26T01:24:11Z</time>
+      </trkpt>
+      <trkpt lat="35.454553887248039" lon="-118.31370899453759">
+        <ele>1897.3</ele>
+        <time>2012-05-26T01:24:23Z</time>
+      </trkpt>
+      <trkpt lat="35.454687746241689" lon="-118.31374260596931">
+        <ele>1902</ele>
+      </trkpt>
+      <trkpt lat="35.454816911369562" lon="-118.31363271921873">
+        <ele>1902.0390625</ele>
+      </trkpt>
+      <trkpt lat="35.454943981021643" lon="-118.31345058046281">
+        <ele>1902.25</ele>
+      </trkpt>
+      <trkpt lat="35.455000977963209" lon="-118.31330884248018">
+        <ele>1904.015625</ele>
+      </trkpt>
+      <trkpt lat="35.455099549144506" lon="-118.31306593492627">
+        <ele>1907.34765625</ele>
+      </trkpt>
+      <trkpt lat="35.455202478915453" lon="-118.31292126327753">
+        <ele>1908.91015625</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+
+</gpx>
