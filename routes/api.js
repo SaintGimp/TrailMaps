@@ -5,10 +5,12 @@
 var dataService = require("../domain/dataService.js");
 var tracks = require("../domain/tracks.js")(dataService);
 var waypoints = require("../domain/waypoints.js")(dataService);
+var dataImporter = require("../data/dataimporter.js");
 
 module.exports = function(app) {
   app.get('/api/trails/:trailName/milemarkers/:mile', exports.mileMarkers);
   app.get('/api/trails/:trailName', exports.trails);
+  app.post('/api/admin/importdata', exports.importdata);
 };
 
 exports.trails = function (req, res) {
@@ -41,5 +43,12 @@ exports.mileMarkers = function (req, res) {
   waypoints.findByValue(options, function(err, waypoint) {
     if (err) { throw new Error(err); }
     res.json(waypoint);
+  });
+};
+
+exports.importdata = function (req, res) {
+  dataImporter.import(function(err) {
+    if (err) { throw new Error(err); }
+    res.json("success");
   });
 };

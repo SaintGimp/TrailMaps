@@ -35,16 +35,15 @@ function dropCollections(db, collectionsToDelete, callback) {
   );
 }
 
-async.waterfall([
-  connect,
-  getCollectionNames,
-  dropCollections,
-  trackImporter.import,
-  mileMarkerImporter.import
-  ],
-  function(err) {
-    if (err) { console.dir(err); }
-    process.exit(0);
-  }
-);
+exports.import = function(callback) {
+  async.waterfall([
+    connect,
+    getCollectionNames,
+    dropCollections,
+    trackImporter.import,
+    mileMarkerImporter.import
+    ],
+    callback
+  );
+};
 
