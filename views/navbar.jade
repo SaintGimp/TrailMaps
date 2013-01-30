@@ -7,12 +7,10 @@
           span.icon-bar
         a.brand(href='#') Trail Maps
         .nav-collapse.collapse
-          ul.nav
+          ul.nav.nav-pills
             li.active
-              a(href='#') Home
+              a(data-toggle="pill", href='#bing-maps') Bing Maps
             li
-              a(href='#about') About
-            li
-              a(href='#contact') Contact
-        form.navbar-form.pull-right(id='searchForm')
-          input.search-query.mile-marker-query(id='searchBox', type='text', placeholder='go to mile marker')
+              a(data-toggle="pill", href='#google-maps') Google Maps
+          form.navbar-form.pull-right(id='searchForm')
+            input.search-query.mile-marker-query(id='searchBox', type='text', placeholder='go to mile marker')

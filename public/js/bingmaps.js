@@ -1,13 +1,11 @@
 /*global Microsoft: false*/
 
-function MapControl() {
+function BingMapControl() {
     var me = this;
 
     // TODO: the visual display of the track starts to break up as we scroll the view, before
     // we load a new track. Seems to be a Bing problem.  Maybe we should load a smaller track bounds?
     
-//    this.defaultLatitude = 32.5897070;
-//    this.defaultLongitude = -116.4669600;
     this.defaultLatitude = 40.50642708521896;
     this.defaultLongitude = -121.36087699433327;
     this.defaultZoomLevel = 5;
@@ -23,7 +21,7 @@ function MapControl() {
     this.initialize = function () {
         // http://msdn.microsoft.com/en-us/library/gg427609.aspx
         Microsoft.Maps.loadModule('Microsoft.Maps.Themes.BingTheme', { callback: function() {
-            me.bingMap = new Microsoft.Maps.Map(document.getElementById("map_canvas"), {
+            me.bingMap = new Microsoft.Maps.Map(document.getElementById("bing-maps"), {
                 credentials: "AiiVGjRyDyDynh0IbGjn7u4ee-6U9F-ZyjnRj5wYEFp_J6kq5HGcMfdd-TYE_6xF",
                 center: new Microsoft.Maps.Location(me.defaultLatitude, me.defaultLongitude),
                 mapTypeId: Microsoft.Maps.MapTypeId.aerial,
@@ -162,16 +160,3 @@ function MapControl() {
     };
 }
 
-var mapControl = new MapControl();
-
-$(function () {
-    mapControl.initialize();
-
-    $('#searchForm').submit(function() {
-        var url = "/api/trails/pct/milemarkers/" + $('#searchBox').val();
-        $.getJSON(url, function(result) {
-            mapControl.setCenterAndZoom(result.loc, 16);
-        });
-        return false;
-    });
-});
