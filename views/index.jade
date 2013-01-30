@@ -1,14 +1,15 @@
 extends layout
 
 block body
-  div(id='map_canvas')
-    div.contentArea.tab-content
-      div.contents.tab-pane.fade.in.active(id='bing-maps')
-      div.contents.tab-pane.fade(id='google-maps')
+  div.contentArea.tab-content(id='map_canvas')
+    div.contents.tab-pane.active(id='bing-maps')
+    div.contents.tab-pane(id='google-maps')
 
 block scripts
   script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
   script(src='http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0')
+  script(src='http://maps.googleapis.com/maps/api/js?sensor=false')
   script(src='js/bingmaps.js')
+  script(src='js/googlemaps.js')
   script(src='js/mapcontrol.js')
   script(src='js/index.js')

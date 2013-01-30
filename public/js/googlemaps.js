@@ -1,6 +1,6 @@
-/*global Microsoft: false*/
+/*global google: false*/
 
-function BingMapControl() {
+function GoogleMapControl() {
     var me = this;
 
     // TODO: the visual display of the track starts to break up as we scroll the view, before
@@ -12,31 +12,20 @@ function BingMapControl() {
     this.previousZoomLevel = this.defaultZoomLevel;
     this.scrollBoundsMultiple = 2;
     this.trackBoundsMultiple = 3;
-    this.bingMap = null;
+    this.googleMap = null;
     this.previousPolyLine = null;
     this.scrollBounds = null;
     this.previousWaypointCollection = null;
     
 
     this.initialize = function () {
-        // http://msdn.microsoft.com/en-us/library/gg427609.aspx
-        Microsoft.Maps.loadModule('Microsoft.Maps.Themes.BingTheme', { callback: function() {
-            me.bingMap = new Microsoft.Maps.Map(document.getElementById("bing-maps"), {
-                credentials: "AiiVGjRyDyDynh0IbGjn7u4ee-6U9F-ZyjnRj5wYEFp_J6kq5HGcMfdd-TYE_6xF",
-                center: new Microsoft.Maps.Location(me.defaultLatitude, me.defaultLongitude),
-                mapTypeId: Microsoft.Maps.MapTypeId.aerial,
-                zoom: me.defaultZoomLevel,
-                enableClickableLogo: false,
-                enableSearchLogo: false,
-                inertiaIntensity: 0.5,
-                tileBuffer: 1,
-                showBreadcrumb: false,
-                theme: new Microsoft.Maps.Themes.BingTheme()
-            });
-
-            Microsoft.Maps.Events.addHandler(me.bingMap, 'viewchange', me.onViewChange);
-            Microsoft.Maps.Events.addHandler(me.bingMap, 'viewchangeend', me.onViewChangeEnd);
-        }});
+        // https://developers.google.com/maps/documentation/javascript/
+        var mapOptions = {
+          center: new google.maps.LatLng(me.defaultLatitude, me.defaultLongitude),
+          zoom: me.defaultZoomLevel,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        me.googleMap = new google.maps.Map(document.getElementById("google-maps"), mapOptions);
     };
 
     this.calculateScrollBounds = function () {
@@ -46,7 +35,7 @@ function BingMapControl() {
         var scrollBoundsSize = mapBounds.width * me.scrollBoundsMultiple;
         // We get weird behavior when west goes past -180 and wraps around to +180. We should
         // probably build a custom rect in that case that's constrained to west < east, but this
-        // will do for now.  The Location class has a NormalizeLongitude thing that might be of some help.
+        // will do for now.
         scrollBoundsSize = Math.min(scrollBoundsSize, 60);
         me.scrollBounds = new Microsoft.Maps.LocationRect(mapCenter, scrollBoundsSize, scrollBoundsSize);
     };
@@ -153,21 +142,20 @@ function BingMapControl() {
     };
 
     this.getCenterAndZoom = function(options) {
-        var center = me.bingMap.getCenter();
+        var mapCenter = me.googleMap.getCenter();
         return {
           center: {
-              latitude: center.latitude,
-              longitude: center.longitude
+              latitude: mapCenter.lat(),
+              longitude: mapCenter.lng()
             },
-            zoom: me.bingMap.getZoom()
+            zoom: me.googleMap.getZoom()
         };
     };
 
     this.setCenterAndZoom = function(options) {
-        var viewOptions = me.bingMap.getOptions();
-        viewOptions.center = new Microsoft.Maps.Location(options.center.latitude, options.center.longitude);
-        viewOptions.zoom = options.zoom;
-        me.bingMap.setView(viewOptions);
+        var mapCenter = new google.maps.LatLng(options.center.latitude, options.center.longitude);
+        me.googleMap.setCenter(mapCenter);
+        me.googleMap.setZoom(options.zoom);
     };
 }
 
