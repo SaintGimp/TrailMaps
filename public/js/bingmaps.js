@@ -6,26 +6,19 @@ function BingMapControl() {
     // TODO: the visual display of the track starts to break up as we scroll the view, before
     // we load a new track. Seems to be a Bing problem.  Maybe we should load a smaller track bounds?
     
-    this.defaultLatitude = 40.50642708521896;
-    this.defaultLongitude = -121.36087699433327;
-    this.defaultZoomLevel = 5;
-    this.previousZoomLevel = this.defaultZoomLevel;
-    this.scrollBoundsMultiple = 2;
-    this.trackBoundsMultiple = 3;
     this.bingMap = null;
     this.previousPolyLine = null;
-    this.scrollBounds = null;
     this.previousWaypointCollection = null;
     
 
-    this.initialize = function () {
+    this.initialize = function (latitude, longitude, zoomLevel, onViewChanged) {
         // http://msdn.microsoft.com/en-us/library/gg427609.aspx
         Microsoft.Maps.loadModule('Microsoft.Maps.Themes.BingTheme', { callback: function() {
             me.bingMap = new Microsoft.Maps.Map(document.getElementById("bing-maps"), {
                 credentials: "AiiVGjRyDyDynh0IbGjn7u4ee-6U9F-ZyjnRj5wYEFp_J6kq5HGcMfdd-TYE_6xF",
-                center: new Microsoft.Maps.Location(me.defaultLatitude, me.defaultLongitude),
+                center: new Microsoft.Maps.Location(latitude, longitude),
                 mapTypeId: Microsoft.Maps.MapTypeId.aerial,
-                zoom: me.defaultZoomLevel,
+                zoom: zoomLevel,
                 enableClickableLogo: false,
                 enableSearchLogo: false,
                 inertiaIntensity: 0.5,
@@ -34,32 +27,13 @@ function BingMapControl() {
                 theme: new Microsoft.Maps.Themes.BingTheme()
             });
 
-            Microsoft.Maps.Events.addHandler(me.bingMap, 'viewchange', me.onViewChange);
-            Microsoft.Maps.Events.addHandler(me.bingMap, 'viewchangeend', me.onViewChangeEnd);
+            //Microsoft.Maps.Events.addHandler(me.bingMap, 'viewchange', onViewChanged);
+            Microsoft.Maps.Events.addHandler(me.bingMap, 'viewchangeend', onViewChanged);
         }});
     };
 
-    this.calculateScrollBounds = function () {
-        // The map bounds adjusts the center if height gets too big so we get the map center directly
-        var mapCenter = me.bingMap.getCenter();
-        var mapBounds = me.bingMap.getBounds();
-        var scrollBoundsSize = mapBounds.width * me.scrollBoundsMultiple;
-        // We get weird behavior when west goes past -180 and wraps around to +180. We should
-        // probably build a custom rect in that case that's constrained to west < east, but this
-        // will do for now.  The Location class has a NormalizeLongitude thing that might be of some help.
-        scrollBoundsSize = Math.min(scrollBoundsSize, 60);
-        me.scrollBounds = new Microsoft.Maps.LocationRect(mapCenter, scrollBoundsSize, scrollBoundsSize);
-    };
 
-    this.calculateTrackBounds = function () {
-        var mapCenter = me.bingMap.getCenter();
-        var mapBounds = me.bingMap.getBounds();
-        var trackBoundsSize = mapBounds.width * me.trackBoundsMultiple;
-        trackBoundsSize = Math.min(trackBoundsSize, 60);
-        return new Microsoft.Maps.LocationRect(mapCenter, trackBoundsSize, trackBoundsSize);
-    };
-
-    this.loadTrack = function(data) {
+    this.displayTrack = function(data) {
         var vertices = [];
         $.each(data.track, function (i, point) {
             vertices.push(new Microsoft.Maps.Location(point.loc[1], point.loc[0]));
@@ -75,7 +49,7 @@ function BingMapControl() {
         me.previousPolyLine = polyLine;
     };
 
-    this.loadWaypoints = function (data) {
+    this.displayWaypoints = function (data) {
         var newWaypointCollection = new Microsoft.Maps.EntityCollection({ visible: true });
         $.each(data.waypoints, function (i, waypoint) {
             var location = new Microsoft.Maps.Location(waypoint.loc[1], waypoint.loc[0]);
@@ -98,61 +72,22 @@ function BingMapControl() {
         }
         me.previousWaypointCollection = newWaypointCollection;
     };
-
-    this.loadTrail = function () {
-        me.calculateScrollBounds();
-        var trackBounds = me.calculateTrackBounds();
-
-        var trailUrl = 'api/trails/pct' + me.buildUrlParameters(trackBounds);
-
-        $.getJSON(trailUrl, null, function (data) {
-            me.loadTrack(data);
-            me.loadWaypoints(data);
-        });
+    
+    this.getCenter = function() {
+        var center = me.bingMap.getCenter();
+        return new Location(center.latitude, center.longitude);
     };
 
-    this.buildUrlParameters = function (trackBounds) {
-        var north = trackBounds.getNorth();
-        var south = trackBounds.getSouth();
-        var east = trackBounds.getEast();
-        var west = trackBounds.getWest();
-        
-        var detail = me.bingMap.getZoom();
-        
-        return '?north=' + north + '&south=' + south + '&east=' + east + '&west=' + west + "&detail=" + detail;
+    this.getBounds = function() {
+        var bounds = me.bingMap.getBounds();
+        return new Rectangle(new Location(bounds.center.latitude, bounds.center.longitude), bounds.width, bounds.height);
     };
 
-    this.onViewChange = function () {
-        if (me.needToLoadNewData()) {
-            me.loadTrail();
-        }
+    this.getZoom = function() {
+        return me.bingMap.getZoom();
     };
 
-    this.onViewChangeEnd = function () {
-        if (me.needToLoadNewData()) {
-            me.loadTrail();
-        }
-    };
-
-    this.needToLoadNewData = function () {
-        if (me.scrollBounds === null) {
-            return true;
-        }
-
-        if (me.bingMap.getZoom() !== me.bingMap.getTargetZoom()) {
-            // Don't load new tracks while in the process of zooming
-            return false;
-        }
-        
-        if (me.bingMap.getZoom() !== me.previousZoomLevel) {
-            me.previousZoomLevel = me.bingMap.getZoom();
-            return true;
-        }
-
-        return !me.scrollBounds.contains(me.bingMap.getBounds().center);
-    };
-
-    this.getCenterAndZoom = function(options) {
+    this.getCenterAndZoom = function() {
         var center = me.bingMap.getCenter();
         return {
           center: {
