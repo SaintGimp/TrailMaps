@@ -8,7 +8,7 @@ function GoogleMapControl() {
     
     this.googleMap = null;
     this.previousPolyLine = null;
-    this.previousWaypointCollection = null;
+    this.waypointCollection = [];
     
 
     this.initialize = function (latitude, longitude, zoomLevel, onViewChanged) {
@@ -16,7 +16,7 @@ function GoogleMapControl() {
         var mapOptions = {
           center: new google.maps.LatLng(latitude, longitude),
           zoom: zoomLevel,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeId: google.maps.MapTypeId.HYBRID
         };
         me.googleMap = new google.maps.Map(document.getElementById("google-maps"), mapOptions);
 
@@ -45,6 +45,31 @@ function GoogleMapControl() {
     };
 
     this.displayWaypoints = function (data) {
+        me.waypointCollection.forEach(function(marker) {
+            marker.setMap(null);
+        });
+        me.waypointCollection.length = 0;
+
+        var icon = {
+            url: '/images/mile_marker.png',
+            anchor: new google.maps.Point(12, 12)
+        };
+
+        $.each(data.waypoints, function (i, waypoint) {
+            var location = new google.maps.LatLng(waypoint.loc[1], waypoint.loc[0]);
+            var options = {
+               position: location,
+               draggable: false,
+               raiseOnDrag: false,
+               map: me.googleMap,
+               labelContent: waypoint.mile.toString(),
+               labelAnchor: new google.maps.Point(-13, 10),
+               labelClass: "waypoint_text", // the CSS class for the label
+               icon: icon
+            };
+            var newWaypoint = new MarkerWithLabel(options);
+            me.waypointCollection.push(newWaypoint);
+        });
     };
 
     this.getCenter = function() {
