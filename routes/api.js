@@ -4,16 +4,16 @@
 
 var dataService = require("../domain/dataService.js");
 var tracks = require("../domain/tracks.js")(dataService);
-var waypoints = require("../domain/waypoints.js")(dataService);
+var mileMarkers = require("../domain/mileMarkers.js")(dataService);
 var dataImporter = require("../data/dataimporter.js");
 
 module.exports = function(app) {
-  app.get('/api/trails/:trailName/milemarkers/:mile', exports.mileMarkers);
-  app.get('/api/trails/:trailName', exports.trails);
+  app.get('/api/trails/:trailName/milemarkers/:mile', exports.getMileMarker);
+  app.get('/api/trails/:trailName', exports.getTrailData);
   app.post('/api/admin/importdata', exports.importdata);
 };
 
-exports.trails = function (req, res) {
+exports.getTrailData = function (req, res) {
   var options = {
     trailName: req.params.trailName,
     north: req.query.north,
@@ -25,22 +25,22 @@ exports.trails = function (req, res) {
 
   tracks.findByArea(options, function(err, trackData) {
     if (err) { throw new Error(err); }
-    waypoints.findByArea(options, function(err, waypointData) {
+    mileMarkers.findByArea(options, function(err, markerData) {
       if (err) { throw new Error(err); }
       res.json({
         track: trackData,
-        waypoints: waypointData
+        mileMarkers: markerData
       });
     });
   });
 };
 
-exports.mileMarkers = function (req, res) {
+exports.getMileMarker = function (req, res) {
   var options = {
     trailName: req.params.trailName,
     mile: parseFloat(req.params.mile)
   };
-  waypoints.findByValue(options, function(err, waypoint) {
+  mileMarkers.findByValue(options, function(err, waypoint) {
     if (err) { throw new Error(err); }
     res.json(waypoint);
   });

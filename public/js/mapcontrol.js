@@ -94,7 +94,7 @@ var mapControl = (function() {
 
   function displayTrail(trail) {
     activeMap.displayTrack(trail);
-    activeMap.displayWaypoints(trail);
+    activeMap.displayMileMarkers(trail);
   }
 
   function loadTrail() {
