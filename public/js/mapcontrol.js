@@ -54,6 +54,11 @@ var mapControl = (function() {
         var map = new GoogleMapControl();
         map.initialize(defaultLatitude, defaultLongitude, defaultZoomLevel, onViewChanged);
         return map;
+    }),
+    "#here-maps": new Map(function() {
+        var map = new HereMapControl();
+        map.initialize(defaultLatitude, defaultLongitude, defaultZoomLevel, onViewChanged);
+        return map;
     })
   };
 

@@ -3,14 +3,18 @@ extends layout
 block body
   div.contentArea.tab-content(id='map_canvas')
     div.contents.tab-pane.active(id='bing-maps')
-    div.contents.tab-pane(id='google-maps')
+    div.contents.map-control.tab-pane(id='google-maps')
+    // TODO: Here apparently supports canvas for hardware accel?
+    div.contents.map-control.tab-pane(id='here-maps')
 
 block scripts
   script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
   script(src='http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0')
   script(src='http://maps.googleapis.com/maps/api/js?sensor=false')
+  script(src='http://api.maps.nokia.com/2.2.3/jsl.js')
   script(src='js/markerwithlabel_packed.js')
   script(src='js/bingmaps.js')
   script(src='js/googlemaps.js')
+  script(src='js/heremaps.js')
   script(src='js/mapcontrol.js')
   script(src='js/index.js')
