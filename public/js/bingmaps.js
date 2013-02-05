@@ -10,6 +10,11 @@ function BingMapControl() {
   this.previousPolyLine = null;
   this.previousMileMarkerCollection = null;
   
+  this.mileMarkerContent =
+    '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">' +
+      '<polygon points="2,7 7,2 12,7 7,12" style="fill:red;stroke:blue;stroke-width:4" />' +
+      '<text x="22" y="12" fill="white" style="font-size:14;font-family:arial;font-weight:bold">%MILE%</text>' +
+    '</svg>';
 
   this.initialize = function (latitude, longitude, zoomLevel, onViewChanged) {
     // http://msdn.microsoft.com/en-us/library/gg427609.aspx
@@ -56,12 +61,12 @@ function BingMapControl() {
       // would be sufficient but it doesn't work right, so we have to go with htmlContent instead. You'd
       // also think that now the icon property wouldn't be needed but you'd be wrong again.
       var options = {
-        icon: '/images/mile_marker.png',
-        htmlContent: '<div><img src="/images/mile_marker.png"><span class="milemarker_text">' + mileMarker.mile + '</span></div>',
+        icon: "this apparently has to be truthy or we'll get a default icon instead of the htmlContent, boo!",
+        htmlContent: me.mileMarkerContent.replace("%MILE%", mileMarker.mile),
         typeName: 'labelPin',
-        height: 25,
+        //height: 25,
         width: 75,
-        anchor: new Microsoft.Maps.Point(12, 12),
+        anchor: new Microsoft.Maps.Point(7, 7),
       };
       newMileMarkerCollection.push(new Microsoft.Maps.Pushpin(location, options));
     });
