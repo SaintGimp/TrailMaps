@@ -1,28 +1,23 @@
 /*global google: false*/
 
-function GoogleMapControl() {
-  var me = this;
+var googleMapControlFactory = function() {
+  var googleMap;
+  var previousPolyLine;
+  var mileMarkerCollection = [];
 
-  // TODO: the visual display of the track starts to break up as we scroll the view, before
-  // we load a new track. Seems to be a Bing problem.  Maybe we should load a smaller track bounds?
-  
-  this.googleMap = null;
-  this.previousPolyLine = null;
-  this.mileMarkerCollection = [];
-
-  this.initialize = function (latitude, longitude, zoomLevel, onViewChanged) {
+  function initialize(latitude, longitude, zoomLevel, onViewChanged) {
     // https://developers.google.com/maps/documentation/javascript/
     var mapOptions = {
       center: new google.maps.LatLng(latitude, longitude),
       zoom: zoomLevel,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
-    me.googleMap = new google.maps.Map(document.getElementById("google-maps"), mapOptions);
+    googleMap = new google.maps.Map(document.getElementById("google-maps"), mapOptions);
 
-    google.maps.event.addListener(me.googleMap, 'idle', onViewChanged);
-  };
+    google.maps.event.addListener(googleMap, 'idle', onViewChanged);
+  }
 
-  this.displayTrack = function(trail) {
+  function displayTrack(trail) {
     var vertices = [];
     $.each(trail.track, function (i, point) {
       vertices.push(new google.maps.LatLng(point.loc[1], point.loc[0]));
@@ -36,19 +31,21 @@ function GoogleMapControl() {
     });
 
     // First add new track, then remove old track
-    polyLine.setMap(me.googleMap);
-    if (me.previousPolyLine) {
-      me.previousPolyLine.setMap(null);
+    polyLine.setMap(googleMap);
+    if (previousPolyLine) {
+      previousPolyLine.setMap(null);
     }
-    me.previousPolyLine = polyLine;
-  };
+    previousPolyLine = polyLine;
+  }
 
-  this.displayMileMarkers = function (trail) {
-    me.mileMarkerCollection.forEach(function(marker) {
+  function displayMileMarkers(trail) {
+    mileMarkerCollection.forEach(function(marker) {
       marker.setMap(null);
     });
-    me.mileMarkerCollection.length = 0;
+    mileMarkerCollection.length = 0;
 
+    // TODO: I'd like to use an SVG marker but Google maps doesn't make that
+    // easy to implement right now in v3.
     var icon = {
       url: '/images/mile_marker.png',
       anchor: new google.maps.Point(12, 12)
@@ -60,49 +57,60 @@ function GoogleMapControl() {
          position: location,
          draggable: false,
          raiseOnDrag: false,
-         map: me.googleMap,
+         map: googleMap,
          labelContent: mileMarker.mile.toString(),
          labelAnchor: new google.maps.Point(-13, 10),
          labelClass: "milemarker_text", // the CSS class for the label
          icon: icon
       };
       var newMileMarker = new MarkerWithLabel(options);
-      me.mileMarkerCollection.push(newMileMarker);
+      mileMarkerCollection.push(newMileMarker);
     });
-  };
+  }
 
-  this.getCenter = function() {
-    var center = me.googleMap.getCenter();
+  function getCenter() {
+    var center = googleMap.getCenter();
     return new Location(center.lat(), center.lng());
-  };
+  }
 
-  this.getBounds = function() {
-    var bounds = me.googleMap.getBounds();
+  function getBounds() {
+    var bounds = googleMap.getBounds();
     var center = bounds.getCenter();
     var ne = bounds.getNorthEast();
     var sw = bounds.getSouthWest();
     return new Rectangle(new Location(center.lat(), center.lng()), ne.lng() - sw.lng(), ne.lat() - sw.lat());
-  };
+  }
 
-  this.getZoom = function() {
-    return me.googleMap.getZoom();
-  };
+  function getZoom() {
+    return googleMap.getZoom();
+  }
 
-  this.getCenterAndZoom = function(options) {
-    var mapCenter = me.googleMap.getCenter();
+  function getCenterAndZoom(options) {
+    var mapCenter = googleMap.getCenter();
     return {
       center: {
         latitude: mapCenter.lat(),
         longitude: mapCenter.lng()
       },
-      zoom: me.googleMap.getZoom()
+      zoom: googleMap.getZoom()
     };
-  };
+  }
 
-  this.setCenterAndZoom = function(options) {
+  function setCenterAndZoom(options) {
     var mapCenter = new google.maps.LatLng(options.center.latitude, options.center.longitude);
-    me.googleMap.setCenter(mapCenter);
-    me.googleMap.setZoom(options.zoom);
+    googleMap.setCenter(mapCenter);
+    googleMap.setZoom(options.zoom);
+  }
+
+  return {
+    initialize: initialize,
+    displayTrack: displayTrack,
+    displayMileMarkers: displayMileMarkers,
+    getCenter: getCenter,
+    getBounds: getBounds,
+    getZoom: getZoom,
+    getCenterAndZoom: getCenterAndZoom,
+    setCenterAndZoom: setCenterAndZoom
   };
-}
+};
 

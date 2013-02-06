@@ -32,12 +32,13 @@ var mapControl = (function() {
   var scrollBounds = null;
   var currentTrailData = null;
 
-  function Map(initializer) {
+  function Map(controlFactory) {
     this.control = undefined;
-    this.initializer = initializer;
+    this.controlFactory = controlFactory;
     this.getControl = function() {
       if (!this.control) {
-        this.control = this.initializer();
+        this.control = this.controlFactory();
+        this.control.initialize(defaultLatitude, defaultLongitude, defaultZoomLevel, onViewChanged);
       }
 
       return this.control;
@@ -45,21 +46,9 @@ var mapControl = (function() {
   }
 
   var maps = {
-    "#bing-maps": new Map(function() {
-        var map = new BingMapControl();
-        map.initialize(defaultLatitude, defaultLongitude, defaultZoomLevel, onViewChanged);
-        return map;
-    }),
-    "#google-maps": new Map(function() {
-        var map = new GoogleMapControl();
-        map.initialize(defaultLatitude, defaultLongitude, defaultZoomLevel, onViewChanged);
-        return map;
-    }),
-    "#here-maps": new Map(function() {
-        var map = new HereMapControl();
-        map.initialize(defaultLatitude, defaultLongitude, defaultZoomLevel, onViewChanged);
-        return map;
-    })
+    "#bing-maps": new Map(bingMapControlFactory),
+    "#google-maps": new Map(googleMapControlFactory),
+    "#here-maps": new Map(hereMapControlFactory),
   };
 
   function initialize(){
