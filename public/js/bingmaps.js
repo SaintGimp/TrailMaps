@@ -1,6 +1,7 @@
+/*global trailmaps: false*/
 /*global Microsoft: false*/
 
-var bingMapControlFactory = function() {
+trailmaps.bingMapControlFactory = function() {
   var bingMap;
   var previousPolyLine;
   var previousMileMarkerCollection;
@@ -75,12 +76,12 @@ var bingMapControlFactory = function() {
 
   function getCenter() {
     var center = bingMap.getCenter();
-    return new Location(center.latitude, center.longitude);
+    return new trailmaps.Location(center.latitude, center.longitude);
   }
 
   function getBounds() {
     var bounds = bingMap.getBounds();
-    return new Rectangle(new Location(bounds.center.latitude, bounds.center.longitude), bounds.width, bounds.height);
+    return new trailmaps.Rectangle(new trailmaps.Location(bounds.center.latitude, bounds.center.longitude), bounds.width, bounds.height);
   }
 
   function getZoom() {

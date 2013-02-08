@@ -6,7 +6,7 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         jshint: {
-            all: { src: ["Gruntfile.js", "app.js", "**/*.js", "!public/js/lib/**/*.js", "!node_modules/**/*.js"] },
+            all: { src: ["Gruntfile.js", "app.js", "**/*.js", "!public/js/lib/**/*.js", "!public/bootstrap/**/*.js", "!node_modules/**/*.js", ] },
             options: {
                 jshintrc: ".jshintrc"
             }
@@ -17,7 +17,7 @@ module.exports = function (grunt) {
                 globals: ['should'],
                 timeout: 3000,
                 ignoreLeaks: false,
-                grep: '*-test',
+                //grep: '*-test',
                 ui: 'bdd',
                 reporter: 'dot'
             }

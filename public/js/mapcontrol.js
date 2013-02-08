@@ -1,10 +1,11 @@
-function Location(latitude, longitude) {
+/*global trailmaps: false*/
+
+trailmaps.Location = function(latitude, longitude) {
   this.latitude = latitude;
   this.longitude = longitude;
-}
+};
 
-function Rectangle(center, width, height)
-{
+trailmaps.Rectangle = function(center, width, height) {
   this.center = center;
   this.width = width;
   this.height = height;
@@ -19,9 +20,9 @@ function Rectangle(center, width, height)
       location.longitude < this.east &&
       location.longitude > this.west);
   };
-}
+};
 
-var mapControl = (function() {
+trailmaps.mapControl = (function() {
   var activeMap;
   var defaultLatitude = 40.50642708521896;
   var defaultLongitude = -121.36087699433327;
@@ -34,8 +35,14 @@ var mapControl = (function() {
 
   function Map(controlFactory) {
     this.control = undefined;
+    
     this.controlFactory = controlFactory;
+    
     this.getControl = function() {
+      // We lazy-create the map controls so that a) we don't do an expensive init if the user
+      // never clicks over to that tab, and b) some of them (Google, I'm looking at you) won't
+      // init properly when their div is hidden, so we have to wait until it becomes visible
+      // to do the init.
       if (!this.control) {
         this.control = this.controlFactory();
         this.control.initialize(defaultLatitude, defaultLongitude, defaultZoomLevel, onViewChanged);
@@ -46,9 +53,9 @@ var mapControl = (function() {
   }
 
   var maps = {
-    "#bing-maps": new Map(bingMapControlFactory),
-    "#google-maps": new Map(googleMapControlFactory),
-    "#here-maps": new Map(hereMapControlFactory),
+    "#bing-maps": new Map(trailmaps.bingMapControlFactory),
+    "#google-maps": new Map(trailmaps.googleMapControlFactory),
+    "#here-maps": new Map(trailmaps.hereMapControlFactory),
   };
 
   function initialize(){
@@ -75,7 +82,7 @@ var mapControl = (function() {
     // probably build a custom rect in that case that's constrained to west < east, but this
     // will do for now.  The Bing.Location class has a NormalizeLongitude thing that might be of some help.
     scrollBoundsSize = Math.min(scrollBoundsSize, 60);
-    scrollBounds = new Rectangle(mapCenter, scrollBoundsSize, scrollBoundsSize);
+    scrollBounds = new trailmaps.Rectangle(mapCenter, scrollBoundsSize, scrollBoundsSize);
   }
 
   function calculateTrackBounds() {
@@ -83,7 +90,7 @@ var mapControl = (function() {
     var mapBounds = activeMap.getBounds();
     var trackBoundsSize = mapBounds.width * trackBoundsMultiple;
     trackBoundsSize = Math.min(trackBoundsSize, 60);
-    return new Rectangle(mapCenter, trackBoundsSize, trackBoundsSize);
+    return new trailmaps.Rectangle(mapCenter, trackBoundsSize, trackBoundsSize);
   }
 
   function displayTrail(trail) {

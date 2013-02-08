@@ -1,8 +1,9 @@
+/*global trailmaps: false*/
 /*global nokia: false*/
 
 // TODO: check out http://jhere.net/
 
-var hereMapControlFactory = function() {
+trailmaps.hereMapControlFactory = function() {
   var hereMap;
   var previousPolyLine;
   var previousMileMarkerCollection;
@@ -78,13 +79,13 @@ var hereMapControlFactory = function() {
 
   function getCenter() {
     var center = hereMap.center;
-    return new Location(center.latitude, center.longitude);
+    return new trailmaps.Location(center.latitude, center.longitude);
   }
 
   function getBounds() {
     var bounds = hereMap.getViewBounds();
     var center = bounds.getCenter();
-    return new Rectangle(new Location(center.latitude, center.longitude), bounds.getWidth(), bounds.getHeight());
+    return new trailmaps.Rectangle(new trailmaps.Location(center.latitude, center.longitude), bounds.getWidth(), bounds.getHeight());
   }
 
   function getZoom() {

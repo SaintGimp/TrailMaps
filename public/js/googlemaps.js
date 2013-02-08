@@ -1,6 +1,8 @@
+/*global trailmaps: false*/
 /*global google: false*/
+/*global MarkerWithLabel: false*/
 
-var googleMapControlFactory = function() {
+trailmaps.googleMapControlFactory = function() {
   var googleMap;
   var previousPolyLine;
   var mileMarkerCollection = [];
@@ -70,7 +72,7 @@ var googleMapControlFactory = function() {
 
   function getCenter() {
     var center = googleMap.getCenter();
-    return new Location(center.lat(), center.lng());
+    return new trailmaps.Location(center.lat(), center.lng());
   }
 
   function getBounds() {
@@ -78,7 +80,7 @@ var googleMapControlFactory = function() {
     var center = bounds.getCenter();
     var ne = bounds.getNorthEast();
     var sw = bounds.getSouthWest();
-    return new Rectangle(new Location(center.lat(), center.lng()), ne.lng() - sw.lng(), ne.lat() - sw.lat());
+    return new trailmaps.Rectangle(new trailmaps.Location(center.lat(), center.lng()), ne.lng() - sw.lng(), ne.lat() - sw.lat());
   }
 
   function getZoom() {
@@ -113,4 +115,3 @@ var googleMapControlFactory = function() {
     setCenterAndZoom: setCenterAndZoom
   };
 };
-

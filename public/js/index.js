@@ -1,3 +1,5 @@
+/*global trailmaps: false*/
+
 $(function () {
-    mapControl.initialize();
+    trailmaps.mapControl.initialize();
 });

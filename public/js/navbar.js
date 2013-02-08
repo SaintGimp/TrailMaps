@@ -1,8 +1,10 @@
+/*global trailmaps: false*/
+
 $(function () {
   $('#searchForm').submit(function() {
       var url = "/api/trails/pct/milemarkers/" + $('#searchBox').val();
       $.getJSON(url, function(result) {
-          mapControl.setCenterAndZoom({
+          trailmaps.mapControl.setCenterAndZoom({
             center: {
               latitude: result.loc[1],
               longitude: result.loc[0]
@@ -26,6 +28,6 @@ $(function () {
     $('.tab-pane').hide();
     $(e.target.hash).show();
 
-    mapControl.showingMap(e.target.hash);
+    trailmaps.mapControl.showingMap(e.target.hash);
   });
 });
