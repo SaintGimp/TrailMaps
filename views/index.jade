@@ -8,14 +8,4 @@ block body
     div.contents.map-control.tab-pane(id='here-maps')
 
 block scripts
-  script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
-  script(src='http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0')
-  script(src='http://maps.googleapis.com/maps/api/js?sensor=false')
-  script(src='http://api.maps.nokia.com/2.2.3/jsl.js')
-  script(src='js/lib/markerwithlabel_packed.js')
-  script(src='js/namespace.js')
-  script(src='js/bingmaps.js')
-  script(src='js/googlemaps.js')
-  script(src='js/heremaps.js')
-  script(src='js/mapcontrol.js')
-  script(src='js/index.js')
+  script(data-main='js/main', src='js/lib/require.js')

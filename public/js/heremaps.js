@@ -1,9 +1,7 @@
-/*global trailmaps: false*/
-/*global nokia: false*/
+/*global define: false*/
 
-// TODO: check out http://jhere.net/
-
-trailmaps.hereMapControlFactory = function() {
+define(['./trailmaps', 'here_maps_api'], function(trailmaps, nokia) {
+  // TODO: check out http://jhere.net/
   var hereMap;
   var previousPolyLine;
   var previousMileMarkerCollection;
@@ -14,25 +12,30 @@ trailmaps.hereMapControlFactory = function() {
       '<text x="22" y="12" fill="white" style="font-size:15;font-family:arial;font-weight:bold">%MILE%</text>' +
     '</svg>';
 
-  function initialize(latitude, longitude, zoomLevel, onViewChanged) {
+  function initialize(latitude, longitude, zoomLevel, onViewChanged, callback) {
     nokia.Settings.set("appId", "63ii-nsJjiF97C-K3jqU");
     nokia.Settings.set("authenticationToken", "FTtFzF5jfEr7iRYgv6tEgg");
 
-    hereMap = new nokia.maps.map.Display(document.getElementById("here-maps"), {
-      baseMapType: nokia.maps.map.Display.SATELLITE,
-      components: [
-        new nokia.maps.map.component.Behavior(),
-        new nokia.maps.map.component.ZoomBar(),
-        //new nokia.maps.map.component.Overview(),
-        new nokia.maps.map.component.OverlaysSelector(),
-        new nokia.maps.map.component.TypeSelector(),
-        new nokia.maps.map.component.ScaleBar()
-      ],
-      center: [latitude, longitude],
-      zoomLevel: zoomLevel
-    });
+    var featureMap = nokia.Features.getFeaturesFromMatrix(["maps"]);
+    nokia.Features.load(featureMap, function() {
+      hereMap = new nokia.maps.map.Display(document.getElementById("here-maps"), {
+        baseMapType: nokia.maps.map.Display.SATELLITE,
+        components: [
+          new nokia.maps.map.component.Behavior(),
+          new nokia.maps.map.component.ZoomBar(),
+          //new nokia.maps.map.component.Overview(),
+          new nokia.maps.map.component.OverlaysSelector(),
+          new nokia.maps.map.component.TypeSelector(),
+          new nokia.maps.map.component.ScaleBar()
+        ],
+        center: [latitude, longitude],
+        zoomLevel: zoomLevel
+      });
 
-    hereMap.addListener("mapviewchangeend", onViewChanged, true);
+      hereMap.addListener("mapviewchangeend", onViewChanged, true);
+
+      callback();
+    });
   }
 
   function displayTrack(trail) {
@@ -119,5 +122,4 @@ trailmaps.hereMapControlFactory = function() {
     getCenterAndZoom: getCenterAndZoom,
     setCenterAndZoom: setCenterAndZoom
   };
-};
-
+});

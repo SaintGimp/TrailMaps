@@ -1,18 +1,20 @@
-.navbar.navbar-inverse.navbar-fixed-top
-    .navbar-inner
-      .container
-        a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        a.brand(href='#') Trail Maps
-        .nav-collapse.collapse
-          ul.nav.nav-pills
-            li.active
-              a(data-toggle="pill", href='#bing-maps') Bing
-            li
-              a(data-toggle="pill", href='#google-maps') Google
-            li
-              a(data-toggle="pill", href='#here-maps') Here
-          form.navbar-form.pull-right(id='searchForm')
-            input.search-query.mile-marker-query(id='searchBox', type='text', placeholder='go to mile marker')
+header
+  nav
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='#') Trail Maps
+          .nav-collapse.collapse
+            ul.nav.nav-pills
+              li.active
+                a(data-toggle="pill", href='#bing-maps') Bing
+              li
+                a(data-toggle="pill", href='#google-maps') Google
+              li
+                a(data-toggle="pill", href='#here-maps') Here
+            form.navbar-form.pull-right(id='searchForm')
+              input.search-query.mile-marker-query(id='searchBox', type='text', placeholder='go to mile marker')

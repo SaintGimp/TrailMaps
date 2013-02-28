@@ -1,28 +1,6 @@
-/*global trailmaps: false*/
+/*global define: false*/
 
-trailmaps.Location = function(latitude, longitude) {
-  this.latitude = latitude;
-  this.longitude = longitude;
-};
-
-trailmaps.Rectangle = function(center, width, height) {
-  this.center = center;
-  this.width = width;
-  this.height = height;
-  this.north = center.latitude + (height / 2);
-  this.south = center.latitude - (height / 2);
-  this.east = center.longitude + (width / 2);
-  this.west = center.longitude - (width / 2);
-
-  this.contains = function(location) {
-    return (location.latitude < this.north &&
-      location.latitude > this.south &&
-      location.longitude < this.east &&
-      location.longitude > this.west);
-  };
-};
-
-trailmaps.mapControl = (function() {
+define(['./trailmaps'], function(trailmaps) {
   var activeMap;
   var defaultLatitude = 40.50642708521896;
   var defaultLongitude = -121.36087699433327;
@@ -33,44 +11,52 @@ trailmaps.mapControl = (function() {
   var scrollBounds = null;
   var currentTrailData = null;
 
-  function Map(controlFactory) {
+  function Map(moduleName) {
     this.control = undefined;
-    
-    this.controlFactory = controlFactory;
-    
-    this.getControl = function() {
+
+    this.moduleName = moduleName;
+
+    this.getControl = function(callback) {
       // We lazy-create the map controls so that a) we don't do an expensive init if the user
       // never clicks over to that tab, and b) some of them (Google, I'm looking at you) won't
       // init properly when their div is hidden, so we have to wait until it becomes visible
       // to do the init.
       if (!this.control) {
-        this.control = this.controlFactory();
-        this.control.initialize(defaultLatitude, defaultLongitude, defaultZoomLevel, onViewChanged);
+        require([moduleName], function(createdControl) {
+          this.control = createdControl;
+          this.control.initialize(defaultLatitude, defaultLongitude, defaultZoomLevel, onViewChanged, function() {
+            callback(this.control);
+          });
+        });
+      } else {
+        callback(this.control);
       }
-
-      return this.control;
     };
   }
 
   var maps = {
-    "#bing-maps": new Map(trailmaps.bingMapControlFactory),
-    "#google-maps": new Map(trailmaps.googleMapControlFactory),
-    "#here-maps": new Map(trailmaps.hereMapControlFactory),
+    "#bing-maps": new Map('./bingmaps'),
+    "#google-maps": new Map('./googlemaps'),
+    "#here-maps": new Map('./heremaps'),
   };
 
-  function initialize(){
-    activeMap = maps["#bing-maps"].getControl();
+  function initialize() {
+    maps["#bing-maps"].getControl(function(control) {
+      activeMap = control;
+    });
   }
 
   function setCenterAndZoom(center, zoomLevel) {
     activeMap.setCenterAndZoom(center, zoomLevel);
   }
-  
+
   function showingMap(mapHash) {
     var centerAndZoom = activeMap.getCenterAndZoom();
-    activeMap = maps[mapHash].getControl();
-    activeMap.setCenterAndZoom(centerAndZoom);
-    displayTrail(currentTrailData);
+    maps[mapHash].getControl(function(control) {
+      activeMap = control;
+      activeMap.setCenterAndZoom(centerAndZoom);
+      displayTrail(currentTrailData);
+    });
   }
 
   function calculateScrollBounds() {
@@ -147,4 +133,4 @@ trailmaps.mapControl = (function() {
     setCenterAndZoom: setCenterAndZoom,
     showingMap: showingMap
   };
-})();
+});

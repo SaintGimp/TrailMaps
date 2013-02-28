@@ -1,13 +1,11 @@
-/*global trailmaps: false*/
-/*global google: false*/
-/*global MarkerWithLabel: false*/
+/*global define: false*/
 
-trailmaps.googleMapControlFactory = function() {
+define(['./trailmaps', 'google_maps_api', 'markerwithlabel'], function(trailmaps, google) {
   var googleMap;
   var previousPolyLine;
   var mileMarkerCollection = [];
 
-  function initialize(latitude, longitude, zoomLevel, onViewChanged) {
+  function initialize(latitude, longitude, zoomLevel, onViewChanged, callback) {
     // https://developers.google.com/maps/documentation/javascript/
     var mapOptions = {
       center: new google.maps.LatLng(latitude, longitude),
@@ -17,6 +15,8 @@ trailmaps.googleMapControlFactory = function() {
     googleMap = new google.maps.Map(document.getElementById("google-maps"), mapOptions);
 
     google.maps.event.addListener(googleMap, 'idle', onViewChanged);
+
+    callback();
   }
 
   function displayTrack(trail) {
@@ -62,7 +62,7 @@ trailmaps.googleMapControlFactory = function() {
          map: googleMap,
          labelContent: mileMarker.mile.toString(),
          labelAnchor: new google.maps.Point(-13, 10),
-         labelClass: "milemarker_text", // the CSS class for the label
+         labelClass: "milemarker_text",
          icon: icon
       };
       var newMileMarker = new MarkerWithLabel(options);
@@ -114,4 +114,4 @@ trailmaps.googleMapControlFactory = function() {
     getCenterAndZoom: getCenterAndZoom,
     setCenterAndZoom: setCenterAndZoom
   };
-};
+});

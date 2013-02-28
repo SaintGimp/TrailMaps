@@ -1,18 +1,17 @@
-/*global trailmaps: false*/
-/*global Microsoft: false*/
+/*global define: false*/
 
-trailmaps.bingMapControlFactory = function() {
+define(['./trailmaps', 'bing_maps_api'], function(trailmaps, Microsoft) {
   var bingMap;
   var previousPolyLine;
   var previousMileMarkerCollection;
-  
+
   var mileMarkerContent =
     '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">' +
       '<polygon points="2,7 7,2 12,7 7,12" style="fill:red;stroke:blue;stroke-width:4" />' +
       '<text x="22" y="12" fill="white" style="font-size:14;font-family:arial;font-weight:bold">%MILE%</text>' +
     '</svg>';
 
-  function initialize(latitude, longitude, zoomLevel, onViewChanged) {
+  function initialize(latitude, longitude, zoomLevel, onViewChanged, callback) {
     // http://msdn.microsoft.com/en-us/library/gg427609.aspx
     Microsoft.Maps.loadModule('Microsoft.Maps.Themes.BingTheme', { callback: function() {
       bingMap = new Microsoft.Maps.Map(document.getElementById("bing-maps"), {
@@ -28,8 +27,9 @@ trailmaps.bingMapControlFactory = function() {
         theme: new Microsoft.Maps.Themes.BingTheme()
       });
 
-      //Microsoft.Maps.Events.addHandler(bingMap, 'viewchange', onViewChanged);
       Microsoft.Maps.Events.addHandler(bingMap, 'viewchangeend', onViewChanged);
+
+      callback();
     }});
   }
 
@@ -60,7 +60,6 @@ trailmaps.bingMapControlFactory = function() {
         icon: "this apparently has to be truthy or we'll get a default icon instead of the htmlContent, boo!",
         htmlContent: mileMarkerContent.replace("%MILE%", mileMarker.mile),
         typeName: 'labelPin',
-        //height: 25,
         width: 75,
         anchor: new Microsoft.Maps.Point(7, 7),
       };
@@ -116,4 +115,4 @@ trailmaps.bingMapControlFactory = function() {
     getCenterAndZoom: getCenterAndZoom,
     setCenterAndZoom: setCenterAndZoom
   };
-};
+});
