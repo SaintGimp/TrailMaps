@@ -3,8 +3,8 @@
  */
 
 var dataService = require("../domain/dataService.js");
-var tracks = require("../domain/tracks.js")(dataService);
-var mileMarkers = require("../domain/mileMarkers.js")(dataService);
+var mileMarkers = require("../domain/milemarkers.js")(dataService);
+var trails = require("../domain/trails.js")(dataService);
 var dataImporter = require("../data/dataimporter.js");
 
 module.exports = function(app) {
@@ -23,15 +23,9 @@ exports.getTrailData = function (req, res) {
     detailLevel: req.query.detail
   };
 
-  tracks.findByArea(options, function(err, trackData) {
+  trails.findByArea(options, function(err, trailData) {
     if (err) { throw new Error(err); }
-    mileMarkers.findByArea(options, function(err, markerData) {
-      if (err) { throw new Error(err); }
-      res.json({
-        track: trackData,
-        mileMarkers: markerData
-      });
-    });
+    res.json(trailData);
   });
 };
 
