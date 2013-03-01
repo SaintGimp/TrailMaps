@@ -1,0 +1,6 @@
+- Change URL when clicking map engine buttons so refresh stays on that map
+- Generate a URL that captures trail/engine/location/zoom and lets user go back to it later
+- Support multiple trails in URL
+- Users can enter to/from mile segments and pick color for that segment
+- Offer KML overlays from various sources
+- Add alternate route GPS data
