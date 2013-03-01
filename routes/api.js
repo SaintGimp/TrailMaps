@@ -13,7 +13,7 @@ module.exports = function(app) {
   app.post('/api/admin/importdata', exports.importdata);
 };
 
-exports.getTrailData = function (req, res) {
+exports.getTrailData = function (req, res, next) {
   var options = {
     trailName: req.params.trailName,
     north: req.query.north,
@@ -24,25 +24,25 @@ exports.getTrailData = function (req, res) {
   };
 
   trails.findByArea(options, function(err, trailData) {
-    if (err) { throw new Error(err); }
+    if (err) { next(err); }
     res.json(trailData);
   });
 };
 
-exports.getMileMarker = function (req, res) {
+exports.getMileMarker = function (req, res, next) {
   var options = {
     trailName: req.params.trailName,
     mile: parseFloat(req.params.mile)
   };
   mileMarkers.findByValue(options, function(err, waypoint) {
-    if (err) { throw new Error(err); }
+    if (err) { next(err); }
     res.json(waypoint);
   });
 };
 
-exports.importdata = function (req, res) {
+exports.importdata = function (req, res, next) {
   dataImporter.import(function(err) {
-    if (err) { throw new Error(err); }
+    if (err) { next(err); }
     res.json("success");
   });
 };

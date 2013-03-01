@@ -23,7 +23,7 @@ app.configure(function(){
   app.use(require('less-middleware')({ src: path.join(__dirname, 'public'), compress: true }));
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(app.router);
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+  app.use(express.errorHandler);
 });
 
 // Routes
