@@ -38,3 +38,6 @@ http:brianstoner.com/blog/testing-in-nodejs-with-mocha/
 http:naltatis.github.com/jade-syntax-docs/
 
 https:github.com/taitems/Aristo-jQuery-UI-Theme
+
+*** Promises
+http://ianbishop.github.com/blog/2013/01/13/escape-from-callback-hell/

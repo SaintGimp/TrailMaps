@@ -1,6 +1,30 @@
-- Change URL when clicking map engine buttons so refresh stays on that map
-- Generate a URL that captures trail/engine/location/zoom and lets user go back to it later
-- Support multiple trails in URL
-- Users can enter to/from mile segments and pick color for that segment
-- Offer KML overlays from various sources
-- Add alternate route GPS data
+Features:
+* Display trail map in three different mapping engines
+- "About" page for the app
+- "About" page for the trail
+- Support deep links to current engine, location, and zoom (plan for multiple trails)
+- Support touch interface if any of the mapping engines offer that
+- Allow users to choose custom colors for sections of the trail
+- Offer KML overlays from other sources (snow, fire, etc)
+- Include alternate trail routes
+- Offer more than one trail
+- Include POIs and other waypoints
+- Allow users to add custom waypoints
+
+User stories:
+* Can switch between mapping engines keeping location and zoom the same
+- Refreshing the page stays on the same engine
+
+Engineering tasks:
+- Here still sometimes gets used before totally loaded
+- When switching tabs, only set loc/zoom if it's different than we want
+- Add readme and license
+- Implement client-side testing
+- Implement server-side integration testing
+
+Future work/research/learning/refactoring
+- Check out Lineman.JS at http://searls.testdouble.com/2012/10/13/say-hello-to-lineman/
+- Check out Testacular and Test'em
+- Checkout supertest from the VisionMedia guys
+- Look at promises ($.deferred?) for async orchestration
+- Add fades to transitions between engine tabs (breaks Google when I tried the first time)

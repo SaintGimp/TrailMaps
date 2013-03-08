@@ -12,24 +12,25 @@ define(['./trailmaps'], function(trailmaps) {
   var currentTrailData = null;
 
   function Map(moduleName) {
-    this.control = undefined;
+    var self = this;
+    self.control = undefined;
 
-    this.moduleName = moduleName;
+    self.moduleName = moduleName;
 
-    this.getControl = function(callback) {
+    self.getControl = function(callback) {
       // We lazy-create the map controls so that a) we don't do an expensive init if the user
       // never clicks over to that tab, and b) some of them (Google, I'm looking at you) won't
       // init properly when their div is hidden, so we have to wait until it becomes visible
       // to do the init.
-      if (!this.control) {
+      if (!self.control) {
         require([moduleName], function(createdControl) {
-          this.control = createdControl;
-          this.control.initialize(defaultLatitude, defaultLongitude, defaultZoomLevel, onViewChanged, function() {
-            callback(this.control);
+          self.control = createdControl;
+          self.control.initialize(defaultLatitude, defaultLongitude, defaultZoomLevel, onViewChanged, function() {
+            callback(self.control);
           });
         });
       } else {
-        callback(this.control);
+        callback(self.control);
       }
     };
   }
@@ -51,12 +52,21 @@ define(['./trailmaps'], function(trailmaps) {
   }
 
   function showingMap(mapHash) {
-    var centerAndZoom = activeMap.getCenterAndZoom();
+    var currentView = activeMap.getCenterAndZoom();
     maps[mapHash].getControl(function(control) {
       activeMap = control;
-      activeMap.setCenterAndZoom(centerAndZoom);
-      displayTrail(currentTrailData);
+      var newView = activeMap.getCenterAndZoom();
+      if (!viewsAreSame(currentView, newView)) {
+        activeMap.setCenterAndZoom(currentView);
+        displayTrail(currentTrailData);
+      }
     });
+  }
+
+  function viewsAreSame(currentView, newView) {
+    return currentView.center.latitude === newView.center.latitude &&
+      currentView.center.longitude === newView.center.longitude &&
+      currentView.zoom === newView.zoom;
   }
 
   function calculateScrollBounds() {

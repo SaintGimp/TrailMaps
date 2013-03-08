@@ -24,10 +24,9 @@ define(['jquery', './mapcontrol', 'bootstrap'], function($, mapControl) {
       // have to force the tab to be shown first before we might cause it to
       // be initialized.  However, when we show it like this, it never hides
       // again in response to pill clicks, so we have to hide all tab panes
-      // manually.  Hopefully this can be make cleaner somehow.  Should we be
-      // applying the CSS style that makes a pane visible?
-      $('.tab-pane').hide();
-      $(e.target.hash).show();
+      // manually.  Hopefully this can be make cleaner somehow.
+      $(e.target.hash).addClass('in.active');
+      $('.tab-pane.fade.in.active').removeClass('in.active');
 
       mapControl.showingMap(e.target.hash);
     });
