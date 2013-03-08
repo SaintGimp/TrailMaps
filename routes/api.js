@@ -1,9 +1,5 @@
-/*
- * Serve JSON to our AngularJS client
- */
-
 var dataService = require("../domain/dataService.js");
-var mileMarkers = require("../domain/milemarkers.js")(dataService);
+var mileMarkers = require("../domain/mileMarkers.js")(dataService);
 var trails = require("../domain/trails.js")(dataService);
 var dataImporter = require("../data/dataimporter.js");
 

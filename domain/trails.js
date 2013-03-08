@@ -6,7 +6,7 @@ module.exports = function(dataServiceToUse)
 {
   dataService = dataServiceToUse;
   tracks = require("./tracks")(dataService);
-  mileMarkers = require('./milemarkers')(dataService);
+  mileMarkers = require('./mileMarkers')(dataService);
   return exports;
 };
 
