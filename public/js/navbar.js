@@ -19,15 +19,9 @@ define(['jquery', './mapcontrol', 'bootstrap'], function($, mapControl) {
     // TODO: this ought to be a custom 'shown' event raised by Bootstrap but it
     // doesn't seem to be fired for pills.  Bug?
     $('a[data-toggle="pill"]').on('click', function (e) {
-      // This is a nasty hack caused by the fact that Google maps has a bug
-      // where it gets messed up if it's initialized on a hidden div, so we
-      // have to force the tab to be shown first before we might cause it to
-      // be initialized.  However, when we show it like this, it never hides
-      // again in response to pill clicks, so we have to hide all tab panes
-      // manually.  Hopefully this can be make cleaner somehow.
-      $(e.target.hash).addClass('in.active');
-      $('.tab-pane.fade.in.active').removeClass('in.active');
-
+      // TODO: We used to have to force tabs to be shown here before Google got inited otherwise
+      // it would freak out. That seems to be no longer the case after implementing require.js,
+      // but I'm not sure if it works only due to timing or what.  Keep on eye on this.
       mapControl.showingMap(e.target.hash);
     });
   });
