@@ -41,9 +41,10 @@ define(['./trailmaps'], function(trailmaps) {
     "#here-maps": new Map('./heremaps'),
   };
 
-  function initialize() {
+  function initialize(callback) {
     maps["#bing-maps"].getControl(function(control) {
       activeMap = control;
+      callback();
     });
   }
 

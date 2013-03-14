@@ -9,7 +9,12 @@
         "describe": false,
         "before": false,
         "beforeEach": false,
-        "angular": false
+        "after": false,
+        "afterEach": false,
+        "require": false,
+        "define": false,
+        "requirejs": false,
+        "mocha": false
     },
 
     "browser"       : true,

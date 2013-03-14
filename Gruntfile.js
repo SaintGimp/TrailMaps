@@ -12,7 +12,7 @@ module.exports = function (grunt) {
             }
         },
         simplemocha: {
-            all: { src: 'test/**/*.js' },
+            all: { src: 'test/server/**/*.js' },
             options: {
                 globals: ['should'],
                 timeout: 3000,

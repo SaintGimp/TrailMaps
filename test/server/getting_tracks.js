@@ -1,6 +1,6 @@
 var should = require('should');
 var fakeDataService = require('./fakeDataService');
-var tracks = require('../domain/tracks')(fakeDataService);
+var tracks = require('../../domain/tracks')(fakeDataService);
 
 describe('Finding track data by area', function() {
   var trackData;

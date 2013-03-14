@@ -1,6 +1,6 @@
 var should = require('should');
 var fakeDataService = require('./fakeDataService');
-var mileMarkers = require('../domain/milemarkers')(fakeDataService);
+var mileMarkers = require('../../domain/milemarkers')(fakeDataService);
 
 describe('Finding mile markers by area', function() {
   var mileMarkerData;

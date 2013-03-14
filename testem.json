@@ -1,0 +1,7 @@
+{
+  "test_page": "test/client/runner.html",
+  "routes": {
+  	"/js": "public/js",
+  	"/stylesheets": "public/stylesheets"
+  }
+}

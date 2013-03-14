@@ -1,6 +1,6 @@
 var should = require('should');
 var fakeDataService = require('./fakeDataService');
-var trails = require('../domain/trails')(fakeDataService);
+var trails = require('../../domain/trails')(fakeDataService);
 
 describe('Finding trail data by area', function() {
   var trailData;
