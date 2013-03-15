@@ -29,7 +29,11 @@ function connect(callback) {
   if (connectedDb) {
     callback(null, connectedDb);
   } else {
-    MongoClient.connect(getMongoUrl(), callback);
+    var options = { server: { auto_reconnect: true } };
+    MongoClient.connect(getMongoUrl(), options, function(err, db) {
+      connectedDb = db;
+      callback(err, db);
+    });
   }
 }
 

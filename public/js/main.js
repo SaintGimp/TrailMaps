@@ -1,6 +1,3 @@
-/*global requirejs: false*/
-/*global define: false*/
-
 /*global Microsoft: false*/
 /*global google: false*/
 /*global nokia: false*/
