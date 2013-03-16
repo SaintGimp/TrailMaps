@@ -36,6 +36,8 @@ function dropCollections(db, collectionsToDelete, callback) {
 }
 
 exports.import = function(callback) {
+  console.log("Importing trail data");
+
   async.waterfall([
     connect,
     getCollectionNames,
