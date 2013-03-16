@@ -50,3 +50,5 @@ http://stackoverflow.com/questions/11439540/how-can-i-mock-dependencies-for-unit
 http://stackoverflow.com/questions/14251614/how-do-i-avoid-introducing-global-leaks-when-using-squire-js-with-requirejs-and?rq=1
 http://tobyho.com/2012/09/12/better-tdd-workflow-via-exclusive-tests-in-jasmine-and-mocha/
 
+*** Browser integration tests
+http://theycallmeswift.com/2012/05/01/excuse-me-thats-not-an-integration-test/

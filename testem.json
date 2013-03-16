@@ -3,5 +3,12 @@
   "routes": {
   	"/js": "public/js",
   	"/stylesheets": "public/stylesheets"
-  }
+  },
+  "src_files": [
+  	"public/js/*.js",
+  	"test/client/*.js"
+  ],	
+  "serve_files": [
+  	"*.dummy"
+  ]
 }

@@ -14,7 +14,9 @@
         "require": false,
         "define": false,
         "requirejs": false,
-        "mocha": false
+        "mocha": false,
+        "chai": false,
+        "expect": true
     },
 
     "browser"       : true,

@@ -40,6 +40,8 @@ define('google_maps_api', ['async!http://maps.google.com/maps/api/js?v=3&sensor=
   return google;
 });
 
+expect = chai.expect;
+
 require(['jquery'], function($) {
   var specs = [];
 
