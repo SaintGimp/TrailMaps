@@ -5,8 +5,8 @@ define(['trailmaps'], function(trailmaps) {
     self.center = undefined;
     self.zoom = undefined;
 
-    self.initialize = function(latitude, longitude, zoomLevel, onViewChanged, callback) {
-      self.center = trailmaps.Location(latitude, longitude);
+    self.initialize = function(center, zoomLevel, onViewChanged, callback) {
+      self.center = center;
       self.zoom = zoomLevel;
       self.viewChangedHandler = onViewChanged;
       callback();

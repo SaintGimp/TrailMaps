@@ -2,8 +2,7 @@
 
 define(['trailmaps'], function(trailmaps) {
   var activeMap;
-  var defaultLatitude = 40.50642708521896;
-  var defaultLongitude = -121.36087699433327;
+  var defaultCenter = new trailmaps.Location(40.50642708521896, -121.36087699433327);
   var defaultZoomLevel = 5;
   var previousZoomLevel = defaultZoomLevel;
   var scrollBoundsMultiple = 2;
@@ -26,7 +25,7 @@ define(['trailmaps'], function(trailmaps) {
       if (!self.control) {
         requireFunc([moduleName], function(createdControl) {
           self.control = createdControl;
-          self.control.initialize(defaultLatitude, defaultLongitude, defaultZoomLevel, onViewChanged, function() {
+          self.control.initialize(defaultCenter, defaultZoomLevel, onViewChanged, function() {
             callback(self.control);
           });
         });
@@ -46,6 +45,7 @@ define(['trailmaps'], function(trailmaps) {
     requireFunc = suppliedRequireFunc;
     maps["#bing-maps"].getControl(function(control) {
       activeMap = control;
+      onViewChanged();
       callback();
     });
   }
@@ -144,6 +144,10 @@ define(['trailmaps'], function(trailmaps) {
   return {
     initialize: initialize,
     setCenterAndZoom: setCenterAndZoom,
-    showingMap: showingMap
+    showingMap: showingMap,
+
+    // For testing
+    defaultCenter: defaultCenter,
+    defaultZoomLevel: defaultZoomLevel
   };
 });

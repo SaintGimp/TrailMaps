@@ -9,12 +9,12 @@ define(['trailmaps', 'bing_maps_api'], function(trailmaps, Microsoft) {
       '<text x="22" y="12" fill="white" style="font-size:14;font-family:arial;font-weight:bold">%MILE%</text>' +
     '</svg>';
 
-  function initialize(latitude, longitude, zoomLevel, onViewChanged, callback) {
+  function initialize(center, zoomLevel, onViewChanged, callback) {
     // http://msdn.microsoft.com/en-us/library/gg427609.aspx
     Microsoft.Maps.loadModule('Microsoft.Maps.Themes.BingTheme', { callback: function() {
       bingMap = new Microsoft.Maps.Map(document.getElementById("bing-maps"), {
         credentials: "AiiVGjRyDyDynh0IbGjn7u4ee-6U9F-ZyjnRj5wYEFp_J6kq5HGcMfdd-TYE_6xF",
-        center: new Microsoft.Maps.Location(latitude, longitude),
+        center: new Microsoft.Maps.Location(center.latitude, center.longitude),
         mapTypeId: Microsoft.Maps.MapTypeId.aerial,
         zoom: zoomLevel,
         enableClickableLogo: false,

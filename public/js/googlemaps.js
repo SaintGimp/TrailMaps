@@ -6,10 +6,10 @@ define(['trailmaps', 'google_maps_api', 'markerwithlabel'], function(trailmaps, 
   var previousPolyLine;
   var mileMarkerCollection = [];
 
-  function initialize(latitude, longitude, zoomLevel, onViewChanged, callback) {
+  function initialize(center, zoomLevel, onViewChanged, callback) {
     // https://developers.google.com/maps/documentation/javascript/
     var mapOptions = {
-      center: new google.maps.LatLng(latitude, longitude),
+      center: new google.maps.LatLng(canter.latitude, center.longitude),
       zoom: zoomLevel,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };

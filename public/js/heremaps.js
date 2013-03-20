@@ -12,7 +12,7 @@ define(['trailmaps', 'here_maps_api'], function(trailmaps, nokia) {
       '<text x="22" y="12" fill="white" style="font-size:15;font-family:arial;font-weight:bold">%MILE%</text>' +
     '</svg>';
 
-  function initialize(latitude, longitude, zoomLevel, onViewChanged, callback) {
+  function initialize(center, zoomLevel, onViewChanged, callback) {
     nokia.Settings.set("appId", "63ii-nsJjiF97C-K3jqU");
     nokia.Settings.set("authenticationToken", "FTtFzF5jfEr7iRYgv6tEgg");
 
@@ -28,7 +28,7 @@ define(['trailmaps', 'here_maps_api'], function(trailmaps, nokia) {
           new nokia.maps.map.component.TypeSelector(),
           new nokia.maps.map.component.ScaleBar()
         ],
-        center: [latitude, longitude],
+        center: [center.latitude, center.longitude],
         zoomLevel: zoomLevel
       });
 
