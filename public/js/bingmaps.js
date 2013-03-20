@@ -1,6 +1,4 @@
-/*global define: false*/
-
-define(['./trailmaps', 'bing_maps_api'], function(trailmaps, Microsoft) {
+define(['trailmaps', 'bing_maps_api'], function(trailmaps, Microsoft) {
   var bingMap;
   var previousPolyLine;
   var previousMileMarkerCollection;

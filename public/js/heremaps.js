@@ -1,6 +1,6 @@
 /*global define: false*/
 
-define(['./trailmaps', 'here_maps_api'], function(trailmaps, nokia) {
+define(['trailmaps', 'here_maps_api'], function(trailmaps, nokia) {
   // TODO: check out http://jhere.net/
   var hereMap;
   var previousPolyLine;

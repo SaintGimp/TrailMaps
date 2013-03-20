@@ -1,6 +1,6 @@
 /*global define: false*/
 
-define(['./trailmaps'], function(trailmaps) {
+define(['trailmaps'], function(trailmaps) {
   var activeMap;
   var defaultLatitude = 40.50642708521896;
   var defaultLongitude = -121.36087699433327;
@@ -10,6 +10,7 @@ define(['./trailmaps'], function(trailmaps) {
   var trackBoundsMultiple = 3;
   var scrollBounds = null;
   var currentTrailData = null;
+  var requireFunc;
 
   function Map(moduleName) {
     var self = this;
@@ -23,7 +24,7 @@ define(['./trailmaps'], function(trailmaps) {
       // init properly when their div is hidden, so we have to wait until it becomes visible
       // to do the init.
       if (!self.control) {
-        require([moduleName], function(createdControl) {
+        requireFunc([moduleName], function(createdControl) {
           self.control = createdControl;
           self.control.initialize(defaultLatitude, defaultLongitude, defaultZoomLevel, onViewChanged, function() {
             callback(self.control);
@@ -36,12 +37,13 @@ define(['./trailmaps'], function(trailmaps) {
   }
 
   var maps = {
-    "#bing-maps": new Map('./bingmaps'),
-    "#google-maps": new Map('./googlemaps'),
-    "#here-maps": new Map('./heremaps'),
+    "#bing-maps": new Map('bingmaps'),
+    "#google-maps": new Map('googlemaps'),
+    "#here-maps": new Map('heremaps'),
   };
 
-  function initialize(callback) {
+  function initialize(suppliedRequireFunc, callback) {
+    requireFunc = suppliedRequireFunc;
     maps["#bing-maps"].getControl(function(control) {
       activeMap = control;
       callback();

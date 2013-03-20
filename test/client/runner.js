@@ -47,16 +47,17 @@ require(['jquery'], function($) {
 
   specs.push('mapControlTest.js');
 
-  mocha.setup('bdd');
-  mocha.setup({globals: [
-    '__async_req_1__',
-    '$MapsNamespace',
-    'Microsoft',
-    'g',
-    'PRF',
-    'microsoftMapsNetworkCallback',
-    'styleKey',
-    '_scaleBarMiElement'
+  mocha.setup({
+    ui: "bdd",
+    globals: [
+      '__async_req_1__',
+      '$MapsNamespace',
+      'Microsoft',
+      'g',
+      'PRF',
+      'microsoftMapsNetworkCallback',
+      'styleKey',
+      '_scaleBarMiElement'
   ]});
 
   $(function() {

@@ -1,7 +1,7 @@
 /*global define: false*/
 /*global MarkerWithLabel: false*/
 
-define(['./trailmaps', 'google_maps_api', 'markerwithlabel'], function(trailmaps, google) {
+define(['trailmaps', 'google_maps_api', 'markerwithlabel'], function(trailmaps, google) {
   var googleMap;
   var previousPolyLine;
   var mileMarkerCollection = [];

@@ -2,13 +2,13 @@
   "test_page": "test/client/runner.html",
   "routes": {
   	"/js": "public/js",
-  	"/stylesheets": "public/stylesheets"
+  	"/stylesheets": "public/stylesheets",
+    "/test": "test"
   },
   "src_files": [
   	"public/js/*.js",
   	"test/client/*.js"
   ],	
   "serve_files": [
-  	"*.dummy"
   ]
 }

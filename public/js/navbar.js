@@ -1,6 +1,6 @@
 /*global define: false*/
 
-define(['jquery', './mapcontrol', 'bootstrap'], function($, mapControl) {
+define(['jquery', 'mapcontrol', 'bootstrap'], function($, mapControl) {
   $(function () {
     $('#searchForm').submit(function() {
         var url = "/api/trails/pct/milemarkers/" + $('#searchBox').val();
