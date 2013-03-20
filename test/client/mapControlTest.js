@@ -32,9 +32,10 @@ define(["/test/client/Squire.js", "/test/client/fakeMap.js"], function(Squire, F
     });
 
     it ('should initialize', function(done) {
-      mapControl.initialize(injector.require.bind(injector), done);
-
-      expect(mapControl).to.be.ok;
+      mapControl.initialize(injector.require.bind(injector), function() {
+        expect(fakeBingMaps.getZoom()).to.equal(5);
+        done();
+      });
     });
   });
 });
