@@ -38,9 +38,9 @@ define(['trailmaps', 'here_maps_api'], function(trailmaps, nokia) {
     });
   }
 
-  function displayTrack(trail) {
+  function displayTrack(track) {
     var vertices = [];
-    $.each(trail.track, function (i, point) {
+    $.each(track, function (i, point) {
       vertices.push(new nokia.maps.geo.Coordinate(point.loc[1], point.loc[0]));
     });
 
@@ -62,9 +62,9 @@ define(['trailmaps', 'here_maps_api'], function(trailmaps, nokia) {
     previousPolyLine = polyLine;
   }
 
-  function displayMileMarkers(trail) {
+  function displayMileMarkers(mileMarkers) {
     var newMileMarkerCollection = [];
-    $.each(trail.mileMarkers, function (i, mileMarker) {
+    $.each(mileMarkers, function (i, mileMarker) {
       var location = new nokia.maps.geo.Coordinate(mileMarker.loc[1], mileMarker.loc[0]);
       var options = {
         icon: mileMarkerContent.replace("%MILE%", mileMarker.mile),

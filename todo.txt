@@ -16,18 +16,19 @@ User stories:
 - Refreshing the page stays on the same engine
 
 Engineering tasks:
-* Implement client-side testing
+* Write client-side tests for existing code
+- Run client tests in Grunt
 - Standardize on one assert library for server and client (Chai?)
-- Mock out the mapping engines?
 - Write a Grunt task that verifies that we have all client tests wired up in Testem
 - Implement server-side integration testing
 - Here still sometimes gets used before totally loaded
 - Requesting bad URL or using bad verb just hangs, need to return 404
+- Mile markers on default zoom seem to have a hiccup at California/Oregon border
 
 To Do on current task:
-- Get Testem to watch all client js files but not serve them to the browsers
 
 Future work/research/learning/refactoring
 - Check out supertest from the VisionMedia guys
 - Look at promises ($.deferred?) for async orchestration
-- Sinon.js as a mocking framework
+- Minify and concatenate files before deployment
+- reduce the size of the trail data sent across the wire - gzip, terse schema, etc.

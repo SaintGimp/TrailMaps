@@ -93,8 +93,8 @@ define(['trailmaps'], function(trailmaps) {
   }
 
   function displayTrail(trail) {
-    activeMap.displayTrack(trail);
-    activeMap.displayMileMarkers(trail);
+    activeMap.displayTrack(trail.track);
+    activeMap.displayMileMarkers(trail.mileMarkers);
   }
 
   function loadTrail() {

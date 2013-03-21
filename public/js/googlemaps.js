@@ -20,9 +20,9 @@ define(['trailmaps', 'google_maps_api', 'markerwithlabel'], function(trailmaps, 
     callback();
   }
 
-  function displayTrack(trail) {
+  function displayTrack(track) {
     var vertices = [];
-    $.each(trail.track, function (i, point) {
+    $.each(track, function (i, point) {
       vertices.push(new google.maps.LatLng(point.loc[1], point.loc[0]));
     });
 
@@ -41,7 +41,7 @@ define(['trailmaps', 'google_maps_api', 'markerwithlabel'], function(trailmaps, 
     previousPolyLine = polyLine;
   }
 
-  function displayMileMarkers(trail) {
+  function displayMileMarkers(mileMarkers) {
     mileMarkerCollection.forEach(function(marker) {
       marker.setMap(null);
     });
@@ -54,7 +54,7 @@ define(['trailmaps', 'google_maps_api', 'markerwithlabel'], function(trailmaps, 
       anchor: new google.maps.Point(12, 12)
     };
 
-    $.each(trail.mileMarkers, function (i, mileMarker) {
+    $.each(mileMarkers, function (i, mileMarker) {
       var location = new google.maps.LatLng(mileMarker.loc[1], mileMarker.loc[0]);
       var options = {
          position: location,

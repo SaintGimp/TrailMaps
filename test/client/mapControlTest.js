@@ -24,12 +24,8 @@ define(["/test/lib/Squire.js", "/test/client/fakeMap.js"], function(Squire, Fake
     var detail = parseFloat(/detail=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
 
     var data = {
-      mileMarkers: [],
+      mileMarkers: [{loc:[west + ((east - west) / 2), south + ((north - south) / 2)], mile:1234}],
       track: [{loc:[west, north]}, {loc:[east, south]}],
-      center: { latitude: south + ((north - south) / 2), longitude: west + ((east - west) / 2)},
-      width: east - west,
-      height: north - south,
-      detail: detail
     };
     request.respond(200, { "Content-Type": "application/json" }, JSON.stringify(data));
   }
@@ -83,10 +79,19 @@ define(["/test/lib/Squire.js", "/test/client/fakeMap.js"], function(Squire, Fake
       expect(numberOfServerRequests).to.equal(1);
       expect(fakeBingMaps.trackData).to.be.ok;
       expect(fakeBingMaps.mileMarkerData).to.be.ok;
-      expect(fakeBingMaps.trackData.center).to.deep.equal(fakeBingMaps.getBounds().center);
-      expect(fakeBingMaps.trackData.width).to.equal(fakeBingMaps.getBounds().width * mapControl.trackBoundsMultiple);
-      expect(fakeBingMaps.trackData.height).to.equal(fakeBingMaps.getBounds().height * mapControl.trackBoundsMultiple);
-      expect(fakeBingMaps.trackData.detail).to.equal(fakeBingMaps.getZoom());
+
+      var west = fakeBingMaps.trackData[0].loc[0];
+      var north = fakeBingMaps.trackData[0].loc[1];
+      var east = fakeBingMaps.trackData[1].loc[0];
+      var south = fakeBingMaps.trackData[1].loc[1];
+      var width = east - west;
+      var height = north - south;
+      expect(width).to.equal(fakeBingMaps.getBounds().width * mapControl.trackBoundsMultiple);
+      expect(height).to.equal(fakeBingMaps.getBounds().height * mapControl.trackBoundsMultiple);
+
+      var marker = fakeBingMaps.mileMarkerData[0];
+      expect(marker.loc[0]).to.equal(fakeBingMaps.getCenter().longitude);
+      expect(marker.loc[1]).to.equal(fakeBingMaps.getCenter().latitude);
     });
   });
 });

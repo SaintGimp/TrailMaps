@@ -31,9 +31,9 @@ define(['trailmaps', 'bing_maps_api'], function(trailmaps, Microsoft) {
     }});
   }
 
-  function displayTrack(trail) {
+  function displayTrack(track) {
     var vertices = [];
-    $.each(trail.track, function (i, point) {
+    $.each(track, function (i, point) {
       vertices.push(new Microsoft.Maps.Location(point.loc[1], point.loc[0]));
     });
 
@@ -47,9 +47,9 @@ define(['trailmaps', 'bing_maps_api'], function(trailmaps, Microsoft) {
     previousPolyLine = polyLine;
   }
 
-  function displayMileMarkers(trail) {
+  function displayMileMarkers(mileMarkers) {
     var newMileMarkerCollection = new Microsoft.Maps.EntityCollection({ visible: true });
-    $.each(trail.mileMarkers, function (i, mileMarker) {
+    $.each(mileMarkers, function (i, mileMarker) {
       var location = new Microsoft.Maps.Location(mileMarker.loc[1], mileMarker.loc[0]);
       // THe behavior of the Bing control is a little wacked. You'd think that specifying the text and textoffset
       // would be sufficient but it doesn't work right, so we have to go with htmlContent instead. You'd

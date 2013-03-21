@@ -14,12 +14,12 @@ define(['trailmaps'], function(trailmaps) {
       callback();
     };
 
-    self.displayTrack = function(trail) {
-      self.trackData = trail;
+    self.displayTrack = function(track) {
+      self.trackData = track;
     };
 
-    self.displayMileMarkers = function(trail) {
-      self.mileMarkerData = trail;
+    self.displayMileMarkers = function(mileMarkers) {
+      self.mileMarkerData = mileMarkers;
     };
 
     self.getCenter = function() {
