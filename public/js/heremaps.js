@@ -12,13 +12,13 @@ define(['trailmaps', 'here_maps_api'], function(trailmaps, nokia) {
       '<text x="22" y="12" fill="white" style="font-size:15;font-family:arial;font-weight:bold">%MILE%</text>' +
     '</svg>';
 
-  function initialize(center, zoomLevel, onViewChanged, callback) {
+  function initialize(container, center, zoomLevel, onViewChanged, callback) {
     nokia.Settings.set("appId", "63ii-nsJjiF97C-K3jqU");
     nokia.Settings.set("authenticationToken", "FTtFzF5jfEr7iRYgv6tEgg");
 
     var featureMap = nokia.Features.getFeaturesFromMatrix(["maps"]);
     nokia.Features.load(featureMap, function() {
-      hereMap = new nokia.maps.map.Display(document.getElementById("here-maps"), {
+      hereMap = new nokia.maps.map.Display(container, {
         baseMapType: nokia.maps.map.Display.SATELLITE,
         components: [
           new nokia.maps.map.component.Behavior(),

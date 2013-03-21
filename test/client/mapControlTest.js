@@ -1,6 +1,7 @@
 /*jshint expr:true*/
 
-define(["/test/lib/Squire.js", "/test/client/fakeMap.js"], function(Squire, FakeMap) {
+// TODO: can we set maps for the test stuff in testem.json?
+define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($, Squire, FakeMap) {
   var server;
   var injector;
   var fakeBingMaps;
@@ -55,9 +56,16 @@ define(["/test/lib/Squire.js", "/test/client/fakeMap.js"], function(Squire, Fake
     });
   }
 
+  function initializeDOM() {
+    $('#testArea').append('<div id="bing-maps"</div>');
+    $('#testArea').append('<div id="google-maps"</div>');
+    $('#testArea').append('<div id="here-maps"</div>');
+  }
+
   describe('Initializing the map control', function() {
     before(function(done) {
       initializeFakeServer();
+      initializeDOM();
       initializeMapControl(done);
     });
 
@@ -69,10 +77,14 @@ define(["/test/lib/Squire.js", "/test/client/fakeMap.js"], function(Squire, Fake
       expect(numberOfModulesLoaded).to.equal(1);
     });
 
-    it ('should configure the first map module with the default center and zoom', function() {
+    it ('should give the map module a DOM element to work with', function() {
       var config = fakeBingMaps.getCenterAndZoom();
       expect(config.center).to.equal(mapControl.defaultCenter);
       expect(config.zoom).to.equal(mapControl.defaultZoomLevel);
+    });
+
+    it ('should configure the first map module with the default center and zoom', function() {
+      expect(fakeBingMaps.container.id).to.equal($('#bing-maps').id);
     });
 
     it ('should load trail data from the server and display it on the map', function() {

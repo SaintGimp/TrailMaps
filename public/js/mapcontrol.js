@@ -1,6 +1,6 @@
 /*global define: false*/
 
-define(['trailmaps'], function(trailmaps) {
+define(['jquery', 'trailmaps'], function($, trailmaps) {
   var activeMap;
   var defaultCenter = new trailmaps.Location(40.50642708521896, -121.36087699433327);
   var defaultZoomLevel = 5;
@@ -25,7 +25,8 @@ define(['trailmaps'], function(trailmaps) {
       if (!self.control) {
         requireFunc([moduleName], function(createdControl) {
           self.control = createdControl;
-          self.control.initialize(defaultCenter, defaultZoomLevel, onViewChanged, function() {
+          var container = $(moduleName);
+          self.control.initialize(container, defaultCenter, defaultZoomLevel, onViewChanged, function() {
             callback(self.control);
           });
         });
