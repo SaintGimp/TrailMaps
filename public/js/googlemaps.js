@@ -9,7 +9,7 @@ define(['trailmaps', 'google_maps_api', 'markerwithlabel'], function(trailmaps, 
   function initialize(center, zoomLevel, onViewChanged, callback) {
     // https://developers.google.com/maps/documentation/javascript/
     var mapOptions = {
-      center: new google.maps.LatLng(canter.latitude, center.longitude),
+      center: new google.maps.LatLng(center.latitude, center.longitude),
       zoom: zoomLevel,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };

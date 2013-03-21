@@ -4,6 +4,8 @@ define(['trailmaps'], function(trailmaps) {
     self.viewChangedHandler = undefined;
     self.center = undefined;
     self.zoom = undefined;
+    self.trackData = undefined;
+    self.mileMarkerData = undefined;
 
     self.initialize = function(center, zoomLevel, onViewChanged, callback) {
       self.center = center;
@@ -13,9 +15,11 @@ define(['trailmaps'], function(trailmaps) {
     };
 
     self.displayTrack = function(trail) {
+      self.trackData = trail;
     };
 
     self.displayMileMarkers = function(trail) {
+      self.mileMarkerData = trail;
     };
 
     self.getCenter = function() {
@@ -23,7 +27,7 @@ define(['trailmaps'], function(trailmaps) {
     };
 
     self.getBounds = function() {
-      return new trailmaps.Rectangle(self.center, 0.25, 0.25);
+      return new trailmaps.Rectangle(self.center, 100 / self.zoom, 100 / self.zoom);
     };
 
     self.getZoom = function() {

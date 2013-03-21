@@ -16,7 +16,8 @@
         "requirejs": false,
         "mocha": false,
         "chai": false,
-        "expect": true
+        "expect": true,
+        "sinon": false
     },
 
     "browser"       : true,

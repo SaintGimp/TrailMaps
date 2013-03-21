@@ -101,7 +101,7 @@ define(['trailmaps'], function(trailmaps) {
     calculateScrollBounds();
     var trackBounds = calculateTrackBounds();
 
-    var trailUrl = 'api/trails/pct' + buildUrlParameters(trackBounds);
+    var trailUrl = '/api/trails/pct' + buildUrlParameters(trackBounds);
 
     console.log("Loading " + trailUrl);
 
@@ -148,6 +148,7 @@ define(['trailmaps'], function(trailmaps) {
 
     // For testing
     defaultCenter: defaultCenter,
-    defaultZoomLevel: defaultZoomLevel
+    defaultZoomLevel: defaultZoomLevel,
+    trackBoundsMultiple: trackBoundsMultiple
   };
 });
