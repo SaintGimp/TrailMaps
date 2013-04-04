@@ -7,12 +7,14 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
   var fakeBingMaps;
   var fakeGoogleMaps;
   var fakeHereMaps;
-  var numberOfModulesLoaded = 0;
+  var loadedModules = [];
   var numberOfServerRequests = 0;
   var mapControl;
 
   function mockedRequire(modules, callback) {
-    numberOfModulesLoaded++;
+    $.each(modules, function(index, value) {
+      loadedModules.push(value);
+    });
     injector.require(modules, callback);
   }
 
@@ -37,6 +39,12 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
     server.autoRespond = true;
   }
 
+  function initializeDOM() {
+    $('#testArea').append('<div id="bing-maps"</div>');
+    $('#testArea').append('<div id="google-maps"</div>');
+    $('#testArea').append('<div id="here-maps"</div>');
+  }
+
   function initializeMapControl(done) {
     fakeBingMaps = new FakeMap();
     fakeGoogleMaps = new FakeMap();
@@ -56,12 +64,6 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
     });
   }
 
-  function initializeDOM() {
-    $('#testArea').append('<div id="bing-maps"</div>');
-    $('#testArea').append('<div id="google-maps"</div>');
-    $('#testArea').append('<div id="here-maps"</div>');
-  }
-
   describe('Initializing the map control', function() {
     before(function(done) {
       initializeFakeServer();
@@ -73,8 +75,9 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
       server.restore();
     });
 
-    it ('should load the first map module ', function() {
-      expect(numberOfModulesLoaded).to.equal(1);
+    it ('should load the Bing map module ', function() {
+      expect(loadedModules.length).to.equal(1);
+      expect(loadedModules[0]).to.equal("bingmaps");
     });
 
     it ('should give the map module a DOM element to work with', function() {

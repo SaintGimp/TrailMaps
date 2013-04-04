@@ -10,7 +10,7 @@ define(['jquery', 'mapcontrol', 'bootstrap'], function($, mapControl) {
                 latitude: result.loc[1],
                 longitude: result.loc[0]
               },
-              zoom: 16
+              zoom: 14
             });
         });
         return false;

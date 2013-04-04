@@ -33,3 +33,4 @@ Future work/research/learning/refactoring
 - Look at promises ($.deferred?) for async orchestration
 - Minify and concatenate files before deployment
 - reduce the size of the trail data sent across the wire - gzip, terse schema, etc.
+- Check out http://thechangelog.com/whoa-sublime-web-inspector/

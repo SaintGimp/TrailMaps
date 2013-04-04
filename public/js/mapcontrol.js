@@ -47,7 +47,10 @@ define(['jquery', 'trailmaps'], function($, trailmaps) {
     maps["#bing-maps"].getControl(function(control) {
       activeMap = control;
       onViewChanged();
-      callback();
+      if (callback)
+      {
+        callback();
+      }
     });
   }
 
