@@ -25,7 +25,7 @@ define(['jquery', 'trailmaps'], function($, trailmaps) {
       if (!self.control) {
         requireFunc([moduleName], function(createdControl) {
           self.control = createdControl;
-          var container = $(moduleName);
+          var container = $("#" + moduleName)[0];
           self.control.initialize(container, defaultCenter, defaultZoomLevel, onViewChanged, function() {
             callback(self.control);
           });
@@ -37,14 +37,14 @@ define(['jquery', 'trailmaps'], function($, trailmaps) {
   }
 
   var maps = {
-    "#bing-maps": new Map('bingmaps'),
-    "#google-maps": new Map('googlemaps'),
-    "#here-maps": new Map('heremaps'),
+    "#bingmaps": new Map('bingmaps'),
+    "#googlemaps": new Map('googlemaps'),
+    "#heremaps": new Map('heremaps'),
   };
 
   function initialize(suppliedRequireFunc, callback) {
     requireFunc = suppliedRequireFunc;
-    maps["#bing-maps"].getControl(function(control) {
+    maps["#bingmaps"].getControl(function(control) {
       activeMap = control;
       onViewChanged();
       if (callback)

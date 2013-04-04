@@ -75,19 +75,19 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
       server.restore();
     });
 
-    it ('should load the Bing map module ', function() {
+    it ('should load the default map module', function() {
       expect(loadedModules.length).to.equal(1);
       expect(loadedModules[0]).to.equal("bingmaps");
     });
 
     it ('should give the map module a DOM element to work with', function() {
-      var config = fakeBingMaps.getCenterAndZoom();
-      expect(config.center).to.equal(mapContainer.defaultCenter);
-      expect(config.zoom).to.equal(mapContainer.defaultZoomLevel);
+      expect(fakeBingMaps.container.id).to.equal($('#bing-maps').id);
     });
 
     it ('should configure the first map module with the default center and zoom', function() {
-      expect(fakeBingMaps.container.id).to.equal($('#bing-maps').id);
+      var config = fakeBingMaps.getCenterAndZoom();
+      expect(config.center).to.equal(mapContainer.defaultCenter);
+      expect(config.zoom).to.equal(mapContainer.defaultZoomLevel);
     });
 
     it ('should load trail data from the server and display it on the map', function() {
@@ -107,6 +107,34 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
       var marker = fakeBingMaps.mileMarkerData[0];
       expect(marker.loc[0]).to.equal(fakeBingMaps.getCenter().longitude);
       expect(marker.loc[1]).to.equal(fakeBingMaps.getCenter().latitude);
+    });
+  });
+
+  describe('Switching to another map type', function() {
+    before(function(done) {
+      initializeFakeServer();
+      initializeDOM();
+      initializeMapContainer(done);
+      mapContainer.showingMap('#google-maps');
+    });
+
+    after(function() {
+      server.restore();
+    });
+
+    it ('should load the default and the new map modules', function() {
+      expect(loadedModules.length).to.equal(2);
+      expect(loadedModules[1]).to.equal("googlemaps");
+    });
+
+    it ('should give the new map module a DOM element to work with', function() {
+      expect(fakeBingMaps.container.id).to.equal($('#google-maps').id);
+    });
+
+    it ('should configure the first map module with the default center and zoom', function() {
+      var config = fakeGoogleMaps.getCenterAndZoom();
+      expect(config.center).to.equal(mapContainer.defaultCenter);
+      expect(config.zoom).to.equal(mapContainer.defaultZoomLevel);
     });
   });
 });
