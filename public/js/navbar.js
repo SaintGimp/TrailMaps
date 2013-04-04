@@ -1,11 +1,11 @@
 /*global define: false*/
 
-define(['jquery', 'mapcontrol', 'bootstrap'], function($, mapControl) {
+define(['jquery', 'mapcontainer', 'bootstrap'], function($, mapContainer) {
   $(function () {
     $('#searchForm').submit(function() {
         var url = "/api/trails/pct/milemarkers/" + $('#searchBox').val();
         $.getJSON(url, function(result) {
-            mapControl.setCenterAndZoom({
+            mapContainer.setCenterAndZoom({
               center: {
                 latitude: result.loc[1],
                 longitude: result.loc[0]
@@ -22,7 +22,7 @@ define(['jquery', 'mapcontrol', 'bootstrap'], function($, mapControl) {
       // TODO: We used to have to force tabs to be shown here before Google got inited otherwise
       // it would freak out. That seems to be no longer the case after implementing require.js,
       // but I'm not sure if it works only due to timing or what.  Keep on eye on this.
-      mapControl.showingMap(e.target.hash);
+      mapContainer.showingMap(e.target.hash);
     });
   });
 });

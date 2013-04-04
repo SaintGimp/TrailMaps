@@ -9,7 +9,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
   var fakeHereMaps;
   var loadedModules = [];
   var numberOfServerRequests = 0;
-  var mapControl;
+  var mapContainer;
 
   function mockedRequire(modules, callback) {
     $.each(modules, function(index, value) {
@@ -45,7 +45,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
     $('#testArea').append('<div id="here-maps"</div>');
   }
 
-  function initializeMapControl(done) {
+  function initializeMapContainer(done) {
     fakeBingMaps = new FakeMap();
     fakeGoogleMaps = new FakeMap();
     fakeHereMaps = new FakeMap();
@@ -56,9 +56,9 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
       'googlemaps': fakeGoogleMaps,
       'heremaps': fakeHereMaps
     });
-    injector.require(['mapcontrol'], function(newMapControl) {
-      mapControl = newMapControl;
-      mapControl.initialize(mockedRequire, function() {
+    injector.require(['mapcontainer'], function(newMapContainer) {
+      mapContainer = newMapContainer;
+      mapContainer.initialize(mockedRequire, function() {
         done();
       });
     });
@@ -68,7 +68,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
     before(function(done) {
       initializeFakeServer();
       initializeDOM();
-      initializeMapControl(done);
+      initializeMapContainer(done);
     });
 
     after(function() {
@@ -82,8 +82,8 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
 
     it ('should give the map module a DOM element to work with', function() {
       var config = fakeBingMaps.getCenterAndZoom();
-      expect(config.center).to.equal(mapControl.defaultCenter);
-      expect(config.zoom).to.equal(mapControl.defaultZoomLevel);
+      expect(config.center).to.equal(mapContainer.defaultCenter);
+      expect(config.zoom).to.equal(mapContainer.defaultZoomLevel);
     });
 
     it ('should configure the first map module with the default center and zoom', function() {
@@ -101,8 +101,8 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
       var south = fakeBingMaps.trackData[1].loc[1];
       var width = east - west;
       var height = north - south;
-      expect(width).to.equal(fakeBingMaps.getBounds().width * mapControl.trackBoundsMultiple);
-      expect(height).to.equal(fakeBingMaps.getBounds().height * mapControl.trackBoundsMultiple);
+      expect(width).to.equal(fakeBingMaps.getBounds().width * mapContainer.trackBoundsMultiple);
+      expect(height).to.equal(fakeBingMaps.getBounds().height * mapContainer.trackBoundsMultiple);
 
       var marker = fakeBingMaps.mileMarkerData[0];
       expect(marker.loc[0]).to.equal(fakeBingMaps.getCenter().longitude);

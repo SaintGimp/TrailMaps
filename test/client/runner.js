@@ -45,7 +45,7 @@ expect = chai.expect;
 require(['jquery'], function($) {
   var specs = [];
 
-  specs.push('mapControlTest.js');
+  specs.push('mapcontainertest.js');
 
   mocha.setup({
     ui: "bdd",

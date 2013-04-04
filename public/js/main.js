@@ -38,6 +38,6 @@ define('google_maps_api', ['async!http://maps.google.com/maps/api/js?v=3&sensor=
   return google;
 });
 
-require(['jquery', './mapcontrol', './navbar'], function($, mapControl) {
-  mapControl.initialize(require);
+require(['jquery', './mapcontainer', './navbar'], function($, mapContainer) {
+  mapContainer.initialize(require);
 });

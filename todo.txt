@@ -26,7 +26,6 @@ Engineering tasks:
 - Mile markers on default zoom seem to have a hiccup at California/Oregon border
 
 To Do on current task:
-- rename mapControl to mapContainer
 
 Future work/research/learning/refactoring
 - Check out supertest from the VisionMedia guys
