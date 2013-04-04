@@ -62,16 +62,6 @@ require(['jquery'], function($) {
 
   $(function() {
     require(specs, function() {
-
-      beforeEach(function() {
-        $('#testArea').remove();
-        $('body').append('<div id="testArea" style="width:400px; height:200px; border:solid red 2px"></div>');
-      });
-
-      afterEach(function() {
-        $('#testArea').remove();
-      });
-
       mocha.run();
     });
   });
