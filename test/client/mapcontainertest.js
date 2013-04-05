@@ -36,7 +36,6 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
   function initializeFakeServer() {
     server = sinon.fakeServer.create();
     server.respondWith(/\/api\/trails\/(\w+)\?(.+)/, trailResponder);
-    server.autoRespond = true;
   }
 
   function initializeDOM() {
@@ -71,80 +70,122 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
     numberOfServerRequests = 0;
     initializeFakeServer();
     initializeDOM();
-    initializeMapContainer(done);
+    initializeMapContainer(function() {
+      server.respond();
+      done();
+    });
   }
 
-  describe('Initializing the map control', function() {
-    before(function(done) {
-      initialize(done);
-    });
+  function cleanup() {
+    $('#testArea').remove();
+    server.restore();
+  }
 
-    after(function() {
-      $('#testArea').remove();
-      server.restore();
-    });
+  function verifyMapTrailDataMatchesView(map) {
+    var west = map.trackData[0].loc[0];
+    var north = map.trackData[0].loc[1];
+    var east = map.trackData[1].loc[0];
+    var south = map.trackData[1].loc[1];
+    var width = east - west;
+    var height = north - south;
+    expect(width).to.equal(map.getBounds().width * mapContainer.trackBoundsMultiple);
+    expect(height).to.equal(map.getBounds().height * mapContainer.trackBoundsMultiple);
 
-    it ('should load the default map module', function() {
-      expect(loadedModules.length).to.equal(1);
-      expect(loadedModules[0]).to.equal("bingmaps");
-    });
+    var marker = map.mileMarkerData[0];
+    expect(marker.loc[0]).to.equal(map.getCenter().longitude);
+    expect(marker.loc[1]).to.equal(map.getCenter().latitude);
+  }
 
-    it ('should give the map module a DOM element to work with', function() {
-      expect(fakeBingMaps.container.id).to.equal($('#bingmaps')[0].id);
-    });
+  describe('Map container', function() {
+    describe('Initializing the map container', function() {
+      before(function(done) {
+        initialize(done);
+      });
 
-    it ('should configure the first map module with the default center and zoom', function() {
-      var config = fakeBingMaps.getCenterAndZoom();
-      expect(config.center).to.equal(mapContainer.defaultCenter);
-      expect(config.zoom).to.equal(mapContainer.defaultZoomLevel);
-    });
+      after(function() {
+        cleanup();
+      });
 
-    it ('should load trail data from the server and display it on the map', function() {
-      expect(numberOfServerRequests).to.equal(1);
-      expect(fakeBingMaps.trackData).to.be.ok;
-      expect(fakeBingMaps.mileMarkerData).to.be.ok;
+      it ('should load the default map module', function() {
+        expect(loadedModules.length).to.equal(1);
+        expect(loadedModules[0]).to.equal("bingmaps");
+      });
 
-      var west = fakeBingMaps.trackData[0].loc[0];
-      var north = fakeBingMaps.trackData[0].loc[1];
-      var east = fakeBingMaps.trackData[1].loc[0];
-      var south = fakeBingMaps.trackData[1].loc[1];
-      var width = east - west;
-      var height = north - south;
-      expect(width).to.equal(fakeBingMaps.getBounds().width * mapContainer.trackBoundsMultiple);
-      expect(height).to.equal(fakeBingMaps.getBounds().height * mapContainer.trackBoundsMultiple);
+      it ('should give the map module a DOM element to work with', function() {
+        expect(fakeBingMaps.container.id).to.equal($('#bingmaps')[0].id);
+      });
 
-      var marker = fakeBingMaps.mileMarkerData[0];
-      expect(marker.loc[0]).to.equal(fakeBingMaps.getCenter().longitude);
-      expect(marker.loc[1]).to.equal(fakeBingMaps.getCenter().latitude);
-    });
-  });
+      it ('should configure the first map module with the default center and zoom', function() {
+        var config = fakeBingMaps.getCenterAndZoom();
+        expect(config.center).to.equal(mapContainer.defaultCenter);
+        expect(config.zoom).to.equal(mapContainer.defaultZoomLevel);
+      });
 
-  describe('Switching to another map type', function() {
-    before(function(done) {
-      initialize(function() {
-        mapContainer.showingMap('#googlemaps');
-        done();
+      it ('should load trail data from the server and display it on the map', function() {
+        expect(numberOfServerRequests).to.equal(1);
+        expect(fakeBingMaps.trackData).to.be.ok;
+        expect(fakeBingMaps.mileMarkerData).to.be.ok;
+
+        verifyMapTrailDataMatchesView(fakeBingMaps);
       });
     });
 
-    after(function() {
-      $('#testArea').remove();
-      server.restore();
+    describe('Switching to another map type', function() {
+      before(function(done) {
+        initialize(function() {
+          mapContainer.showingMap('#googlemaps');
+          server.respond();
+          done();
+        });
+      });
+
+      after(function() {
+        cleanup();
+      });
+
+      it ('should load the default and the new map modules', function() {
+        expect(loadedModules.length).to.equal(2);
+        expect(loadedModules[1]).to.equal("googlemaps");
+      });
+
+      it ('should give the new map module a DOM element to work with', function() {
+        expect(fakeGoogleMaps.container.id).to.equal($('#googlemaps')[0].id);
+      });
+
+      it ('should configure the second map module with the same center and zoom as the first map', function() {
+        var config = fakeGoogleMaps.getCenterAndZoom();
+        expect(config.center).to.equal(mapContainer.defaultCenter);
+        expect(config.zoom).to.equal(mapContainer.defaultZoomLevel);
+      });
+
+      it ('should not reload trail data from the server', function() {
+        expect(numberOfServerRequests).to.equal(1);
+      });
+
+      it ('should display trail data on the second map', function() {
+        verifyMapTrailDataMatchesView(fakeGoogleMaps);
+      });
     });
 
-    it ('should load the default and the new map modules', function() {
-      expect(loadedModules.length).to.equal(2);
-      expect(loadedModules[1]).to.equal("googlemaps");
-    });
+    describe('Zooming in on the map', function() {
+      before(function(done) {
+        initialize(function() {
+          fakeBingMaps.setCenterAndZoom({
+            center: fakeBingMaps.getCenter(),
+            zoom: fakeBingMaps.getZoom() + 1
+          });
+          server.respond();
+          done();
+        });
+      });
 
-    it ('should give the new map module a DOM element to work with', function() {
-      expect(fakeGoogleMaps.container.id).to.equal($('#googlemaps')[0].id);
-    });
+      after(function() {
+        cleanup();
+      });
 
-    it ('should configure the second map module with the same center and zoom as the first map', function() {
-      var config = fakeGoogleMaps.getCenterAndZoom();
-      expect(config.center).to.equal(mapContainer.defaultCenter);
-      expect(config.zoom).to.equal(mapContainer.defaultZoomLevel);
+      it ('should load new trail data', function() {
+        expect(numberOfServerRequests).to.equal(2);
+      });
     });
   });
 });

@@ -13,6 +13,7 @@ define(['trailmaps'], function(trailmaps) {
       self.center = center;
       self.zoom = zoomLevel;
       self.viewChangedHandler = onViewChanged;
+
       callback();
     };
 
@@ -46,6 +47,7 @@ define(['trailmaps'], function(trailmaps) {
     self.setCenterAndZoom = function(options) {
       self.center = options.center;
       self.zoom = options.zoom;
+      self.viewChangedHandler();
     };
   }
 

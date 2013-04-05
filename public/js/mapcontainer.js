@@ -3,8 +3,9 @@
 define(['jquery', 'trailmaps'], function($, trailmaps) {
   var activeMap;
   var defaultCenter = new trailmaps.Location(40.50642708521896, -121.36087699433327);
+  var currentCenter = defaultCenter;
   var defaultZoomLevel = 5;
-  var previousZoomLevel = defaultZoomLevel;
+  var currentZoomLevel = defaultZoomLevel;
   var scrollBoundsMultiple = 2;
   var trackBoundsMultiple = 3;
   var scrollBounds = null;
@@ -26,12 +27,12 @@ define(['jquery', 'trailmaps'], function($, trailmaps) {
         requireFunc([moduleName], function(createdControl) {
           self.control = createdControl;
           var container = $("#" + moduleName)[0];
-          self.control.initialize(container, defaultCenter, defaultZoomLevel, onViewChanged, function() {
-            callback(self.control);
+          self.control.initialize(container, currentCenter, currentZoomLevel, onViewChanged, function() {
+            callback(self.control, true);
           });
         });
       } else {
-        callback(self.control);
+        callback(self.control, false);
       }
     };
   }
@@ -44,28 +45,46 @@ define(['jquery', 'trailmaps'], function($, trailmaps) {
 
   function initialize(suppliedRequireFunc, callback) {
     requireFunc = suppliedRequireFunc;
-    maps["#bingmaps"].getControl(function(control) {
-      activeMap = control;
-      onViewChanged();
-      if (callback)
-      {
+    showingMap('#bingmaps', function() {
+      if (callback) {
         callback();
       }
     });
   }
 
   function setCenterAndZoom(center, zoomLevel) {
+    currentCenter = center;
+    currentZoomLevel = zoomLevel;
     activeMap.setCenterAndZoom(center, zoomLevel);
   }
 
-  function showingMap(mapHash) {
-    var currentView = activeMap.getCenterAndZoom();
-    maps[mapHash].getControl(function(control) {
+  function getCurrentView() {
+    return {
+      center: currentCenter,
+      zoom: currentZoomLevel
+    };
+  }
+
+  function showingMap(mapHash, callback) {
+    maps[mapHash].getControl(function(control, isNew) {
+      var currentView = getCurrentView();
+
       activeMap = control;
+
+      if (!currentTrailData) {
+        loadTrail();
+      } else if (isNew) {
+        displayTrail();
+      }
+
       var newView = activeMap.getCenterAndZoom();
       if (!viewsAreSame(currentView, newView)) {
         activeMap.setCenterAndZoom(currentView);
-        displayTrail(currentTrailData);
+        displayTrail();
+      }
+
+      if (callback) {
+        callback();
       }
     });
   }
@@ -96,9 +115,10 @@ define(['jquery', 'trailmaps'], function($, trailmaps) {
     return new trailmaps.Rectangle(mapCenter, trackBoundsSize, trackBoundsSize);
   }
 
-  function displayTrail(trail) {
-    activeMap.displayTrack(trail.track);
-    activeMap.displayMileMarkers(trail.mileMarkers);
+  function displayTrail() {
+    console.log('Sending trail data to map control');
+    activeMap.displayTrack(currentTrailData.track);
+    activeMap.displayMileMarkers(currentTrailData.mileMarkers);
   }
 
   function loadTrail() {
@@ -110,8 +130,8 @@ define(['jquery', 'trailmaps'], function($, trailmaps) {
     console.log("Loading " + trailUrl);
 
     $.getJSON(trailUrl, null, function (data) {
-      displayTrail(data);
       currentTrailData = data;
+      displayTrail();
     });
   }
 
@@ -127,9 +147,13 @@ define(['jquery', 'trailmaps'], function($, trailmaps) {
   }
 
   function onViewChanged() {
+    console.log('onviewchanged');
     if (needToLoadNewData()) {
       loadTrail();
     }
+
+    currentCenter = activeMap.getCenter();
+    currentZoomLevel = activeMap.getZoom();
   }
 
   function needToLoadNewData() {
@@ -137,8 +161,7 @@ define(['jquery', 'trailmaps'], function($, trailmaps) {
       return true;
     }
 
-    if (activeMap.getZoom() !== previousZoomLevel) {
-      previousZoomLevel = activeMap.getZoom();
+    if (activeMap.getZoom() !== currentZoomLevel) {
       return true;
     }
 
