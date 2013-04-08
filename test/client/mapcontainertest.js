@@ -102,10 +102,6 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
         initialize(done);
       });
 
-      after(function() {
-        cleanup();
-      });
-
       it ('should load the default map module', function() {
         expect(loadedModules.length).to.equal(1);
         expect(loadedModules[0]).to.equal("bingmaps");
@@ -128,19 +124,20 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
 
         verifyMapTrailDataMatchesView(fakeBingMaps);
       });
+
+      after(function() {
+        cleanup();
+      });
     });
 
     describe('Switching to another map type', function() {
       before(function(done) {
         initialize(function() {
-          mapContainer.showingMap('#googlemaps');
-          server.respond();
-          done();
+          mapContainer.showingMap('#googlemaps', function() {
+            server.respond();
+            done();
+          });
         });
-      });
-
-      after(function() {
-        cleanup();
       });
 
       it ('should load the default and the new map modules', function() {
@@ -165,6 +162,10 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
       it ('should display trail data on the second map', function() {
         verifyMapTrailDataMatchesView(fakeGoogleMaps);
       });
+
+      after(function() {
+        cleanup();
+      });
     });
 
     describe('Zooming in on the map', function() {
@@ -179,13 +180,128 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
         });
       });
 
+      it ('should load new trail data', function() {
+        expect(numberOfServerRequests).to.equal(2);
+      });
+
       after(function() {
         cleanup();
+      });
+    });
+
+    describe('Panning a little bit on the map', function() {
+      before(function(done) {
+        initialize(function() {
+          var newCenter = fakeBingMaps.getCenter();
+          newCenter.latitude += 1;
+          fakeBingMaps.setCenterAndZoom({
+            center: newCenter,
+            zoom: fakeBingMaps.getZoom()
+          });
+          server.respond();
+          done();
+        });
+      });
+
+      it ('should not load new trail data', function() {
+        expect(numberOfServerRequests).to.equal(1);
+      });
+
+      after(function() {
+        cleanup();
+      });
+    });
+
+    describe('Panning a lot on the map', function() {
+      before(function(done) {
+        initialize(function() {
+          var newCenter = fakeBingMaps.getCenter();
+          newCenter.latitude += 20;
+          fakeBingMaps.setCenterAndZoom({
+            center: newCenter,
+            zoom: fakeBingMaps.getZoom()
+          });
+          server.respond();
+          done();
+        });
       });
 
       it ('should load new trail data', function() {
         expect(numberOfServerRequests).to.equal(2);
       });
+
+      it ('should display new trail data on the map', function() {
+        verifyMapTrailDataMatchesView(fakeBingMaps);
+      });
+
+      after(function() {
+        cleanup();
+      });
     });
+
+    describe('Switching to new map type after changing view', function() {
+      before(function(done) {
+        initialize(function() {
+          fakeBingMaps.setCenterAndZoom({
+            center: fakeBingMaps.getCenter(),
+            zoom: fakeBingMaps.getZoom() + 1
+          });
+          mapContainer.showingMap('#googlemaps', function() {
+            server.respond();
+            done();
+          });
+        });
+      });
+
+      it ('show the new map with the same view as the old map', function() {
+        expect(fakeGoogleMaps.getZoom()).to.equal(fakeBingMaps.getZoom());
+      });
+
+      it ('should not load new trail data for the new map', function() {
+        expect(numberOfServerRequests).to.equal(2);
+      });
+
+      it ('should display trail data on the map', function() {
+        verifyMapTrailDataMatchesView(fakeGoogleMaps);
+      });
+
+      after(function() {
+        cleanup();
+      });
+    });
+
+    describe('Switching to an already-loaded map type after changing view', function() {
+      before(function(done) {
+        initialize(function() {
+          mapContainer.showingMap('#googlemaps', function() {
+            fakeGoogleMaps.setCenterAndZoom({
+              center: fakeGoogleMaps.getCenter(),
+              zoom: fakeGoogleMaps.getZoom() + 1
+            });
+            mapContainer.showingMap('#bingmaps', function() {
+              server.respond();
+              done();
+            });
+          });
+        });
+      });
+
+      it ('show the map with the same view as the old map', function() {
+        expect(fakeBingMaps.getZoom()).to.equal(fakeGoogleMaps.getZoom());
+      });
+
+      it ('should not load new trail data for the map', function() {
+        expect(numberOfServerRequests).to.equal(2);
+      });
+
+      it ('should display trail data on the map', function() {
+        verifyMapTrailDataMatchesView(fakeBingMaps);
+      });
+
+      after(function() {
+        cleanup();
+      });
+    });
+
   });
 });
