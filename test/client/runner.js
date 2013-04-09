@@ -12,6 +12,7 @@ requirejs.config({
     "async": "lib/async",
     "markerwithlabel": "lib/markerwithlabel_packed",
     "here_maps_api": "http://api.maps.nokia.com/2.2.4/jsl.js?with=maps",
+    "knockout": "lib/knockout-2.2.1"
   },
   shim: {
     "bootstrap": {
@@ -45,7 +46,8 @@ expect = chai.expect;
 require(['jquery'], function($) {
   var specs = [];
 
-  specs.push('mapcontainertest.js');
+  specs.push('mapcontainer_test.js');
+  specs.push('navbar_test.js');
 
   mocha.setup({
     ui: "bdd",
@@ -57,7 +59,9 @@ require(['jquery'], function($) {
       'PRF',
       'microsoftMapsNetworkCallback',
       'styleKey',
-      '_scaleBarMiElement'
+      '_scaleBarMiElement',
+      'lastpass_iter',
+      'lastpass_f'
   ]});
 
   $(function() {

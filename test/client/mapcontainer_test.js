@@ -303,5 +303,26 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
       });
     });
 
+    describe('Changing the view', function() {
+      before(function(done) {
+        initialize(function() {
+          mapContainer.setCenterAndZoom({
+            center: fakeBingMaps.getCenter(),
+            zoom: fakeBingMaps.getZoom() + 1
+          });
+          server.respond();
+          done();
+        });
+      });
+
+      it ('should load new trail data', function() {
+        expect(numberOfServerRequests).to.equal(2);
+      });
+
+      after(function() {
+        cleanup();
+      });
+    });
+
   });
 });

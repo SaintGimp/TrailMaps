@@ -54,10 +54,8 @@ define(['jquery', 'trailmaps'], function($, trailmaps) {
     });
   }
 
-  function setCenterAndZoom(center, zoomLevel) {
-    currentView.center = center;
-    currentView.zoom = zoomLevel;
-    activeMap.setCenterAndZoom(center, zoomLevel);
+  function setCenterAndZoom(options) {
+    activeMap.setCenterAndZoom(options);
   }
 
   function showingMap(mapHash, callback) {

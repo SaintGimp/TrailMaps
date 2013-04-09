@@ -11,10 +11,10 @@ header
           .nav-collapse.collapse
             ul.nav.nav-pills
               li.active
-                a(data-toggle="pill", href='#bingmaps') Bing
+                a(data-toggle="pill", href='#bingmaps', data-bind='click: showMap') Bing
               li
-                a(data-toggle="pill", href='#googlemaps') Google
+                a(data-toggle="pill", href='#googlemaps', data-bind='click: showMap') Google
               li
-                a(data-toggle="pill", href='#heremaps') Here
-            form.navbar-form.pull-right(id='searchForm')
-              input.search-query.mile-marker-query(id='searchBox', type='text', placeholder='go to mile marker')
+                a(data-toggle="pill", href='#heremaps', data-bind='click: showMap') Here
+            form.navbar-form.pull-right(id='searchForm', data-bind='submit: gotoWaypoint')
+              input.search-query.mile-marker-query(id='searchBox', type='text', data-bind='value: searchText', placeholder='go to mile marker')

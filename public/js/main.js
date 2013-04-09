@@ -9,7 +9,8 @@ requirejs.config({
     "bootstrap": "../bootstrap/js/bootstrap.min",
     "async": "lib/async",
     "markerwithlabel": "lib/markerwithlabel_packed",
-    "here_maps_api": "http://api.maps.nokia.com/2.2.4/jsl.js?with=maps"
+    "here_maps_api": "http://api.maps.nokia.com/2.2.4/jsl.js?with=maps",
+    "knockout": "lib/knockout-2.2.1"
   },
   shim: {
     "bootstrap": {
@@ -38,6 +39,7 @@ define('google_maps_api', ['async!http://maps.google.com/maps/api/js?v=3&sensor=
   return google;
 });
 
-require(['jquery', './mapcontainer', './navbar'], function($, mapContainer) {
+require(['jquery', 'knockout', 'bootstrap', './mapcontainer', './navbarModel'], function($, ko, bootstrap, mapContainer, NavbarModel) {
   mapContainer.initialize(require);
+  ko.applyBindings(new NavbarModel(), $('.navbar').get(0));
 });
