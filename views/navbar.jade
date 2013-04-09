@@ -17,4 +17,5 @@ header
               li
                 a(data-toggle="pill", href='#heremaps', data-bind='click: showMap') Here
             form.navbar-form.pull-right(id='searchForm', data-bind='submit: gotoWaypoint')
-              input.search-query.mile-marker-query(id='searchBox', type='text', data-bind='value: searchText', placeholder='go to mile marker')
+              // Have to update form elements after each keypress for IE: https://github.com/SteveSanderson/knockout/issues/760
+              input.search-query.mile-marker-query(id='searchBox', type='text', data-bind='value: searchText, valueUpdate: "afterkeydown"', placeholder='go to mile marker')
