@@ -35,7 +35,7 @@ define(["jquery", "/test/lib/Squire.js"], function($, Squire) {
           server = sinon.fakeServer.create();
 
           navbarModel.searchText("1234");
-          navbarModel.gotoWaypoint();
+          navbarModel.search();
 
           server.respond('/api/trails/pct/milemarkers/1234', responder);
           done();
@@ -60,5 +60,46 @@ define(["jquery", "/test/lib/Squire.js"], function($, Squire) {
         server.restore();
       });
     });
+
+    describe('Searching for latitude/longitude', function() {
+      before(function(done) {
+        initializeNavBar(function() {
+          navbarModel.searchText("39.1, -120.2");
+          navbarModel.search();
+          done();
+        });
+      });
+
+      it ('should center the map on the coordinates', function() {
+        expect(mapContainerStub.setCenterAndZoom.calledWithMatch({
+          center: {
+            latitude: 39.1,
+            longitude: -120.2
+          },
+          zoom: 14
+        })).to.be.ok;
+      });
+
+      it ('Should recognize all forms of latitude/longitude coordinates', function() {
+        expect('39,-120').to.match(navbarModel.coordinatesRegex);
+        expect('39, -120').to.match(navbarModel.coordinatesRegex);
+        expect('39.1234,  -120.5789').to.match(navbarModel.coordinatesRegex);
+        expect('-39.1234,120.5789').to.match(navbarModel.coordinatesRegex);
+
+        expect('foo').to.not.match(navbarModel.coordinatesRegex);
+        expect('1234').to.not.match(navbarModel.coordinatesRegex);
+        expect('1234.5').to.not.match(navbarModel.coordinatesRegex);
+      });
+
+      it ('Should correctly parse latitude/longitude coordinates', function() {
+        expect('39,-120'.match(navbarModel.numberRegex)).to.eql(['39', '-120']);
+        expect('39.1, -120.2'.match(navbarModel.numberRegex)).to.eql(['39.1', '-120.2']);
+      });
+
+      after(function() {
+        server.restore();
+      });
+    });
+
   });
 });

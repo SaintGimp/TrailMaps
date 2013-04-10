@@ -53,3 +53,11 @@ http://tobyho.com/2012/09/12/better-tdd-workflow-via-exclusive-tests-in-jasmine-
 
 *** Browser integration tests
 http://theycallmeswift.com/2012/05/01/excuse-me-thats-not-an-integration-test/
+
+*** Sublime Text
+http://blog.alexmaccaw.com/sublime-text
+
+*** Discourse
+http://blog.discourse.org/2013/04/discourse-as-your-first-rails-app/
+
+
