@@ -8,7 +8,8 @@ describe('Finding mile markers by area', function() {
   describe('when finding mile markers', function() {
     before(function(done){
       var options = {trailName: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 5};
-      mileMarkers.findByArea(options, function(err, data) {
+      mileMarkers.findByArea(options)
+      .done(function(data) {
         mileMarkerData = data;
         done();
       });
@@ -37,7 +38,8 @@ describe('Finding mile markers by area', function() {
   describe('when requesting more than the maximum detail', function() {
     before(function(done){
       var options = {trailName: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 20};
-      mileMarkers.findByArea(options, function(err, data) {
+      mileMarkers.findByArea(options)
+      .done(function(data) {
         mileMarkerData = data;
         done();
       });
@@ -54,7 +56,8 @@ describe('Finding mile markers by area', function() {
     before(function(done){
       fakeDataService.shouldErrorOnNextCall = true;
       var options = {trailName: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 20};
-      mileMarkers.findByArea(options, function(err, data) {
+      mileMarkers.findByArea(options)
+      .catch(function(err) {
         errorFromCall = err;
         done();
       });
@@ -71,8 +74,9 @@ describe('Finding a mile marker by value', function() {
 
   describe('when finding a mile marker', function() {
     before(function(done){
-      var options = {trailName: "pct", mile: 1234};
-      mileMarkers.findByValue(options, function(err, mileMarker) {
+      var options = { trailName: "pct", mile: 1234 };
+      mileMarkers.findByValue(options)
+      .done(function(mileMarker) {
         foundMileMarker = mileMarker;
         done();
       });

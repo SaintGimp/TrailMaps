@@ -1,12 +1,12 @@
 var fs = require("fs"),
   xml2js = require('xml2js'),
   mongoClient = require('mongodb').MongoClient,
-  async = require('async'),
+  Q = require('q'),
   dataService = require("../domain/dataService.js");
 
 var parser = new xml2js.Parser();
 
-var files = [
+var fileNames = [
   "data/pct_waypoints/ca_pct_waypoints/ca_pct_waypoints.gpx",
   "data/pct_waypoints/or_pct_waypoints/or_pct_waypoints.gpx",
   "data/pct_waypoints/wa_pct_waypoints/wa_pct_waypoints.gpx"
@@ -17,15 +17,17 @@ Array.prototype.append = function(array)
     this.push.apply(this, array);
 };
 
-function readFile(fileName, callback) {
+function readFile(fileName) {
   console.log('Reading ' + fileName);
-  fs.readFile(__dirname + "/../" + fileName, 'utf8', callback);
+  return Q.nfcall(fs.readFile, __dirname + "/../" + fileName, 'utf8');
 }
 
-function parseData(mileMarkers, waypointXml, callback) {
+function parseData(waypointXml) {
   console.log('Parsing data');
-  parser.parseString(waypointXml, function(err, waypointJson) {
-    console.log('Converting mile markers');
+
+  return Q.ninvoke(parser, 'parseString', waypointXml)
+  .then(function(waypointJson) {
+   console.log('Converting mile markers');
     var markerJson = waypointJson.gpx.wpt.filter(function(waypoint) {
       return waypoint.name[0].match(/^(?:\d{4}|\d{4}-\d)$/);
     });
@@ -36,30 +38,31 @@ function parseData(mileMarkers, waypointXml, callback) {
         mile: parseFloat(name)
       };
     });
-    mileMarkers.append(newMarkers);
-    callback(err);
+    return newMarkers;
   });
 }
 
-function addMarkerData(mileMarkers, fileName, callback) {
+function loadFile(fileName) {
   console.log('Adding mile marker data from ' + fileName);
-  async.waterfall([
-    async.apply(readFile, fileName),
-    async.apply(parseData, mileMarkers)
-    ],
-    callback
-  );
+
+  return readFile(fileName)
+  .then(parseData);
 }
 
 function loadMileMarkers(callback) {
   console.log('Loading mile marker files');
   var mileMarkers = [];
-  async.forEach(files,
-    async.apply(addMarkerData, mileMarkers),
-    function(err) {
-      callback(err, mileMarkers);
-    }
-  );
+
+  return Q.all(fileNames.map(function(fileName) {
+    return loadFile(fileName);
+  }))
+  .then(function (fileContentSet) {
+    fileContentSet.forEach(function(fileContent) {
+      mileMarkers.append(fileContent);
+    });
+
+    return mileMarkers;
+  });
 }
 
 function Collection(detailLevel) {
@@ -67,8 +70,9 @@ function Collection(detailLevel) {
   this.detailLevel = detailLevel;
 }
 
-function buildCollections(mileMarkers, callback) {
+function buildCollections(mileMarkers) {
   console.log('Building collections');
+
   var stride = 1;
   var collections = [];
   for (var detailLevel = 14; detailLevel >= 1; detailLevel--)
@@ -82,58 +86,37 @@ function buildCollections(mileMarkers, callback) {
     stride *= 2;
   }
 
-  callback(null, collections);
+  return collections;
 }
 
-function connect(callback) {
-  console.log('Connecting to database');
-  dataService.db(callback);
-}
-
-function writeCollection(db, collection, callback)
+function writeCollection(collection)
 {
   var collectionName = "pct_milemarkers" + collection.detailLevel;
   console.log('Writing collection ' + collectionName);
-  async.series([
-    function(callback) {
-      db.collection(collectionName).insert(collection.data, {w:0}, callback);
-    },
-    function(callback) {
-      db.collection(collectionName).ensureIndex({ loc: "2d" }, {w:0}, callback);
-    }],
-    callback
-  );
+
+  return dataService.collection(collectionName)
+  .then(function(mongoCollection) {
+    return Q.ninvoke(mongoCollection, 'insert', collection.data, {w:1})
+    .then(function() {
+      return Q.ninvoke(mongoCollection, 'ensureIndex', { loc: "2d" }, {w:1});
+    });
+  });
 }
 
-function writeCollections(collections, db, callback) {
-  console.log('Writing collections');
-  async.forEach(collections,
-    async.apply(writeCollection, db),
-    callback
-  );
-}
-
-function saveCollections(collections, callback) {
+function saveCollections(collections) {
   console.log('Saving collections');
-  async.waterfall([
-    connect,
-    async.apply(writeCollections, collections)
-    ],
-    callback
-  );
+  return Q.all(collections.map(function(collection) {
+    return writeCollection(collection);
+  }));
 }
 
 exports.import = function(callback) {
   console.log('Importing mile markers');
-  
-  async.waterfall([
-    loadMileMarkers,
-    buildCollections,
-    saveCollections
-    ],
-    function(err) {
-      console.log('Finished importing mile markers');
-      callback(err);
-    }
-  );
+
+  return loadMileMarkers()
+  .then(buildCollections)
+  .then(saveCollections)
+  .then(function() {
+    console.log('Finished importing mile markers');
+  });
 };

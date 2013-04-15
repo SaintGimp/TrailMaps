@@ -1,6 +1,5 @@
-var MongoClient = require('mongodb').MongoClient;
-var async = require('async');
-var connectedDb;
+var Q = require('Q');
+var QMongoDB = require('./q-mongodb');
 
 function getMongoUrl() {
   var mongo;
@@ -25,50 +24,34 @@ function getMongoUrl() {
   }
 }
 
-function connect(callback) {
-  if (connectedDb) {
-    callback(null, connectedDb);
-  } else {
-    var options = { server: { auto_reconnect: true } };
-    MongoClient.connect(getMongoUrl(), options, function(err, db) {
-      connectedDb = db;
-      callback(err, db);
+exports.collection = function(name) {
+  return QMongoDB.db(getMongoUrl())
+  .then(function(db) {
+    return QMongoDB.collection(db, name);
+  });
+};
+
+exports.collections = function() {
+  return QMongoDB.db(getMongoUrl())
+    .then(function(db) {
+      return Q.ninvoke(db, "collections");
     });
-  }
-}
+};
 
-function queryArray(collectionName, searchTerms, projection, sort, db, callback) {
-  db.collection(collectionName).find(searchTerms, projection).limit(2000).sort(sort).toArray(function (err, documents) {
-    if (err) { console.dir(err); }
-    callback(err, documents);
-  });
-}
-
-function queryOne(collectionName, searchTerms, projection, sort, db, callback) {
-  db.collection(collectionName).findOne(searchTerms, projection, function (err, document) {
-    if (err) { console.dir(err); }
-    callback(err, document);
-  });
-}
-
-exports.findArray = function(collectionName, searchTerms, projection, sort, callback) {
-  async.waterfall([
-    connect,
-    async.apply(queryArray, collectionName, searchTerms, projection, sort)
-    ],
-    callback
+exports.findArray = function(collectionName, searchTerms, projection, sort) {
+  return exports.collection(collectionName)
+  .then(
+    function(collection) {
+      return Q.ninvoke(collection.find(searchTerms, projection).limit(2000).sort(sort), 'toArray');
+    }
   );
 };
 
-exports.findOne = function(collectionName, searchTerms, projection, sort, callback) {
-  async.waterfall([
-    connect,
-    async.apply(queryOne, collectionName, searchTerms, projection, sort)
-    ],
-    callback
+exports.findOne = function(collectionName, searchTerms, projection, sort) {
+  return exports.collection(collectionName)
+  .then(
+    function(collection) {
+      return Q.ninvoke(collection, 'findOne', searchTerms, projection);
+    }
   );
-};
-
-exports.db = function(callback) {
-  connect(callback);
 };

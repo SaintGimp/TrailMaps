@@ -42,6 +42,10 @@ https:github.com/taitems/Aristo-jQuery-UI-Theme
 *** Promises
 http://ianbishop.github.com/blog/2013/01/13/escape-from-callback-hell/
 http://www.kendoui.com/blogs/teamblog/posts/13-03-28/what-is-the-point-of-promises.aspx
+http://wiki.commonjs.org/wiki/Promises/A
+https://github.com/kriskowal/q
+https://github.com/cujojs/when
+
 
 *** Testem, Require.JS, and other stuff
 http://net.tutsplus.com/tutorials/javascript-ajax/make-javascript-testing-fun-with-testem/
@@ -60,4 +64,11 @@ http://blog.alexmaccaw.com/sublime-text
 *** Discourse
 http://blog.discourse.org/2013/04/discourse-as-your-first-rails-app/
 
+*** iTerm
+http://90kts.com/2011/09/29/split-panes-and-remembered-sessions-in-iterm2/
+http://serverfault.com/questions/2746/how-do-i-launch-terminal-commands-into-multiple-tabs
+https://code.google.com/p/iterm2/wiki/AppleScript
+http://www.iterm2.com/#/section/faq
 
+*** Knockout
+https://chrome.google.com/webstore/detail/knockoutjs-context-debugg/oddcpmchholgcjgjdnfjmildmlielhof

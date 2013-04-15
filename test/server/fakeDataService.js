@@ -1,10 +1,12 @@
+var Q = require('Q');
+
 var lastCall;
 
 exports.getLastCall = function() { return lastCall; };
 
 exports.shouldErrorOnNextCall = false;
 
-exports.findArray = function(collectionName, searchTerms, projection, sortOrder, callback) {
+exports.findArray = function(collectionName, searchTerms, projection, sortOrder) {
   lastCall = {
     collectionName: collectionName,
     searchTerms: searchTerms,
@@ -19,14 +21,16 @@ exports.findArray = function(collectionName, searchTerms, projection, sortOrder,
       { loc: [3, 4] }
     ];
 
-    callback(null, dummyData);
+    return new Q(dummyData);
   } else {
-    exports.shouldErrorOnNextCall = false;
-    callback(new Error("Oops"), null);
+    return Q.fcall(function() {
+      exports.shouldErrorOnNextCall = false;
+      throw new Error("findArray Oops");
+    });
   }
 };
 
-exports.findOne = function(collectionName, searchTerms, projection, sortOrder, callback) {
+exports.findOne = function(collectionName, searchTerms, projection, sortOrder) {
   lastCall = {
     collectionName: collectionName,
     searchTerms: searchTerms,
@@ -41,9 +45,11 @@ exports.findOne = function(collectionName, searchTerms, projection, sortOrder, c
       name: "1234"
     };
 
-    callback(null, dummyData);
+    return new Q(dummyData);
   } else {
-    exports.shouldErrorOnNextCall = false;
-    callback(new Error("Oops"), null);
+    return Q.fcall(function() {
+      exports.shouldErrorOnNextCall = false;
+      throw new Error("findOne Oops");
+    });
   }
 };

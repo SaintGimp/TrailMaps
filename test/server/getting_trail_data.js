@@ -8,7 +8,8 @@ describe('Finding trail data by area', function() {
   describe('when finding trail data', function() {
     before(function(done) {
       var options = {trailName: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 5};
-      trails.findByArea(options, function(err, data) {
+      trails.findByArea(options)
+      .done(function(data) {
         trailData = data;
         done();
       });
@@ -33,7 +34,8 @@ describe('Finding trail data by area', function() {
     before(function(done) {
       fakeDataService.shouldErrorOnNextCall = true;
       var options = {trailName: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 20};
-      trails.findByArea(options, function(err, data) {
+      trails.findByArea(options)
+      .catch(function(err) {
         errorFromCall = err;
         done();
       });

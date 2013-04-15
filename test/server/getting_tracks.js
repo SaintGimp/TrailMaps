@@ -8,7 +8,8 @@ describe('Finding track data by area', function() {
   describe('when finding track data', function() {
     before(function(done){
       var options = {trailName: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 5};
-      tracks.findByArea(options, function(err, data) {
+      tracks.findByArea(options)
+      .done(function(data) {
         trackData = data;
         done();
       });
@@ -37,7 +38,8 @@ describe('Finding track data by area', function() {
   describe('when requesting more than the maximum detail', function() {
     before(function(done){
       var options = {trailName: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 20};
-      tracks.findByArea(options, function(err, data) {
+      tracks.findByArea(options)
+      .done(function(data) {
         trackData = data;
         done();
       });
@@ -54,7 +56,8 @@ describe('Finding track data by area', function() {
     before(function(done){
       fakeDataService.shouldErrorOnNextCall = true;
       var options = {trailName: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 20};
-      tracks.findByArea(options, function(err, data) {
+      tracks.findByArea(options)
+      .catch(function(err) {
         errorFromCall = err;
         done();
       });

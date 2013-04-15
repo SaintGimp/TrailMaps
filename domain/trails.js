@@ -1,3 +1,5 @@
+var Q = require('Q');
+
 var dataService;
 var tracks;
 var mileMarkers;
@@ -10,19 +12,14 @@ module.exports = function(dataServiceToUse)
   return exports;
 };
 
-exports.findByArea = function(options, callback) {
-  // TODO: we actually want to get track and mile markers in parallel
-  tracks.findByArea(options, function(err, trackData) {
-    if (err) {
-      callback(err, null);
-    } else {
-      mileMarkers.findByArea(options, function(err, markerData) {
-        if (err) { callback(err, null); }
-        callback(null, {
-          track: trackData,
-          mileMarkers: markerData
-        });
-      });
-    }
+exports.findByArea = function(options) {
+  var getTracks = tracks.findByArea(options);
+  var getMileMarkers = mileMarkers.findByArea(options);
+
+  return Q.spread([getTracks, getMileMarkers], function(trackData, markerData) {
+    return {
+        track: trackData,
+        mileMarkers: markerData
+    };
   });
 };

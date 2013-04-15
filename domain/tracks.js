@@ -1,3 +1,5 @@
+var Q = require('Q');
+
 var dataService;
 
 module.exports = function(dataServiceToUse)
@@ -21,8 +23,6 @@ exports.findByArea = function(options, callback) {
   };
   var projection = { _id: 0, loc: 1 };
   var sortOrder = { seq: 1 };
-  
-  dataService.findArray(collectionName, searchTerms, projection, sortOrder, function (err, documents) {
-    callback(err, documents);
-  });
+
+  return dataService.findArray(collectionName, searchTerms, projection, sortOrder);
 };

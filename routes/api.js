@@ -2,6 +2,7 @@ var dataService = require("../domain/dataService.js");
 var mileMarkers = require("../domain/mileMarkers.js")(dataService);
 var trails = require("../domain/trails.js")(dataService);
 var dataImporter = require("../data/dataimporter.js");
+var Q = require('Q');
 
 module.exports = function(app) {
   app.get('/api/trails/:trailName/milemarkers/:mile', exports.getMileMarker);
@@ -19,10 +20,13 @@ exports.getTrailData = function (req, res, next) {
     detailLevel: req.query.detail
   };
 
-  trails.findByArea(options, function(err, trailData) {
-    if (err) { next(err); }
-    res.json(trailData);
-  });
+  trails.findByArea(options)
+  .done(
+    function(trailData) {
+      res.json(trailData);
+    },
+    next
+  );
 };
 
 exports.getMileMarker = function (req, res, next) {
@@ -30,15 +34,22 @@ exports.getMileMarker = function (req, res, next) {
     trailName: req.params.trailName,
     mile: parseFloat(req.params.mile)
   };
-  mileMarkers.findByValue(options, function(err, waypoint) {
-    if (err) { next(err); }
-    res.json(waypoint);
-  });
+
+  mileMarkers.findByValue(options)
+  .done(
+    function(marker) {
+      res.json(marker);
+    },
+    next
+  );
 };
 
 exports.importdata = function (req, res, next) {
-  dataImporter.import(function(err) {
-    if (err) { next(err); }
-    res.json("success");
-  });
+  dataImporter.import()
+  .done(
+    function(marker) {
+      res.json("success");
+    },
+    next
+  );
 };

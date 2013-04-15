@@ -1,12 +1,12 @@
 var fs = require("fs"),
   xml2js = require('xml2js'),
-  mongoClient = require('mongodb').MongoClient,
-  async = require('async'),
+  Q = require('Q'),
   dataService = require("../domain/dataService.js");
+
 
 var parser = new xml2js.Parser();
 
-var files = [
+var fileNames = [
   "data/pct_tracks/ca_pct_tracks/ca_section_a_track.gpx",
   "data/pct_tracks/ca_pct_tracks/ca_section_b_track.gpx",
   "data/pct_tracks/ca_pct_tracks/ca_section_c_track.gpx",
@@ -48,47 +48,50 @@ Array.prototype.append = function(array)
     this.push.apply(this, array);
 };
 
-function readFile(fileName, callback) {
+function readFile(fileName) {
   console.log('Reading ' + fileName);
-  fs.readFile(__dirname + "/../" + fileName, 'utf8', callback);
+  return Q.nfcall(fs.readFile, __dirname + "/../" + fileName, 'utf8');
 }
 
-function parseData(track, trackXml, callback) {
+function parseData(trackXml) {
   console.log('Parsing data');
-  parser.parseString(trackXml, function(err, trackJson) {
+
+  return Q.ninvoke(parser, 'parseString', trackXml)
+  .then(function(trackJson) {
     console.log('Converting ' + trackJson.gpx.trk[0].name);
-    var trackPoints = trackJson.gpx.trk[0].trkseg[0].trkpt.map(function(point) {
+    return trackJson.gpx.trk[0].trkseg[0].trkpt.map(function(point) {
       return {
         loc: [parseFloat(point.$.lon), parseFloat(point.$.lat)], // MongoDB likes longitude first
       };
     });
-    track.append(trackPoints);
-    callback(err);
   });
 }
 
-function addTrackData(track, fileName, callback) {
+function loadFile(fileName) {
   console.log('Adding track data from ' + fileName);
-  async.waterfall([
-    async.apply(readFile, fileName),
-    async.apply(parseData, track)
-    ],
-    callback
-  );
+
+  return readFile(fileName)
+  .then(parseData);
 }
 
-function loadTrack(callback) {
+function loadTrack() {
   console.log('Loading track files');
   var track = [];
-  async.forEachSeries(files,
-    async.apply(addTrackData, track),
-    function(err) {
-      track.forEach(function(point, index) {
-        point.seq = index;
-      });
-      callback(err, track);
-    }
-  );
+
+  return Q.all(fileNames.map(function(fileName) {
+    return loadFile(fileName);
+  }))
+  .then(function (fileContentSet) {
+    fileContentSet.forEach(function(fileContent) {
+      track.append(fileContent);
+    });
+
+    track.forEach(function(point, index) {
+      point.seq = index;
+    });
+
+    return track;
+  });
 }
 
 function Collection(detailLevel) {
@@ -96,7 +99,7 @@ function Collection(detailLevel) {
   this.detailLevel = detailLevel;
 }
 
-function buildCollections(track, callback) {
+function buildCollections(track) {
   console.log('Building collections');
   var stride = 1;
   var collections = [];
@@ -111,58 +114,37 @@ function buildCollections(track, callback) {
     stride *= 2;
   }
 
-  callback(null, collections);
+  return collections;
 }
 
-function connect(callback) {
-  console.log('Connecting to database');
-  dataService.db(callback);
-}
-
-function writeCollection(db, collection, callback)
+function writeCollection(collection)
 {
   var collectionName = "pct_track" + collection.detailLevel;
   console.log('Writing collection ' + collectionName);
-  async.series([
-    function(callback) {
-      db.collection(collectionName).insert(collection.data, {w:1}, callback);
-    },
-    function(callback) {
-      db.collection(collectionName).ensureIndex({ loc: "2d" }, {w:1}, callback);
-    }],
-    callback
-  );
+
+  return dataService.collection(collectionName)
+  .then(function(mongoCollection) {
+    return Q.ninvoke(mongoCollection, 'insert', collection.data, {w:1})
+    .then(function() {
+      return Q.ninvoke(mongoCollection, 'ensureIndex', { loc: "2d" }, {w:1});
+    });
+  });
 }
 
-function writeCollections(collections, db, callback) {
-  console.log('Writing collections');
-  async.forEach(collections,
-    async.apply(writeCollection, db),
-    callback
-  );
-}
-
-function saveCollections(collections, callback) {
+function saveCollections(collections) {
   console.log('Saving collections');
-  async.waterfall([
-    connect,
-    async.apply(writeCollections, collections)
-    ],
-    callback
-  );
+  return Q.all(collections.map(function(collection) {
+    return writeCollection(collection);
+  }));
 }
 
-exports.import = function(callback) {
+exports.import = function() {
   console.log('Importing tracks');
-  
-  async.waterfall([
-    loadTrack,
-    buildCollections,
-    saveCollections
-    ],
-    function(err) {
-      console.log('Finished importing tracks');
-      callback(err);
-    }
-  );
+
+  return loadTrack()
+  .then(buildCollections)
+  .then(saveCollections)
+  .then(function() {
+    console.log('Finished importing tracks');
+  });
 };

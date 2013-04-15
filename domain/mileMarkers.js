@@ -1,3 +1,5 @@
+var Q = require('Q');
+
 var dataService;
 
 module.exports = function(dataServiceToUse)
@@ -25,19 +27,15 @@ exports.findByArea = function(options, callback) {
   };
   var projection = { _id: 0, loc: 1, mile: 1 };
   var sortOrder = { _id: 1 };
-  
-  dataService.findArray(collectionName, searchTerms, projection, sortOrder, function (err, documents) {
-    callback(err, documents);
-  });
+
+  return dataService.findArray(collectionName, searchTerms, projection, sortOrder);
 };
 
-exports.findByValue = function(options, callback) {
+exports.findByValue = function(options) {
   var collectionName = makeCollectionName(options.trailName, maxDetailevel);
   var searchTerms = { mile: options.mile };
   var projection = { _id: 0, loc: 1, mile: 1 };
   var sortOrder = { _id: 1 };
-  
-  dataService.findOne(collectionName, searchTerms, projection, sortOrder, function (err, document) {
-    callback(err, document);
-  });
+
+  return dataService.findOne(collectionName, searchTerms, projection, sortOrder);
 };
