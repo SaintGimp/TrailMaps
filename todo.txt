@@ -16,13 +16,11 @@ User stories:
 - Refreshing the page stays on the same engine
 
 Engineering tasks:
-* Run client tests in Grunt
-- Standardize on one assert library for server and client (Chai?)
+* Standardize on one assert library for server and client (Chai?)
 - Write a Grunt task that verifies that we have all client tests wired up in Testem
 - Implement server-side integration testing
 - Here still sometimes gets used before totally loaded
 - Requesting bad URL or using bad verb just hangs, need to return 404
-- Mile markers on default zoom seem to have a hiccup at California/Oregon border
 - Document components that need to be installed globally (node, mongo, grunt, testem, etc.)
 
 To Do on current task:
