@@ -1,4 +1,4 @@
-var Q = require('Q');
+var Q = require('q');
 var trackImporter = require('./trackimporter.js');
 var mileMarkerImporter = require('./milemarkerimporter.js');
 var dataService = require("../domain/dataService.js");

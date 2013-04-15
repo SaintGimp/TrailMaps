@@ -1,6 +1,6 @@
 var fs = require("fs"),
   xml2js = require('xml2js'),
-  Q = require('Q'),
+  Q = require('q'),
   dataService = require("../domain/dataService.js");
 
 

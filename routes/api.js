@@ -2,7 +2,7 @@ var dataService = require("../domain/dataService.js");
 var mileMarkers = require("../domain/mileMarkers.js")(dataService);
 var trails = require("../domain/trails.js")(dataService);
 var dataImporter = require("../data/dataimporter.js");
-var Q = require('Q');
+var Q = require('q');
 
 module.exports = function(app) {
   app.get('/api/trails/:trailName/milemarkers/:mile', exports.getMileMarker);
