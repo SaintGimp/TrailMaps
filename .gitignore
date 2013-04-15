@@ -13,6 +13,7 @@ pids
 logs
 results
 
+tests.tap
 npm-debug.log
 
 node_modules/mongodb/node_modules/bson/build/Release/*

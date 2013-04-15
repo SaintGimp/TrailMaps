@@ -23,6 +23,7 @@ Engineering tasks:
 - Here still sometimes gets used before totally loaded
 - Requesting bad URL or using bad verb just hangs, need to return 404
 - Mile markers on default zoom seem to have a hiccup at California/Oregon border
+- Document components that need to be installed globally (node, mongo, grunt, testem, etc.)
 
 To Do on current task:
 
