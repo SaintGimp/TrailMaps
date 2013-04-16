@@ -1,4 +1,6 @@
-var should = require('should');
+/*jshint expr:true*/
+
+var expect = require('chai').expect;
 var fakeDataService = require('./fakeDataService');
 var mileMarkers = require('../../domain/milemarkers')(fakeDataService);
 
@@ -16,22 +18,22 @@ describe('Finding mile markers by area', function() {
     });
 
     it('should get mile marker data from the service', function() {
-      mileMarkerData.should.have.length(2);
+      expect(mileMarkerData).to.have.length(2);
     });
 
     it('should get data from the collection corresponding to the trail name', function() {
-      fakeDataService.getLastCall().collectionName.should.match(/^pct_milemarkers\d+$/);
+      expect(fakeDataService.getLastCall().collectionName).to.match(/^pct_milemarkers\d+$/);
     });
 
     it('should get data from the collection corresponding to the detail level', function() {
-      fakeDataService.getLastCall().collectionName.should.match(/.*5$/);
+      expect(fakeDataService.getLastCall().collectionName).to.match(/.*5$/);
     });
 
     it('should get data for the specified geographic area', function() {
-      fakeDataService.getLastCall().searchTerms.loc.$within.$box[0][0].should.equal(-125);
-      fakeDataService.getLastCall().searchTerms.loc.$within.$box[0][1].should.equal(32);
-      fakeDataService.getLastCall().searchTerms.loc.$within.$box[1][0].should.equal(-110);
-      fakeDataService.getLastCall().searchTerms.loc.$within.$box[1][1].should.equal(50);
+      expect(fakeDataService.getLastCall().searchTerms.loc.$within.$box[0][0]).to.equal(-125);
+      expect(fakeDataService.getLastCall().searchTerms.loc.$within.$box[0][1]).to.equal(32);
+      expect(fakeDataService.getLastCall().searchTerms.loc.$within.$box[1][0]).to.equal(-110);
+      expect(fakeDataService.getLastCall().searchTerms.loc.$within.$box[1][1]).to.equal(50);
     });
   });
 
@@ -46,7 +48,7 @@ describe('Finding mile markers by area', function() {
     });
 
     it('should get mile markers from the the collection corresponding to the maximum available detail level', function() {
-      fakeDataService.getLastCall().collectionName.should.match(/.*14$/);
+      expect(fakeDataService.getLastCall().collectionName).to.match(/.*14$/);
     });
   });
 
@@ -64,7 +66,7 @@ describe('Finding mile markers by area', function() {
     });
 
     it('should propagate the error', function() {
-      should.exist(errorFromCall);
+      expect(errorFromCall).to.exist;
     });
   });
 });
@@ -83,19 +85,19 @@ describe('Finding a mile marker by value', function() {
     });
 
     it('should get a mile marker from the service', function() {
-      should.exist(foundMileMarker);
+      expect(foundMileMarker).to.exist;
     });
 
     it('should get the mile marker from the collection corresponding to the trail name', function() {
-      fakeDataService.getLastCall().collectionName.should.match(/^pct_milemarkers\d+$/);
+      expect(fakeDataService.getLastCall().collectionName).to.match(/^pct_milemarkers\d+$/);
     });
 
     it('should get the mile marker from the maximum detail level collection', function() {
-      fakeDataService.getLastCall().collectionName.should.match(/.*14$/);
+      expect(fakeDataService.getLastCall().collectionName).to.match(/.*14$/);
     });
 
     it('should get the mile marker by value', function() {
-      fakeDataService.getLastCall().searchTerms.mile.should.equal(1234);
+      expect(fakeDataService.getLastCall().searchTerms.mile).to.equal(1234);
     });
   });
 });

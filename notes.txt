@@ -69,6 +69,7 @@ http://90kts.com/2011/09/29/split-panes-and-remembered-sessions-in-iterm2/
 http://serverfault.com/questions/2746/how-do-i-launch-terminal-commands-into-multiple-tabs
 https://code.google.com/p/iterm2/wiki/AppleScript
 http://www.iterm2.com/#/section/faq
+http://hints.macworld.com/article.php?story=20070409141256538
 
 *** Knockout
 https://chrome.google.com/webstore/detail/knockoutjs-context-debugg/oddcpmchholgcjgjdnfjmildmlielhof

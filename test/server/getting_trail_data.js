@@ -1,4 +1,6 @@
-var should = require('should');
+/*jshint expr:true*/
+
+var expect = require('chai').expect;
 var fakeDataService = require('./fakeDataService');
 var trails = require('../../domain/trails')(fakeDataService);
 
@@ -16,15 +18,15 @@ describe('Finding trail data by area', function() {
     });
 
     it('should get trail data from the service', function() {
-      should.exist(trailData);
+      expect(trailData).to.exist;
     });
 
     it('should include track data', function() {
-      trailData.track.should.have.length(2);
+      expect(trailData.track).to.have.length(2);
     });
 
     it('should include mile marker data', function() {
-      trailData.mileMarkers.should.have.length(2);
+      expect(trailData.mileMarkers).to.have.length(2);
     });
   });
 
@@ -42,7 +44,7 @@ describe('Finding trail data by area', function() {
     });
 
     it('should propagate the error', function() {
-      should.exist(errorFromCall);
+      expect(errorFromCall).to.exist;
     });
   });
 });

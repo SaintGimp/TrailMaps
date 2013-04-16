@@ -1,4 +1,6 @@
-var should = require('should');
+/*jshint expr:true*/
+
+var expect = require('chai').expect;
 var fakeDataService = require('./fakeDataService');
 var tracks = require('../../domain/tracks')(fakeDataService);
 
@@ -16,22 +18,22 @@ describe('Finding track data by area', function() {
     });
 
     it('should get track data from the service', function() {
-      trackData.should.have.length(2);
+      expect(trackData).to.have.length(2);
     });
 
     it('should get data from the collection corresponding to the trail name', function() {
-      fakeDataService.getLastCall().collectionName.should.match(/^pct_track\d+$/);
+      expect(fakeDataService.getLastCall().collectionName).to.match(/^pct_track\d+$/);
     });
 
     it('should get data from the collection corresponding to the detail level', function() {
-      fakeDataService.getLastCall().collectionName.should.match(/.*5$/);
+      expect(fakeDataService.getLastCall().collectionName).to.match(/.*5$/);
     });
 
     it('should get data for the specified geographic area', function() {
-      fakeDataService.getLastCall().searchTerms.loc.$within.$box[0][0].should.equal(-125);
-      fakeDataService.getLastCall().searchTerms.loc.$within.$box[0][1].should.equal(32);
-      fakeDataService.getLastCall().searchTerms.loc.$within.$box[1][0].should.equal(-110);
-      fakeDataService.getLastCall().searchTerms.loc.$within.$box[1][1].should.equal(50);
+      expect(fakeDataService.getLastCall().searchTerms.loc.$within.$box[0][0]).to.equal(-125);
+      expect(fakeDataService.getLastCall().searchTerms.loc.$within.$box[0][1]).to.equal(32);
+      expect(fakeDataService.getLastCall().searchTerms.loc.$within.$box[1][0]).to.equal(-110);
+      expect(fakeDataService.getLastCall().searchTerms.loc.$within.$box[1][1]).to.equal(50);
     });
   });
 
@@ -46,7 +48,7 @@ describe('Finding track data by area', function() {
     });
 
     it('should get data from the the collection corresponding to the maximum available detail level', function() {
-      fakeDataService.getLastCall().collectionName.should.match(/.*16$/);
+      expect(fakeDataService.getLastCall().collectionName).to.match(/.*16$/);
     });
   });
 
@@ -64,7 +66,7 @@ describe('Finding track data by area', function() {
     });
 
     it('should propagate the error', function() {
-      should.exist(errorFromCall);
+      expect(errorFromCall).to.exist;
     });
   });
 });
