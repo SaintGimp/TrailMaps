@@ -1,4 +1,4 @@
-define(['trailmaps'], function(trailmaps) {
+define(['q', 'trailmaps'], function(Q, trailmaps) {
   function FakeMap() {
     var self = this;
     self.container = undefined;
@@ -8,13 +8,13 @@ define(['trailmaps'], function(trailmaps) {
     self.trackData = undefined;
     self.mileMarkerData = undefined;
 
-    self.initialize = function(container, center, zoomLevel, onViewChanged, callback) {
+    self.initialize = function(container, center, zoomLevel, onViewChanged) {
       self.container = container;
       self.center = center;
       self.zoom = zoomLevel;
       self.viewChangedHandler = onViewChanged;
 
-      callback();
+      return new Q();
     };
 
     self.displayTrack = function(track) {

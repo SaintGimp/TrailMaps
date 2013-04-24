@@ -1,4 +1,4 @@
-define(['trailmaps', 'bing_maps_api'], function(trailmaps, Microsoft) {
+define(['q', 'trailmaps', 'bing_maps_api'], function(Q, trailmaps, Microsoft) {
   var bingMap;
   var previousPolyLine;
   var previousMileMarkerCollection;
@@ -9,7 +9,9 @@ define(['trailmaps', 'bing_maps_api'], function(trailmaps, Microsoft) {
       '<text x="22" y="12" fill="white" style="font-size:14;font-family:arial;font-weight:bold">%MILE%</text>' +
     '</svg>';
 
-  function initialize(container, center, zoomLevel, onViewChanged, callback) {
+  function initialize(container, center, zoomLevel, onViewChanged) {
+    var deferred = Q.defer();
+
     // http://msdn.microsoft.com/en-us/library/gg427609.aspx
     Microsoft.Maps.loadModule('Microsoft.Maps.Themes.BingTheme', { callback: function() {
       bingMap = new Microsoft.Maps.Map(container, {
@@ -27,8 +29,10 @@ define(['trailmaps', 'bing_maps_api'], function(trailmaps, Microsoft) {
 
       Microsoft.Maps.Events.addHandler(bingMap, 'viewchangeend', onViewChanged);
 
-      callback();
+      deferred.resolve();
     }});
+
+    return deferred.promise;
   }
 
   function displayTrack(track) {

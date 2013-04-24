@@ -10,7 +10,8 @@ requirejs.config({
     "async": "lib/async",
     "markerwithlabel": "lib/markerwithlabel_packed",
     "here_maps_api": "http://api.maps.nokia.com/2.2.4/jsl.js?with=maps",
-    "knockout": "lib/knockout-2.2.1"
+    "knockout": "lib/knockout-2.2.1",
+    "q": "lib/q"
   },
   shim: {
     "bootstrap": {

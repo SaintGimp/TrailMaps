@@ -1,6 +1,6 @@
 /*global define: false*/
 
-define(['trailmaps', 'here_maps_api'], function(trailmaps, nokia) {
+define(['q', 'trailmaps', 'here_maps_api'], function(Q, trailmaps, nokia) {
   // TODO: check out http://jhere.net/
   var hereMap;
   var previousPolyLine;
@@ -12,7 +12,9 @@ define(['trailmaps', 'here_maps_api'], function(trailmaps, nokia) {
       '<text x="22" y="12" fill="white" style="font-size:15;font-family:arial;font-weight:bold">%MILE%</text>' +
     '</svg>';
 
-  function initialize(container, center, zoomLevel, onViewChanged, callback) {
+  function initialize(container, center, zoomLevel, onViewChanged) {
+    var deferred = Q.defer();
+
     nokia.Settings.set("appId", "63ii-nsJjiF97C-K3jqU");
     nokia.Settings.set("authenticationToken", "FTtFzF5jfEr7iRYgv6tEgg");
 
@@ -34,8 +36,10 @@ define(['trailmaps', 'here_maps_api'], function(trailmaps, nokia) {
 
       hereMap.addListener("mapviewchangeend", onViewChanged, true);
 
-      callback();
+      deferred.resolve();
     });
+
+    return deferred.promise;
   }
 
   function displayTrack(track) {

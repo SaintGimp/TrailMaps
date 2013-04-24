@@ -29,7 +29,8 @@ define(['jquery', 'trailmaps'], function($, trailmaps) {
         requireFunc([moduleName], function(createdControl) {
           self.control = createdControl;
           var container = $("#" + moduleName)[0];
-          self.control.initialize(container, currentView.center, currentView.zoom, onViewChanged, function() {
+          self.control.initialize(container, currentView.center, currentView.zoom, onViewChanged)
+          .then(function() {
             callback(self.control, true);
           });
         });
