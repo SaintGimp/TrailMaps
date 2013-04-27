@@ -50,7 +50,7 @@ function loadFile(fileName) {
   .then(parseData);
 }
 
-function loadMileMarkers(callback) {
+function loadMileMarkers() {
   console.log('Loading mile marker files');
   var mileMarkers = [];
 
@@ -115,7 +115,7 @@ function saveCollections(collections) {
   }));
 }
 
-exports.import = function(callback) {
+exports.import = function() {
   console.log('Importing mile markers');
 
   return loadMileMarkers()

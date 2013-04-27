@@ -15,7 +15,7 @@ function makeCollectionName(trailName, detailLevel) {
   return trailName + "_milemarkers" + detailLevel;
 }
 
-exports.findByArea = function(options, callback) {
+exports.findByArea = function(options) {
   var effectiveDetailLevel = Math.min(options.detailLevel, maxDetailevel);
   var collectionName = makeCollectionName(options.trailName, effectiveDetailLevel);
   var searchTerms = {

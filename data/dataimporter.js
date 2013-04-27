@@ -8,7 +8,7 @@ function dropCollection(collection) {
   return Q.ninvoke(collection, 'drop');
 }
 
-function dropCollections(db, collectionsToDelete, callback) {
+function dropCollections(db, collectionsToDelete) {
   console.log('Dropping collections');
 
   return dataService.collections()
