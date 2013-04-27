@@ -19,7 +19,8 @@ define(['jquery', 'mapcontainer', 'knockout'], function($, mapContainer, ko) {
       // TODO: We used to have to force tabs to be shown here before Google got inited otherwise
       // it would freak out. That seems to be no longer the case after implementing require.js,
       // but I'm not sure if it works only due to timing or what.  Keep on eye on this.
-      mapContainer.showingMap(event.target.hash);
+      mapContainer.showingMap(event.target.hash)
+      .done();
     };
 
     self.coordinatesRegex = /^-?\d*\.?\d+,\s*-?\d*\.?\d+$/;

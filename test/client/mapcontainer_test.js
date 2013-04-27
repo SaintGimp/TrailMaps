@@ -59,7 +59,8 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
     });
     injector.require(['mapcontainer'], function(newMapContainer) {
       mapContainer = newMapContainer;
-      mapContainer.initialize(mockedRequire, function() {
+      mapContainer.initialize(mockedRequire)
+      .done(function() {
         done();
       });
     });
@@ -133,7 +134,8 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
     describe('Switching to another map type', function() {
       before(function(done) {
         initialize(function() {
-          mapContainer.showingMap('#googlemaps', function() {
+          mapContainer.showingMap('#googlemaps')
+          .done(function() {
             server.respond();
             done();
           });
@@ -246,7 +248,8 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
             center: fakeBingMaps.getCenter(),
             zoom: fakeBingMaps.getZoom() + 1
           });
-          mapContainer.showingMap('#googlemaps', function() {
+          mapContainer.showingMap('#googlemaps')
+          .done(function() {
             server.respond();
             done();
           });
@@ -273,12 +276,15 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
     describe('Switching to an already-loaded map type after changing view', function() {
       before(function(done) {
         initialize(function() {
-          mapContainer.showingMap('#googlemaps', function() {
+          mapContainer.showingMap('#googlemaps')
+          .then(function() {
             fakeGoogleMaps.setCenterAndZoom({
               center: fakeGoogleMaps.getCenter(),
               zoom: fakeGoogleMaps.getZoom() + 1
             });
-            mapContainer.showingMap('#bingmaps', function() {
+          }).done(function() {
+            mapContainer.showingMap('#bingmaps')
+            .done(function() {
               server.respond();
               done();
             });

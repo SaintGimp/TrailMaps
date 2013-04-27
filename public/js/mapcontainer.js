@@ -1,6 +1,6 @@
 /*global define: false*/
 
-define(['jquery', 'trailmaps'], function($, trailmaps) {
+define(['q', 'jquery', 'trailmaps'], function(Q, $, trailmaps) {
   var activeMap;
   var defaultCenter = new trailmaps.Location(40.50642708521896, -121.36087699433327);
   var defaultZoomLevel = 5;
@@ -20,23 +20,27 @@ define(['jquery', 'trailmaps'], function($, trailmaps) {
 
     self.moduleName = moduleName;
 
-    self.getControl = function(callback) {
+    self.getControl = function() {
       // We lazy-create the map controls so that a) we don't do an expensive init if the user
       // never clicks over to that tab, and b) some of them (Google, I'm looking at you) won't
       // init properly when their div is hidden, so we have to wait until it becomes visible
       // to do the init.
+      var deferred = Q.defer();
+
       if (!self.control) {
         requireFunc([moduleName], function(createdControl) {
           self.control = createdControl;
           var container = $("#" + moduleName)[0];
           self.control.initialize(container, currentView.center, currentView.zoom, onViewChanged)
           .then(function() {
-            callback(self.control, true);
+            deferred.resolve({ control: self.control, isNew: true });
           });
         });
       } else {
-        callback(self.control, false);
+        deferred.resolve({ control: self.control, isNew: false });
       }
+
+      return deferred.promise;
     };
   }
 
@@ -46,26 +50,23 @@ define(['jquery', 'trailmaps'], function($, trailmaps) {
     "#heremaps": new Map('heremaps'),
   };
 
-  function initialize(suppliedRequireFunc, callback) {
+  function initialize(suppliedRequireFunc) {
     requireFunc = suppliedRequireFunc;
-    showingMap('#bingmaps', function() {
-      if (callback) {
-        callback();
-      }
-    });
+    return showingMap('#bingmaps');
   }
 
   function setCenterAndZoom(options) {
     activeMap.setCenterAndZoom(options);
   }
 
-  function showingMap(mapHash, callback) {
-    maps[mapHash].getControl(function(control, isNew) {
-      activeMap = control;
+  function showingMap(mapHash) {
+    return maps[mapHash].getControl()
+    .then(function(data) {
+      activeMap = data.control;
 
       if (!currentTrailData) {
         loadTrail();
-      } else if (isNew) {
+      } else if (data.isNew) {
         displayTrail();
       } else {
         var newView = activeMap.getCenterAndZoom();
@@ -73,10 +74,6 @@ define(['jquery', 'trailmaps'], function($, trailmaps) {
           activeMap.setCenterAndZoom(currentView);
           displayTrail();
         }
-      }
-
-      if (callback) {
-        callback();
       }
     });
   }

@@ -41,6 +41,7 @@ define('google_maps_api', ['async!http://maps.google.com/maps/api/js?v=3&sensor=
 });
 
 require(['jquery', 'knockout', 'bootstrap', './mapcontainer', './navbarModel'], function($, ko, bootstrap, mapContainer, NavbarModel) {
-  mapContainer.initialize(require);
+  mapContainer.initialize(require)
+  .done();
   ko.applyBindings(new NavbarModel(), $('.navbar').get(0));
 });
