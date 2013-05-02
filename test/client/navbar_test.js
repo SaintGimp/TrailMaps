@@ -32,6 +32,11 @@ define(["jquery", "/test/lib/Squire.js"], function($, Squire) {
     request.respond(200, { "Content-Type": "application/json" }, 'null');
   }
 
+  function typeaheadResponder(request, trail, queryString) {
+    numberOfServerRequests++;
+    request.respond(200, { "Content-Type": "application/json" }, '["foo", "bar"]');
+  }
+
   describe('Nav bar', function() {
     describe('Searching for mile markers', function() {
       before(function(done) {
@@ -192,5 +197,80 @@ define(["jquery", "/test/lib/Squire.js"], function($, Squire) {
         server.restore();
       });
     });
+
+    describe('Querying for a waypoint typeahead list', function() {
+      var typeaheadData;
+
+      before(function(done) {
+        initializeNavBar(function() {
+          numberOfServerRequests = 0;
+          server = sinon.fakeServer.create();
+
+          navbarModel.waypointTypeaheadSource("foo", function(data) {
+            typeaheadData = data;
+          });
+
+          server.respond('/api/trails/pct/waypoints/typeahead/foo', typeaheadResponder);
+          done();
+        });
+      });
+
+      it ('should get the typeahead list from the server', function() {
+        expect(numberOfServerRequests).to.equal(1);
+      });
+
+      it ('should process the typeahead list', function() {
+        expect(typeaheadData).to.eql(["foo", "bar"]);
+      });
+
+      after(function() {
+        server.restore();
+      });
+    });
+
+    describe('Querying for a waypoint typeahead list with non-waypoint text', function() {
+      before(function(done) {
+        initializeNavBar(function() {
+          numberOfServerRequests = 0;
+          server = sinon.fakeServer.create();
+
+          navbarModel.waypointTypeaheadSource("1234");
+
+          server.respond('/api/trails/pct/waypoints/typeahead/1234', typeaheadResponder);
+          done();
+        });
+      });
+
+      it ('should not try to get the typeahead list from the server', function() {
+        expect(numberOfServerRequests).to.equal(0);
+      });
+
+      after(function() {
+        server.restore();
+      });
+    });
+
+    describe('Selecting a typeahead item', function() {
+      before(function(done) {
+        initializeNavBar(function() {
+          numberOfServerRequests = 0;
+          server = sinon.fakeServer.create();
+
+          navbarModel.waypointTypeaheadUpdater("foo");
+
+          server.respond('/api/trails/pct/waypoints/foo', responder);
+          done();
+        });
+      });
+
+      it ('should get the waypoint from the server', function() {
+        expect(numberOfServerRequests).to.equal(1);
+      });
+
+      after(function() {
+        server.restore();
+      });
+    });
+
   });
 });

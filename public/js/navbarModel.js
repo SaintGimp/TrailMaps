@@ -26,6 +26,21 @@ define(['jquery', 'mapcontainer', 'knockout'], function($, mapContainer, ko) {
       .done();
     };
 
+    self.waypointTypeaheadSource = function(query, process) {
+      if (isWaypoint(query)) {
+        var url = "/api/trails/pct/waypoints/typeahead/" + encodeURIComponent(query);
+        return $.getJSON(url, null, function (data) {
+         return process(data);
+        });
+      }
+    };
+
+    self.waypointTypeaheadUpdater = function(item) {
+      self.searchText(item);
+      self.search();
+      return item;
+    };
+
     self.coordinatesRegex = /^-?\d*\.?\d+,\s*-?\d*\.?\d+$/;
     self.numberRegex = /-?\d*\.?\d+/g;
     self.mileMarkerRegex = /^\d*\.?\d?$/;
@@ -77,6 +92,10 @@ define(['jquery', 'mapcontainer', 'knockout'], function($, mapContainer, ko) {
 
     function isMileMarker(text) {
       return text.match(self.mileMarkerRegex);
+    }
+
+    function isWaypoint(text) {
+      return !isCoordinates(text) && !isMileMarker(text);
     }
   };
 });

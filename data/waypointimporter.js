@@ -23,6 +23,12 @@ function readFile(fileName) {
   return Q.nfcall(fs.readFile, __dirname + "/../" + fileName, 'utf8');
 }
 
+function cleanupName(name) {
+  var namePart = name.split(" - ")[0];
+  var majorNamePart = namePart.split(",")[0];
+  return majorNamePart;
+}
+
 function parseData(waypointXml) {
   console.log('Parsing data');
 
@@ -34,7 +40,7 @@ function parseData(waypointXml) {
     });
     var newWaypoints = filteredWaypointJson.map(function(waypoint) {
       return {
-        name: waypoint.desc[0],
+        name: cleanupName(waypoint.desc[0]),
         loc: [parseFloat(waypoint.$.lon), parseFloat(waypoint.$.lat)] // MongoDB likes longitude first
       };
     });

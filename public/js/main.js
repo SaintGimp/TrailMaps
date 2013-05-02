@@ -43,5 +43,12 @@ define('google_maps_api', ['async!http://maps.google.com/maps/api/js?v=3&sensor=
 require(['jquery', 'knockout', 'bootstrap', './mapcontainer', './navbarModel'], function($, ko, bootstrap, mapContainer, NavbarModel) {
   mapContainer.initialize(require)
   .done();
-  ko.applyBindings(new NavbarModel(), $('.navbar').get(0));
+  var navbarModel = new NavbarModel();
+  ko.applyBindings(navbarModel, $('.navbar').get(0));
+  // TODO: Not sure this is the best place to wire this up but I don't see any better options at the moment
+  $('#searchBox').typeahead({
+    source: navbarModel.waypointTypeaheadSource,
+    updater: navbarModel.waypointTypeaheadUpdater,
+    minLength: 3
+  });
 });

@@ -7,6 +7,7 @@ var Q = require('q');
 
 module.exports = function(app) {
   app.get('/api/trails/:trailName/milemarkers/:mile', exports.getMileMarker);
+  app.get('/api/trails/:trailName/waypoints/typeahead/:text', exports.getWaypointTypeaheadList);
   app.get('/api/trails/:trailName/waypoints/:name', exports.getWaypoint);
   app.get('/api/trails/:trailName', exports.getTrailData);
   app.post('/api/admin/importdata', exports.importdata);
@@ -41,6 +42,21 @@ exports.getMileMarker = function (req, res, next) {
   .done(
     function(marker) {
       res.json(marker);
+    },
+    next
+  );
+};
+
+exports.getWaypointTypeaheadList = function (req, res, next) {
+  var options = {
+    trailName: req.params.trailName,
+    text: req.params.text
+  };
+
+  waypoints.getTypeaheadList(options)
+  .done(
+    function(waypointNames) {
+      res.json(waypointNames);
     },
     next
   );

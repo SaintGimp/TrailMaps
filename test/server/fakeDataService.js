@@ -17,8 +17,8 @@ exports.findArray = function(collectionName, searchTerms, projection, sortOrder)
   if (!exports.shouldErrorOnNextCall)
   {
     var dummyData = [
-      { loc: [1, 2] },
-      { loc: [3, 4] }
+      { name: "foo", loc: [1, 2] },
+      { name: "bar", loc: [3, 4] }
     ];
 
     return new Q(dummyData);
