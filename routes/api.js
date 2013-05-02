@@ -1,11 +1,13 @@
 var dataService = require("../domain/dataService.js");
 var mileMarkers = require("../domain/mileMarkers.js")(dataService);
+var waypoints = require("../domain/waypoints.js")(dataService);
 var trails = require("../domain/trails.js")(dataService);
 var dataImporter = require("../data/dataimporter.js");
 var Q = require('q');
 
 module.exports = function(app) {
   app.get('/api/trails/:trailName/milemarkers/:mile', exports.getMileMarker);
+  app.get('/api/trails/:trailName/waypoints/:name', exports.getWaypoint);
   app.get('/api/trails/:trailName', exports.getTrailData);
   app.post('/api/admin/importdata', exports.importdata);
 };
@@ -39,6 +41,21 @@ exports.getMileMarker = function (req, res, next) {
   .done(
     function(marker) {
       res.json(marker);
+    },
+    next
+  );
+};
+
+exports.getWaypoint = function (req, res, next) {
+  var options = {
+    trailName: req.params.trailName,
+    name: req.params.name
+  };
+
+  waypoints.findByName(options)
+  .done(
+    function(waypoint) {
+      res.json(waypoint);
     },
     next
   );
