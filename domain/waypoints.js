@@ -14,7 +14,7 @@ function makeCollectionName(trailName) {
 
 exports.findByName = function(options) {
   var collectionName = makeCollectionName(options.trailName);
-  var searchTerms = { name: options.name };
+  var searchTerms = { name: new RegExp("^" + options.name, "i") };
   var projection = { _id: 0, name: 1, loc: 1 };
   var sortOrder = { _id: 1 };
 

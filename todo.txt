@@ -12,12 +12,11 @@ Features:
 - Allow users to add custom waypoints
 
 User stories:
-* User can go to waypoints by name (allow partial matches or not?)
-- User sees autocomplete waypoint names in search box
+* User sees autocomplete waypoint names in search box
 
 To Do on current task:
-* Implement server API to look up waypoints by name
-- Test text in search box and look up mile marker if number or waypoint if text
+* Implement typeahead data source in server
+- Configure search box for typeahead
 
 Engineering tasks:
 - Write a Grunt task that verifies that we have all client tests wired up in Testem

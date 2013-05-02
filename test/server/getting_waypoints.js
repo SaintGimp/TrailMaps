@@ -22,11 +22,12 @@ describe('Finding a waypoint by name', function() {
     });
 
     it('should get the waypoint from the collection corresponding to the trail name', function() {
-      expect(fakeDataService.getLastCall().collectionName).to.eql('pct_waypoints');
+      expect(fakeDataService.getLastCall().collectionName).to.equal("pct_waypoints");
     });
 
-    it('should get the mile marker by value', function() {
-      expect(fakeDataService.getLastCall().searchTerms.name).to.equal("waypoint");
+    it('should get a waypoint whos name starts with the search text', function() {
+      expect(fakeDataService.getLastCall().searchTerms.name.source).to.equal("^waypoint");
+      expect(fakeDataService.getLastCall().searchTerms.name.ignoreCase).to.be.ok;
     });
   });
 });

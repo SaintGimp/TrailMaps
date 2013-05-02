@@ -10,9 +10,12 @@ define(['jquery', 'mapcontainer', 'knockout'], function($, mapContainer, ko) {
       var searchText = self.searchText();
       if (isCoordinates(searchText)) {
         gotoCoordinates(searchText);
-      } else {
+      } else if (isMileMarker(searchText)) {
         gotoMileMarker(searchText);
+      } else {
+        gotoWaypoint(searchText);
       }
+
     };
 
     self.showMap = function(data, event) {
@@ -24,8 +27,8 @@ define(['jquery', 'mapcontainer', 'knockout'], function($, mapContainer, ko) {
     };
 
     self.coordinatesRegex = /^-?\d*\.?\d+,\s*-?\d*\.?\d+$/;
-
     self.numberRegex = /-?\d*\.?\d+/g;
+    self.mileMarkerRegex = /^\d*\.?\d?$/;
 
     function gotoMileMarker(mileMarker) {
       var url = "/api/trails/pct/milemarkers/" + mileMarker;
@@ -53,8 +56,27 @@ define(['jquery', 'mapcontainer', 'knockout'], function($, mapContainer, ko) {
       });
     }
 
+    function gotoWaypoint(waypoint) {
+      var url = "/api/trails/pct/waypoints/" + encodeURIComponent(waypoint);
+      $.getJSON(url, function(result) {
+          if (result) {
+            mapContainer.setCenterAndZoom({
+              center: {
+                latitude: result.loc[1],
+                longitude: result.loc[0]
+              },
+              zoom: 14
+            });
+          }
+      });
+    }
+
     function isCoordinates(text) {
       return text.match(self.coordinatesRegex);
+    }
+
+    function isMileMarker(text) {
+      return text.match(self.mileMarkerRegex);
     }
   };
 });

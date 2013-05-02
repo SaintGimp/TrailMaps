@@ -47,11 +47,11 @@ define(["jquery", "/test/lib/Squire.js"], function($, Squire) {
         });
       });
 
-      it ('should get the waypoint from the server', function() {
+      it ('should get the mile marker from the server', function() {
         expect(numberOfServerRequests).to.equal(1);
       });
 
-      it ('should center the map on the waypoint', function() {
+      it ('should center the map on the mile marker', function() {
         expect(mapContainerStub.setCenterAndZoom.calledWithMatch({
           center: {
             latitude: 39,
@@ -66,7 +66,7 @@ define(["jquery", "/test/lib/Squire.js"], function($, Squire) {
       });
     });
 
-    describe('Searching for an invalid mile markers', function() {
+    describe('Searching for an invalid mile marker', function() {
       before(function(done) {
         initializeNavBar(function() {
           numberOfServerRequests = 0;
@@ -80,7 +80,7 @@ define(["jquery", "/test/lib/Squire.js"], function($, Squire) {
         });
       });
 
-      it ('should get the waypoint from the server', function() {
+      it ('should get the mile marker from the server', function() {
         expect(numberOfServerRequests).to.equal(1);
       });
 
@@ -133,5 +133,64 @@ define(["jquery", "/test/lib/Squire.js"], function($, Squire) {
       });
     });
 
+    describe('Searching for waypoints', function() {
+      before(function(done) {
+        initializeNavBar(function() {
+          numberOfServerRequests = 0;
+          server = sinon.fakeServer.create();
+
+          navbarModel.searchText("foo bar");
+          navbarModel.search();
+
+          server.respond('/api/trails/pct/waypoints/foo%20bar', responder);
+          done();
+        });
+      });
+
+      it ('should get the waypoint from the server', function() {
+        expect(numberOfServerRequests).to.equal(1);
+      });
+
+      it ('should center the map on the waypoint', function() {
+        expect(mapContainerStub.setCenterAndZoom.calledWithMatch({
+          center: {
+            latitude: 39,
+            longitude: -120
+          },
+          zoom: 14
+        })).to.be.ok;
+      });
+
+      after(function() {
+        server.restore();
+      });
+    });
+
+    describe('Searching for an invalid waypoint', function() {
+      before(function(done) {
+        initializeNavBar(function() {
+          numberOfServerRequests = 0;
+          server = sinon.fakeServer.create();
+
+          navbarModel.searchText("north pole");
+          navbarModel.search();
+
+          server.respond('/api/trails/pct/waypoints/north%20pole', nullResponder);
+          done();
+        });
+      });
+
+      it ('should get the waypoint from the server', function() {
+        expect(numberOfServerRequests).to.equal(1);
+      });
+
+      it ('should not move the map view', function() {
+        expect(mapContainerStub.setCenterAndZoom.called).to.not.be.ok;
+      });
+
+      after(function() {
+        server.restore();
+      });
+    });
   });
 });
