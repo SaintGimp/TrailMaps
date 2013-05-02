@@ -30,13 +30,15 @@ define(['jquery', 'mapcontainer', 'knockout'], function($, mapContainer, ko) {
     function gotoMileMarker(mileMarker) {
       var url = "/api/trails/pct/milemarkers/" + mileMarker;
       $.getJSON(url, function(result) {
-          mapContainer.setCenterAndZoom({
-            center: {
-              latitude: result.loc[1],
-              longitude: result.loc[0]
-            },
-            zoom: 14
-          });
+          if (result) {
+            mapContainer.setCenterAndZoom({
+              center: {
+                latitude: result.loc[1],
+                longitude: result.loc[0]
+              },
+              zoom: 14
+            });
+          }
       });
     }
 

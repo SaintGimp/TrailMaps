@@ -27,6 +27,11 @@ define(["jquery", "/test/lib/Squire.js"], function($, Squire) {
     request.respond(200, { "Content-Type": "application/json" }, '{ "loc": [ -120, 39 ], "mile": 1234 }');
   }
 
+  function nullResponder(request, trail, queryString) {
+    numberOfServerRequests++;
+    request.respond(200, { "Content-Type": "application/json" }, 'null');
+  }
+
   describe('Nav bar', function() {
     describe('Searching for mile markers', function() {
       before(function(done) {
@@ -54,6 +59,33 @@ define(["jquery", "/test/lib/Squire.js"], function($, Squire) {
           },
           zoom: 14
         })).to.be.ok;
+      });
+
+      after(function() {
+        server.restore();
+      });
+    });
+
+    describe('Searching for an invalid mile markers', function() {
+      before(function(done) {
+        initializeNavBar(function() {
+          numberOfServerRequests = 0;
+          server = sinon.fakeServer.create();
+
+          navbarModel.searchText("4567");
+          navbarModel.search();
+
+          server.respond('/api/trails/pct/milemarkers/4567', nullResponder);
+          done();
+        });
+      });
+
+      it ('should get the waypoint from the server', function() {
+        expect(numberOfServerRequests).to.equal(1);
+      });
+
+      it ('should not move the map view', function() {
+        expect(mapContainerStub.setCenterAndZoom.called).to.not.be.ok;
       });
 
       after(function() {
