@@ -1,6 +1,7 @@
 var Q = require('q');
 var trackImporter = require('./trackimporter.js');
 var mileMarkerImporter = require('./milemarkerimporter.js');
+var waypointImporter = require('./waypointimporter.js');
 var dataService = require("../domain/dataService.js");
 
 function dropCollection(collection) {
@@ -14,7 +15,7 @@ function dropCollections(db, collectionsToDelete) {
   return dataService.collections()
   .then(function(collections) {
     var collectionsToDrop = collections.filter(function(collection) {
-      return collection.collectionName.match(/.*track\d+$/) || collection.collectionName.match(/.*milemarkers\d+$/);
+      return collection.collectionName.match(/.*track\d+$/) || collection.collectionName.match(/.*milemarkers\d+$/) || collection.collectionName.match(/waypoints$/);
     });
 
     return Q.all(collectionsToDrop.map(function(collection) {
@@ -28,7 +29,7 @@ exports.import = function() {
 
   return dropCollections()
   .then(function() {
-    return Q.all([trackImporter.import(), mileMarkerImporter.import()]);
+    return Q.all([trackImporter.import(), mileMarkerImporter.import(), waypointImporter.import()]);
   });
 };
 

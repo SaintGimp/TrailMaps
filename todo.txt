@@ -1,30 +1,31 @@
 Features:
-* Display trail map in three different mapping engines
+- Search/GOTO
+- Support deep links to current engine, location, and zoom (plan for multiple trails)
 - "About" page for the app
 - "About" page for the trail
-- Support deep links to current engine, location, and zoom (plan for multiple trails)
 - Support touch interface if any of the mapping engines offer that
 - Allow users to choose custom colors for sections of the trail
 - Offer KML overlays from other sources (snow, fire, etc)
 - Include alternate trail routes
 - Offer more than one trail
-- Include POIs and other waypoints
+- Allow the user to search for waypoints
 - Allow users to add custom waypoints
 
 User stories:
-* Can switch between mapping engines keeping location and zoom the same
-- Refreshing the page stays on the same engine
+* User can go to waypoints by name (allow partial matches or not?)
+- User sees autocomplete waypoint names in search box
+
+To Do on current task:
+* Implement server API to look up waypoints by name
+- Test text in search box and look up mile marker if number or waypoint if text
 
 Engineering tasks:
-* Convert client js code to promises
 - Write a Grunt task that verifies that we have all client tests wired up in Testem
 - Implement server-side integration testing
 - Here still sometimes gets used before totally loaded
 - Requesting bad URL or using bad verb just hangs, need to return 404
 - Document components that need to be installed globally (node, mongo, grunt, testem, etc.)
 - Figure out how to auto-launch all terminal processes we need for a normal dev session
-
-To Do on current task:
 
 Future work/research/learning/refactoring
 - Check out supertest from the VisionMedia guys
