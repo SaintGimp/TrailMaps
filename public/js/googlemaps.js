@@ -7,6 +7,8 @@ define(['q', 'trailmaps', 'google_maps_api', 'markerwithlabel'], function(Q, tra
   var mileMarkerCollection = [];
 
   function initialize(container, center, zoomLevel, onViewChanged) {
+    var deferred = Q.defer();
+
     // https://developers.google.com/maps/documentation/javascript/
     var mapOptions = {
       center: new google.maps.LatLng(center.latitude, center.longitude),
@@ -15,9 +17,12 @@ define(['q', 'trailmaps', 'google_maps_api', 'markerwithlabel'], function(Q, tra
     };
     googleMap = new google.maps.Map(container, mapOptions);
 
-    google.maps.event.addListener(googleMap, 'idle', onViewChanged);
+    google.maps.event.addListenerOnce(googleMap, 'idle', function() {
+      deferred.resolve();
+      google.maps.event.addListener(googleMap, 'idle', onViewChanged);
+    });
 
-    return new Q();
+    return deferred.promise;
   }
 
   function displayTrack(track) {

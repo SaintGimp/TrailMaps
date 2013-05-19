@@ -2,10 +2,12 @@ extends layout
 
 block body
   div.contentArea.tab-content(id='map_canvas')
-    div.contents.tab-pane.active(id='bingmaps')
-    div.contents.map-control.tab-pane(id='googlemaps')
+    div.contents.map-control.tab-pane(class=mapName === 'bing' ? 'active' : '', id='bing')
+    div.contents.map-control.tab-pane(class=mapName === 'google' ? 'active' : '', id='google')
     // TODO: Here apparently supports canvas for hardware accel?
-    div.contents.map-control.tab-pane(id='heremaps')
+    div.contents.map-control.tab-pane(class=mapName === 'here' ? 'active' : '', id='here')
 
 block scripts
-  script(data-main='js/main', src='js/lib/require.js')
+  script
+    trailMaps.mapName = '#{mapName}';
+  script(data-main='js/maps', src='js/lib/require.js')

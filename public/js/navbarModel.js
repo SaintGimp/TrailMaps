@@ -1,4 +1,5 @@
 /*global define: false*/
+/*global trailMaps: false*/
 
 define(['jquery', 'mapcontainer', 'knockout'], function($, mapContainer, ko) {
   return function() {
@@ -15,14 +16,16 @@ define(['jquery', 'mapcontainer', 'knockout'], function($, mapContainer, ko) {
       } else {
         gotoWaypoint(searchText);
       }
-
     };
 
     self.showMap = function(data, event) {
-      // TODO: We used to have to force tabs to be shown here before Google got inited otherwise
-      // it would freak out. That seems to be no longer the case after implementing require.js,
-      // but I'm not sure if it works only due to timing or what.  Keep on eye on this.
-      mapContainer.showingMap(event.target.hash)
+      var hash = event.target.hash;
+      var mapName = hash.substr(1, hash.length);
+
+      var newUrl = trailMaps.baseMapUrl + '/' + mapName;
+      history.replaceState(null, null, newUrl);
+
+      mapContainer.showingMap(mapName)
       .done();
     };
 

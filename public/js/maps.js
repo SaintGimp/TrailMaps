@@ -32,7 +32,7 @@ requirejs.config({
   //enforceDefine: true,
 });
 
-define('bing_maps_api', ["async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0!onscriptload"], function() {
+define('bing_maps_api', ['async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0!onscriptload'], function() {
   return Microsoft;
 });
 
@@ -41,10 +41,12 @@ define('google_maps_api', ['async!http://maps.google.com/maps/api/js?v=3&sensor=
 });
 
 require(['jquery', 'knockout', 'bootstrap', './mapcontainer', './navbarModel'], function($, ko, bootstrap, mapContainer, NavbarModel) {
-  mapContainer.initialize(require)
+  mapContainer.initialize(require, trailMaps.mapName)
   .done();
+
   var navbarModel = new NavbarModel();
   ko.applyBindings(navbarModel, $('.navbar').get(0));
+  
   // TODO: Not sure this is the best place to wire this up but I don't see any better options at the moment
   $('#searchBox').typeahead({
     source: navbarModel.waypointTypeaheadSource,

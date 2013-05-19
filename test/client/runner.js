@@ -62,7 +62,8 @@ require(['jquery'], function($) {
       'styleKey',
       '_scaleBarMiElement',
       'lastpass_iter',
-      'lastpass_f'
+      'lastpass_f',
+      'trailMaps'
   ]});
 
   $(function() {

@@ -11,11 +11,10 @@ Features:
 
 User stories:
 * Refreshing the page stays on the current map
-- Refreshing the page stays on the current view (?)
 - User can easily copy/paste link that goes to current map and view
 
 To Do on current task:
-* Move maps to RESTful URL location
+* Decide whether to hook up history to map pills
 
 
 Engineering tasks:

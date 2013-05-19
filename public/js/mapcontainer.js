@@ -14,7 +14,7 @@ define(['q', 'jquery', 'trailmaps'], function(Q, $, trailmaps) {
   var currentTrailData = null;
   var requireFunc;
 
-  function Map(moduleName) {
+  function Map(moduleName, containerName) {
     var self = this;
     self.control = undefined;
 
@@ -30,7 +30,7 @@ define(['q', 'jquery', 'trailmaps'], function(Q, $, trailmaps) {
       if (!self.control) {
         requireFunc([moduleName], function(createdControl) {
           self.control = createdControl;
-          var container = $("#" + moduleName)[0];
+          var container = $("#" + containerName)[0];
           self.control.initialize(container, currentView.center, currentView.zoom, onViewChanged)
           .then(function() {
             deferred.resolve({ control: self.control, isNew: true });
@@ -45,28 +45,28 @@ define(['q', 'jquery', 'trailmaps'], function(Q, $, trailmaps) {
   }
 
   var maps = {
-    "#bingmaps": new Map('bingmaps'),
-    "#googlemaps": new Map('googlemaps'),
-    "#heremaps": new Map('heremaps'),
+    "bing": new Map('bingmaps', 'bing'),
+    "google": new Map('googlemaps', 'google'),
+    "here": new Map('heremaps', 'here'),
   };
 
-  function initialize(suppliedRequireFunc) {
+  function initialize(suppliedRequireFunc, mapName) {
     requireFunc = suppliedRequireFunc;
-    return showingMap('#bingmaps');
+    return showingMap(mapName);
   }
 
   function setCenterAndZoom(options) {
     activeMap.setCenterAndZoom(options);
   }
 
-  function showingMap(mapHash) {
-    return maps[mapHash].getControl()
-    .then(function(data) {
-      activeMap = data.control;
+  function showingMap(mapName) {
+    return maps[mapName].getControl()
+    .then(function(controlData) {
+      activeMap = controlData.control;
 
       if (!currentTrailData) {
         loadTrail();
-      } else if (data.isNew) {
+      } else if (controlData.isNew) {
         displayTrail();
       } else {
         var newView = activeMap.getCenterAndZoom();

@@ -1,6 +1,7 @@
 /*jshint expr:true*/
+/*global trailMaps:true*/
 
-define(["jquery", "/test/lib/Squire.js"], function($, Squire) {
+define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
   var navbarModel;
   var server;
   var numberOfServerRequests;
@@ -8,9 +9,11 @@ define(["jquery", "/test/lib/Squire.js"], function($, Squire) {
   var mapContainerStub;
 
   function initializeNavBar(done) {
+    trailMaps = {baseMapUrl: '/foo/bar'};
+
     mapContainerStub = {
-      showingMap: sinon.spy(),
-      setCenterAndZoom: sinon.spy()
+      showingMap: sinon.stub().returns(new Q()),
+      setCenterAndZoom: sinon.stub()
     };
     injector = new Squire();
     injector.mock({
@@ -269,6 +272,19 @@ define(["jquery", "/test/lib/Squire.js"], function($, Squire) {
 
       after(function() {
         server.restore();
+      });
+    });
+
+    describe('Showing a map', function() {
+      before(function(done) {
+        initializeNavBar(function() {
+          navbarModel.showMap(null, {target: {hash: '#bing'}});
+          done();
+        });
+      });
+
+      it ('should show the map in the map container', function() {
+        expect(mapContainerStub.showingMap.calledWith('bing')).to.be.ok;
       });
     });
 

@@ -41,12 +41,12 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
   function initializeDOM() {
     $('#testArea').remove();
     $('body').append('<div id="testArea" style="width:400px; height:200px; border:solid red 2px"></div>');
-    $('#testArea').append('<div id="bingmaps"</div>');
-    $('#testArea').append('<div id="googlemaps"</div>');
-    $('#testArea').append('<div id="heremaps"</div>');
+    $('#testArea').append('<div id="bing"</div>');
+    $('#testArea').append('<div id="google"</div>');
+    $('#testArea').append('<div id="here"</div>');
   }
 
-  function initializeMapContainer(done) {
+  function initializeMapContainer(mapName, done) {
     fakeBingMaps = new FakeMap();
     fakeGoogleMaps = new FakeMap();
     fakeHereMaps = new FakeMap();
@@ -59,19 +59,19 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
     });
     injector.require(['mapcontainer'], function(newMapContainer) {
       mapContainer = newMapContainer;
-      mapContainer.initialize(mockedRequire)
+      mapContainer.initialize(mockedRequire, mapName)
       .done(function() {
         done();
       });
     });
   }
 
-  function initialize(done) {
+  function initialize(mapName, done) {
     loadedModules = [];
     numberOfServerRequests = 0;
     initializeFakeServer();
     initializeDOM();
-    initializeMapContainer(function() {
+    initializeMapContainer(mapName, function() {
       server.respond();
       done();
     });
@@ -100,19 +100,19 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
   describe('Map container', function() {
     describe('Initializing the map container', function() {
       before(function(done) {
-        initialize(done);
+        initialize('bing', done);
       });
 
-      it ('should load the default map module', function() {
+      it ('should load the requested map module', function() {
         expect(loadedModules.length).to.equal(1);
         expect(loadedModules[0]).to.equal("bingmaps");
       });
 
       it ('should give the map module a DOM element to work with', function() {
-        expect(fakeBingMaps.container.id).to.equal($('#bingmaps')[0].id);
+        expect(fakeBingMaps.container.id).to.equal($('#bing')[0].id);
       });
 
-      it ('should configure the first map module with the default center and zoom', function() {
+      it ('should configure the map module with the default center and zoom', function() {
         var config = fakeBingMaps.getCenterAndZoom();
         expect(config.center).to.equal(mapContainer.defaultCenter);
         expect(config.zoom).to.equal(mapContainer.defaultZoomLevel);
@@ -133,8 +133,8 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
 
     describe('Switching to another map type', function() {
       before(function(done) {
-        initialize(function() {
-          mapContainer.showingMap('#googlemaps')
+        initialize('bing', function() {
+          mapContainer.showingMap('google')
           .done(function() {
             server.respond();
             done();
@@ -148,7 +148,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
       });
 
       it ('should give the new map module a DOM element to work with', function() {
-        expect(fakeGoogleMaps.container.id).to.equal($('#googlemaps')[0].id);
+        expect(fakeGoogleMaps.container.id).to.equal($('#google')[0].id);
       });
 
       it ('should configure the second map module with the same center and zoom as the first map', function() {
@@ -172,7 +172,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
 
     describe('Zooming in on the map', function() {
       before(function(done) {
-        initialize(function() {
+        initialize('bing', function() {
           fakeBingMaps.setCenterAndZoom({
             center: fakeBingMaps.getCenter(),
             zoom: fakeBingMaps.getZoom() + 1
@@ -193,7 +193,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
 
     describe('Panning a little bit on the map', function() {
       before(function(done) {
-        initialize(function() {
+        initialize('bing', function() {
           var newCenter = fakeBingMaps.getCenter();
           newCenter.latitude += 1;
           fakeBingMaps.setCenterAndZoom({
@@ -216,7 +216,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
 
     describe('Panning a lot on the map', function() {
       before(function(done) {
-        initialize(function() {
+        initialize('bing', function() {
           var newCenter = fakeBingMaps.getCenter();
           newCenter.latitude += 20;
           fakeBingMaps.setCenterAndZoom({
@@ -243,12 +243,12 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
 
     describe('Switching to new map type after changing view', function() {
       before(function(done) {
-        initialize(function() {
+        initialize('bing', function() {
           fakeBingMaps.setCenterAndZoom({
             center: fakeBingMaps.getCenter(),
             zoom: fakeBingMaps.getZoom() + 1
           });
-          mapContainer.showingMap('#googlemaps')
+          mapContainer.showingMap('google')
           .done(function() {
             server.respond();
             done();
@@ -275,15 +275,15 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
 
     describe('Switching to an already-loaded map type after changing view', function() {
       before(function(done) {
-        initialize(function() {
-          mapContainer.showingMap('#googlemaps')
+        initialize('bing', function() {
+          mapContainer.showingMap('google')
           .then(function() {
             fakeGoogleMaps.setCenterAndZoom({
               center: fakeGoogleMaps.getCenter(),
               zoom: fakeGoogleMaps.getZoom() + 1
             });
           }).done(function() {
-            mapContainer.showingMap('#bingmaps')
+            mapContainer.showingMap('bing')
             .done(function() {
               server.respond();
               done();
@@ -311,7 +311,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
 
     describe('Changing the view', function() {
       before(function(done) {
-        initialize(function() {
+        initialize('bing', function() {
           mapContainer.setCenterAndZoom({
             center: fakeBingMaps.getCenter(),
             zoom: fakeBingMaps.getZoom() + 1

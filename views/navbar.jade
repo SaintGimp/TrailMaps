@@ -7,15 +7,19 @@ header
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.brand(href='#') Trail Maps
+          a.brand(href='/') Trail Maps
           .nav-collapse.collapse
             ul.nav.nav-pills
-              li.active
-                a(data-toggle="pill", href='#bingmaps', data-bind='click: showMap') Bing
-              li
-                a(data-toggle="pill", href='#googlemaps', data-bind='click: showMap') Google
-              li
-                a(data-toggle="pill", href='#heremaps', data-bind='click: showMap') Here
+              li(class=mapName === 'bing' ? 'active' : '')
+                a(data-toggle="pill", href='#bing', data-bind='click: showMap') Bing
+              li(class=mapName === 'google' ? 'active' : '')
+                a(data-toggle="pill", href='#google', data-bind='click: showMap') Google
+              li(class=mapName === 'here' ? 'active' : '')
+                a(data-toggle="pill", href='#here', data-bind='click: showMap') Here
             form.navbar-form.pull-right(id='searchForm', data-bind='submit: search')
               // Have to update form elements after each keypress for IE: https://github.com/SteveSanderson/knockout/issues/760
               input.search-query(id='searchBox', type='text', autocomplete='off', data-bind='value: searchText, valueUpdate: "afterkeydown"', placeholder='waypoint, mile, or lat/long')
+
+script
+  trailMaps.baseMapUrl = '#{baseMapUrl}';
+
