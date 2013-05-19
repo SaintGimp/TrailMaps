@@ -5,7 +5,7 @@
 
 module.exports = function(app) {
 	app.get('/', function(req, res) {
-    res.redirect('/trails/pct/maps');
+    res.redirect('/trails/pct/maps/bing');
   });
   app.get('/trails/pct/maps/:mapName', exports.maps);
 };
