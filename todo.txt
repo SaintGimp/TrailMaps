@@ -1,22 +1,22 @@
 Features:
-- Search/GOTO
-- Support deep links to current engine, location, and zoom (plan for multiple trails)
+* Support deep links to current engine, location, and zoom (plan for multiple trails)
 - "About" page for the app
 - "About" page for the trail
+- Allow users to add/edit/delete waypoints
+- Include alternate trail routes
 - Support touch interface if any of the mapping engines offer that
 - Allow users to choose custom colors for sections of the trail
 - Offer KML overlays from other sources (snow, fire, etc)
-- Include alternate trail routes
 - Offer more than one trail
-- Allow the user to search for waypoints
-- Allow users to add custom waypoints
 
 User stories:
-* User sees autocomplete waypoint names in search box
+* Refreshing the page stays on the current map
+- Refreshing the page stays on the current view (?)
+- User can easily copy/paste link that goes to current map and view
 
 To Do on current task:
-* Implement typeahead data source in server
-- Configure search box for typeahead
+* Move maps to RESTful URL location
+
 
 Engineering tasks:
 - Write a Grunt task that verifies that we have all client tests wired up in Testem
