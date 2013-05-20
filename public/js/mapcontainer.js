@@ -1,6 +1,6 @@
 /*global define: false*/
 
-define(['q', 'jquery', 'trailmaps'], function(Q, $, trailmaps) {
+define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
   var activeMap;
   var defaultCenter = new trailmaps.Location(40.50642708521896, -121.36087699433327);
   var defaultZoomLevel = 5;
@@ -13,6 +13,8 @@ define(['q', 'jquery', 'trailmaps'], function(Q, $, trailmaps) {
   var scrollBounds = null;
   var currentTrailData = null;
   var requireFunc;
+
+  var activeMapName = ko.observable('');
 
   function Map(moduleName, containerName) {
     var self = this;
@@ -60,6 +62,8 @@ define(['q', 'jquery', 'trailmaps'], function(Q, $, trailmaps) {
   }
 
   function showingMap(mapName) {
+    activeMapName(mapName);
+
     return maps[mapName].getControl()
     .then(function(controlData) {
       activeMap = controlData.control;
@@ -156,6 +160,7 @@ define(['q', 'jquery', 'trailmaps'], function(Q, $, trailmaps) {
     initialize: initialize,
     setCenterAndZoom: setCenterAndZoom,
     showingMap: showingMap,
+    activeMapName: activeMapName,
 
     // For testing
     defaultCenter: defaultCenter,

@@ -165,6 +165,10 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
         verifyMapTrailDataMatchesView(fakeGoogleMaps);
       });
 
+      it ('should publish the active map name', function() {
+        expect(mapContainer.activeMapName()).to.equal('google');
+      });
+      
       after(function() {
         cleanup();
       });

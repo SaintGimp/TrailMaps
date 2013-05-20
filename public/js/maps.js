@@ -1,6 +1,7 @@
 /*global Microsoft: false*/
 /*global google: false*/
 /*global nokia: false*/
+/*global trailMaps: false*/
 
 requirejs.config({
   baseUrl: "/js",
@@ -43,14 +44,20 @@ define('google_maps_api', ['async!http://maps.google.com/maps/api/js?v=3&sensor=
 require(['jquery', 'knockout', 'bootstrap', './mapcontainer', './navbarModel'], function($, ko, bootstrap, mapContainer, NavbarModel) {
   mapContainer.initialize(require, trailMaps.mapName)
   .done();
+  ko.applyBindings(mapContainer, $('#map_canvas').get(0));
 
   var navbarModel = new NavbarModel();
   ko.applyBindings(navbarModel, $('.navbar').get(0));
-  
+
   // TODO: Not sure this is the best place to wire this up but I don't see any better options at the moment
   $('#searchBox').typeahead({
     source: navbarModel.waypointTypeaheadSource,
     updater: navbarModel.waypointTypeaheadUpdater,
     minLength: 3
   });
+
+  history.replaceState(trailMaps.mapName, null, window.location.pathname);
+  window.onpopstate = function(event) {
+    navbarModel.showMap(event.state);
+  };
 });

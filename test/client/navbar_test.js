@@ -278,13 +278,17 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
     describe('Showing a map', function() {
       before(function(done) {
         initializeNavBar(function() {
-          navbarModel.showMap(null, {target: {hash: '#bing'}});
+          navbarModel.onPillClick(null, {target: {href: 'foo/google'}});
           done();
         });
       });
 
       it ('should show the map in the map container', function() {
-        expect(mapContainerStub.showingMap.calledWith('bing')).to.be.ok;
+        expect(mapContainerStub.showingMap.calledWith('google')).to.be.ok;
+      });
+
+      it ('should publish the active map name', function() {
+        expect(navbarModel.activeMapName()).to.equal('google');
       });
     });
 

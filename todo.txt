@@ -10,17 +10,16 @@ Features:
 - Offer more than one trail
 
 User stories:
-* Refreshing the page stays on the current map
-- User can easily copy/paste link that goes to current map and view
+* User can easily copy/paste link that goes to current map and view
 
 To Do on current task:
-* Decide whether to hook up history to map pills
+* Decide how to make the link available to the user. In the address bar?
 
 
 Engineering tasks:
+- Google maps get grouchy when not active and browser window is resized
 - Write a Grunt task that verifies that we have all client tests wired up in Testem
 - Implement server-side integration testing
-- Here still sometimes gets used before totally loaded
 - Requesting bad URL or using bad verb just hangs, need to return 404
 - Document components that need to be installed globally (node, mongo, grunt, testem, etc.)
 - Figure out how to auto-launch all terminal processes we need for a normal dev session

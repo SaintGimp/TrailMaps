@@ -5,6 +5,25 @@ define(['jquery', 'mapcontainer', 'knockout'], function($, mapContainer, ko) {
   return function() {
     var self = this;
 
+    self.activeMapName = ko.observable(trailMaps.mapName);
+
+    self.onPillClick = function(data, event) {
+      var href = event.target.href;
+      var mapName = href.substr(href.lastIndexOf('/') + 1, href.length);
+
+      history.pushState(mapName, null, href);
+
+      self.showMap(mapName);
+
+      return false;
+    };
+
+    self.showMap = function(mapName) {
+      self.activeMapName(mapName);
+      mapContainer.showingMap(mapName)
+      .done();
+    };
+
     self.searchText = ko.observable();
 
     self.search = function() {
@@ -16,17 +35,6 @@ define(['jquery', 'mapcontainer', 'knockout'], function($, mapContainer, ko) {
       } else {
         gotoWaypoint(searchText);
       }
-    };
-
-    self.showMap = function(data, event) {
-      var hash = event.target.hash;
-      var mapName = hash.substr(1, hash.length);
-
-      var newUrl = trailMaps.baseMapUrl + '/' + mapName;
-      history.replaceState(null, null, newUrl);
-
-      mapContainer.showingMap(mapName)
-      .done();
     };
 
     self.waypointTypeaheadSource = function(query, process) {
