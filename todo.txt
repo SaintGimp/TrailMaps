@@ -2,6 +2,9 @@ Features:
 * Support deep links to current engine, location, and zoom (plan for multiple trails)
 - "About" page for the app
 - "About" page for the trail
+- Nicer error pages (404 and 500), don't show stack traces in production
+- Log all errors to a file
+- Log all page requests to a file
 - Allow users to add/edit/delete waypoints
 - Include alternate trail routes
 - Support touch interface if any of the mapping engines offer that
@@ -20,7 +23,6 @@ Engineering tasks:
 - Google maps get grouchy when not active and browser window is resized
 - Write a Grunt task that verifies that we have all client tests wired up in Testem
 - Implement server-side integration testing
-- Requesting bad URL or using bad verb just hangs, need to return 404
 - Document components that need to be installed globally (node, mongo, grunt, testem, etc.)
 - Figure out how to auto-launch all terminal processes we need for a normal dev session
 

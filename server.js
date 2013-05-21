@@ -23,6 +23,9 @@ app.configure(function(){
   app.use(require('less-middleware')({ src: path.join(__dirname, 'public'), compress: true }));
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(app.router);
+  app.use(function(req, res, next) {
+    res.send(404);
+  });
   app.use(express.errorHandler);
 });
 
