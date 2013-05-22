@@ -9,5 +9,11 @@ block body
 
 block scripts
   script
-    trailMaps.mapName = '#{mapName}';
+    trailMaps = window.trailMaps || {};
+    trailMaps.configuration = trailMaps.configuration || {};
+    trailMaps.configuration.defaultMapName = '#{defaultMapName}';
+    trailMaps.configuration.defaultLatitude = #{defaultLatitude};
+    trailMaps.configuration.defaultLongitude = #{defaultLongitude};
+    trailMaps.configuration.defaultZoom = #{defaultZoom};
+
   script(data-main='js/maps', src='js/lib/require.js')

@@ -41,8 +41,8 @@ define('google_maps_api', ['async!http://maps.google.com/maps/api/js?v=3&sensor=
   return google;
 });
 
-require(['jquery', 'knockout', 'bootstrap', './mapcontainer', './navbarModel'], function($, ko, bootstrap, mapContainer, NavbarModel) {
-  mapContainer.initialize(require, trailMaps.mapName)
+require(['jquery', 'knockout', 'bootstrap', './trailmaps', './mapcontainer', './navbarModel'], function($, ko, bootstrap, trailMaps, mapContainer, NavbarModel) {
+  mapContainer.initialize(require, trailMaps.configuration.defaultMapName)
   .done();
   ko.applyBindings(mapContainer, $('#map_canvas').get(0));
 
@@ -56,7 +56,7 @@ require(['jquery', 'knockout', 'bootstrap', './mapcontainer', './navbarModel'], 
     minLength: 3
   });
 
-  history.replaceState(trailMaps.mapName, null, window.location.href);
+  history.replaceState(trailMaps.configuration.defaultMapName, null, window.location.href);
   window.onpopstate = function(event) {
     navbarModel.showMap(event.state);
   };

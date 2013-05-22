@@ -23,8 +23,14 @@ define(function() {
     };
   }
 
+  // TODO: this is a little strange. We have a global trailmaps variable
+  // that holds default values from the server, and it has to be created
+  // before the require.js stuff kicks in.  However, this thing we're
+  // building here is what should be thought of as our namespace object
+  // so we merge in the config from the global.  Is there a better way?
   return {
     Location: Location,
-    Rectangle: Rectangle
+    Rectangle: Rectangle,
+    configuration: trailMaps.configuration
   };
 });

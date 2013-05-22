@@ -10,12 +10,22 @@ module.exports = function(app) {
   app.get('/trails/pct/maps/:mapName', exports.maps);
 };
 
+function getValue(queryValue, fallbackValue) {
+  var value = parseFloat(queryValue);
+  return !isNaN(value) ? value : fallbackValue;
+}
+
 exports.maps = function(req, res) {
   // TODO: 404 if it's not a map name we recognize
   // TODO: allow no map name, default to Bing
-  res.render('maps', {
-    mapName: req.params.mapName,
-    // TODO: get this from the request url?
+  var defaults = {
+    defaultMapName: req.params.mapName,
+    defaultLatitude: getValue(req.query.lat, 40.50642708521896),
+    defaultLongitude: getValue(req.query.lon, -121.36087699433327),
+    defaultZoom: getValue(req.query.zoom, 5),
+    // TODO: get this from the request url? Maybe just figure it out on the client?
     baseMapUrl: '/trails/pct/maps'
-  });
+  };
+
+  res.render('maps', defaults);
 };

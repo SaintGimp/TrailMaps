@@ -2,8 +2,8 @@
 
 define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
   var activeMap;
-  var defaultCenter = new trailmaps.Location(40.50642708521896, -121.36087699433327);
-  var defaultZoomLevel = 5;
+  var defaultCenter = new trailmaps.Location(trailmaps.configuration.defaultLatitude, trailmaps.configuration.defaultLongitude);
+  var defaultZoomLevel = trailmaps.configuration.defaultZoom;
   var currentView = {
     center: defaultCenter,
     zoom: defaultZoomLevel

@@ -1,5 +1,6 @@
 Features:
 * Support deep links to current engine, location, and zoom (plan for multiple trails)
+- Make searches create browser history points
 - "About" page for the app
 - "About" page for the trail
 - Nicer error pages (404 and 500), don't show stack traces in production
@@ -13,7 +14,6 @@ Features:
 - Offer more than one trail
 
 User stories:
-* App accepts links with location/zoom query parameters
 * User can generate/copy link with location/zoom query parameters
 
 To Do on current task:
@@ -24,7 +24,7 @@ Engineering tasks:
 - Google maps get grouchy when not active and browser window is resized
 - Write a Grunt task that verifies that we have all client tests wired up in Testem
 - Implement server-side integration testing
-- Document components that need to be installed globally (node, mongo, grunt, testem, etc.)
+- Document the components that need to be installed globally (node, mongo, grunt, testem, etc.)
 - Figure out how to auto-launch all terminal processes we need for a normal dev session
 
 Future work/research/learning/refactoring
