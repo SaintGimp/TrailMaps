@@ -13,7 +13,8 @@ Features:
 - Offer more than one trail
 
 User stories:
-* User can easily copy/paste link that goes to current map and view
+* App accepts links with location/zoom query parameters
+* User can generate/copy link with location/zoom query parameters
 
 To Do on current task:
 * Decide how to make the link available to the user. In the address bar?

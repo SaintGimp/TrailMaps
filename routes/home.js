@@ -15,6 +15,7 @@ exports.maps = function(req, res) {
   // TODO: allow no map name, default to Bing
   res.render('maps', {
     mapName: req.params.mapName,
+    // TODO: get this from the request url?
     baseMapUrl: '/trails/pct/maps'
   });
 };

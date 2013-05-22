@@ -56,7 +56,7 @@ require(['jquery', 'knockout', 'bootstrap', './mapcontainer', './navbarModel'], 
     minLength: 3
   });
 
-  history.replaceState(trailMaps.mapName, null, window.location.pathname);
+  history.replaceState(trailMaps.mapName, null, window.location.href);
   window.onpopstate = function(event) {
     navbarModel.showMap(event.state);
   };
