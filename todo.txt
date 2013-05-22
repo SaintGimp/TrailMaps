@@ -12,6 +12,7 @@ Features:
 - Allow users to choose custom colors for sections of the trail
 - Offer KML overlays from other sources (snow, fire, etc)
 - Offer more than one trail
+- Have an outgoing link to National Weather Service forecast based on current lat/lon
 
 User stories:
 * User can generate/copy link with location/zoom query parameters
@@ -21,6 +22,7 @@ To Do on current task:
 
 
 Engineering tasks:
+- History only works on IE10 not IE9, need shim or graceful degrade
 - Google maps get grouchy when not active and browser window is resized
 - Write a Grunt task that verifies that we have all client tests wired up in Testem
 - Implement server-side integration testing
