@@ -9,8 +9,6 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
   var mapContainerStub;
 
   function initializeNavBar(done) {
-    trailMaps = {baseMapUrl: '/foo/bar'};
-
     mapContainerStub = {
       showingMap: sinon.stub().returns(new Q()),
       setCenterAndZoom: sinon.stub()

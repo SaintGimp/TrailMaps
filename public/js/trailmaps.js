@@ -1,4 +1,5 @@
 /*global define: false*/
+/*global trailMaps: false*/
 
 define(function() {
   function Location(latitude, longitude) {

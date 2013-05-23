@@ -1,6 +1,7 @@
 /*global Microsoft: false*/
 /*global google: false*/
 /*global nokia: false*/
+/*global trailMaps:true*/
 
 // TODO: share this somehow with main.js
 
@@ -12,7 +13,7 @@ requirejs.config({
     "async": "lib/async",
     "markerwithlabel": "lib/markerwithlabel_packed",
     "here_maps_api": "http://api.maps.nokia.com/2.2.4/jsl.js?with=maps",
-    "knockout": "lib/knockout-2.2.1",
+    "knockout": "http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1",
     "q": "lib/q"
   },
   shim: {
@@ -43,6 +44,15 @@ define('google_maps_api', ['async!http://maps.google.com/maps/api/js?v=3&sensor=
 });
 
 expect = chai.expect;
+
+// Defaults that would usually be set in the view
+trailMaps = {
+  configuration: {
+    defaultLatitude: 40.50642708521896,
+    defaultLongitude: -121.36087699433327,
+    defaultZoom: 5
+  }
+};
 
 require(['jquery'], function($) {
   var specs = [];
