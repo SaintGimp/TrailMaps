@@ -48,6 +48,7 @@ expect = chai.expect;
 // Defaults that would usually be set in the view
 trailMaps = {
   configuration: {
+    defaultMapName: 'bing',
     defaultLatitude: 40.50642708521896,
     defaultLongitude: -121.36087699433327,
     defaultZoom: 5

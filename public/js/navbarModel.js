@@ -5,20 +5,24 @@ define(['jquery', 'mapcontainer', 'knockout'], function($, mapContainer, ko) {
   return function() {
     var self = this;
 
-    self.activeMapName = ko.observable(trailMaps.mapName);
+    self.activeMapName = ko.observable(trailMaps.configuration.defaultMapName.toLowerCase());
 
     self.onPillClick = function(data, event) {
       var href = event.target.href;
-      var mapName = href.substr(href.lastIndexOf('/') + 1, href.length);
+      var mapName = href.substr(href.lastIndexOf('/') + 1, href.length).toLowerCase();
 
-      history.pushState(mapName, null, href);
+      if (mapName !== self.activeMapName())
+      {
+        history.pushState(mapName, null, href);
 
-      self.showMap(mapName);
+        self.showMap(mapName);
+      }
 
       return false;
     };
 
     self.showMap = function(mapName) {
+      mapName = mapName.toLowerCase();
       self.activeMapName(mapName);
       mapContainer.showingMap(mapName)
       .done();
