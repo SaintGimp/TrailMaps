@@ -7,20 +7,32 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
   var numberOfServerRequests;
   var injector;
   var mapContainerStub;
+  var sandbox;
 
   function initializeNavBar(done) {
+    sandbox = sinon.sandbox.create();
+
     mapContainerStub = {
-      showingMap: sinon.stub().returns(new Q()),
-      setCenterAndZoom: sinon.stub()
+      showingMap: sandbox.stub().returns(new Q()),
+      setCenterAndZoom: sandbox.stub(),
+      getUrlFragment: sandbox.stub().returns('bing?blahblah')
     };
+
     injector = new Squire();
     injector.mock({
       'mapcontainer': mapContainerStub,
+      'history': sandbox.stub(window.history)
     });
+
     injector.require(['navbarModel'], function(NavbarModel) {
       navbarModel = new NavbarModel();
       done();
     });
+  }
+
+  function cleanup()
+  {
+    sandbox.restore();
   }
 
   function responder(request, trail, queryString) {
@@ -68,6 +80,7 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       after(function() {
+        cleanup();
         server.restore();
       });
     });
@@ -95,6 +108,7 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       after(function() {
+        cleanup();
         server.restore();
       });
     });
@@ -135,6 +149,7 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       after(function() {
+        cleanup();
         server.restore();
       });
     });
@@ -168,6 +183,7 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       after(function() {
+        cleanup();
         server.restore();
       });
     });
@@ -195,6 +211,7 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       after(function() {
+        cleanup();
         server.restore();
       });
     });
@@ -225,6 +242,7 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       after(function() {
+        cleanup();
         server.restore();
       });
     });
@@ -247,6 +265,7 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       after(function() {
+        cleanup();
         server.restore();
       });
     });
@@ -269,6 +288,7 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       after(function() {
+        cleanup();
         server.restore();
       });
     });
@@ -287,6 +307,27 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
 
       it ('should publish the active map name', function() {
         expect(navbarModel.activeMapName()).to.equal('google');
+      });
+
+      after(function() {
+        cleanup();
+      });
+    });
+
+    describe('Displaying the URL for the current map and view', function() {
+      before(function(done) {
+        initializeNavBar(function() {
+          navbarModel.displayUrl();
+          done();
+        });
+      });
+
+      it ('should display the URL in the address bar', function() {
+        expect(history.replaceState.calledWith('bing', null, 'bing?blahblah')).to.be.ok;
+      });
+
+      after(function() {
+        cleanup();
       });
     });
 

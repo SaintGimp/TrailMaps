@@ -41,6 +41,10 @@ define('google_maps_api', ['async!http://maps.google.com/maps/api/js?v=3&sensor=
   return google;
 });
 
+define('history', function() {
+  return window.history;
+});
+
 require(['jquery', 'knockout', 'bootstrap', './trailmaps', './mapcontainer', './navbarModel'], function($, ko, bootstrap, trailMaps, mapContainer, NavbarModel) {
   mapContainer.initialize(require, trailMaps.configuration.defaultMapName)
   .done();

@@ -168,7 +168,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
       it ('should publish the active map name', function() {
         expect(mapContainer.activeMapName()).to.equal('google');
       });
-      
+
       after(function() {
         cleanup();
       });
@@ -327,6 +327,22 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
 
       it ('should load new trail data', function() {
         expect(numberOfServerRequests).to.equal(2);
+      });
+
+      after(function() {
+        cleanup();
+      });
+    });
+
+    describe('Getting a URL fragment', function() {
+      before(function(done) {
+        initialize('bing', function() {
+          done();
+        });
+      });
+
+      it ('should build a URL that describes the current map and view', function() {
+        expect(mapContainer.getUrlFragment()).to.equal('bing?lat=40.50643&lon=-121.36088&zoom=5');
       });
 
       after(function() {

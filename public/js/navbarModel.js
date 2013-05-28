@@ -1,7 +1,7 @@
 /*global define: false*/
 /*global trailMaps: false*/
 
-define(['jquery', 'mapcontainer', 'knockout'], function($, mapContainer, ko) {
+define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContainer, ko, history) {
   return function() {
     var self = this;
 
@@ -112,5 +112,10 @@ define(['jquery', 'mapcontainer', 'knockout'], function($, mapContainer, ko) {
     function isWaypoint(text) {
       return !isCoordinates(text) && !isMileMarker(text);
     }
+
+    self.displayUrl = function() {
+      var url = mapContainer.getUrlFragment();
+      history.replaceState(self.activeMapName(), null, url);
+    };
   };
 });

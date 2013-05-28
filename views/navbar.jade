@@ -16,7 +16,14 @@ header
                 a(href='#{baseMapUrl}/google', data-bind='click: onPillClick') Google
               li(data-bind="css: {active: activeMapName() === 'here'}")
                 a(href='#{baseMapUrl}/here', data-bind='click: onPillClick') Here
-            form.navbar-form.pull-right(id='searchForm', data-bind='submit: search')
-              // Have to update form elements after each keypress for IE: https://github.com/SteveSanderson/knockout/issues/760
-              input.search-query(id='searchBox', type='text', autocomplete='off', data-bind='value: searchText, valueUpdate: "afterkeydown"', placeholder='waypoint, mile, or lat/long')
+            
+            ul.nav.pull-right
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle="dropdown") Tools
+                ul.dropdown-menu
+                  li
+                    a(href='#', data-bind='click: displayUrl') Generate URL in address bar
 
+              form.navbar-form.pull-right(id='searchForm', data-bind='submit: search')
+                // Have to update form elements after each keypress for IE: https://github.com/SteveSanderson/knockout/issues/760
+                input.search-query(id='searchBox', type='text', autocomplete='off', data-bind='value: searchText, valueUpdate: "afterkeydown"', placeholder='waypoint, mile, or lat/long')

@@ -1,6 +1,5 @@
 Features:
-* Support deep links to current engine, location, and zoom (plan for multiple trails)
-- Make searches create browser history points
+* Make searches create browser history points
 - "About" page for the app
 - "About" page for the trail
 - Nicer error pages (404 and 500), don't show stack traces in production
@@ -18,7 +17,9 @@ User stories:
 * User can generate/copy link with location/zoom query parameters
 
 To Do on current task:
-* Decide how to make the link available to the user. In the address bar?
+* Don't let client unit tests stomp on browser address bar
+- Make searches create browser history points
+
 
 
 Engineering tasks:

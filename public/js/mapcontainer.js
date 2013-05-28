@@ -156,11 +156,18 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
     return !scrollBounds.contains(activeMap.getCenter());
   }
 
+  function getUrlFragment() {
+    var lat = currentView.center.latitude.toFixed(5);
+    var lon = currentView.center.longitude.toFixed(5);
+    return activeMapName() + '?lat=' + lat + '&lon=' + lon + '&zoom=' + currentView.zoom;
+  }
+
   return {
     initialize: initialize,
     setCenterAndZoom: setCenterAndZoom,
     showingMap: showingMap,
     activeMapName: activeMapName,
+    getUrlFragment: getUrlFragment,
 
     // For testing
     defaultCenter: defaultCenter,
