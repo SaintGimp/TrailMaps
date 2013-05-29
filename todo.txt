@@ -17,7 +17,6 @@ User stories:
 * User can generate/copy link with location/zoom query parameters
 
 To Do on current task:
-* Don't let client unit tests stomp on browser address bar
 - Make searches create browser history points
 
 

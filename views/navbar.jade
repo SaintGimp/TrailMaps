@@ -17,13 +17,15 @@ header
               li(data-bind="css: {active: activeMapName() === 'here'}")
                 a(href='#{baseMapUrl}/here', data-bind='click: onPillClick') Here
             
-            ul.nav.pull-right
+            ul.nav
+              li
+                p.navbar-text(style='padding-right:15px') |
               li.dropdown
                 a.dropdown-toggle(href='#', data-toggle="dropdown") Tools
+                  b.caret
                 ul.dropdown-menu
                   li
                     a(href='#', data-bind='click: displayUrl') Generate URL in address bar
-
-              form.navbar-form.pull-right(id='searchForm', data-bind='submit: search')
-                // Have to update form elements after each keypress for IE: https://github.com/SteveSanderson/knockout/issues/760
-                input.search-query(id='searchBox', type='text', autocomplete='off', data-bind='value: searchText, valueUpdate: "afterkeydown"', placeholder='waypoint, mile, or lat/long')
+            form.navbar-form.pull-right(id='searchForm', data-bind='submit: search')
+              // Have to update form elements after each keypress for IE: https://github.com/SteveSanderson/knockout/issues/760
+              input.search-query(id='searchBox', type='text', autocomplete='off', data-bind='value: searchText, valueUpdate: "afterkeydown"', placeholder='waypoint, mile, or lat/long')
