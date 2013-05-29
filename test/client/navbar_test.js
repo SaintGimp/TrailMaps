@@ -3,8 +3,6 @@
 
 define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
   var navbarModel;
-  var server;
-  var numberOfServerRequests;
   var injector;
   var mapContainerStub;
   var sandbox;
@@ -26,6 +24,7 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
 
     injector.require(['navbarModel'], function(NavbarModel) {
       navbarModel = new NavbarModel();
+      sandbox.useFakeServer();
       done();
     });
   }
@@ -36,17 +35,14 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
   }
 
   function responder(request, trail, queryString) {
-    numberOfServerRequests++;
     request.respond(200, { "Content-Type": "application/json" }, '{ "loc": [ -120, 39 ], "mile": 1234 }');
   }
 
   function nullResponder(request, trail, queryString) {
-    numberOfServerRequests++;
     request.respond(200, { "Content-Type": "application/json" }, 'null');
   }
 
   function typeaheadResponder(request, trail, queryString) {
-    numberOfServerRequests++;
     request.respond(200, { "Content-Type": "application/json" }, '["foo", "bar"]');
   }
 
@@ -54,19 +50,16 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
     describe('Searching for mile markers', function() {
       before(function(done) {
         initializeNavBar(function() {
-          numberOfServerRequests = 0;
-          server = sinon.fakeServer.create();
-
           navbarModel.searchText("1234");
           navbarModel.search();
 
-          server.respond('/api/trails/pct/milemarkers/1234', responder);
+          sandbox.server.respond('/api/trails/pct/milemarkers/1234', responder);
           done();
         });
       });
 
       it ('should get the mile marker from the server', function() {
-        expect(numberOfServerRequests).to.equal(1);
+        expect(sandbox.server.requests.length).to.equal(1);
       });
 
       it ('should center the map on the mile marker', function() {
@@ -81,26 +74,22 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
 
       after(function() {
         cleanup();
-        server.restore();
       });
     });
 
     describe('Searching for an invalid mile marker', function() {
       before(function(done) {
         initializeNavBar(function() {
-          numberOfServerRequests = 0;
-          server = sinon.fakeServer.create();
-
           navbarModel.searchText("4567");
           navbarModel.search();
 
-          server.respond('/api/trails/pct/milemarkers/4567', nullResponder);
+          sandbox.server.respond('/api/trails/pct/milemarkers/4567', nullResponder);
           done();
         });
       });
 
       it ('should get the mile marker from the server', function() {
-        expect(numberOfServerRequests).to.equal(1);
+        expect(sandbox.server.requests.length).to.equal(1);
       });
 
       it ('should not move the map view', function() {
@@ -109,7 +98,6 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
 
       after(function() {
         cleanup();
-        server.restore();
       });
     });
 
@@ -150,26 +138,22 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
 
       after(function() {
         cleanup();
-        server.restore();
       });
     });
 
     describe('Searching for waypoints', function() {
       before(function(done) {
         initializeNavBar(function() {
-          numberOfServerRequests = 0;
-          server = sinon.fakeServer.create();
-
           navbarModel.searchText("foo bar");
           navbarModel.search();
 
-          server.respond('/api/trails/pct/waypoints/foo%20bar', responder);
+          sandbox.server.respond('/api/trails/pct/waypoints/foo%20bar', responder);
           done();
         });
       });
 
       it ('should get the waypoint from the server', function() {
-        expect(numberOfServerRequests).to.equal(1);
+        expect(sandbox.server.requests.length).to.equal(1);
       });
 
       it ('should center the map on the waypoint', function() {
@@ -184,26 +168,22 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
 
       after(function() {
         cleanup();
-        server.restore();
       });
     });
 
     describe('Searching for an invalid waypoint', function() {
       before(function(done) {
         initializeNavBar(function() {
-          numberOfServerRequests = 0;
-          server = sinon.fakeServer.create();
-
           navbarModel.searchText("north pole");
           navbarModel.search();
 
-          server.respond('/api/trails/pct/waypoints/north%20pole', nullResponder);
+          sandbox.server.respond('/api/trails/pct/waypoints/north%20pole', nullResponder);
           done();
         });
       });
 
       it ('should get the waypoint from the server', function() {
-        expect(numberOfServerRequests).to.equal(1);
+        expect(sandbox.server.requests.length).to.equal(1);
       });
 
       it ('should not move the map view', function() {
@@ -212,7 +192,6 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
 
       after(function() {
         cleanup();
-        server.restore();
       });
     });
 
@@ -221,20 +200,17 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
 
       before(function(done) {
         initializeNavBar(function() {
-          numberOfServerRequests = 0;
-          server = sinon.fakeServer.create();
-
           navbarModel.waypointTypeaheadSource("foo", function(data) {
             typeaheadData = data;
           });
 
-          server.respond('/api/trails/pct/waypoints/typeahead/foo', typeaheadResponder);
+          sandbox.server.respond('/api/trails/pct/waypoints/typeahead/foo', typeaheadResponder);
           done();
         });
       });
 
       it ('should get the typeahead list from the server', function() {
-        expect(numberOfServerRequests).to.equal(1);
+        expect(sandbox.server.requests.length).to.equal(1);
       });
 
       it ('should process the typeahead list', function() {
@@ -243,53 +219,44 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
 
       after(function() {
         cleanup();
-        server.restore();
       });
     });
 
     describe('Querying for a waypoint typeahead list with non-waypoint text', function() {
       before(function(done) {
         initializeNavBar(function() {
-          numberOfServerRequests = 0;
-          server = sinon.fakeServer.create();
-
           navbarModel.waypointTypeaheadSource("1234");
 
-          server.respond('/api/trails/pct/waypoints/typeahead/1234', typeaheadResponder);
+          sandbox.server.respond('/api/trails/pct/waypoints/typeahead/1234', typeaheadResponder);
           done();
         });
       });
 
       it ('should not try to get the typeahead list from the server', function() {
-        expect(numberOfServerRequests).to.equal(0);
+        expect(sandbox.server.requests.length).to.equal(0);
       });
 
       after(function() {
         cleanup();
-        server.restore();
       });
     });
 
     describe('Selecting a typeahead item', function() {
       before(function(done) {
         initializeNavBar(function() {
-          numberOfServerRequests = 0;
-          server = sinon.fakeServer.create();
-
           navbarModel.waypointTypeaheadUpdater("foo");
 
-          server.respond('/api/trails/pct/waypoints/foo', responder);
+          sandbox.server.respond('/api/trails/pct/waypoints/foo', responder);
           done();
         });
       });
 
       it ('should get the waypoint from the server', function() {
-        expect(numberOfServerRequests).to.equal(1);
+        expect(sandbox.server.requests.length).to.equal(1);
       });
 
       after(function() {
         cleanup();
-        server.restore();
       });
     });
 
