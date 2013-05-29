@@ -309,6 +309,10 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
         expect(navbarModel.activeMapName()).to.equal('google');
       });
 
+      it ('should add the map to the browser history', function() {
+        expect(history.pushState.calledWith('google', null, 'foo/google')).to.be.ok;
+      });
+
       after(function() {
         cleanup();
       });
