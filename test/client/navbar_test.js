@@ -1,31 +1,33 @@
 /*jshint expr:true*/
 /*global trailMaps:true*/
 
-define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
+define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer.js"], function(Q, $, Squire, testableMapContainer) {
   var navbarModel;
   var injector;
-  var mapContainerStub;
+  var mapContainer;
   var sandbox;
+  var numberOfServerRequests;
 
   function initializeNavBar(done) {
     sandbox = sinon.sandbox.create();
+    sandbox.useFakeServer();
+    numberOfServerRequests = 0;
 
-    mapContainerStub = {
-      showingMap: sandbox.stub().returns(new Q()),
-      setCenterAndZoom: sandbox.stub(),
-      getUrlFragment: sandbox.stub().returns('bing?blahblah')
-    };
+    testableMapContainer.create("bing", sandbox.server)
+    .done(function(newMapContainer) {
+      sandbox.server.respond();
+      mapContainer = newMapContainer;
 
-    injector = new Squire();
-    injector.mock({
-      'mapcontainer': mapContainerStub,
-      'history': sandbox.stub(window.history)
-    });
+      injector = new Squire();
+      injector.mock({
+        'mapcontainer': mapContainer,
+        'history': sandbox.stub(window.history)
+      });
 
-    injector.require(['navbarModel'], function(NavbarModel) {
-      navbarModel = new NavbarModel();
-      sandbox.useFakeServer();
-      done();
+      injector.require(['navbarModel'], function(NavbarModel) {
+        navbarModel = new NavbarModel();
+        done();
+      });
     });
   }
 
@@ -35,21 +37,30 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
   }
 
   function responder(request, trail, queryString) {
+    numberOfServerRequests++;
     request.respond(200, { "Content-Type": "application/json" }, '{ "loc": [ -120, 39 ], "mile": 1234 }');
   }
 
   function nullResponder(request, trail, queryString) {
+    numberOfServerRequests++;
     request.respond(200, { "Content-Type": "application/json" }, 'null');
   }
 
   function typeaheadResponder(request, trail, queryString) {
+    numberOfServerRequests++;
     request.respond(200, { "Content-Type": "application/json" }, '["foo", "bar"]');
   }
 
   describe('Nav bar', function() {
     describe('Searching for mile markers', function() {
+      var originalViewOptions;
+      var originalUrlFragment;
+
       before(function(done) {
         initializeNavBar(function() {
+          originalViewOptions = mapContainer.getViewOptions();
+          originalUrlFragment = mapContainer.getUrlFragment();
+
           navbarModel.searchText("1234");
           navbarModel.search();
 
@@ -59,17 +70,25 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       it ('should get the mile marker from the server', function() {
-        expect(sandbox.server.requests.length).to.equal(1);
+        expect(numberOfServerRequests).to.equal(1);
       });
 
       it ('should center the map on the mile marker', function() {
-        expect(mapContainerStub.setCenterAndZoom.calledWithMatch({
+        expect(mapContainer.getViewOptions().view).to.deep.equal({
           center: {
             latitude: 39,
             longitude: -120
           },
           zoom: 14
-        })).to.be.ok;
+        });
+      });
+
+      it ('should replace the current browser history node with the previous view', function() {
+        expect(history.replaceState.calledWith(originalViewOptions, null, originalUrlFragment)).to.be.ok;
+      });
+
+      it ('should add the new map view to the browser history', function() {
+        expect(history.pushState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
       });
 
       after(function() {
@@ -78,8 +97,12 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
     });
 
     describe('Searching for an invalid mile marker', function() {
+      var originalViewOptions;
+
       before(function(done) {
         initializeNavBar(function() {
+          originalViewOptions = mapContainer.getViewOptions();
+
           navbarModel.searchText("4567");
           navbarModel.search();
 
@@ -89,11 +112,11 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       it ('should get the mile marker from the server', function() {
-        expect(sandbox.server.requests.length).to.equal(1);
+        expect(numberOfServerRequests).to.equal(1);
       });
 
       it ('should not move the map view', function() {
-        expect(mapContainerStub.setCenterAndZoom.called).to.not.be.ok;
+        expect(mapContainer.getViewOptions()).to.deep.equal(originalViewOptions);
       });
 
       after(function() {
@@ -111,13 +134,13 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       it ('should center the map on the coordinates', function() {
-        expect(mapContainerStub.setCenterAndZoom.calledWithMatch({
+        expect(mapContainer.getViewOptions().view).to.deep.equal({
           center: {
             latitude: 39.1,
             longitude: -120.2
           },
           zoom: 14
-        })).to.be.ok;
+        });
       });
 
       it ('Should recognize all forms of latitude/longitude coordinates', function() {
@@ -153,17 +176,17 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       it ('should get the waypoint from the server', function() {
-        expect(sandbox.server.requests.length).to.equal(1);
+        expect(numberOfServerRequests).to.equal(1);
       });
 
       it ('should center the map on the waypoint', function() {
-        expect(mapContainerStub.setCenterAndZoom.calledWithMatch({
+        expect(mapContainer.getViewOptions().view).to.deep.equal({
           center: {
             latitude: 39,
             longitude: -120
           },
           zoom: 14
-        })).to.be.ok;
+        });
       });
 
       after(function() {
@@ -172,8 +195,12 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
     });
 
     describe('Searching for an invalid waypoint', function() {
+      var originalViewOptions;
+
       before(function(done) {
         initializeNavBar(function() {
+          originalViewOptions = mapContainer.getViewOptions();
+
           navbarModel.searchText("north pole");
           navbarModel.search();
 
@@ -183,11 +210,11 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       it ('should get the waypoint from the server', function() {
-        expect(sandbox.server.requests.length).to.equal(1);
+        expect(numberOfServerRequests).to.equal(1);
       });
 
       it ('should not move the map view', function() {
-        expect(mapContainerStub.setCenterAndZoom.called).to.not.be.ok;
+        expect(mapContainer.getViewOptions()).to.deep.equal(originalViewOptions);
       });
 
       after(function() {
@@ -210,7 +237,7 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       it ('should get the typeahead list from the server', function() {
-        expect(sandbox.server.requests.length).to.equal(1);
+        expect(numberOfServerRequests).to.equal(1);
       });
 
       it ('should process the typeahead list', function() {
@@ -233,7 +260,7 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       it ('should not try to get the typeahead list from the server', function() {
-        expect(sandbox.server.requests.length).to.equal(0);
+        expect(numberOfServerRequests).to.equal(0);
       });
 
       after(function() {
@@ -252,7 +279,7 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       it ('should get the waypoint from the server', function() {
-        expect(sandbox.server.requests.length).to.equal(1);
+        expect(numberOfServerRequests).to.equal(1);
       });
 
       after(function() {
@@ -269,15 +296,15 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
 
       it ('should show the map in the map container', function() {
-        expect(mapContainerStub.showingMap.calledWith('google')).to.be.ok;
+        expect(mapContainer.getViewOptions().mapName).to.equal('google');
       });
 
       it ('should publish the active map name', function() {
         expect(navbarModel.activeMapName()).to.equal('google');
       });
 
-      it ('should add the map to the browser history', function() {
-        expect(history.pushState.calledWith('google', null, 'foo/google')).to.be.ok;
+      it ('should replace the current browser history node with the new map name', function() {
+        expect(history.replaceState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
       });
 
       after(function() {
@@ -285,16 +312,44 @@ define(["q", "jquery", "/test/lib/Squire.js"], function(Q, $, Squire) {
       });
     });
 
-    describe('Displaying the URL for the current map and view', function() {
+    describe('Showing a map that has been shown before', function() {
       before(function(done) {
         initializeNavBar(function() {
-          navbarModel.displayUrl();
+          navbarModel.onPillClick(null, {target: {href: 'foo/google'}});
+          navbarModel.onPillClick(null, {target: {href: 'foo/bing'}});
           done();
         });
       });
 
-      it ('should display the URL in the address bar', function() {
-        expect(history.replaceState.calledWith('bing', null, 'bing?blahblah')).to.be.ok;
+      it ('should show the map in the map container', function() {
+        expect(mapContainer.getViewOptions().mapName).to.equal('bing');
+      });
+
+      it ('should publish the active map name', function() {
+        expect(navbarModel.activeMapName()).to.equal('bing');
+      });
+
+      it ('should replace the current browser history node with the new map name', function() {
+        expect(history.replaceState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
+      });
+
+      after(function() {
+        cleanup();
+      });
+    });
+
+    describe('Changing the map container view', function() {
+      before(function(done) {
+        initializeNavBar(function() {
+          var viewOptions = mapContainer.getViewOptions();
+          viewOptions.view.zoom++;
+          mapContainer.setCenterAndZoom(viewOptions.view);
+          done();
+        });
+      });
+
+      it ('should replace the current browser history node with the new view', function() {
+        expect(history.replaceState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
       });
 
       after(function() {

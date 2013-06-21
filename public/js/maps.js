@@ -60,8 +60,8 @@ require(['jquery', 'knockout', 'bootstrap', './trailmaps', './mapcontainer', './
     minLength: 3
   });
 
-  history.replaceState(trailMaps.configuration.defaultMapName, null, window.location.href);
+  navbarModel.initializeBrowserHistory();
   window.onpopstate = function(event) {
-    navbarModel.showMap(event.state);
+    navbarModel.restoreHistoryState(event.state);
   };
 });

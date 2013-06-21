@@ -6,26 +6,32 @@ define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContain
     var self = this;
 
     self.activeMapName = ko.observable(trailMaps.configuration.defaultMapName.toLowerCase());
-
+    mapContainer.addViewChangedListener(function() {
+      replaceCurrentHistoryNode();
+    });
+    
     self.onPillClick = function(data, event) {
       var href = event.target.href;
       var mapName = href.substr(href.lastIndexOf('/') + 1, href.length).toLowerCase();
 
       if (mapName !== self.activeMapName())
       {
-        history.pushState(mapName, null, href);
-
-        self.showMap(mapName);
+        showMap(mapName);
       }
 
       return false;
     };
 
-    self.showMap = function(mapName) {
+    function showMap(mapName) {
       mapName = mapName.toLowerCase();
       self.activeMapName(mapName);
       mapContainer.showingMap(mapName)
       .done();
+    }
+
+    self.restoreHistoryState = function(options) {
+      showMap(options.mapName);
+      mapContainer.setCenterAndZoom(options.view);
     };
 
     self.searchText = ko.observable();
@@ -64,7 +70,7 @@ define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContain
       var url = "/api/trails/pct/milemarkers/" + mileMarker;
       $.getJSON(url, function(result) {
           if (result) {
-            mapContainer.setCenterAndZoom({
+            changeMapView({
               center: {
                 latitude: result.loc[1],
                 longitude: result.loc[0]
@@ -77,7 +83,7 @@ define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContain
 
     function gotoCoordinates(location) {
       var numbers = location.match(self.numberRegex);
-      mapContainer.setCenterAndZoom({
+      changeMapView({
         center: {
           latitude: parseFloat(numbers[0]),
           longitude: parseFloat(numbers[1])
@@ -90,7 +96,7 @@ define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContain
       var url = "/api/trails/pct/waypoints/" + encodeURIComponent(waypoint);
       $.getJSON(url, function(result) {
           if (result) {
-            mapContainer.setCenterAndZoom({
+            changeMapView({
               center: {
                 latitude: result.loc[1],
                 longitude: result.loc[0]
@@ -99,6 +105,12 @@ define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContain
             });
           }
       });
+    }
+
+    function changeMapView(options) {
+      replaceCurrentHistoryNode();
+      mapContainer.setCenterAndZoom(options);
+      addNewHistoryNode();
     }
 
     function isCoordinates(text) {
@@ -113,9 +125,18 @@ define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContain
       return !isCoordinates(text) && !isMileMarker(text);
     }
 
-    self.displayUrl = function() {
-      var url = mapContainer.getUrlFragment();
-      history.replaceState(self.activeMapName(), null, url);
+    self.initializeBrowserHistory = function() {
+      replaceCurrentHistoryNode();
     };
+
+    function replaceCurrentHistoryNode() {
+      var url = mapContainer.getUrlFragment();
+      history.replaceState(mapContainer.getViewOptions(), null, url);
+    }
+
+    function addNewHistoryNode() {
+      var url = mapContainer.getUrlFragment();
+      history.pushState(mapContainer.getViewOptions(), null, url);
+    }
   };
 });

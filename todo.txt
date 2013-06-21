@@ -1,25 +1,31 @@
 Features:
-* Make searches create browser history points
+* Allow users to add/edit/delete waypoints
 - "About" page for the app
 - "About" page for the trail
 - Nicer error pages (404 and 500), don't show stack traces in production
 - Log all errors to a file
 - Log all page requests to a file
-- Allow users to add/edit/delete waypoints
 - Include alternate trail routes
 - Support touch interface if any of the mapping engines offer that
 - Allow users to choose custom colors for sections of the trail
 - Offer KML overlays from other sources (snow, fire, etc)
 - Offer more than one trail
 - Have an outgoing link to National Weather Service forecast based on current lat/lon
+- Add crosshair to show the center of the view
+- Make links (optionally?) show a pushpin or similar to show which location was linked
+- Enter trail scouting reports with links to photos, locations, and descriptions
 
 User stories:
-* User can generate/copy link with location/zoom query parameters
+* User can view existing waypoints
+- User can sort and filter existing waypoints
+- User can delete an existing waypoint
+- User can edit an existing waypoint
+- User can add a new waypoint
+- Admin can audit all waypoint changes
 
 To Do on current task:
-- Make searches create browser history points
-
-
+* Make new page that displays waypoints
+- Link waypoint page in navbar
 
 Engineering tasks:
 - History only works on IE10 not IE9, need shim or graceful degrade

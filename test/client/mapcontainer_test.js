@@ -1,14 +1,9 @@
 /*jshint expr:true*/
 
 // TODO: can we set maps for the test stuff in testem.json?
-define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($, Squire, FakeMap) {
-  var server;
+define(["jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer.js"], function($, Squire, testableMapContainer) {
+  var sandbox;
   var injector;
-  var fakeBingMaps;
-  var fakeGoogleMaps;
-  var fakeHereMaps;
-  var loadedModules;
-  var numberOfServerRequests;
   var mapContainer;
 
   function mockedRequire(modules, callback) {
@@ -16,26 +11,6 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
       loadedModules.push(value);
     });
     injector.require(modules, callback);
-  }
-
-  function trailResponder(request, trail, queryString) {
-    numberOfServerRequests++;
-    var north = parseFloat(/north=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
-    var south = parseFloat(/south=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
-    var east = parseFloat(/east=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
-    var west = parseFloat(/west=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
-    var detail = parseFloat(/detail=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
-
-    var data = {
-      mileMarkers: [{loc:[west + ((east - west) / 2), south + ((north - south) / 2)], mile:1234}],
-      track: [{loc:[west, north]}, {loc:[east, south]}],
-    };
-    request.respond(200, { "Content-Type": "application/json" }, JSON.stringify(data));
-  }
-
-  function initializeFakeServer() {
-    server = sinon.fakeServer.create();
-    server.respondWith(/\/api\/trails\/(\w+)\?(.+)/, trailResponder);
   }
 
   function initializeDOM() {
@@ -46,40 +21,22 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
     $('#testArea').append('<div id="here"</div>');
   }
 
-  function initializeMapContainer(mapName, done) {
-    fakeBingMaps = new FakeMap();
-    fakeGoogleMaps = new FakeMap();
-    fakeHereMaps = new FakeMap();
-
-    injector = new Squire();
-    injector.mock({
-      'bingmaps': fakeBingMaps,
-      'googlemaps': fakeGoogleMaps,
-      'heremaps': fakeHereMaps
-    });
-    injector.require(['mapcontainer'], function(newMapContainer) {
-      mapContainer = newMapContainer;
-      mapContainer.initialize(mockedRequire, mapName)
-      .done(function() {
-        done();
-      });
-    });
-  }
-
   function initialize(mapName, done) {
-    loadedModules = [];
-    numberOfServerRequests = 0;
-    initializeFakeServer();
+    sandbox = sinon.sandbox.create();
+    sandbox.useFakeServer();
+
     initializeDOM();
-    initializeMapContainer(mapName, function() {
-      server.respond();
+    testableMapContainer.create(mapName, sandbox.server)
+    .done(function(newMapContainer) {
+      mapContainer = newMapContainer;
+      sandbox.server.respond();
       done();
     });
   }
 
   function cleanup() {
     $('#testArea').remove();
-    server.restore();
+    sandbox.restore();
   }
 
   function verifyMapTrailDataMatchesView(map) {
@@ -104,26 +61,26 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
       });
 
       it ('should load the requested map module', function() {
-        expect(loadedModules.length).to.equal(1);
-        expect(loadedModules[0]).to.equal("bingmaps");
+        expect(mapContainer.loadedModules.length).to.equal(1);
+        expect(mapContainer.loadedModules[0]).to.equal("bingmaps");
       });
 
       it ('should give the map module a DOM element to work with', function() {
-        expect(fakeBingMaps.container.id).to.equal($('#bing')[0].id);
+        expect(mapContainer.fakeBingMaps.container.id).to.equal($('#bing')[0].id);
       });
 
       it ('should configure the map module with the default center and zoom', function() {
-        var config = fakeBingMaps.getCenterAndZoom();
+        var config = mapContainer.fakeBingMaps.getCenterAndZoom();
         expect(config.center).to.equal(mapContainer.defaultCenter);
         expect(config.zoom).to.equal(mapContainer.defaultZoomLevel);
       });
 
       it ('should load trail data from the server and display it on the map', function() {
-        expect(numberOfServerRequests).to.equal(1);
-        expect(fakeBingMaps.trackData).to.be.ok;
-        expect(fakeBingMaps.mileMarkerData).to.be.ok;
+        expect(mapContainer.numberOfServerRequests).to.equal(1);
+        expect(mapContainer.fakeBingMaps.trackData).to.be.ok;
+        expect(mapContainer.fakeBingMaps.mileMarkerData).to.be.ok;
 
-        verifyMapTrailDataMatchesView(fakeBingMaps);
+        verifyMapTrailDataMatchesView(mapContainer.fakeBingMaps);
       });
 
       after(function() {
@@ -136,33 +93,33 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
         initialize('bing', function() {
           mapContainer.showingMap('google')
           .done(function() {
-            server.respond();
+            sandbox.server.respond();
             done();
           });
         });
       });
 
       it ('should load the default and the new map modules', function() {
-        expect(loadedModules.length).to.equal(2);
-        expect(loadedModules[1]).to.equal("googlemaps");
+        expect(mapContainer.loadedModules.length).to.equal(2);
+        expect(mapContainer.loadedModules[1]).to.equal("googlemaps");
       });
 
       it ('should give the new map module a DOM element to work with', function() {
-        expect(fakeGoogleMaps.container.id).to.equal($('#google')[0].id);
+        expect(mapContainer.fakeGoogleMaps.container.id).to.equal($('#google')[0].id);
       });
 
       it ('should configure the second map module with the same center and zoom as the first map', function() {
-        var config = fakeGoogleMaps.getCenterAndZoom();
+        var config = mapContainer.fakeGoogleMaps.getCenterAndZoom();
         expect(config.center).to.equal(mapContainer.defaultCenter);
         expect(config.zoom).to.equal(mapContainer.defaultZoomLevel);
       });
 
       it ('should not reload trail data from the server', function() {
-        expect(numberOfServerRequests).to.equal(1);
+        expect(mapContainer.numberOfServerRequests).to.equal(1);
       });
 
       it ('should display trail data on the second map', function() {
-        verifyMapTrailDataMatchesView(fakeGoogleMaps);
+        verifyMapTrailDataMatchesView(mapContainer.fakeGoogleMaps);
       });
 
       it ('should publish the active map name', function() {
@@ -177,17 +134,17 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
     describe('Zooming in on the map', function() {
       before(function(done) {
         initialize('bing', function() {
-          fakeBingMaps.setCenterAndZoom({
-            center: fakeBingMaps.getCenter(),
-            zoom: fakeBingMaps.getZoom() + 1
+          mapContainer.fakeBingMaps.setCenterAndZoom({
+            center: mapContainer.fakeBingMaps.getCenter(),
+            zoom: mapContainer.fakeBingMaps.getZoom() + 1
           });
-          server.respond();
+          sandbox.server.respond();
           done();
         });
       });
 
       it ('should load new trail data', function() {
-        expect(numberOfServerRequests).to.equal(2);
+        expect(mapContainer.numberOfServerRequests).to.equal(2);
       });
 
       after(function() {
@@ -198,19 +155,19 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
     describe('Panning a little bit on the map', function() {
       before(function(done) {
         initialize('bing', function() {
-          var newCenter = fakeBingMaps.getCenter();
+          var newCenter = mapContainer.fakeBingMaps.getCenter();
           newCenter.latitude += 1;
-          fakeBingMaps.setCenterAndZoom({
+          mapContainer.fakeBingMaps.setCenterAndZoom({
             center: newCenter,
-            zoom: fakeBingMaps.getZoom()
+            zoom: mapContainer.fakeBingMaps.getZoom()
           });
-          server.respond();
+          sandbox.server.respond();
           done();
         });
       });
 
       it ('should not load new trail data', function() {
-        expect(numberOfServerRequests).to.equal(1);
+        expect(mapContainer.numberOfServerRequests).to.equal(1);
       });
 
       after(function() {
@@ -221,23 +178,23 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
     describe('Panning a lot on the map', function() {
       before(function(done) {
         initialize('bing', function() {
-          var newCenter = fakeBingMaps.getCenter();
+          var newCenter = mapContainer.fakeBingMaps.getCenter();
           newCenter.latitude += 20;
-          fakeBingMaps.setCenterAndZoom({
+          mapContainer.fakeBingMaps.setCenterAndZoom({
             center: newCenter,
-            zoom: fakeBingMaps.getZoom()
+            zoom: mapContainer.fakeBingMaps.getZoom()
           });
-          server.respond();
+          sandbox.server.respond();
           done();
         });
       });
 
       it ('should load new trail data', function() {
-        expect(numberOfServerRequests).to.equal(2);
+        expect(mapContainer.numberOfServerRequests).to.equal(2);
       });
 
       it ('should display new trail data on the map', function() {
-        verifyMapTrailDataMatchesView(fakeBingMaps);
+        verifyMapTrailDataMatchesView(mapContainer.fakeBingMaps);
       });
 
       after(function() {
@@ -248,28 +205,28 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
     describe('Switching to new map type after changing view', function() {
       before(function(done) {
         initialize('bing', function() {
-          fakeBingMaps.setCenterAndZoom({
-            center: fakeBingMaps.getCenter(),
-            zoom: fakeBingMaps.getZoom() + 1
+          mapContainer.setCenterAndZoom({
+            center: mapContainer.fakeBingMaps.getCenter(),
+            zoom: mapContainer.fakeBingMaps.getZoom() + 1
           });
           mapContainer.showingMap('google')
           .done(function() {
-            server.respond();
+            sandbox.server.respond();
             done();
           });
         });
       });
 
       it ('show the new map with the same view as the old map', function() {
-        expect(fakeGoogleMaps.getZoom()).to.equal(fakeBingMaps.getZoom());
+        expect(mapContainer.fakeGoogleMaps.getZoom()).to.equal(mapContainer.fakeBingMaps.getZoom());
       });
 
       it ('should not load new trail data for the new map', function() {
-        expect(numberOfServerRequests).to.equal(2);
+        expect(mapContainer.numberOfServerRequests).to.equal(2);
       });
 
       it ('should display trail data on the map', function() {
-        verifyMapTrailDataMatchesView(fakeGoogleMaps);
+        verifyMapTrailDataMatchesView(mapContainer.fakeGoogleMaps);
       });
 
       after(function() {
@@ -282,14 +239,14 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
         initialize('bing', function() {
           mapContainer.showingMap('google')
           .then(function() {
-            fakeGoogleMaps.setCenterAndZoom({
-              center: fakeGoogleMaps.getCenter(),
-              zoom: fakeGoogleMaps.getZoom() + 1
+            mapContainer.setCenterAndZoom({
+              center: mapContainer.fakeGoogleMaps.getCenter(),
+              zoom: mapContainer.fakeGoogleMaps.getZoom() + 1
             });
           }).done(function() {
             mapContainer.showingMap('bing')
             .done(function() {
-              server.respond();
+              sandbox.server.respond();
               done();
             });
           });
@@ -297,15 +254,15 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
       });
 
       it ('show the map with the same view as the old map', function() {
-        expect(fakeBingMaps.getZoom()).to.equal(fakeGoogleMaps.getZoom());
+        expect(mapContainer.fakeBingMaps.getZoom()).to.equal(mapContainer.fakeGoogleMaps.getZoom());
       });
 
       it ('should not load new trail data for the map', function() {
-        expect(numberOfServerRequests).to.equal(2);
+        expect(mapContainer.numberOfServerRequests).to.equal(2);
       });
 
       it ('should display trail data on the map', function() {
-        verifyMapTrailDataMatchesView(fakeBingMaps);
+        verifyMapTrailDataMatchesView(mapContainer.fakeBingMaps);
       });
 
       after(function() {
@@ -317,16 +274,16 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js"], function($,
       before(function(done) {
         initialize('bing', function() {
           mapContainer.setCenterAndZoom({
-            center: fakeBingMaps.getCenter(),
-            zoom: fakeBingMaps.getZoom() + 1
+            center: mapContainer.fakeBingMaps.getCenter(),
+            zoom: mapContainer.fakeBingMaps.getZoom() + 1
           });
-          server.respond();
+          sandbox.server.respond();
           done();
         });
       });
 
       it ('should load new trail data', function() {
-        expect(numberOfServerRequests).to.equal(2);
+        expect(mapContainer.numberOfServerRequests).to.equal(2);
       });
 
       after(function() {

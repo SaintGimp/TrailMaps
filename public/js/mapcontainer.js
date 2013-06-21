@@ -4,7 +4,13 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
   var activeMap;
   var defaultCenter = new trailmaps.Location(trailmaps.configuration.defaultLatitude, trailmaps.configuration.defaultLongitude);
   var defaultZoomLevel = trailmaps.configuration.defaultZoom;
-  var currentView = {
+  // The view that the container will work to display
+  var currentContainerView = {
+    center: defaultCenter,
+    zoom: defaultZoomLevel
+  };
+  // The view that the map control currently has, which may lag behind the container's view
+  var currentMapView = {
     center: defaultCenter,
     zoom: defaultZoomLevel
   };
@@ -13,6 +19,7 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
   var scrollBounds = null;
   var currentTrailData = null;
   var requireFunc;
+  var viewChangedListener = null;
 
   var activeMapName = ko.observable('');
 
@@ -33,7 +40,7 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
         requireFunc([moduleName], function(createdControl) {
           self.control = createdControl;
           var container = $("#" + containerName)[0];
-          self.control.initialize(container, currentView.center, currentView.zoom, onViewChanged)
+          self.control.initialize(container, currentContainerView.center, currentContainerView.zoom, onViewChanged)
           .then(function() {
             deferred.resolve({ control: self.control, isNew: true });
           });
@@ -58,6 +65,7 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
   }
 
   function setCenterAndZoom(options) {
+    currentContainerView = options;
     activeMap.setCenterAndZoom(options);
   }
 
@@ -71,11 +79,12 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
       if (!currentTrailData) {
         loadTrail();
       } else if (controlData.isNew) {
+        activeMap.setCenterAndZoom(currentContainerView);
         displayTrail();
       } else {
         var newView = activeMap.getCenterAndZoom();
-        if (!viewsAreSame(currentView, newView)) {
-          activeMap.setCenterAndZoom(currentView);
+        if (!viewsAreSame(currentContainerView, newView)) {
+          activeMap.setCenterAndZoom(currentContainerView);
           displayTrail();
         }
       }
@@ -141,7 +150,11 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
       loadTrail();
     }
 
-    currentView = activeMap.getCenterAndZoom();
+    currentMapView = activeMap.getCenterAndZoom();
+    currentContainerView = activeMap.getCenterAndZoom();
+    if (viewChangedListener !== null) {
+      viewChangedListener(getViewOptions());
+    }
   }
 
   function needToLoadNewData() {
@@ -149,7 +162,7 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
       return true;
     }
 
-    if (activeMap.getZoom() !== currentView.zoom) {
+    if (activeMap.getZoom() !== currentMapView.zoom) {
       return true;
     }
 
@@ -157,9 +170,20 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
   }
 
   function getUrlFragment() {
-    var lat = currentView.center.latitude.toFixed(5);
-    var lon = currentView.center.longitude.toFixed(5);
-    return activeMapName() + '?lat=' + lat + '&lon=' + lon + '&zoom=' + currentView.zoom;
+    var lat = currentContainerView.center.latitude.toFixed(5);
+    var lon = currentContainerView.center.longitude.toFixed(5);
+    return activeMapName() + '?lat=' + lat + '&lon=' + lon + '&zoom=' + currentContainerView.zoom;
+  }
+
+  function getViewOptions() {
+    return {
+      mapName: activeMapName(),
+      view: currentContainerView
+    };
+  }
+
+  function addViewChangedListener(listener) {
+    viewChangedListener = listener;
   }
 
   return {
@@ -168,6 +192,8 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
     showingMap: showingMap,
     activeMapName: activeMapName,
     getUrlFragment: getUrlFragment,
+    getViewOptions: getViewOptions,
+    addViewChangedListener: addViewChangedListener,
 
     // For testing
     defaultCenter: defaultCenter,
