@@ -5,4 +5,4 @@ Displays a GPS track and mile markers for various long-distance trails, using th
 
 This project is intended to be useful but is mostly a vehicle for me to learn Node.js and Javascript.
 
-Hosted right now at http://trailmaps.ironfoundry.me.
+Hosted right now at http://trailmaps.saintgimp.org.
