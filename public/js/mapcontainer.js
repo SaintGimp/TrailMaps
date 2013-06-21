@@ -4,13 +4,8 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
   var activeMap;
   var defaultCenter = new trailmaps.Location(trailmaps.configuration.defaultLatitude, trailmaps.configuration.defaultLongitude);
   var defaultZoomLevel = trailmaps.configuration.defaultZoom;
-  // The view that the container will work to display
+  // The view that the container will work to display, but the map control may be lagging behing
   var currentContainerView = {
-    center: defaultCenter,
-    zoom: defaultZoomLevel
-  };
-  // The view that the map control currently has, which may lag behind the container's view
-  var currentMapView = {
     center: defaultCenter,
     zoom: defaultZoomLevel
   };
@@ -18,6 +13,7 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
   var trackBoundsMultiple = 3;
   var scrollBounds = null;
   var currentTrailData = null;
+  var trailDataZoomLevel = null;
   var requireFunc;
   var viewChangedListener = null;
 
@@ -127,6 +123,7 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
     var trackBounds = calculateTrackBounds();
 
     var trailUrl = '/api/trails/pct' + buildUrlParameters(trackBounds);
+    trailDataZoomLevel = currentContainerView.zoom;
 
     $.getJSON(trailUrl, null, function (data) {
       currentTrailData = data;
@@ -140,7 +137,7 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
     var east = trackBounds.east;
     var west = trackBounds.west;
 
-    var detail = activeMap.getZoom();
+    var detail = currentContainerView.zoom;
 
     return '?north=' + north + '&south=' + south + '&east=' + east + '&west=' + west + "&detail=" + detail;
   }
@@ -150,7 +147,6 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
       loadTrail();
     }
 
-    currentMapView = activeMap.getCenterAndZoom();
     currentContainerView = activeMap.getCenterAndZoom();
     if (viewChangedListener !== null) {
       viewChangedListener(getViewOptions());
@@ -162,7 +158,7 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
       return true;
     }
 
-    if (activeMap.getZoom() !== currentMapView.zoom) {
+    if (activeMap.getZoom() !== trailDataZoomLevel) {
       return true;
     }
 
