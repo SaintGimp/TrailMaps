@@ -6,6 +6,8 @@ block body
     div.contents.map-control.tab-pane(id='google', data-bind='css: {active: activeMapName() === "google"}')
     // TODO: Here apparently supports canvas for hardware accel?
     div.contents.map-control.tab-pane(id='here', data-bind='css: {active: activeMapName() === "here"}')
+    div.crosshair
+      img(src='/images/crosshair.png')
 
 block scripts
   script
