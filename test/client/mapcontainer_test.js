@@ -6,13 +6,6 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer.js"]
   var injector;
   var mapContainer;
 
-  function mockedRequire(modules, callback) {
-    $.each(modules, function(index, value) {
-      loadedModules.push(value);
-    });
-    injector.require(modules, callback);
-  }
-
   function initializeDOM() {
     $('#testArea').remove();
     $('body').append('<div id="testArea" style="width:400px; height:200px; border:solid red 2px"></div>');

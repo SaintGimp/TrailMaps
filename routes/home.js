@@ -8,6 +8,7 @@ module.exports = function(app) {
     res.redirect('/trails/pct/maps/bing');
   });
   app.get('/trails/pct/maps/:mapName', exports.maps);
+  app.get('/trails/pct/waypoints', exports.waypoints);
 };
 
 function getValue(queryValue, fallbackValue) {
@@ -28,4 +29,10 @@ exports.maps = function(req, res) {
   };
 
   res.render('maps', defaults);
+};
+
+exports.waypoints = function(req, res) {
+  // TODO: 404 if it's not a map name we recognize
+
+  res.render('waypoints');
 };

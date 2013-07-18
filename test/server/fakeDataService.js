@@ -53,3 +53,20 @@ exports.findOne = function(collectionName, searchTerms, projection, sortOrder) {
     });
   }
 };
+
+exports.remove = function(collectionName, searchTerms) {
+  lastCall = {
+    collectionName: collectionName,
+    searchTerms: searchTerms,
+  };
+
+  if (!exports.shouldErrorOnNextCall)
+  {
+    return new Q();
+  } else {
+    return Q.fcall(function() {
+      exports.shouldErrorOnNextCall = false;
+      throw new Error("remove Oops");
+    });
+  }
+};

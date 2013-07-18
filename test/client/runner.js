@@ -60,6 +60,7 @@ require(['jquery'], function($) {
 
   specs.push('mapcontainer_test.js');
   specs.push('navbar_test.js');
+  specs.push('waypoints_test.js');
 
   mocha.setup({
     ui: "bdd",

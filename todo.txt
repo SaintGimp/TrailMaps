@@ -16,18 +16,21 @@ Features:
 - Enter trail scouting reports with links to photos, locations, and descriptions
 
 User stories:
-* User can view existing waypoints
-- User can sort and filter existing waypoints
-- User can delete an existing waypoint
-- User can edit an existing waypoint
+* User can edit an existing waypoint (I think editing only name, to change lat/long create new waypoint?)
 - User can add a new waypoint
+- User can sort and filter existing waypoints
+- User can sort waypoints by trail mile order
 - Admin can audit all waypoint changes
+- Waypoints page looks good
+- Waypoints page is accessible from the rest of the site
 
 To Do on current task:
-* Make new page that displays waypoints
-- Link waypoint page in navbar
+* client side
+* server side
 
 Engineering tasks:
+- Import waypoints from Halfmile's data using only five decimal places
+- The server API to get waypoint by name should probably be get by ID, right? Names are not unique.
 - History only works on IE10 not IE9, need shim or graceful degrade
 - Google maps get grouchy when not active and browser window is resized
 - Write a Grunt task that verifies that we have all client tests wired up in Testem

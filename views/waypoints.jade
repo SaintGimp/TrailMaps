@@ -1,0 +1,23 @@
+block body
+  div(id='waypoints', data-bind='visible: waypoints().length > 0', style='display:none')
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          th Name
+          th Latitude
+          th Longitude
+          th(style='width: 150px; text-align:right;')
+      tbody(data-bind=" template: { name: 'waypoint-template', foreach: waypoints }")
+
+block scripts
+  script(id='waypoint-template', type='text/html')
+    tr
+      td(data-bind='text: name')
+      td(data-bind='text: latitude')
+      td(data-bind='text: longitude')
+      td(style='width: 150px; text-align:right;')
+        button.btn(data-bind='click: displayOnMap') Go
+        button.btn(data-bind='click: edit') Edit
+        button.btn(data-bind='click: $root.deleteWaypoint') Delete
+
+  script(data-main='/js/waypoints', src='/js/lib/require.js')

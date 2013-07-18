@@ -36,17 +36,17 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
     sandbox.restore();
   }
 
-  function responder(request, trail, queryString) {
+  function responder(request) {
     numberOfServerRequests++;
     request.respond(200, { "Content-Type": "application/json" }, '{ "loc": [ -120, 39 ], "mile": 1234 }');
   }
 
-  function nullResponder(request, trail, queryString) {
+  function nullResponder(request) {
     numberOfServerRequests++;
     request.respond(200, { "Content-Type": "application/json" }, 'null');
   }
 
-  function typeaheadResponder(request, trail, queryString) {
+  function typeaheadResponder(request) {
     numberOfServerRequests++;
     request.respond(200, { "Content-Type": "application/json" }, '["foo", "bar"]');
   }

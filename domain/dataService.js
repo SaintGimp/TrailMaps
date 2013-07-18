@@ -47,11 +47,20 @@ exports.findArray = function(collectionName, searchTerms, projection, sort) {
   );
 };
 
-exports.findOne = function(collectionName, searchTerms, projection, sort) {
+exports.findOne = function(collectionName, searchTerms, projection) {
   return exports.collection(collectionName)
   .then(
     function(collection) {
       return Q.ninvoke(collection, 'findOne', searchTerms, projection);
+    }
+  );
+};
+
+exports.remove = function(collectionName, searchTerms) {
+  return exports.collection(collectionName)
+  .then(
+    function(collection) {
+      return Q.ninvoke(collection, 'remove', searchTerms);
     }
   );
 };
