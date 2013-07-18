@@ -91,13 +91,43 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
           waypointsViewModel.loadData();
           sandbox.server.respond('/api/trails/pct/waypoints', getWaypointsResponder);
 
-          waypointsViewModel.waypoints()[0].edit();
+          waypointsViewModel.edit(waypointsViewModel.waypoints()[0]);
           done();
         });
       });
 
       it ('should use the edit template for the waypoint', function() {
         expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[0])).to.equal('edit-template');
+      });
+
+      after(function() {
+        cleanup();
+      });
+    });
+
+    describe('Editing a waypoint and then another one', function() {
+      before(function(done) {
+        initialize(function() {
+          waypointsViewModel.loadData();
+          sandbox.server.respond('/api/trails/pct/waypoints', getWaypointsResponder);
+
+          waypointsViewModel.edit(waypointsViewModel.waypoints()[0]);
+          waypointsViewModel.waypoints()[0].name("edited");
+          waypointsViewModel.edit(waypointsViewModel.waypoints()[1]);
+          done();
+        });
+      });
+
+      it ('should cancel the edit for the first waypoint', function() {
+        expect(waypointsViewModel.waypoints()[0].name()).to.equal('one');
+      });
+
+      it ('should use the normal template for the first waypoint', function() {
+        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[0])).to.equal('waypoint-template');
+      });
+
+      it ('should use the edit template for the second waypoint', function() {
+        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[1])).to.equal('edit-template');
       });
 
       after(function() {
@@ -119,9 +149,9 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
           waypointsViewModel.loadData();
           sandbox.server.respond('/api/trails/pct/waypoints', getWaypointsResponder);
 
-          waypointsViewModel.waypoints()[0].edit();
+          waypointsViewModel.edit(waypointsViewModel.waypoints()[0]);
           waypointsViewModel.waypoints()[0].name('edited');
-          waypointsViewModel.waypoints()[0].confirmEdit();
+          waypointsViewModel.confirmEdit(waypointsViewModel.waypoints()[0]);
           sandbox.server.respond('PUT', '/api/trails/pct/waypoints/123', updateWaypointResponder);
           done();
         });
@@ -155,9 +185,9 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
           waypointsViewModel.loadData();
           sandbox.server.respond('/api/trails/pct/waypoints', getWaypointsResponder);
 
-          waypointsViewModel.waypoints()[0].edit();
+          waypointsViewModel.edit(waypointsViewModel.waypoints()[0]);
           waypointsViewModel.waypoints()[0].name('edited');
-          waypointsViewModel.waypoints()[0].cancelEdit();
+          waypointsViewModel.cancelEdit(waypointsViewModel.waypoints()[0]);
           done();
         });
       });

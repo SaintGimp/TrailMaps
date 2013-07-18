@@ -25,12 +25,13 @@ User stories:
 - Waypoints page is accessible from the rest of the site
 
 To Do on current task:
-* Commit on enter
-- Edit on clicking name
-- Clicking edit button puts focus in input box
+* Make location a link to map (replace Go button)
+- Can we remove the edit button and use only double-click, or does that break on touch interfaces?
+
+
+
 
 Engineering tasks:
-- Import waypoints from Halfmile's data using only five decimal places
 - The server API to get waypoint by name should probably be get by ID, right? Names are not unique.
 - History only works on IE10 not IE9, need shim or graceful degrade
 - Google maps get grouchy when not active and browser window is resized

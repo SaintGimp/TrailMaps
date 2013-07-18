@@ -20,7 +20,7 @@ requirejs.config({
   },
 });
 
-require(['jquery', 'knockout', 'bootstrap', './waypointsViewModel'], function($, ko, bootstrap, WaypointsViewModel) {
+require(['jquery', 'knockout', 'bootstrap', 'waypointsViewModel', 'knockoutBindingHandlers'], function($, ko, bootstrap, WaypointsViewModel) {
   var waypointsViewModel = new WaypointsViewModel();
   waypointsViewModel.loadData()
   .done(function() {

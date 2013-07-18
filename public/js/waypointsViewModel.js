@@ -35,6 +35,28 @@ define(['jquery', 'knockout', 'q', 'waypointViewModel'], function($, ko, Q, Wayp
       });
     };
 
+    self.activeWaypoint = null;
+
+    self.edit = function(waypoint) {
+      if (self.activeWaypoint)
+      {
+        self.activeWaypoint.cancelEdit();
+      }
+
+      self.activeWaypoint = waypoint;
+      waypoint.edit();
+    };
+
+    self.confirmEdit = function(waypoint) {
+      self.activeWaypoint = null;
+      waypoint.confirmEdit();
+    };
+
+    self.cancelEdit = function(waypoint) {
+      waypoint.cancelEdit();
+      self.activeWaypoint = null;
+    };
+
     self.templateName = function(waypoint) {
       return waypoint.isEditing() ? "edit-template" : "waypoint-template";
     };
