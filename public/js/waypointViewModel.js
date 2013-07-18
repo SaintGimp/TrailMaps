@@ -5,11 +5,15 @@ define(['jquery', 'knockout', 'q'], function($, ko, Q) {
   return function() {
     var self = this;
 
+    self.name = ko.observable();
+    self.latitude = ko.observable();
+    self.longitude = ko.observable();
+
     self.fromJS = function(data) {
       self.id = data._id;
-      self.name = ko.observable(data.name);
-      self.latitude = ko.observable(data.loc[1]);
-      self.longitude = ko.observable(data.loc[0]);
+      self.name(data.name);
+      self.latitude(data.loc[1]);
+      self.longitude(data.loc[0]);
     };
 
     self.toJS = function() {
@@ -25,7 +29,39 @@ define(['jquery', 'knockout', 'q'], function($, ko, Q) {
       window.location.assign(url);
     };
 
+    self.isEditing = ko.observable(false);
+
+    self.originalValues = null;
+
     self.edit = function() {
+      self.originalValues = self.toJS();
+      self.isEditing(true);
+    };
+
+    self.confirmEdit = function() {
+      var deferred = Q.defer();
+
+      $.ajax({
+        type: 'PUT',
+        url: "/api/trails/pct/waypoints/" + self.id,
+        data: JSON.stringify(self.toJS()),
+        processData: false,
+        contentType: "application/json; charset=utf-8",
+        success: function() {
+          self.isEditing(false);
+          deferred.resolve(true);
+        },
+        error: function() {
+          deferred.resolve(false);
+        }
+      });
+
+      return deferred.promise;
+    };
+
+    self.cancelEdit = function() {
+      self.fromJS(self.originalValues);
+      self.isEditing(false);
     };
 
     self.delete = function() {

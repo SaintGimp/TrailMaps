@@ -85,5 +85,99 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
       });
     });
 
+    describe('Editing a waypoint', function() {
+      before(function(done) {
+        initialize(function() {
+          waypointsViewModel.loadData();
+          sandbox.server.respond('/api/trails/pct/waypoints', getWaypointsResponder);
+
+          waypointsViewModel.waypoints()[0].edit();
+          done();
+        });
+      });
+
+      it ('should use the edit template for the waypoint', function() {
+        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[0])).to.equal('edit-template');
+      });
+
+      after(function() {
+        cleanup();
+      });
+    });
+
+    describe('Confirming a waypoint edit', function() {
+      var updatedWaypoint;
+
+      function updateWaypointResponder(request) {
+        numberOfServerRequests++;
+        updatedWaypoint = JSON.parse(request.requestBody);
+        request.respond(200);
+      }
+
+      before(function(done) {
+        initialize(function() {
+          waypointsViewModel.loadData();
+          sandbox.server.respond('/api/trails/pct/waypoints', getWaypointsResponder);
+
+          waypointsViewModel.waypoints()[0].edit();
+          waypointsViewModel.waypoints()[0].name('edited');
+          waypointsViewModel.waypoints()[0].confirmEdit();
+          sandbox.server.respond('PUT', '/api/trails/pct/waypoints/123', updateWaypointResponder);
+          done();
+        });
+      });
+
+      it ('should use the normal template for the waypoint', function() {
+        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[0])).to.equal('waypoint-template');
+      });
+
+      it ('should have the new values', function() {
+        expect(waypointsViewModel.waypoints()[0].name()).to.equal('edited');
+      });
+
+      it ('should save the waypoint to the server', function() {
+        expect(numberOfServerRequests).to.equal(2);
+        expect(updatedWaypoint).to.deep.equal({
+          name: "edited",
+          loc: [ -120, 39 ],
+          _id: "123"
+        });
+      });
+
+      after(function() {
+        cleanup();
+      });
+    });
+
+    describe('Canceling a waypoint edit', function() {
+      before(function(done) {
+        initialize(function() {
+          waypointsViewModel.loadData();
+          sandbox.server.respond('/api/trails/pct/waypoints', getWaypointsResponder);
+
+          waypointsViewModel.waypoints()[0].edit();
+          waypointsViewModel.waypoints()[0].name('edited');
+          waypointsViewModel.waypoints()[0].cancelEdit();
+          done();
+        });
+      });
+
+      it ('should use the normal template for the waypoint', function() {
+        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[0])).to.equal('waypoint-template');
+      });
+
+      it ('should have the old values', function() {
+        expect(waypointsViewModel.waypoints()[0].name()).to.equal('one');
+      });
+
+      it ('should not save the waypoint to the server', function() {
+        expect(numberOfServerRequests).to.equal(1);
+      });
+
+      after(function() {
+        cleanup();
+      });
+    });
+
   });
 });

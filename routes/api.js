@@ -9,6 +9,7 @@ module.exports = function(app) {
   app.get('/api/trails/:trailName/milemarkers/:mile', exports.getMileMarker);
   app.get('/api/trails/:trailName/waypoints/typeahead/:text', exports.getWaypointTypeaheadList);
   app.get('/api/trails/:trailName/waypoints/:name', exports.getWaypoint);
+  app.put('/api/trails/:trailName/waypoints/:id', exports.updateWaypoint);
   app.delete('/api/trails/:trailName/waypoints/:id', exports.deleteWaypoint);
   app.get('/api/trails/:trailName/waypoints', exports.getWaypoints);
   app.get('/api/trails/:trailName', exports.getTrailData);
@@ -74,6 +75,26 @@ exports.getWaypoint = function (req, res, next) {
   .done(
     function(waypoint) {
       res.json(waypoint);
+    },
+    next
+  );
+};
+
+exports.updateWaypoint = function (req, res, next) {
+  var options = {
+    trailName: req.params.trailName,
+    id: req.params.id,
+    name: req.body.name
+  };
+
+  waypoints.updateById(options)
+  .done(
+    function(success) {
+      if (!success)
+      {
+        res.status(404);
+      }
+      res.send();
     },
     next
   );

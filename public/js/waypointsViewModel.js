@@ -34,5 +34,9 @@ define(['jquery', 'knockout', 'q', 'waypointViewModel'], function($, ko, Q, Wayp
         }
       });
     };
+
+    self.templateName = function(waypoint) {
+      return waypoint.isEditing() ? "edit-template" : "waypoint-template";
+    };
   };
 });

@@ -9,7 +9,7 @@ define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContain
     mapContainer.addViewChangedListener(function() {
       replaceCurrentHistoryNode();
     });
-    
+
     self.onPillClick = function(data, event) {
       var href = event.target.href;
       var mapName = href.substr(href.lastIndexOf('/') + 1, href.length).toLowerCase();

@@ -6,6 +6,8 @@ exports.getLastCall = function() { return lastCall; };
 
 exports.shouldErrorOnNextCall = false;
 
+exports.shouldFailOnNextCall = false;
+
 exports.findArray = function(collectionName, searchTerms, projection, sortOrder) {
   lastCall = {
     collectionName: collectionName,
@@ -51,6 +53,27 @@ exports.findOne = function(collectionName, searchTerms, projection, sortOrder) {
       exports.shouldErrorOnNextCall = false;
       throw new Error("findOne Oops");
     });
+  }
+};
+
+exports.update = function(collectionName, searchTerms, updateOperation) {
+  lastCall = {
+    collectionName: collectionName,
+    searchTerms: searchTerms,
+    updateOperation: updateOperation
+  };
+
+  if (exports.shouldErrorOnNextCall)
+  {
+    return Q.fcall(function() {
+      exports.shouldErrorOnNextCall = false;
+      throw new Error("update Oops");
+    });
+  } else if (exports.shouldFailOnNextCall) {
+    exports.shouldFailOnNextCall = false;
+    return new Q([0]);
+  } else {
+    return new Q([1]);
   }
 };
 

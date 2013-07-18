@@ -41,7 +41,7 @@ function parseData(waypointXml) {
     var newWaypoints = filteredWaypointJson.map(function(waypoint) {
       return {
         name: cleanupName(waypoint.desc[0]),
-        loc: [parseFloat(waypoint.$.lon), parseFloat(waypoint.$.lat)] // MongoDB likes longitude first
+        loc: [parseFloat(waypoint.$.lon).toFixed(5), parseFloat(waypoint.$.lat).toFixed(5)] // MongoDB likes longitude first
       };
     });
     return newWaypoints;

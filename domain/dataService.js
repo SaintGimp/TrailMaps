@@ -56,6 +56,15 @@ exports.findOne = function(collectionName, searchTerms, projection) {
   );
 };
 
+exports.update = function(collectionName, searchTerms, updateOperation) {
+  return exports.collection(collectionName)
+  .then(
+    function(collection) {
+      return Q.ninvoke(collection, 'update', searchTerms, updateOperation, { w: 1 });
+    }
+  );
+};
+
 exports.remove = function(collectionName, searchTerms) {
   return exports.collection(collectionName)
   .then(

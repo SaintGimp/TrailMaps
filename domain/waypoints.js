@@ -45,6 +45,17 @@ exports.getTypeaheadList = function(options) {
   });
 };
 
+exports.updateById = function(options) {
+  var collectionName = makeCollectionName(options.trailName);
+  var searchTerms = { _id: new ObjectId(options.id) };
+  var updateOperation = { $set: { name: options.name } };
+
+  return dataService.update(collectionName, searchTerms, updateOperation)
+  .then(function(result) {
+    return result[0] === 1;
+  });
+};
+
 exports.deleteById = function(options) {
   var collectionName = makeCollectionName(options.trailName);
   var searchTerms = { _id: new ObjectId(options.id) };
