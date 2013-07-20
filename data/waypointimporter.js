@@ -29,6 +29,13 @@ function cleanupName(name) {
   return majorNamePart;
 }
 
+function getSequenceNumber(location) {
+  return dataService.findOne('pct_track16', { loc: { $near: location } }, { seq: 1 })
+  .then(function(trackPoint) {
+    return trackPoint.seq;
+  });
+}
+
 function parseData(waypointXml) {
   console.log('Parsing data');
 
@@ -36,15 +43,60 @@ function parseData(waypointXml) {
   .then(function(waypointJson) {
    console.log('Converting waypoints');
     var filteredWaypointJson = waypointJson.gpx.wpt.filter(function(waypoint) {
-      return !waypoint.name[0].match(/^(?:\d{4}|\d{4}-\d)$/) && waypoint.desc;
+      return !waypoint.name[0].match(/^(?:\d{4}|\d{4}-\d)$/) &&
+       waypoint.desc &&
+       !waypoint.desc[0].match(/^Campsite/) &&
+       !waypoint.desc[0].match(/^Creek/) &&
+       !waypoint.desc[0].match(/^Cross/) &&
+       !waypoint.desc[0].match(/^Depart/) &&
+       !waypoint.desc[0].match(/^Descend/) &&
+       !waypoint.desc[0].match(/^Gate/) &&
+       !waypoint.desc[0].match(/^Forest Road/) &&
+       !waypoint.desc[0].match(/^Headwaters/) &&
+       !waypoint.desc[0].match(/^Keep /) &&
+       !waypoint.desc[0].match(/^Left /) &&
+       !waypoint.desc[0].match(/^PCT departs/) &&
+       !waypoint.desc[0].match(/^PCT follows/) &&
+       !waypoint.desc[0].match(/^PCT joins/) &&
+       !waypoint.desc[0].match(/^Paved/) &&
+       !waypoint.desc[0].match(/^Pipe /) &&
+       !waypoint.desc[0].match(/^Powerline /) &&
+       !waypoint.desc[0].match(/^Right /) &&
+       !waypoint.desc[0].match(/^Road /) &&
+       !waypoint.desc[0].match(/^Seasonal creek/i) &&
+       !waypoint.desc[0].match(/^Seasonal spring/i) &&
+       !waypoint.desc[0].match(/^Seasonal stream/i) &&
+       !waypoint.desc[0].match(/^Seasonal water/i) &&
+       !waypoint.desc[0].match(/^Several /) &&
+       !waypoint.desc[0].match(/^Small /) &&
+       !waypoint.desc[0].match(/^Spring/) &&
+       !waypoint.desc[0].match(/^Spur /) &&
+       !waypoint.desc[0].match(/^Stream/) &&
+       !waypoint.desc[0].match(/^Trail junction/) &&
+       !waypoint.desc[0].match(/^Trail to/) &&
+       !waypoint.desc[0].match(/^Trailside/) &&
+       !waypoint.desc[0].match(/^Unmarked/) &&
+       !waypoint.desc[0].match(/^Unpaved/) &&
+       !waypoint.desc[0].match(/^Water/) &&
+       !waypoint.desc[0].match(/^Wire/);
     });
     var newWaypoints = filteredWaypointJson.map(function(waypoint) {
       return {
         name: cleanupName(waypoint.desc[0]),
-        loc: [parseFloat(waypoint.$.lon).toFixed(5), parseFloat(waypoint.$.lat).toFixed(5)] // MongoDB likes longitude first
+        loc: [parseFloat(waypoint.$.lon), parseFloat(waypoint.$.lat)], // MongoDB likes longitude first
+        halfmileName: waypoint.name[0]
       };
     });
     return newWaypoints;
+  })
+  .then(function(waypoints) {
+    return Q.all(waypoints.map(function(waypoint) {
+      return getSequenceNumber(waypoint.loc)
+      .then(function(sequenceNumber) {
+        waypoint.seq = sequenceNumber;
+        return waypoint;
+      });
+    }));
   });
 }
 

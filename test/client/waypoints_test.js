@@ -23,7 +23,7 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
 
   function getWaypointsResponder(request) {
     numberOfServerRequests++;
-    request.respond(200, { "Content-Type": "application/json" }, '[{ "name": "one", "loc": [ -120, 39 ], "_id": "123" }, { "name": "two", "loc": [ -122, 45 ], "_id": "456" }]');
+    request.respond(200, { "Content-Type": "application/json" }, '[{ "name": "one", "loc": [ -120, 39 ], "seq": 0, "_id": "123" }, { "name": "two", "loc": [ -122, 45 ], "seq": 1, "_id": "456" }]');
   }
 
   function deleteWaypointResponder(request) {
@@ -50,6 +50,7 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
         expect(waypointsViewModel.waypoints()[0].toJS()).to.deep.equal({
           name: "one",
           loc: [ -120, 39 ],
+          seq: 0,
           _id: "123"
         });
       });
@@ -170,6 +171,7 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
         expect(updatedWaypoint).to.deep.equal({
           name: "edited",
           loc: [ -120, 39 ],
+          seq: 0,
           _id: "123"
         });
       });

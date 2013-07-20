@@ -29,7 +29,8 @@ exports.import = function() {
 
   return dropCollections()
   .then(function() {
-    return Q.all([trackImporter.import(), mileMarkerImporter.import(), waypointImporter.import()]);
-  });
+    return Q.all([trackImporter.import(), mileMarkerImporter.import()]);
+  })
+  .then(waypointImporter.import);
 };
 

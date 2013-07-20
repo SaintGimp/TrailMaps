@@ -18,6 +18,10 @@ define(['jquery', 'knockout', 'q', 'waypointViewModel'], function($, ko, Q, Wayp
           self.waypoints.push(waypoint);
         });
 
+        // self.waypoints.sort(function(left, right) {
+        //   return left.name === right.name() ? 0 : (left.name() < right.name() ? -1 : 1);
+        // });
+
         deferred.resolve();
       });
 

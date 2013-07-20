@@ -6,26 +6,26 @@ define(['jquery', 'knockout', 'q'], function($, ko, Q) {
     var self = this;
 
     self.name = ko.observable();
-    self.latitude = ko.observable();
-    self.longitude = ko.observable();
 
     self.fromJS = function(data) {
       self.id = data._id;
       self.name(data.name);
-      self.latitude(data.loc[1]);
-      self.longitude(data.loc[0]);
+      self.latitude = data.loc[1];
+      self.longitude = data.loc[0];
+      self.seq = data.seq;
     };
 
     self.toJS = function() {
       return {
         name: self.name(),
-        loc: [self.longitude(), self.latitude()],
-        _id: self.id
+        loc: [self.longitude, self.latitude],
+        seq: self.seq,
+        _id: self.id,
       };
     };
 
     self.displayOnMap = function() {
-      var url = 'maps/bing?lat=' + self.latitude() + '&lon=' + self.longitude() + '&zoom=15';
+      var url = 'maps/bing?lat=' + self.latitude.toFixed(5) + '&lon=' + self.longitude.toFixed(5) + '&zoom=15';
       window.location.assign(url);
     };
 

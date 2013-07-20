@@ -17,8 +17,8 @@ function makeCollectionName(trailName) {
 exports.getWaypoints = function(options) {
   var collectionName = makeCollectionName(options.trailName);
   var searchTerms = { };
-  var projection = { _id: 1, name: 1, loc: 1 };
-  var sortOrder = { _id: 1 };
+  var projection = { _id: 1, name: 1, loc: 1, seq: 1 };
+  var sortOrder = { seq: 1 };
 
   return dataService.findArray(collectionName, searchTerms, projection, sortOrder);
 };

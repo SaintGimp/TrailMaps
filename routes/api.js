@@ -130,6 +130,7 @@ exports.getWaypoints = function (req, res, next) {
 };
 
 exports.importdata = function (req, res, next) {
+  res.connection.setTimeout(0);
   dataImporter.import()
   .done(
     function(marker) {
