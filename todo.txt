@@ -32,6 +32,7 @@ To Do on current task:
 
 
 Engineering tasks:
+- I think Mocha now natively supports promises, right?  If so, switch over to that format.
 - The server API to get waypoint by name should probably be get by ID, right? Names are not unique.
 - History only works on IE10 not IE9, need shim or graceful degrade
 - Google maps get grouchy when not active and browser window is resized

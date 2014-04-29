@@ -5,32 +5,29 @@
  */
 
 var express = require('express'),
+  app = exports.app = express(),
   path = require('path');
-
-var app = exports.app = express();
 
 // Configuration
 
-app.configure(function(){
-  app.set('port', process.env.VMC_APP_PORT || process.env.PORT || 3000);
-  app.set('host', process.env.VCAP_APP_HOST || process.env.HOST || 'localhost');
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
-  app.use(express.logger('dev'));
-  app.use(express.favicon());
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(require('less-middleware')({ src: path.join(__dirname, 'public'), compress: true }));
-  app.use(express.static(path.join(__dirname, 'public')));
-  app.use(app.router);
-  app.use(function(req, res, next) {
-    res.send(404);
-  });
-  app.use(express.errorHandler);
-});
+app.set('port', process.env.VMC_APP_PORT || process.env.PORT || 3000);
+app.set('host', process.env.VCAP_APP_HOST || process.env.HOST || 'localhost');
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+app.use(require('static-favicon')());
+app.use(require('morgan')({ format: 'dev'}));
+app.use(require('body-parser')());
+app.use(require('method-override')());
+app.use(require('less-middleware')(path.join(__dirname, 'public'), {}, {}, {compress: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('errorhandler')());
 
 // Routes
 require('./routes');
+
+app.use(function(req, res, next) {
+  res.send(404);
+});
 
 // Start server
 app.listen(app.get('port'), app.get('host'), function(){
