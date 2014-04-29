@@ -10,13 +10,18 @@ define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContain
       replaceCurrentHistoryNode();
     });
 
-    self.onPillClick = function(data, event) {
+    self.onPillClick = function(data, event, done) {
       var href = event.target.href;
       var mapName = href.substr(href.lastIndexOf('/') + 1, href.length).toLowerCase();
 
       if (mapName !== self.activeMapName())
       {
-        showMap(mapName);
+        showMap(mapName).done(function() {
+          replaceCurrentHistoryNode();
+          if (done) {
+            done();
+          }
+        });
       }
 
       return false;
@@ -25,12 +30,11 @@ define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContain
     function showMap(mapName) {
       mapName = mapName.toLowerCase();
       self.activeMapName(mapName);
-      mapContainer.showingMap(mapName)
-      .done();
+      return mapContainer.showingMap(mapName);
     }
 
     self.restoreHistoryState = function(options) {
-      showMap(options.mapName);
+      showMap(options.mapName).done();
       mapContainer.setCenterAndZoom(options.view);
     };
 

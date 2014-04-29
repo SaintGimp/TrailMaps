@@ -290,8 +290,9 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
     describe('Showing a map', function() {
       before(function(done) {
         initializeNavBar(function() {
-          navbarModel.onPillClick(null, {target: {href: 'foo/google'}});
-          done();
+          navbarModel.onPillClick(null, {target: {href: 'foo/google'}}, function() {
+            done();
+          });
         });
       });
 
@@ -304,6 +305,7 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
 
       it ('should replace the current browser history node with the new map name', function() {
+        console.log(mapContainer.getViewOptions());
         expect(history.replaceState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
       });
 
@@ -315,9 +317,11 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
     describe('Showing a map that has been shown before', function() {
       before(function(done) {
         initializeNavBar(function() {
-          navbarModel.onPillClick(null, {target: {href: 'foo/google'}});
-          navbarModel.onPillClick(null, {target: {href: 'foo/bing'}});
-          done();
+          navbarModel.onPillClick(null, {target: {href: 'foo/google'}}, function() {
+            navbarModel.onPillClick(null, {target: {href: 'foo/bing'}}, function() {
+              done();
+            });
+          });
         });
       });
 
