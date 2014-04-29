@@ -29,8 +29,8 @@ define(['jquery', 'knockout', 'q', 'waypointViewModel'], function($, ko, Q, Wayp
     };
 
     self.deleteWaypoint = function(waypoint) {
-      waypoint.delete()
-      .done(function(success) {
+      return waypoint.delete()
+      .then(function(success) {
         if (success) {
           self.waypoints.remove(waypoint);
         } else {

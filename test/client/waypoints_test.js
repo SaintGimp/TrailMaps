@@ -66,9 +66,11 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
           waypointsViewModel.loadData();
           sandbox.server.respond('/api/trails/pct/waypoints', getWaypointsResponder);
 
-          waypointsViewModel.deleteWaypoint(waypointsViewModel.waypoints()[0]);
+          waypointsViewModel.deleteWaypoint(waypointsViewModel.waypoints()[0])
+          .done(function() {
+            done();
+          });
           sandbox.server.respond('DELETE', '/api/trails/pct/waypoints/123', deleteWaypointResponder);
-          done();
         });
       });
 
@@ -76,7 +78,7 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
         expect(numberOfServerRequests).to.equal(2);
       });
 
-      it ('remove the waypoint from the list', function() {
+      it ('should remove the waypoint from the list', function() {
         expect(waypointsViewModel.waypoints().length).to.equal(1);
         expect(waypointsViewModel.waypoints()[0].id).to.equal('456');
       });
