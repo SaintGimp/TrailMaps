@@ -4,8 +4,9 @@ var QMongoDB = require('./q-mongodb');
 function getMongoUrl() {
   var mongo;
   if (process.env.VCAP_SERVICES) {
+    console.log("VCAP_SERVICES connection string: " + process.env.VCAP_SERVICES);
     var env = JSON.parse(process.env.VCAP_SERVICES);
-    mongo = env['mongodb-2.0'][0].credentials;
+    mongo = env['mongodb-2.2'][0].credentials;
   } else {
     mongo = {
       "hostname": "localhost",

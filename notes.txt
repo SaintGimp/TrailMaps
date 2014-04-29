@@ -74,3 +74,30 @@ http://hints.macworld.com/article.php?story=20070409141256538
 
 *** Knockout
 https://chrome.google.com/webstore/detail/knockoutjs-context-debugg/oddcpmchholgcjgjdnfjmildmlielhof
+
+
+*** Find in Files
+/Users/elee/Projects/GitHub/TrailMaps/,*.js,-/Users/elee/Projects/GitHub/TrailMaps/node_modules/*,-/Users/elee/Projects/GitHub/TrailMaps/test/lib/*,-/Users/elee/Projects/GitHub/TrailMaps/public/js/lib/*,-/Users/elee/Projects/GitHub/TrailMaps/public/bootstrap/*
+
+Debuggers:
+Node Inspector https://github.com/node-inspector/node-inspector
+Webstorm http://www.jetbrains.com/webstorm/
+Brackets http://brackets.io/
+
+Note on Bootstrap 3:
+> Now we've got v3 which has all sorts of wack colors and typography, like someone wanted to go "flat" but gave up halfway through.
+The idea of BS3 wasn't so much "flat" as it was a "remove gradients to allow easier customisation". Previously (in BC2) you had to override a ton of stuff to get "sane" buttons again. BS3 just gives you simple buttons that you can add to immediately. Same goes for the nav-bar. I much prefer it this way.
+reply
+	
+
+efsavage 1 hour ago | link
+
+I can see that, I guess it's just going after a different use case than I was using it for (i.e. the decent designer-less site). It has no real value to me if I have to go through and style everything over again.
+reply
+	
+
+clone1018 38 minutes ago | link
+
+Just head on over to Bootswatch and pick out your favorite theme, that's your new bootstrap :p
+My favorites so far are http://bootswatch.com/cerulean/
+reply
