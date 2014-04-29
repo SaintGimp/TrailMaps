@@ -33,7 +33,6 @@
     "debug"         : false,
     "devel"         : false,
 
-    "es5"           : true,
     "globalstrict"  : false,
     "strict"        : false,
 
