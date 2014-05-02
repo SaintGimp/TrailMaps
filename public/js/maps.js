@@ -12,7 +12,7 @@ requirejs.config({
     "async": "lib/async",
     "markerwithlabel": "lib/markerwithlabel_packed",
     "here_maps_api": "http://api.maps.nokia.com/2.2.4/jsl.js?with=maps",
-    "knockout": "http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1",
+    "knockout": "http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min",
     "q": "lib/q"
   },
   shim: {

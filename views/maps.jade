@@ -1,6 +1,8 @@
 extends layout
 
 block body
+  include navbar
+  
   div.contentArea.tab-content(id='mapCanvas')
     div.contents.map-control.tab-pane(id='bing', data-bind='css: {active: activeMapName() === "bing"}')
     div.contents.map-control.tab-pane(id='google', data-bind='css: {active: activeMapName() === "google"}')
