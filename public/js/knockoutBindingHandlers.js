@@ -17,7 +17,7 @@ define(['knockout'], function(ko) {
 
   ko.bindingHandlers.escapekey = {
     init: function(element, valueAccessor, allBindingsAccessor, data) {
-      // wrap the handler with a check for the enter key
+      // wrap the handler with a check for the escape key
       var wrappedHandler = function(data, event) {
         if (event.keyCode === 27) {
           valueAccessor().call(this, data, event);

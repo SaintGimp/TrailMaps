@@ -1,7 +1,7 @@
 extends layout
 
 block body
-  div.contentArea.tab-content(id='map_canvas')
+  div.contentArea.tab-content(id='mapCanvas')
     div.contents.map-control.tab-pane(id='bing', data-bind='css: {active: activeMapName() === "bing"}')
     div.contents.map-control.tab-pane(id='google', data-bind='css: {active: activeMapName() === "google"}')
     // TODO: Here apparently supports canvas for hardware accel?

@@ -55,7 +55,7 @@ define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContain
       if (isWaypoint(query)) {
         var url = "/api/trails/pct/waypoints/typeahead/" + encodeURIComponent(query);
         return $.getJSON(url, null, function (data) {
-         return process(data);
+          return process(data);
         });
       }
     };

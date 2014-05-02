@@ -1,11 +1,13 @@
 /* app css stylesheet */
 
+body { padding-top: 70px; }
+
 // http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/
 // The goal is to make a pane that auto-expands to fill the entire viewport except for the header
-#map_canvas {
+#mapCanvas {
     overflow: hidden;
     position: absolute;
-    top: 41px;  // Leave room for header - TODO: is there a way to refer to the actual header size here?
+    top: 51px;  // Leave room for header - TODO: is there a way to refer to the actual header size here?
     left: 0px;
     right: 0px;
     bottom: 0px;
@@ -18,7 +20,7 @@
 }
 
 @media (max-width: 979px) {
-  #map_canvas {
+  #mapCanvas {
     top: 51px;
     left: 0px;
     right: 0px;
@@ -33,7 +35,11 @@
     font-weight: bold;
 }
 
-.search-query {
+#searchBox {
+    width: 200px;
+}
+
+.typeahead.tt-hint {
     width: 200px;
 }
 
