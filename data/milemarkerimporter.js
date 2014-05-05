@@ -8,9 +8,9 @@ var fs = require("fs"),
 var parser = new xml2js.Parser();
 
 var fileNames = [
-  "data/pct_waypoints/ca_pct_waypoints/ca_pct_waypoints.gpx",
-  "data/pct_waypoints/or_pct_waypoints/or_pct_waypoints.gpx",
-  "data/pct_waypoints/wa_pct_waypoints/wa_pct_waypoints.gpx"
+  "data/pct/ca_state_gps/ca_state_waypoints.gpx",
+  "data/pct/or_state_gps/or_state_waypoints.gpx",
+  "data/pct/wa_state_gps/wa_state_waypoints.gpx"
 ];
 
 Array.prototype.append = function(array)

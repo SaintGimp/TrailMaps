@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1"
+     creator="~lippke/GPS/2014-prep/GenerateGPX.py" version="1.1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+     http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+  <metadata>
+    <desc><![CDATA[This data is the product of the PCT Halfmile Project.  It originates in 
+          well over a dozen GPS recordings made over time with Garmin handheld GPS units,
+          custom built GPS loggers, and survey grade post-processed loggers.  Per-section 
+          accuracy varies from 0.6 meter (California L,M,N,O) to 5 meters (e.g, Washington J) 
+          to unknown accuracy in other sections.  In general, the error values are low when there 
+          is no tree cover and are much higher under trees -- and worst of all when trees are coupled 
+          with steep terrain.  All data has been filtered and then reduced for GPS compatibility.
+          A few side trails have been created solely by reference to satellite imagery and maps.
+          Elevation values are spline-interpolated from many surrounding 1/3 arcsecond 
+          USGS DEM grid points and, as such, are NAVD88-based (i.e., they are quasi-MSL).<br/><br/>
+          Contact David Lippke (White Jeep) at &lt;lippke@gmail.com&gt; if you have technical questions 
+          or Lon Cooper &lt;Halfmile@pctmap.net&gt; for all others questions.]]>
+    </desc>
+    <bounds minlat="40.195175" maxlat="41.012595" minlon="-121.652957" maxlon="-121.379383"/>
+  </metadata>
+  <trk>
+    <name>CA Sec N - Boiling Spring Lake Correction</name>
+    <extensions>
+      <gpxx:TrackExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+        <gpxx:DisplayColor>DarkMagenta</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="40.4223880" lon="-121.3793830"><ele>1837.63</ele></trkpt>
+      <trkpt lat="40.4230540" lon="-121.3794940"><ele>1848.87</ele></trkpt>
+      <trkpt lat="40.4232510" lon="-121.3797430"><ele>1854.74</ele></trkpt>
+      <trkpt lat="40.4234650" lon="-121.3799060"><ele>1857.36</ele></trkpt>
+      <trkpt lat="40.4236720" lon="-121.3806150"><ele>1865.74</ele></trkpt>
+      <trkpt lat="40.4237670" lon="-121.3807510"><ele>1867.48</ele></trkpt>
+      <trkpt lat="40.4245240" lon="-121.3813660"><ele>1879.05</ele></trkpt>
+      <trkpt lat="40.4247230" lon="-121.3816120"><ele>1882.20</ele></trkpt>
+      <trkpt lat="40.4254460" lon="-121.3821200"><ele>1889.27</ele></trkpt>
+      <trkpt lat="40.4258920" lon="-121.3825080"><ele>1895.40</ele></trkpt>
+      <trkpt lat="40.4261330" lon="-121.3831740"><ele>1900.57</ele></trkpt>
+      <trkpt lat="40.4266090" lon="-121.3839900"><ele>1902.44</ele></trkpt>
+      <trkpt lat="40.4271920" lon="-121.3848860"><ele>1902.29</ele></trkpt>
+      <trkpt lat="40.4274020" lon="-121.3850590"><ele>1902.22</ele></trkpt>
+      <trkpt lat="40.4274380" lon="-121.3853250"><ele>1903.20</ele></trkpt>
+      <trkpt lat="40.4279610" lon="-121.3865390"><ele>1899.66</ele></trkpt>
+      <trkpt lat="40.4287900" lon="-121.3872880"><ele>1890.18</ele></trkpt>
+      <trkpt lat="40.4291580" lon="-121.3877960"><ele>1884.39</ele></trkpt>
+      <trkpt lat="40.4293050" lon="-121.3881480"><ele>1881.73</ele></trkpt>
+      <trkpt lat="40.4295360" lon="-121.3882910"><ele>1880.10</ele></trkpt>
+      <trkpt lat="40.4297600" lon="-121.3885150"><ele>1877.75</ele></trkpt>
+      <trkpt lat="40.4298850" lon="-121.3888150"><ele>1875.23</ele></trkpt>
+      <trkpt lat="40.4300990" lon="-121.3890980"><ele>1872.45</ele></trkpt>
+      <trkpt lat="40.4302650" lon="-121.3893870"><ele>1870.53</ele></trkpt>
+      <trkpt lat="40.4304800" lon="-121.3895750"><ele>1869.81</ele></trkpt>
+      <trkpt lat="40.4310490" lon="-121.3903300"><ele>1868.37</ele></trkpt>
+      <trkpt lat="40.4319580" lon="-121.3912190"><ele>1865.46</ele></trkpt>
+      <trkpt lat="40.4325000" lon="-121.3920580"><ele>1859.13</ele></trkpt>
+      <trkpt lat="40.4328310" lon="-121.3927770"><ele>1856.68</ele></trkpt>
+      <trkpt lat="40.4332810" lon="-121.3930270"><ele>1856.66</ele></trkpt>
+      <trkpt lat="40.4335730" lon="-121.3935490"><ele>1855.79</ele></trkpt>
+      <trkpt lat="40.4338230" lon="-121.3937180"><ele>1855.51</ele></trkpt>
+      <trkpt lat="40.4343980" lon="-121.3939670"><ele>1846.87</ele></trkpt>
+      <trkpt lat="40.4350250" lon="-121.3944600"><ele>1831.52</ele></trkpt>
+      <trkpt lat="40.4361570" lon="-121.3952440"><ele>1821.17</ele></trkpt>
+      <trkpt lat="40.4368200" lon="-121.3962090"><ele>1814.91</ele></trkpt>
+      <trkpt lat="40.4370660" lon="-121.3969302"><ele>1810.12</ele></trkpt>
+      <trkpt lat="40.4372922" lon="-121.3972856"><ele>1809.20</ele></trkpt>
+      <trkpt lat="40.4374706" lon="-121.3976402"><ele>1808.48</ele></trkpt>
+      <trkpt lat="40.4376324" lon="-121.3978458"><ele>1808.34</ele></trkpt>
+      <trkpt lat="40.4378861" lon="-121.3979029"><ele>1808.24</ele></trkpt>
+      <trkpt lat="40.4380662" lon="-121.3980923"><ele>1808.00</ele></trkpt>
+      <trkpt lat="40.4381064" lon="-121.3984198"><ele>1807.74</ele></trkpt>
+      <trkpt lat="40.4382609" lon="-121.3987139"><ele>1807.32</ele></trkpt>
+      <trkpt lat="40.4386435" lon="-121.3991403"><ele>1805.01</ele></trkpt>
+      <trkpt lat="40.4388576" lon="-121.3994659"><ele>1801.28</ele></trkpt>
+      <trkpt lat="40.4389680" lon="-121.3997387"><ele>1798.83</ele></trkpt>
+      <trkpt lat="40.4390327" lon="-121.4000621"><ele>1797.27</ele></trkpt>
+      <trkpt lat="40.4391773" lon="-121.4005416"><ele>1795.19</ele></trkpt>
+      <trkpt lat="40.4391824" lon="-121.4006611"><ele>1794.49</ele></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>CA Sec N - Burney Falls Trail</name>
+    <extensions>
+      <gpxx:TrackExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+        <gpxx:DisplayColor>DarkMagenta</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="41.0125950" lon="-121.6509790"><ele>872.60</ele></trkpt>
+      <trkpt lat="41.0123740" lon="-121.6510300"><ele>863.56</ele></trkpt>
+      <trkpt lat="41.0123300" lon="-121.6510120"><ele>864.75</ele></trkpt>
+      <trkpt lat="41.0120130" lon="-121.6511810"><ele>857.60</ele></trkpt>
+      <trkpt lat="41.0117840" lon="-121.6515990"><ele>861.06</ele></trkpt>
+      <trkpt lat="41.0116180" lon="-121.6516680"><ele>887.43</ele></trkpt>
+      <trkpt lat="41.0114520" lon="-121.6516100"><ele>894.32</ele></trkpt>
+      <trkpt lat="41.0110750" lon="-121.6518390"><ele>892.91</ele></trkpt>
+      <trkpt lat="41.0109520" lon="-121.6518060"><ele>892.73</ele></trkpt>
+      <trkpt lat="41.0107250" lon="-121.6519180"><ele>889.99</ele></trkpt>
+      <trkpt lat="41.0107510" lon="-121.6520290"><ele>886.54</ele></trkpt>
+      <trkpt lat="41.0106920" lon="-121.6524530"><ele>886.04</ele></trkpt>
+      <trkpt lat="41.0106360" lon="-121.6525270"><ele>890.07</ele></trkpt>
+      <trkpt lat="41.0106840" lon="-121.6525940"><ele>891.26</ele></trkpt>
+      <trkpt lat="41.0107200" lon="-121.6527720"><ele>893.43</ele></trkpt>
+      <trkpt lat="41.0106500" lon="-121.6529570"><ele>896.20</ele></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>CA Sec N - Carter Creek Trail</name>
+    <extensions>
+      <gpxx:TrackExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+        <gpxx:DisplayColor>DarkMagenta</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="40.1951750" lon="-121.4174200"><ele>2017.62</ele></trkpt>
+      <trkpt lat="40.1954600" lon="-121.4172730"><ele>2012.49</ele></trkpt>
+      <trkpt lat="40.1961580" lon="-121.4171600"><ele>1998.22</ele></trkpt>
+      <trkpt lat="40.1962640" lon="-121.4171110"><ele>1997.79</ele></trkpt>
+      <trkpt lat="40.1966280" lon="-121.4171470"><ele>1995.55</ele></trkpt>
+      <trkpt lat="40.1970670" lon="-121.4173840"><ele>1989.78</ele></trkpt>
+      <trkpt lat="40.1974620" lon="-121.4176600"><ele>1988.02</ele></trkpt>
+      <trkpt lat="40.1979940" lon="-121.4181920"><ele>1985.13</ele></trkpt>
+      <trkpt lat="40.1982400" lon="-121.4182530"><ele>1982.50</ele></trkpt>
+      <trkpt lat="40.1984500" lon="-121.4182490"><ele>1980.50</ele></trkpt>
+      <trkpt lat="40.1987100" lon="-121.4183400"><ele>1978.43</ele></trkpt>
+      <trkpt lat="40.1988740" lon="-121.4184640"><ele>1977.85</ele></trkpt>
+      <trkpt lat="40.1990570" lon="-121.4185400"><ele>1977.13</ele></trkpt>
+      <trkpt lat="40.1992600" lon="-121.4187900"><ele>1976.93</ele></trkpt>
+      <trkpt lat="40.1997540" lon="-121.4188940"><ele>1973.88</ele></trkpt>
+      <trkpt lat="40.1999680" lon="-121.4189770"><ele>1973.71</ele></trkpt>
+      <trkpt lat="40.2004630" lon="-121.4189630"><ele>1971.32</ele></trkpt>
+      <trkpt lat="40.2006580" lon="-121.4190140"><ele>1971.12</ele></trkpt>
+      <trkpt lat="40.2007850" lon="-121.4189600"><ele>1970.21</ele></trkpt>
+      <trkpt lat="40.2008950" lon="-121.4189550"><ele>1969.80</ele></trkpt>
+      <trkpt lat="40.2009370" lon="-121.4189870"><ele>1970.03</ele></trkpt>
+      <trkpt lat="40.2009760" lon="-121.4189590"><ele>1969.59</ele></trkpt>
+      <trkpt lat="40.2010240" lon="-121.4188400"><ele>1968.21</ele></trkpt>
+      <trkpt lat="40.2011740" lon="-121.4187140"><ele>1966.95</ele></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>CA Sec N - Old Station Trail</name>
+    <extensions>
+      <gpxx:TrackExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+        <gpxx:DisplayColor>DarkMagenta</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="40.6513020" lon="-121.4600420"><ele>1387.71</ele></trkpt>
+      <trkpt lat="40.6512510" lon="-121.4599600"><ele>1387.78</ele></trkpt>
+      <trkpt lat="40.6508950" lon="-121.4599140"><ele>1388.62</ele></trkpt>
+      <trkpt lat="40.6507850" lon="-121.4596620"><ele>1388.99</ele></trkpt>
+      <trkpt lat="40.6504880" lon="-121.4593660"><ele>1390.10</ele></trkpt>
+      <trkpt lat="40.6503520" lon="-121.4592950"><ele>1390.49</ele></trkpt>
+      <trkpt lat="40.6502980" lon="-121.4592130"><ele>1390.68</ele></trkpt>
+      <trkpt lat="40.6499330" lon="-121.4590740"><ele>1391.60</ele></trkpt>
+      <trkpt lat="40.6490800" lon="-121.4592140"><ele>1393.60</ele></trkpt>
+      <trkpt lat="40.6485160" lon="-121.4594740"><ele>1395.16</ele></trkpt>
+      <trkpt lat="40.6481310" lon="-121.4595270"><ele>1396.32</ele></trkpt>
+      <trkpt lat="40.6479780" lon="-121.4595190"><ele>1396.94</ele></trkpt>
+      <trkpt lat="40.6476830" lon="-121.4593760"><ele>1398.34</ele></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>CA Sec N - Subway Cave Trail</name>
+    <extensions>
+      <gpxx:TrackExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+        <gpxx:DisplayColor>DarkMagenta</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="40.6810480" lon="-121.4184240"><ele>1329.94</ele></trkpt>
+      <trkpt lat="40.6813190" lon="-121.4185680"><ele>1329.82</ele></trkpt>
+      <trkpt lat="40.6815550" lon="-121.4185540"><ele>1329.58</ele></trkpt>
+      <trkpt lat="40.6817400" lon="-121.4187160"><ele>1329.26</ele></trkpt>
+      <trkpt lat="40.6818600" lon="-121.4188930"><ele>1328.98</ele></trkpt>
+      <trkpt lat="40.6820670" lon="-121.4191080"><ele>1328.47</ele></trkpt>
+      <trkpt lat="40.6821750" lon="-121.4191620"><ele>1328.29</ele></trkpt>
+      <trkpt lat="40.6824170" lon="-121.4191940"><ele>1327.94</ele></trkpt>
+      <trkpt lat="40.6827310" lon="-121.4194190"><ele>1327.25</ele></trkpt>
+      <trkpt lat="40.6829770" lon="-121.4193660"><ele>1327.04</ele></trkpt>
+      <trkpt lat="40.6833790" lon="-121.4195230"><ele>1326.90</ele></trkpt>
+      <trkpt lat="40.6835770" lon="-121.4198420"><ele>1326.63</ele></trkpt>
+      <trkpt lat="40.6837630" lon="-121.4199430"><ele>1326.67</ele></trkpt>
+      <trkpt lat="40.6838880" lon="-121.4200550"><ele>1326.52</ele></trkpt>
+      <trkpt lat="40.6840150" lon="-121.4202860"><ele>1326.22</ele></trkpt>
+      <trkpt lat="40.6840740" lon="-121.4203370"><ele>1326.09</ele></trkpt>
+      <trkpt lat="40.6842490" lon="-121.4202210"><ele>1326.29</ele></trkpt>
+      <trkpt lat="40.6843390" lon="-121.4202230"><ele>1326.30</ele></trkpt>
+      <trkpt lat="40.6844730" lon="-121.4202390"><ele>1326.27</ele></trkpt>
+      <trkpt lat="40.6846430" lon="-121.4203680"><ele>1325.98</ele></trkpt>
+      <trkpt lat="40.6847570" lon="-121.4203900"><ele>1326.04</ele></trkpt>
+      <trkpt lat="40.6848240" lon="-121.4201190"><ele>1326.74</ele></trkpt>
+      <trkpt lat="40.6847600" lon="-121.4198420"><ele>1327.33</ele></trkpt>
+      <trkpt lat="40.6847820" lon="-121.4197020"><ele>1327.71</ele></trkpt>
+      <trkpt lat="40.6848800" lon="-121.4196610"><ele>1327.89</ele></trkpt>
+      <trkpt lat="40.6850890" lon="-121.4194000"><ele>1328.60</ele></trkpt>
+      <trkpt lat="40.6853050" lon="-121.4192900"><ele>1329.00</ele></trkpt>
+      <trkpt lat="40.6854900" lon="-121.4192830"><ele>1329.12</ele></trkpt>
+      <trkpt lat="40.6856350" lon="-121.4193860"><ele>1329.35</ele></trkpt>
+      <trkpt lat="40.6857490" lon="-121.4194110"><ele>1329.35</ele></trkpt>
+      <trkpt lat="40.6858500" lon="-121.4193200"><ele>1328.68</ele></trkpt>
+      <trkpt lat="40.6859060" lon="-121.4191610"><ele>1328.15</ele></trkpt>
+      <trkpt lat="40.6859830" lon="-121.4191240"><ele>1327.90</ele></trkpt>
+      <trkpt lat="40.6860590" lon="-121.4190230"><ele>1327.44</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

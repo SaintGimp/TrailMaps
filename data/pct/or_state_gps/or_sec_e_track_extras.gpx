@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1"
+     creator="~lippke/GPS/2014-prep/GenerateGPX.py" version="1.1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+     http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+  <metadata>
+    <desc><![CDATA[This data is the product of the PCT Halfmile Project.  It originates in 
+          well over a dozen GPS recordings made over time with Garmin handheld GPS units,
+          custom built GPS loggers, and survey grade post-processed loggers.  Per-section 
+          accuracy varies from 0.6 meter (California L,M,N,O) to 5 meters (e.g, Washington J) 
+          to unknown accuracy in other sections.  In general, the error values are low when there 
+          is no tree cover and are much higher under trees -- and worst of all when trees are coupled 
+          with steep terrain.  All data has been filtered and then reduced for GPS compatibility.
+          A few side trails have been created solely by reference to satellite imagery and maps.
+          Elevation values are spline-interpolated from many surrounding 1/3 arcsecond 
+          USGS DEM grid points and, as such, are NAVD88-based (i.e., they are quasi-MSL).<br/><br/>
+          Contact David Lippke (White Jeep) at &lt;lippke@gmail.com&gt; if you have technical questions 
+          or Lon Cooper &lt;Halfmile@pctmap.net&gt; for all others questions.]]>
+    </desc>
+    <bounds minlat="44.257543" maxlat="44.261326" minlon="-121.790034" maxlon="-121.785751"/>
+  </metadata>
+  <trk>
+    <name>OR Sec E - Lava Camp Trail</name>
+    <extensions>
+      <gpxx:TrackExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+        <gpxx:DisplayColor>DarkMagenta</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="44.2575430" lon="-121.7900340"><ele>1611.49</ele></trkpt>
+      <trkpt lat="44.2575830" lon="-121.7900220"><ele>1611.33</ele></trkpt>
+      <trkpt lat="44.2576870" lon="-121.7897510"><ele>1611.56</ele></trkpt>
+      <trkpt lat="44.2577000" lon="-121.7896640"><ele>1612.01</ele></trkpt>
+      <trkpt lat="44.2576570" lon="-121.7894560"><ele>1612.67</ele></trkpt>
+      <trkpt lat="44.2576770" lon="-121.7893560"><ele>1612.68</ele></trkpt>
+      <trkpt lat="44.2577310" lon="-121.7891970"><ele>1613.19</ele></trkpt>
+      <trkpt lat="44.2578530" lon="-121.7890470"><ele>1612.76</ele></trkpt>
+      <trkpt lat="44.2580230" lon="-121.7890630"><ele>1613.40</ele></trkpt>
+      <trkpt lat="44.2582060" lon="-121.7887820"><ele>1613.42</ele></trkpt>
+      <trkpt lat="44.2583940" lon="-121.7886190"><ele>1612.36</ele></trkpt>
+      <trkpt lat="44.2584510" lon="-121.7885960"><ele>1612.27</ele></trkpt>
+      <trkpt lat="44.2585950" lon="-121.7886290"><ele>1611.53</ele></trkpt>
+      <trkpt lat="44.2586910" lon="-121.7885970"><ele>1611.26</ele></trkpt>
+      <trkpt lat="44.2588170" lon="-121.7882670"><ele>1611.06</ele></trkpt>
+      <trkpt lat="44.2589590" lon="-121.7881350"><ele>1610.66</ele></trkpt>
+      <trkpt lat="44.2594090" lon="-121.7881200"><ele>1612.73</ele></trkpt>
+      <trkpt lat="44.2595260" lon="-121.7878670"><ele>1610.59</ele></trkpt>
+      <trkpt lat="44.2595420" lon="-121.7876500"><ele>1610.68</ele></trkpt>
+      <trkpt lat="44.2597500" lon="-121.7874600"><ele>1609.46</ele></trkpt>
+      <trkpt lat="44.2598340" lon="-121.7873110"><ele>1609.14</ele></trkpt>
+      <trkpt lat="44.2606230" lon="-121.7878230"><ele>1605.55</ele></trkpt>
+      <trkpt lat="44.2607310" lon="-121.7878480"><ele>1604.89</ele></trkpt>
+      <trkpt lat="44.2608940" lon="-121.7879800"><ele>1604.06</ele></trkpt>
+      <trkpt lat="44.2610940" lon="-121.7879360"><ele>1604.37</ele></trkpt>
+      <trkpt lat="44.2612220" lon="-121.7878520"><ele>1605.55</ele></trkpt>
+      <trkpt lat="44.2613110" lon="-121.7876750"><ele>1606.98</ele></trkpt>
+      <trkpt lat="44.2613260" lon="-121.7875040"><ele>1607.61</ele></trkpt>
+      <trkpt lat="44.2612850" lon="-121.7872040"><ele>1609.64</ele></trkpt>
+      <trkpt lat="44.2611650" lon="-121.7868860"><ele>1610.95</ele></trkpt>
+      <trkpt lat="44.2612650" lon="-121.7865910"><ele>1610.04</ele></trkpt>
+      <trkpt lat="44.2612730" lon="-121.7864320"><ele>1608.60</ele></trkpt>
+      <trkpt lat="44.2611310" lon="-121.7858950"><ele>1610.48</ele></trkpt>
+      <trkpt lat="44.2611570" lon="-121.7857510"><ele>1610.30</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

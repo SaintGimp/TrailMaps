@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1"
+     creator="~lippke/GPS/2014-prep/GenerateGPX.py" version="1.1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+     http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+  <metadata>
+    <desc><![CDATA[This data is the product of the PCT Halfmile Project.  It originates in 
+          well over a dozen GPS recordings made over time with Garmin handheld GPS units,
+          custom built GPS loggers, and survey grade post-processed loggers.  Per-section 
+          accuracy varies from 0.6 meter (California L,M,N,O) to 5 meters (e.g, Washington J) 
+          to unknown accuracy in other sections.  In general, the error values are low when there 
+          is no tree cover and are much higher under trees -- and worst of all when trees are coupled 
+          with steep terrain.  All data has been filtered and then reduced for GPS compatibility.
+          A few side trails have been created solely by reference to satellite imagery and maps.
+          Elevation values are spline-interpolated from many surrounding 1/3 arcsecond 
+          USGS DEM grid points and, as such, are NAVD88-based (i.e., they are quasi-MSL).<br/><br/>
+          Contact David Lippke (White Jeep) at &lt;lippke@gmail.com&gt; if you have technical questions 
+          or Lon Cooper &lt;Halfmile@pctmap.net&gt; for all others questions.]]>
+    </desc>
+    <bounds minlat="41.157899" maxlat="41.164578" minlon="-121.921302" maxlon="-121.920361"/>
+  </metadata>
+  <trk>
+    <name>CA Sec O - Alder Creek Trail</name>
+    <extensions>
+      <gpxx:TrackExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+        <gpxx:DisplayColor>DarkMagenta</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="41.1645780" lon="-121.9207000"><ele>1643.78</ele></trkpt>
+      <trkpt lat="41.1645210" lon="-121.9206500"><ele>1644.38</ele></trkpt>
+      <trkpt lat="41.1643970" lon="-121.9208320"><ele>1643.47</ele></trkpt>
+      <trkpt lat="41.1642110" lon="-121.9209810"><ele>1643.34</ele></trkpt>
+      <trkpt lat="41.1639570" lon="-121.9210370"><ele>1644.35</ele></trkpt>
+      <trkpt lat="41.1636550" lon="-121.9213020"><ele>1644.36</ele></trkpt>
+      <trkpt lat="41.1626140" lon="-121.9211290"><ele>1648.31</ele></trkpt>
+      <trkpt lat="41.1623550" lon="-121.9210250"><ele>1648.66</ele></trkpt>
+      <trkpt lat="41.1619960" lon="-121.9207160"><ele>1648.09</ele></trkpt>
+      <trkpt lat="41.1616720" lon="-121.9206000"><ele>1646.56</ele></trkpt>
+      <trkpt lat="41.1615190" lon="-121.9206030"><ele>1645.74</ele></trkpt>
+      <trkpt lat="41.1611160" lon="-121.9203610"><ele>1645.73</ele></trkpt>
+      <trkpt lat="41.1610080" lon="-121.9204300"><ele>1645.31</ele></trkpt>
+      <trkpt lat="41.1603770" lon="-121.9205230"><ele>1643.73</ele></trkpt>
+      <trkpt lat="41.1601660" lon="-121.9205990"><ele>1643.45</ele></trkpt>
+      <trkpt lat="41.1595890" lon="-121.9205930"><ele>1642.14</ele></trkpt>
+      <trkpt lat="41.1593850" lon="-121.9204980"><ele>1642.14</ele></trkpt>
+      <trkpt lat="41.1589320" lon="-121.9205320"><ele>1640.16</ele></trkpt>
+      <trkpt lat="41.1587990" lon="-121.9205640"><ele>1641.79</ele></trkpt>
+      <trkpt lat="41.1586810" lon="-121.9206670"><ele>1642.93</ele></trkpt>
+      <trkpt lat="41.1584930" lon="-121.9207550"><ele>1643.46</ele></trkpt>
+      <trkpt lat="41.1583660" lon="-121.9207770"><ele>1643.97</ele></trkpt>
+      <trkpt lat="41.1582690" lon="-121.9207830"><ele>1644.46</ele></trkpt>
+      <trkpt lat="41.1580250" lon="-121.9206040"><ele>1645.21</ele></trkpt>
+      <trkpt lat="41.1578990" lon="-121.9206730"><ele>1647.04</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

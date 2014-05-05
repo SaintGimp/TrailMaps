@@ -1,0 +1,5820 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1"
+     creator="~lippke/GPS/2014-prep/GenerateGPX.py" version="1.1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+     http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+  <metadata>
+    <desc><![CDATA[This waypoint data is sourced from the PCT Halfmile Project.
+          Elevation values are spline interpolations from USGS 1/3rd arcsecond DEM data 
+          and, as such, are NAVD88-based (i.e., are quasi MSL).<br/><br/>
+          Contact David Lippke (White Jeep) at &lt;lippke@gmail.com&gt; if you have technical questions
+          or Lon Cooper &lt;Halfmile@pctmap.net&gt; for all others.]]>
+    </desc>
+  </metadata>
+
+  <wpt lat="42.063890" lon="-122.602690">
+    <ele>1302.29</ele>
+    <name>1727</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.059260" lon="-122.601440">
+    <ele>1319.58</ele>
+    <name>1727-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.060103" lon="-122.593644">
+    <ele>1310.39</ele>
+    <name>1728</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.060777" lon="-122.588233">
+    <ele>1380.63</ele>
+    <name>1728-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.055486" lon="-122.584979">
+    <ele>1477.19</ele>
+    <name>1729</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.050013" lon="-122.585919">
+    <ele>1494.31</ele>
+    <name>1729-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.044046" lon="-122.582318">
+    <ele>1498.42</ele>
+    <name>1730</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.038566" lon="-122.578241">
+    <ele>1566.93</ele>
+    <name>1730-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.033088" lon="-122.573080">
+    <ele>1604.48</ele>
+    <name>1731</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.031330" lon="-122.567292">
+    <ele>1570.01</ele>
+    <name>1731-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.035334" lon="-122.561210">
+    <ele>1562.01</ele>
+    <name>1732</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.036396" lon="-122.553531">
+    <ele>1581.59</ele>
+    <name>1732-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.041349" lon="-122.548533">
+    <ele>1529.07</ele>
+    <name>1733</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.039680" lon="-122.541411">
+    <ele>1508.68</ele>
+    <name>1733-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.041356" lon="-122.534914">
+    <ele>1531.09</ele>
+    <name>1734</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.042773" lon="-122.526917">
+    <ele>1573.74</ele>
+    <name>1734-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.045331" lon="-122.518303">
+    <ele>1618.53</ele>
+    <name>1735</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.051538" lon="-122.514729">
+    <ele>1662.24</ele>
+    <name>1735-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.053891" lon="-122.506844">
+    <ele>1615.39</ele>
+    <name>1736</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.058783" lon="-122.500044">
+    <ele>1608.82</ele>
+    <name>1736-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.063034" lon="-122.495348">
+    <ele>1695.28</ele>
+    <name>1737</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.067132" lon="-122.488883">
+    <ele>1684.72</ele>
+    <name>1737-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.070209" lon="-122.480857">
+    <ele>1678.04</ele>
+    <name>1738</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.076708" lon="-122.480170">
+    <ele>1668.12</ele>
+    <name>1738-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.083593" lon="-122.481237">
+    <ele>1634.59</ele>
+    <name>1739</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.089961" lon="-122.478428">
+    <ele>1597.94</ele>
+    <name>1739-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.095177" lon="-122.473209">
+    <ele>1612.89</ele>
+    <name>1740</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.100713" lon="-122.474970">
+    <ele>1578.91</ele>
+    <name>1740-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.106928" lon="-122.475910">
+    <ele>1514.33</ele>
+    <name>1741</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.110662" lon="-122.478140">
+    <ele>1455.61</ele>
+    <name>1741-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.116378" lon="-122.478599">
+    <ele>1408.64</ele>
+    <name>1742</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.122533" lon="-122.477732">
+    <ele>1437.58</ele>
+    <name>1742-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.128543" lon="-122.481669">
+    <ele>1388.30</ele>
+    <name>1743</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.134346" lon="-122.483190">
+    <ele>1395.53</ele>
+    <name>1743-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.139976" lon="-122.487902">
+    <ele>1418.95</ele>
+    <name>1744</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.143208" lon="-122.494724">
+    <ele>1436.15</ele>
+    <name>1744-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.139107" lon="-122.501231">
+    <ele>1472.78</ele>
+    <name>1745</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.135877" lon="-122.508459">
+    <ele>1509.34</ele>
+    <name>1745-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.142117" lon="-122.511951">
+    <ele>1481.06</ele>
+    <name>1746</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.147642" lon="-122.507684">
+    <ele>1499.69</ele>
+    <name>1746-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.153685" lon="-122.508038">
+    <ele>1453.14</ele>
+    <name>1747</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.158355" lon="-122.501296">
+    <ele>1402.14</ele>
+    <name>1747-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.158142" lon="-122.492840">
+    <ele>1435.71</ele>
+    <name>1748</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.158659" lon="-122.485829">
+    <ele>1409.62</ele>
+    <name>1748-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.157503" lon="-122.480626">
+    <ele>1477.66</ele>
+    <name>1749</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.160408" lon="-122.473125">
+    <ele>1533.15</ele>
+    <name>1749-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.164348" lon="-122.465455">
+    <ele>1551.43</ele>
+    <name>1750</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.165018" lon="-122.456254">
+    <ele>1569.94</ele>
+    <name>1750-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.170559" lon="-122.454653">
+    <ele>1579.60</ele>
+    <name>1751</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.175900" lon="-122.452304">
+    <ele>1583.46</ele>
+    <name>1751-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.178797" lon="-122.444737">
+    <ele>1559.89</ele>
+    <name>1752</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.182877" lon="-122.439353">
+    <ele>1551.06</ele>
+    <name>1752-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.187542" lon="-122.433715">
+    <ele>1553.62</ele>
+    <name>1753</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.191509" lon="-122.429438">
+    <ele>1606.34</ele>
+    <name>1753-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.195754" lon="-122.426248">
+    <ele>1682.48</ele>
+    <name>1754</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.201030" lon="-122.420183">
+    <ele>1611.67</ele>
+    <name>1754-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.200830" lon="-122.412120">
+    <ele>1552.14</ele>
+    <name>1755</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.200170" lon="-122.403650">
+    <ele>1503.98</ele>
+    <name>1755-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.200520" lon="-122.394960">
+    <ele>1452.97</ele>
+    <name>1756</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.200570" lon="-122.386180">
+    <ele>1408.02</ele>
+    <name>1756-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.202330" lon="-122.378150">
+    <ele>1431.15</ele>
+    <name>1757</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.207010" lon="-122.372010">
+    <ele>1445.17</ele>
+    <name>1757-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.213250" lon="-122.369710">
+    <ele>1409.50</ele>
+    <name>1758</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.217280" lon="-122.365060">
+    <ele>1372.25</ele>
+    <name>1758-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.220530" lon="-122.356860">
+    <ele>1418.98</ele>
+    <name>1759</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.225660" lon="-122.350840">
+    <ele>1442.38</ele>
+    <name>1759-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.230140" lon="-122.344440">
+    <ele>1494.67</ele>
+    <name>1760</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.230480" lon="-122.335800">
+    <ele>1537.44</ele>
+    <name>1760-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.232080" lon="-122.327330">
+    <ele>1594.19</ele>
+    <name>1761</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.235300" lon="-122.320130">
+    <ele>1663.45</ele>
+    <name>1761-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.236870" lon="-122.312590">
+    <ele>1694.37</ele>
+    <name>1762</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.242660" lon="-122.307650">
+    <ele>1742.42</ele>
+    <name>1762-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.242300" lon="-122.299000">
+    <ele>1762.42</ele>
+    <name>1763</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.242980" lon="-122.290170">
+    <ele>1810.84</ele>
+    <name>1763-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.247920" lon="-122.285490">
+    <ele>1864.60</ele>
+    <name>1764</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.253240" lon="-122.290520">
+    <ele>1859.51</ele>
+    <name>1764-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.260220" lon="-122.288810">
+    <ele>1822.30</ele>
+    <name>1765</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.265560" lon="-122.290800">
+    <ele>1758.81</ele>
+    <name>1765-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.269680" lon="-122.287870">
+    <ele>1682.36</ele>
+    <name>1766</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.271110" lon="-122.279300">
+    <ele>1643.29</ele>
+    <name>1766-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.276280" lon="-122.275880">
+    <ele>1655.39</ele>
+    <name>1767</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.280910" lon="-122.268730">
+    <ele>1670.09</ele>
+    <name>1767-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.286720" lon="-122.266340">
+    <ele>1649.27</ele>
+    <name>1768</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.291120" lon="-122.271660">
+    <ele>1631.17</ele>
+    <name>1768-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.297760" lon="-122.272190">
+    <ele>1675.42</ele>
+    <name>1769</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.303160" lon="-122.267160">
+    <ele>1680.64</ele>
+    <name>1769-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.308730" lon="-122.262090">
+    <ele>1638.82</ele>
+    <name>1770</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.315110" lon="-122.263250">
+    <ele>1611.38</ele>
+    <name>1770-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.318250" lon="-122.255420">
+    <ele>1628.93</ele>
+    <name>1771</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.324080" lon="-122.254090">
+    <ele>1618.31</ele>
+    <name>1771-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.330260" lon="-122.257520">
+    <ele>1612.90</ele>
+    <name>1772</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.336330" lon="-122.260820">
+    <ele>1601.41</ele>
+    <name>1772-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.335490" lon="-122.268100">
+    <ele>1582.75</ele>
+    <name>1773</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.334640" lon="-122.276480">
+    <ele>1587.57</ele>
+    <name>1773-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.337860" lon="-122.282250">
+    <ele>1598.66</ele>
+    <name>1774</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.342890" lon="-122.287190">
+    <ele>1597.36</ele>
+    <name>1774-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.346380" lon="-122.292810">
+    <ele>1574.02</ele>
+    <name>1775</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.350430" lon="-122.291950">
+    <ele>1638.60</ele>
+    <name>1775-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.354970" lon="-122.296610">
+    <ele>1655.02</ele>
+    <name>1776</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.359930" lon="-122.297630">
+    <ele>1671.08</ele>
+    <name>1776-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.365260" lon="-122.296250">
+    <ele>1670.79</ele>
+    <name>1777</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.369880" lon="-122.302620">
+    <ele>1606.46</ele>
+    <name>1777-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.374430" lon="-122.299160">
+    <ele>1611.42</ele>
+    <name>1778</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.378050" lon="-122.295530">
+    <ele>1618.80</ele>
+    <name>1778-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.382680" lon="-122.292670">
+    <ele>1580.18</ele>
+    <name>1779</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.387090" lon="-122.287670">
+    <ele>1543.94</ele>
+    <name>1779-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.391930" lon="-122.287440">
+    <ele>1511.27</ele>
+    <name>1780</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.395870" lon="-122.291460">
+    <ele>1514.83</ele>
+    <name>1780-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.158316" lon="-122.501546">
+    <ele>1401.60</ele>
+    <name>AshlandCanal</name>
+    <desc>Ashland canal, dry gully - mi 1747.5</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="42.313360" lon="-122.262842">
+    <ele>1616.64</ele>
+    <name>BrownTr</name>
+    <desc>Trail to Brown Mountain Shelter - mi 1770.4</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.058327" lon="-122.602542">
+    <ele>1329.00</ele>
+    <name>DptHwy99</name>
+    <desc>PCT departs Old Hwy 99, paved -  mi 1727.4</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="42.393878" lon="-122.290183">
+    <ele>1509.31</ele>
+    <name>FishLakeTr</name>
+    <desc>Trail to Fish Lake - mi 1780.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.122704" lon="-122.464166">
+    <ele>1380.32</ele>
+    <name>GreenSprInn</name>
+    <desc>Green Springs Inn, 1.8 miles SE of PCT - mi 1743.4</desc>
+    <sym>Lodge</sym>
+  </wpt>
+  <wpt lat="42.217128" lon="-122.366760">
+    <ele>1357.30</ele>
+    <name>GrizzlyCreek</name>
+    <desc>Grizzly Creek, polluted water - mi 1758.4</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.095154" lon="-122.473201">
+    <ele>1612.09</ele>
+    <name>HobartBluffTr</name>
+    <desc>Hobart Bluff Trail junction - mi 1740</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.395848" lon="-122.291439">
+    <ele>1514.91</ele>
+    <name>Hwy140</name>
+    <desc>Highway 140, near fish lake - mi 1780.5</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="42.063895" lon="-122.602693">
+    <ele>1302.32</ele>
+    <name>Hwy5b</name>
+    <desc>Interstate Hwy 5 - mi 1727</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="42.130024" lon="-122.482666">
+    <ele>1388.69</ele>
+    <name>Hwy66</name>
+    <desc>Highway 66 at Green Springs Summit - mi 1743.2</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="42.180148" lon="-122.466227">
+    <ele>1532.05</ele>
+    <name>HyattLakeRst</name>
+    <desc>Hyatt Lake Resort, 1.4 miles N of PCT - mi 1749.8</desc>
+    <sym>Lodge</sym>
+  </wpt>
+  <wpt lat="42.168684" lon="-122.463245">
+    <ele>1536.36</ele>
+    <name>HyattLkCG</name>
+    <desc>Hyatt Lake Campground [approximate location], 3/10 mile N of PCT</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="42.336653" lon="-122.261404">
+    <ele>1595.57</ele>
+    <name>LakeOfWoodsTr</name>
+    <desc>Trail to Lake Of The Woods - mi 1772.5</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.158208" lon="-122.485206">
+    <ele>1408.28</ele>
+    <name>RD1749</name>
+    <desc>Hyatt Prairie Rd - mi 1748.6</desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="42.164397" lon="-122.465125">
+    <ele>1555.52</ele>
+    <name>RD1750</name>
+    <desc>Hyatt Prairie Rd, paved - mi 1750</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="42.218734" lon="-122.359898">
+    <ele>1398.47</ele>
+    <name>RD1759</name>
+    <desc>Moon Prairie Rd, paved - mi 1758.8</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="42.226760" lon="-122.350560">
+    <ele>1447.23</ele>
+    <name>RD1760</name>
+    <desc>Keno Access  Rd, paved -  mi 1759.6</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="42.293323" lon="-122.271666">
+    <ele>1640.37</ele>
+    <name>RD1769</name>
+    <desc>Dead Indian Memorial Rd, paved - mi 1768.7</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="42.059262" lon="-122.590810">
+    <ele>1340.17</ele>
+    <name>WA1728</name>
+    <desc>Seasonal Spring just past wooden bridge - mi 1728.2</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.053455" lon="-122.507664">
+    <ele>1623.86</ele>
+    <name>WA1736</name>
+    <desc>Fenced in spring - mi 1725.9</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.067211" lon="-122.487436">
+    <ele>1680.07</ele>
+    <name>WA1738</name>
+    <desc>Small spring - mi 1737.6</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.069146" lon="-122.483146">
+    <ele>1668.70</ele>
+    <name>WA1738b</name>
+    <desc>Spring-fed pipe by pond, 100 yards NW of trail - mi 1737.9</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.154041" lon="-122.507608">
+    <ele>1453.11</ele>
+    <name>WA1747</name>
+    <desc>Seasonal spring, faucet - mi 1747.1</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.164883" lon="-122.462144">
+    <ele>1552.84</ele>
+    <name>WA1750</name>
+    <desc>Water and corrals, 400 feet N of PCT -  mi 1750.2</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.208734" lon="-122.374904">
+    <ele>1394.76</ele>
+    <name>WA1758</name>
+    <desc>Klum Campground, 3/10 mi W of PCT -  mi 1757.5</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.241015" lon="-122.306804">
+    <ele>1732.25</ele>
+    <name>WA1762</name>
+    <desc>Big Springs, 1/10 mile E of PCT - mi 1762.4</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.313537" lon="-122.264475">
+    <ele>1625.19</ele>
+    <name>WA1770</name>
+    <desc>Brown Mountain Shelter, well water, 1/10 mile W of PCT - mi 1770.4</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.399520" lon="-122.284750">
+    <ele>1561.74</ele>
+    <name>1781</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.403660" lon="-122.279480">
+    <ele>1604.02</ele>
+    <name>1781-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.408790" lon="-122.276000">
+    <ele>1635.07</ele>
+    <name>1782</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.413470" lon="-122.272570">
+    <ele>1675.14</ele>
+    <name>1782-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.419080" lon="-122.274330">
+    <ele>1725.62</ele>
+    <name>1783</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.423650" lon="-122.272530">
+    <ele>1762.27</ele>
+    <name>1783-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.428080" lon="-122.267640">
+    <ele>1808.21</ele>
+    <name>1784</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.432220" lon="-122.262660">
+    <ele>1873.18</ele>
+    <name>1784-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.434690" lon="-122.270390">
+    <ele>1913.15</ele>
+    <name>1785</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.438970" lon="-122.276720">
+    <ele>1911.15</ele>
+    <name>1785-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.443110" lon="-122.273820">
+    <ele>1876.48</ele>
+    <name>1786</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.448290" lon="-122.269730">
+    <ele>1835.83</ele>
+    <name>1786-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.452870" lon="-122.265870">
+    <ele>1831.86</ele>
+    <name>1787</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.457900" lon="-122.268560">
+    <ele>1807.00</ele>
+    <name>1787-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.463180" lon="-122.273170">
+    <ele>1810.09</ele>
+    <name>1788</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.468400" lon="-122.278620">
+    <ele>1799.27</ele>
+    <name>1788-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.474360" lon="-122.279320">
+    <ele>1792.92</ele>
+    <name>1789</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.480500" lon="-122.279820">
+    <ele>1836.56</ele>
+    <name>1789-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.486910" lon="-122.279370">
+    <ele>1870.49</ele>
+    <name>1790</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.489950" lon="-122.276130">
+    <ele>1866.36</ele>
+    <name>1790-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.493960" lon="-122.269050">
+    <ele>1889.18</ele>
+    <name>1791</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.497430" lon="-122.261470">
+    <ele>1906.70</ele>
+    <name>1791-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.502410" lon="-122.257700">
+    <ele>1923.24</ele>
+    <name>1792</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.506640" lon="-122.251350">
+    <ele>1913.46</ele>
+    <name>1792-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.506550" lon="-122.245110">
+    <ele>1895.04</ele>
+    <name>1793</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.507300" lon="-122.239320">
+    <ele>1881.57</ele>
+    <name>1793-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.511390" lon="-122.233540">
+    <ele>1857.45</ele>
+    <name>1794</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.516790" lon="-122.228820">
+    <ele>1833.29</ele>
+    <name>1794-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.523130" lon="-122.231320">
+    <ele>1831.20</ele>
+    <name>1795</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.529270" lon="-122.233970">
+    <ele>1822.31</ele>
+    <name>1795-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.535830" lon="-122.233150">
+    <ele>1836.12</ele>
+    <name>1796</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.542140" lon="-122.231180">
+    <ele>1843.81</ele>
+    <name>1796-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.548120" lon="-122.229500">
+    <ele>1843.07</ele>
+    <name>1797</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.553040" lon="-122.224240">
+    <ele>1863.09</ele>
+    <name>1797-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.558220" lon="-122.218450">
+    <ele>1877.04</ele>
+    <name>1798</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.564770" lon="-122.220220">
+    <ele>1884.40</ele>
+    <name>1798-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.571100" lon="-122.222030">
+    <ele>1917.09</ele>
+    <name>1799</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.577220" lon="-122.224990">
+    <ele>1976.03</ele>
+    <name>1799-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.580660" lon="-122.227470">
+    <ele>2028.27</ele>
+    <name>1800</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.585940" lon="-122.227000">
+    <ele>2022.10</ele>
+    <name>1800-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.589580" lon="-122.224270">
+    <ele>2055.24</ele>
+    <name>1801</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.593530" lon="-122.219570">
+    <ele>2012.42</ele>
+    <name>1801-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.597890" lon="-122.214650">
+    <ele>2038.03</ele>
+    <name>1802</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.604170" lon="-122.215720">
+    <ele>2083.44</ele>
+    <name>1802-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.609730" lon="-122.217540">
+    <ele>2050.17</ele>
+    <name>1803</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.616340" lon="-122.216710">
+    <ele>2019.60</ele>
+    <name>1803-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.621970" lon="-122.214140">
+    <ele>2064.12</ele>
+    <name>1804</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.627510" lon="-122.216140">
+    <ele>2150.42</ele>
+    <name>1804-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.631680" lon="-122.221770">
+    <ele>2205.70</ele>
+    <name>1805</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.637760" lon="-122.222580">
+    <ele>2211.31</ele>
+    <name>1805-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.641570" lon="-122.215150">
+    <ele>2237.28</ele>
+    <name>1806</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.643540" lon="-122.210500">
+    <ele>2165.06</ele>
+    <name>1806-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.647220" lon="-122.207230">
+    <ele>2077.08</ele>
+    <name>1807</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.652810" lon="-122.205190">
+    <ele>2028.12</ele>
+    <name>1807-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.657410" lon="-122.206190">
+    <ele>1984.39</ele>
+    <name>1808</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.655130" lon="-122.210990">
+    <ele>1917.59</ele>
+    <name>1808-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.658670" lon="-122.211480">
+    <ele>1890.88</ele>
+    <name>1809</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.664400" lon="-122.208450">
+    <ele>1874.69</ele>
+    <name>1809-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.667600" lon="-122.201590">
+    <ele>1838.08</ele>
+    <name>1810</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.673300" lon="-122.197570">
+    <ele>1800.89</ele>
+    <name>1810-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.676090" lon="-122.189740">
+    <ele>1797.56</ele>
+    <name>1811</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.677520" lon="-122.180780">
+    <ele>1795.37</ele>
+    <name>1811-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.681580" lon="-122.173360">
+    <ele>1791.03</ele>
+    <name>1812</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.687960" lon="-122.171520">
+    <ele>1755.39</ele>
+    <name>1812-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.693640" lon="-122.175420">
+    <ele>1791.89</ele>
+    <name>1813</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.699360" lon="-122.179210">
+    <ele>1849.89</ele>
+    <name>1813-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.704790" lon="-122.183240">
+    <ele>1901.59</ele>
+    <name>1814</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.709830" lon="-122.188650">
+    <ele>1944.17</ele>
+    <name>1814-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.715400" lon="-122.192330">
+    <ele>1958.73</ele>
+    <name>1815</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.721940" lon="-122.191250">
+    <ele>1960.14</ele>
+    <name>1815-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.727480" lon="-122.190300">
+    <ele>1956.39</ele>
+    <name>1816</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.732640" lon="-122.191370">
+    <ele>1934.15</ele>
+    <name>1816-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.737700" lon="-122.195490">
+    <ele>1891.10</ele>
+    <name>1817</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.743260" lon="-122.193330">
+    <ele>1864.76</ele>
+    <name>1817-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.749350" lon="-122.194870">
+    <ele>1841.91</ele>
+    <name>1818</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.755460" lon="-122.195840">
+    <ele>1854.70</ele>
+    <name>1818-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.760310" lon="-122.192930">
+    <ele>1880.60</ele>
+    <name>1819</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.766450" lon="-122.191170">
+    <ele>1903.51</ele>
+    <name>1819-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.771960" lon="-122.189760">
+    <ele>1938.23</ele>
+    <name>1820</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.776790" lon="-122.185730">
+    <ele>1981.05</ele>
+    <name>1820-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.778330" lon="-122.177500">
+    <ele>2033.97</ele>
+    <name>1821</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.783650" lon="-122.173040">
+    <ele>2032.56</ele>
+    <name>1821-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.789740" lon="-122.173460">
+    <ele>1995.32</ele>
+    <name>1822</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.795950" lon="-122.175400">
+    <ele>1971.31</ele>
+    <name>1822-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.801710" lon="-122.175940">
+    <ele>1935.84</ele>
+    <name>1823</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.808070" lon="-122.176560">
+    <ele>1944.39</ele>
+    <name>1823-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.814140" lon="-122.179110">
+    <ele>1915.19</ele>
+    <name>1824</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.818260" lon="-122.181490">
+    <ele>1943.37</ele>
+    <name>1824-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.822680" lon="-122.182320">
+    <ele>1988.99</ele>
+    <name>1825</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.829020" lon="-122.182690">
+    <ele>2033.46</ele>
+    <name>1825-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.833440" lon="-122.188590">
+    <ele>2000.30</ele>
+    <name>1826</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.838930" lon="-122.193040">
+    <ele>2001.93</ele>
+    <name>1826-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.844600" lon="-122.193880">
+    <ele>1945.36</ele>
+    <name>1827</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.851090" lon="-122.194910">
+    <ele>1899.81</ele>
+    <name>1827-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.857800" lon="-122.193490">
+    <ele>1887.21</ele>
+    <name>1828</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.862410" lon="-122.186950">
+    <ele>1904.28</ele>
+    <name>1828-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.868040" lon="-122.182270">
+    <ele>1896.46</ele>
+    <name>1829</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.872950" lon="-122.177690">
+    <ele>1881.96</ele>
+    <name>1829-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.878720" lon="-122.174420">
+    <ele>1920.45</ele>
+    <name>1830</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.882310" lon="-122.168140">
+    <ele>1925.12</ele>
+    <name>1830-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.887360" lon="-122.165090">
+    <ele>1868.82</ele>
+    <name>1831</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.891260" lon="-122.169160">
+    <ele>1856.99</ele>
+    <name>1831-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.896920" lon="-122.167450">
+    <ele>1890.65</ele>
+    <name>1832</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.901810" lon="-122.165120">
+    <ele>1931.52</ele>
+    <name>1832-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.904300" lon="-122.160240">
+    <ele>1980.49</ele>
+    <name>1833</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.906770" lon="-122.152970">
+    <ele>2073.99</ele>
+    <name>1833-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.911260" lon="-122.148580">
+    <ele>2162.65</ele>
+    <name>1834</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.915090" lon="-122.154160">
+    <ele>2181.96</ele>
+    <name>1834-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.918870" lon="-122.160640">
+    <ele>2161.88</ele>
+    <name>1835</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.923900" lon="-122.165050">
+    <ele>2184.42</ele>
+    <name>1835-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.929410" lon="-122.168700">
+    <ele>2217.75</ele>
+    <name>1836</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.935210" lon="-122.169340">
+    <ele>2194.27</ele>
+    <name>1836-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.940680" lon="-122.170370">
+    <ele>2272.39</ele>
+    <name>1837</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.943040" lon="-122.176940">
+    <ele>2330.96</ele>
+    <name>1837-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.946130" lon="-122.169110">
+    <ele>2320.10</ele>
+    <name>1838</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.951560" lon="-122.172320">
+    <ele>2350.08</ele>
+    <name>1838-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.955020" lon="-122.168510">
+    <ele>2332.61</ele>
+    <name>1839</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.957900" lon="-122.162530">
+    <ele>2298.19</ele>
+    <name>1839-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.961670" lon="-122.157810">
+    <ele>2247.98</ele>
+    <name>1840</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.965440" lon="-122.150900">
+    <ele>2218.91</ele>
+    <name>1840-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.972130" lon="-122.151610">
+    <ele>2192.53</ele>
+    <name>1841</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.977980" lon="-122.149040">
+    <ele>2168.19</ele>
+    <name>1841-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.982360" lon="-122.144260">
+    <ele>2161.37</ele>
+    <name>1842</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.987780" lon="-122.138810">
+    <ele>2093.62</ele>
+    <name>1842-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.990790" lon="-122.134050">
+    <ele>2011.89</ele>
+    <name>1843</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.994350" lon="-122.133140">
+    <ele>1990.72</ele>
+    <name>1843-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.000510" lon="-122.133140">
+    <ele>1949.72</ele>
+    <name>1844</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.006550" lon="-122.129320">
+    <ele>1910.37</ele>
+    <name>1844-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.011140" lon="-122.123140">
+    <ele>1877.96</ele>
+    <name>1845</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.014700" lon="-122.115710">
+    <ele>1850.10</ele>
+    <name>1845-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.019860" lon="-122.110140">
+    <ele>1849.90</ele>
+    <name>1846</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.023640" lon="-122.105120">
+    <ele>1825.48</ele>
+    <name>1846-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.026850" lon="-122.097120">
+    <ele>1854.97</ele>
+    <name>1847</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.032310" lon="-122.091590">
+    <ele>1864.57</ele>
+    <name>1847-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.037870" lon="-122.090360">
+    <ele>1892.49</ele>
+    <name>1848</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.042760" lon="-122.096250">
+    <ele>1887.46</ele>
+    <name>1848-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.047540" lon="-122.102070">
+    <ele>1857.72</ele>
+    <name>1849</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.053100" lon="-122.106790">
+    <ele>1840.06</ele>
+    <name>1849-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.059920" lon="-122.107360">
+    <ele>1825.96</ele>
+    <name>1850</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.066520" lon="-122.107380">
+    <ele>1817.85</ele>
+    <name>1850-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.071290" lon="-122.101910">
+    <ele>1808.43</ele>
+    <name>1851</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.077360" lon="-122.098550">
+    <ele>1804.84</ele>
+    <name>1851-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.083370" lon="-122.095050">
+    <ele>1808.66</ele>
+    <name>1852</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.089190" lon="-122.091780">
+    <ele>1804.82</ele>
+    <name>1852-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="42.656508" lon="-122.213900">
+    <ele>1903.89</ele>
+    <name>7LakeTr</name>
+    <desc>Seven Lake Trail - mi 1808.7</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.664055" lon="-122.208668">
+    <ele>1876.90</ele>
+    <name>7MileTr</name>
+    <desc>PCT joins Seven Mile Trail - mi 1809.5</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.879791" lon="-122.172439">
+    <ele>1931.58</ele>
+    <name>AnnieSpringsTr</name>
+    <desc>Annie Springs Trail - mi 1830.1</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.605577" lon="-122.214488">
+    <ele>2077.12</ele>
+    <name>DivideTr</name>
+    <desc>Divide Trail - mi 1802.7</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.683217" lon="-122.172119">
+    <ele>1771.70</ele>
+    <name>Dpt7MileTrail</name>
+    <desc>Depart Seven Mile Trail - mi 1812.1</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.089173" lon="-122.091775">
+    <ele>1804.77</ele>
+    <name>Hwy138c</name>
+    <desc>Highway 138 - mi 1852.5</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="42.871432" lon="-122.180517">
+    <ele>1882.70</ele>
+    <name>Hwy62</name>
+    <desc>Highway 62 - near Mazama Village, mi 1829.3</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="42.736924" lon="-122.195690">
+    <ele>1891.33</ele>
+    <name>JackSpringTr</name>
+    <desc>Jack Spring Trail - mi 1816.9</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.891410" lon="-122.169576">
+    <ele>1857.29</ele>
+    <name>Jct1832</name>
+    <desc>Dutton Creek Trail, Equestrian PCT goes W, Hiker PCT goes to Rim Village - mi 1831.5</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.995739" lon="-122.134329">
+    <ele>1979.15</ele>
+    <name>Jct1844</name>
+    <desc>Equestrian PCT rejoins main PCT - 1843.6</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.934499" lon="-122.170140">
+    <ele>2184.23</ele>
+    <name>LightSpringsTr</name>
+    <desc>Lightning Springs Trail, spring 8/10  mile W of PCT -  mi 1836.4</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.867247" lon="-122.167052">
+    <ele>1835.12</ele>
+    <name>MazamaStore</name>
+    <desc>Mazama Store, 1 mile SE of PCT -  mi 1829.3</desc>
+    <sym>Shopping Center</sym>
+  </wpt>
+  <wpt lat="42.433499" lon="-122.269064">
+    <ele>1906.88</ele>
+    <name>MtMcLoughlinTr</name>
+    <desc>Mount McLoughlin Trail - mi 1784.9</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.685419" lon="-122.171491">
+    <ele>1756.52</ele>
+    <name>RangerSpringTr</name>
+    <desc>Trail to seasonal Ranger Spring [8/10 mile W of PCT] - mi 1812.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.966097" lon="-122.150829">
+    <ele>2214.90</ele>
+    <name>RD1841</name>
+    <desc>Rim Road, paved - mi 1840.6</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="42.513897" lon="-122.230419">
+    <ele>1839.64</ele>
+    <name>RedLakeTr</name>
+    <desc>Red Lake Trail - mi 1794.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.867053" lon="-122.168345">
+    <ele>1836.65</ele>
+    <name>Restaurant1829</name>
+    <desc>Mazama Village Restaurant, 1 mile SE of PCT -  mi 1829.3</desc>
+    <sym>Restaurant</sym>
+  </wpt>
+  <wpt lat="42.557354" lon="-122.218942">
+    <ele>1879.07</ele>
+    <name>SkyLakesTr</name>
+    <desc>Sky Lakes Trail - mi 1797.9</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.757284" lon="-122.196492">
+    <ele>1847.31</ele>
+    <name>StuartFallsTr</name>
+    <desc>Stuart Falls Trail - 1818.7</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.816268" lon="-122.181196">
+    <ele>1923.11</ele>
+    <name>StuartFallsTr2</name>
+    <desc>Stuart Falls Trail, 2nd junction - mi 1824.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.471852" lon="-122.280178">
+    <ele>1780.21</ele>
+    <name>TwinPondsTr</name>
+    <desc>Twin Ponds Trail - mi 1788.8</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="42.396451" lon="-122.290087">
+    <ele>1523.36</ele>
+    <name>WA1781</name>
+    <desc>Creek - mi 1780.6</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.505723" lon="-122.254003">
+    <ele>1910.77</ele>
+    <name>WA1792</name>
+    <desc>Christi's Spring - mi 1792.3</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.620438" lon="-122.212112">
+    <ele>2026.59</ele>
+    <name>WA1804</name>
+    <desc>Small Lake, 2/10 mile NE of PCT - mi 1803.8</desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="42.649059" lon="-122.207402">
+    <ele>2059.19</ele>
+    <name>WA1807</name>
+    <desc>Small Seasonal Creek - mi 1807.1</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.653777" lon="-122.204992">
+    <ele>2014.94</ele>
+    <name>WA1808</name>
+    <desc>Small Creek - mi 1807.6</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.654671" lon="-122.211433">
+    <ele>1914.56</ele>
+    <name>WA1809</name>
+    <desc>Small Creek - mi 1808.5</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.657672" lon="-122.212042">
+    <ele>1893.25</ele>
+    <name>WA1809b</name>
+    <desc>Small Creek - mi 1808.9</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.668519" lon="-122.201207">
+    <ele>1825.73</ele>
+    <name>WA1810</name>
+    <desc>Honeymoon Creek, often muddy, water is better at 1809 - mi 1810.1</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.739913" lon="-122.204260">
+    <ele>1811.62</ele>
+    <name>WA1817</name>
+    <desc>Seasonal Jack Spring, 7/10 mile W of PCT, may be dry, difficult to find</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.888720" lon="-122.164774">
+    <ele>1869.60</ele>
+    <name>WA1831</name>
+    <desc>Small Creek - mi 1831.1</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.893364" lon="-122.169023">
+    <ele>1860.12</ele>
+    <name>WA1832</name>
+    <desc>Castle Creek - mi 1831.7</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.904272" lon="-122.161252">
+    <ele>1967.28</ele>
+    <name>WA1833</name>
+    <desc>Dutton Creek 2nd crossing - mi 1832.9</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="42.911222" lon="-122.143607">
+    <ele>2172.19</ele>
+    <name>WA1834</name>
+    <desc>Water Fountain, Crater Rim Village. 2/10 mile E of PCT -  mi 1834.1</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="43.094770" lon="-122.087150">
+    <ele>1809.40</ele>
+    <name>1853</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.100740" lon="-122.083300">
+    <ele>1822.40</ele>
+    <name>1853-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.107380" lon="-122.080900">
+    <ele>1847.66</ele>
+    <name>1854</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.112720" lon="-122.081480">
+    <ele>1910.98</ele>
+    <name>1854-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.117670" lon="-122.080310">
+    <ele>1971.91</ele>
+    <name>1855</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.123760" lon="-122.081600">
+    <ele>2024.62</ele>
+    <name>1855-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.129310" lon="-122.076180">
+    <ele>2086.37</ele>
+    <name>1856</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.134770" lon="-122.076430">
+    <ele>2127.50</ele>
+    <name>1856-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.135330" lon="-122.085210">
+    <ele>2142.88</ele>
+    <name>1857</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.140090" lon="-122.083020">
+    <ele>2158.37</ele>
+    <name>1857-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.142720" lon="-122.075310">
+    <ele>2191.94</ele>
+    <name>1858</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.148050" lon="-122.078020">
+    <ele>2215.84</ele>
+    <name>1858-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.153470" lon="-122.080170">
+    <ele>2240.78</ele>
+    <name>1859</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.157260" lon="-122.073720">
+    <ele>2225.70</ele>
+    <name>1859-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.162540" lon="-122.073250">
+    <ele>2240.90</ele>
+    <name>1860</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.164160" lon="-122.073910">
+    <ele>2211.46</ele>
+    <name>1860-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.162210" lon="-122.067090">
+    <ele>2142.35</ele>
+    <name>1861</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.163290" lon="-122.062580">
+    <ele>2128.82</ele>
+    <name>1861-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.169970" lon="-122.062030">
+    <ele>2149.51</ele>
+    <name>1862</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.176610" lon="-122.063820">
+    <ele>2152.65</ele>
+    <name>1862-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.181310" lon="-122.057910">
+    <ele>2152.80</ele>
+    <name>1863</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.186340" lon="-122.054660">
+    <ele>2171.90</ele>
+    <name>1863-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.192610" lon="-122.052780">
+    <ele>2196.89</ele>
+    <name>1864</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.197260" lon="-122.050560">
+    <ele>2230.77</ele>
+    <name>1864-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.201590" lon="-122.048120">
+    <ele>2229.39</ele>
+    <name>1865</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.206990" lon="-122.042980">
+    <ele>2258.04</ele>
+    <name>1865-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.211720" lon="-122.038550">
+    <ele>2307.02</ele>
+    <name>1866</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.216280" lon="-122.032330">
+    <ele>2258.19</ele>
+    <name>1866-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.219480" lon="-122.025760">
+    <ele>2228.87</ele>
+    <name>1867</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.224210" lon="-122.024820">
+    <ele>2207.62</ele>
+    <name>1867-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.226450" lon="-122.019800">
+    <ele>2152.05</ele>
+    <name>1868</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.229570" lon="-122.015990">
+    <ele>2105.99</ele>
+    <name>1868-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.225490" lon="-122.012770">
+    <ele>2038.16</ele>
+    <name>1869</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.225140" lon="-122.008750">
+    <ele>2000.88</ele>
+    <name>1869-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.230340" lon="-122.007710">
+    <ele>1978.03</ele>
+    <name>1870</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.235060" lon="-122.001900">
+    <ele>1951.53</ele>
+    <name>1870-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.239020" lon="-121.996010">
+    <ele>1902.63</ele>
+    <name>1871</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.243840" lon="-121.990880">
+    <ele>1891.51</ele>
+    <name>1871-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.245370" lon="-121.985950">
+    <ele>1927.91</ele>
+    <name>1872</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.251450" lon="-121.988300">
+    <ele>1968.56</ele>
+    <name>1872-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.256120" lon="-121.990920">
+    <ele>1990.56</ele>
+    <name>1873</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.262600" lon="-121.989860">
+    <ele>2016.49</ele>
+    <name>1873-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.269400" lon="-121.989950">
+    <ele>2053.08</ele>
+    <name>1874</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.275440" lon="-121.990840">
+    <ele>2046.19</ele>
+    <name>1874-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.280520" lon="-121.997240">
+    <ele>1982.74</ele>
+    <name>1875</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.284340" lon="-122.004280">
+    <ele>2027.22</ele>
+    <name>1875-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.289430" lon="-122.010300">
+    <ele>2009.49</ele>
+    <name>1876</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.294770" lon="-122.016140">
+    <ele>1952.41</ele>
+    <name>1876-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.298790" lon="-122.009550">
+    <ele>1934.63</ele>
+    <name>1877</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.303650" lon="-122.005080">
+    <ele>1926.43</ele>
+    <name>1877-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.309270" lon="-122.002760">
+    <ele>1911.42</ele>
+    <name>1878</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.314560" lon="-122.006460">
+    <ele>1924.97</ele>
+    <name>1878-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.316080" lon="-122.014960">
+    <ele>1986.43</ele>
+    <name>1879</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.321420" lon="-122.017250">
+    <ele>2030.59</ele>
+    <name>1879-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.325450" lon="-122.016060">
+    <ele>2007.98</ele>
+    <name>1880</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.330290" lon="-122.010850">
+    <ele>1941.17</ele>
+    <name>1880-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.336730" lon="-122.009010">
+    <ele>1937.94</ele>
+    <name>1881</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.343200" lon="-122.010820">
+    <ele>1905.51</ele>
+    <name>1881-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.348940" lon="-122.015400">
+    <ele>1867.43</ele>
+    <name>1882</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.355060" lon="-122.018970">
+    <ele>1827.20</ele>
+    <name>1882-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.359160" lon="-122.025190">
+    <ele>1785.03</ele>
+    <name>1883</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.362650" lon="-122.029050">
+    <ele>1795.46</ele>
+    <name>1883-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.367350" lon="-122.032980">
+    <ele>1773.42</ele>
+    <name>1884</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.370330" lon="-122.039050">
+    <ele>1836.23</ele>
+    <name>1884-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.373610" lon="-122.043460">
+    <ele>1863.92</ele>
+    <name>1885</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.377240" lon="-122.049670">
+    <ele>1906.59</ele>
+    <name>1885-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.379950" lon="-122.051400">
+    <ele>1966.28</ele>
+    <name>1886</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.382840" lon="-122.057680">
+    <ele>2029.30</ele>
+    <name>1886-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.388750" lon="-122.061720">
+    <ele>2097.91</ele>
+    <name>1887</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.392110" lon="-122.061730">
+    <ele>2171.46</ele>
+    <name>1887-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.397600" lon="-122.060430">
+    <ele>2168.11</ele>
+    <name>1888</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.403800" lon="-122.063180">
+    <ele>2133.60</ele>
+    <name>1888-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.408280" lon="-122.070140">
+    <ele>2151.93</ele>
+    <name>1889</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.411960" lon="-122.076010">
+    <ele>2096.88</ele>
+    <name>1889-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.415470" lon="-122.082650">
+    <ele>2062.17</ele>
+    <name>1890</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.416740" lon="-122.085310">
+    <ele>2012.54</ele>
+    <name>1890-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.421190" lon="-122.085990">
+    <ele>1943.18</ele>
+    <name>1891</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.424170" lon="-122.091720">
+    <ele>1916.20</ele>
+    <name>1891-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.427930" lon="-122.096170">
+    <ele>1858.83</ele>
+    <name>1892</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.432870" lon="-122.098200">
+    <ele>1825.72</ele>
+    <name>1892-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.436350" lon="-122.104630">
+    <ele>1810.47</ele>
+    <name>1893</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.441190" lon="-122.110220">
+    <ele>1777.49</ele>
+    <name>1893-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.442480" lon="-122.116390">
+    <ele>1738.40</ele>
+    <name>1894</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.441930" lon="-122.123940">
+    <ele>1722.70</ele>
+    <name>1894-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.445550" lon="-122.128790">
+    <ele>1707.31</ele>
+    <name>1895</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.448710" lon="-122.134720">
+    <ele>1703.38</ele>
+    <name>1895-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.454370" lon="-122.133800">
+    <ele>1702.61</ele>
+    <name>1896</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.460830" lon="-122.134450">
+    <ele>1704.69</ele>
+    <name>1896-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.466110" lon="-122.137630">
+    <ele>1720.34</ele>
+    <name>1897</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.469960" lon="-122.139950">
+    <ele>1720.82</ele>
+    <name>1897-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.474240" lon="-122.143210">
+    <ele>1746.06</ele>
+    <name>1898</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.480090" lon="-122.142390">
+    <ele>1782.77</ele>
+    <name>1898-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.484150" lon="-122.137580">
+    <ele>1822.91</ele>
+    <name>1899</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.489760" lon="-122.136910">
+    <ele>1866.61</ele>
+    <name>1899-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.495860" lon="-122.134170">
+    <ele>1890.43</ele>
+    <name>1900</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.501510" lon="-122.136810">
+    <ele>1940.82</ele>
+    <name>1900-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.504930" lon="-122.141010">
+    <ele>1995.63</ele>
+    <name>1901</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.508160" lon="-122.138720">
+    <ele>2061.61</ele>
+    <name>1901-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.513550" lon="-122.135660">
+    <ele>2119.60</ele>
+    <name>1902</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.519510" lon="-122.133560">
+    <ele>2141.14</ele>
+    <name>1902-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.521750" lon="-122.125850">
+    <ele>2119.95</ele>
+    <name>1903</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.522860" lon="-122.118530">
+    <ele>2110.36</ele>
+    <name>1903-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.529150" lon="-122.121540">
+    <ele>2127.15</ele>
+    <name>1904</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.535240" lon="-122.121870">
+    <ele>2093.55</ele>
+    <name>1904-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.538820" lon="-122.128880">
+    <ele>2104.57</ele>
+    <name>1905</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.543210" lon="-122.133620">
+    <ele>2125.10</ele>
+    <name>1905-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.550000" lon="-122.133190">
+    <ele>2060.07</ele>
+    <name>1906</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.555710" lon="-122.128400">
+    <ele>2008.81</ele>
+    <name>1906-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.558710" lon="-122.120480">
+    <ele>1964.23</ele>
+    <name>1907</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.562820" lon="-122.114530">
+    <ele>1894.86</ele>
+    <name>1907-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.563760" lon="-122.106820">
+    <ele>1840.42</ele>
+    <name>1908</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.567780" lon="-122.101250">
+    <ele>1780.32</ele>
+    <name>1908-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.572610" lon="-122.095440">
+    <ele>1744.74</ele>
+    <name>1909</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.577770" lon="-122.090900">
+    <ele>1718.88</ele>
+    <name>1909-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.576900" lon="-122.083560">
+    <ele>1659.20</ele>
+    <name>1910</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.580940" lon="-122.079170">
+    <ele>1653.62</ele>
+    <name>1910-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.585110" lon="-122.073890">
+    <ele>1633.47</ele>
+    <name>1911</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.588570" lon="-122.066470">
+    <ele>1601.44</ele>
+    <name>1911-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.588460" lon="-122.059240">
+    <ele>1553.16</ele>
+    <name>1912</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.591640" lon="-122.054090">
+    <ele>1537.46</ele>
+    <name>1912-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.592970" lon="-122.045410">
+    <ele>1576.10</ele>
+    <name>1913</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.594820" lon="-122.037920">
+    <ele>1586.03</ele>
+    <name>1913-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.597170" lon="-122.033650">
+    <ele>1550.48</ele>
+    <name>1914</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.325959" lon="-122.018683">
+    <ele>2013.46</ele>
+    <name>BradleyCkTr</name>
+    <desc>Bradley Creek Trail - mi 1879.8</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.493346" lon="-122.134727">
+    <ele>1884.83</ele>
+    <name>CraterButteTr</name>
+    <desc>Crater Butte Trail - mi 1899.8</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.460083" lon="-122.024400">
+    <ele>1493.07</ele>
+    <name>CrescentLkCG</name>
+    <desc>Crescent Lake Campground</desc>
+    <sym>Picnic Area</sym>
+  </wpt>
+  <wpt lat="43.304863" lon="-122.002628">
+    <ele>1895.17</ele>
+    <name>CS1878</name>
+    <desc>Campsite by Six Horse Spring Trail, 4/10 mile to water - mi 1877.7</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="43.367730" lon="-122.033506">
+    <ele>1776.12</ele>
+    <name>CS1884</name>
+    <desc>Campsite near Forest Road 60 - mi 1884</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="43.579384" lon="-122.043850">
+    <ele>1479.31</ele>
+    <name>CS1912</name>
+    <desc>Campsite near railroad tracks, W of Shelter Cove Resort - mi 1912.7</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="43.528648" lon="-122.070917">
+    <ele>1774.75</ele>
+    <name>CSDiamondView</name>
+    <desc>Campsite at Diamond View Lake</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="43.090414" lon="-122.090108">
+    <ele>1797.64</ele>
+    <name>DiamondLkTr</name>
+    <desc>Diamond Lake alternate trail - mi 1852.6</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.597161" lon="-122.033613">
+    <ele>1550.26</ele>
+    <name>Hwy58B</name>
+    <desc>Highway 58 near Willamette Pass - mi 1914</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="43.242247" lon="-121.994158">
+    <ele>1890.53</ele>
+    <name>MillerLkTr</name>
+    <desc>Miller Lake Trail - mi 1871.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.211869" lon="-122.037893">
+    <ele>2308.12</ele>
+    <name>ORWAHighPt</name>
+    <desc>High point of Oregon-Washington segment of the PCT, 7,560 feet - mi 1866</desc>
+    <sym>Flag, Red</sym>
+  </wpt>
+  <wpt lat="43.095855" lon="-122.086458">
+    <ele>1812.42</ele>
+    <name>RD1853</name>
+    <desc>Forest Road 961, unpaved - mi 1853.1</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.367482" lon="-122.033229">
+    <ele>1773.99</ele>
+    <name>RD1884</name>
+    <desc>Forest Road 60, near Windigo Pass - mi 1884</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="43.581561" lon="-122.040216">
+    <ele>1463.55</ele>
+    <name>ShelterCove</name>
+    <desc>Shelter Cove Resort - mi 1912.7</desc>
+    <sym>Lodge</sym>
+  </wpt>
+  <wpt lat="43.592453" lon="-122.050764">
+    <ele>1543.98</ele>
+    <name>ShelterCoveTr</name>
+    <desc>Shelter Cove Trail - mi 1912.7</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.462225" lon="-122.133332">
+    <ele>1695.82</ele>
+    <name>SummitLkCG</name>
+    <desc>Summitt Lake Campground - mi 1896.6</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="43.162517" lon="-122.063866">
+    <ele>2118.38</ele>
+    <name>ThielsenCkTr</name>
+    <desc>Thielsen Creek Trail - mi 1861.4</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.153545" lon="-122.080782">
+    <ele>2235.37</ele>
+    <name>ThielsenTr</name>
+    <desc>Mount Thielsen Trail - mi  1859</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.162943" lon="-122.065274">
+    <ele>2102.10</ele>
+    <name>WA1861</name>
+    <desc>Thielsen Creek, water may be 1/10 mile NW of PCT - mi 1861.4</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="43.304293" lon="-122.000222">
+    <ele>1813.10</ele>
+    <name>WA1878</name>
+    <desc>Six Horse Spring, 4/10 mile E of PCT - mi 1877.7</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="43.382248" lon="-122.058485">
+    <ele>2010.38</ele>
+    <name>WA1886</name>
+    <desc>Minor lakelet just off the trail through the trees - mi 1886.5</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="43.449554" lon="-122.135405">
+    <ele>1701.21</ele>
+    <name>WA1896</name>
+    <desc>Small Creek - mi 1895.6</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="43.446869" lon="-122.132778">
+    <ele>1697.56</ele>
+    <name>WACS1895</name>
+    <desc>Campsite near south shore of Summit Lake - mi 1895.3</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="43.599753" lon="-122.036715">
+    <ele>1560.15</ele>
+    <name>WillametteSki</name>
+    <desc>Willamette Ski Resort, open weekends only during summer, 2/10 miles NW of PCT - mi 1914</desc>
+    <sym>Ski Resort</sym>
+  </wpt>
+  <wpt lat="43.364286" lon="-122.031005">
+    <ele>1780.55</ele>
+    <name>WindigoPsTr</name>
+    <desc>Windigo Pass Trail - mi 1883.7</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.581078" lon="-122.051214">
+    <ele>1504.95</ele>
+    <name>YoranLkTr</name>
+    <desc>Yoran Lake Trail - mi 1912.7</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.595970" lon="-122.025930">
+    <ele>1605.17</ele>
+    <name>1914-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.594080" lon="-122.017460">
+    <ele>1636.57</ele>
+    <name>1915</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.594430" lon="-122.010080">
+    <ele>1672.46</ele>
+    <name>1915-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.592480" lon="-122.002210">
+    <ele>1675.93</ele>
+    <name>1916</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.594410" lon="-121.998020">
+    <ele>1705.13</ele>
+    <name>1916-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.599350" lon="-121.998850">
+    <ele>1745.76</ele>
+    <name>1917</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.604950" lon="-121.997020">
+    <ele>1757.90</ele>
+    <name>1917-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.610280" lon="-121.999920">
+    <ele>1782.56</ele>
+    <name>1918</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.612470" lon="-122.000800">
+    <ele>1829.24</ele>
+    <name>1918-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.613660" lon="-122.004590">
+    <ele>1890.55</ele>
+    <name>1919</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.618630" lon="-122.001280">
+    <ele>1928.47</ele>
+    <name>1919-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.624760" lon="-121.999820">
+    <ele>1875.51</ele>
+    <name>1920</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.630080" lon="-122.001250">
+    <ele>1848.29</ele>
+    <name>1920-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.633900" lon="-122.006020">
+    <ele>1813.81</ele>
+    <name>1921</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.638550" lon="-122.008970">
+    <ele>1717.68</ele>
+    <name>1921-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.643880" lon="-122.007950">
+    <ele>1671.51</ele>
+    <name>1922</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.648780" lon="-122.002340">
+    <ele>1639.88</ele>
+    <name>1922-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.652140" lon="-121.993980">
+    <ele>1647.18</ele>
+    <name>1923</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.657280" lon="-121.989960">
+    <ele>1652.58</ele>
+    <name>1923-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.662700" lon="-121.987910">
+    <ele>1667.61</ele>
+    <name>1924</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.669060" lon="-121.988230">
+    <ele>1695.00</ele>
+    <name>1924-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.674500" lon="-121.990880">
+    <ele>1751.40</ele>
+    <name>1925</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.678400" lon="-121.997220">
+    <ele>1822.73</ele>
+    <name>1925-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.685020" lon="-121.995430">
+    <ele>1820.29</ele>
+    <name>1926</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.691500" lon="-121.994690">
+    <ele>1879.06</ele>
+    <name>1926-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.697770" lon="-121.993180">
+    <ele>1934.48</ele>
+    <name>1927</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.704000" lon="-121.994920">
+    <ele>1976.04</ele>
+    <name>1927-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.709760" lon="-121.992450">
+    <ele>1999.97</ele>
+    <name>1928</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.715500" lon="-121.991620">
+    <ele>1959.47</ele>
+    <name>1928-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.720910" lon="-121.987850">
+    <ele>1928.30</ele>
+    <name>1929</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.724540" lon="-121.982470">
+    <ele>1921.12</ele>
+    <name>1929-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.728340" lon="-121.976280">
+    <ele>1879.16</ele>
+    <name>1930</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.731920" lon="-121.978710">
+    <ele>1827.60</ele>
+    <name>1930-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.737820" lon="-121.978340">
+    <ele>1785.79</ele>
+    <name>1931</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.744300" lon="-121.979250">
+    <ele>1748.81</ele>
+    <name>1931-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.748550" lon="-121.973100">
+    <ele>1769.63</ele>
+    <name>1932</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.754060" lon="-121.972190">
+    <ele>1798.14</ele>
+    <name>1932-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.759550" lon="-121.970590">
+    <ele>1813.76</ele>
+    <name>1933</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.765040" lon="-121.966950">
+    <ele>1841.79</ele>
+    <name>1933-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.770540" lon="-121.969040">
+    <ele>1825.15</ele>
+    <name>1934</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.776470" lon="-121.966400">
+    <ele>1824.43</ele>
+    <name>1934-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.782500" lon="-121.965560">
+    <ele>1806.51</ele>
+    <name>1935</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.788390" lon="-121.967990">
+    <ele>1769.89</ele>
+    <name>1935-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.794960" lon="-121.967050">
+    <ele>1723.51</ele>
+    <name>1936</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.801230" lon="-121.964450">
+    <ele>1702.55</ele>
+    <name>1936-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.807700" lon="-121.963310">
+    <ele>1697.55</ele>
+    <name>1937</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.813950" lon="-121.961740">
+    <ele>1694.70</ele>
+    <name>1937-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.819880" lon="-121.958680">
+    <ele>1708.97</ele>
+    <name>1938</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.825540" lon="-121.956110">
+    <ele>1711.42</ele>
+    <name>1938-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.831390" lon="-121.953800">
+    <ele>1732.80</ele>
+    <name>1939</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.836070" lon="-121.949820">
+    <ele>1731.10</ele>
+    <name>1939-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.840600" lon="-121.949450">
+    <ele>1732.93</ele>
+    <name>1940</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.845040" lon="-121.953410">
+    <ele>1766.58</ele>
+    <name>1940-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.847410" lon="-121.960210">
+    <ele>1812.83</ele>
+    <name>1941</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.851240" lon="-121.964520">
+    <ele>1851.35</ele>
+    <name>1941-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.855200" lon="-121.960950">
+    <ele>1814.81</ele>
+    <name>1942</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.859960" lon="-121.961540">
+    <ele>1805.25</ele>
+    <name>1942-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.863970" lon="-121.956320">
+    <ele>1810.82</ele>
+    <name>1943</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.868480" lon="-121.954260">
+    <ele>1800.54</ele>
+    <name>1943-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.874270" lon="-121.951650">
+    <ele>1770.15</ele>
+    <name>1944</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.880140" lon="-121.953290">
+    <ele>1748.42</ele>
+    <name>1944-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.882920" lon="-121.945760">
+    <ele>1713.64</ele>
+    <name>1945</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.887790" lon="-121.940260">
+    <ele>1694.79</ele>
+    <name>1945-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.892760" lon="-121.934390">
+    <ele>1662.15</ele>
+    <name>1946</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.897620" lon="-121.928700">
+    <ele>1639.08</ele>
+    <name>1946-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.901450" lon="-121.921380">
+    <ele>1600.16</ele>
+    <name>1947</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.906790" lon="-121.917960">
+    <ele>1614.10</ele>
+    <name>1947-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.912730" lon="-121.915630">
+    <ele>1601.81</ele>
+    <name>1948</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.917670" lon="-121.914240">
+    <ele>1571.80</ele>
+    <name>1948-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.921510" lon="-121.907780">
+    <ele>1560.41</ele>
+    <name>1949</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.922590" lon="-121.898740">
+    <ele>1545.07</ele>
+    <name>1949-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.926760" lon="-121.895810">
+    <ele>1548.96</ele>
+    <name>1950</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.933040" lon="-121.898180">
+    <ele>1561.92</ele>
+    <name>1950-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.935480" lon="-121.894060">
+    <ele>1566.41</ele>
+    <name>1951</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.937230" lon="-121.885310">
+    <ele>1597.31</ele>
+    <name>1951-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.940570" lon="-121.878090">
+    <ele>1628.97</ele>
+    <name>1952</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.946440" lon="-121.876700">
+    <ele>1622.96</ele>
+    <name>1952-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.950550" lon="-121.879920">
+    <ele>1659.68</ele>
+    <name>1953</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.955370" lon="-121.882340">
+    <ele>1684.38</ele>
+    <name>1953-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.961450" lon="-121.882120">
+    <ele>1693.98</ele>
+    <name>1954</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.967210" lon="-121.883820">
+    <ele>1719.60</ele>
+    <name>1954-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.971240" lon="-121.882360">
+    <ele>1719.67</ele>
+    <name>1955</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.976580" lon="-121.876940">
+    <ele>1716.24</ele>
+    <name>1955-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.976890" lon="-121.869700">
+    <ele>1671.46</ele>
+    <name>1956</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.975690" lon="-121.861580">
+    <ele>1646.38</ele>
+    <name>1956-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.974590" lon="-121.853200">
+    <ele>1634.68</ele>
+    <name>1957</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.978760" lon="-121.848700">
+    <ele>1611.54</ele>
+    <name>1957-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.981430" lon="-121.843340">
+    <ele>1610.57</ele>
+    <name>1958</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.981700" lon="-121.835520">
+    <ele>1617.38</ele>
+    <name>1958-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.982280" lon="-121.826540">
+    <ele>1604.05</ele>
+    <name>1959</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.986920" lon="-121.825940">
+    <ele>1623.13</ele>
+    <name>1959-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.991460" lon="-121.829450">
+    <ele>1629.86</ele>
+    <name>1960</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.996970" lon="-121.827810">
+    <ele>1615.37</ele>
+    <name>1960-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.002990" lon="-121.825930">
+    <ele>1663.41</ele>
+    <name>1961</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.008230" lon="-121.822870">
+    <ele>1709.72</ele>
+    <name>1961-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.014670" lon="-121.822990">
+    <ele>1758.62</ele>
+    <name>1962</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.019190" lon="-121.825690">
+    <ele>1817.00</ele>
+    <name>1962-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.023140" lon="-121.830220">
+    <ele>1884.49</ele>
+    <name>1963</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.024450" lon="-121.827720">
+    <ele>1928.54</ele>
+    <name>1963-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.028670" lon="-121.827810">
+    <ele>1966.19</ele>
+    <name>1964</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.030910" lon="-121.828950">
+    <ele>1899.68</ele>
+    <name>1964-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.036930" lon="-121.829890">
+    <ele>1835.67</ele>
+    <name>1965</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.040590" lon="-121.823320">
+    <ele>1826.17</ele>
+    <name>1965-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.041820" lon="-121.816330">
+    <ele>1846.48</ele>
+    <name>1966</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.046280" lon="-121.810020">
+    <ele>1881.62</ele>
+    <name>1966-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.053300" lon="-121.809000">
+    <ele>1898.31</ele>
+    <name>1967</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.060390" lon="-121.809210">
+    <ele>1871.19</ele>
+    <name>1967-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.067320" lon="-121.811150">
+    <ele>1840.09</ele>
+    <name>1968</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.072610" lon="-121.815790">
+    <ele>1842.74</ele>
+    <name>1968-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.075650" lon="-121.819520">
+    <ele>1763.83</ele>
+    <name>1969</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.080530" lon="-121.818530">
+    <ele>1741.27</ele>
+    <name>1969-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.084120" lon="-121.820000">
+    <ele>1810.92</ele>
+    <name>1970</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.087370" lon="-121.818080">
+    <ele>1857.00</ele>
+    <name>1970-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.092270" lon="-121.813590">
+    <ele>1917.39</ele>
+    <name>1971</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.097390" lon="-121.814170">
+    <ele>1927.37</ele>
+    <name>1971-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.103630" lon="-121.814530">
+    <ele>1921.53</ele>
+    <name>1972</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.108910" lon="-121.811970">
+    <ele>1941.65</ele>
+    <name>1972-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.114020" lon="-121.811920">
+    <ele>1965.97</ele>
+    <name>1973</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.119430" lon="-121.814330">
+    <ele>1989.37</ele>
+    <name>1973-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.122950" lon="-121.819130">
+    <ele>1948.26</ele>
+    <name>1974</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.128250" lon="-121.820560">
+    <ele>1917.96</ele>
+    <name>1974-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.134180" lon="-121.823800">
+    <ele>1939.30</ele>
+    <name>1975</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.139510" lon="-121.821170">
+    <ele>1943.57</ele>
+    <name>1975-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.144980" lon="-121.823130">
+    <ele>2008.06</ele>
+    <name>1976</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.150100" lon="-121.817120">
+    <ele>2027.80</ele>
+    <name>1976-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.155200" lon="-121.819240">
+    <ele>2007.39</ele>
+    <name>1977</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.161700" lon="-121.818230">
+    <ele>2000.30</ele>
+    <name>1977-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.167690" lon="-121.818000">
+    <ele>1981.75</ele>
+    <name>1978</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.173320" lon="-121.815650">
+    <ele>2018.05</ele>
+    <name>1978-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.178770" lon="-121.818320">
+    <ele>1954.92</ele>
+    <name>1979</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.183860" lon="-121.819830">
+    <ele>1896.16</ele>
+    <name>1979-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.189070" lon="-121.814040">
+    <ele>1900.37</ele>
+    <name>1980</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.189290" lon="-121.805170">
+    <ele>1975.13</ele>
+    <name>1980-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.190410" lon="-121.798640">
+    <ele>2008.62</ele>
+    <name>1981</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.190830" lon="-121.792630">
+    <ele>2090.00</ele>
+    <name>1981-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.195780" lon="-121.793380">
+    <ele>2043.52</ele>
+    <name>1982</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.201910" lon="-121.793290">
+    <ele>1965.26</ele>
+    <name>1982-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.208660" lon="-121.791890">
+    <ele>1913.36</ele>
+    <name>1983</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.212500" lon="-121.788070">
+    <ele>1938.57</ele>
+    <name>1983-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.216800" lon="-121.782560">
+    <ele>1926.38</ele>
+    <name>1984</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.220040" lon="-121.776100">
+    <ele>1889.38</ele>
+    <name>1984-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.225770" lon="-121.775200">
+    <ele>1850.57</ele>
+    <name>1985</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.232140" lon="-121.773860">
+    <ele>1839.88</ele>
+    <name>1985-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.238210" lon="-121.775370">
+    <ele>1817.24</ele>
+    <name>1986</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.243740" lon="-121.773190">
+    <ele>1783.26</ele>
+    <name>1986-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.249060" lon="-121.777320">
+    <ele>1718.40</ele>
+    <name>1987</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.250290" lon="-121.782950">
+    <ele>1671.24</ele>
+    <name>1987-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.254040" lon="-121.788870">
+    <ele>1642.91</ele>
+    <name>1988</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.257780" lon="-121.793300">
+    <ele>1621.80</ele>
+    <name>1988-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.257380" lon="-121.799590">
+    <ele>1624.57</ele>
+    <name>1989</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.259850" lon="-121.805200">
+    <ele>1617.61</ele>
+    <name>1989-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.662597" lon="-121.987799">
+    <ele>1667.28</ele>
+    <name>BobbyLkTr</name>
+    <desc>Bobby Lake Trail - mi 1924</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.745570" lon="-121.978169">
+    <ele>1748.30</ele>
+    <name>CharltonLkTr</name>
+    <desc>Charlton Lake Trail</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.661900" lon="-121.982927">
+    <ele>1656.97</ele>
+    <name>CS1924</name>
+    <desc>Bobby Lake campsite, 3/10 mile E of PCT - mi 1924</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="43.744845" lon="-121.976992">
+    <ele>1744.37</ele>
+    <name>CS1932</name>
+    <desc>Campsite Charlton Lake - mi 1931.6</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="43.913699" lon="-121.915882">
+    <ele>1601.81</ele>
+    <name>CS1948</name>
+    <desc>Desane Lake campsite - mi 1948.1</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="43.922982" lon="-121.895984">
+    <ele>1538.20</ele>
+    <name>CS1950</name>
+    <desc>Horseshoe Lake, campsite -  mi 1949.7</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="43.925044" lon="-121.895358">
+    <ele>1538.21</ele>
+    <name>CS1950b</name>
+    <desc>Horseshoe Lake, campsite - mi 1949.9</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="43.957055" lon="-121.881984">
+    <ele>1683.41</ele>
+    <name>CS1953</name>
+    <desc>Dumbbell Lake, campsite - mi 1953.7</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="44.260650" lon="-121.801390">
+    <ele>1630.23</ele>
+    <name>DWObservatory</name>
+    <desc>Dee Wright Observatory, 2/10 mile E of PCT - mi 1989.5</desc>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="43.981988" lon="-121.825154">
+    <ele>1600.40</ele>
+    <name>ElkLkTr</name>
+    <desc>Elk Lake Trail - mi 1959.1</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.125323" lon="-121.821086">
+    <ele>1918.39</ele>
+    <name>FoleyTr</name>
+    <desc>Foley Trail - mi 1974.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.178887" lon="-121.817328">
+    <ele>1947.53</ele>
+    <name>GlacierWayTr</name>
+    <desc>Glacier Way Trail - mi 1979.1</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.995534" lon="-121.827924">
+    <ele>1613.89</ele>
+    <name>HorseCkTr</name>
+    <desc>Horse Creek Trail - mi 1960.4</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.038128" lon="-121.829637">
+    <ele>1829.38</ele>
+    <name>HorseLkTr</name>
+    <desc>Horse Lake Trail - mi 1965.1</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.259853" lon="-121.805200">
+    <ele>1617.53</ele>
+    <name>Hwy242</name>
+    <desc>Hwy 242, near McKenzie Pass - mi 1989.5</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.977867" lon="-121.872380">
+    <ele>1675.24</ele>
+    <name>IslandTr</name>
+    <desc>Island Trail - mi 1955.8</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.261100" lon="-121.785694">
+    <ele>1609.93</ele>
+    <name>LavaCampLk</name>
+    <desc>Lava Camp Lake, campground, 1/2 mile NE of PCT - mi 1988.3</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="44.257551" lon="-121.790035">
+    <ele>1611.45</ele>
+    <name>LavaCampTr</name>
+    <desc>Lava Camp Lake Trail - mi 1988.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.084164" lon="-121.820566">
+    <ele>1804.85</ele>
+    <name>LintonMwTr</name>
+    <desc>Linton Meadow Trail - mi 1970</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.612411" lon="-122.001088">
+    <ele>1827.38</ele>
+    <name>MaidenLkTr</name>
+    <desc>Maiden Lake Trail - mi 1918.5</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.631176" lon="-122.004135">
+    <ele>1840.37</ele>
+    <name>MaidenPkTr</name>
+    <desc>Maiden Peak Trail - mi 1920.7</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.639808" lon="-122.009912">
+    <ele>1715.50</ele>
+    <name>MaidenPkTr2</name>
+    <desc>Maiden Peak Trail, N trail junction</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.917579" lon="-121.916568">
+    <ele>1573.25</ele>
+    <name>MinkLkTr</name>
+    <desc>Mink Lake Trail - mi 1948.4</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.942666" lon="-121.878280">
+    <ele>1631.96</ele>
+    <name>MinkLkTr2</name>
+    <desc>Mink Lake Trail, N trail - mi 1952.2</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.040077" lon="-121.822234">
+    <ele>1825.64</ele>
+    <name>NashLkTr</name>
+    <desc>Nash Lake Trail - mi 1965.6</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.982533" lon="-121.846643">
+    <ele>1610.67</ele>
+    <name>ParkTr</name>
+    <desc>Park Trail - mi 1957.8</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.934046" lon="-121.895915">
+    <ele>1570.25</ele>
+    <name>PorkyLkTr</name>
+    <desc>Porky Lake Trail - mi 1950.7</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.748968" lon="-121.972853">
+    <ele>1768.21</ele>
+    <name>RD1932</name>
+    <desc>Forest Road 5897, unpaved - mi 1932</desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="43.808320" lon="-121.963653">
+    <ele>1695.69</ele>
+    <name>RD1937</name>
+    <desc>Forest Road 600, unpaved - mi 1937</desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="43.899960" lon="-121.924562">
+    <ele>1604.20</ele>
+    <name>TopLkTr</name>
+    <desc>Top Lake Trail - mi 1946.8</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.854336" lon="-121.965126">
+    <ele>1847.27</ele>
+    <name>WA1942</name>
+    <desc>Stormy Lake outlet - mi 1941.7</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="43.949875" lon="-121.881271">
+    <ele>1659.29</ele>
+    <name>WA1953</name>
+    <desc>Island Lake - mi 1952.9</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="44.039917" lon="-121.827209">
+    <ele>1829.94</ele>
+    <name>WA1965</name>
+    <desc>Sisters Mirror Lake - mi 1965.3</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="44.073414" lon="-121.816871">
+    <ele>1828.37</ele>
+    <name>WA1969</name>
+    <desc>N Fork Mesa Creek - mi 1968.6</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="44.080350" lon="-121.818485">
+    <ele>1740.58</ele>
+    <name>WA1970</name>
+    <desc>Mesa Creek - mi 1969.5</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="44.104561" lon="-121.813042">
+    <ele>1914.66</ele>
+    <name>WA1972</name>
+    <desc>Hinton Creek - mi 1972.1</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="44.110317" lon="-121.809746">
+    <ele>1960.11</ele>
+    <name>WA1973</name>
+    <desc>Separation Creek - mi 1972.6</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="44.168186" lon="-121.817406">
+    <ele>2002.07</ele>
+    <name>WA1978</name>
+    <desc>Obsidian Creek - mi 1978</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="44.179070" lon="-121.817070">
+    <ele>1945.18</ele>
+    <name>WA1979</name>
+    <desc>Glacier Creek - mi 1979.1</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="44.231617" lon="-121.773174">
+    <ele>1835.68</ele>
+    <name>WA1985</name>
+    <desc>South Matthieu Lake - mi 1985.4</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="44.250614" lon="-121.783272">
+    <ele>1669.61</ele>
+    <name>WA1988</name>
+    <desc>Small Lake - mi 1987.5</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="43.601912" lon="-121.996201">
+    <ele>1745.61</ele>
+    <name>WACS1917</name>
+    <desc>Lower Rosary Lake, water, campsite - mi 1917.3</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="43.608231" lon="-122.000675">
+    <ele>1780.89</ele>
+    <name>WACS1918</name>
+    <desc>Middle Rosary Lake, water, campsite - mi 1917.8</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="43.838048" lon="-121.947591">
+    <ele>1727.53</ele>
+    <name>WACS1940</name>
+    <desc>Brahma Lake, campsite - mi 1939.7</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="43.694994" lon="-121.993294">
+    <ele>1909.69</ele>
+    <name>WaldoRdTr</name>
+    <desc>Waldo Road Trail - mi 1926.8</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="43.912509" lon="-121.915533">
+    <ele>1601.33</ele>
+    <name>WinopeeLkTr</name>
+    <desc>Winopee Lake Trail - mi 1948</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.261780" lon="-121.811500">
+    <ele>1595.30</ele>
+    <name>1990</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.267060" lon="-121.815990">
+    <ele>1664.62</ele>
+    <name>1990-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.269660" lon="-121.820260">
+    <ele>1694.52</ele>
+    <name>1991</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.275380" lon="-121.823380">
+    <ele>1758.07</ele>
+    <name>1991-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.280470" lon="-121.827750">
+    <ele>1848.24</ele>
+    <name>1992</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.285900" lon="-121.831600">
+    <ele>1861.41</ele>
+    <name>1992-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.292360" lon="-121.833460">
+    <ele>1853.84</ele>
+    <name>1993</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.297430" lon="-121.831650">
+    <ele>1786.02</ele>
+    <name>1993-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.301520" lon="-121.826150">
+    <ele>1690.85</ele>
+    <name>1994</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.306840" lon="-121.821440">
+    <ele>1637.88</ele>
+    <name>1994-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.311050" lon="-121.819260">
+    <ele>1618.54</ele>
+    <name>1995</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.311530" lon="-121.828110">
+    <ele>1697.69</ele>
+    <name>1995-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.313820" lon="-121.836600">
+    <ele>1749.78</ele>
+    <name>1996</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.315570" lon="-121.845150">
+    <ele>1779.84</ele>
+    <name>1996-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.318530" lon="-121.852410">
+    <ele>1762.76</ele>
+    <name>1997</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.323850" lon="-121.855150">
+    <ele>1749.48</ele>
+    <name>1997-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.328940" lon="-121.857320">
+    <ele>1750.22</ele>
+    <name>1998</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.331800" lon="-121.864590">
+    <ele>1707.57</ele>
+    <name>1998-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.337080" lon="-121.869120">
+    <ele>1650.72</ele>
+    <name>1999</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.341830" lon="-121.865310">
+    <ele>1619.91</ele>
+    <name>1999-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.347240" lon="-121.866990">
+    <ele>1577.79</ele>
+    <name>2000</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.353130" lon="-121.866300">
+    <ele>1532.48</ele>
+    <name>2000-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.358310" lon="-121.870380">
+    <ele>1476.03</ele>
+    <name>2001</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.362690" lon="-121.868260">
+    <ele>1460.14</ele>
+    <name>2001-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.365030" lon="-121.860720">
+    <ele>1463.44</ele>
+    <name>2002</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.369840" lon="-121.856350">
+    <ele>1460.86</ele>
+    <name>2002-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.375470" lon="-121.856820">
+    <ele>1453.54</ele>
+    <name>2003</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.380520" lon="-121.855770">
+    <ele>1429.09</ele>
+    <name>2003-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.385140" lon="-121.849950">
+    <ele>1434.90</ele>
+    <name>2004</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.391240" lon="-121.848980">
+    <ele>1442.26</ele>
+    <name>2004-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.397450" lon="-121.850120">
+    <ele>1449.95</ele>
+    <name>2005</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.402830" lon="-121.849040">
+    <ele>1463.78</ele>
+    <name>2005-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.408260" lon="-121.850270">
+    <ele>1488.40</ele>
+    <name>2006</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.413830" lon="-121.852750">
+    <ele>1464.93</ele>
+    <name>2006-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.420160" lon="-121.854150">
+    <ele>1476.27</ele>
+    <name>2007</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.424860" lon="-121.849580">
+    <ele>1466.30</ele>
+    <name>2007-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.429600" lon="-121.848850">
+    <ele>1515.73</ele>
+    <name>2008</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.433350" lon="-121.852620">
+    <ele>1564.33</ele>
+    <name>2008-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.438140" lon="-121.853240">
+    <ele>1598.72</ele>
+    <name>2009</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.441570" lon="-121.849620">
+    <ele>1646.10</ele>
+    <name>2009-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.444990" lon="-121.846280">
+    <ele>1702.97</ele>
+    <name>2010</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.447110" lon="-121.845080">
+    <ele>1745.03</ele>
+    <name>2010-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.453540" lon="-121.846480">
+    <ele>1785.39</ele>
+    <name>2011</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.459650" lon="-121.847090">
+    <ele>1802.53</ele>
+    <name>2011-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.462290" lon="-121.847300">
+    <ele>1864.61</ele>
+    <name>2012</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.466140" lon="-121.851220">
+    <ele>1916.47</ele>
+    <name>2012-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.470680" lon="-121.852330">
+    <ele>1920.00</ele>
+    <name>2013</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.475320" lon="-121.850050">
+    <ele>1917.97</ele>
+    <name>2013-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.480850" lon="-121.852770">
+    <ele>1921.31</ele>
+    <name>2014</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.486670" lon="-121.854000">
+    <ele>1949.67</ele>
+    <name>2014-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.489440" lon="-121.847410">
+    <ele>1977.23</ele>
+    <name>2015</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.492740" lon="-121.843510">
+    <ele>1923.56</ele>
+    <name>2015-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.498220" lon="-121.838880">
+    <ele>1856.27</ele>
+    <name>2016</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.503190" lon="-121.833910">
+    <ele>1802.87</ele>
+    <name>2016-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.504460" lon="-121.827200">
+    <ele>1740.38</ele>
+    <name>2017</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.507800" lon="-121.822140">
+    <ele>1683.18</ele>
+    <name>2017-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.512050" lon="-121.816660">
+    <ele>1659.44</ele>
+    <name>2018</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.514690" lon="-121.811070">
+    <ele>1632.84</ele>
+    <name>2018-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.520300" lon="-121.812030">
+    <ele>1670.54</ele>
+    <name>2019</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.525420" lon="-121.814540">
+    <ele>1716.17</ele>
+    <name>2019-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.531580" lon="-121.814830">
+    <ele>1765.47</ele>
+    <name>2020</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.536590" lon="-121.816060">
+    <ele>1832.11</ele>
+    <name>2020-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.540680" lon="-121.812760">
+    <ele>1883.17</ele>
+    <name>2021</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.545470" lon="-121.810220">
+    <ele>1904.47</ele>
+    <name>2021-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.550210" lon="-121.805210">
+    <ele>1898.08</ele>
+    <name>2022</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.556580" lon="-121.802980">
+    <ele>1872.26</ele>
+    <name>2022-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.563280" lon="-121.803670">
+    <ele>1929.69</ele>
+    <name>2023</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.569470" lon="-121.801200">
+    <ele>1932.61</ele>
+    <name>2023-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.575430" lon="-121.800210">
+    <ele>1961.34</ele>
+    <name>2024</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.580780" lon="-121.801210">
+    <ele>1959.42</ele>
+    <name>2024-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.585520" lon="-121.797810">
+    <ele>1901.42</ele>
+    <name>2025</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.591690" lon="-121.795820">
+    <ele>1904.80</ele>
+    <name>2025-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.598080" lon="-121.796290">
+    <ele>1968.28</ele>
+    <name>2026</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.600670" lon="-121.802820">
+    <ele>1946.20</ele>
+    <name>2026-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.606790" lon="-121.803280">
+    <ele>1915.27</ele>
+    <name>2027</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.613010" lon="-121.805150">
+    <ele>1929.75</ele>
+    <name>2027-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.614400" lon="-121.810690">
+    <ele>1891.95</ele>
+    <name>2028</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.616940" lon="-121.815980">
+    <ele>1817.69</ele>
+    <name>2028-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.621280" lon="-121.813290">
+    <ele>1773.61</ele>
+    <name>2029</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.627640" lon="-121.812810">
+    <ele>1749.69</ele>
+    <name>2029-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.633150" lon="-121.816320">
+    <ele>1792.16</ele>
+    <name>2030</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.638080" lon="-121.816380">
+    <ele>1792.44</ele>
+    <name>2030-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.640920" lon="-121.822670">
+    <ele>1761.09</ele>
+    <name>2031</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.641230" lon="-121.828220">
+    <ele>1708.21</ele>
+    <name>2031-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.646460" lon="-121.830190">
+    <ele>1660.33</ele>
+    <name>2032</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.645510" lon="-121.831740">
+    <ele>1596.16</ele>
+    <name>2032-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.651180" lon="-121.833330">
+    <ele>1555.56</ele>
+    <name>2033</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.651080" lon="-121.835330">
+    <ele>1485.27</ele>
+    <name>2033-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.655960" lon="-121.839320">
+    <ele>1448.81</ele>
+    <name>2034</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.660400" lon="-121.844050">
+    <ele>1398.85</ele>
+    <name>2034-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.662750" lon="-121.849780">
+    <ele>1318.97</ele>
+    <name>2035</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.665930" lon="-121.849730">
+    <ele>1340.46</ele>
+    <name>2035-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.671040" lon="-121.854040">
+    <ele>1396.82</ele>
+    <name>2036</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.676470" lon="-121.855420">
+    <ele>1479.11</ele>
+    <name>2036-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.681330" lon="-121.854610">
+    <ele>1525.46</ele>
+    <name>2037</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.683740" lon="-121.846070">
+    <ele>1494.35</ele>
+    <name>2037-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.686260" lon="-121.839270">
+    <ele>1512.91</ele>
+    <name>2038</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.692280" lon="-121.839550">
+    <ele>1528.20</ele>
+    <name>2038-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.695260" lon="-121.834020">
+    <ele>1584.68</ele>
+    <name>2039</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.698720" lon="-121.826540">
+    <ele>1672.05</ele>
+    <name>2039-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.702810" lon="-121.824670">
+    <ele>1695.21</ele>
+    <name>2040</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.704880" lon="-121.818680">
+    <ele>1737.32</ele>
+    <name>2040-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.706730" lon="-121.810850">
+    <ele>1795.11</ele>
+    <name>2041</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.712000" lon="-121.805850">
+    <ele>1798.99</ele>
+    <name>2041-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.717470" lon="-121.801720">
+    <ele>1804.05</ele>
+    <name>2042</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.722990" lon="-121.800960">
+    <ele>1906.23</ele>
+    <name>2042-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.721930" lon="-121.795150">
+    <ele>1990.51</ele>
+    <name>2043</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.727550" lon="-121.799730">
+    <ele>2083.87</ele>
+    <name>2043-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.732450" lon="-121.800380">
+    <ele>2021.44</ele>
+    <name>2044</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.738230" lon="-121.799170">
+    <ele>1943.80</ele>
+    <name>2044-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.744710" lon="-121.798870">
+    <ele>1901.54</ele>
+    <name>2045</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.750710" lon="-121.802090">
+    <ele>1855.79</ele>
+    <name>2045-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.755630" lon="-121.797030">
+    <ele>1805.59</ele>
+    <name>2046</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.759940" lon="-121.792390">
+    <ele>1734.84</ele>
+    <name>2046-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.764020" lon="-121.786110">
+    <ele>1683.24</ele>
+    <name>2047</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.768090" lon="-121.787800">
+    <ele>1731.32</ele>
+    <name>2047-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.769620" lon="-121.791280">
+    <ele>1756.24</ele>
+    <name>2048</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.773710" lon="-121.796090">
+    <ele>1732.31</ele>
+    <name>2048-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.777460" lon="-121.798720">
+    <ele>1688.77</ele>
+    <name>2049</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.782330" lon="-121.803880">
+    <ele>1693.41</ele>
+    <name>2049-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.788640" lon="-121.805990">
+    <ele>1713.02</ele>
+    <name>2050</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.792340" lon="-121.809080">
+    <ele>1710.09</ele>
+    <name>2050-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.794970" lon="-121.810910">
+    <ele>1653.52</ele>
+    <name>2051</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.801130" lon="-121.812790">
+    <ele>1632.86</ele>
+    <name>2051-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.806750" lon="-121.811350">
+    <ele>1593.65</ele>
+    <name>2052</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.811960" lon="-121.808110">
+    <ele>1622.74</ele>
+    <name>2052-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.812500" lon="-121.800530">
+    <ele>1573.87</ele>
+    <name>2053</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.813960" lon="-121.792880">
+    <ele>1530.31</ele>
+    <name>2053-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.818760" lon="-121.788660">
+    <ele>1526.09</ele>
+    <name>2054</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.824580" lon="-121.789750">
+    <ele>1490.55</ele>
+    <name>2054-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.830610" lon="-121.786810">
+    <ele>1479.05</ele>
+    <name>2055</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.836650" lon="-121.783100">
+    <ele>1449.52</ele>
+    <name>2055-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.841480" lon="-121.777180">
+    <ele>1429.24</ele>
+    <name>2056</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.847490" lon="-121.774180">
+    <ele>1401.66</ele>
+    <name>2056-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.851890" lon="-121.771200">
+    <ele>1391.62</ele>
+    <name>2057</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.854930" lon="-121.764490">
+    <ele>1405.92</ele>
+    <name>2057-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.858860" lon="-121.762950">
+    <ele>1418.84</ele>
+    <name>2058</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.865210" lon="-121.765430">
+    <ele>1464.60</ele>
+    <name>2058-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.866380" lon="-121.760500">
+    <ele>1505.13</ele>
+    <name>2059</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.869350" lon="-121.754930">
+    <ele>1540.52</ele>
+    <name>2059-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.875860" lon="-121.756360">
+    <ele>1522.70</ele>
+    <name>2060</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.882120" lon="-121.758710">
+    <ele>1502.23</ele>
+    <name>2060-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.884770" lon="-121.754020">
+    <ele>1457.63</ele>
+    <name>2061</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.888800" lon="-121.747750">
+    <ele>1418.02</ele>
+    <name>2061-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.894020" lon="-121.749390">
+    <ele>1382.04</ele>
+    <name>2062</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.898980" lon="-121.754590">
+    <ele>1340.28</ele>
+    <name>2062-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.904080" lon="-121.749710">
+    <ele>1335.70</ele>
+    <name>2063</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.905630" lon="-121.743670">
+    <ele>1340.15</ele>
+    <name>2063-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.909450" lon="-121.739870">
+    <ele>1374.35</ele>
+    <name>2064</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.916020" lon="-121.739570">
+    <ele>1356.57</ele>
+    <name>2064-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.921470" lon="-121.742550">
+    <ele>1394.52</ele>
+    <name>2065</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.927340" lon="-121.746420">
+    <ele>1438.24</ele>
+    <name>2065-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.933320" lon="-121.750090">
+    <ele>1497.45</ele>
+    <name>2066</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.938270" lon="-121.755310">
+    <ele>1528.01</ele>
+    <name>2066-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.944050" lon="-121.755420">
+    <ele>1523.66</ele>
+    <name>2067</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.948350" lon="-121.748970">
+    <ele>1538.36</ele>
+    <name>2067-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.954300" lon="-121.751360">
+    <ele>1459.14</ele>
+    <name>2068</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.954900" lon="-121.747400">
+    <ele>1380.16</ele>
+    <name>2068-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.958670" lon="-121.743290">
+    <ele>1317.66</ele>
+    <name>2069</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.963420" lon="-121.739880">
+    <ele>1306.22</ele>
+    <name>2069-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.967540" lon="-121.732700">
+    <ele>1302.49</ele>
+    <name>2070</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.972760" lon="-121.728100">
+    <ele>1251.45</ele>
+    <name>2070-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.978520" lon="-121.726990">
+    <ele>1216.33</ele>
+    <name>2071</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.983680" lon="-121.724610">
+    <ele>1181.62</ele>
+    <name>2071-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.987770" lon="-121.720560">
+    <ele>1161.88</ele>
+    <name>2072</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.992400" lon="-121.718070">
+    <ele>1099.35</ele>
+    <name>2072-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.995790" lon="-121.718050">
+    <ele>1035.46</ele>
+    <name>2073</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.999600" lon="-121.715690">
+    <ele>1013.38</ele>
+    <name>2073-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.004680" lon="-121.718630">
+    <ele>1051.23</ele>
+    <name>2074</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.010750" lon="-121.716000">
+    <ele>1076.58</ele>
+    <name>2074-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.017040" lon="-121.714240">
+    <ele>1117.27</ele>
+    <name>2075</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.023430" lon="-121.714070">
+    <ele>1193.33</ele>
+    <name>2075-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.029900" lon="-121.713060">
+    <ele>1279.85</ele>
+    <name>2076</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.035170" lon="-121.708530">
+    <ele>1305.05</ele>
+    <name>2076-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.041470" lon="-121.709290">
+    <ele>1298.60</ele>
+    <name>2077</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.047830" lon="-121.711290">
+    <ele>1283.40</ele>
+    <name>2077-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.053180" lon="-121.714680">
+    <ele>1270.65</ele>
+    <name>2078</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.058650" lon="-121.718410">
+    <ele>1240.82</ele>
+    <name>2078-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.064640" lon="-121.721030">
+    <ele>1211.45</ele>
+    <name>2079</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.070540" lon="-121.721300">
+    <ele>1151.99</ele>
+    <name>2079-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.075620" lon="-121.719210">
+    <ele>1101.01</ele>
+    <name>2080</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.080860" lon="-121.721380">
+    <ele>1072.24</ele>
+    <name>2080-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.084060" lon="-121.728110">
+    <ele>1067.67</ele>
+    <name>2081</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.089510" lon="-121.732250">
+    <ele>1058.50</ele>
+    <name>2081-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.094030" lon="-121.736710">
+    <ele>1054.55</ele>
+    <name>2082</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.098450" lon="-121.740770">
+    <ele>1025.58</ele>
+    <name>2082-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.101590" lon="-121.746420">
+    <ele>1025.35</ele>
+    <name>2083</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.104640" lon="-121.753520">
+    <ele>1019.48</ele>
+    <name>2083-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.108800" lon="-121.758120">
+    <ele>1004.64</ele>
+    <name>2084</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.113690" lon="-121.762940">
+    <ele>1005.75</ele>
+    <name>2084-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.117300" lon="-121.762640">
+    <ele>1001.82</ele>
+    <name>2085</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.121330" lon="-121.768300">
+    <ele>998.68</ele>
+    <name>2085-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.124330" lon="-121.774690">
+    <ele>989.56</ele>
+    <name>2086</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.130030" lon="-121.772180">
+    <ele>990.48</ele>
+    <name>2086-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.135550" lon="-121.769160">
+    <ele>1007.05</ele>
+    <name>2087</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.140850" lon="-121.766380">
+    <ele>989.54</ele>
+    <name>2087-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.142060" lon="-121.760180">
+    <ele>987.71</ele>
+    <name>2088</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.144870" lon="-121.753340">
+    <ele>987.13</ele>
+    <name>2088-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.150450" lon="-121.755950">
+    <ele>989.25</ele>
+    <name>2089</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.155340" lon="-121.760610">
+    <ele>997.29</ele>
+    <name>2089-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.161940" lon="-121.759860">
+    <ele>1014.23</ele>
+    <name>2090</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.168460" lon="-121.758460">
+    <ele>1034.83</ele>
+    <name>2090-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.174910" lon="-121.758040">
+    <ele>1092.47</ele>
+    <name>2091</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.181140" lon="-121.759300">
+    <ele>1166.91</ele>
+    <name>2091-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.187680" lon="-121.758470">
+    <ele>1185.69</ele>
+    <name>2092</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.193970" lon="-121.756650">
+    <ele>1178.44</ele>
+    <name>2092-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.199970" lon="-121.753280">
+    <ele>1219.15</ele>
+    <name>2093</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.206250" lon="-121.750760">
+    <ele>1223.97</ele>
+    <name>2093-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.208190" lon="-121.742020">
+    <ele>1189.74</ele>
+    <name>2094</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.210970" lon="-121.733670">
+    <ele>1185.95</ele>
+    <name>2094-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.212500" lon="-121.725080">
+    <ele>1262.46</ele>
+    <name>2095</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.215700" lon="-121.717180">
+    <ele>1278.52</ele>
+    <name>2095-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.221350" lon="-121.712410">
+    <ele>1251.93</ele>
+    <name>2096</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.226620" lon="-121.706750">
+    <ele>1213.78</ele>
+    <name>2096-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.230010" lon="-121.699060">
+    <ele>1199.18</ele>
+    <name>2097</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.228280" lon="-121.692170">
+    <ele>1252.57</ele>
+    <name>2097-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.232580" lon="-121.691350">
+    <ele>1288.41</ele>
+    <name>2098</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.237930" lon="-121.686450">
+    <ele>1348.10</ele>
+    <name>2098-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.244510" lon="-121.686140">
+    <ele>1378.53</ele>
+    <name>2099</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.251010" lon="-121.686950">
+    <ele>1359.77</ele>
+    <name>2099-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.256300" lon="-121.692030">
+    <ele>1337.38</ele>
+    <name>2100</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.262750" lon="-121.690140">
+    <ele>1354.68</ele>
+    <name>2100-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.268980" lon="-121.692940">
+    <ele>1379.88</ele>
+    <name>2101</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.275240" lon="-121.690330">
+    <ele>1320.70</ele>
+    <name>2101-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.280810" lon="-121.685930">
+    <ele>1279.88</ele>
+    <name>2102</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.284490" lon="-121.681370">
+    <ele>1269.11</ele>
+    <name>2102-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="44.766340" lon="-121.783766">
+    <ele>1683.75</ele>
+    <name>BreitenbushCG</name>
+    <desc>Breitenbush Lake Camp Ground, 3/10 mile NE of PCT, shelters - mi 2047.1</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="44.714906" lon="-121.803852">
+    <ele>1794.13</ele>
+    <name>BreitenbushTr</name>
+    <desc>Breitenbush Trail - mi 2041.7</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.737106" lon="-121.799357">
+    <ele>1950.26</ele>
+    <name>CS2044</name>
+    <desc>Campsite - mi 2044.4</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="44.797138" lon="-121.812518">
+    <ele>1641.34</ele>
+    <name>CS2051</name>
+    <desc>Upper Lake campsite - mi 2051.2</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="44.815051" lon="-121.790912">
+    <ele>1513.93</ele>
+    <name>CS2054</name>
+    <desc>Campsite near Head Lake - mi 2053.7</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="44.906253" lon="-121.748800">
+    <ele>1330.25</ele>
+    <name>CS2063</name>
+    <desc>Lemiti Creek campsite - mi 2063.2</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="44.944032" lon="-121.754630">
+    <ele>1521.60</ele>
+    <name>CS2067</name>
+    <desc>Campsite - mi 2067</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="45.222680" lon="-121.694246">
+    <ele>1182.81</ele>
+    <name>FrogLkCG</name>
+    <desc>Frog Lake Campground, well water, 6/10 mile SE of PCT - mi 2097</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="44.775934" lon="-121.796644">
+    <ele>1692.31</ele>
+    <name>GibsonLkTr</name>
+    <desc>Gibson Lake Trail - mi 2048.8</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.777162" lon="-121.798049">
+    <ele>1682.77</ele>
+    <name>HorseShoeLkTR2</name>
+    <desc>Horseshoe Lake Trail - mi 2049</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.423757" lon="-121.849686">
+    <ele>1464.21</ele>
+    <name>Hwy20</name>
+    <desc>Highway 20, near Santiam Pass - mi 2007.4</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="45.229158" lon="-121.700625">
+    <ele>1193.09</ele>
+    <name>Hwy26</name>
+    <desc>Highway 26, Wapinitia Pass - mi 2096.9</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="45.284505" lon="-121.681367">
+    <ele>1269.53</ele>
+    <name>Hwy35</name>
+    <desc>Highway 35, near Barlow Pass - mi 2102.5</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="44.403703" lon="-121.850671">
+    <ele>1468.48</ele>
+    <name>Jct2006</name>
+    <desc>Keep right at 3 way trail junction - mi 2005.6</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.686113" lon="-121.839669">
+    <ele>1510.30</ele>
+    <name>JeffCreek</name>
+    <desc>Jeff Creek - mi 2038</desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="44.854688" lon="-121.762480">
+    <ele>1411.18</ele>
+    <name>JudeLk</name>
+    <desc>Jude Lake - mi 2057.6</desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="45.148399" lon="-121.751038">
+    <ele>987.37</ele>
+    <name>LCraterLk</name>
+    <desc>Little Crater Lake, water, 1/10 mile E of PCT - mi 2088.8</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.147826" lon="-121.753500">
+    <ele>989.15</ele>
+    <name>LCraterLkTr</name>
+    <desc>Trail to Little Crater Lake - mi 2088.8</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.282167" lon="-121.828823">
+    <ele>1863.37</ele>
+    <name>LittleBelknapTr</name>
+    <desc>Little Belknap spur trail - mi 1992.2</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.792344" lon="-121.806205">
+    <ele>1726.44</ele>
+    <name>ManyLkView</name>
+    <desc>Many Lakes Viewpoint - mi 2050.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.664694" lon="-121.846573">
+    <ele>1322.58</ele>
+    <name>MilkCreek</name>
+    <desc>Milk Creek, milky glacial water - mi 2035.3</desc>
+    <sym>Flag, Red</sym>
+  </wpt>
+  <wpt lat="44.814351" lon="-121.791218">
+    <ele>1512.71</ele>
+    <name>OlallieLkTr</name>
+    <desc>Trail to Olallie Lake - mi 2053.6</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.813766" lon="-121.789135">
+    <ele>1512.61</ele>
+    <name>OlallieStore</name>
+    <desc>Olallie Lake Store, 1/10 mile E of PCT - mi 2053.6</desc>
+    <sym>Lodge</sym>
+  </wpt>
+  <wpt lat="45.264178" lon="-121.690921">
+    <ele>1355.34</ele>
+    <name>PalmateerTr</name>
+    <desc>Palmateer Trail - mi 2100.6</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.663446" lon="-121.847928">
+    <ele>1315.24</ele>
+    <name>PameliaLkTr</name>
+    <desc>Pamelia Lake Trail - mi 2035.1</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.944068" lon="-121.755400">
+    <ele>1523.55</ele>
+    <name>PinheadSadleTr</name>
+    <desc>Pinhead Saddle Trail - mi 2067</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.380263" lon="-121.856028">
+    <ele>1428.05</ele>
+    <name>RD2003</name>
+    <desc>Old Santiam Wagon Road, unpaved - mi 2003.5</desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="44.396615" lon="-121.849571">
+    <ele>1448.78</ele>
+    <name>RD2005</name>
+    <desc>Forest Road 860, unpaved - mi 2004.9</desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="44.765298" lon="-121.787126">
+    <ele>1680.86</ele>
+    <name>RD2047</name>
+    <desc>Forest Road 4220, unpaved - mi 2047.1</desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="44.815481" lon="-121.790497">
+    <ele>1514.66</ele>
+    <name>RD2054</name>
+    <desc>Forest Road 4220, unpaved - mi 2053.7</desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="45.021284" lon="-121.714252">
+    <ele>1161.98</ele>
+    <name>RD2075</name>
+    <desc>Unpaved road - mi 2075.3</desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="45.077296" lon="-121.719247">
+    <ele>1091.19</ele>
+    <name>RD2080</name>
+    <desc>Road S549 [Mount Wilson Rd], unpaved - mi 2080.1</desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="45.101806" lon="-121.746818">
+    <ele>1027.44</ele>
+    <name>RD2083</name>
+    <desc>Forest Road 57, paved - mi 2083</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.165535" lon="-121.758793">
+    <ele>1023.04</ele>
+    <name>RD2090</name>
+    <desc>Forest Road 5890, unpaved - mi 2090.3</desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="45.186583" lon="-121.758633">
+    <ele>1182.57</ele>
+    <name>RD2092</name>
+    <desc>Forest Road 58, paved - mi 2091.9</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="44.699040" lon="-121.825084">
+    <ele>1659.17</ele>
+    <name>RussellCreek</name>
+    <desc>Russell Creek, milky glacial water, can be a dangerous crossing - mi 2039.5</desc>
+    <sym>Flag, Red</sym>
+  </wpt>
+  <wpt lat="44.853992" lon="-121.767442">
+    <ele>1403.64</ele>
+    <name>RussLkTr</name>
+    <desc>Russ Lake Trail - mi 2057.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.437523" lon="-121.855017">
+    <ele>1585.20</ele>
+    <name>SantiamLkTr</name>
+    <desc>Santiam Lake Trail - mi 2008.9</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.425620" lon="-121.848590">
+    <ele>1474.97</ele>
+    <name>SantiamTH</name>
+    <desc>Santiam Trailhead, parking, outhouse, tables - mi 2007.6</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.808134" lon="-121.810761">
+    <ele>1614.42</ele>
+    <name>SheepLkTr</name>
+    <desc>Sheep Lake Trail - mi 2052.1</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.390560" lon="-121.848831">
+    <ele>1441.20</ele>
+    <name>SouthLoopTr</name>
+    <desc>South Loop Trail - mi 2004.4</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.570845" lon="-121.801016">
+    <ele>1916.20</ele>
+    <name>SwallowLkTr</name>
+    <desc>Swallow Lake Trail - mi 2023.6</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.095415" lon="-121.738603">
+    <ele>1044.88</ele>
+    <name>TimothyLkTr</name>
+    <desc>Trail to Clackamas Lake Campground - mi 2082.2</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.113273" lon="-121.762455">
+    <ele>1006.32</ele>
+    <name>TimothyLkTr2</name>
+    <desc>Timothy Lake, 2nd trail - mi 2084.5</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.144524" lon="-121.754499">
+    <ele>986.94</ele>
+    <name>TimothyLkTr3</name>
+    <desc>Timothy Lake Trail, 3rd crossing - mi 2088.4</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.350658" lon="-121.865271">
+    <ele>1551.52</ele>
+    <name>TR2000</name>
+    <desc>Unmarked trail junction - mi 2000.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.237004" lon="-121.686461">
+    <ele>1340.36</ele>
+    <name>TwinLkTr</name>
+    <desc>Twin Lake Trail - mi 2098.4</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.257040" lon="-121.692189">
+    <ele>1332.54</ele>
+    <name>TwinLkTr2</name>
+    <desc>Twin Lake Trail, 2nd junction - mi 2100.1</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.402605" lon="-121.849010">
+    <ele>1463.10</ele>
+    <name>WA2005</name>
+    <desc>Small Pond - mi 2005.5</desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="44.510399" lon="-121.818336">
+    <ele>1657.32</ele>
+    <name>WA2018</name>
+    <desc>Koko Lake - mi 2017.8</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="44.552137" lon="-121.804687">
+    <ele>1912.46</ele>
+    <name>WA2022</name>
+    <desc>Rockpile Lake - mi 2022.2</desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="44.636291" lon="-121.816962">
+    <ele>1793.56</ele>
+    <name>WA2030</name>
+    <desc>Shale Lake - mi 2030.3</desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="45.005064" lon="-121.717464">
+    <ele>1048.94</ele>
+    <name>WA2074</name>
+    <desc>Small spring, 300 feet E of PCT - mi 2074</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="45.107281" lon="-121.754845">
+    <ele>1009.65</ele>
+    <name>WA2084</name>
+    <desc>Oak Grove Fork Clackamas River - mi 2083.8</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="44.904462" lon="-121.743237">
+    <ele>1339.26</ele>
+    <name>WACS2063</name>
+    <desc>Trooper Spring, water, campsite - mi 2063.6</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="44.982980" lon="-121.725350">
+    <ele>1170.41</ele>
+    <name>WACS2072</name>
+    <desc>Small spring, campsite, 250 feet W of PCT - mi 2071.4</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="45.000775" lon="-121.716922">
+    <ele>1021.10</ele>
+    <name>WACS2074</name>
+    <desc>Warm Springs River, water, campsite - mi 2073.6</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="45.197353" lon="-121.753688">
+    <ele>1197.28</ele>
+    <name>WACS2093</name>
+    <desc>Seeping Spring, campsite - mi 2092.8</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="44.513619" lon="-121.811940">
+    <ele>1626.84</ele>
+    <name>WascoLkTr</name>
+    <desc>Wasco Lake Trail - mi 2018.4</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.703276" lon="-121.825723">
+    <ele>1701.37</ele>
+    <name>WhitewaterCkTr</name>
+    <desc>Whitewater Creek Trail - mi 2040.1</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.681084" lon="-121.855703">
+    <ele>1538.40</ele>
+    <name>WoodpeckerTr</name>
+    <desc>Woodpecker Trail - mi 2036.9</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="44.371728" lon="-121.865557">
+    <ele>1429.70</ele>
+    <name>YouthCampHQ</name>
+    <desc>Big Lake Youth Camp, 8/10 mile N of PCT -  mi 2001.3</desc>
+    <sym>Lodge</sym>
+  </wpt>
+  <wpt lat="44.361354" lon="-121.871534">
+    <ele>1454.40</ele>
+    <name>YouthCampTr</name>
+    <desc>Trail to Big Lake Youth Camp - mi 2001.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.287480" lon="-121.684610">
+    <ele>1326.95</ele>
+    <name>2103</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.294090" lon="-121.681770">
+    <ele>1328.38</ele>
+    <name>2103-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.300170" lon="-121.682220">
+    <ele>1369.29</ele>
+    <name>2104</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.305910" lon="-121.687390">
+    <ele>1417.36</ele>
+    <name>2104-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.311560" lon="-121.690180">
+    <ele>1460.97</ele>
+    <name>2105</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.314990" lon="-121.694900">
+    <ele>1503.53</ele>
+    <name>2105-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.319560" lon="-121.697820">
+    <ele>1584.68</ele>
+    <name>2106</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.324220" lon="-121.697990">
+    <ele>1664.98</ele>
+    <name>2106-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.329960" lon="-121.702740">
+    <ele>1766.38</ele>
+    <name>2107</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.333250" lon="-121.708370">
+    <ele>1829.89</ele>
+    <name>2107-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.334320" lon="-121.717040">
+    <ele>1842.29</ele>
+    <name>2108</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.336940" lon="-121.725400">
+    <ele>1793.69</ele>
+    <name>2108-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.338230" lon="-121.732790">
+    <ele>1750.38</ele>
+    <name>2109</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.340390" lon="-121.738360">
+    <ele>1665.96</ele>
+    <name>2109-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.341290" lon="-121.744480">
+    <ele>1629.44</ele>
+    <name>2110</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.342280" lon="-121.745810">
+    <ele>1523.01</ele>
+    <name>2110-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.342890" lon="-121.749040">
+    <ele>1475.59</ele>
+    <name>2111</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.344160" lon="-121.751850">
+    <ele>1566.62</ele>
+    <name>2111-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.346800" lon="-121.754950">
+    <ele>1621.33</ele>
+    <name>2112</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.351080" lon="-121.751170">
+    <ele>1648.57</ele>
+    <name>2112-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.355050" lon="-121.754030">
+    <ele>1684.11</ele>
+    <name>2113</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.358620" lon="-121.752100">
+    <ele>1669.77</ele>
+    <name>2113-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.363060" lon="-121.754870">
+    <ele>1589.53</ele>
+    <name>2114</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.365810" lon="-121.757850">
+    <ele>1481.65</ele>
+    <name>2114-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.364950" lon="-121.764000">
+    <ele>1390.86</ele>
+    <name>2115</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.369000" lon="-121.767330">
+    <ele>1293.17</ele>
+    <name>2115-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.371460" lon="-121.773370">
+    <ele>1176.11</ele>
+    <name>2116</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.372530" lon="-121.777520">
+    <ele>1067.47</ele>
+    <name>2116-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.377810" lon="-121.782240">
+    <ele>999.79</ele>
+    <name>2117</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.382210" lon="-121.788510">
+    <ele>975.75</ele>
+    <name>2117-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.386600" lon="-121.795970">
+    <ele>920.80</ele>
+    <name>2118</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.390080" lon="-121.804830">
+    <ele>866.84</ele>
+    <name>2118-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.393530" lon="-121.803870">
+    <ele>861.29</ele>
+    <name>2119</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.396100" lon="-121.797720">
+    <ele>871.01</ele>
+    <name>2119-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.398150" lon="-121.803660">
+    <ele>908.18</ele>
+    <name>2120</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.400560" lon="-121.795830">
+    <ele>1000.40</ele>
+    <name>2120-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.400750" lon="-121.791750">
+    <ele>1114.78</ele>
+    <name>2121</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.403230" lon="-121.790210">
+    <ele>1207.87</ele>
+    <name>2121-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.404550" lon="-121.780680">
+    <ele>1296.84</ele>
+    <name>2122</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.409400" lon="-121.782860">
+    <ele>1289.52</ele>
+    <name>2122-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.414090" lon="-121.790190">
+    <ele>1323.71</ele>
+    <name>2123</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.417390" lon="-121.797840">
+    <ele>1291.65</ele>
+    <name>2123-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.419160" lon="-121.792520">
+    <ele>1191.54</ele>
+    <name>2124</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.422960" lon="-121.794470">
+    <ele>1081.28</ele>
+    <name>2124-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.429030" lon="-121.797900">
+    <ele>1065.16</ele>
+    <name>2125</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.435510" lon="-121.798350">
+    <ele>1125.46</ele>
+    <name>2125-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.439560" lon="-121.805480">
+    <ele>1171.97</ele>
+    <name>2126</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.445170" lon="-121.805350">
+    <ele>1195.32</ele>
+    <name>2126-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.450940" lon="-121.803980">
+    <ele>1228.57</ele>
+    <name>2127</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.456810" lon="-121.805950">
+    <ele>1255.78</ele>
+    <name>2127-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.459400" lon="-121.814550">
+    <ele>1231.84</ele>
+    <name>2128</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.464130" lon="-121.821040">
+    <ele>1242.74</ele>
+    <name>2128-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.467260" lon="-121.828030">
+    <ele>1231.41</ele>
+    <name>2129</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.473200" lon="-121.831530">
+    <ele>1276.45</ele>
+    <name>2129-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.474230" lon="-121.835670">
+    <ele>1338.30</ele>
+    <name>2130</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.476800" lon="-121.844210">
+    <ele>1318.15</ele>
+    <name>2130-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.482690" lon="-121.847450">
+    <ele>1347.71</ele>
+    <name>2131</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.487290" lon="-121.852060">
+    <ele>1340.07</ele>
+    <name>2131-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.490460" lon="-121.860220">
+    <ele>1316.11</ele>
+    <name>2132</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.497340" lon="-121.861300">
+    <ele>1356.54</ele>
+    <name>2132-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.501620" lon="-121.862760">
+    <ele>1305.11</ele>
+    <name>2133</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.506120" lon="-121.866130">
+    <ele>1229.21</ele>
+    <name>2133-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.512630" lon="-121.868200">
+    <ele>1230.11</ele>
+    <name>2134</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.518010" lon="-121.861610">
+    <ele>1207.42</ele>
+    <name>2134-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.523310" lon="-121.855820">
+    <ele>1267.10</ele>
+    <name>2135</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.529530" lon="-121.850910">
+    <ele>1256.48</ele>
+    <name>2135-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.535470" lon="-121.845260">
+    <ele>1281.95</ele>
+    <name>2136</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.540390" lon="-121.839670">
+    <ele>1297.61</ele>
+    <name>2136-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.546920" lon="-121.835920">
+    <ele>1307.79</ele>
+    <name>2137</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.553930" lon="-121.833440">
+    <ele>1323.96</ele>
+    <name>2137-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.556690" lon="-121.828150">
+    <ele>1301.27</ele>
+    <name>2138</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.558308" lon="-121.817779">
+    <ele>1265.75</ele>
+    <name>2138-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.560942" lon="-121.808170">
+    <ele>1230.15</ele>
+    <name>2139</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.567890" lon="-121.806200">
+    <ele>1210.50</ele>
+    <name>2139-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.575155" lon="-121.806645">
+    <ele>1191.70</ele>
+    <name>2140</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.580180" lon="-121.799900">
+    <ele>1154.98</ele>
+    <name>2140-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.580256" lon="-121.790071">
+    <ele>1161.31</ele>
+    <name>2141</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.586696" lon="-121.794716">
+    <ele>1228.06</ele>
+    <name>2141-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.585611" lon="-121.804450">
+    <ele>1273.96</ele>
+    <name>2142</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.585368" lon="-121.813471">
+    <ele>1297.27</ele>
+    <name>2142-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.591573" lon="-121.819181">
+    <ele>1277.37</ele>
+    <name>2143</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.597572" lon="-121.825552">
+    <ele>1275.68</ele>
+    <name>2143-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.602555" lon="-121.829443">
+    <ele>1183.72</ele>
+    <name>2144</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.608564" lon="-121.835406">
+    <ele>1165.11</ele>
+    <name>2144-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.614230" lon="-121.841800">
+    <ele>1158.04</ele>
+    <name>2145</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.620791" lon="-121.843062">
+    <ele>1260.76</ele>
+    <name>2145-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.627558" lon="-121.839966">
+    <ele>1260.67</ele>
+    <name>2146</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.634251" lon="-121.844669">
+    <ele>1230.63</ele>
+    <name>2146-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.640997" lon="-121.846970">
+    <ele>1210.52</ele>
+    <name>2147</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.647405" lon="-121.841370">
+    <ele>1144.72</ele>
+    <name>2147-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.654441" lon="-121.842404">
+    <ele>1142.90</ele>
+    <name>2148</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.659917" lon="-121.839419">
+    <ele>961.26</ele>
+    <name>2148-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.663421" lon="-121.834899">
+    <ele>819.77</ele>
+    <name>2149</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.667786" lon="-121.832429">
+    <ele>710.71</ele>
+    <name>2149-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.668779" lon="-121.829612">
+    <ele>543.11</ele>
+    <name>2150</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.675015" lon="-121.830996">
+    <ele>406.12</ele>
+    <name>2150-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.672086" lon="-121.838498">
+    <ele>294.45</ele>
+    <name>2151</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.669264" lon="-121.848124">
+    <ele>256.12</ele>
+    <name>2151-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.669537" lon="-121.856879">
+    <ele>271.56</ele>
+    <name>2152</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.664352" lon="-121.865924">
+    <ele>229.19</ele>
+    <name>2152-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.659877" lon="-121.871119">
+    <ele>208.03</ele>
+    <name>2153</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.659997" lon="-121.879731">
+    <ele>235.20</ele>
+    <name>2153-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.659022" lon="-121.888498">
+    <ele>166.90</ele>
+    <name>2154</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.661647" lon="-121.891460">
+    <ele>95.91</ele>
+    <name>2154-5</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.661800" lon="-121.897540">
+    <ele>62.48</ele>
+    <name>2155</name>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="45.600434" lon="-121.877893">
+    <ele>218.35</ele>
+    <name>4MiBridge</name>
+    <desc>4 1/2 mile bridge</desc>
+    <sym>Flag, Red</sym>
+  </wpt>
+  <wpt lat="45.661792" lon="-121.897533">
+    <ele>62.60</ele>
+    <name>BridgeOfGods</name>
+    <desc>Bridge of the Gods</desc>
+    <sym>Flag, Red</sym>
+  </wpt>
+  <wpt lat="45.495203" lon="-121.861381">
+    <ele>1365.51</ele>
+    <name>BuckPkTr</name>
+    <desc>Buck Peak Trail - mi 2132.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.374579" lon="-121.778936">
+    <ele>1031.36</ele>
+    <name>CS2117</name>
+    <desc>Campsite - mi 2116.7</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="45.378576" lon="-121.783898">
+    <ele>990.23</ele>
+    <name>CS2117b</name>
+    <desc>Campsite - mi 2117.1</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="45.426890" lon="-121.796242">
+    <ele>1047.93</ele>
+    <name>CS2125</name>
+    <desc>Campsite - mi 2124.8</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="45.489001" lon="-121.858776">
+    <ele>1293.99</ele>
+    <name>CS2132</name>
+    <desc>Campsite - mi 2131.9</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="45.557028" lon="-121.826740">
+    <ele>1288.69</ele>
+    <name>CS2138</name>
+    <desc>Indian Springs Campground, abandoned - mi 2138.1</desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="45.579236" lon="-121.842621">
+    <ele>753.18</ele>
+    <name>EagleCrkTr</name>
+    <desc>Indian Springs Trail 435 meets Eagle Creek Trail.</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.563100" lon="-121.828610">
+    <ele>1166.39</ele>
+    <name>EC00-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.569437" lon="-121.831843">
+    <ele>1070.92</ele>
+    <name>EC01</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.574242" lon="-121.838252">
+    <ele>921.21</ele>
+    <name>EC01-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.579574" lon="-121.842810">
+    <ele>746.55</ele>
+    <name>EC02</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.582620" lon="-121.845870">
+    <ele>683.98</ele>
+    <name>EC02-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.575800" lon="-121.846559">
+    <ele>614.59</ele>
+    <name>EC03</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.570323" lon="-121.847910">
+    <ele>560.72</ele>
+    <name>EC03-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.566069" lon="-121.852204">
+    <ele>508.01</ele>
+    <name>EC04</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.568198" lon="-121.854851">
+    <ele>448.69</ele>
+    <name>EC04-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.573631" lon="-121.852359">
+    <ele>410.38</ele>
+    <name>EC05</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.580179" lon="-121.851787">
+    <ele>360.29</ele>
+    <name>EC05-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.584622" lon="-121.854720">
+    <ele>301.00</ele>
+    <name>EC06</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.589081" lon="-121.860324">
+    <ele>286.36</ele>
+    <name>EC06-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.592613" lon="-121.866637">
+    <ele>258.89</ele>
+    <name>EC07</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.597147" lon="-121.872304">
+    <ele>229.19</ele>
+    <name>EC07-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.601386" lon="-121.878900">
+    <ele>209.57</ele>
+    <name>EC08</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.607315" lon="-121.881577">
+    <ele>192.85</ele>
+    <name>EC08-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.612456" lon="-121.885860">
+    <ele>169.35</ele>
+    <name>EC09</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.617449" lon="-121.888393">
+    <ele>178.11</ele>
+    <name>EC09-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.622221" lon="-121.894603">
+    <ele>126.72</ele>
+    <name>EC10</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.627627" lon="-121.897330">
+    <ele>136.08</ele>
+    <name>EC10-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.630634" lon="-121.904940">
+    <ele>100.61</ele>
+    <name>EC11</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.632752" lon="-121.911308">
+    <ele>71.55</ele>
+    <name>EC11-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.636611" lon="-121.918275">
+    <ele>33.79</ele>
+    <name>EC12</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.640069" lon="-121.924706">
+    <ele>24.68</ele>
+    <name>EC12-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.643304" lon="-121.924726">
+    <ele>61.49</ele>
+    <name>EC13</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.645567" lon="-121.916583">
+    <ele>63.38</ele>
+    <name>EC13-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.649700" lon="-121.910499">
+    <ele>57.20</ele>
+    <name>EC14</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.652402" lon="-121.903597">
+    <ele>68.74</ele>
+    <name>EC14-5</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.657658" lon="-121.898063">
+    <ele>76.90</ele>
+    <name>EC15</name>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="45.637495" lon="-121.919737">
+    <ele>33.02</ele>
+    <name>ECRest</name>
+    <desc>Bathroom, water fountain, near parking area.</desc>
+    <sym>Picnic Area</sym>
+  </wpt>
+  <wpt lat="45.608249" lon="-121.882454">
+    <ele>161.97</ele>
+    <name>HighBridge</name>
+    <desc>High Bridge</desc>
+    <sym>Flag, Red</sym>
+  </wpt>
+  <wpt lat="45.662763" lon="-121.894930">
+    <ele>70.32</ele>
+    <name>Hwy84</name>
+    <desc>Highway 84 - mi 2154.8</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="45.556350" lon="-121.825785">
+    <ele>1293.32</ele>
+    <name>IndianSpg</name>
+    <desc>Indian Spring - mi 2138.1</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="45.557298" lon="-121.826976">
+    <ele>1285.01</ele>
+    <name>IndianSpgTr</name>
+    <desc>Indian Springs Trail Number 435, to Eagle Creek alternate - mi 2138.1</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.467813" lon="-121.829302">
+    <ele>1225.26</ele>
+    <name>LostLkTr</name>
+    <desc>Lost Lake Trail - mi 2129.1</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.396056" lon="-121.797740">
+    <ele>871.03</ele>
+    <name>MuddyBridge</name>
+    <desc>Muddy Fork, hiker bridge - mi 2119.5</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.395603" lon="-121.801049">
+    <ele>861.88</ele>
+    <name>MuddyFord</name>
+    <desc>Muddy Fork, horse ford - mi 2119.2</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.344091" lon="-121.754358">
+    <ele>1602.22</ele>
+    <name>ParadiseParkTr</name>
+    <desc>Paradise Park Trail junction - mi 2111.8</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.665231" lon="-121.895634">
+    <ele>41.27</ele>
+    <name>PCTPub</name>
+    <desc>PCT Pub and Hostel, food only no hostel - mi 2155</desc>
+    <sym>Restaurant</sym>
+  </wpt>
+  <wpt lat="45.333568" lon="-121.713989">
+    <ele>1852.17</ele>
+    <name>Radio2108</name>
+    <desc>Microwave radio antenna - mi 2107.8</desc>
+    <sym>Flag, Red</sym>
+  </wpt>
+  <wpt lat="45.379957" lon="-121.776140">
+    <ele>1058.70</ele>
+    <name>RamonaFalls</name>
+    <desc>Ramona Falls</desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="45.379948" lon="-121.784169">
+    <ele>1016.86</ele>
+    <name>RamonaTr</name>
+    <desc>Ramona Falls Trail alternate - mi 2117.2</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.394379" lon="-121.799336">
+    <ele>871.11</ele>
+    <name>RamonaTr2</name>
+    <desc>Ramona Falls Trail, 2nd crossing mi 2119.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.427129" lon="-121.796829">
+    <ele>1047.75</ele>
+    <name>RD2125</name>
+    <desc>Lolo Pass Road, paved - mi 2124.9</desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="45.375711" lon="-121.779713">
+    <ele>1022.71</ele>
+    <name>SandyRiver</name>
+    <desc>Sandy River, silty, can be a dangerous crossing - mi 2116.8</desc>
+    <sym>Flag, Red</sym>
+  </wpt>
+  <wpt lat="45.336187" lon="-121.721884">
+    <ele>1824.67</ele>
+    <name>SilcoxHutTr</name>
+    <desc>Silcox Hut Trail - mi 2108.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.330539" lon="-121.710530">
+    <ele>1805.47</ele>
+    <name>TimberlineLdg</name>
+    <desc>Timberline Lodge, 2/10 mile S of PCT - mi 2107.7</desc>
+    <sym>Lodge</sym>
+  </wpt>
+  <wpt lat="45.321952" lon="-121.696042">
+    <ele>1628.44</ele>
+    <name>TimberlineTr</name>
+    <desc>Timberline Trail - mi 2106.3</desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="45.584153" lon="-121.852872">
+    <ele>322.08</ele>
+    <name>TunnelFall</name>
+    <desc>Tunnel Falls</desc>
+    <sym>Flag, Red</sym>
+  </wpt>
+  <wpt lat="45.314303" lon="-121.692652">
+    <ele>1471.21</ele>
+    <name>WA2105</name>
+    <desc>Gully with water - mi 2105.3</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="45.579531" lon="-121.795281">
+    <ele>1141.53</ele>
+    <name>WA2141</name>
+    <desc>Wahtum Lake - mi 2140.7</desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="45.343313" lon="-121.746689">
+    <ele>1455.11</ele>
+    <name>ZigzagRv</name>
+    <desc>Zigzag River, silty - mi 2110.9</desc>
+    <sym>Flag, Red</sym>
+  </wpt>
+</gpx>
