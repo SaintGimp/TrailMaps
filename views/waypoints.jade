@@ -6,30 +6,30 @@ block body
       thead
         tr
           th Name
-          th Latitude
-          th Longitude
-          th(style='width: 200px; text-align:right;')
+          th(style='width: 170px;') Latitude/Longitude
+          th(style='text-align:right;')
       tbody(data-bind=" template: { name: templateName, foreach: waypoints }")
 
 block scripts
   script(id='waypoint-template', type='text/html')
     tr
       td(data-bind='text: name, event: { dblclick: $root.edit }')
-      td(data-bind='text: latitude.toFixed(5)')
-      td(data-bind='text: longitude.toFixed(5)')
       td
-        button.btn(data-bind='click: displayOnMap') Go
-        button.btn(data-bind='click: $root.edit') Edit
-        button.btn(data-bind='click: $root.deleteWaypoint') Delete
+        a(style='cursor:pointer;', data-bind='text: latitude.toFixed(5) + ", " + longitude.toFixed(5), click: displayOnMap')
+      td
+        div.btn-group.btn-group-sm
+          button.btn.btn-primary(data-bind='click: $root.edit') Edit
+          button.btn.btn-link(data-bind='click: $root.deleteWaypoint') Delete
 
   script(id='edit-template', type='text/html')
     tr
       td
         input(style='width: 100%;', data-bind='value: name, hasfocus: true, enterkey: $root.confirmEdit, escapekey: $root.cancelEdit, event: { blur: $root.cancelEdit }')
-      td(data-bind='text: latitude')
-      td(data-bind='text: longitude')
+        td
+          a(style='cursor:pointer;', data-bind='text: latitude.toFixed(5) + ", " + longitude.toFixed(5), click: displayOnMap')
       td
-        button.btn(data-bind='click: $root.confirmEdit') Ok
-        button.btn(data-bind='click: $root.cancelEdit') Cancel
+        div.btn-group.btn-group-sm
+          button.btn.btn-primary(data-bind='click: $root.confirmEdit') Ok
+          button.btn.btn-link(data-bind='click: $root.cancelEdit') Cancel
 
   script(data-main='/js/waypoints', src='/js/lib/require.js')
