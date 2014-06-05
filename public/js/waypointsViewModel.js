@@ -57,7 +57,9 @@ define(['jquery', 'knockout', 'q', 'waypointViewModel'], function($, ko, Q, Wayp
     };
 
     self.cancelEdit = function(waypoint) {
-      waypoint.cancelEdit();
+      if (waypoint === self.activeWaypoint) {
+        waypoint.cancelEdit();
+      }
       self.activeWaypoint = null;
     };
 
