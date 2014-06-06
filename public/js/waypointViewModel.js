@@ -13,6 +13,9 @@ define(['jquery', 'knockout', 'q'], function($, ko, Q) {
       self.latitude = data.loc[1];
       self.longitude = data.loc[0];
       self.seq = data.seq;
+
+      self.location = self.latitude.toFixed(5) + ", " + self.longitude.toFixed(5);
+      self.link = 'maps/bing?lat=' + self.latitude.toFixed(5) + '&lon=' + self.longitude.toFixed(5) + '&zoom=15';
     };
 
     self.toJS = function() {
@@ -22,11 +25,6 @@ define(['jquery', 'knockout', 'q'], function($, ko, Q) {
         seq: self.seq,
         _id: self.id,
       };
-    };
-
-    self.displayOnMap = function() {
-      var url = 'maps/bing?lat=' + self.latitude.toFixed(5) + '&lon=' + self.longitude.toFixed(5) + '&zoom=15';
-      window.location.assign(url);
     };
 
     self.isEditing = ko.observable(false);

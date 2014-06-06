@@ -26,6 +26,7 @@ User stories:
 
 To Do on current task:
 * Can we remove the edit button and use only double-click, or does that break on touch interfaces?
+- Make the location link a proper href so we can open in new tab, etc.
 
 
 

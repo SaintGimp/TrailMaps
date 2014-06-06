@@ -15,9 +15,9 @@ block scripts
     tr
       td(data-bind='text: name, event: { dblclick: $root.edit }')
       td
-        a(style='cursor:pointer;', data-bind='text: latitude.toFixed(5) + ", " + longitude.toFixed(5), click: displayOnMap')
+        a(data-bind='attr: { href: link}, text: location')
       td
-        div.btn-group.btn-group-sm
+        div.btn-group.btn-group-xs
           button.btn.btn-primary(data-bind='click: $root.edit') Edit
           button.btn.btn-link(data-bind='click: $root.deleteWaypoint') Delete
 
@@ -25,10 +25,10 @@ block scripts
     tr
       td
         input(style='width: 100%;', data-bind='value: name, hasfocus: true, enterkey: $root.confirmEdit, escapekey: $root.cancelEdit, event: { blur: $root.cancelEdit }')
-        td
-          a(style='cursor:pointer;', data-bind='text: latitude.toFixed(5) + ", " + longitude.toFixed(5), click: displayOnMap')
       td
-        div.btn-group.btn-group-sm
+        a(data-bind='attr: { href: link}, text: location')
+      td
+        div.btn-group.btn-group-xs
           button.btn.btn-primary(data-bind='click: $root.confirmEdit') Ok
           button.btn.btn-link(data-bind='click: $root.cancelEdit') Cancel
 

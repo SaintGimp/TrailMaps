@@ -53,6 +53,9 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
           seq: 0,
           _id: "123"
         });
+        expect(waypointsViewModel.waypoints()[0].name()).to.equal("one");
+        expect(waypointsViewModel.waypoints()[0].location).to.equal("39.00000, -120.00000");
+        expect(waypointsViewModel.waypoints()[0].link).to.equal("maps/bing?lat=39.00000&lon=-120.00000&zoom=15");
       });
 
       after(function() {
