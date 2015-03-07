@@ -1,8 +1,0 @@
-{
-    "src_files": [
-        "*.js"
-    ],
-    "src_files_ignore": [
-        "b.js"
-    ]
-}
