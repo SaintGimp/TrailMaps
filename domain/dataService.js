@@ -3,25 +3,12 @@ var QMongoDB = require('./q-mongodb');
 
 function getMongoUrl() {
   var mongo;
-  if (process.env.VCAP_SERVICES) {
-    console.log("VCAP_SERVICES connection string: " + process.env.VCAP_SERVICES);
-    var env = JSON.parse(process.env.VCAP_SERVICES);
-    mongo = env['mongodb-2.2'][0].credentials;
+  if (process.env.MONGO_URI) {
+    console.log("MongoDB connection string: " + process.env.MONGO_URI);
+    return process.env.MONGO_URI;
   } else {
-    mongo = {
-      "hostname": "localhost",
-      "port": 27017,
-      "username": "",
-      "password": "",
-      "name": "",
-      "db": "TrailMaps"
-    };
-  }
-
-  if (mongo.username && mongo.password) {
-    return "mongodb://" + mongo.username + ":" + mongo.password + "@" + mongo.hostname + ":" + mongo.port + "/" + mongo.db;
-  } else {
-    return "mongodb://" + mongo.hostname + ":" + mongo.port + "/" + mongo.db;
+    console.log("Connecting to local MongoDB");
+    return "mongodb://localhost:27017/trailmaps";
   }
 }
 
