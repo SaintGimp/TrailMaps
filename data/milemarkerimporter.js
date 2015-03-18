@@ -8,9 +8,37 @@ var fs = require("fs"),
 var parser = new xml2js.Parser();
 
 var fileNames = [
-  "data/pct/ca_state_gps/ca_state_waypoints.gpx",
-  "data/pct/or_state_gps/or_state_waypoints.gpx",
-  "data/pct/wa_state_gps/wa_state_waypoints.gpx"
+  "data/pct/ca_state_gps/CA_Sec_A_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_B_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_C_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_D_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_E_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_F_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_G_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_H_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_I_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_J_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_K_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_L_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_M_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_N_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_O_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_P_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_Q_waypoints.gpx",
+  "data/pct/ca_state_gps/CA_Sec_R_waypoints.gpx",
+
+  "data/pct/or_state_gps/OR_Sec_B_waypoints.gpx",
+  "data/pct/or_state_gps/OR_Sec_C_waypoints.gpx",
+  "data/pct/or_state_gps/OR_Sec_D_waypoints.gpx",
+  "data/pct/or_state_gps/OR_Sec_E_waypoints.gpx",
+  "data/pct/or_state_gps/OR_Sec_F_waypoints.gpx",
+  "data/pct/or_state_gps/OR_Sec_G_waypoints.gpx",
+
+  "data/pct/wa_state_gps/WA_Sec_H_waypoints.gpx",
+  "data/pct/wa_state_gps/WA_Sec_I_waypoints.gpx",
+  "data/pct/wa_state_gps/WA_Sec_J_waypoints.gpx",
+  "data/pct/wa_state_gps/WA_Sec_K_waypoints.gpx",
+  "data/pct/wa_state_gps/WA_Sec_L_waypoints.gpx"
 ];
 
 Array.prototype.append = function(array)
