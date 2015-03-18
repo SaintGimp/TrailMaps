@@ -6,38 +6,41 @@ var fs = require("fs"),
 
 var parser = new xml2js.Parser();
 
+// TODO: now that the 2015 dataset doesn't have the "extras"
+// files, we could probably just process all *.gpx files
+// in the data directory and subs
 var fileNames = [
-  "data/pct/ca_state_gps/ca_sec_a_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_b_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_c_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_d_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_e_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_f_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_g_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_h_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_i_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_j_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_k_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_l_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_m_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_n_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_o_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_p_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_q_track.gpx",
-  "data/pct/ca_state_gps/ca_sec_r_track.gpx",
+  "data/pct/ca_state_gps/CA_Sec_A_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_B_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_C_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_D_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_E_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_F_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_G_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_H_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_I_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_J_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_K_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_L_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_M_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_N_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_O_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_P_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_Q_tracks.gpx",
+  "data/pct/ca_state_gps/CA_Sec_R_tracks.gpx",
 
-  "data/pct/or_state_gps/or_sec_b_track.gpx",
-  "data/pct/or_state_gps/or_sec_c_track.gpx",
-  "data/pct/or_state_gps/or_sec_d_track.gpx",
-  "data/pct/or_state_gps/or_sec_e_track.gpx",
-  "data/pct/or_state_gps/or_sec_f_track.gpx",
-  "data/pct/or_state_gps/or_sec_g_track.gpx",
+  "data/pct/or_state_gps/OR_Sec_B_tracks.gpx",
+  "data/pct/or_state_gps/OR_Sec_C_tracks.gpx",
+  "data/pct/or_state_gps/OR_Sec_D_tracks.gpx",
+  "data/pct/or_state_gps/OR_Sec_E_tracks.gpx",
+  "data/pct/or_state_gps/OR_Sec_F_tracks.gpx",
+  "data/pct/or_state_gps/OR_Sec_G_tracks.gpx",
 
-  "data/pct/wa_state_gps/wa_sec_h_track.gpx",
-  "data/pct/wa_state_gps/wa_sec_i_track.gpx",
-  "data/pct/wa_state_gps/wa_sec_j_track.gpx",
-  "data/pct/wa_state_gps/wa_sec_k_track.gpx",
-  "data/pct/wa_state_gps/wa_sec_l_track.gpx"
+  "data/pct/wa_state_gps/WA_Sec_H_tracks.gpx",
+  "data/pct/wa_state_gps/WA_Sec_I_tracks.gpx",
+  "data/pct/wa_state_gps/WA_Sec_J_tracks.gpx",
+  "data/pct/wa_state_gps/WA_Sec_K_tracks.gpx",
+  "data/pct/wa_state_gps/WA_Sec_L_tracks.gpx"
 ];
 
 Array.prototype.append = function(array)
