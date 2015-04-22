@@ -6,7 +6,8 @@
 
 var express = require('express'),
   app = exports.app = express(),
-  path = require('path');
+  path = require('path'),
+  bodyParser = require('body-parser');
 
 // Configuration
 
@@ -15,8 +16,9 @@ app.set('host', process.env.VCAP_APP_HOST || process.env.HOST || 'localhost');
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(require('static-favicon')());
-app.use(require('morgan')({ format: 'dev'}));
-app.use(require('body-parser')());
+app.use(require('morgan')('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(require('method-override')());
 app.use(require('less-middleware')(path.join(__dirname, 'public'), {}, {}, {compress: true }));
 app.use(express.static(path.join(__dirname, 'public')));
