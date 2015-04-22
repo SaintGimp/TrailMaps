@@ -6,12 +6,12 @@
 requirejs.config({
   baseUrl: "/js",
   paths: {
-    "jquery" : "https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min",
-    "bootstrap": "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min",
-    "typeahead": "http://twitter.github.io/typeahead.js/releases/0.10.5/typeahead.bundle.min",
+    "jquery" : "https://code.jquery.com/jquery-2.1.3.min",
+    "bootstrap": "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min",
+    "typeahead": "https://twitter.github.io/typeahead.js/releases/0.10.5/typeahead.bundle.min",
     "async": "lib/async",
     "markerwithlabel": "lib/markerwithlabel_packed",
-    "here_maps_api": "http://api.maps.nokia.com/2.2.4/jsl.js?with=maps",
+    "here_maps_api": "https://api.maps.nokia.com/2.2.4/jsl.js?with=maps",
     "knockout": "https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min",
     "q": "lib/q"
   },
@@ -40,11 +40,11 @@ requirejs.config({
   //enforceDefine: true,
 });
 
-define('bing_maps_api', ['async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0!onscriptload'], function() {
+define('bing_maps_api', ['async!https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0!onscriptload'], function() {
   return Microsoft;
 });
 
-define('google_maps_api', ['async!http://maps.google.com/maps/api/js?v=3&sensor=false'], function() {
+define('google_maps_api', ['async!https://maps.google.com/maps/api/js?v=3&sensor=false'], function() {
   return google;
 });
 

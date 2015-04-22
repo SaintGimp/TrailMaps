@@ -8,12 +8,12 @@
 requirejs.config({
   baseUrl: "/js",
   paths: {
-    "jquery" : "https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min",
-    "bootstrap": "../bootstrap/js/bootstrap.min",
+    "jquery" : "https://code.jquery.com/jquery-2.1.3.min",
+    "bootstrap": "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min",
     "async": "lib/async",
     "markerwithlabel": "lib/markerwithlabel_packed",
     "here_maps_api": "http://api.maps.nokia.com/2.2.4/jsl.js?with=maps",
-    "knockout": "http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1",
+    "knockout": "https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min",
     "q": "lib/q"
   },
   shim: {

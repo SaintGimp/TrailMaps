@@ -33,27 +33,27 @@ module.exports = function (grunt) {
     },
 
     testem: {
-      options : {
-        launch_in_ci : [
-          'phantomjs'
+      environment1  : {
+        src: [
+            "public/js/*.js",
+            "test/client/*.js"
         ],
-        "test_page": "test/client/runner.html",
-        "routes": {
-          "/js": "public/js",
-          "/stylesheets": "public/stylesheets",
-          "/test": "test"
-        },
-        "src_files": [
-          "public/js/*.js",
-          "test/client/*.js"
-        ],
-        "serve_files": [
-        ]
-      },
-      main : {
-        files : {
-          'test/client/tests.tap': [
-            'test/client/runner.html'
+        options : {
+          debug: true,
+          launch_in_ci : [
+            'phantomjs'
+          ],
+          test_page: "test/client/runner.html",
+          routes: {
+            "/js": "public/js",
+            "/stylesheets": "public/stylesheets",
+            "/test": "test"
+          },
+          src_files: [
+            "public/js/*.js",
+            "test/client/*.js"
+          ],
+          serve_files: [
           ]
         }
       }
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-simple-mocha');
-  grunt.loadNpmTasks('grunt-testem');
+  grunt.loadNpmTasks('grunt-contrib-testem');
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'simplemocha', 'testem']);
