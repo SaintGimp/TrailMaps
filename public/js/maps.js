@@ -7,12 +7,12 @@ requirejs.config({
   baseUrl: "/js",
   paths: {
     "jquery" : "https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min",
-    "bootstrap": "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min",
-    "typeahead": "http://twitter.github.io/typeahead.js/releases/0.10.2/typeahead.bundle.min",
+    "bootstrap": "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min",
+    "typeahead": "http://twitter.github.io/typeahead.js/releases/0.10.5/typeahead.bundle.min",
     "async": "lib/async",
     "markerwithlabel": "lib/markerwithlabel_packed",
     "here_maps_api": "http://api.maps.nokia.com/2.2.4/jsl.js?with=maps",
-    "knockout": "http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min",
+    "knockout": "https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min",
     "q": "lib/q"
   },
   shim: {

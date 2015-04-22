@@ -15,6 +15,7 @@ results
 
 tests.tap
 npm-debug.log
+testem*
 
 # Dependency directory
 # Commenting this out is preferred by some people, see
