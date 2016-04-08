@@ -46,7 +46,7 @@
     "expr"          : false,
     "forin"         : true,
     "immed"         : true,
-    "latedef"       : true,
+    "latedef"       : "nofunc",
     "laxbreak"      : false,
     "loopfunc"      : false,
     "noarg"         : true,
