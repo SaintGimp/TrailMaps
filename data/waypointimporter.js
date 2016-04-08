@@ -1,6 +1,5 @@
 var fs = require("fs"),
   xml2js = require('xml2js'),
-  mongoClient = require('mongodb').MongoClient,
   Q = require('q'),
   _ = require('underscore'),
   dataService = require("../domain/dataService.js");

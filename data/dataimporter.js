@@ -4,32 +4,27 @@ var mileMarkerImporter = require('./milemarkerimporter.js');
 var waypointImporter = require('./waypointimporter.js');
 var dataService = require("../domain/dataService.js");
 
-function dropCollection(collection) {
-  console.log("Dropping " + collection.collectionName);
-  return Q.ninvoke(collection, 'drop');
-}
-
-function dropCollections(db, collectionsToDelete) {
-  console.log('Dropping collections');
-
-  return dataService.collections()
-  .then(function(collections) {
-    var collectionsToDrop = collections.filter(function(collection) {
-      return collection.collectionName.match(/.*track\d+$/) || collection.collectionName.match(/.*milemarkers\d+$/) || collection.collectionName.match(/waypoints$/);
-    });
-
-    return Q.all(collectionsToDrop.map(function(collection) {
-      return dropCollection(collection);
-    }));
-  });
+function deleteAllData() {
+    console.log("Deleting all data");
+    
+    var querySpec = {
+        query: 'SELECT * FROM root r WHERE r.app = @app',
+        parameters: [{
+            name: '@app',
+            value: 'trailmaps'
+        }]
+    };
+        
+  return dataService.bulkDelete(querySpec);
 }
 
 exports.import = function() {
   console.log("Importing trail data");
 
-  return dropCollections()
+  return deleteAllData()
   .then(function() {
-    return Q.all([trackImporter.import(), mileMarkerImporter.import()]);
+    return trackImporter.import();
+//    return Q.all([trackImporter.import(), mileMarkerImporter.import()]);
   })
   .then(waypointImporter.import);
 };
