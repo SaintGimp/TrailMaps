@@ -1,4 +1,5 @@
 var Q = require('q');
+var stopwatch = require('@songkick/promise-stopwatch');
 
 var dataService;
 
@@ -24,5 +25,11 @@ exports.findByArea = function(options) {
   var projection = { _id: 0, loc: 1 };
   var sortOrder = { seq: 1 };
 
-  return dataService.findArray(collectionName, searchTerms, projection, sortOrder);
+  return stopwatch()(function() {
+    return dataService.findArray(collectionName, searchTerms, projection, sortOrder);
+  })()
+  .then(function(response){
+    console.log('Track load took ' + response.duration + 'ms');
+    return response.result;
+  });
 };
