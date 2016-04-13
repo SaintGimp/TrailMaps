@@ -10,6 +10,9 @@
   "repository": "",
   "author": "Eric Lee",
   "license": "MIT",
+  "engines": {
+    "node": "4.4.x"
+  },
   "dependencies": {
     "body-parser": "1.15.x",
     "errorhandler": "1.4.x",
