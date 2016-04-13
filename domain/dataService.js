@@ -2,6 +2,7 @@ var Q = require('q');
 var QMongoDB = require('./q-mongodb');
 
 var existingDb = null;
+var existingCollections = {};
 
 function getMongoUrl() {
   var mongo;
@@ -26,10 +27,24 @@ function getDb() {
     });
   }
 }
+
+function getCollection(db, name) {
+  if (existingCollections[name]) {
+    return new Q(existingCollections[name]);
+  }
+  else {
+    return QMongoDB.collection(db, name)
+    .then(function(collection) {
+      existingCollections[name] = collection;
+      return collection;
+    });
+  }
+}
+
 exports.collection = function(name) {
   return getDb()
   .then(function(db) {
-    return QMongoDB.collection(db, name);
+    return getCollection(db, name);
   });
 };
 
