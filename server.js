@@ -33,5 +33,6 @@ app.use(function(req, res, next) {
 
 // Start server
 app.listen(app.get('port'), app.get('host'), function(){
+  console.log("Node server version %s", process.version);
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });

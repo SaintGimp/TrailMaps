@@ -1,10 +1,11 @@
 var Q = require('q');
 var QMongoDB = require('./q-mongodb');
 
+var existingDb = null;
+
 function getMongoUrl() {
   var mongo;
   if (process.env.MONGO_URI) {
-    console.log("MongoDB connection string: " + process.env.MONGO_URI);
     return process.env.MONGO_URI;
   } else {
     console.log("Connecting to local MongoDB");
@@ -12,15 +13,28 @@ function getMongoUrl() {
   }
 }
 
+function getDb() {
+  if (existingDb) {
+    return new Q(existingDb);
+  }
+  else
+  {
+    return QMongoDB.db(getMongoUrl())
+    .then(function(db) {
+      existingDb = db;
+      return db;
+    });
+  }
+}
 exports.collection = function(name) {
-  return QMongoDB.db(getMongoUrl())
+  return getDb()
   .then(function(db) {
     return QMongoDB.collection(db, name);
   });
 };
 
 exports.collections = function() {
-  return QMongoDB.db(getMongoUrl())
+  return getDb()
     .then(function(db) {
       return Q.ninvoke(db, "collections");
     });
