@@ -84,6 +84,10 @@ Node Inspector https://github.com/node-inspector/node-inspector
 Webstorm http://www.jetbrains.com/webstorm/
 Brackets http://brackets.io/
 
+*** DocumentDB
+Not terribly desirable so far, but if we return to it, check out https://github.com/songkick/promise-retry to make
+life easier.
+
 Note on Bootstrap 3:
 > Now we've got v3 which has all sorts of wack colors and typography, like someone wanted to go "flat" but gave up halfway through.
 The idea of BS3 wasn't so much "flat" as it was a "remove gradients to allow easier customisation". Previously (in BC2) you had to override a ton of stuff to get "sane" buttons again. BS3 just gives you simple buttons that you can add to immediately. Same goes for the nav-bar. I much prefer it this way.
