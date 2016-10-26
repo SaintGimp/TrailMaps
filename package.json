@@ -11,7 +11,8 @@
   "author": "Eric Lee",
   "license": "MIT",
   "engines": {
-    "node": "4.4.x"
+    "node": ">=6.9.1 <7.0.0",
+    "npm": ">=3.10.8 <4.0.0"
   },
   "dependencies": {
     "@songkick/promise-stopwatch": "0.0.1",
