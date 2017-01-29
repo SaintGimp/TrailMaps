@@ -16,13 +16,13 @@
   },
   "dependencies": {
     "@songkick/promise-stopwatch": "0.0.1",
-    "body-parser": "1.15.x",
-    "errorhandler": "1.4.x",
-    "express": "4.13.x",
+    "body-parser": "1.16.x",
+    "errorhandler": "1.5.x",
+    "express": "4.14.x",
     "jade": "1.11.x",
-    "less-middleware": "2.1.x",
+    "less-middleware": "2.2.x",
     "method-override": "2.3.x",
-    "mongodb": "2.1.x",
+    "mongodb": "2.2.x",
     "morgan": "1.7.x",
     "q": "1.4.x",
     "serve-favicon": "2.3.x",
@@ -32,7 +32,7 @@
   "devDependencies": {
     "chai": "3.5.x",
     "grunt": "1.0.x",
-    "grunt-contrib-jshint": "1.0.x",
+    "grunt-contrib-jshint": "1.1.x",
     "grunt-simple-mocha": "0.4.x",
     "grunt-testem-mincer": "0.5.x"
   }
