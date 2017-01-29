@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -87,8 +87,8 @@
   </wpt>
   <wpt lat="39.696620" lon="-120.706995">
     <ele>2150.8</ele>
-    <name>WACS1214</name>
-    <desc><![CDATA[Small pond, campsites, trail junction to creek and piped spring, campsite.]]></desc>
+    <name>WACS1214C</name>
+    <desc><![CDATA[Small pond, campsites.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="39.705715" lon="-120.716501">
@@ -226,7 +226,7 @@
   <wpt lat="39.817842" lon="-121.066869">
     <ele>1046.4</ele>
     <name>WA1250</name>
-    <desc><![CDATA[Stream]]></desc>
+    <desc><![CDATA[Bear Creek, footbridge, large campsite, water.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="39.816677" lon="-121.095815">
@@ -394,7 +394,7 @@
   <wpt lat="40.006011" lon="-121.251046">
     <ele>673.6</ele>
     <name>Belden</name>
-    <desc><![CDATA[Belden Town Resort]]></desc>
+    <desc><![CDATA[Belden [Mile 1284.3] is a resort on the PCT, with a very small store, restaurant/bar [www.beldentown.com, 530-283-9662], and The Braatens of Little Haven. The Belden Post Office closed in 2013.  Note that Hwy 70 is a narrow, curvy, dangerous road with no room to safely walk.<br/><br/>The Braatens of Little Haven will hold packages for three weeks during June and July (small donations accepted to offset expenses), USPS address:<br/><br/>(Hiker's Legal Name and ETA)<br/>c/o Braatens at Little Haven<br/>PO Box 4<br/>Belden, CA 95915<br/><br/>Include a return address.  Call The Braatens at 530-283-9880 when you arrive in Belden (between 6 am and 7:30 pm) to arrange for delivery or pick up.<br/>-----<br/>The Belden Town Resort [www.beldentown.com, 530-283-9662] may hold hiker packages for a fee (UPS or FedEx only, call first for details).<br/><br/>(Hiker Name, PCT Hiker)<br/>Belden Town Resort<br/>14785 Beldon Town Rd<br/>Belden, CA 95915<br/>-----<br/>The Caribou Crossroads RV Park [listed on previous versions of Halfmile maps] is probably not a good resupply option. The RV park is currently for sale and some hikers had issues in 2015.]]></desc>
     <sym>Shopping Center</sym>
   </wpt>
   <wpt lat="40.006965" lon="-121.249470">
@@ -471,7 +471,7 @@
   </wpt>
   <wpt lat="39.821850" lon="-121.080105">
     <ele>992.6</ele>
-    <name>CS1251</name>
+    <name>WACS1250B</name>
     <desc><![CDATA[Large campsite]]></desc>
     <sym>Campground</sym>
   </wpt>
@@ -549,7 +549,7 @@
   </wpt>
   <wpt lat="39.696916" lon="-120.705431">
     <ele>2149.6</ele>
-    <name>WA1214B</name>
+    <name>WA1214</name>
     <desc><![CDATA[Trail junction to Little Jamison Creek, 200 feet off-trail.]]></desc>
     <sym>Water Source</sym>
   </wpt>
@@ -627,7 +627,7 @@
   </wpt>
   <wpt lat="39.696011" lon="-120.703855">
     <ele>2174.2</ele>
-    <name>WA1214</name>
+    <name>WA1214B</name>
     <desc><![CDATA[Piped spring 1/10 mile E of PCT]]></desc>
     <sym>Water Source</sym>
   </wpt>

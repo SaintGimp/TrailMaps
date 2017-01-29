@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -76,7 +76,7 @@
   <wpt lat="34.336656" lon="-117.641776">
     <ele>2513.7</ele>
     <name>TR0363</name>
-    <desc><![CDATA[Acorn trail junction.]]></desc>
+    <desc><![CDATA[Acorn trail junction. You can access Wrightwood on this very steep trail [3.6 miles, dropping 2,337 feet], but it's probably better for most hikers to go 6 miles north on the PCT to Hwy 2 and hitch into Wrightwood [5.5 miles E on Hwy 2].]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="34.338588" lon="-117.648973">
@@ -574,13 +574,13 @@
   <wpt lat="34.304640" lon="-117.465200">
     <ele>913.0</ele>
     <name>Hwy15</name>
-    <desc><![CDATA[Interstate Highway 15, Cajon Pass, busy interstate highway intersection with a McDonald's restaurant, pay phone, gas station mini-mart and motel. WATER ALERT: Next northbound water may be Guffy Spring in 22.3 miles.]]></desc>
+    <desc><![CDATA[Interstate Highway 15 and Cajon Pass [about 1/2 mile north of the  PCT] is a busy interstate highway intersection with a McDonald's restaurant, pay phone, gas station mini-mart and a hiker-friendly Best Western Motel [760-249-6777].<br/>-<br/>Hikers going to the McDonalds or gas station mini-mart at Cajon Pass walk along a section of historic Route 66 [now called Wagon Train Rd] which also runs past a memorial built in 1917 honoring pioneers of the Santa Fe and Salt Lake trails [behind the truck weigh station]. Route 66 ran 2,448 miles from Chicago to LA, less than the length of the PCT.<br/>-----<br/>WATER ALERT: Next northbound water may be Guffy Spring in 22.3 miles.]]></desc>
     <sym>Car</sym>
   </wpt>
   <wpt lat="34.438371" lon="-118.268510">
     <ele>678.4</ele>
     <name>ActonKOA</name>
-    <desc><![CDATA[Hiker-friendly KOA RV park, 2/10 mile E of PCT with camping, showers, laundry, and a small store.]]></desc>
+    <desc><![CDATA[Hiker-friendly KOA RV park, 2/10 mile E of PCT with camping, showers, laundry, and a small store.<br/>-<br/>To reach the KOA cross Soledad Canyon Rd and walk N on the PCT down the embankment. Look to the right and you will see the KOA campground across the flat open area. If you cross the creek you have gone too far. Hikers usually camp in the grassy area near the basketball court. The office  and store is up the wooden stairs E of the basketball court.<br/>-<br/>Acton KOA phone: 661-268-1214<br/>Acton KOA website: www.acton-koa.com]]></desc>
     <sym>Campground</sym>
   </wpt>
   <wpt lat="34.329253" lon="-117.636483">
@@ -670,7 +670,7 @@
   <wpt lat="34.496190" lon="-118.326370">
     <ele>773.1</ele>
     <name>AguaDulce</name>
-    <desc><![CDATA[Agua Dulce is a small town on the PCT with a grocery store, restaurants, pay phone, and ATM. Hiker Heaven [AKA the Saufley's] was closed in 2015 and is no longer hosting PCT hikers. Agua Dulce does not have a Post Office.]]></desc>
+    <desc><![CDATA[Agua Dulce is a small town on the PCT with a good grocery store, restaurants, pay phones, ATM and Hiker Heaven [AKA the Saufley's]. Hiker Heaven will be open April 1 through June 30 in 2016, and for southbound thru-hikers in the fall of 2016. Hiker Heaven has a limit of 50 hikers per night, first-come, first-serve, no reservations, 2-night max stay. Hiker Heaven accepts resupply packages sent by USPS, UPS, FedEx or DHL. Include ETA on your package.<br/>PCT Hiker (your name)<br/>c/o The Saufley's<br/>11861 Darling Road<br/>Agua Dulce, CA 91390<br/>-<br/>Saufleys Home Phone: 661-268-1235<br/>Hiker Heaven guest house [hiker] phone: 661-268-1348<br/>Hiker Heaven website: www.hikerheaven.com<br/>-<br/>The PCT goes through the center of Agua Dulce. To reach Hiker Heaven walk past the grocery store and pizza place and turn left on Darling Road for 1 mile.]]></desc>
     <sym>Residence</sym>
   </wpt>
   <wpt lat="34.400434" lon="-117.839860">
@@ -682,7 +682,7 @@
   <wpt lat="34.373262" lon="-117.752393">
     <ele>2006.3</ele>
     <name>Hwy2B</name>
-    <desc><![CDATA[Vincent Gap, 2nd crossing of Hwy 2, outhouse, trash cans, picnic table, large paved parking area, used by Mt Baden Powell day hikers.]]></desc>
+    <desc><![CDATA[Vincent Gap, 2nd crossing of Hwy 2, outhouse, trash cans, picnic table, large paved parking area, used by Mt Baden Powell day hikers.<br/>-<br/>The High Desert Trail Alternate (also known as the Manzanita Trail) connects Vincent Gap to the South Fork Campground allowing hikers to bypass Mount Baden-Powell during high snow years. See maps for details.]]></desc>
     <sym>Car</sym>
   </wpt>
   <wpt lat="34.375706" lon="-117.892593">
@@ -708,12 +708,6 @@
     <name>MtBaldy</name>
     <desc><![CDATA[Mount Baldy [Mount San Antonio], 10,063 feet, 3.9 miles S of PCT mile 362.6.]]></desc>
     <sym>Summit</sym>
-  </wpt>
-  <wpt lat="34.360230" lon="-117.631049">
-    <ele>1801.8</ele>
-    <name>PO0363</name>
-    <desc><![CDATA[Wrightwood Post Office, 4.5 miles N of PCT [or 5.6 miles E of Hwy 2].]]></desc>
-    <sym>Post Office</sym>
   </wpt>
   <wpt lat="34.403370" lon="-117.868245">
     <ele>1584.4</ele>

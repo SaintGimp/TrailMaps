@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -160,7 +160,7 @@
   <wpt lat="38.069012" lon="-119.639788">
     <ele>2425.7</ele>
     <name>WACS0987</name>
-    <desc><![CDATA[Wilma Lake, campsite.]]></desc>
+    <desc><![CDATA[Wilma Lake (sometimes incorrectly named Wilmer Lake), campsites. This lake has a history of name changes on maps and trail signs. The lake is named after Wilma Seavey, daughter of Clyde L. Seavey.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.073618" lon="-119.646105">
@@ -195,7 +195,7 @@
   </wpt>
   <wpt lat="38.199181" lon="-119.569501">
     <ele>2756.6</ele>
-    <name>WA0999</name>
+    <name>WA0999B</name>
     <desc><![CDATA[Small lake]]></desc>
     <sym>Water Source</sym>
   </wpt>
@@ -340,7 +340,7 @@
   <wpt lat="38.022795" lon="-119.519657">
     <ele>2316.7</ele>
     <name>WA0973</name>
-    <desc><![CDATA[Piute Creek, may be a difficult ford early in the season.]]></desc>
+    <desc><![CDATA[Piute Creek.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.008843" lon="-119.479161">
@@ -520,7 +520,7 @@
   <wpt lat="37.874258" lon="-119.356879">
     <ele>2614.4</ele>
     <name>TuolumneStore</name>
-    <desc><![CDATA[Tuolumne Meadows Store, 3/10 mile SW of PCT mile 942.5.]]></desc>
+    <desc><![CDATA[Tuolumne Meadows has a campground, store [3/10 mile W of the PCT, surprisingly well stocked], snack bar, outfitter [in the gas station], and a post office. Tuolumne Meadows Post Office [Open M-F 9-5, Sa 9-12; 209-372-8236]<br/>(Your Name)<br/>c/o General Delivery<br/>Tuolumne Meadows<br/>Yosemite National Park, CA 95389]]></desc>
     <sym>Shopping Center</sym>
   </wpt>
   <wpt lat="37.726175" lon="-119.530475">
@@ -648,6 +648,36 @@
     <name>JMT0943</name>
     <desc><![CDATA[John Muir Trail to Yosemite Valley.]]></desc>
     <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="37.901070" lon="-119.412990">
+    <ele>2698.4</ele>
+    <name>WA0947</name>
+    <desc><![CDATA[Wooden bridge over Tuolumne River.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="38.045240" lon="-119.572620">
+    <ele>2919.7</ele>
+    <name>WA0980</name>
+    <desc><![CDATA[Ford Rancheria Creek (sometimes difficult early season).]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.055090" lon="-119.584360">
+    <ele>2537.7</ele>
+    <name>WA0981</name>
+    <desc><![CDATA[Seasonal stream]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.062640" lon="-119.624270">
+    <ele>1093.6</ele>
+    <name>WA0985</name>
+    <desc><![CDATA[Small lake]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.194580" lon="-119.570750">
+    <ele>1002.3</ele>
+    <name>WA0999</name>
+    <desc><![CDATA[Second crossing, Cascade Creek, single log bridge.]]></desc>
+    <sym>Water Source</sym>
   </wpt>
   <wpt lat="37.877025" lon="-119.353072">
     <ele>2620.2</ele>

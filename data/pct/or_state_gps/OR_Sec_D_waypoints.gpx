@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -163,7 +163,7 @@
     <desc><![CDATA[Diamond Peak Wilderness boundary]]></desc>
     <sym>Forest</sym>
   </wpt>
-  <wpt lat="43.469549" lon="-122.139878">
+  <wpt lat="43.468800" lon="-122.140260">
     <ele>1721.0</ele>
     <name>WA1889</name>
     <desc><![CDATA[Large pond]]></desc>
@@ -364,7 +364,7 @@
   <wpt lat="43.581561" lon="-122.040216">
     <ele>1463.5</ele>
     <name>ShelterCove</name>
-    <desc><![CDATA[Shelter Cove Resort]]></desc>
+    <desc><![CDATA[Shelter Cove Resort is a hiker friendly resort and RV park 2.2 miles south of the PCT with hiker camping, cabins, store, showers, laundry, WiFi and a payphone. They accept hiker supply packages via UPS only, no fee, include ETA.<br/>(Your Name)<br/>c/o Shelter Cove Resort & Marina<br/>27600 West Odell Lake Road, Highway 58<br/>Crescent, OR 97733<br/>-<br/>Shelter Cove phone: 541-433-2548<br/>Shelter Cove website: www.sheltercoveresort.com]]></desc>
     <sym>Post Office</sym>
   </wpt>
   <wpt lat="43.304293" lon="-122.000222">
@@ -376,7 +376,7 @@
   <wpt lat="43.599753" lon="-122.036715">
     <ele>1560.1</ele>
     <name>WillametteSki</name>
-    <desc><![CDATA[Willamette Ski Resort, sometimes open on summer weekends, 2/10 miles NW of PCT.]]></desc>
+    <desc><![CDATA[Willamette Pass Ski Area has a pizza restaurant and is sometimes open on summer weekends, 2/10 miles NW of PCT.<br/>-<br/>Willamette Pass phone: 541-345-7669<br/>Willamette Pass website: www.willamettepass.com]]></desc>
     <sym>Ski Resort</sym>
   </wpt>
   <wpt lat="43.581078" lon="-122.051214">

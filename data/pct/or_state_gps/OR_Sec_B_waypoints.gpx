@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -448,7 +448,7 @@
   <wpt lat="42.208734" lon="-122.374904">
     <ele>1395.0</ele>
     <name>WA1748</name>
-    <desc><![CDATA[Klum Landing Park Campground, 3/10 mi W of PCT.]]></desc>
+    <desc><![CDATA[Klum Landing Park is a county campground with campsites, water, and coin showers that charges $20 per site for overnight camping [8 person maximum per campsite].<br/>http://jacksoncountyor.org/parks/Camping/Howard-Prairie-Lake/Klum-Landing-Park]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="42.062074" lon="-122.602392">

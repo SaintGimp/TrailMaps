@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -430,7 +430,7 @@
   <wpt lat="37.538319" lon="-118.969102">
     <ele>3101.1</ele>
     <name>DuckLakeTR</name>
-    <desc><![CDATA[Duck Lake Trail junction]]></desc>
+    <desc><![CDATA[Duck Lake Trail junction. No camping within 300 feet of the outlet of Duck Lake.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="37.826493" lon="-119.279165">
@@ -460,7 +460,7 @@
   <wpt lat="36.694520" lon="-118.373488">
     <ele>3998.4</ele>
     <name>ForesterPass</name>
-    <desc><![CDATA[Forester Pass, highest point on the Pacific Crest Trail, 3,200 feet.]]></desc>
+    <desc><![CDATA[Forester Pass, highest point on the Pacific Crest Trail, 13,200 feet.]]></desc>
     <sym>Summit</sym>
   </wpt>
   <wpt lat="36.789552" lon="-118.411768">
@@ -562,7 +562,7 @@
   <wpt lat="37.728520" lon="-119.171303">
     <ele>3001.0</ele>
     <name>JMT0923</name>
-    <desc><![CDATA[John Muir Trail rejoins PCT.]]></desc>
+    <desc><![CDATA[John Muir Trail rejoins PCT. No camping within 1/4 mile of the outlet of Thousand Island Lake.]]></desc>
     <sym>Flag, Blue</sym>
   </wpt>
   <wpt lat="36.594283" lon="-118.371148">
@@ -676,7 +676,7 @@
   <wpt lat="37.236853" lon="-118.880076">
     <ele>2364.9</ele>
     <name>MuirRanch</name>
-    <desc><![CDATA[Muir Trail Ranch, 1.5 miles NW of PCT on Florence Lake Trail.]]></desc>
+    <desc><![CDATA[Muir Trail Ranch, 1.5 miles NW of PCT on Florence Lake Trail.<br/>-<br/>Muir Trail Ranch is a private guest ranch 1.5 miles NW of PCT that accepts hiker resupply packages and sells a few emergency supplies. Packages are delivered to the ranch via pack animals. They have specific packing requirements and a $55 fee. For details see www.muirtrailranch.com/resupply.html]]></desc>
     <sym>Post Office</sym>
   </wpt>
   <wpt lat="37.838821" lon="-119.285015">
@@ -730,7 +730,7 @@
   <wpt lat="37.614855" lon="-119.074890">
     <ele>2349.7</ele>
     <name>RedsMdwStore</name>
-    <desc><![CDATA[Red's Meadow Store, 3/10 mile NE of PCT mile 906.7.]]></desc>
+    <desc><![CDATA[Red's Meadow is a pack station 3/10 mile NE of the PCT with a small store, restaurant, cabins, laundry, pay phone, nearby campground with free hot spring showers. The shuttle to Mammoth Lakes stops near the store.  Red's Meadow is open from about 6/15 - 10/1. Snow may delay the opening. Red's Meadow accepts resupply packages [$35 per package plus a daily storage fee; www.redsmeadow.com/pdf/PackagePickUp.pdf; 760-934-2345]]]></desc>
     <sym>Shopping Center</sym>
   </wpt>
   <wpt lat="37.621142" lon="-119.081971">
@@ -856,7 +856,7 @@
   <wpt lat="37.376168" lon="-119.013068">
     <ele>2342.9</ele>
     <name>VVR</name>
-    <desc><![CDATA[Vermilion Valley Resort, 6 miles west of PCT mile 878.7.]]></desc>
+    <desc><![CDATA[Vermilion Valley Resort is a hiker-friendly resort 6 miles W of the PCT with a small store, restaurant, tent cabins, showers, and laundry. You can reach VVR by a ferry boat that lands 1.5 miles SW of the PCT [$19 round trip, pick up at 9:45a and 4:45p] or hike 5 miles along the N shore of Lake Edison to VVR or via the Bear Ridge Trail.  VVR accepts hiker resupply packages [$20 with a 25 pound limit], UPS preferred, include ETA, allow extra time for delivery to VVR.<br/>UPS Address:<br/>Vermilion Valley Resort<br/>c/o Rancheria Garage<br/>62311 Huntington Lake Road<br/>Lakeshore, CA 93634<br/>-<br/>Place hiker's name and ETA on all 4 sides of package<br/>-<br/>VVR phone: 559-259-4000<br/>VVR website: www.edisonlake.com]]></desc>
     <sym>Shopping Center</sym>
   </wpt>
   <wpt lat="37.412557" lon="-118.924659">
@@ -1402,7 +1402,7 @@
   <wpt lat="37.527302" lon="-118.949248">
     <ele>3022.7</ele>
     <name>WA0893</name>
-    <desc><![CDATA[Purple Lake outlet, wood bridge.]]></desc>
+    <desc><![CDATA[Purple Lake outlet, wood bridge. No camping within 300 feet of the outlet of Purple Lake.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="37.568198" lon="-119.040342">
@@ -2152,13 +2152,13 @@
   <wpt lat="37.711653" lon="-119.151770">
     <ele>2958.9</ele>
     <name>WACS0909R</name>
-    <desc><![CDATA[Garnet Lake, campsite, 11.3 miles north on JMT alternate.]]></desc>
+    <desc><![CDATA[Garnet Lake, campsite, 11.3 miles north on JMT alternate. No camping within 1/4 mile of the outlet of Garnet Lake.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="37.713484" lon="-119.154439">
     <ele>2968.9</ele>
     <name>WACS0909S</name>
-    <desc><![CDATA[Garnet Lake, campsite, 12 miles north on JMT alternate.]]></desc>
+    <desc><![CDATA[Garnet Lake, campsite, 12 miles north on JMT alternate. No camping within 1/4 mile of the outlet of Garnet Lake.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="37.720913" lon="-119.159309">
@@ -2286,12 +2286,6 @@
     <name>WhitneyPtlTR</name>
     <desc><![CDATA[Whitney Portal trail junction, 6.3 miles east of PCT mile 767.]]></desc>
     <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="36.586490" lon="-118.240754">
-    <ele>2539.5</ele>
-    <name>WPortalStore</name>
-    <desc><![CDATA[Whitney Portal Store, 8.3 miles east of Mt Whitney trail. ]]></desc>
-    <sym>Shopping Center</sym>
   </wpt>
   <wpt lat="36.558933" lon="-118.361780">
     <ele>3286.0</ele>

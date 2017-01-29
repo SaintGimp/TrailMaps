@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -112,7 +112,7 @@
   <wpt lat="34.339264" lon="-117.177016">
     <ele>1073.4</ele>
     <name>WA0308</name>
-    <desc><![CDATA[Deep Creek hot spring. ]]></desc>
+    <desc><![CDATA[Deep Creek hot spring. Camping is not permitted within one mile of Deep Creek. Sometimes this is enforced, especially on weekends near the popular clothing optional hot spring that can be crowded on weekends.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="34.312309" lon="-117.265540">
@@ -148,7 +148,7 @@
   <wpt lat="34.308588" lon="-117.315367">
     <ele>964.9</ele>
     <name>RD0324B</name>
-    <desc><![CDATA[PCT joins a paved road after passing through a small industrial work yard. ]]></desc>
+    <desc><![CDATA[PCT joins paved Hwy 73 after after crossing smaller road and passing through a small industrial work yard.]]></desc>
     <sym>Truck</sym>
   </wpt>
   <wpt lat="34.308699" lon="-117.322236">
@@ -328,7 +328,7 @@
   <wpt lat="34.306818" lon="-117.313477">
     <ele>963.8</ele>
     <name>WR0324</name>
-    <desc><![CDATA[Bridge over Silverwood Lake dam outlet.]]></desc>
+    <desc><![CDATA[Bridge over Cedar Springs Dam outlet.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="34.305877" lon="-117.276203">
@@ -364,7 +364,7 @@
   <wpt lat="34.345212" lon="-117.230572">
     <ele>955.7</ele>
     <name>MFSpillway</name>
-    <desc><![CDATA[Mojave River Forks Reservoir Spillway, 200 feet NW of PCT.]]></desc>
+    <desc><![CDATA[Mojave River Forks Reservoir Spillway, 200 feet NW of PCT. The Reservoir is usually a dry lake bed. In wet years, the trail below the dam [PCT miles 313 - 314] may be flooded. Rangers report the flooded area sometimes has quicksand, so use caution.<br/>As an alternate, you can take the paved path just past the spillway to a road on top of the dam. Follow the road west to Arrowhead Lake Rd, and backtrack east on Hwy 173 to the PCT. This 2.9 mile alternate bypasses 1.3 miles of the PCT.]]></desc>
     <sym>Flag, Blue</sym>
   </wpt>
   <wpt lat="34.344096" lon="-117.195520">
@@ -442,7 +442,7 @@
   <wpt lat="34.283627" lon="-116.917247">
     <ele>2301.2</ele>
     <name>RD0279</name>
-    <desc><![CDATA[Holcomb Valley Road 2N09, paved to L, unpaved to R of PCT crossing.]]></desc>
+    <desc><![CDATA[Holcomb Valley Road 2N09, paved for about 1/4 mile leading up to PCT junction, dirt road for about 2 miles beyond that S to Hwy 38, unpaved to R of PCT crossing.]]></desc>
     <sym>Truck</sym>
   </wpt>
   <wpt lat="34.280917" lon="-116.913176">
@@ -460,7 +460,7 @@
   <wpt lat="34.286261" lon="-116.899872">
     <ele>2351.7</ele>
     <name>CS0277</name>
-    <desc><![CDATA[Campsite, picnic table nearby.]]></desc>
+    <desc><![CDATA[Campsite]]></desc>
     <sym>Campground</sym>
   </wpt>
   <wpt lat="34.290378" lon="-116.883446">
@@ -859,12 +859,6 @@
     <desc><![CDATA[San Gorgonio Peak.]]></desc>
     <sym>Summit</sym>
   </wpt>
-  <wpt lat="34.261560" lon="-116.846596">
-    <ele>2060.3</ele>
-    <name>PO0266</name>
-    <desc><![CDATA[Big Bear City Post Office, 5.4 miles SW of PCT.]]></desc>
-    <sym>Post Office</sym>
-  </wpt>
   <wpt lat="33.925549" lon="-116.695072">
     <ele>415.8</ele>
     <name>RD0210</name>
@@ -928,7 +922,7 @@
   <wpt lat="33.989219" lon="-116.656203">
     <ele>673.1</ele>
     <name>WRCS0219</name>
-    <desc><![CDATA[Whitewater Preserve, 6/10  mile E of PCT, shade, water, wading pool, toilets, and free camping for PCT hikers.]]></desc>
+    <desc><![CDATA[The Whitewater Preserve is a hiker-friendly conservation preserve 6/10 mile E of the PCT at the site of an old trout farm. The preserve has running water, shade, toilets, a wading pool, and free camping for PCT hikers. PCT hikers who arrive after the ranger station closes should camp in the open grass area S of the Ranger Station. Check in with the ranger in the morning if staying more than one night.<br/>-<br/>No fires, smoking or alcohol. <br/>-<br/>Preserve phone: 760-325-7222<br/>Website: www.wildlandsconservancy.org]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="34.125108" lon="-116.756521">
@@ -940,7 +934,7 @@
   <wpt lat="33.937586" lon="-116.698417">
     <ele>489.0</ele>
     <name>ZiggyBear</name>
-    <desc><![CDATA[Ziggy and the Bear, trail angels, 2/10 mile SE of the PCT.]]></desc>
+    <desc><![CDATA[Ziggy and the Bear are trail angels who live 2/10 mile SE of PCT mile 210.8. Ziggy and the Bear offer water, shade, cowboy camping, Wi-Fi, and they accept hiker resupply packages [$5 each] USPS only:<br/>(Your Name)<br/>c/o Pat Miller<br/>PO Box 826<br/>Cabazon, CA 92230<br/>-<br/>Due to USPS regulations they can not pick up general delivery packages.<br/>-<br/>Phone: 951-849-7506 [8 am - 8 pm only]<br/>Email: whitewatertrailhouse@gmail.com <br/>Website: whitewaterhikerhouse.blogspot.com<br/>-<br/>Smoking, alcohol, animals or drugs are not allowed.<br/>-<br/>Hiker directions: Hike 1.3 miles north of Interstate Highway 10 to GT0211. Exit the PCT on the unmarked side trail and walk east to the house with the flagpole and white fence. Enter at gate in fence.]]></desc>
     <sym>Post Office</sym>
   </wpt>
   <wpt lat="33.924524" lon="-116.694668">

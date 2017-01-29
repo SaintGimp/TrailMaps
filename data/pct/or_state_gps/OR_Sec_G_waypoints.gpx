@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -21,8 +21,8 @@
   </wpt>
   <wpt lat="45.316838" lon="-121.696491">
     <ele>1538.2</ele>
-    <name>KohnstammWild</name>
-    <desc><![CDATA[Richard L. Kohnstamm Wilderness boundary]]></desc>
+    <name>Kohnstamm</name>
+    <desc><![CDATA[Richard L. Kohnstamm Memorial Area boundary.]]></desc>
     <sym>Forest</sym>
   </wpt>
   <wpt lat="45.321960" lon="-121.696050">
@@ -442,13 +442,13 @@
   <wpt lat="45.379957" lon="-121.776140">
     <ele>1070.2</ele>
     <name>RamonaFalls</name>
-    <desc><![CDATA[Ramona Falls]]></desc>
+    <desc><![CDATA[Ramona Falls. No camping with 500 feet of the falls.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="45.330539" lon="-121.710530">
     <ele>1805.5</ele>
     <name>TimberlineLdg</name>
-    <desc><![CDATA[Timberline Lodge, 2/10 mile S of PCT.]]></desc>
+    <desc><![CDATA[Timberline Lodge is a ski resort, restaurant and lodge 2/10 mile S of the PCT that accepts hiker resupply packages [$5] shipped by USPS or UPS.<br/>(Your Name)<br/>c/o WY'East Store<br/>Timberline Lodge Ski Area<br/>27500 E Timberline Rd<br/>Timberline Lodge, OR 97028<br/>-<br/>Be sure to write "Hold for PCT Hiker" on package.<br/>Timberline phone: 503-272-3189<br/>Timberline hours: 7 - 7 every day<br/>Website: www.timberlinelodge.com]]></desc>
     <sym>Lodging</sym>
   </wpt>
   <wpt lat="45.584153" lon="-121.852872">

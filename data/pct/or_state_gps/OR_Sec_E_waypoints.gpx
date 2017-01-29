@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -238,7 +238,7 @@
   <wpt lat="43.977881" lon="-121.872400">
     <ele>1675.2</ele>
     <name>TR1947</name>
-    <desc><![CDATA[Island Trail #4337 junction]]></desc>
+    <desc><![CDATA[Red Hill Trail, Island Trail #4337 junction]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="43.975052" lon="-121.858099">
@@ -352,7 +352,7 @@
   <wpt lat="44.163754" lon="-121.818066">
     <ele>1992.3</ele>
     <name>Obsidian</name>
-    <desc><![CDATA[Obsidian Limited Entry Area, southern boundary. Camping prohibited for the next 2 miles to the north. Several campsites near the southern boundary of the Limited Entry Area.]]></desc>
+    <desc><![CDATA[Obsidian Limited Entry Area, southern boundary. Camping is prohibited without a special permit in the Obsidian Limited Entry Area that runs from approx. mile 1969 to mile 1971. Several campsites near the southern boundary of the Limited Entry Area.]]></desc>
     <sym>Flag, Blue</sym>
   </wpt>
   <wpt lat="44.166783" lon="-121.818144">
@@ -388,7 +388,7 @@
   <wpt lat="44.183858" lon="-121.819517">
     <ele>1899.5</ele>
     <name>Obsidian2</name>
-    <desc><![CDATA[Obsidian Limited Entry Area northern boundary. Camping prohibited for 2 miles to the south.]]></desc>
+    <desc><![CDATA[Obsidian Limited Entry Area northern boundary. Camping is prohibited without a special permit in the Obsidian Limited Entry Area that runs from approx. mile 1969 to mile 1971.]]></desc>
     <sym>Flag, Blue</sym>
   </wpt>
   <wpt lat="44.189397" lon="-121.802119">
@@ -418,7 +418,7 @@
   <wpt lat="44.232297" lon="-121.774595">
     <ele>1843.9</ele>
     <name>TR1977B</name>
-    <desc><![CDATA[Matthieu Lake Trail #4062 junction]]></desc>
+    <desc><![CDATA[Matthieu Lake Trail #4062 junction. Camping restricted at North Matthieu Lake to 7 first come first serve sites marked by a post in the ground. If occupied, camp at least a quarter mile away.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="44.250585" lon="-121.783288">
@@ -430,7 +430,7 @@
   <wpt lat="44.250302" lon="-121.784708">
     <ele>1662.5</ele>
     <name>TR1979</name>
-    <desc><![CDATA[Matthieu Lake Trail #4062, second junction.]]></desc>
+    <desc><![CDATA[Matthieu Lake Trail #4062, second junction. Camping restricted at North Matthieu Lake to 7 first come first serve sites marked by a post in the ground. If occupied, camp at least a quarter mile away.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="44.259832" lon="-121.805197">
@@ -496,7 +496,7 @@
   <wpt lat="44.261100" lon="-121.785694">
     <ele>1609.9</ele>
     <name>LavaCampLk</name>
-    <desc><![CDATA[Lava Camp Lake, campground, outhouse, 1/2 mile northeast of PCT mile 1988.3. WATER ALERT: Next northbound water may be Big Lake Youth Camp in 12.5 miles or the pond in 16.4 miles.]]></desc>
+    <desc><![CDATA[Lava Camp Lake, campground, outhouse, 1/2 mile northeast of PCT mile 1988.3. WATER ALERT: Next northbound water may be Big Lake Youth Camp in 12.5 miles or the pond in 16.4 miles.<br/>]]></desc>
     <sym>Campground</sym>
   </wpt>
   <wpt lat="44.257551" lon="-121.790035">
@@ -508,7 +508,7 @@
   <wpt lat="44.231617" lon="-121.773174">
     <ele>1835.7</ele>
     <name>WA1977</name>
-    <desc><![CDATA[South Matthieu Lake]]></desc>
+    <desc><![CDATA[South Matthieu Lake. Camping restricted at South Matthieu Lake to 3 first come first serve sites marked by a post in the ground. If occupied, camp at least a quarter mile away.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="43.597801" lon="-122.032191">

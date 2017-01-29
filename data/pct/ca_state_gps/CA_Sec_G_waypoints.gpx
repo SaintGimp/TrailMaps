@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -94,13 +94,13 @@
   <wpt lat="35.663090" lon="-118.027350">
     <ele>1604.5</ele>
     <name>Hwy178</name>
-    <desc><![CDATA[Highway 178. Onyx is 17.7 miles west of the PCT, the town of Lake Isabella is 37 miles W of the PCT on Hwy 178.]]></desc>
+    <desc><![CDATA[Highway 178, Walker Pass, access to the town of Onyx and Lake Isabella.]]></desc>
     <sym>Car</sym>
   </wpt>
   <wpt lat="36.453183" lon="-118.215748">
     <ele>3392.9</ele>
     <name>CottonwoodPass</name>
-    <desc><![CDATA[Cottonwood Pass and Horseshoe Meadow Trail junction]]></desc>
+    <desc><![CDATA[Cottonwood Pass and Horseshoe Meadow Trail junction.<br/>-----<br/>Bear canisters are required in most areas from Cottonwood Pass to the northern border of Yosemite National Park. For most hikers, this means carrying a bear canister from Kennedy Meadows to Sonora Pass. See www.sierrawild.gov/bears/]]></desc>
     <sym>Summit</sym>
   </wpt>
   <wpt lat="35.677905" lon="-118.012192">
@@ -190,7 +190,7 @@
   <wpt lat="36.018998" lon="-118.123605">
     <ele>1874.1</ele>
     <name>KMStore</name>
-    <desc><![CDATA[Kennedy Meadows Store, 1/2 mile E of the PCT.]]></desc>
+    <desc><![CDATA[Kennedy Meadows is a small hiker-friendly community 1/2 mile east of the PCT. Kennedy Meadows has a restaurant, internet cafe and a small general store [559-850-5647] with a grill, laundry, showers, pay phone, and they allow hikers to camp out back. The store accepts hiker resupply packages [$5 ea] sent by USPS or UPS Include ETA on your package.<br/>(Your Name)<br/>c/o Kennedy Meadows General Store<br/>96740 Beach Meadow Road<br/>Inyokern, CA 93527]]></desc>
     <sym>Shopping Center</sym>
   </wpt>
   <wpt lat="36.227402" lon="-118.134708">
@@ -291,7 +291,7 @@
   </wpt>
   <wpt lat="36.222656" lon="-118.135364">
     <ele>2627.4</ele>
-    <name>WA0720</name>
+    <name>WACS0720</name>
     <desc><![CDATA[Cow Creek]]></desc>
     <sym>Water Source</sym>
   </wpt>
@@ -340,7 +340,7 @@
   <wpt lat="36.454157" lon="-118.225141">
     <ele>3417.8</ele>
     <name>WA0751</name>
-    <desc><![CDATA[Chicken Spring Lake outlet, in dry years the outlet may be dry but the lake will have water.]]></desc>
+    <desc><![CDATA[Chicken Spring Lake outlet, in dry years the outlet may be dry but the lake will have water.<br/>-----<br/>Water is usually plentiful in the Sierra Nevada sections of the Pacific Crest Trail. Water sources listed here were all checked in July and again late August 2012 (a very dry year). PCT hikers entering the Sierra earlier in the season will find more water sources that what is listed on Halfmile apps or maps.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="36.494201" lon="-118.322474">
@@ -363,7 +363,7 @@
   </wpt>
   <wpt lat="36.214553" lon="-118.137577">
     <ele>2536.1</ele>
-    <name>WACS0719</name>
+    <name>WA0719</name>
     <desc><![CDATA[Cow Creek, campsite.]]></desc>
     <sym>Water Source</sym>
   </wpt>

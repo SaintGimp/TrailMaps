@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -16,7 +16,7 @@
   <wpt lat="38.847148" lon="-120.087472">
     <ele>2348.7</ele>
     <name>DesolationWild</name>
-    <desc><![CDATA[Desolation Wilderness boundary]]></desc>
+    <desc><![CDATA[Desolation Wilderness boundary. Overnight camping is prohibited for approximately 4.7 miles from Hwy 50/Echo Summit (mile 1090.76) to the Desolation Wilderness boundary (mile 1095.47).]]></desc>
     <sym>Forest</sym>
   </wpt>
   <wpt lat="38.852912" lon="-120.103054">

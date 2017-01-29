@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -388,7 +388,7 @@
   <wpt lat="49.062823" lon="-120.782672">
     <ele>1191.7</ele>
     <name>Hwy3B</name>
-    <desc><![CDATA[Highway 3, near the Manning Park Lodge, Canada.]]></desc>
+    <desc><![CDATA[Highway 3, near the Manning Park Lodge. The lodge offers lodging, restaurant, and a small store.]]></desc>
     <sym>Car</sym>
   </wpt>
   <wpt lat="48.519516" lon="-120.732879">

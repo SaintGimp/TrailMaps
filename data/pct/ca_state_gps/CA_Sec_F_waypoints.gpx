@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -286,7 +286,7 @@
   <wpt lat="35.473354" lon="-118.174017">
     <ele>1381.5</ele>
     <name>WR620</name>
-    <desc><![CDATA[Willow Spring, 1.6 miles N of PCT, pond, trough. WATER ALERT: Next northbound water may be Joshua Tree Spring] in 43.7 miles!! Next water southbound may be Landers Camp in 11.1 miles.]]></desc>
+    <desc><![CDATA[Willow Spring, 1.6 miles N of PCT, pond, trough. WATER ALERT: Next northbound water may be Joshua Tree Spring] in 43.7 miles!! Next water southbound may be Landers Camp in 11.1 miles.<br/>-----<br/>Willow Spring can be reached as a 3.2 mile alternate bypassing 1.9 miles of the PCT. Follow the unsigned gully at PCT mile 620 [wooden PCT posts and Carsonite PCT markers are on either side of this gully] for 1.4 miles N to unpaved Dove Spring Canyon Rd [SC103]. The gully is mostly easy walking, but does have 2 or 3 short boulder scrambles that some hikers will find uncomfortable. After reaching SC103, walk right [SE] for 2/10 mile to reach Willow Spring. From WR620 continue 1.6 miles SE on SC103 to rejoin the PCT at mile 621.9. Skillful navigators can walk cross country east toward WR620 2/10 mile before the gully reaches SC103, shortening the alternate by about 4/10 mile. It can be difficult to find the correct point to exit the gully before reaching SC103 because your view is blocked in the gully.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="35.552860" lon="-118.133635">
@@ -310,7 +310,7 @@
   <wpt lat="35.663884" lon="-118.037523">
     <ele>1544.8</ele>
     <name>CS0651</name>
-    <desc><![CDATA[Walker Pass Campground, with picnic tables, and outhouse. This campground often does not have water.]]></desc>
+    <desc><![CDATA[Walker Pass Campground. The campground often does not have water. Check www.pctwater.com. One of the 3 spring-fed cisterns 2/10 mile NW of the campground may have water [follow Hwy 178 for 250 yards W from the campground entrance and look to the left] or Canebrake Creek 1.8 miles W on Hwy 178.]]></desc>
     <sym>Campground</sym>
   </wpt>
   <wpt lat="35.387442" lon="-118.301802">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -394,7 +394,7 @@
   <wpt lat="45.983725" lon="-121.795536">
     <ele>1412.4</ele>
     <name>WA2203</name>
-    <desc><![CDATA[Blue Lake]]></desc>
+    <desc><![CDATA[Blue Lake. At Blue Lake [Mile 2202.5  2203] within 250 feet of lakes, camping is allowed only at 9 designated sites, first come first served.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="46.003535" lon="-121.788197">
@@ -820,13 +820,13 @@
   <wpt lat="46.472152" lon="-121.431199">
     <ele>1858.4</ele>
     <name>Yakama</name>
-    <desc><![CDATA[Yakama Indian Reservation boundary]]></desc>
+    <desc><![CDATA[Yakama Indian Reservation. Please stay on the trail. Trespassing and hunting prohibited on tribal lands from mile 2268.4 to 2269.2]]></desc>
     <sym>Flag, Blue</sym>
   </wpt>
   <wpt lat="46.482943" lon="-121.434317">
     <ele>1973.3</ele>
     <name>CispusPass</name>
-    <desc><![CDATA[Cispus Pass]]></desc>
+    <desc><![CDATA[Cispus Pass. Please stay on the trail. Trespassing and hunting prohibited on Yakama Indian Reservation tribal lands from mile 2268.4 to 2269.2.]]></desc>
     <sym>Summit</sym>
   </wpt>
   <wpt lat="46.490381" lon="-121.435033">
@@ -964,13 +964,13 @@
   <wpt lat="46.585050" lon="-121.400735">
     <ele>1860.7</ele>
     <name>TR2285</name>
-    <desc><![CDATA[Shoe Lake Trail #1119 junction]]></desc>
+    <desc><![CDATA[Shoe Lake Trail #1119 junction. No camping or fires in Shoe Lake Basin. Grazing, hitching, or tethering of stock within 200 of lake is prohibited.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="46.592250" lon="-121.400102">
     <ele>1995.5</ele>
     <name>TR2286</name>
-    <desc><![CDATA[Shoe Lake Trail #1119 second junction]]></desc>
+    <desc><![CDATA[Shoe Lake Trail #1119 second junction.  No camping or fires in Shoe Lake Basin. Grazing, hitching, or tethering of stock within 200 of lake is prohibited.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="46.602046" lon="-121.402978">
@@ -994,7 +994,7 @@
   <wpt lat="46.617714" lon="-121.386757">
     <ele>1769.2</ele>
     <name>TR2289</name>
-    <desc><![CDATA[Chairlift Trail #H2 junction]]></desc>
+    <desc><![CDATA[Chairlift Trail #1112 junction]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="46.625547" lon="-121.372389">

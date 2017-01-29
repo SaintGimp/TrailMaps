@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -40,7 +40,7 @@
   <wpt lat="44.361409" lon="-121.871297">
     <ele>1455.6</ele>
     <name>TR1993</name>
-    <desc><![CDATA[Trail junction to Big Lake Youth Camp and road 960.]]></desc>
+    <desc><![CDATA[Trail junction to Big Lake Youth Camp and road 960. Marked "User Trail."]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="44.379730" lon="-121.856085">
@@ -52,7 +52,7 @@
   <wpt lat="44.380282" lon="-121.855985">
     <ele>1428.2</ele>
     <name>RD1995</name>
-    <desc><![CDATA[Unpaved Old Santiam Wagon Road, trailhead parking area.]]></desc>
+    <desc><![CDATA[Unpaved Old Santiam Wagon Road, FR 811, trailhead parking area. Accessible to Big Lake Youth Camp via FR 811, then FR 815 (0.9 miles).]]></desc>
     <sym>Truck</sym>
   </wpt>
   <wpt lat="44.381352" lon="-121.853893">
@@ -82,7 +82,7 @@
   <wpt lat="44.402165" lon="-121.848612">
     <ele>1461.8</ele>
     <name>WA1996</name>
-    <desc><![CDATA[Large Pond. WATER ALERT: Next northbound water may be Koko Lake in 12.9 miles.]]></desc>
+    <desc><![CDATA[Large Pond. WATER ALERT: Next northbound water may be Koko Lake in 12.9 miles.<br/>]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="44.403911" lon="-121.849582">
@@ -136,7 +136,7 @@
   <wpt lat="44.510384" lon="-121.818499">
     <ele>1657.7</ele>
     <name>WA2008</name>
-    <desc><![CDATA[Pond near Koko Lake. WATER ALERT: Next southbound water may be the pond 11.6 miles.]]></desc>
+    <desc><![CDATA[Pond near Koko Lake. WATER ALERT: Next southbound water may be the pond 11.6 miles.<br/>]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="44.513595" lon="-121.811954">
@@ -166,7 +166,7 @@
   <wpt lat="44.636136" lon="-121.817070">
     <ele>1793.6</ele>
     <name>WA2020</name>
-    <desc><![CDATA[Shale Lake]]></desc>
+    <desc><![CDATA[Shale Lake. Pamelia Limited Entry Area, mile 2020 to 2021.5. No camping, including at Shale Lake, without a special permit. PCT users may pass through the area on the PCT.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="44.649023" lon="-121.834678">
@@ -244,7 +244,7 @@
   <wpt lat="44.706509" lon="-121.810903">
     <ele>1794.9</ele>
     <name>JeffersonPark</name>
-    <desc><![CDATA[Jefferson Park, southern boundary.]]></desc>
+    <desc><![CDATA[Jefferson Park, southern boundary. A new campsite reservation system for Jefferson Park [mile 2030.8 to 2031.8] is slated to begin for the 2016 hiking season. Camping within 250 feet of lakes between Memorial Day and October 31st is allowed only at designated sites, which must be reserved in advance via a special permit. Designated campsites will be marked with numbered posts. Camping outside of the 250 designated campsite area is allowed in pre-existing hardened campsites. Check with the Willamette National Forest for more info.]]></desc>
     <sym>Flag, Blue</sym>
   </wpt>
   <wpt lat="44.714870" lon="-121.803857">
@@ -262,7 +262,7 @@
   <wpt lat="44.717061" lon="-121.802163">
     <ele>1795.3</ele>
     <name>JeffersonPark2</name>
-    <desc><![CDATA[Jefferson Park, northern boundary.]]></desc>
+    <desc><![CDATA[Jefferson Park, northern boundary. A new campsite reservation system for Jefferson Park [mile 2030.8 to 2031.8] is slated to begin for the 2016 hiking season. Camping within 250 feet of lakes between Memorial Day and October 31st is allowed only at designated sites, which must be reserved in advance via a special permit. Designated campsites will be marked with numbered posts. Camping outside of the 250 designated campsite area is allowed in pre-existing hardened campsites. Check with the Willamette National Forest for more info.]]></desc>
     <sym>Flag, Blue</sym>
   </wpt>
   <wpt lat="44.721594" lon="-121.801100">
@@ -364,7 +364,7 @@
   <wpt lat="44.854027" lon="-121.767375">
     <ele>1404.0</ele>
     <name>TR2047</name>
-    <desc><![CDATA[Russ Lake Trail #716 junction]]></desc>
+    <desc><![CDATA[Russ Lake Trail #716 junction. Warm Springs Reservation [mile 2046.3 to 2069.4].  Please stay on the PCT right-of-way, which is 200 feet wide.  Trespassing and hunting are prohibited on tribal lands.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="44.854876" lon="-121.763238">
@@ -496,7 +496,7 @@
   <wpt lat="45.088140" lon="-121.731835">
     <ele>1060.5</ele>
     <name>MtHoodNF</name>
-    <desc><![CDATA[Mount Hood National Forest boundary]]></desc>
+    <desc><![CDATA[Mount Hood National Forest boundary. Warm Springs Reservation [mile 2046.3 to 2069.4].  Please stay on the PCT right-of-way, which is 200 feet wide.  Trespassing and hunting are prohibited on tribal lands. ]]></desc>
     <sym>Forest</sym>
   </wpt>
   <wpt lat="45.095405" lon="-121.738632">
@@ -610,7 +610,7 @@
   <wpt lat="45.229140" lon="-121.700688">
     <ele>1193.1</ele>
     <name>Hwy26</name>
-    <desc><![CDATA[Highway 26, Wapinitia Pass. Trailhead parking, outhouse, trash cans nearby.]]></desc>
+    <desc><![CDATA[Highway 26, Wapinitia Pass. Trailhead parking, outhouse, trash cans nearby.<br/>-----<br/>The small community of Government Camp is 7.2 miles NW of the PCT on Hwy 26.<br/>-----<br/>CJ's Foodmart and Chevron is 1.9 miles NW of the PCT on Hwy 26. [503-337-2277; www.cjsfoodmart.com]]]></desc>
     <sym>Car</sym>
   </wpt>
   <wpt lat="45.236989" lon="-121.686465">
@@ -640,7 +640,7 @@
   <wpt lat="45.284354" lon="-121.681520">
     <ele>1269.2</ele>
     <name>Hwy35</name>
-    <desc><![CDATA[Highway 35, Barlow Pass.]]></desc>
+    <desc><![CDATA[Highway 35, Barlow Pass. The small community of Government Camp is 2.1 miles W on Hwy 35, then 2.7 miles W on Hwy 26.]]></desc>
     <sym>Car</sym>
   </wpt>
   <wpt lat="44.766340" lon="-121.783766">
@@ -670,13 +670,13 @@
   <wpt lat="44.813766" lon="-121.789135">
     <ele>1512.6</ele>
     <name>OlallieStore</name>
-    <desc><![CDATA[Olallie Lake Store, 1/10 mile E of PCT. www.olallielakeresort.com/]]></desc>
+    <desc><![CDATA[Olallie Lake Store, small store 1/10 mile E of PCT. www.olallielakeresort.com]]></desc>
     <sym>Shopping Center</sym>
   </wpt>
   <wpt lat="44.371728" lon="-121.865557">
     <ele>1429.7</ele>
     <name>YouthCampHQ</name>
-    <desc><![CDATA[Big Lake Youth Camp, 8/10 mile N of PCT. WATER ALERT: Next southbound water may be Lava Camp Lake in 12.5 miles.]]></desc>
+    <desc><![CDATA[Big Lake Youth Camp is a hiker-friendly Seventh-Day Adventist church camp 8/10 mile N of PCT. They offer camping, showers, laundry, meals and they accept resupply packages shipped by USPS or UPS.<br/>(Your Name)<br/>c/o Big Lake Youth Camp<br/>13100 Highway 20<br/>Sisters, OR 97759<br/>-<br/>Big Lake phone: 503-850-3583<br/>Big Lake website: www.biglake.org<br/>-----<br/>TR1963 to Big Lake Youth Camp trail is marked "User Trail" on the sign (no reference to the youth camp). The camp is also accessible from RD1995 (mile 1994.62) via Forest Road 811, then FR-815 (0.9 miles).<br/>-----<br/>WATER ALERT: Next southbound water may be Lava Camp Lake in 12.5 miles.]]></desc>
     <sym>Post Office</sym>
   </wpt>
   <wpt lat="44.261245" lon="-121.808735">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -250,7 +250,7 @@
   <wpt lat="38.822959" lon="-120.039859">
     <ele>2207.0</ele>
     <name>Hwy50</name>
-    <desc><![CDATA[Highway 50]]></desc>
+    <desc><![CDATA[Highway 50. Overnight camping is prohibited for approximately 4.7 miles from Hwy 50/Echo Summit (mile 1090.76) to the Desolation Wilderness boundary (mile 1095.47).]]></desc>
     <sym>Car</sym>
   </wpt>
   <wpt lat="38.834284" lon="-120.042752">
@@ -262,7 +262,7 @@
   <wpt lat="38.834584" lon="-120.043836">
     <ele>2263.6</ele>
     <name>EchoLake</name>
-    <desc><![CDATA[Echo Lake, Echo Chalet Store.]]></desc>
+    <desc><![CDATA[Echo Lake, Echo Chalet store, a small resort [www.echochalet.com] on the PCT with cabins [2 night minimum stay], small store, deli, and pay phone. Echo Lake is open daily during the summer only. The Echo Lake Post Office can no longer receive hiker resupply packages.]]></desc>
     <sym>Shopping Center</sym>
   </wpt>
   <wpt lat="38.788312" lon="-120.042351">
@@ -310,7 +310,7 @@
   <wpt lat="38.686441" lon="-119.986681">
     <ele>2699.3</ele>
     <name>WA1075</name>
-    <desc><![CDATA[Frog Lake]]></desc>
+    <desc><![CDATA[Frog Lake. Camping is not permitted at Frog Lake due to shoreline restoration.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.683214" lon="-119.983251">

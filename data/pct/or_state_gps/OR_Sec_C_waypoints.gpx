@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -244,7 +244,7 @@
   <wpt lat="42.801102" lon="-122.175759">
     <ele>1945.2</ele>
     <name>CraterLakeNP</name>
-    <desc><![CDATA[Crater Lake National Park boundary]]></desc>
+    <desc><![CDATA[Crater Lake National Park boundary. Camping restrictions are strictly enforced in Crater Lake National Park. Essentially, you have to be a mile from a road to disperse camp (which can sometime be difficult to know when on the PCT). Camping is not allowed along the Rim Alternate except at the Lightning Spring Camp and the Grouse Hill Camp.]]></desc>
     <sym>Forest</sym>
   </wpt>
   <wpt lat="42.816228" lon="-122.179384">
@@ -322,7 +322,7 @@
   <wpt lat="42.912062" lon="-122.147244">
     <ele>2168.9</ele>
     <name>RimVillage</name>
-    <desc><![CDATA[Paved sidewalk to visitor center, restrooms, and water.]]></desc>
+    <desc><![CDATA[Paved sidewalk to visitor center, small store, restrooms, and water.]]></desc>
     <sym>Flag, Blue</sym>
   </wpt>
   <wpt lat="42.912531" lon="-122.148411">
@@ -351,7 +351,7 @@
   </wpt>
   <wpt lat="42.991014" lon="-122.130836">
     <ele>2016.5</ele>
-    <name>CLCS11</name>
+    <name>GrouseHillCamp</name>
     <desc><![CDATA[Grouse Hill Camp trail junction, hikers only no stock permitted.]]></desc>
     <sym>Campground</sym>
   </wpt>
@@ -445,12 +445,6 @@
     <desc><![CDATA[Small creek]]></desc>
     <sym>Water Source</sym>
   </wpt>
-  <wpt lat="43.001496" lon="-122.132707">
-    <ele>1945.4</ele>
-    <name>CS1837</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
   <wpt lat="42.905365" lon="-122.158159">
     <ele>1999.8</ele>
     <name>CLWA02</name>
@@ -460,7 +454,7 @@
   <wpt lat="42.891438" lon="-122.169637">
     <ele>1857.0</ele>
     <name>TR1821</name>
-    <desc><![CDATA[Dutton Creek trail junction, PCT Crater Lake Rim alternate route via Rim Village and spectacular Crater Lake Rim.]]></desc>
+    <desc><![CDATA[Dutton Creek trail junction, PCT Crater Lake Rim alternate route via Rim Village and spectacular Crater Lake Rim. Dutton Camp nearby. <br/>----------<br/>A route along the Crater Lake Rim (the purple line on these maps) is a highly recommended 11.7 mile alternate route that bypasses 16.2 miles of the official PCT.<br/>A few years ago, both routes were signed as the PCT and sometimes called the "Hiker PCT" and "Equestrian PCT". As of 2014 all PCT signs have been removed from Rim Trail which is now clearly an alternate to the official PCT. Three different trails combine to form the Crater Lake Rim Alternate.<br/>1) At PCT mile 1820.5 follow the Dutton Creek Trail 2.3 miles to the Rim Village.<br/>2) From the Rim Village follow the Discovery Point Trail 1.2 miles to the Rim Trail.<br/>3) Follow the Rim Trail 8.2 miles and rejoin the PCT at mile 1836.7.<br/>----------<br/>Camping restrictions are strictly enforced in Crater Lake National Park. Essentially, you have to be a mile from a road to disperse camp (which can sometime be difficult to know when on the PCT). Camping is not allowed along the Rim Alternate except at the Lightning Spring Camp and the Grouse Hill Camp.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="42.777157" lon="-122.178790">
@@ -489,8 +483,8 @@
   </wpt>
   <wpt lat="42.867247" lon="-122.167052">
     <ele>1835.1</ele>
-    <name>Mazama</name>
-    <desc><![CDATA[Mazama Store, restaurant, 1 mile SE of PCT]]></desc>
+    <name>MazamaVillage</name>
+    <desc><![CDATA[Mazama Village has a campground, cabins, restaurant, laundry, showers, pay phones and store. The Mazama Village Store accepts hiker resupply packages by USPS or UPS.<br/>----- USPS Address -----<br/>(Your Name)<br/>c/o Mazama Village Camper Store<br/>Mazama Village<br/>Crater Lake, OR 97604<br/>----- UPS Address -----<br/>(Your Name)<br/>c/o Mazama Village Camper Store<br/>569 Mazama Village Dr.<br/>Crater Lake, OR 97604<br/>-<br/>Phone: 541-594-2255<br/>Website: www.craterlakelodges.com<br/>----------<br/>WATER ALERT: Next southbound water may be the creek in 19.9 miles.]]></desc>
     <sym>Shopping Center</sym>
   </wpt>
   <wpt lat="42.739913" lon="-122.204260">

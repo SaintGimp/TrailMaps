@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -16,7 +16,7 @@
   <wpt lat="41.842115" lon="-123.196178">
     <ele>418.4</ele>
     <name>SeiadValley</name>
-    <desc><![CDATA[Very small community of Seiad Valley, small store, Post Office, cafe, RV park.]]></desc>
+    <desc><![CDATA[Seiad Valley is a very small community on the PCT with a small store, cafe, pay phone, RV park w/ hiker camping, laundry, showers and a post office. The Mid River RV Park [530-496-3400] accepts hiker resupply packages [$5 or free w/ $10 hiker camping]. Shipping by UPS recommended. Include ETA on package.<br/>(Your Name)<br/>c/o Mid River RV Park<br/>44701 Highway 96<br/>Seiad Valley, CA 96086<br/>----------<br/>Seiad Valley Post Office [open M-F 12-4, Sa 12-1:30;  530-496-3211].<br/>(Your Name)<br/>c/o General Delivery<br/>Seiad Valley, CA 96086]]></desc>
     <sym>Post Office</sym>
   </wpt>
   <wpt lat="41.844399" lon="-123.210040">
@@ -418,7 +418,7 @@
   <wpt lat="42.073236" lon="-122.602556">
     <ele>1209.3</ele>
     <name>Callahans</name>
-    <desc><![CDATA[Callahans Lodge, 8/10 mile N of PCT mile 1726.8.]]></desc>
+    <desc><![CDATA[Callahan's Lodge is hiker friendly restaurant and lodge 8/10 mile north of the PCT with a restaurant, lodging, laundry, showers, hiker camping and they accept resupply packages [$5 ea] sent by USPS or UPS. Include ETA on your package.<br/>PCT Hiker (Your Name)<br/>c/o Callahan's Lodge<br/>7100 Old Highway 99 South <br/>Ashland, OR  97520<br/>-<br/>Callahan's phone: 800-286-0507 or 541-482-1299<br/>Callahan's website: www.callahanslodge.com]]></desc>
     <sym>Lodging</sym>
   </wpt>
   <wpt lat="42.003588" lon="-122.909063">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -46,7 +46,7 @@
   <wpt lat="40.028374" lon="-121.299427">
     <ele>1052.5</ele>
     <name>LassenNF</name>
-    <desc><![CDATA[Lassen National Forest, Plumas National Forest boundary.]]></desc>
+    <desc><![CDATA[Lassen National Forest, Plumas National Forest boundary. Overnight camping with stock is not allowed in Lassen Volcanic National Park (mile 1343.8 to 1363) except at developed sites with corrals.]]></desc>
     <sym>Forest</sym>
   </wpt>
   <wpt lat="40.029559" lon="-121.300263">
@@ -340,7 +340,7 @@
   <wpt lat="40.409358" lon="-121.384070">
     <ele>1801.0</ele>
     <name>LassenNP</name>
-    <desc><![CDATA[Lassen Volcanic National Park boundary.]]></desc>
+    <desc><![CDATA[Lassen Volcanic National Park boundary. Overnight camping with stock is not allowed in Lassen Volcanic National Park (mile 1343.8 to 1363) except at developed sites with corrals.]]></desc>
     <sym>Forest</sym>
   </wpt>
   <wpt lat="40.408892" lon="-121.382727">
@@ -580,7 +580,7 @@
   <wpt lat="40.758291" lon="-121.396807">
     <ele>1463.2</ele>
     <name>TR1383</name>
-    <desc><![CDATA[Lost Creek trail junction, 1/3 mile from PCT but way below the trail.]]></desc>
+    <desc><![CDATA[Trail junction to Lost Creek Spring, 3/10 mile NW, 388 foot vertical descent from trail.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="40.755759" lon="-121.388912">
@@ -808,7 +808,7 @@
   <wpt lat="41.006502" lon="-121.644269">
     <ele>906.0</ele>
     <name>WACS1416</name>
-    <desc><![CDATA[Burney Falls State Park PCT trail camp, outhouse, picnic tables, outhouse, trash cans.]]></desc>
+    <desc><![CDATA[Burney Falls State Park Headwaters Group Campground, reservation from State Park required, $35 fee, outhouse, picnic tables, trash cans. [Camping in the $5/night hiker/biker campsites in the main campground NE of mile 1416.5 is the preferred hiker option].]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="41.006270" lon="-121.641281">
@@ -934,7 +934,7 @@
   <wpt lat="40.444169" lon="-121.403903">
     <ele>1737.2</ele>
     <name>Drakesbad</name>
-    <desc><![CDATA[Drakesbad Resort]]></desc>
+    <desc><![CDATA[Drakesbad Guest Ranch is a hiker-friendly resort on the PCT with a coin operated laundry, free showers, and an excellent restaurant. They accept hiker resupply packages sent by USPS, UPS or FedEx. Include ETA on your package.<br/>(Your Name), PCT hiker<br/>Drakesbad Guest Ranch<br/>End of Warner Valley Road<br/>Chester, CA 96020<br/>-<br/>Drakesbad phone: 866-999-0914<br/>Drakesbad website: www.drakesbad.com]]></desc>
     <sym>Post Office</sym>
   </wpt>
   <wpt lat="40.210249" lon="-121.379604">
@@ -1024,13 +1024,13 @@
   <wpt lat="40.676656" lon="-121.427971">
     <ele>1332.9</ele>
     <name>JJsCafe</name>
-    <desc><![CDATA[JJ's Cafe, open Th - Mo 7-3, closed Tu & We, 530-335-7225, 1/2 mile SW of Hwy 44.]]></desc>
+    <desc><![CDATA[JJ's Cafe, open Su-Th 7-3, Fr-Sa 7-7:30, [www.jjscafeoldstation.com; 530-335-7225], 1/2 mile SW of Hwy 44. The Old Station Fill-Up gas station & mini-mart is next door to JJ's, open 7-7 daily [www.oldstationfillup.com, 530-335-3152].]]></desc>
     <sym>Restaurant</sym>
   </wpt>
   <wpt lat="40.651251" lon="-121.459960">
     <ele>1387.9</ele>
     <name>Old Station</name>
-    <desc><![CDATA[Old Station Post Office.]]></desc>
+    <desc><![CDATA[Old Station is a very small town 3/10 mile W of the PCT with a mini-mart, pay phone, RV Park and a post office. Old Station Post Office [open M-F 11-3; 530-335-7191]   <br/>(Your Name)  <br/>c/o General Delivery  <br/>Old Station, CA 96071<br/>-----<br/>The Hat Creek Resort & RV Park [www.hatcreekresortrv.com; 530-335-7121] is a private RV park with cabins located in Old Station next to the Post Office. ]]></desc>
     <sym>Post Office</sym>
   </wpt>
   <wpt lat="40.201189" lon="-121.418685">

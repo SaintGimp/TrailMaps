@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -616,7 +616,7 @@
   <wpt lat="41.012642" lon="-121.650383">
     <ele>893.0</ele>
     <name>BurneyFallsSP</name>
-    <desc><![CDATA[Burney Falls State Park, store, campground, water, showers, laundry.]]></desc>
+    <desc><![CDATA[Burney Falls State Park, store, campground, water, showers, laundry.<br/>-<br/>Burney Falls State Park is a state park on the PCT with a campground, coin showers, pay phone and a small store that accepts hiker resupply packages [$5]. Burney Falls State Park Camp Store [open daily 8-8; 530-335-5713] accepts hiker resupply packages sent by USPS. Include ETA on package.<br/>(Your Name)<br/>c/o Burney Park Camp Store<br/>McArthur Burney Falls State Park<br/>24900 State Highway 89<br/>Burney, CA 96013<br/>-----<br/>WATER ALERT: Next southbound water may be the lake in 11.3 miles.]]></desc>
     <sym>Campground</sym>
   </wpt>
   <wpt lat="41.164606" lon="-121.920758">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -256,7 +256,7 @@
   <wpt lat="35.052248" lon="-118.358443">
     <ele>1263.3</ele>
     <name>RD0558</name>
-    <desc><![CDATA[Paved Tehachapi Willow Springs Road. Tehachapi is 9.1 miles NW of the PCT on Tehachapi Willow Springs Rd, Mojave is 11.5 miles E of the PCT on nearby Oak Creek Rd.]]></desc>
+    <desc><![CDATA[Paved Tehachapi Willow Springs Road. Tehachapi is 9.1 miles NW of the PCT on Tehachapi Willow Springs Rd, Mojave is 11.5 miles E of the PCT on nearby Oak Creek Rd.<br/>-----<br/>Tehachapi Willow Springs Road has easier hitching to Tehachapi or Mojave than the almost freeway like Hwy 58, but resuming the PCT from Hwy 58 cuts 8 miles from the 25 mile northbound waterless section to the north.]]></desc>
     <sym>Truck</sym>
   </wpt>
   <wpt lat="35.071552" lon="-118.324608">
@@ -292,7 +292,7 @@
   <wpt lat="34.520099" lon="-118.317149">
     <ele>830.7</ele>
     <name>SierraHwy</name>
-    <desc><![CDATA[The PCT follows Sierra Hwy W for 1/10 mile, then N on Peterson Road.]]></desc>
+    <desc><![CDATA[The PCT follows Sierra Hwy W for 1/10 mile, then N on Mint Canyon Rd to Peterson Rd.]]></desc>
     <sym>Car</sym>
   </wpt>
   <wpt lat="34.738452" lon="-118.655891">
@@ -388,7 +388,7 @@
   <wpt lat="34.775889" lon="-118.605708">
     <ele>929.6</ele>
     <name>WR518</name>
-    <desc><![CDATA[Hikertown. Private land south from near mile 518 for 7 miles to RD0511 - No Camping Allowed.]]></desc>
+    <desc><![CDATA[Hikertown, www.hikertown.com, hosts many hikers and accepts hiker resupply packages sent by USPS or UPS. Include ETA on your package.<br/>(Your Name)<br/>c/o Hikertown<br/>26803 W. Ave. C-15<br/>Lancaster CA 93536]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="34.788109" lon="-118.607755">
@@ -437,6 +437,12 @@
     <ele>1476.1</ele>
     <name>WRCS542</name>
     <desc><![CDATA[Tylerhorse Canyon, small creek, campsite. WATER ALERT: Next northbound water may be Oak Creek in 16.6 miles.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.919390" lon="-118.447050">
+    <ele>2420.5</ele>
+    <name>IberdrolaWF</name>
+    <desc><![CDATA[Iberdrola Renewables, Manzana Wind Project office, 1.3 miles east of the PCT, has faucet near building and a 110 gallon water tank at the south fence if the office is closed (nights & weekends).]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="34.496186" lon="-118.326366">

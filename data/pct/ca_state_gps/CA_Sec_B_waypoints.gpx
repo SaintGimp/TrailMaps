@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -286,7 +286,7 @@
   <wpt lat="33.839059" lon="-116.736294">
     <ele>2360.9</ele>
     <name>FullerRidgeTH</name>
-    <desc><![CDATA[Fuller Ridge Trailhead, parking.]]></desc>
+    <desc><![CDATA[Fuller Ridge Trailhead, parking.<br/>-<br/>As the crow flies, it's 4.3 miles from the Fuller Ridge Trailhead north to the Snow Canyon Road faucet [WR206]. On the PCT it's 15.2 miles. The trail descends 6,040 feet.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="33.680520" lon="-116.681913">
@@ -370,7 +370,7 @@
   <wpt lat="33.563127" lon="-116.576750">
     <ele>1500.7</ele>
     <name>Hwy74</name>
-    <desc><![CDATA[Highway 74, Pine to Palms Highway, Paradise Cafe 1 mile west.]]></desc>
+    <desc><![CDATA[Highway 74, the Paradise Cafe 1 mile west or the PCT.<br/>-<br/>Idyllwild is 13.5 miles NW on Hwy 74, then 4.5 miles N on Hwy 243. The small town of Anza is 1 mile W on Hwy 74, then 5.8 miles SW on Hwy 371.]]></desc>
     <sym>Car</sym>
   </wpt>
   <wpt lat="33.288558" lon="-116.653857">
@@ -426,12 +426,6 @@
     <name>NCircleDr-EM</name>
     <desc><![CDATA[Left on paved North Circle Drive - mi 3.6]]></desc>
     <sym>Car</sym>
-  </wpt>
-  <wpt lat="33.758553" lon="-116.739102">
-    <ele>1875.1</ele>
-    <name>PineCvMkt-BMR</name>
-    <desc><![CDATA[Pass small Pine Cove Market and gas station on left - mi 2.9]]></desc>
-    <sym>Shopping Center</sym>
   </wpt>
   <wpt lat="33.824896" lon="-116.751655">
     <ele>2197.9</ele>
@@ -568,7 +562,7 @@
   <wpt lat="33.710008" lon="-116.622516">
     <ele>2136.3</ele>
     <name>SpitlerTr</name>
-    <desc><![CDATA[Spitler Trail Junction]]></desc>
+    <desc><![CDATA[Spitler Trail Junction.<br/>-----<br/>Many thru-hikers reach the San Jacinto Mountains early in the hiking season when snow and ice still cover parts of the trail. In 2005 a PCT hiker died in the San Jacinto's following a snowstorm. Snow often begins on the north side of Apache Peak (mile 169.5) and continues 21 miles through Fuller Ridge. If you reach Apache Peak and are uneasy traveling north you can backtrack 1 mile to the Spitler Peak Trail and hike the Spitler to Idyllwild Alternate shown in the back of this section of Halfmile's maps. Snow melts quickly, so trail reports more than a few days old may not be accurate following warm weather.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="33.708651" lon="-116.624792">
@@ -772,7 +766,7 @@
   <wpt lat="33.569052" lon="-116.591406">
     <ele>1460.5</ele>
     <name>WR152</name>
-    <desc><![CDATA[Paradise Valley Cafe, water spigot outside, 1 mile west of PCT mile 151.9. WATER ALERT: Next southbound water may be Tule Spring in 14.9 miles.]]></desc>
+    <desc><![CDATA[Paradise Valley Cafe, water spigot outside, 1 mile west of PCT mile 151.9.<br/>-<br/>The Paradise Valley Cafe accepts hiker resupply packages via USPS, UPS & FedEx. Include ETA on your Package.<br/>(Your Name)<br/>c/o Paradise Valley Cafe<br/>61721 State Highway 74<br/>Mountain Center, CA 92561<br/>-<br/>Cafe phone: 951-659-3663<br/>Hours: open We-Su 8-8 & Mo 8-3; closed Tu<br/>-----<br/> WATER ALERT: Next southbound water may be Tule Spring in 14.9 miles.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="33.622548" lon="-116.556536">
@@ -856,7 +850,7 @@
   <wpt lat="33.853687" lon="-116.722852">
     <ele>1936.9</ele>
     <name>WRCS194</name>
-    <desc><![CDATA[Seasonal Water, West Fork Snow Creek, campsite, 1/10 mile S of PCT on unmarked use trail.]]></desc>
+    <desc><![CDATA[Seasonal headwaters of the West Fork Snow Creek, campsite, 1/10 mile S of PCT on unmarked use trail.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="33.679008" lon="-116.668667">

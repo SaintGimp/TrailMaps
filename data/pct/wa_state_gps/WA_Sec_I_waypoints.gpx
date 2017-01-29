@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -16,7 +16,7 @@
   <wpt lat="46.643654" lon="-121.379292">
     <ele>1343.8</ele>
     <name>Hwy12</name>
-    <desc><![CDATA[Highway 12 near White Pass, trailhead parking both on north and south sides of the highway.]]></desc>
+    <desc><![CDATA[Highway 12 near White Pass, trailhead parking both on north and south sides of the highway. White Pass is a very small ski area 1/2 mile SW of the PCT on Hwy 12 with a motel [The Village Inn 509-672-3131] and the Kracker Barrel convenience store [509-672-3105] that accepts hiker resupply packages.<br/>----------<br/>(Your Name)<br/>c/o Kracker Barrel Store<br/>48851 US Highway 12<br/>Naches, WA 98937<br/>----------<br/>The town of Packwood is 20.5 miles W of the PCT on Hwy 12.]]></desc>
     <sym>Car</sym>
   </wpt>
   <wpt lat="46.644348" lon="-121.380560">
@@ -748,7 +748,7 @@
   <wpt lat="47.422477" lon="-121.411878">
     <ele>919.8</ele>
     <name>SnoqualmiePass</name>
-    <desc><![CDATA[Summit Inn, Pancake House restaurant, 3/10 mile SE of PCT.]]></desc>
+    <desc><![CDATA[Snoqualmie Pass is a busy interstate highway intersection and small ski resort, on the PCT. They have a motel [Summit Inn, 425-434-6300; www.snoqualmiesummitlodge.com], restaurant and a Chevron station [425-434-6688] with a surprisingly good market. The Chevron station is also a contract postal station that accepts general delivery packages. Be sure to include accurate ETA on package.<br/>----------<br/>(Your Name)<br/>c/o General Delivery<br/>Snoqualmie Pass, WA 98068<br/>Please hold in the Chevron station for PCT hiker<br/>----------<br/>The Summit Inn accepts packages [$15 fee if not staying at the Inn], next to the Chevron station, 425-434-6300; www.snoqualmiesummitlodge.com.<br/>{Your Name}<br/>c/o Summit Inn<br/>603 State Route 906<br/>Snoqualmie Pass WA 9806<br/>----------<br/>Snoqualmie Pass mail is routed through the North Bend Post Office [425-831-7020]]]></desc>
     <sym>Lodging</sym>
   </wpt>
   <wpt lat="47.426634" lon="-121.415488">
@@ -756,6 +756,12 @@
     <name>Hwy90</name>
     <desc><![CDATA[Interstate Highway 90 overpass, Snoqualmie Pass]]></desc>
     <sym>Car</sym>
+  </wpt>
+  <wpt lat="46.639445" lon="-121.388503">
+    <ele>1363.0</ele>
+    <name>KrackerBarrel</name>
+    <desc><![CDATA[Kracker Barrel Store, 1/2 mile SW of PCT. Small store, deli, laundry, lodging nearby.]]></desc>
+    <sym>Lodge</sym>
   </wpt>
   <wpt lat="46.644337" lon="-121.380698">
     <ele>1347.1</ele>

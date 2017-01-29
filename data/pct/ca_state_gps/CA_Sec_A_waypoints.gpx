@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -28,7 +28,7 @@
   <wpt lat="32.858333" lon="-116.415658">
     <ele>1815.1</ele>
     <name>TR0041</name>
-    <desc><![CDATA[Trail junction to Burnt Ranchera Campground and Mount Laguna.]]></desc>
+    <desc><![CDATA[Trail junction to Burnt Ranchera Campground and Mount Laguna.<br/>-<br/>The easiest access to the Mount Laguna Store, Lodge, Outiftter and PO is to use TR0041 through the Burnt Rancheria Campground. You can also access Mount Laguna via a use trail from the Desert View Picnic Area [WR043, look for the picnic tables W of PCT in the trees] or take RD0043 and backtrack SW on the Sunrise Hwy.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="32.828343" lon="-116.417805">
@@ -46,7 +46,7 @@
   <wpt lat="32.682523" lon="-116.517143">
     <ele>937.0</ele>
     <name>LakeMorenaCG</name>
-    <desc><![CDATA[Trailhead parking near Lake Morena Campground. PCT joins paved Lake Shore Drive for 2/10 mile north. Access to Lake Morena Village via paved Lake Morena Drive.]]></desc>
+    <desc><![CDATA[WATER ALERT: Next southbound water may be the faucet at the Juvenile Ranch facility in 18.7 miles. Check www.pctwater.com for the latest water information.<br/>-<br/>Trailhead parking near Lake Morena Campground. PCT joins paved Lake Shore Drive for 2/10 mile north. Access to Lake Morena Village via paved Lake Morena Drive. The campground office is 3/10 mile NW on Lake Morena Dr.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="32.605325" lon="-116.471378">
@@ -394,7 +394,7 @@
   <wpt lat="33.099146" lon="-116.469501">
     <ele>689.2</ele>
     <name>Hwy78</name>
-    <desc><![CDATA[Highway 78, near Scissors Crossing.]]></desc>
+    <desc><![CDATA[Highway 78, Julian is 12 miles west on Highway 78, the Stagecoach Trails RV Park is 4 miles southeast of the PCT on S2.<br/>]]></desc>
     <sym>Car</sym>
   </wpt>
   <wpt lat="32.734293" lon="-116.480025">
@@ -418,7 +418,7 @@
   <wpt lat="32.889087" lon="-116.450430">
     <ele>1679.4</ele>
     <name>LagunaCG</name>
-    <desc><![CDATA[Mount Laguna Campground, 7/10 mile SW of PCT, showers, water, open year round.]]></desc>
+    <desc><![CDATA[Mount Laguna Campground, 7/10 mile SW of PCT, fee, coin-operated showers, water, open year round.]]></desc>
     <sym>Campground</sym>
   </wpt>
   <wpt lat="32.589720" lon="-116.466988">
@@ -436,7 +436,7 @@
   <wpt lat="32.680169" lon="-116.512125">
     <ele>949.1</ele>
     <name>OakShoreGro</name>
-    <desc><![CDATA[Oak Shore Grocery, small store w/ deli, 4/10 mile SE of PCT.]]></desc>
+    <desc><![CDATA[Oak Shore Grocery, small store w/ deli, 4/10 mile SE of PCT in Lake Morena Village.]]></desc>
     <sym>Shopping Center</sym>
   </wpt>
   <wpt lat="32.994335" lon="-116.542371">
@@ -460,13 +460,13 @@
   <wpt lat="32.607373" lon="-116.470798">
     <ele>784.5</ele>
     <name>PO0001</name>
-    <desc><![CDATA[Campo Post Office, 2/10 mile NE of PCT.]]></desc>
+    <desc><![CDATA[Campo is a small town on the PCT with a small store, pay phone and a post office. Campo Post Office [open M-F 8:30-11:30 & 12:30-4:30, Sa 9:30-12;  619-478-5466]<br/>(Your Name)<br/>c/o General Delivery<br/>Campo, CA 91906]]></desc>
     <sym>Post Office</sym>
   </wpt>
   <wpt lat="32.867127" lon="-116.419153">
     <ele>1803.2</ele>
     <name>PO0041</name>
-    <desc><![CDATA[Mount Laguna Post Office, 4/10 mile W of PCT, store, lodge, next door.]]></desc>
+    <desc><![CDATA[Mount Laguna is 4/10 mile W of PCT, has a Lodge with a small store, restaurant, outfitter [Mount Laguna Sports 619-473-0450], and a post office. The Laguna Mountain Lodge and store [open 9-5 daily] accepts resupply packages [$5 ea] sent by USPS or UPS. Include Name, ETA, and Phone # on your package. <br/>USPS Address:<br/>(Your Name)<br/>c/o Laguna Mountain Lodge<br/>PO Box 146<br/>Mount Laguna, CA 91948<br/>-<br/>UPS Address:<br/>(Your Name)<br/>c/o Laguna Mountain Lodge<br/>10678 Sunrise Hwy<br/>Mount Laguna, CA 91948<br/>-<br/>Lodge hours: everyday 9-5<br/>Lodge phone: 619-473-8533<br/>Lodge website: www.lagunamountain.com<br/>----------<br/>Mount Laguna Post Office [M-F 12-4, Sa 9-11; 619-473-8341]<br/>(Your Name)<br/>c/o General Delivery<br/>Mount Laguna, CA 91948]]></desc>
     <sym>Post Office</sym>
   </wpt>
   <wpt lat="33.196021" lon="-116.561126">
@@ -496,7 +496,7 @@
   <wpt lat="32.660050" lon="-116.550710">
     <ele>895.9</ele>
     <name>RD0014</name>
-    <desc><![CDATA[PCT joins unpaved South Boundary Rd.]]></desc>
+    <desc><![CDATA[PCT makes a sharp right turn and joins unpaved South Boundary Rd [RD0014]. In 3/10 mile pass an unpaved and unsigned road on your left. Do not take this dead-end road! Continue another 3/10 mile to where the PCT departs South Boundary Rd at mile 14.6. The PCT departs South Boundary Rd on a trail with a PCT sign, near a yellow sign in Spanish cautioning travelers. ]]></desc>
     <sym>Truck</sym>
   </wpt>
   <wpt lat="32.654718" lon="-116.542627">
@@ -514,7 +514,7 @@
   <wpt lat="32.771631" lon="-116.439064">
     <ele>1343.8</ele>
     <name>RD0033</name>
-    <desc><![CDATA[Unpaved Fred Canyon Road, access to Cibbets Flat Campground.]]></desc>
+    <desc><![CDATA[Unpaved Fred Canyon Road, access to Cibbets Flat Campground.<br/>-<br/>In May 2009 a Marine helicopter crashed near PCT mile 32.6. Munitions carried by the helicopter were scattered as a result of the crash. Signs warn hikers to stay on trail because of a safety hazard from unexploded military ordinances in this area.]]></desc>
     <sym>Truck</sym>
   </wpt>
   <wpt lat="32.871281" lon="-116.415258">
@@ -580,7 +580,7 @@
   <wpt lat="32.608394" lon="-116.474383">
     <ele>776.0</ele>
     <name>TradingPost</name>
-    <desc><![CDATA[Trading Post, small store, 2/10 mile E of PCT.]]></desc>
+    <desc><![CDATA[Trading Post, small store in Campo, 2/10 mile E of PCT.]]></desc>
     <sym>Flag, Blue</sym>
   </wpt>
   <wpt lat="32.672542" lon="-116.567716">
@@ -646,7 +646,7 @@
   <wpt lat="32.925106" lon="-116.482388">
     <ele>1607.6</ele>
     <name>WR053</name>
-    <desc><![CDATA[Pioneer Mail Picnic Area, outhouse.]]></desc>
+    <desc><![CDATA[Pioneer Mail Picnic Area, outhouse.<br/>-<br/>"Remote camping" not allowed in the Laguna Mountain Recreation Area (approximately mile 41.2 - 52.).]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="33.010341" lon="-116.537514">
@@ -766,7 +766,7 @@
   <wpt lat="33.215517" lon="-116.588104">
     <ele>1061.2</ele>
     <name>WRCS101</name>
-    <desc><![CDATA[Barrel Spring, trough, shade, and campsites. WATER ALERT: Next southbound water may be the Rodriguez fire tank in 32.7 miles. Check the water report for current information.]]></desc>
+    <desc><![CDATA[WATER ALERT: Next southbound water may be the Rodriguez fire tank in 32.7 miles. Check the water report for current information.<br/>-<br/>Barrel Spring, trough, shade, campsites [the spring source is 330 ft southbound on the  PCT, then take the unmarked trail W, uphill 150 feet].<br/>-<br/>Watch for Poison Oak in the Barrel Spring area.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="33.248098" lon="-116.600006">
@@ -774,12 +774,6 @@
     <name>WRCS105B</name>
     <desc><![CDATA[San Ysidro Creek]]></desc>
     <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.283607" lon="-116.634573">
-    <ele>953.5</ele>
-    <name>PO0110</name>
-    <desc><![CDATA[Warner Springs Post Office - 1.2 miles NW of PCT mile 109.5.]]></desc>
-    <sym>Post Office</sym>
   </wpt>
   <wpt lat="32.589741" lon="-116.466981">
     <ele>889.2</ele>

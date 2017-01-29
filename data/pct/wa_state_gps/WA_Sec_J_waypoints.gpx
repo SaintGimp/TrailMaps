@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
-     creator="~lippke/PCT-2015/lol/P16 - Final GPX.ipynb" version="1.1"
+     creator="~lippke/PCT-2016/lol/P16 - Final GPX.ipynb" version="1.1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
      http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -646,7 +646,7 @@
   <wpt lat="47.746224" lon="-121.088505">
     <ele>1235.3</ele>
     <name>Hwy2J</name>
-    <desc><![CDATA[Highway 2, Stevens Pass ski area, dining, large trailhead parking, overhead pedestrian bridge.]]></desc>
+    <desc><![CDATA[Stevens Pass [mile 2461.6] is a ski resort next to the PCT with snacks, espresso service, and a restaurant that accepts resupply packages shipped via UPS or FedEx only. It's open 7 days a week but has no overnight accommodations:<br/>Hiker Name<br/>c/o Stevens Pass, Through Hiker<br/>93001 NE Stevens Pass Hwy, US 2<br/>Skykomish, WA 98288<br/>-<br/>UPS or FEDEX ONLY!<br/>Phone: 206-812-7844 (summer only) or 206-812-4510 ex 4350<br/>Website: stevenspass.com]]></desc>
     <sym>Car</sym>
   </wpt>
   <wpt lat="47.593660" lon="-121.140442">
