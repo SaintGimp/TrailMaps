@@ -7,6 +7,7 @@ var existingCollections = {};
 function getMongoUrl() {
   var mongo;
   if (process.env.MONGO_URI) {
+    console.log("Connecting to " + process.env.MONGO_URI);
     return process.env.MONGO_URI;
   } else {
     console.log("Connecting to local MongoDB");
