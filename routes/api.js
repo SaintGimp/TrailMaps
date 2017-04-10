@@ -26,7 +26,7 @@ exports.getTrailData = function (req, res, next) {
     detailLevel: req.query.detail
   };
 
-  trails.findByArea(options)
+  trails.findByArea(options, res.locals.log)
   .done(
     function(trailData) {
       res.json(trailData);

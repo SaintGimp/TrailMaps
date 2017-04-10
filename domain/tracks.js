@@ -25,13 +25,5 @@ exports.findByArea = function(options) {
   var projection = { _id: 0, loc: 1 };
   var sortOrder = { seq: 1 };
 
-  var stopwatchPromise = stopwatch()(function() {
-    return dataService.findArray(collectionName, searchTerms, projection, sortOrder);
-  })()
-  .then(function(response){
-    console.log('Track load took ' + response.duration + 'ms');
-    return response.result;
-  });
-  
-  return new Q(stopwatchPromise);
+  return dataService.findArray(collectionName, searchTerms, projection, sortOrder);
 };

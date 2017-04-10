@@ -1,4 +1,5 @@
 var Q = require('q');
+var stopwatch = require('@songkick/promise-stopwatch');
 
 var dataService;
 var tracks;
@@ -12,14 +13,25 @@ module.exports = function(dataServiceToUse)
   return exports;
 };
 
-exports.findByArea = function(options) {
+exports.findByArea = function(options, logger) {
   var getTracks = tracks.findByArea(options);
   var getMileMarkers = mileMarkers.findByArea(options);
 
-  return Q.spread([getTracks, getMileMarkers], function(trackData, markerData) {
-    return {
-        track: trackData,
-        mileMarkers: markerData
-    };
+  var dataFunction = function() {
+    return Q.spread([getTracks, getMileMarkers], function(trackData, markerData) {
+      return {
+          track: trackData,
+          mileMarkers: markerData
+      };
+    });
+  }
+
+  var stopwatchPromise = stopwatch()(dataFunction)()
+  .then(function(response) {
+    logger.trackEvent("Find By Area", {}, { "Trail load duration": response.duration });
+    console.log('Trail load took ' + response.duration + 'ms');
+    return response.result;
   });
+
+  return new Q(stopwatchPromise);
 };
