@@ -31,6 +31,14 @@ app.use(function(req, res, next) {
   res.send(404);
 });
 
+// Application Insights
+// Specify the instrumentation key in Azure by setting the APPINSIGHTS_INSTRUMENTATIONKEY environment variable
+var appInsights;
+if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY) {
+  appInsights = require("applicationinsights");
+  appInsights.setup().start();
+}
+
 // Start server
 app.listen(app.get('port'), app.get('host'), function(){
   console.log("Node server version %s", process.version);
