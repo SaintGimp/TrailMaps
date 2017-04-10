@@ -224,37 +224,15 @@
       "resolved": "https://registry.npmjs.org/errno/-/errno-0.1.4.tgz",
       "optional": true
     },
-    "errorhandler": {
-      "version": "1.5.0",
-      "from": "errorhandler@1.5.0",
-      "resolved": "https://registry.npmjs.org/errorhandler/-/errorhandler-1.5.0.tgz",
-      "dependencies": {
-        "accepts": {
-          "version": "1.3.3",
-          "from": "accepts@>=1.3.3 <1.4.0",
-          "resolved": "https://registry.npmjs.org/accepts/-/accepts-1.3.3.tgz"
-        },
-        "escape-html": {
-          "version": "1.0.3",
-          "from": "escape-html@>=1.0.3 <1.1.0",
-          "resolved": "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz"
-        },
-        "mime-types": {
-          "version": "2.1.14",
-          "from": "mime-types@~2.1.11",
-          "resolved": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.14.tgz"
-        },
-        "negotiator": {
-          "version": "0.6.1",
-          "from": "negotiator@0.6.1",
-          "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz"
-        }
-      }
-    },
     "es6-promise": {
       "version": "3.2.1",
       "from": "es6-promise@3.2.1",
       "resolved": "https://registry.npmjs.org/es6-promise/-/es6-promise-3.2.1.tgz"
+    },
+    "es6-shim": {
+      "version": "0.35.3",
+      "from": "es6-shim@>=0.35.2 <0.36.0",
+      "resolved": "https://registry.npmjs.org/es6-shim/-/es6-shim-0.35.3.tgz"
     },
     "escape-string-regexp": {
       "version": "1.0.5",
@@ -365,6 +343,18 @@
           "version": "1.1.1",
           "from": "vary@>=1.1.0 <1.2.0",
           "resolved": "https://registry.npmjs.org/vary/-/vary-1.1.1.tgz"
+        }
+      }
+    },
+    "express-ai": {
+      "version": "0.4.2",
+      "from": "express-ai@latest",
+      "resolved": "https://registry.npmjs.org/express-ai/-/express-ai-0.4.2.tgz",
+      "dependencies": {
+        "applicationinsights": {
+          "version": "0.17.2",
+          "from": "applicationinsights@>=0.17.1 <0.18.0",
+          "resolved": "https://registry.npmjs.org/applicationinsights/-/applicationinsights-0.17.2.tgz"
         }
       }
     },
@@ -1260,8 +1250,7 @@
     "uuid": {
       "version": "3.0.1",
       "from": "uuid@>=3.0.0 <4.0.0",
-      "resolved": "https://registry.npmjs.org/uuid/-/uuid-3.0.1.tgz",
-      "optional": true
+      "resolved": "https://registry.npmjs.org/uuid/-/uuid-3.0.1.tgz"
     },
     "verror": {
       "version": "1.3.6",
