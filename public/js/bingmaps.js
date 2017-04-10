@@ -1,10 +1,11 @@
 define(['q', 'trailmaps', 'bing_maps_api'], function(Q, trailmaps, Microsoft) {
   var bingMap;
+  var trackLayer;
   var previousPolyLine;
-  var previousMileMarkerCollection;
+  var previousMileMarkerLayer;
 
   var mileMarkerContent =
-    '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">' +
+    '<svg xmlns="http://www.w3.org/2000/svg" width="75" height="14">' +
       '<polygon points="2,7 7,2 12,7 7,12" style="fill:red;stroke:blue;stroke-width:4" />' +
       '<text x="22" y="12" fill="white" style="font-size:14;font-family:arial;font-weight:bold">%MILE%</text>' +
     '</svg>';
@@ -13,25 +14,23 @@ define(['q', 'trailmaps', 'bing_maps_api'], function(Q, trailmaps, Microsoft) {
     var deferred = Q.defer();
 
     // http://msdn.microsoft.com/en-us/library/gg427609.aspx
-    Microsoft.Maps.loadModule('Microsoft.Maps.Themes.BingTheme', { callback: function() {
-      bingMap = new Microsoft.Maps.Map(container, {
-        credentials: "AiiVGjRyDyDynh0IbGjn7u4ee-6U9F-ZyjnRj5wYEFp_J6kq5HGcMfdd-TYE_6xF",
-        center: new Microsoft.Maps.Location(center.latitude, center.longitude),
-        mapTypeId: Microsoft.Maps.MapTypeId.aerial,
-        zoom: zoomLevel,
-        enableClickableLogo: false,
-        enableSearchLogo: false,
-        inertiaIntensity: 0.5,
-        tileBuffer: 1,
-        showBreadcrumb: false,
-        theme: new Microsoft.Maps.Themes.BingTheme()
+    bingMap = new Microsoft.Maps.Map(container, {
+      credentials: "AiiVGjRyDyDynh0IbGjn7u4ee-6U9F-ZyjnRj5wYEFp_J6kq5HGcMfdd-TYE_6xF",
+      center: new Microsoft.Maps.Location(center.latitude, center.longitude),
+      mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+      zoom: zoomLevel,
+      enableClickableLogo: false,
+      enableSearchLogo: false,
+      inertiaIntensity: 0.5,
+      tileBuffer: 1,
+      showBreadcrumb: false,
       });
 
-      Microsoft.Maps.Events.addHandler(bingMap, 'viewchangeend', onViewChanged);
+    Microsoft.Maps.Events.addHandler(bingMap, 'viewchangeend', onViewChanged);
+    trackLayer = new Microsoft.Maps.Layer();
+    bingMap.layers.insert(trackLayer);
 
-      deferred.resolve();
-    }});
-
+    deferred.resolve();
     return deferred.promise;
   }
 
@@ -41,38 +40,35 @@ define(['q', 'trailmaps', 'bing_maps_api'], function(Q, trailmaps, Microsoft) {
       vertices.push(new Microsoft.Maps.Location(point.loc[1], point.loc[0]));
     });
 
-    var polyLine = new Microsoft.Maps.Polyline(vertices, null);
+    var polyLine = new Microsoft.Maps.Polyline(vertices, {
+            strokeColor: 'red',
+            strokeThickness: 3,
+    });
 
     // First add new track, then remove old track
-    bingMap.entities.push(polyLine);
+    trackLayer.add(polyLine);
     if (previousPolyLine) {
-      bingMap.entities.remove(previousPolyLine);
+      trackLayer.remove(previousPolyLine);
     }
     previousPolyLine = polyLine;
   }
 
   function displayMileMarkers(mileMarkers) {
-    var newMileMarkerCollection = new Microsoft.Maps.EntityCollection({ visible: true });
+    var newMileMarkerLayer = new Microsoft.Maps.Layer();
     $.each(mileMarkers, function (i, mileMarker) {
       var location = new Microsoft.Maps.Location(mileMarker.loc[1], mileMarker.loc[0]);
-      // THe behavior of the Bing control is a little wacked. You'd think that specifying the text and textoffset
-      // would be sufficient but it doesn't work right, so we have to go with htmlContent instead. You'd
-      // also think that now the icon property wouldn't be needed but you'd be wrong again.
       var options = {
-        icon: "this apparently has to be truthy or we'll get a default icon instead of the htmlContent, boo!",
-        htmlContent: mileMarkerContent.replace("%MILE%", mileMarker.mile),
-        typeName: 'labelPin',
-        width: 75,
+        icon: mileMarkerContent.replace("%MILE%", mileMarker.mile),
         anchor: new Microsoft.Maps.Point(7, 7),
       };
-      newMileMarkerCollection.push(new Microsoft.Maps.Pushpin(location, options));
+      newMileMarkerLayer.add(new Microsoft.Maps.Pushpin(location, options));
     });
 
-    bingMap.entities.push(newMileMarkerCollection);
-    if (previousMileMarkerCollection) {
-      bingMap.entities.remove(previousMileMarkerCollection);
+    bingMap.layers.insert(newMileMarkerLayer);
+    if (previousMileMarkerLayer) {
+      bingMap.layers.remove(previousMileMarkerLayer);
     }
-    previousMileMarkerCollection = newMileMarkerCollection;
+    previousMileMarkerLayer = newMileMarkerLayer;
   }
 
   function getCenter() {

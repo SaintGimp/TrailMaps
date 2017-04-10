@@ -40,7 +40,7 @@ requirejs.config({
   //enforceDefine: true,
 });
 
-define('bing_maps_api', ['async!https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0!onscriptload'], function() {
+define('bing_maps_api', ['async!https://www.bing.com/api/maps/mapcontrol!callback'], function() {
   return Microsoft;
 });
 
