@@ -50,9 +50,20 @@ function readFile(fileName) {
 }
 
 function cleanupName(name) {
-  var namePart = name.split(" - ")[0];
-  var majorNamePart = namePart.split(",")[0];
-  return majorNamePart;
+  // This runs after we've filtered out waypoints based on matches.  Now
+  // we want to modify the remaining waypoints to have better names. First
+  // we remove certain substrings, then we split on certain delimiters to
+  // get rid of descriptive text, then we do more replacements.
+
+  name = name.replace(/^Paved\, one lane /, "");
+
+  var primaryName = name.split(/\. |\.$|, | - | \(| \[| is |\.\</, 1)[0].trim();
+  
+  primaryName = primaryName.replace(/^(Paved |Unpaved |Gravel |Seasonal )/, "");
+  primaryName = primaryName.replace(/^Arrive /, "");
+  primaryName = primaryName.replace(/Hwy/, "Highway");
+  primaryName = primaryName.replace(/Rd/, "Road");
+  return primaryName;
 }
 
 async function getSequenceNumber(location) {
@@ -70,37 +81,45 @@ async function parseData(waypointXml) {
       waypoint.desc &&
       !waypoint.desc[0].match(/bivy campsite/i) &&
       !waypoint.desc[0].match(/campsite/i) &&
+      !waypoint.desc[0].match(/^Continue /) &&
       !waypoint.desc[0].match(/^Creek/) &&
       !waypoint.desc[0].match(/^Cross/) &&
       !waypoint.desc[0].match(/^Depart/) &&
       !waypoint.desc[0].match(/^Descend/) &&
+      !waypoint.desc[0].match(/^Fence/) &&
+      !waypoint.desc[0].match(/^Ford a/) &&
       !waypoint.desc[0].match(/^Gate/) &&
-      !waypoint.desc[0].match(/^Forest Road/) &&
+      !waypoint.desc[0].match(/^Gravel road/) &&
+      //!waypoint.desc[0].match(/^Forest Road/) &&
       !waypoint.desc[0].match(/^Headwaters/) &&
+      !waypoint.desc[0].match(/jeep road/i) &&
       !waypoint.desc[0].match(/^Keep /) &&
+      !waypoint.desc[0].match(/^Lake$/) &&
       !waypoint.desc[0].match(/^Left /) &&
-      !waypoint.desc[0].match(/^PCT departs/) &&
-      !waypoint.desc[0].match(/^PCT follows/) &&
-      !waypoint.desc[0].match(/^PCT joins/) &&
-      !waypoint.desc[0].match(/^Paved/) &&
+      !waypoint.desc[0].match(/^Paved road/) &&
+      !waypoint.desc[0].match(/^PCT /) &&
       !waypoint.desc[0].match(/^Pipe /) &&
-      !waypoint.desc[0].match(/^Powerline /) &&
+      !waypoint.desc[0].match(/powerline/i) &&
+      !waypoint.desc[0].match(/^Railroad tracks/) &&
       !waypoint.desc[0].match(/^Right /) &&
-      !waypoint.desc[0].match(/^Road /) &&
+      //!waypoint.desc[0].match(/^Road /) &&
       !waypoint.desc[0].match(/^Seasonal creek/i) &&
       !waypoint.desc[0].match(/^Seasonal spring/i) &&
       !waypoint.desc[0].match(/^Seasonal stream/i) &&
+      !waypoint.desc[0].match(/^Seasonal trail/i) &&
       !waypoint.desc[0].match(/^Seasonal water/i) &&
       !waypoint.desc[0].match(/^Several /) &&
+      !waypoint.desc[0].match(/^Ski lift/) &&
       !waypoint.desc[0].match(/^Small /) &&
       !waypoint.desc[0].match(/^Spring/) &&
       !waypoint.desc[0].match(/^Spur /) &&
       !waypoint.desc[0].match(/^Stream/) &&
+      !waypoint.desc[0].match(/^The PCT/) &&
       !waypoint.desc[0].match(/^Trail junction/) &&
       !waypoint.desc[0].match(/^Trail to/) &&
       !waypoint.desc[0].match(/^Trailside/) &&
       !waypoint.desc[0].match(/^Unmarked/) &&
-      !waypoint.desc[0].match(/^Unpaved/) &&
+      !waypoint.desc[0].match(/^Unpaved road/) &&
       !waypoint.desc[0].match(/^Water/) &&
       !waypoint.desc[0].match(/^Wire/);
   });
@@ -109,7 +128,8 @@ async function parseData(waypointXml) {
     return {
       name: cleanupName(waypoint.desc[0]),
       loc: [parseFloat(waypoint.$.lon), parseFloat(waypoint.$.lat)], // MongoDB likes longitude first
-      halfmileName: waypoint.name[0]
+      halfmileName: waypoint.name[0],
+      halfmileDescription: waypoint.desc[0],
     };
   });
 

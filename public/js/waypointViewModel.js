@@ -7,6 +7,7 @@ define(["jquery", "knockout", "q"], function($, ko, Q) {
     self.fromJS = function(data) {
       self.id = data._id;
       self.name(data.name);
+      self.halfmileDescription = data.halfmileDescription;
       self.latitude = data.loc[1];
       self.longitude = data.loc[0];
       self.seq = data.seq;

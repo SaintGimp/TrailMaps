@@ -5,7 +5,8 @@ block body
     table.table.table-striped.table-bordered
       thead
         tr
-          th Name
+          th(style='width: 300px;') Name
+          th Halfmile Description
           th(style='width: 170px;') Latitude/Longitude
           th(style='text-align:right;')
       tbody(data-bind=" template: { name: templateName, foreach: waypoints }")
@@ -14,6 +15,7 @@ block scripts
   script(id='waypoint-template', type='text/html')
     tr
       td(data-bind='text: name, event: { dblclick: $root.edit }')
+      td(data-bind='text: halfmileDescription')
       td
         a(data-bind='attr: { href: link}, text: location')
       td
