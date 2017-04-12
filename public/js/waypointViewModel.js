@@ -1,7 +1,4 @@
-/*global define: false*/
-/*global trailMaps: false*/
-
-define(['jquery', 'knockout', 'q'], function($, ko, Q) {
+define(["jquery", "knockout", "q"], function($, ko, Q) {
   return function() {
     var self = this;
 
@@ -15,7 +12,7 @@ define(['jquery', 'knockout', 'q'], function($, ko, Q) {
       self.seq = data.seq;
 
       self.location = self.latitude.toFixed(5) + ", " + self.longitude.toFixed(5);
-      self.link = 'maps/bing?lat=' + self.latitude.toFixed(5) + '&lon=' + self.longitude.toFixed(5) + '&zoom=15';
+      self.link = "maps/bing?lat=" + self.latitude.toFixed(5) + "&lon=" + self.longitude.toFixed(5) + "&zoom=15";
     };
 
     self.toJS = function() {
@@ -40,7 +37,7 @@ define(['jquery', 'knockout', 'q'], function($, ko, Q) {
       var deferred = Q.defer();
 
       $.ajax({
-        type: 'PUT',
+        type: "PUT",
         url: "/api/trails/pct/waypoints/" + self.id,
         data: JSON.stringify(self.toJS()),
         processData: false,
@@ -66,7 +63,7 @@ define(['jquery', 'knockout', 'q'], function($, ko, Q) {
       var deferred = Q.defer();
 
       $.ajax({
-        type: 'DELETE',
+        type: "DELETE",
         url: "/api/trails/pct/waypoints/" + self.id,
         success: function() {
           deferred.resolve(true);

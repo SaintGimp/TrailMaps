@@ -1,14 +1,14 @@
-define(['q', 'trailmaps', 'bing_maps_api'], function(Q, trailmaps, Microsoft) {
+define(["q", "trailmaps", "bing_maps_api"], function(Q, trailmaps, Microsoft) {
   var bingMap;
   var trackLayer;
   var previousPolyLine;
   var previousMileMarkerLayer;
 
   var mileMarkerContent =
-    '<svg xmlns="http://www.w3.org/2000/svg" width="75" height="14">' +
-      '<polygon points="2,7 7,2 12,7 7,12" style="fill:red;stroke:blue;stroke-width:4" />' +
-      '<text x="22" y="12" fill="white" style="font-size:14;font-family:arial;font-weight:bold">%MILE%</text>' +
-    '</svg>';
+    "<svg xmlns='http://www.w3.org/2000/svg' width='75' height='14'>" +
+      "<polygon points='2,7 7,2 12,7 7,12' style='fill:red;stroke:blue;stroke-width:4' />" +
+      "<text x='22' y='12' fill='white' style='font-size:14;font-family:arial;font-weight:bold'>%MILE%</text>" +
+    "</svg>";
 
   function initialize(container, center, zoomLevel, onViewChanged) {
     var deferred = Q.defer();
@@ -24,9 +24,9 @@ define(['q', 'trailmaps', 'bing_maps_api'], function(Q, trailmaps, Microsoft) {
       inertiaIntensity: 0.5,
       tileBuffer: 1,
       showBreadcrumb: false,
-      });
+    });
 
-    Microsoft.Maps.Events.addHandler(bingMap, 'viewchangeend', onViewChanged);
+    Microsoft.Maps.Events.addHandler(bingMap, "viewchangeend", onViewChanged);
     trackLayer = new Microsoft.Maps.Layer();
     bingMap.layers.insert(trackLayer);
 
@@ -41,8 +41,8 @@ define(['q', 'trailmaps', 'bing_maps_api'], function(Q, trailmaps, Microsoft) {
     });
 
     var polyLine = new Microsoft.Maps.Polyline(vertices, {
-            strokeColor: 'red',
-            strokeThickness: 3,
+      strokeColor: "red",
+      strokeThickness: 3,
     });
 
     // First add new track, then remove old track

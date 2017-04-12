@@ -1,5 +1,4 @@
-/*jshint expr:true*/
-/*global trailMaps:true*/
+/* global sinon:false */
 
 define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer.js"], function(Q, $, Squire, testableMapContainer) {
   var navbarModel;
@@ -20,11 +19,11 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
 
       injector = new Squire();
       injector.mock({
-        'mapcontainer': mapContainer,
-        'history': sandbox.stub(window.history)
+        "mapcontainer": mapContainer,
+        "history": sandbox.stub(window.history)
       });
 
-      injector.require(['navbarModel'], function(NavbarModel) {
+      injector.require(["navbarModel"], function(NavbarModel) {
         navbarModel = new NavbarModel();
         done();
       });
@@ -43,7 +42,7 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
 
   function nullResponder(request) {
     numberOfServerRequests++;
-    request.respond(200, { "Content-Type": "application/json" }, 'null');
+    request.respond(200, { "Content-Type": "application/json" }, "null");
   }
 
   function typeaheadResponder(request) {
@@ -51,8 +50,8 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
     request.respond(200, { "Content-Type": "application/json" }, '["foo", "bar"]');
   }
 
-  describe('Nav bar', function() {
-    describe('Searching for mile markers', function() {
+  describe("Nav bar", function() {
+    describe("Searching for mile markers", function() {
       var originalViewOptions;
       var originalUrlFragment;
 
@@ -64,16 +63,16 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
           navbarModel.searchText("1234");
           navbarModel.search();
 
-          sandbox.server.respond('/api/trails/pct/milemarkers/1234', responder);
+          sandbox.server.respond("/api/trails/pct/milemarkers/1234", responder);
           done();
         });
       });
 
-      it ('should get the mile marker from the server', function() {
+      it ("should get the mile marker from the server", function() {
         expect(numberOfServerRequests).to.equal(1);
       });
 
-      it ('should center the map on the mile marker', function() {
+      it ("should center the map on the mile marker", function() {
         expect(mapContainer.getViewOptions().view).to.deep.equal({
           center: {
             latitude: 39,
@@ -83,11 +82,11 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
         });
       });
 
-      it ('should replace the current browser history node with the previous view', function() {
+      it ("should replace the current browser history node with the previous view", function() {
         expect(history.replaceState.calledWith(originalViewOptions, null, originalUrlFragment)).to.be.ok;
       });
 
-      it ('should add the new map view to the browser history', function() {
+      it ("should add the new map view to the browser history", function() {
         expect(history.pushState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
       });
 
@@ -96,7 +95,7 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
     });
 
-    describe('Searching for an invalid mile marker', function() {
+    describe("Searching for an invalid mile marker", function() {
       var originalViewOptions;
 
       before(function(done) {
@@ -106,16 +105,16 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
           navbarModel.searchText("4567");
           navbarModel.search();
 
-          sandbox.server.respond('/api/trails/pct/milemarkers/4567', nullResponder);
+          sandbox.server.respond("/api/trails/pct/milemarkers/4567", nullResponder);
           done();
         });
       });
 
-      it ('should get the mile marker from the server', function() {
+      it ("should get the mile marker from the server", function() {
         expect(numberOfServerRequests).to.equal(1);
       });
 
-      it ('should not move the map view', function() {
+      it ("should not move the map view", function() {
         expect(mapContainer.getViewOptions()).to.deep.equal(originalViewOptions);
       });
 
@@ -124,7 +123,7 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
     });
 
-    describe('Searching for latitude/longitude', function() {
+    describe("Searching for latitude/longitude", function() {
       before(function(done) {
         initializeNavBar(function() {
           navbarModel.searchText("39.1, -120.2");
@@ -133,7 +132,7 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
         });
       });
 
-      it ('should center the map on the coordinates', function() {
+      it ("should center the map on the coordinates", function() {
         expect(mapContainer.getViewOptions().view).to.deep.equal({
           center: {
             latitude: 39.1,
@@ -143,20 +142,20 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
         });
       });
 
-      it ('Should recognize all forms of latitude/longitude coordinates', function() {
-        expect('39,-120').to.match(navbarModel.coordinatesRegex);
-        expect('39, -120').to.match(navbarModel.coordinatesRegex);
-        expect('39.1234,  -120.5789').to.match(navbarModel.coordinatesRegex);
-        expect('-39.1234,120.5789').to.match(navbarModel.coordinatesRegex);
+      it ("Should recognize all forms of latitude/longitude coordinates", function() {
+        expect("39,-120").to.match(navbarModel.coordinatesRegex);
+        expect("39, -120").to.match(navbarModel.coordinatesRegex);
+        expect("39.1234,  -120.5789").to.match(navbarModel.coordinatesRegex);
+        expect("-39.1234,120.5789").to.match(navbarModel.coordinatesRegex);
 
-        expect('foo').to.not.match(navbarModel.coordinatesRegex);
-        expect('1234').to.not.match(navbarModel.coordinatesRegex);
-        expect('1234.5').to.not.match(navbarModel.coordinatesRegex);
+        expect("foo").to.not.match(navbarModel.coordinatesRegex);
+        expect("1234").to.not.match(navbarModel.coordinatesRegex);
+        expect("1234.5").to.not.match(navbarModel.coordinatesRegex);
       });
 
-      it ('Should correctly parse latitude/longitude coordinates', function() {
-        expect('39,-120'.match(navbarModel.numberRegex)).to.eql(['39', '-120']);
-        expect('39.1, -120.2'.match(navbarModel.numberRegex)).to.eql(['39.1', '-120.2']);
+      it ("Should correctly parse latitude/longitude coordinates", function() {
+        expect("39,-120".match(navbarModel.numberRegex)).to.eql(["39", "-120"]);
+        expect("39.1, -120.2".match(navbarModel.numberRegex)).to.eql(["39.1", "-120.2"]);
       });
 
       after(function() {
@@ -164,22 +163,22 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
     });
 
-    describe('Searching for waypoints', function() {
+    describe("Searching for waypoints", function() {
       before(function(done) {
         initializeNavBar(function() {
           navbarModel.searchText("foo bar");
           navbarModel.search();
 
-          sandbox.server.respond('/api/trails/pct/waypoints/foo%20bar', responder);
+          sandbox.server.respond("/api/trails/pct/waypoints/foo%20bar", responder);
           done();
         });
       });
 
-      it ('should get the waypoint from the server', function() {
+      it ("should get the waypoint from the server", function() {
         expect(numberOfServerRequests).to.equal(1);
       });
 
-      it ('should center the map on the waypoint', function() {
+      it ("should center the map on the waypoint", function() {
         expect(mapContainer.getViewOptions().view).to.deep.equal({
           center: {
             latitude: 39,
@@ -194,7 +193,7 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
     });
 
-    describe('Searching for an invalid waypoint', function() {
+    describe("Searching for an invalid waypoint", function() {
       var originalViewOptions;
 
       before(function(done) {
@@ -204,16 +203,16 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
           navbarModel.searchText("north pole");
           navbarModel.search();
 
-          sandbox.server.respond('/api/trails/pct/waypoints/north%20pole', nullResponder);
+          sandbox.server.respond("/api/trails/pct/waypoints/north%20pole", nullResponder);
           done();
         });
       });
 
-      it ('should get the waypoint from the server', function() {
+      it ("should get the waypoint from the server", function() {
         expect(numberOfServerRequests).to.equal(1);
       });
 
-      it ('should not move the map view', function() {
+      it ("should not move the map view", function() {
         expect(mapContainer.getViewOptions()).to.deep.equal(originalViewOptions);
       });
 
@@ -222,7 +221,7 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
     });
 
-    describe('Querying for a waypoint typeahead list', function() {
+    describe("Querying for a waypoint typeahead list", function() {
       var typeaheadData;
 
       before(function(done) {
@@ -231,16 +230,16 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
             typeaheadData = data;
           });
 
-          sandbox.server.respond('/api/trails/pct/waypoints/typeahead/foo', typeaheadResponder);
+          sandbox.server.respond("/api/trails/pct/waypoints/typeahead/foo", typeaheadResponder);
           done();
         });
       });
 
-      it ('should get the typeahead list from the server', function() {
+      it ("should get the typeahead list from the server", function() {
         expect(numberOfServerRequests).to.equal(1);
       });
 
-      it ('should process the typeahead list', function() {
+      it ("should process the typeahead list", function() {
         expect(typeaheadData).to.eql(["foo", "bar"]);
       });
 
@@ -249,17 +248,17 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
     });
 
-    describe('Querying for a waypoint typeahead list with non-waypoint text', function() {
+    describe("Querying for a waypoint typeahead list with non-waypoint text", function() {
       before(function(done) {
         initializeNavBar(function() {
           navbarModel.waypointTypeaheadSource("1234");
 
-          sandbox.server.respond('/api/trails/pct/waypoints/typeahead/1234', typeaheadResponder);
+          sandbox.server.respond("/api/trails/pct/waypoints/typeahead/1234", typeaheadResponder);
           done();
         });
       });
 
-      it ('should not try to get the typeahead list from the server', function() {
+      it ("should not try to get the typeahead list from the server", function() {
         expect(numberOfServerRequests).to.equal(0);
       });
 
@@ -268,17 +267,17 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
     });
 
-    describe('Selecting a typeahead item', function() {
+    describe("Selecting a typeahead item", function() {
       before(function(done) {
         initializeNavBar(function() {
           navbarModel.waypointTypeaheadUpdater("foo");
 
-          sandbox.server.respond('/api/trails/pct/waypoints/foo', responder);
+          sandbox.server.respond("/api/trails/pct/waypoints/foo", responder);
           done();
         });
       });
 
-      it ('should get the waypoint from the server', function() {
+      it ("should get the waypoint from the server", function() {
         expect(numberOfServerRequests).to.equal(1);
       });
 
@@ -287,25 +286,24 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
     });
 
-    describe('Showing a map', function() {
+    describe("Showing a map", function() {
       before(function(done) {
         initializeNavBar(function() {
-          navbarModel.onPillClick(null, {target: {href: 'foo/google'}}, function() {
+          navbarModel.onPillClick(null, {target: {href: "foo/google"}}, function() {
             done();
           });
         });
       });
 
-      it ('should show the map in the map container', function() {
-        expect(mapContainer.getViewOptions().mapName).to.equal('google');
+      it ("should show the map in the map container", function() {
+        expect(mapContainer.getViewOptions().mapName).to.equal("google");
       });
 
-      it ('should publish the active map name', function() {
-        expect(navbarModel.activeMapName()).to.equal('google');
+      it ("should publish the active map name", function() {
+        expect(navbarModel.activeMapName()).to.equal("google");
       });
 
-      it ('should replace the current browser history node with the new map name', function() {
-        console.log(mapContainer.getViewOptions());
+      it ("should replace the current browser history node with the new map name", function() {
         expect(history.replaceState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
       });
 
@@ -314,26 +312,26 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
     });
 
-    describe('Showing a map that has been shown before', function() {
+    describe("Showing a map that has been shown before", function() {
       before(function(done) {
         initializeNavBar(function() {
-          navbarModel.onPillClick(null, {target: {href: 'foo/google'}}, function() {
-            navbarModel.onPillClick(null, {target: {href: 'foo/bing'}}, function() {
+          navbarModel.onPillClick(null, {target: {href: "foo/google"}}, function() {
+            navbarModel.onPillClick(null, {target: {href: "foo/bing"}}, function() {
               done();
             });
           });
         });
       });
 
-      it ('should show the map in the map container', function() {
-        expect(mapContainer.getViewOptions().mapName).to.equal('bing');
+      it ("should show the map in the map container", function() {
+        expect(mapContainer.getViewOptions().mapName).to.equal("bing");
       });
 
-      it ('should publish the active map name', function() {
-        expect(navbarModel.activeMapName()).to.equal('bing');
+      it ("should publish the active map name", function() {
+        expect(navbarModel.activeMapName()).to.equal("bing");
       });
 
-      it ('should replace the current browser history node with the new map name', function() {
+      it ("should replace the current browser history node with the new map name", function() {
         expect(history.replaceState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
       });
 
@@ -342,7 +340,7 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
     });
 
-    describe('Changing the map container view', function() {
+    describe("Changing the map container view", function() {
       before(function(done) {
         initializeNavBar(function() {
           var viewOptions = mapContainer.getViewOptions();
@@ -352,7 +350,7 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
         });
       });
 
-      it ('should replace the current browser history node with the new view', function() {
+      it ("should replace the current browser history node with the new view", function() {
         expect(history.replaceState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
       });
 

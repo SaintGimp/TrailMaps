@@ -1,36 +1,29 @@
-var Q = require('q');
-var trackImporter = require('./trackimporter.js');
-var mileMarkerImporter = require('./milemarkerimporter.js');
-var waypointImporter = require('./waypointimporter.js');
+var trackImporter = require("./trackimporter.js");
+var mileMarkerImporter = require("./milemarkerimporter.js");
+var waypointImporter = require("./waypointimporter.js");
 var dataService = require("../domain/dataService.js");
 
-function dropCollection(collection) {
-  console.log("Dropping " + collection.collectionName);
-  return Q.ninvoke(collection, 'drop');
-}
+async function dropCollections() {
+  console.log("Dropping collections");
 
-function dropCollections(db, collectionsToDelete) {
-  console.log('Dropping collections');
-
-  return dataService.collections()
-  .then(function(collections) {
-    var collectionsToDrop = collections.filter(function(collection) {
-      return collection.collectionName.match(/.*track\d+$/) || collection.collectionName.match(/.*milemarkers\d+$/) || collection.collectionName.match(/waypoints$/);
-    });
-
-    return Q.all(collectionsToDrop.map(function(collection) {
-      return dropCollection(collection);
-    }));
+  var collections = await dataService.collections();
+  var collectionsToDrop = collections.filter(function(collection) {
+    return collection.collectionName.match(/.*track\d+$/) || collection.collectionName.match(/.*milemarkers\d+$/) || collection.collectionName.match(/waypoints$/);
   });
+
+  var dropPromises = collectionsToDrop.map(function(collection) {
+    console.log("Dropping " + collection.collectionName);
+    return collection.drop();
+  });
+
+  return await Promise.all(dropPromises);
 }
 
-exports.import = function() {
+exports.import = async function() {
   console.log("Importing trail data");
 
-  return dropCollections()
-  .then(function() {
-    return Q.all([trackImporter.import(), mileMarkerImporter.import()]);
-  })
-  .then(waypointImporter.import);
+  await dropCollections();
+  await Promise.all([trackImporter.import(), mileMarkerImporter.import()]);
+  await waypointImporter.import();
 };
 

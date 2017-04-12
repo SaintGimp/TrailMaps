@@ -1,7 +1,5 @@
 /*global Microsoft: false*/
 /*global google: false*/
-/*global nokia: false*/
-/*global trailMaps: false*/
 
 requirejs.config({
   baseUrl: "/js",
@@ -21,10 +19,10 @@ requirejs.config({
       exports: "$.fn.popover"
     },
     "knockout": {
-      deps: ['jquery']
+      deps: ["jquery"]
     },
     "typeahead": {
-      deps: ['jquery']
+      deps: ["jquery"]
     },
     "bing_maps_api": {
       exports: "Microsoft"
@@ -40,42 +38,43 @@ requirejs.config({
   //enforceDefine: true,
 });
 
-define('bing_maps_api', ['async!https://www.bing.com/api/maps/mapcontrol!callback'], function() {
+define("bing_maps_api", ["async!https://www.bing.com/api/maps/mapcontrol!callback"], function() {
   return Microsoft;
 });
 
-define('google_maps_api', ['async!https://maps.google.com/maps/api/js?v=3&sensor=false'], function() {
+define("google_maps_api", ["async!https://maps.google.com/maps/api/js?v=3&sensor=false"], function() {
   return google;
 });
 
-define('history', function() {
+define("history", function() {
   return window.history;
 });
 
-require(['jquery', 'knockout', 'bootstrap', 'typeahead', './trailmaps', './mapcontainer', './navbarModel'], function($, ko, bootstrap, typeAhead, trailMaps, mapContainer, NavbarModel) {
+require(["jquery", "knockout", "bootstrap", "typeahead", "./trailmaps", "./mapcontainer", "./navbarModel"], function($, ko, bootstrap, typeAhead, trailMaps, mapContainer, NavbarModel) {
   mapContainer.initialize(require, trailMaps.configuration.defaultMapName)
   .done();
-  ko.applyBindings(mapContainer, $('#mapCanvas').get(0));
+  ko.applyBindings(mapContainer, $("#mapCanvas").get(0));
 
   var navbarModel = new NavbarModel();
-  ko.applyBindings(navbarModel, $('.navbar').get(0));
+  ko.applyBindings(navbarModel, $(".navbar").get(0));
 
-  // TODO: Not sure this is the best place to wire this up but I don't see any better options at the moment
-  $('#searchBox').typeahead({
-    hint: true,
-    highlight: true,
-    minLength: 3
-  },
-  {
-    name: 'waypoints',
-    source: navbarModel.waypointTypeaheadSource,
-    displayKey: function(value) {
-      return value;
-    }
-  })
+  // TODO: Not sure this is the best place to wire this up but I don"t see any better options at the moment
+  $("#searchBox").typeahead(
+    {
+      hint: true,
+      highlight: true,
+      minLength: 3
+    },
+    {
+      name: "waypoints",
+      source: navbarModel.waypointTypeaheadSource,
+      displayKey: function(value) {
+        return value;
+      }
+    })
   .bind("typeahead:selected", navbarModel.search)
   .keydown(function(event) {
-    if (event.keyCode ===13) {
+    if (event.keyCode === 13) {
       navbarModel.search();
     }
   });

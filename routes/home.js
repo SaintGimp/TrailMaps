@@ -4,11 +4,11 @@
  */
 
 module.exports = function(app) {
-	app.get('/', function(req, res) {
-    res.redirect('/trails/pct/maps/bing');
+  app.get("/", function(req, res) {
+    res.redirect("/trails/pct/maps/bing");
   });
-  app.get('/trails/pct/maps/:mapName', exports.maps);
-  app.get('/trails/pct/waypoints', exports.waypoints);
+  app.get("/trails/pct/maps/:mapName", exports.maps);
+  app.get("/trails/pct/waypoints", exports.waypoints);
 };
 
 function getValue(queryValue, fallbackValue) {
@@ -25,14 +25,14 @@ exports.maps = function(req, res) {
     defaultLongitude: getValue(req.query.lon, -121.36087699433327),
     defaultZoom: getValue(req.query.zoom, 5),
     // TODO: get this from the request url? Maybe just figure it out on the client?
-    baseMapUrl: '/trails/pct/maps'
+    baseMapUrl: "/trails/pct/maps"
   };
 
-  res.render('maps', defaults);
+  res.render("maps", defaults);
 };
 
 exports.waypoints = function(req, res) {
   // TODO: 404 if it's not a map name we recognize
 
-  res.render('waypoints');
+  res.render("waypoints");
 };

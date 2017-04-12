@@ -1,7 +1,4 @@
-/*global define: false*/
-/*global trailMaps: false*/
-
-define(['jquery', 'knockout', 'q', 'waypointViewModel'], function($, ko, Q, WaypointViewModel) {
+define(["jquery", "knockout", "q", "waypointViewModel"], function($, ko, Q, WaypointViewModel) {
   return function() {
     var self = this;
 
@@ -34,7 +31,7 @@ define(['jquery', 'knockout', 'q', 'waypointViewModel'], function($, ko, Q, Wayp
         if (success) {
           self.waypoints.remove(waypoint);
         } else {
-          alert('Error deleting waypoint.');
+          alert("Error deleting waypoint.");
         }
       });
     };

@@ -1,6 +1,6 @@
 /*global define: false*/
 
-define(['knockout'], function(ko) {
+define(["knockout"], function(ko) {
   ko.bindingHandlers.enterkey = {
     init: function(element, valueAccessor, allBindingsAccessor, data, bindingContext) {
       // wrap the handler with a check for the enter key
@@ -10,7 +10,7 @@ define(['knockout'], function(ko) {
           element.blur();
         }
       };
-      // call the real event binding for 'keyup' with our wrapped handler
+      // call the real event binding for "keyup" with our wrapped handler
       ko.bindingHandlers.event.init(element, function() { return { keyup: wrappedHandler }; }, allBindingsAccessor, data, bindingContext);
     }
   };
@@ -24,7 +24,7 @@ define(['knockout'], function(ko) {
           element.blur();
         }
       };
-      // call the real event binding for 'keyup' with our wrapped handler
+      // call the real event binding for "keyup" with our wrapped handler
       ko.bindingHandlers.event.init(element, function() { return { keyup: wrappedHandler }; }, allBindingsAccessor, data, bindingContext);
     }
   };

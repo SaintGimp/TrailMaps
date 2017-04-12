@@ -2,11 +2,6 @@
   "name": "TrailMaps",
   "version": "0.0.1",
   "dependencies": {
-    "@songkick/promise-stopwatch": {
-      "version": "0.0.1",
-      "from": "@songkick/promise-stopwatch@latest",
-      "resolved": "https://registry.npmjs.org/@songkick/promise-stopwatch/-/promise-stopwatch-0.0.1.tgz"
-    },
     "ansi-regex": {
       "version": "2.1.1",
       "from": "ansi-regex@>=2.0.0 <3.0.0",

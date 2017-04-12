@@ -2,11 +2,17 @@
 
 module.exports = function (grunt) {
   "use strict";
-
+  
+  require("load-grunt-tasks")(grunt);
+  
   // Project configuration.
   grunt.initConfig({
-    jshint: {
-      all: { src: [
+    eslint: {
+      options: {
+        config: ".eslintrc.json",
+        reset: true
+      },
+      target: [
         "Gruntfile.js",
         "app.js",
         "**/*.js",
@@ -14,34 +20,31 @@ module.exports = function (grunt) {
         "!test/lib/**/*.js",
         "!public/bootstrap/**/*.js",
         "!node_modules/**/*.js"
-      ]},
-      options: {
-        jshintrc: ".jshintrc"
-      }
+      ]
     },
-
+  
     simplemocha: {
-      all: { src: 'test/server/**/*.js' },
+      all: { src: "test/server/**/*.js" },
       options: {
-        globals: ['should'],
+        globals: ["should"],
         timeout: 3000,
         ignoreLeaks: false,
-        //grep: '*-test',
-        ui: 'bdd',
-        reporter: 'dot'
+        //grep: "*-test",
+        ui: "bdd",
+        reporter: "dot"
       }
     },
 
     testem: {
       environment1  : {
         src: [
-            "public/js/*.js",
-            "test/client/*.js"
+          "public/js/*.js",
+          "test/client/*.js"
         ],
         options : {
           debug: true,
           launch_in_ci : [
-            'phantomjs'
+            "phantomjs"
           ],
           test_page: "test/client/runner.html",
           routes: {
@@ -60,10 +63,10 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-simple-mocha');
-  grunt.loadNpmTasks('grunt-testem-mincer');
+  grunt.loadNpmTasks("grunt-eslint");
+  grunt.loadNpmTasks("grunt-simple-mocha");
+  grunt.loadNpmTasks("grunt-testem-mincer");
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'simplemocha', 'testem']);
+  grunt.registerTask("default", ["eslint", "simplemocha", "testem"]);
 };

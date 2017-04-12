@@ -1,11 +1,9 @@
-var Q = require('q');
-var QMongoDB = require('./q-mongodb');
+const MongoClient = require("mongodb").MongoClient;
 
-var existingDb = null;
-var existingCollections = {};
+var existingDbPromise = null;
+var existingCollectionPromises = [];
 
 function getMongoUrl() {
-  var mongo;
   if (process.env.MONGO_URI) {
     console.log("Connecting to " + process.env.MONGO_URI);
     return process.env.MONGO_URI;
@@ -15,79 +13,54 @@ function getMongoUrl() {
   }
 }
 
-function getDb() {
-  if (existingDb) {
-    return new Q(existingDb);
+async function getDb() {
+  if (!existingDbPromise) {
+    console.log("Creating new connection...");
+    existingDbPromise = MongoClient.connect(getMongoUrl());
   }
-  else
-  {
-    return QMongoDB.db(getMongoUrl())
-    .then(function(db) {
-      existingDb = db;
-      return db;
-    });
-  }
+
+  return await existingDbPromise;
 }
 
-function getCollection(db, name) {
-  if (existingCollections[name]) {
-    return new Q(existingCollections[name]);
+async function getCollection(db, name) {
+  if (!existingCollectionPromises[name]) {
+    console.log("Getting new collection reference for " + name + "...");
+    existingCollectionPromises[name] = db.collection(name);
+    var collection = await existingCollectionPromises[name];
+    if (!collection) {
+      existingCollectionPromises[name] = await db.createCollection(name);
+    }
   }
-  else {
-    return QMongoDB.collection(db, name)
-    .then(function(collection) {
-      existingCollections[name] = collection;
-      return collection;
-    });
-  }
+
+  return await existingCollectionPromises[name];
 }
 
-exports.collection = function(name) {
-  return getDb()
-  .then(function(db) {
-    return getCollection(db, name);
-  });
+exports.collection = async function(name) {
+  var db = await getDb();
+  return await getCollection(db, name);
 };
 
-exports.collections = function() {
-  return getDb()
-    .then(function(db) {
-      return Q.ninvoke(db, "collections");
-    });
+exports.collections = async function() {
+  var db = await getDb();
+  return await db.collections();
 };
 
-exports.findArray = function(collectionName, searchTerms, projection, sort) {
-  return exports.collection(collectionName)
-  .then(
-    function(collection) {
-      return Q.ninvoke(collection.find(searchTerms, projection).limit(2000).sort(sort), 'toArray');
-    }
-  );
+exports.findArray = async function(collectionName, searchTerms, projection, sort) {
+  var collection = await exports.collection(collectionName);
+  return await collection.find(searchTerms, projection).limit(2000).sort(sort).toArray();
 };
 
-exports.findOne = function(collectionName, searchTerms, projection) {
-  return exports.collection(collectionName)
-  .then(
-    function(collection) {
-      return Q.ninvoke(collection, 'findOne', searchTerms, projection);
-    }
-  );
+exports.findOne = async function(collectionName, searchTerms, projection) {
+  var collection = await exports.collection(collectionName);
+  return await collection.findOne(searchTerms, projection);
 };
 
-exports.update = function(collectionName, searchTerms, updateOperation) {
-  return exports.collection(collectionName)
-  .then(
-    function(collection) {
-      return Q.ninvoke(collection, 'update', searchTerms, updateOperation, { w: 1 });
-    }
-  );
+exports.update = async function(collectionName, searchTerms, updateOperation) {
+  var collection = await exports.collection(collectionName);
+  return await collection.update(searchTerms, updateOperation, { w: 1 });
 };
 
-exports.remove = function(collectionName, searchTerms) {
-  return exports.collection(collectionName)
-  .then(
-    function(collection) {
-      return Q.ninvoke(collection, 'remove', searchTerms);
-    }
-  );
+exports.remove = async function(collectionName, searchTerms) {
+  var collection = await exports.collection(collectionName);
+  return await collection.remove(searchTerms);
 };

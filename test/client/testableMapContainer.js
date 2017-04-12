@@ -1,7 +1,5 @@
-/*jshint expr:true*/
-
 // TODO: can we set maps for the test stuff in testem.json?
-define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js", 'q'], function($, Squire, FakeMap, Q) {
+define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js", "q"], function($, Squire, FakeMap, Q) {
   var injector;
   var loadedModules;
   var mapContainer;
@@ -19,7 +17,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js", 'q'], functi
     var south = parseFloat(/south=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
     var east = parseFloat(/east=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
     var west = parseFloat(/west=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
-    var detail = parseFloat(/detail=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
+    //var detail = parseFloat(/detail=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
 
     var data = {
       mileMarkers: [{loc:[west + ((east - west) / 2), south + ((north - south) / 2)], mile:1234}],
@@ -35,13 +33,13 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js", 'q'], functi
 
     injector = new Squire();
     injector.mock({
-      'bingmaps': fakeBingMaps,
-      'googlemaps': fakeGoogleMaps,
-      'heremaps': fakeHereMaps
+      "bingmaps": fakeBingMaps,
+      "googlemaps": fakeGoogleMaps,
+      "heremaps": fakeHereMaps
     });
 
     var deferred = Q.defer();
-    injector.require(['mapcontainer'], function(newMapContainer) {
+    injector.require(["mapcontainer"], function(newMapContainer) {
       mapContainer = newMapContainer;
       mapContainer.loadedModules = loadedModules;
       mapContainer.fakeBingMaps = fakeBingMaps;

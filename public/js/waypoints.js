@@ -1,8 +1,3 @@
-/*global Microsoft: false*/
-/*global google: false*/
-/*global nokia: false*/
-/*global trailMaps: false*/
-
 requirejs.config({
   baseUrl: "/js",
   paths: {
@@ -20,10 +15,10 @@ requirejs.config({
   },
 });
 
-require(['jquery', 'knockout', 'bootstrap', 'waypointsViewModel', 'knockoutBindingHandlers'], function($, ko, bootstrap, WaypointsViewModel) {
+require(["jquery", "knockout", "bootstrap", "waypointsViewModel", "knockoutBindingHandlers"], function($, ko, bootstrap, WaypointsViewModel) {
   var waypointsViewModel = new WaypointsViewModel();
   waypointsViewModel.loadData()
   .done(function() {
-    ko.applyBindings(waypointsViewModel, $('#waypoints').get(0));
+    ko.applyBindings(waypointsViewModel, $("#waypoints").get(0));
   });
 });

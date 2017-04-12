@@ -1,5 +1,4 @@
-/*jshint expr:true*/
-/*global trailMaps:true*/
+/* global sinon:false */
 
 define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel) {
   var waypointsViewModel;
@@ -31,21 +30,21 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
     request.respond(200);
   }
 
-  describe('Waypoints', function() {
-    describe('Loading data from server', function() {
+  describe("Waypoints", function() {
+    describe("Loading data from server", function() {
       before(function(done) {
         initialize(function() {
           waypointsViewModel.loadData();
-          sandbox.server.respond('/api/trails/pct/waypoints', getWaypointsResponder);
+          sandbox.server.respond("/api/trails/pct/waypoints", getWaypointsResponder);
           done();
         });
       });
 
-      it ('should get waypoint data from the server', function() {
+      it ("should get waypoint data from the server", function() {
         expect(numberOfServerRequests).to.equal(1);
       });
 
-      it ('should create observable waypoints', function() {
+      it ("should create observable waypoints", function() {
         expect(waypointsViewModel.waypoints().length).to.equal(2);
         expect(waypointsViewModel.waypoints()[0].toJS()).to.deep.equal({
           name: "one",
@@ -63,27 +62,27 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
       });
     });
 
-    describe('Deleting a waypoint', function() {
+    describe("Deleting a waypoint", function() {
       before(function(done) {
         initialize(function() {
           waypointsViewModel.loadData();
-          sandbox.server.respond('/api/trails/pct/waypoints', getWaypointsResponder);
+          sandbox.server.respond("/api/trails/pct/waypoints", getWaypointsResponder);
 
           waypointsViewModel.deleteWaypoint(waypointsViewModel.waypoints()[0])
           .done(function() {
             done();
           });
-          sandbox.server.respond('DELETE', '/api/trails/pct/waypoints/123', deleteWaypointResponder);
+          sandbox.server.respond("DELETE", "/api/trails/pct/waypoints/123", deleteWaypointResponder);
         });
       });
 
-      it ('should delete the waypoint from the server', function() {
+      it ("should delete the waypoint from the server", function() {
         expect(numberOfServerRequests).to.equal(2);
       });
 
-      it ('should remove the waypoint from the list', function() {
+      it ("should remove the waypoint from the list", function() {
         expect(waypointsViewModel.waypoints().length).to.equal(1);
-        expect(waypointsViewModel.waypoints()[0].id).to.equal('456');
+        expect(waypointsViewModel.waypoints()[0].id).to.equal("456");
       });
 
       after(function() {
@@ -91,19 +90,19 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
       });
     });
 
-    describe('Editing a waypoint', function() {
+    describe("Editing a waypoint", function() {
       before(function(done) {
         initialize(function() {
           waypointsViewModel.loadData();
-          sandbox.server.respond('/api/trails/pct/waypoints', getWaypointsResponder);
+          sandbox.server.respond("/api/trails/pct/waypoints", getWaypointsResponder);
 
           waypointsViewModel.edit(waypointsViewModel.waypoints()[0]);
           done();
         });
       });
 
-      it ('should use the edit template for the waypoint', function() {
-        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[0])).to.equal('edit-template');
+      it ("should use the edit template for the waypoint", function() {
+        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[0])).to.equal("edit-template");
       });
 
       after(function() {
@@ -111,11 +110,11 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
       });
     });
 
-    describe('Editing a waypoint and then another one', function() {
+    describe("Editing a waypoint and then another one", function() {
       before(function(done) {
         initialize(function() {
           waypointsViewModel.loadData();
-          sandbox.server.respond('/api/trails/pct/waypoints', getWaypointsResponder);
+          sandbox.server.respond("/api/trails/pct/waypoints", getWaypointsResponder);
 
           waypointsViewModel.edit(waypointsViewModel.waypoints()[0]);
           waypointsViewModel.waypoints()[0].name("edited");
@@ -124,16 +123,16 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
         });
       });
 
-      it ('should cancel the edit for the first waypoint', function() {
-        expect(waypointsViewModel.waypoints()[0].name()).to.equal('one');
+      it ("should cancel the edit for the first waypoint", function() {
+        expect(waypointsViewModel.waypoints()[0].name()).to.equal("one");
       });
 
-      it ('should use the normal template for the first waypoint', function() {
-        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[0])).to.equal('waypoint-template');
+      it ("should use the normal template for the first waypoint", function() {
+        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[0])).to.equal("waypoint-template");
       });
 
-      it ('should use the edit template for the second waypoint', function() {
-        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[1])).to.equal('edit-template');
+      it ("should use the edit template for the second waypoint", function() {
+        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[1])).to.equal("edit-template");
       });
 
       after(function() {
@@ -141,7 +140,7 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
       });
     });
 
-    describe('Confirming a waypoint edit', function() {
+    describe("Confirming a waypoint edit", function() {
       var updatedWaypoint;
 
       function updateWaypointResponder(request) {
@@ -153,25 +152,25 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
       before(function(done) {
         initialize(function() {
           waypointsViewModel.loadData();
-          sandbox.server.respond('/api/trails/pct/waypoints', getWaypointsResponder);
+          sandbox.server.respond("/api/trails/pct/waypoints", getWaypointsResponder);
 
           waypointsViewModel.edit(waypointsViewModel.waypoints()[0]);
-          waypointsViewModel.waypoints()[0].name('edited');
+          waypointsViewModel.waypoints()[0].name("edited");
           waypointsViewModel.confirmEdit(waypointsViewModel.waypoints()[0]);
-          sandbox.server.respond('PUT', '/api/trails/pct/waypoints/123', updateWaypointResponder);
+          sandbox.server.respond("PUT", "/api/trails/pct/waypoints/123", updateWaypointResponder);
           done();
         });
       });
 
-      it ('should use the normal template for the waypoint', function() {
-        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[0])).to.equal('waypoint-template');
+      it ("should use the normal template for the waypoint", function() {
+        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[0])).to.equal("waypoint-template");
       });
 
-      it ('should have the new values', function() {
-        expect(waypointsViewModel.waypoints()[0].name()).to.equal('edited');
+      it ("should have the new values", function() {
+        expect(waypointsViewModel.waypoints()[0].name()).to.equal("edited");
       });
 
-      it ('should save the waypoint to the server', function() {
+      it ("should save the waypoint to the server", function() {
         expect(numberOfServerRequests).to.equal(2);
         expect(updatedWaypoint).to.deep.equal({
           name: "edited",
@@ -186,28 +185,28 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
       });
     });
 
-    describe('Canceling a waypoint edit', function() {
+    describe("Canceling a waypoint edit", function() {
       before(function(done) {
         initialize(function() {
           waypointsViewModel.loadData();
-          sandbox.server.respond('/api/trails/pct/waypoints', getWaypointsResponder);
+          sandbox.server.respond("/api/trails/pct/waypoints", getWaypointsResponder);
 
           waypointsViewModel.edit(waypointsViewModel.waypoints()[0]);
-          waypointsViewModel.waypoints()[0].name('edited');
+          waypointsViewModel.waypoints()[0].name("edited");
           waypointsViewModel.cancelEdit(waypointsViewModel.waypoints()[0]);
           done();
         });
       });
 
-      it ('should use the normal template for the waypoint', function() {
-        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[0])).to.equal('waypoint-template');
+      it ("should use the normal template for the waypoint", function() {
+        expect(waypointsViewModel.templateName(waypointsViewModel.waypoints()[0])).to.equal("waypoint-template");
       });
 
-      it ('should have the old values', function() {
-        expect(waypointsViewModel.waypoints()[0].name()).to.equal('one');
+      it ("should have the old values", function() {
+        expect(waypointsViewModel.waypoints()[0].name()).to.equal("one");
       });
 
-      it ('should not save the waypoint to the server', function() {
+      it ("should not save the waypoint to the server", function() {
         expect(numberOfServerRequests).to.equal(1);
       });
 

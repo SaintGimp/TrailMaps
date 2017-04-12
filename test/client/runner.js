@@ -1,7 +1,9 @@
-/*global Microsoft: false*/
-/*global google: false*/
-/*global nokia: false*/
-/*global trailMaps:true*/
+/* global Microsoft:false */
+/* global google:false */
+/* global requirejs:false */
+/* global chai:false */
+/* global expect:true */
+/* global trailMaps:true */
 
 // TODO: share this somehow with main.js
 
@@ -35,11 +37,11 @@ requirejs.config({
   //enforceDefine: true,
 });
 
-define('bing_maps_api', ["async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0!onscriptload"], function() {
+define("bing_maps_api", ["async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0!onscriptload"], function() {
   return Microsoft;
 });
 
-define('google_maps_api', ['async!http://maps.google.com/maps/api/js?v=3&sensor=false'], function() {
+define("google_maps_api", ["async!http://maps.google.com/maps/api/js?v=3&sensor=false"], function() {
   return google;
 });
 
@@ -48,35 +50,36 @@ expect = chai.expect;
 // Defaults that would usually be set in the view
 trailMaps = {
   configuration: {
-    defaultMapName: 'bing',
+    defaultMapName: "bing",
     defaultLatitude: 40.50642708521896,
     defaultLongitude: -121.36087699433327,
     defaultZoom: 5
   }
 };
 
-require(['jquery'], function($) {
+require(["jquery"], function($) {
   var specs = [];
 
-  specs.push('mapcontainer_test.js');
-  specs.push('navbar_test.js');
-  specs.push('waypoints_test.js');
+  specs.push("mapcontainer_test.js");
+  specs.push("navbar_test.js");
+  specs.push("waypoints_test.js");
 
   mocha.setup({
     ui: "bdd",
     globals: [
-      '__async_req_1__',
-      '$MapsNamespace',
-      'Microsoft',
-      'g',
-      'PRF',
-      'microsoftMapsNetworkCallback',
-      'styleKey',
-      '_scaleBarMiElement',
-      'lastpass_iter',
-      'lastpass_f',
-      'trailMaps'
-  ]});
+      "__async_req_1__",
+      "$MapsNamespace",
+      "Microsoft",
+      "g",
+      "PRF",
+      "microsoftMapsNetworkCallback",
+      "styleKey",
+      "_scaleBarMiElement",
+      "lastpass_iter",
+      "lastpass_f",
+      "trailMaps"
+    ]
+  });
 
   $(function() {
     require(specs, function() {

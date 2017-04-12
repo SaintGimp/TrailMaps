@@ -1,12 +1,11 @@
 var fs = require("fs"),
-  xml2js = require('xml2js'),
-  Q = require('q'),
+  xml2js = require("xml2js"),
+  Q = require("q"),
   dataService = require("../domain/dataService.js");
-
 
 var parser = new xml2js.Parser();
 
-// TODO: now that the 2015 dataset doesn't have the "extras"
+// TODO: now that the 2015 dataset doesn"t have the "extras"
 // files, we could probably just process all *.gpx files
 // in the data directory and subs
 var fileNames = [
@@ -45,53 +44,51 @@ var fileNames = [
 
 Array.prototype.append = function(array)
 {
-    this.push.apply(this, array);
+  this.push.apply(this, array);
 };
 
 function readFile(fileName) {
-  console.log('Reading ' + fileName);
-  return Q.nfcall(fs.readFile, __dirname + "/../" + fileName, 'utf8');
+  console.log("Reading " + fileName);
+  return Q.nfcall(fs.readFile, __dirname + "/../" + fileName, "utf8");
 }
 
-function parseData(trackXml) {
-  console.log('Parsing data');
+async function parseData(trackXml) {
+  console.log("Parsing data");
 
-  return Q.ninvoke(parser, 'parseString', trackXml)
-  .then(function(trackJson) {
-    console.log('Converting ' + trackJson.gpx.trk[0].name);
-    return trackJson.gpx.trk[0].trkseg[0].trkpt.map(function(point) {
-      return {
-        loc: [parseFloat(point.$.lon), parseFloat(point.$.lat)], // MongoDB likes longitude first
-      };
-    });
+  var trackJson = await Q.ninvoke(parser, "parseString", trackXml);
+
+  console.log("Converting " + trackJson.gpx.trk[0].name);
+  return trackJson.gpx.trk[0].trkseg[0].trkpt.map(function(point) {
+    return {
+      loc: [parseFloat(point.$.lon), parseFloat(point.$.lat)], // MongoDB likes longitude first
+    };
   });
 }
 
-function loadFile(fileName) {
-  console.log('Adding track data from ' + fileName);
+async function loadFile(fileName) {
+  console.log("Adding track data from " + fileName);
 
-  return readFile(fileName)
-  .then(parseData);
+  var trackXml = await readFile(fileName);
+  return await parseData(trackXml);
 }
 
-function loadTrack() {
-  console.log('Loading track files');
+async function loadTrack() {
+  console.log("Loading track files");
   var track = [];
 
-  return Q.all(fileNames.map(function(fileName) {
+  var loadPromises = fileNames.map(function(fileName) {
     return loadFile(fileName);
-  }))
-  .then(function (fileContentSet) {
-    fileContentSet.forEach(function(fileContent) {
-      track.append(fileContent);
-    });
-
-    track.forEach(function(point, index) {
-      point.seq = index;
-    });
-
-    return track;
   });
+  var fileContentSet = await Promise.all(loadPromises);
+  fileContentSet.forEach(function(fileContent) {
+    track.append(fileContent);
+  });
+
+  track.forEach(function(point, index) {
+    point.seq = index;
+  });
+
+  return track;
 }
 
 function Collection(detailLevel) {
@@ -100,7 +97,7 @@ function Collection(detailLevel) {
 }
 
 function buildCollections(track) {
-  console.log('Building collections');
+  console.log("Building collections");
   var stride = 1;
   var collections = [];
   for (var detailLevel = 16; detailLevel >= 1; detailLevel--)
@@ -117,34 +114,32 @@ function buildCollections(track) {
   return collections;
 }
 
-function writeCollection(collection)
+async function writeCollection(collection)
 {
   var collectionName = "pct_track" + collection.detailLevel;
-  console.log('Writing collection ' + collectionName);
+  console.log("Writing collection " + collectionName);
 
-  return dataService.collection(collectionName)
-  .then(function(mongoCollection) {
-    return Q.ninvoke(mongoCollection, 'insert', collection.data, {w:1})
-    .then(function() {
-      return Q.ninvoke(mongoCollection, 'ensureIndex', { loc: "2d" }, {w:1});
-    });
-  });
+  var mongoCollection = await dataService.collection(collectionName);
+  await mongoCollection.insert(collection.data, {w:1});
+  return await mongoCollection.ensureIndex({ loc: "2d" }, {w:1});
 }
 
-function saveCollections(collections) {
-  console.log('Saving collections');
-  return Q.all(collections.map(function(collection) {
+async function saveCollections(collections) {
+  console.log("Saving collections");
+  
+  var savePromises = collections.map(function(collection) {
     return writeCollection(collection);
-  }));
+  });
+
+  return await Promise.all(savePromises);
 }
 
-exports.import = function() {
-  console.log('Importing tracks');
+exports.import = async function() {
+  console.log("Importing tracks");
 
-  return loadTrack()
-  .then(buildCollections)
-  .then(saveCollections)
-  .then(function() {
-    console.log('Finished importing tracks');
-  });
+  var track = await loadTrack();
+  var collections = await buildCollections(track);
+  await saveCollections(collections);
+
+  console.log("Finished importing tracks");
 };

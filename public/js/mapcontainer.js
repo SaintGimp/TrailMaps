@@ -1,6 +1,6 @@
 /*global define: false*/
 
-define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
+define(["q", "jquery", "trailmaps", "knockout"], function(Q, $, trailmaps, ko) {
   var activeMap;
   var defaultCenter = new trailmaps.Location(trailmaps.configuration.defaultLatitude, trailmaps.configuration.defaultLongitude);
   var defaultZoomLevel = trailmaps.configuration.defaultZoom;
@@ -17,7 +17,7 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
   var requireFunc;
   var viewChangedListener = null;
 
-  var activeMapName = ko.observable('');
+  var activeMapName = ko.observable("");
 
   function Map(moduleName, containerName) {
     var self = this;
@@ -26,8 +26,8 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
     self.moduleName = moduleName;
 
     self.getControl = function() {
-      // We lazy-create the map controls so that a) we don't do an expensive init if the user
-      // never clicks over to that tab, and b) some of them (Google, I'm looking at you) won't
+      // We lazy-create the map controls so that a) we don"t do an expensive init if the user
+      // never clicks over to that tab, and b) some of them (Google, I"m looking at you) won"t
       // init properly when their div is hidden, so we have to wait until it becomes visible
       // to do the init.
       var deferred = Q.defer();
@@ -50,9 +50,9 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
   }
 
   var maps = {
-    "bing": new Map('bingmaps', 'bing'),
-    "google": new Map('googlemaps', 'google'),
-    "here": new Map('heremaps', 'here'),
+    "bing": new Map("bingmaps", "bing"),
+    "google": new Map("googlemaps", "google"),
+    "here": new Map("heremaps", "here"),
   };
 
   function initialize(suppliedRequireFunc, mapName) {
@@ -99,7 +99,7 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
     var mapBounds = activeMap.getBounds();
     var scrollBoundsSize = mapBounds.width * scrollBoundsMultiple;
     // We get weird behavior when west goes past -180 and wraps around to +180. We should
-    // probably build a custom rect in that case that's constrained to west < east, but this
+    // probably build a custom rect in that case that"s constrained to west < east, but this
     // will do for now.  The Bing.Location class has a NormalizeLongitude thing that might be of some help.
     scrollBoundsSize = Math.min(scrollBoundsSize, 60);
     scrollBounds = new trailmaps.Rectangle(mapCenter, scrollBoundsSize, scrollBoundsSize);
@@ -122,7 +122,7 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
     calculateScrollBounds();
     var trackBounds = calculateTrackBounds();
 
-    var trailUrl = '/api/trails/pct' + buildUrlParameters(trackBounds);
+    var trailUrl = "/api/trails/pct" + buildUrlParameters(trackBounds);
     trailDataZoomLevel = currentContainerView.zoom;
 
     $.getJSON(trailUrl, null, function (data) {
@@ -139,7 +139,7 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
 
     var detail = currentContainerView.zoom;
 
-    return '?north=' + north + '&south=' + south + '&east=' + east + '&west=' + west + "&detail=" + detail;
+    return "?north=" + north + "&south=" + south + "&east=" + east + "&west=" + west + "&detail=" + detail;
   }
 
   function onViewChanged() {
@@ -168,7 +168,7 @@ define(['q', 'jquery', 'trailmaps', 'knockout'], function(Q, $, trailmaps, ko) {
   function getUrlFragment() {
     var lat = currentContainerView.center.latitude.toFixed(5);
     var lon = currentContainerView.center.longitude.toFixed(5);
-    return activeMapName() + '?lat=' + lat + '&lon=' + lon + '&zoom=' + currentContainerView.zoom;
+    return activeMapName() + "?lat=" + lat + "&lon=" + lon + "&zoom=" + currentContainerView.zoom;
   }
 
   function getViewOptions() {

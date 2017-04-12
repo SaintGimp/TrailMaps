@@ -1,7 +1,7 @@
 /*global define: false*/
 /*global trailMaps: false*/
 
-define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContainer, ko, history) {
+define(["jquery", "mapcontainer", "knockout", "history"], function($, mapContainer, ko, history) {
   return function() {
     var self = this;
 
@@ -12,7 +12,7 @@ define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContain
 
     self.onPillClick = function(data, event, done) {
       var href = event.target.href;
-      var mapName = href.substr(href.lastIndexOf('/') + 1, href.length).toLowerCase();
+      var mapName = href.substr(href.lastIndexOf("/") + 1, href.length).toLowerCase();
 
       if (mapName !== self.activeMapName())
       {
@@ -73,15 +73,15 @@ define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContain
     function gotoMileMarker(mileMarker) {
       var url = "/api/trails/pct/milemarkers/" + mileMarker;
       $.getJSON(url, function(result) {
-          if (result) {
-            changeMapView({
-              center: {
-                latitude: result.loc[1],
-                longitude: result.loc[0]
-              },
-              zoom: 14
-            });
-          }
+        if (result) {
+          changeMapView({
+            center: {
+              latitude: result.loc[1],
+              longitude: result.loc[0]
+            },
+            zoom: 14
+          });
+        }
       });
     }
 
@@ -99,15 +99,15 @@ define(['jquery', 'mapcontainer', 'knockout', 'history'], function($, mapContain
     function gotoWaypoint(waypoint) {
       var url = "/api/trails/pct/waypoints/" + encodeURIComponent(waypoint);
       $.getJSON(url, function(result) {
-          if (result) {
-            changeMapView({
-              center: {
-                latitude: result.loc[1],
-                longitude: result.loc[0]
-              },
-              zoom: 14
-            });
-          }
+        if (result) {
+          changeMapView({
+            center: {
+              latitude: result.loc[1],
+              longitude: result.loc[0]
+            },
+            zoom: 14
+          });
+        }
       });
     }
 

@@ -1,7 +1,7 @@
 /*global define: false*/
 /*global MarkerWithLabel: false*/
 
-define(['q', 'trailmaps', 'google_maps_api', 'markerwithlabel'], function(Q, trailmaps, google) {
+define(["q", "trailmaps", "google_maps_api", "markerwithlabel"], function(Q, trailmaps, google) {
   var googleMap;
   var previousPolyLine;
   var mileMarkerCollection = [];
@@ -17,9 +17,9 @@ define(['q', 'trailmaps', 'google_maps_api', 'markerwithlabel'], function(Q, tra
     };
     googleMap = new google.maps.Map(container, mapOptions);
 
-    google.maps.event.addListenerOnce(googleMap, 'idle', function() {
+    google.maps.event.addListenerOnce(googleMap, "idle", function() {
       deferred.resolve();
-      google.maps.event.addListener(googleMap, 'idle', onViewChanged);
+      google.maps.event.addListener(googleMap, "idle", onViewChanged);
     });
 
     return deferred.promise;
@@ -52,24 +52,24 @@ define(['q', 'trailmaps', 'google_maps_api', 'markerwithlabel'], function(Q, tra
     });
     mileMarkerCollection.length = 0;
 
-    // TODO: I'd like to use an SVG marker but Google maps doesn't make that
+    // TODO: I"d like to use an SVG marker but Google maps doesn"t make that
     // easy to implement right now in v3.
     var icon = {
-      url: '/images/mile_marker.png',
+      url: "/images/mile_marker.png",
       anchor: new google.maps.Point(12, 12)
     };
 
     $.each(mileMarkers, function (i, mileMarker) {
       var location = new google.maps.LatLng(mileMarker.loc[1], mileMarker.loc[0]);
       var options = {
-         position: location,
-         draggable: false,
-         raiseOnDrag: false,
-         map: googleMap,
-         labelContent: mileMarker.mile.toString(),
-         labelAnchor: new google.maps.Point(-13, 10),
-         labelClass: "milemarker_text",
-         icon: icon
+        position: location,
+        draggable: false,
+        raiseOnDrag: false,
+        map: googleMap,
+        labelContent: mileMarker.mile.toString(),
+        labelAnchor: new google.maps.Point(-13, 10),
+        labelClass: "milemarker_text",
+        icon: icon
       };
       var newMileMarker = new MarkerWithLabel(options);
       mileMarkerCollection.push(newMileMarker);
@@ -93,7 +93,7 @@ define(['q', 'trailmaps', 'google_maps_api', 'markerwithlabel'], function(Q, tra
     return googleMap.getZoom();
   }
 
-  function getCenterAndZoom(options) {
+  function getCenterAndZoom() {
     var mapCenter = googleMap.getCenter();
     return {
       center: {

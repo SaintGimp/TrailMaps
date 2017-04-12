@@ -1,16 +1,16 @@
 /*global define: false*/
 
-define(['q', 'trailmaps', 'here_maps_api'], function(Q, trailmaps, nokia) {
+define(["q", "trailmaps", "here_maps_api"], function(Q, trailmaps, nokia) {
   // TODO: check out http://jhere.net/
   var hereMap;
   var previousPolyLine;
   var previousMileMarkerCollection;
 
   var mileMarkerContent =
-    '<svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" version="1.1">' +
-      '<polygon points="2,7 7,2 12,7 7,12" style="fill:red;stroke:blue;stroke-width:4" />' +
-      '<text x="22" y="12" fill="white" style="font-size:15;font-family:arial;font-weight:bold">%MILE%</text>' +
-    '</svg>';
+    "<svg width='50' height='50' xmlns='http://www.w3.org/2000/svg' version='1.1'>" +
+      "<polygon points='2,7 7,2 12,7 7,12' style='fill:red;stroke:blue;stroke-width:4' />" +
+      "<text x='22' y='12' fill='white' style='font-size:15;font-family:arial;font-weight:bold'>%MILE%</text>" +
+    "</svg>";
 
   function initialize(container, center, zoomLevel, onViewChanged) {
     var deferred = Q.defer();

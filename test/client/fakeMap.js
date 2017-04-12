@@ -1,4 +1,4 @@
-define(['q', 'trailmaps'], function(Q, trailmaps) {
+define(["q", "trailmaps"], function(Q, trailmaps) {
   function FakeMap() {
     var self = this;
     self.container = undefined;
