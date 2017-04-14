@@ -80,7 +80,11 @@ exports.deleteWaypoint = async function (req, res) {
     id: req.params.id
   };
 
-  await waypoints.deleteById(options);
+  var success = await waypoints.deleteById(options);
+  if (!success)
+  {
+    res.status(404);
+  }
   res.send();
 };
 

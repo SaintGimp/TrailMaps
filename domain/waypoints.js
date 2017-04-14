@@ -46,8 +46,8 @@ exports.updateById = async function(options) {
   var searchTerms = { _id: new ObjectId(options.id) };
   var updateOperation = { $set: { name: options.name } };
 
-  var result = await dataService.update(collectionName, searchTerms, updateOperation);
-  return result[0] === 1;
+  var commandResult = await dataService.update(collectionName, searchTerms, updateOperation);
+  return commandResult.result.ok === 1;
 };
 
 exports.deleteById = async function(options) {
