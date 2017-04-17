@@ -50,13 +50,16 @@ define("history", function() {
   return window.history;
 });
 
-require(["jquery", "knockout", "bootstrap", "typeahead", "./trailmaps", "./mapcontainer", "./navbarModel"], function($, ko, bootstrap, typeAhead, trailMaps, mapContainer, NavbarModel) {
+require(["jquery", "knockout", "bootstrap", "typeahead", "./trailmaps", "./mapcontainer", "./navbarModel", "./createWaypointModel"], function($, ko, bootstrap, typeAhead, trailMaps, mapContainer, NavbarModel, CreateWaypointModel) {
   mapContainer.initialize(require, trailMaps.configuration.defaultMapName)
   .done();
   ko.applyBindings(mapContainer, $("#mapCanvas").get(0));
 
   var navbarModel = new NavbarModel();
   ko.applyBindings(navbarModel, $(".navbar").get(0));
+
+  var createWaypointModel = new CreateWaypointModel(mapContainer);
+  ko.applyBindings(createWaypointModel, $("#createWaypointDialog").get(0));
 
   // TODO: Not sure this is the best place to wire this up but I don"t see any better options at the moment
   $("#searchBox").typeahead(

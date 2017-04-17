@@ -25,6 +25,8 @@ header
               span.caret
             ul.dropdown-menu
               li
+                a(href="#createWaypointDialog", role="button", data-toggle="modal") Create new waypoint
+              li
                 a(href='#{waypointsUrl}') Edit waypoints
         
         form.navbar-form.navbar-right(id='searchForm', role='search' data-bind='submit: search')

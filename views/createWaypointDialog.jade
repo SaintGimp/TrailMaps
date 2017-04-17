@@ -1,0 +1,14 @@
+div.modal.fade(id="createWaypointDialog", tabindex="-1")
+  div.modal-dialog.modal-sm
+    div.modal-content
+      div.modal-header
+        button.close(type="button", data-dismiss="modal", aria-label="Close")
+          span(aria-hidden="true") &times;
+        h4.modal-title Create waypoint
+      div.modal-body
+        form.horizontal-form
+          div.form-group
+            div.input-group
+              input.form-control(id="newWaypointName", type="text", data-bind="value: waypointName, hasfocus: true,", autocomplete='off', placeholder="Waypoint name...")
+              span.input-group-btn
+                button.btn.btn-primary(type="button", data-bind="click: $root.create") Create

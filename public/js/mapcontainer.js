@@ -26,8 +26,8 @@ define(["q", "jquery", "trailmaps", "knockout"], function(Q, $, trailmaps, ko) {
     self.moduleName = moduleName;
 
     self.getControl = function() {
-      // We lazy-create the map controls so that a) we don"t do an expensive init if the user
-      // never clicks over to that tab, and b) some of them (Google, I"m looking at you) won"t
+      // We lazy-create the map controls so that a) we don't do an expensive init if the user
+      // never clicks over to that tab, and b) some of them (Google, I'm looking at you) won't
       // init properly when their div is hidden, so we have to wait until it becomes visible
       // to do the init.
       var deferred = Q.defer();
