@@ -62,8 +62,9 @@ function cleanupName(name) {
   primaryName = primaryName.replace(/^(Paved |Unpaved |Gravel |Seasonal )/, "");
   primaryName = primaryName.replace(/^Arrive /, "");
   primaryName = primaryName.replace(/Hwy/, "Highway");
+  primaryName = primaryName.replace(/ outlet$/, "");
   primaryName = primaryName.replace(/Rd/, "Road");
-  return primaryName;
+  return primaryName.trim();
 }
 
 async function getSequenceNumber(location) {
@@ -96,6 +97,7 @@ async function parseData(waypointXml) {
       !waypoint.desc[0].match(/^Keep /) &&
       !waypoint.desc[0].match(/^Lake$/) &&
       !waypoint.desc[0].match(/^Left /) &&
+      !waypoint.desc[0].match(/of PCT on the JMT/) &&
       !waypoint.desc[0].match(/^Paved road/) &&
       !waypoint.desc[0].match(/^PCT /) &&
       !waypoint.desc[0].match(/^Pipe /) &&

@@ -24,8 +24,9 @@ exports.maps = function(req, res) {
     defaultLatitude: getValue(req.query.lat, 40.50642708521896),
     defaultLongitude: getValue(req.query.lon, -121.36087699433327),
     defaultZoom: getValue(req.query.zoom, 5),
-    // TODO: get this from the request url? Maybe just figure it out on the client?
-    baseMapUrl: "/trails/pct/maps"
+    // TODO: get these from the request url? Maybe just figure it out on the client?
+    baseMapUrl: "/trails/pct/maps",
+    waypointsUrl: "/trails/pct/waypoints"
   };
 
   res.render("maps", defaults);

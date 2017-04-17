@@ -22,8 +22,10 @@ header
             p.navbar-text.hidden-xs(style='padding-right:15px') |
           li.dropdown
             a.dropdown-toggle(href='#', data-toggle="dropdown") Tools
-              b.caret
+              span.caret
             ul.dropdown-menu
+              li
+                a(href='#{waypointsUrl}') Edit waypoints
         
         form.navbar-form.navbar-right(id='searchForm', role='search' data-bind='submit: search')
           .form-group

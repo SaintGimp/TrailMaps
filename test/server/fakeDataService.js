@@ -71,9 +71,9 @@ exports.update = function(collectionName, searchTerms, updateOperation) {
     });
   } else if (exports.shouldFailOnNextCall) {
     exports.shouldFailOnNextCall = false;
-    return new Q([0]);
+    return new Q({ result: { ok: 0 } });
   } else {
-    return new Q([1]);
+    return new Q({ result: { ok: 1 } });
   }
 };
 
