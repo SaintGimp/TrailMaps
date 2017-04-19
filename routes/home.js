@@ -26,7 +26,8 @@ exports.maps = function(req, res) {
     defaultZoom: getValue(req.query.zoom, 5),
     // TODO: get these from the request url? Maybe just figure it out on the client?
     baseMapUrl: "/trails/pct/maps",
-    waypointsUrl: "/trails/pct/waypoints"
+    waypointsUrl: "/trails/pct/waypoints",
+    googleApiKey: process.env.GOOGLE_API_KEY
   };
 
   res.render("maps", defaults);

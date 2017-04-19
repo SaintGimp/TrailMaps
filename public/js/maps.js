@@ -42,7 +42,7 @@ define("bing_maps_api", ["async!https://www.bing.com/api/maps/mapcontrol!callbac
   return Microsoft;
 });
 
-define("google_maps_api", ["async!https://maps.google.com/maps/api/js?v=3&sensor=false"], function() {
+define("google_maps_api", ["async!https://maps.googleapis.com/maps/api/js?key=" + trailMaps.configuration.googleApiKey], function() {
   return google;
 });
 
