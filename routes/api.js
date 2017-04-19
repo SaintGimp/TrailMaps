@@ -8,6 +8,7 @@ module.exports = function(app) {
   app.get("/api/trails/:trailName/milemarkers/:mile", exports.getMileMarker);
   app.get("/api/trails/:trailName/waypoints/typeahead/:text", exports.getWaypointTypeaheadList);
   app.get("/api/trails/:trailName/waypoints/:name", exports.getWaypoint);
+  app.post("/api/trails/:trailName/waypoints", exports.createWaypoint);
   app.put("/api/trails/:trailName/waypoints/:id", exports.updateWaypoint);
   app.delete("/api/trails/:trailName/waypoints/:id", exports.deleteWaypoint);
   app.get("/api/trails/:trailName/waypoints", exports.getWaypoints);
@@ -57,6 +58,23 @@ exports.getWaypoint = async function (req, res) {
 
   var waypoint = await waypoints.findByName(options);
   res.json(waypoint);
+};
+
+exports.createWaypoint = async function (req, res) {
+  var options = {
+    trailName: req.params.trailName,
+    waypoint: req.body
+  };
+
+  var success = await waypoints.create(options);
+  if (!success)
+  {
+    res.status(500);
+  }
+  else {
+    res.status(201);
+  }
+  res.send();
 };
 
 exports.updateWaypoint = async function (req, res) {

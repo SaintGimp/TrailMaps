@@ -56,3 +56,17 @@ exports.deleteById = async function(options) {
 
   return await dataService.remove(collectionName, searchTerms);
 };
+
+exports.create = async function(options) {
+  var collectionName = makeCollectionName(options.trailName);
+  var waypoint = options.waypoint;
+  waypoint.seq = await getSequenceNumber(waypoint.loc);
+
+  var commandResult = await dataService.insert(collectionName, waypoint);
+  return commandResult.result.ok === 1;
+};
+
+async function getSequenceNumber(location) {
+  var trackPoint = await dataService.findOne("pct_track16", { loc: { $near: location } }, { seq: 1 });
+  return trackPoint.seq;
+}

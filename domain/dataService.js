@@ -64,3 +64,8 @@ exports.remove = async function(collectionName, searchTerms) {
   var collection = await exports.collection(collectionName);
   return await collection.remove(searchTerms);
 };
+
+exports.insert = async function(collectionName, insertOperation) {
+  var collection = await exports.collection(collectionName);
+  return await collection.insert(insertOperation, { w: 1 });
+};

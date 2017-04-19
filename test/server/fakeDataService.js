@@ -44,7 +44,8 @@ exports.findOne = function(collectionName, searchTerms, projection, sortOrder) {
   {
     var dummyData = {
       loc: [1, 2],
-      name: "1234"
+      name: "1234",
+      seq: 4321
     };
 
     return new Q(dummyData);
@@ -91,5 +92,25 @@ exports.remove = function(collectionName, searchTerms) {
       exports.shouldErrorOnNextCall = false;
       throw new Error("remove Oops");
     });
+  }
+};
+
+exports.insert = function(collectionName, insertOperation) {
+  lastCall = {
+    collectionName: collectionName,
+    insertOperation: insertOperation
+  };
+
+  if (exports.shouldErrorOnNextCall)
+  {
+    return Q.fcall(function() {
+      exports.shouldErrorOnNextCall = false;
+      throw new Error("insert Oops");
+    });
+  } else if (exports.shouldFailOnNextCall) {
+    exports.shouldFailOnNextCall = false;
+    return new Q({ result: { ok: 0 } });
+  } else {
+    return new Q({ result: { ok: 1 } });
   }
 };
