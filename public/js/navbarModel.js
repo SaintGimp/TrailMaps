@@ -40,6 +40,11 @@ define(["jquery", "mapcontainer", "knockout", "history"], function($, mapContain
 
     self.searchText = ko.observable();
 
+    self.typeAheadSelected = function(obj, data) {
+      self.searchText(data);
+      self.search();
+    };
+
     self.search = function() {
       var searchText = self.searchText();
       if (isCoordinates(searchText)) {
