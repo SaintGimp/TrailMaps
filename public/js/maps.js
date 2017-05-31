@@ -6,7 +6,7 @@ requirejs.config({
   paths: {
     "jquery" : "https://code.jquery.com/jquery-2.1.3.min",
     "bootstrap": "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min",
-    "typeahead": "https://twitter.github.io/typeahead.js/releases/0.10.5/typeahead.bundle.min",
+    "typeahead": "https://twitter.github.io/typeahead.js/releases/0.11.1/typeahead.bundle.min",
     "async": "lib/async",
     "markerwithlabel": "lib/markerwithlabel_packed",
     "here_maps_api": "https://api.maps.nokia.com/2.2.4/jsl.js?with=maps",
