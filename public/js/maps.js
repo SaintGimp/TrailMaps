@@ -4,13 +4,21 @@
 requirejs.config({
   baseUrl: "/js",
   paths: {
-    "jquery" : "https://code.jquery.com/jquery-2.1.3.min",
-    "bootstrap": "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min",
-    "typeahead": "https://twitter.github.io/typeahead.js/releases/0.10.5/typeahead.bundle.min",
+    "jquery" : "https://code.jquery.com/jquery-2.2.4.min",
+    "bootstrap": "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min",
+    // There are multiple issues with more recent versions (e.g. 0.11.1) of Twitter Typeahead.  One, it's incompatible with require.js.
+    // To get around that we have to use a fork of Twitter Typeahead that has a fix for compatibility with require.js from here:
+    // https://github.com/nikcub/typeahead.
+    // Second problem, there's some kind of imcompatibility with Bootstrap that prevents the autocomplete dropdown from showing up.
+    // We already had to use a custom css file from https://github.com/hyspace/typeahead.js-bootstrap3.less  or 
+    // https://github.com/bassjobsen/typeahead.js-bootstrap-css to shim the two together,
+    // even with old versions of Typehead, but the newest version of Typehead is broken again.  Don't know why yet.
+    // Since everything is working ok right now, probably best not to mess with it.
+    "typeahead": "lib/typeahead.bundle.min",
     "async": "lib/async",
     "markerwithlabel": "lib/markerwithlabel_packed",
     "here_maps_api": "https://api.maps.nokia.com/2.2.4/jsl.js?with=maps",
-    "knockout": "https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min",
+    "knockout": "https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min",
     "q": "lib/q"
   },
   shim: {
