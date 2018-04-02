@@ -8,7 +8,7 @@ async function dropCollections() {
 
   var collections = await dataService.collections();
   var collectionsToDrop = collections.filter(function(collection) {
-    return collection.collectionName.match(/.*track\d+$/) || collection.collectionName.match(/.*milemarkers\d+$/) || collection.collectionName.match(/waypoints$/);
+    return collection.collectionName.match(/.*track\d+$/) || collection.collectionName.match(/.*milemarkers\d+$/);
   });
 
   var dropPromises = collectionsToDrop.map(function(collection) {
@@ -24,6 +24,5 @@ exports.import = async function() {
 
   await dropCollections();
   await Promise.all([trackImporter.import(), mileMarkerImporter.import()]);
-  await waypointImporter.import();
 };
 
