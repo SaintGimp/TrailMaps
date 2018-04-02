@@ -13,11 +13,23 @@
           or Lon Cooper <Halfmile@pctmap.net> for all others.]]>
     </desc>
   </metadata>
+  <wpt lat="38.847406" lon="-120.078958">
+    <ele>2278.0</ele>
+    <name>TR1095</name>
+    <desc><![CDATA[Trail to a public phone and boat taxi.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="38.847148" lon="-120.087472">
     <ele>2348.7</ele>
     <name>DesolationWild</name>
-    <desc><![CDATA[Desolation Wilderness boundary. Overnight camping is prohibited for approximately 4.7 miles from Hwy 50/Echo Summit (mile 1090.76) to the Desolation Wilderness boundary (mile 1095.47).]]></desc>
+    <desc><![CDATA[Desolation Wilderness boundary. Overnight camping is prohibited for approximately 4.7 miles from the Desolation Wilderness boundary S to Hwy 50/Echo Summit .]]></desc>
     <sym>Forest</sym>
+  </wpt>
+  <wpt lat="38.848773" lon="-120.095386">
+    <ele>2400.9</ele>
+    <name>TR1096</name>
+    <desc><![CDATA[Tamarack Lake trail junction]]></desc>
+    <sym>Trail Head</sym>
   </wpt>
   <wpt lat="38.852912" lon="-120.103054">
     <ele>2507.3</ele>
@@ -37,10 +49,28 @@
     <desc><![CDATA[Second trail junction to Lake of the Woods.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
+  <wpt lat="38.856492" lon="-120.113139">
+    <ele>2532.2</ele>
+    <name>TR1097D</name>
+    <desc><![CDATA[Lake Lucille trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="38.857633" lon="-120.118719">
     <ele>2539.2</ele>
     <name>TR1098</name>
     <desc><![CDATA[Lake Aloha trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="38.864156" lon="-120.128490">
+    <ele>2479.2</ele>
+    <name>WACS1098</name>
+    <desc><![CDATA[Aloha Lake, several campsites.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.876293" lon="-120.146222">
+    <ele>2477.5</ele>
+    <name>TR1100</name>
+    <desc><![CDATA[Mosquito Pass trail junction]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="38.878169" lon="-120.142423">
@@ -53,6 +83,18 @@
     <ele>2409.8</ele>
     <name>WACS1101</name>
     <desc><![CDATA[Heather Lake, campsites.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.879075" lon="-120.126827">
+    <ele>2376.6</ele>
+    <name>CS1101</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="38.879516" lon="-120.124136">
+    <ele>2370.1</ele>
+    <name>WACS1102</name>
+    <desc><![CDATA[Susie Lake outlet, campsites. Campsites also south and north of the outlet.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.884637" lon="-120.120744">
@@ -79,6 +121,12 @@
     <desc><![CDATA[Gilmore Lake trail junction]]></desc>
     <sym>Trail Head</sym>
   </wpt>
+  <wpt lat="38.902721" lon="-120.134977">
+    <ele>2731.4</ele>
+    <name>WA1105</name>
+    <desc><![CDATA[Small creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="38.905773" lon="-120.134970">
     <ele>2858.2</ele>
     <name>DicksPass</name>
@@ -97,6 +145,12 @@
     <desc><![CDATA[Dicks Lake trail junction, camping nearby.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
+  <wpt lat="38.924430" lon="-120.156280">
+    <ele>2526.1</ele>
+    <name>WACS1109</name>
+    <desc><![CDATA[Fontanillis Lake, campsites.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="38.933490" lon="-120.149480">
     <ele>2430.0</ele>
     <name>TR1109</name>
@@ -109,11 +163,29 @@
     <desc><![CDATA[Camper Flat trail junction]]></desc>
     <sym>Trail Head</sym>
   </wpt>
+  <wpt lat="38.935990" lon="-120.154752">
+    <ele>2406.2</ele>
+    <name>WA1110</name>
+    <desc><![CDATA[Middle Velma Lake]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="38.944993" lon="-120.159232">
     <ele>2466.4</ele>
     <name>TR1111</name>
     <desc><![CDATA[Meeks Bay trail junction]]></desc>
     <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="38.961906" lon="-120.170623">
+    <ele>2325.8</ele>
+    <name>CS1113</name>
+    <desc><![CDATA[Seasonal Phipps Creek (often dry), campsite.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="38.970195" lon="-120.169939">
+    <ele>2409.6</ele>
+    <name>CS1113B</name>
+    <desc><![CDATA[Seasonal Creek and campsite.]]></desc>
+    <sym>Campground</sym>
   </wpt>
   <wpt lat="38.991922" lon="-120.191627">
     <ele>2398.5</ele>
@@ -127,6 +199,18 @@
     <desc><![CDATA[Desolation Wilderness boundary]]></desc>
     <sym>Forest</sym>
   </wpt>
+  <wpt lat="39.018232" lon="-120.216510">
+    <ele>2300.1</ele>
+    <name>CS1118</name>
+    <desc><![CDATA[Small campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="39.019427" lon="-120.215811">
+    <ele>2308.6</ele>
+    <name>RD1118</name>
+    <desc><![CDATA[Jeep road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
   <wpt lat="39.024597" lon="-120.212352">
     <ele>2257.7</ele>
     <name>WACS1119</name>
@@ -138,6 +222,12 @@
     <name>CS1120</name>
     <desc><![CDATA[Seasonal Miller Creek, campsite nearby.]]></desc>
     <sym>Campground</sym>
+  </wpt>
+  <wpt lat="39.033414" lon="-120.233226">
+    <ele>2140.3</ele>
+    <name>RD1121</name>
+    <desc><![CDATA[Jeep road]]></desc>
+    <sym>Truck</sym>
   </wpt>
   <wpt lat="39.049284" lon="-120.244262">
     <ele>2125.3</ele>
@@ -169,6 +259,42 @@
     <desc><![CDATA[Barker Pass, trailhead parking, outhouse, unpaved Forest Road 3.]]></desc>
     <sym>Truck</sym>
   </wpt>
+  <wpt lat="39.081800" lon="-120.245384">
+    <ele>2451.2</ele>
+    <name>RD1126</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="39.082139" lon="-120.245401">
+    <ele>2453.7</ele>
+    <name>CS1126</name>
+    <desc><![CDATA[Campsites]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="39.091361" lon="-120.246384">
+    <ele>2469.8</ele>
+    <name>WA1127</name>
+    <desc><![CDATA[Small stream]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="39.091946" lon="-120.243263">
+    <ele>2424.4</ele>
+    <name>WACS1127</name>
+    <desc><![CDATA[North Fork Blackwood Creek, campsites.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="39.093428" lon="-120.243159">
+    <ele>2411.4</ele>
+    <name>WA1127B</name>
+    <desc><![CDATA[Spring]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="39.096665" lon="-120.241754">
+    <ele>2372.2</ele>
+    <name>WA1128</name>
+    <desc><![CDATA[Small creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="39.105838" lon="-120.236812">
     <ele>2542.4</ele>
     <name>GraniteChiefWild</name>
@@ -181,17 +307,47 @@
     <desc><![CDATA[Tahoe Rim trail departs the PCT, campsites nearby.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
+  <wpt lat="39.172529" lon="-120.257289">
+    <ele>2263.4</ele>
+    <name>WACS1136</name>
+    <desc><![CDATA[Five Lakes Creek, several campsites.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="39.171990" lon="-120.259014">
     <ele>2267.1</ele>
     <name>TR1136</name>
     <desc><![CDATA[Five Lakes trail junction]]></desc>
     <sym>Trail Head</sym>
   </wpt>
+  <wpt lat="39.170858" lon="-120.259848">
+    <ele>2259.6</ele>
+    <name>WA1136</name>
+    <desc><![CDATA[Small creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="39.166967" lon="-120.268467">
     <ele>2167.1</ele>
     <name>TR1137</name>
     <desc><![CDATA[Whisky Creek trail junction]]></desc>
     <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="39.172170" lon="-120.275299">
+    <ele>2196.3</ele>
+    <name>WA1137</name>
+    <desc><![CDATA[Trailside creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="39.173105" lon="-120.277014">
+    <ele>2213.4</ele>
+    <name>CS1138</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="39.174682" lon="-120.280769">
+    <ele>2222.5</ele>
+    <name>CS1138B</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
   </wpt>
   <wpt lat="39.184854" lon="-120.288606">
     <ele>2422.8</ele>
@@ -205,11 +361,23 @@
     <desc><![CDATA[Mountain Meadow Lake trail junction]]></desc>
     <sym>Trail Head</sym>
   </wpt>
+  <wpt lat="39.189744" lon="-120.285515">
+    <ele>2474.9</ele>
+    <name>WA1140</name>
+    <desc><![CDATA[Small creek, headwaters of the Middle Fork American River.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="39.193959" lon="-120.283299">
     <ele>2566.1</ele>
     <name>TR1140</name>
     <desc><![CDATA[Squaw Valley trail junction]]></desc>
     <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="39.195359" lon="-120.283075">
+    <ele>2590.7</ele>
+    <name>GraniteChiefWild2</name>
+    <desc><![CDATA[Granite Chief Wilderness boundary]]></desc>
+    <sym>Forest</sym>
   </wpt>
   <wpt lat="39.197356" lon="-120.281614">
     <ele>2572.9</ele>
@@ -235,6 +403,48 @@
     <desc><![CDATA[Painted Rock trail junction]]></desc>
     <sym>Trail Head</sym>
   </wpt>
+  <wpt lat="39.236310" lon="-120.278983">
+    <ele>2421.5</ele>
+    <name>CS1144</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="39.238276" lon="-120.281358">
+    <ele>2429.1</ele>
+    <name>WA1145</name>
+    <desc><![CDATA[Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="39.244689" lon="-120.280483">
+    <ele>2633.3</ele>
+    <name>TR1146</name>
+    <desc><![CDATA[Cold Stream trail to Truckee.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="39.253674" lon="-120.291053">
+    <ele>2602.0</ele>
+    <name>CS1147</name>
+    <desc><![CDATA[Small campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="39.286484" lon="-120.322498">
+    <ele>2435.6</ele>
+    <name>WeatherStation</name>
+    <desc><![CDATA[Weather station]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="39.293795" lon="-120.320458">
+    <ele>2401.4</ele>
+    <name>TR1151</name>
+    <desc><![CDATA[Emigrant trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="39.304520" lon="-120.322426">
+    <ele>2314.4</ele>
+    <name>RD1152</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
   <wpt lat="39.305550" lon="-120.322357">
     <ele>2312.2</ele>
     <name>Ski1152</name>
@@ -248,10 +458,16 @@
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="39.316788" lon="-120.326044">
-    <ele>2168.4</ele>
+    <ele>1805.7</ele>
     <name>RD1153</name>
     <desc><![CDATA[Paved Highway 40 near Donner Pass.]]></desc>
     <sym>Truck</sym>
+  </wpt>
+  <wpt lat="39.320955" lon="-120.321522">
+    <ele>2144.1</ele>
+    <name>PL1154</name>
+    <desc><![CDATA[High voltage power line]]></desc>
+    <sym>Flag, Green</sym>
   </wpt>
   <wpt lat="39.325619" lon="-120.321212">
     <ele>2194.8</ele>
@@ -264,222 +480,6 @@
     <name>PL1155</name>
     <desc><![CDATA[High voltage power line]]></desc>
     <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="39.320955" lon="-120.321522">
-    <ele>2144.1</ele>
-    <name>PL1154</name>
-    <desc><![CDATA[High voltage power line]]></desc>
-    <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="39.304520" lon="-120.322426">
-    <ele>2314.4</ele>
-    <name>RD1152</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="39.293795" lon="-120.320458">
-    <ele>2401.4</ele>
-    <name>TR1151</name>
-    <desc><![CDATA[Emigrant trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="39.286484" lon="-120.322498">
-    <ele>2435.6</ele>
-    <name>WeatherStation</name>
-    <desc><![CDATA[Weather station]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="39.253674" lon="-120.291053">
-    <ele>2602.0</ele>
-    <name>CS1147</name>
-    <desc><![CDATA[Small campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="39.244689" lon="-120.280483">
-    <ele>2633.3</ele>
-    <name>TR1146</name>
-    <desc><![CDATA[Cold Stream trail to Truckee.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="39.238276" lon="-120.281358">
-    <ele>2429.1</ele>
-    <name>WA1145</name>
-    <desc><![CDATA[Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.236310" lon="-120.278983">
-    <ele>2421.5</ele>
-    <name>CS1144</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="39.195359" lon="-120.283075">
-    <ele>2590.7</ele>
-    <name>GraniteChiefWild2</name>
-    <desc><![CDATA[Granite Chief Wilderness boundary]]></desc>
-    <sym>Forest</sym>
-  </wpt>
-  <wpt lat="39.189744" lon="-120.285515">
-    <ele>2474.9</ele>
-    <name>WA1140</name>
-    <desc><![CDATA[Small creek, headwaters of the Middle Fork American River.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.174682" lon="-120.280769">
-    <ele>2222.5</ele>
-    <name>CS1138B</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="39.173105" lon="-120.277014">
-    <ele>2213.4</ele>
-    <name>CS1138</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="39.172170" lon="-120.275299">
-    <ele>2196.3</ele>
-    <name>WA1137</name>
-    <desc><![CDATA[Trailside creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.170858" lon="-120.259848">
-    <ele>2259.6</ele>
-    <name>WA1136</name>
-    <desc><![CDATA[Small creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.172529" lon="-120.257289">
-    <ele>2263.4</ele>
-    <name>WACS1136</name>
-    <desc><![CDATA[Five Lakes Creek, several campsites.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.096665" lon="-120.241754">
-    <ele>2372.2</ele>
-    <name>WA1128</name>
-    <desc><![CDATA[Small creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.093428" lon="-120.243159">
-    <ele>2411.4</ele>
-    <name>WA1127B</name>
-    <desc><![CDATA[Spring]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.091946" lon="-120.243263">
-    <ele>2424.4</ele>
-    <name>WACS1127</name>
-    <desc><![CDATA[North Fork Blackwood Creek, campsites.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.091361" lon="-120.246384">
-    <ele>2469.8</ele>
-    <name>WA1127</name>
-    <desc><![CDATA[Small stream]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.082139" lon="-120.245401">
-    <ele>2453.7</ele>
-    <name>CS1126</name>
-    <desc><![CDATA[Campsites]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="39.081800" lon="-120.245384">
-    <ele>2451.2</ele>
-    <name>RD1126</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="39.033414" lon="-120.233226">
-    <ele>2140.3</ele>
-    <name>RD1121</name>
-    <desc><![CDATA[Jeep road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="39.019427" lon="-120.215811">
-    <ele>2308.6</ele>
-    <name>RD1118</name>
-    <desc><![CDATA[Jeep road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="39.018232" lon="-120.216510">
-    <ele>2300.1</ele>
-    <name>CS1118</name>
-    <desc><![CDATA[Small campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="38.970195" lon="-120.169939">
-    <ele>2409.6</ele>
-    <name>CS1113B</name>
-    <desc><![CDATA[Seasonal Creek and campsite.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="38.961906" lon="-120.170623">
-    <ele>2325.8</ele>
-    <name>CS1113</name>
-    <desc><![CDATA[Seasonal Phipps Creek (often dry), campsite.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="38.935990" lon="-120.154752">
-    <ele>2406.2</ele>
-    <name>WA1110</name>
-    <desc><![CDATA[Middle Velma Lake]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.924430" lon="-120.156280">
-    <ele>2526.1</ele>
-    <name>WACS1109</name>
-    <desc><![CDATA[Fontanillis Lake, campsites.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.902721" lon="-120.134977">
-    <ele>2731.4</ele>
-    <name>WA1105</name>
-    <desc><![CDATA[Small creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.879516" lon="-120.124136">
-    <ele>2370.1</ele>
-    <name>WACS1102</name>
-    <desc><![CDATA[Susie Lake outlet, campsites. Campsites also south and north of the outlet.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.879075" lon="-120.126827">
-    <ele>2376.6</ele>
-    <name>CS1101</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="38.876293" lon="-120.146222">
-    <ele>2477.5</ele>
-    <name>TR1100</name>
-    <desc><![CDATA[Mosquito Pass trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.864156" lon="-120.128490">
-    <ele>2479.2</ele>
-    <name>WACS1098</name>
-    <desc><![CDATA[Aloha Lake, several campsites.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.856492" lon="-120.113139">
-    <ele>2532.2</ele>
-    <name>TR1097D</name>
-    <desc><![CDATA[Lake Lucille trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.848773" lon="-120.095386">
-    <ele>2400.9</ele>
-    <name>TR1096</name>
-    <desc><![CDATA[Tamarack Lake trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.847406" lon="-120.078958">
-    <ele>2278.0</ele>
-    <name>TR1095</name>
-    <desc><![CDATA[Trail to a public phone and boat taxi.]]></desc>
-    <sym>Trail Head</sym>
   </wpt>
   <wpt lat="38.835762" lon="-120.045207">
     <ele>2274.9</ele>
@@ -832,7 +832,7 @@
     <sym>Triangle, Red</sym>
   </wpt>
   <wpt lat="39.095508" lon="-120.241907">
-    <ele>2377.2</ele>
+    <ele>2377.1</ele>
     <name>1127-5</name>
     <sym>Triangle, Red</sym>
   </wpt>

@@ -13,53 +13,11 @@
           or Lon Cooper <Halfmile@pctmap.net> for all others.]]>
     </desc>
   </metadata>
-  <wpt lat="33.834067" lon="-116.716524">
-    <ele>2485.2</ele>
-    <name>SanJacintoWild2</name>
-    <desc><![CDATA[San Jacinto State Park Wilderness, northern boundary. Camping allowed only in designated camping areas, $5 per person permit required, for 5.4 miles to the south.]]></desc>
-    <sym>Forest</sym>
-  </wpt>
-  <wpt lat="33.783253" lon="-116.699434">
-    <ele>2490.6</ele>
-    <name>SanJacintoWild</name>
-    <desc><![CDATA[San Jacinto State Park Wilderness, southern boundary. Camping allowed only in designated camping areas, $5 per person permit required, for 5.4 miles to the north.]]></desc>
-    <sym>Forest</sym>
-  </wpt>
-  <wpt lat="33.379033" lon="-116.592348">
-    <ele>1558.1</ele>
-    <name>TR0127</name>
-    <desc><![CDATA[Spur trail to Mike Herrera's place.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.802024" lon="-116.698795">
-    <ele>2727.4</ele>
-    <name>2SJTrail</name>
-    <desc><![CDATA[Trail from San Jacinto Peak via Little Round Valley rejoins PCT, in 2011 the only trail sign here was one pointing to Fuller Ridge.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.675912" lon="-116.675724">
-    <ele>1335.5</ele>
-    <name>ACCenter-Spt</name>
-    <desc><![CDATA[Apple Canyon Center, Ronald McDonald Camp gate. Turn right on gravel road that follows the fenced E edge of the Hurkey CG - mile 6.9]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
   <wpt lat="33.783607" lon="-116.751874">
     <ele>1769.9</ele>
     <name>AlandaleFS-BMR</name>
     <desc><![CDATA[Pass Alandale Forest Service Station on the left - mi 5.5]]></desc>
     <sym>Water Hydrant</sym>
-  </wpt>
-  <wpt lat="33.716680" lon="-116.624513">
-    <ele>2241.0</ele>
-    <name>ApacheSprTr</name>
-    <desc><![CDATA[Apache Spring Trail Junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.724750" lon="-116.706334">
-    <ele>1753.0</ele>
-    <name>BigCTank-Spt</name>
-    <desc><![CDATA[Continue past metal water tank below Big Cedar Spring [empty in August 2010] - mi 11.6]]></desc>
-    <sym>Drinking Water</sym>
   </wpt>
   <wpt lat="33.826486" lon="-116.750492">
     <ele>2232.7</ele>
@@ -79,23 +37,89 @@
     <desc><![CDATA[Right on unpaved Black Mountain Rd - mi 8.2]]></desc>
     <sym>Car</sym>
   </wpt>
-  <wpt lat="33.707091" lon="-116.688726">
-    <ele>1546.3</ele>
-    <name>BonitaVRd-Spt</name>
-    <desc><![CDATA[Keep left at the junction with unpaved Bonita Vista Rd - mi 9.8]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="33.666257" lon="-116.575298">
-    <ele>2065.0</ele>
-    <name>CedarSprTr</name>
-    <desc><![CDATA[Cedar Spring Trail Junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
   <wpt lat="33.764053" lon="-116.687075">
     <ele>1947.8</ele>
     <name>Creek-EM</name>
     <desc><![CDATA[Small Creek]]></desc>
     <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="33.764699" lon="-116.687202">
+    <ele>1956.8</ele>
+    <name>ErnieMaxwellTr</name>
+    <desc><![CDATA[Earnie Maxwell trailhead, on Fern Valley Rd, just below Humber Park, start of 3.6 mile route to center of Idyllwild.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.742484" lon="-116.702448">
+    <ele>1692.8</ele>
+    <name>HemstreetPl-EM</name>
+    <desc><![CDATA[Right on paved Hemstreet Pl - mi 2.8]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="33.745751" lon="-116.714587">
+    <ele>1632.7</ele>
+    <name>Hwy243</name>
+    <desc><![CDATA[Arrive Hwy 243 - mi 3.7]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="33.745301" lon="-116.713514">
+    <ele>1633.8</ele>
+    <name>NCircleDr-EM</name>
+    <desc><![CDATA[Left on paved North Circle Drive - mi 3.6]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="33.824896" lon="-116.751655">
+    <ele>2197.9</ele>
+    <name>PosesSpg-BMR</name>
+    <desc><![CDATA[Pipe and faucet by Black Mountain Rd - mi 12.8]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="33.743423" lon="-116.704700">
+    <ele>1666.2</ele>
+    <name>SCircleDr-EM</name>
+    <desc><![CDATA[Left on paved South Circle Dr - mi 3.0]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="33.743296" lon="-116.702395">
+    <ele>1687.3</ele>
+    <name>StrongDr-EM</name>
+    <desc><![CDATA[Left on paved Strong Dr - 2.9]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="33.740279" lon="-116.702357">
+    <ele>1744.7</ele>
+    <name>TahquitzViewRd-EM</name>
+    <desc><![CDATA[Right on unpaved Tahquitz View Rd]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="33.742927" lon="-116.710988">
+    <ele>1623.6</ele>
+    <name>VillageCntrDr-EM</name>
+    <desc><![CDATA[Right on paved Village Center Dr - mi 3.4]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="33.285073" lon="-116.655414">
+    <ele>891.7</ele>
+    <name>PrivateCG</name>
+    <desc><![CDATA[Private campground]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="33.288558" lon="-116.653857">
+    <ele>892.7</ele>
+    <name>Hwy79B</name>
+    <desc><![CDATA[Hwy 79, 2nd crossing, Agua Caliente Creek.]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="33.295565" lon="-116.638654">
+    <ele>911.3</ele>
+    <name>WR113</name>
+    <desc><![CDATA[Agua Caliente Creek, just past picnic tables.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.309273" lon="-116.630542">
+    <ele>972.1</ele>
+    <name>WR115</name>
+    <desc><![CDATA[Agua Caliente Creek]]></desc>
+    <sym>Water Source</sym>
   </wpt>
   <wpt lat="33.311008" lon="-116.627581">
     <ele>986.1</ele>
@@ -103,11 +127,59 @@
     <desc><![CDATA[Campsite on E side of Agua Caliente Creek]]></desc>
     <sym>Campground</sym>
   </wpt>
+  <wpt lat="33.317172" lon="-116.626687">
+    <ele>1013.8</ele>
+    <name>WR115B</name>
+    <desc><![CDATA[Agua Caliente Creek, last crossing.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.326799" lon="-116.635855">
+    <ele>1242.8</ele>
+    <name>TR0118</name>
+    <desc><![CDATA[Unmarked spur trail going 100 yards S to Lost Creek Road.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.326141" lon="-116.636023">
+    <ele>1227.9</ele>
+    <name>TR0118b</name>
+    <desc><![CDATA[100 yard spur trail from Lost Creek Rd to the PCT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.333701" lon="-116.637942">
+    <ele>1277.0</ele>
+    <name>LostValleyRd</name>
+    <desc><![CDATA[Lost Valley Road, abandoned road.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.344277" lon="-116.636958">
+    <ele>1325.5</ele>
+    <name>WR120</name>
+    <desc><![CDATA[Lost Valley Spring, 2/10 mile N of PCT.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="33.352986" lon="-116.609277">
     <ele>1530.1</ele>
     <name>CS0124</name>
     <desc><![CDATA[Several small campsites among the boulders.]]></desc>
     <sym>Campground</sym>
+  </wpt>
+  <wpt lat="33.379033" lon="-116.592348">
+    <ele>1558.1</ele>
+    <name>TR0127</name>
+    <desc><![CDATA[Spur trail to Mike Herrera's place.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.380506" lon="-116.591184">
+    <ele>1548.1</ele>
+    <name>WR127B</name>
+    <desc><![CDATA[Water tank, 2/10 mile E of PCT mile.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.381612" lon="-116.595174">
+    <ele>1541.2</ele>
+    <name>WR127</name>
+    <desc><![CDATA[Chihuahua Valley Rd, unpaved.]]></desc>
+    <sym>Water Source</sym>
   </wpt>
   <wpt lat="33.396418" lon="-116.601356">
     <ele>1704.3</ele>
@@ -115,11 +187,83 @@
     <desc><![CDATA[Several campsites on the high ridge near Combs Peak.]]></desc>
     <sym>Campground</sym>
   </wpt>
+  <wpt lat="33.441375" lon="-116.604831">
+    <ele>1255.1</ele>
+    <name>GT0134</name>
+    <desc><![CDATA[Pipe gate]]></desc>
+    <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="33.455982" lon="-116.604871">
+    <ele>1137.9</ele>
+    <name>GT0136</name>
+    <desc><![CDATA[Pipe gate]]></desc>
+    <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="33.457890" lon="-116.604818">
+    <ele>1095.0</ele>
+    <name>WR137</name>
+    <desc><![CDATA[Tule Canyon Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.459217" lon="-116.597706">
+    <ele>1060.9</ele>
+    <name>WR137B</name>
+    <desc><![CDATA[Tule Spring, 3/10 mile E of PCT.<br/>---<br/>WATER ALERT: Next northbound water after Tule Spring may be the Paradise Cafe in 14.9 miles.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.460218" lon="-116.599938">
+    <ele>1103.3</ele>
+    <name>RD0137</name>
+    <desc><![CDATA[Upaved Tule Canyon Truck Trail]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="33.475362" lon="-116.578381">
+    <ele>1088.0</ele>
+    <name>WR140</name>
+    <desc><![CDATA[Guzzler cistern]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.476664" lon="-116.577336">
+    <ele>1069.7</ele>
+    <name>RD0140</name>
+    <desc><![CDATA[Coyote Canyon Rd, unpaved.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="33.480494" lon="-116.574349">
+    <ele>1020.1</ele>
+    <name>WRCS140B</name>
+    <desc><![CDATA[Nance Canyon, seasonal creek, several sandy beach-like campsites downstream from trail crossing.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.499568" lon="-116.570308">
+    <ele>1245.5</ele>
+    <name>RD0143</name>
+    <desc><![CDATA[Unpaved Table Mountain Truck Trail, trail gate.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
   <wpt lat="33.505688" lon="-116.576992">
     <ele>1314.2</ele>
     <name>CS0144</name>
     <desc><![CDATA[Several campsites among huge boulders.]]></desc>
     <sym>Campground</sym>
+  </wpt>
+  <wpt lat="33.528188" lon="-116.590782">
+    <ele>1496.3</ele>
+    <name>RD0147</name>
+    <desc><![CDATA[Table Mountain Truck Trail, unpaved, 2nd crossing.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="33.563127" lon="-116.576750">
+    <ele>1064.6</ele>
+    <name>Hwy74</name>
+    <desc><![CDATA[Highway 74, Idyllwild is 13.5 miles NW on Hwy 74, then 4.5 miles N on Hwy 243. The small town of Anza is 1 mile W on Hwy 74, then 5.8 miles SW on Hwy 371.]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="33.569052" lon="-116.591406">
+    <ele>1460.5</ele>
+    <name>WR152</name>
+    <desc><![CDATA[Paradise Valley Cafe [theparadisevalleycafe.com, 951-659-3663], water spigot outside, 1 mile W of PCT.<br/>---<br/>WATER ALERT: Next southbound water after Paradise Cafe may be Tule Spring in 14.9 miles.]]></desc>
+    <sym>Water Source</sym>
   </wpt>
   <wpt lat="33.595619" lon="-116.571353">
     <ele>1579.4</ele>
@@ -133,6 +277,30 @@
     <desc><![CDATA[Campsite]]></desc>
     <sym>Campground</sym>
   </wpt>
+  <wpt lat="33.622486" lon="-116.564465">
+    <ele>1813.9</ele>
+    <name>GT0158</name>
+    <desc><![CDATA[Gate, fence.]]></desc>
+    <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="33.622195" lon="-116.567215">
+    <ele>1733.6</ele>
+    <name>WR158b</name>
+    <desc><![CDATA[Tunnel Spring, 3/10 mile W of PCT.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.623103" lon="-116.564014">
+    <ele>1814.2</ele>
+    <name>TR0158</name>
+    <desc><![CDATA[Trail junction for Live Oak Spring and Tunnel Spring, trail gate 250 feet S of junction.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.622548" lon="-116.556536">
+    <ele>1657.0</ele>
+    <name>WR158</name>
+    <desc><![CDATA[Live Oak Spring, 1 mile E of PCT.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="33.636672" lon="-116.569200">
     <ele>1924.7</ele>
     <name>CS0160</name>
@@ -144,6 +312,198 @@
     <name>CS0161</name>
     <desc><![CDATA[Small shady campsites]]></desc>
     <sym>Campground</sym>
+  </wpt>
+  <wpt lat="33.666257" lon="-116.575298">
+    <ele>1500.7</ele>
+    <name>CedarSprTr</name>
+    <desc><![CDATA[Cedar Spring Trail Junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.676726" lon="-116.576572">
+    <ele>1947.1</ele>
+    <name>WR162</name>
+    <desc><![CDATA[Cedar Spring, 1 mile N of PCT.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.672365" lon="-116.582038">
+    <ele>2116.2</ele>
+    <name>TR0163</name>
+    <desc><![CDATA[Eagle Spring trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.669432" lon="-116.581411">
+    <ele>2052.2</ele>
+    <name>WR163</name>
+    <desc><![CDATA[Seasonal Eagle Spring, 3/10 mile S of PCT.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.690070" lon="-116.609559">
+    <ele>1827.0</ele>
+    <name>FobesRanchTr</name>
+    <desc><![CDATA[Fobes Ranch Trail Junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.675912" lon="-116.675724">
+    <ele>1335.5</ele>
+    <name>ACCenter-Spt</name>
+    <desc><![CDATA[Apple Canyon Center, Ronald McDonald Camp gate. Turn right on gravel road that follows the fenced E edge of the Hurkey CG - mile 6.9]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="33.724750" lon="-116.706334">
+    <ele>1753.0</ele>
+    <name>BigCTank-Spt</name>
+    <desc><![CDATA[Continue past metal water tank below Big Cedar Spring [empty in August 2010] - mi 11.6]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="33.707091" lon="-116.688726">
+    <ele>1546.3</ele>
+    <name>BonitaVRd-Spt</name>
+    <desc><![CDATA[Keep left at the junction with unpaved Bonita Vista Rd - mi 9.8]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="33.693960" lon="-116.681314">
+    <ele>1428.9</ele>
+    <name>DarrenMem-Spt</name>
+    <desc><![CDATA[Pass a small memorial for Darren York who died after becoming ill mountain biking in 2006 - mile 8.6]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="33.697683" lon="-116.683542">
+    <ele>1441.4</ele>
+    <name>Footbridge-Spt</name>
+    <desc><![CDATA[Cross a small wooden footbridge - mile 8.9]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="33.691554" lon="-116.681810">
+    <ele>1406.5</ele>
+    <name>Fork1-Spt</name>
+    <desc><![CDATA[Keep left at the unmarked fork in the trail - mi 8.5]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.696145" lon="-116.682182">
+    <ele>1439.3</ele>
+    <name>Fork2-Spt</name>
+    <desc><![CDATA[Keep left at the unsigned fork - mile 8.8]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="33.680520" lon="-116.681913">
+    <ele>1353.4</ele>
+    <name>Gate-Spt</name>
+    <desc><![CDATA[Pedestrian gate to Hurkey Campground, next to campsite 130, near Darren York memorial log bench.]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="33.669668" lon="-116.674554">
+    <ele>1329.9</ele>
+    <name>HemetStore</name>
+    <desc><![CDATA[Hemet Lake Market & Cafe [lakehemetrecreation.com, 951-659-2680], 6/10 mile SE of entrance to Hurkey Campground on Highway 74]]></desc>
+    <sym>Shopping Center</sym>
+  </wpt>
+  <wpt lat="33.675452" lon="-116.681963">
+    <ele>1351.1</ele>
+    <name>HurkeyCG</name>
+    <desc><![CDATA[Hurkey Campground entrance, water, payphone, restrooms, coin showers, $20 per night for 6 people.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="33.681657" lon="-116.681554">
+    <ele>1356.2</ele>
+    <name>HurkeyCrk-Spt</name>
+    <desc><![CDATA[Cross Hurkey Creek - mile 7.6]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="33.738847" lon="-116.720485">
+    <ele>1595.2</ele>
+    <name>Hwy243-Spt</name>
+    <desc><![CDATA[Right Highway 243 - mi 13.5]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="33.715676" lon="-116.695629">
+    <ele>1643.3</ele>
+    <name>MayValGate-Spt</name>
+    <desc><![CDATA[Pass under locked Forest Service Gate - mi 10.6]]></desc>
+    <sym>Toll Booth</sym>
+  </wpt>
+  <wpt lat="33.705907" lon="-116.688968">
+    <ele>1543.7</ele>
+    <name>MayValRd-Spt</name>
+    <desc><![CDATA[Right on unpaved and unmarked May Valley Rd - mi 9.7]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="33.701292" lon="-116.683959">
+    <ele>1481.2</ele>
+    <name>Powerline-Spt</name>
+    <desc><![CDATA[Cross under a small power line - mile 9.2]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="33.729244" lon="-116.710578">
+    <ele>1708.7</ele>
+    <name>RdJct-Spt</name>
+    <desc><![CDATA[Keep right at unmarked junction of unpaved roads - mi 12.1]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="33.731801" lon="-116.710111">
+    <ele>1693.4</ele>
+    <name>SaunMdwRd-Spt</name>
+    <desc><![CDATA[Right on paved Saunders Meadow Rd - mi 12.3]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="33.697877" lon="-116.652228">
+    <ele>1505.8</ele>
+    <name>SpitlerTH-Spt</name>
+    <desc><![CDATA[Spitler Peak trailhead, parking, go left on paved Apple Canyon Road - mi 4.7]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.708651" lon="-116.624792">
+    <ele>2004.3</ele>
+    <name>Spring-Spt</name>
+    <desc><![CDATA[Small Spring]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="33.711982" lon="-116.693287">
+    <ele>1604.4</ele>
+    <name>Spring2-Spt</name>
+    <desc><![CDATA[Pass spring and trough on the left - mi 10.2]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="33.717648" lon="-116.697527">
+    <ele>1656.4</ele>
+    <name>SRidgeTr-Spt</name>
+    <desc><![CDATA[Continue past Southridge, Tahquitz Peak trailhead on right - mi 10.7]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.679291" lon="-116.679310">
+    <ele>1366.8</ele>
+    <name>WaterTank-Spt</name>
+    <desc><![CDATA[Water Tank N of Hurkey CG, no water for hikers - mile 7.4]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="33.679008" lon="-116.668667">
+    <ele>1348.3</ele>
+    <name>YellowPst3-Spt</name>
+    <desc><![CDATA[Yellow Post with arrow pointing N to campsite number 3. Campsite is 2/10 mile N of Apple Canyon Road - mile 6.4]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="33.681339" lon="-116.669224">
+    <ele>1352.9</ele>
+    <name>YPCamp3-Spt</name>
+    <desc><![CDATA[Yellow post campsite number 3]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="33.710008" lon="-116.622516">
+    <ele>2136.3</ele>
+    <name>SpitlerTr</name>
+    <desc><![CDATA[Spitler Trail Junction<br/>---<br/>Many thru-hikers reach the San Jacinto Mountains early in the hiking season when snow and ice still cover parts of the trail. In 2005 a PCT hiker died in the San Jacinto's following a snowstorm. Snow often begins on the north side of Apache Peak and continues 21 miles through Fuller Ridge. If you reach Apache Peak and are uneasy traveling north you can backtrack 1 mile to the Spitler Peak Trail and hike the Spitler to Idyllwild Alternate [see Halfmile's maps]. Snow melts quickly, so trail reports more than a few days old may not be accurate following warm weather.<br/>---<br/>MOUNTAIN FIRE CLOSURE: 8.6 miles of the PCT from the Spitler Peak Trail N to Tahquitz Creek will remain closed in 2018 due to the 2013 Mountain Fire. Check with PCTA.org or the San Jacinto Ranger Station at 909-382-2921 for updates. The Spitler to Idyllwild Alternate [See Halfmile maps] bypasses this closure.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.719822" lon="-116.620367">
+    <ele>2085.1</ele>
+    <name>WRCS169</name>
+    <desc><![CDATA[Apache Spring, 1/2 mile E of PCT, several large campsites, can be very windy.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.716680" lon="-116.624513">
+    <ele>2241.0</ele>
+    <name>ApacheSprTr</name>
+    <desc><![CDATA[Apache Spring Trail Junction]]></desc>
+    <sym>Trail Head</sym>
   </wpt>
   <wpt lat="33.727728" lon="-116.632800">
     <ele>2103.9</ele>
@@ -163,6 +523,96 @@
     <desc><![CDATA[Several large campsites]]></desc>
     <sym>Campground</sym>
   </wpt>
+  <wpt lat="33.759820" lon="-116.665583">
+    <ele>2485.8</ele>
+    <name>WR177</name>
+    <desc><![CDATA[Tahquitz Creek<br/>---<br/>MOUNTAIN FIRE CLOSURE: 8.6 miles of the PCT from the Tahquitz Creek S to the Spitler Peak Trail will remain closed in 2018 due to the 2013 Mountain Fire. Check with PCTA.org or the San Jacinto Ranger Station at 909-382-2921 for updates. The Spitler to Idyllwild Alternate bypasses this closure.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.760705" lon="-116.665620">
+    <ele>2479.1</ele>
+    <name>TqtzValTr</name>
+    <desc><![CDATA[Tahquitz Valley Trail]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.770339" lon="-116.664696">
+    <ele>2435.7</ele>
+    <name>SkunkLawsTr</name>
+    <desc><![CDATA[Skunk Laws Trail Junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.768201" lon="-116.663562">
+    <ele>2403.1</ele>
+    <name>TqtzMdw</name>
+    <desc><![CDATA[Tahquitz Meadow, usually has water in May and June, 7/10 mile N of PCT mile 177.3.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.757497" lon="-116.671598">
+    <ele>2627.1</ele>
+    <name>TqtzPkTr</name>
+    <desc><![CDATA[Tahquitz Peak Trail]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.755402" lon="-116.677101">
+    <ele>2689.7</ele>
+    <name>TqtzPeak</name>
+    <desc><![CDATA[Tahquitz Peak, 4/10 mile W of PCT.]]></desc>
+    <sym>Summit</sym>
+  </wpt>
+  <wpt lat="33.764664" lon="-116.685855">
+    <ele>1981.6</ele>
+    <name>HumberPark</name>
+    <desc><![CDATA[Humber Park, 2.6 miles W of PCT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.774280" lon="-116.673053">
+    <ele>2420.5</ele>
+    <name>SaddleJct</name>
+    <desc><![CDATA[Saddle Junction, Devils Slide Trail to Humber Park, Idyllwild.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.747578" lon="-116.714376">
+    <ele>1641.9</ele>
+    <name>SanJacCG-BMR</name>
+    <desc><![CDATA[San Jacinto State Park Campground in the town of Idyllwild.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="33.787250" lon="-116.652988">
+    <ele>2407.6</ele>
+    <name>LawsTr</name>
+    <desc><![CDATA[Laws Trail Junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.812466" lon="-116.644019">
+    <ele>2560.9</ele>
+    <name>LongValleyTr</name>
+    <desc><![CDATA[Long Valley Trail Junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.812997" lon="-116.638541">
+    <ele>2600.8</ele>
+    <name>PSTram</name>
+    <desc><![CDATA[Palm Springs Tram]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.776877" lon="-116.665271">
+    <ele>2436.5</ele>
+    <name>SkunkCabTr</name>
+    <desc><![CDATA[Skunk Cabbage Junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.803041" lon="-116.643474">
+    <ele>2665.4</ele>
+    <name>TrRoundValley</name>
+    <desc><![CDATA[Round Valley Trail Junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.783687" lon="-116.657237">
+    <ele>2381.0</ele>
+    <name>WillowCreek</name>
+    <desc><![CDATA[Willow Creek]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
   <wpt lat="33.775715" lon="-116.674167">
     <ele>2489.9</ele>
     <name>CS0180</name>
@@ -175,11 +625,59 @@
     <desc><![CDATA[Campsite]]></desc>
     <sym>Campground</sym>
   </wpt>
+  <wpt lat="33.814755" lon="-116.679440">
+    <ele>3298.4</ele>
+    <name>MtSanJacinto</name>
+    <desc><![CDATA[San Jacinto Peak, 3.6 miles E of PCT]]></desc>
+    <sym>Summit</sym>
+  </wpt>
+  <wpt lat="33.803601" lon="-116.664091">
+    <ele>2758.4</ele>
+    <name>RoundValley</name>
+    <desc><![CDATA[Round Valley]]></desc>
+    <sym>Park</sym>
+  </wpt>
+  <wpt lat="33.814222" lon="-116.678365">
+    <ele>3259.7</ele>
+    <name>SJShelter</name>
+    <desc><![CDATA[Shelter near San Jacinto Peak]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="33.802458" lon="-116.658847">
+    <ele>2739.4</ele>
+    <name>TrWillowCrk</name>
+    <desc><![CDATA[Willow Creek Trail Junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.795005" lon="-116.678192">
+    <ele>2830.9</ele>
+    <name>WA0181</name>
+    <desc><![CDATA[Wellmans Cienaga, 7/10 mile N of PCT.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.799235" lon="-116.674228">
+    <ele>2957.5</ele>
+    <name>WellmanDiv</name>
+    <desc><![CDATA[Wellman Divide, trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.788526" lon="-116.677347">
+    <ele>2740.9</ele>
+    <name>SJTrail</name>
+    <desc><![CDATA[Trail to San Jacinto Peak via Wellman Divide]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="33.787601" lon="-116.678466">
     <ele>2763.4</ele>
     <name>CS0181B</name>
     <desc><![CDATA[Several campsites]]></desc>
     <sym>Campground</sym>
+  </wpt>
+  <wpt lat="33.786596" lon="-116.689506">
+    <ele>2620.4</ele>
+    <name>WR182</name>
+    <desc><![CDATA[Strawberry Cienaga]]></desc>
+    <sym>Water Source</sym>
   </wpt>
   <wpt lat="33.780200" lon="-116.695200">
     <ele>2558.6</ele>
@@ -187,11 +685,89 @@
     <desc><![CDATA[Several campsites]]></desc>
     <sym>Campground</sym>
   </wpt>
+  <wpt lat="33.783253" lon="-116.699434">
+    <ele>2490.6</ele>
+    <name>SanJacintoWild</name>
+    <desc><![CDATA[San Jacinto State Park Wilderness, southern boundary. Camping allowed only in designated camping areas, $5 per person permit required, for 5.4 miles to the N.]]></desc>
+    <sym>Forest</sym>
+  </wpt>
   <wpt lat="33.782606" lon="-116.702663">
     <ele>2471.1</ele>
     <name>CS0183B</name>
     <desc><![CDATA[Strawberry Trail Camp, outhouse.]]></desc>
     <sym>Campground</sym>
+  </wpt>
+  <wpt lat="33.752766" lon="-116.721851">
+    <ele>1712.3</ele>
+    <name>DeerSpringsTr</name>
+    <desc><![CDATA[Deer Springs Trail, across road from Idyllwild Nature Center]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.769968" lon="-116.696749">
+    <ele>2253.5</ele>
+    <name>SuicideRock</name>
+    <desc><![CDATA[Suicide Rock]]></desc>
+    <sym>Summit</sym>
+  </wpt>
+  <wpt lat="33.768325" lon="-116.709636">
+    <ele>2106.9</ele>
+    <name>TrSuicideRock</name>
+    <desc><![CDATA[Suicide Rock Trail Junction]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="33.782939" lon="-116.704193">
+    <ele>2452.8</ele>
+    <name>StrawberryJct</name>
+    <desc><![CDATA[Strawberry Junction, Deer Springs Trail to Suicide Rock, Idyllwild.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.790617" lon="-116.705444">
+    <ele>2550.8</ele>
+    <name>WR184</name>
+    <desc><![CDATA[Stone Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.800730" lon="-116.705115">
+    <ele>2653.5</ele>
+    <name>MarionMtnTr</name>
+    <desc><![CDATA[Marion Mountain trail junction, Seven Pines Trail junction 100 feet N.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.800683" lon="-116.698779">
+    <ele>2722.8</ele>
+    <name>WR186</name>
+    <desc><![CDATA[Deer Springs, North Fork San Jacinto River.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.802024" lon="-116.698795">
+    <ele>2727.4</ele>
+    <name>2SJTrail</name>
+    <desc><![CDATA[Trail from San Jacinto Peak via Little Round Valley rejoins PCT, in 2011 the only trail sign here was one pointing to Fuller Ridge.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.807617" lon="-116.697540">
+    <ele>2720.9</ele>
+    <name>WR186B</name>
+    <desc><![CDATA[N Fork San Jacinto River Tributary, often the best water source in this area.<br/>---<br/>WATER ALERT: Next northbound water after N Fork San Jacinto River Tributary may be the Snow Canyon Road faucet in 19.5 miles.<br/>---<br/>Be sure to fill up here, a long dry and waterless section of trail is ahead as you make the descent toward Cabazon. Over the years, a number of hiker rescues have happened in this area due to snow, ice, or navigation issues on Fuller Ridge [the next 4.3 miles], or because of heat and dehydration at lower elevations.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.810660" lon="-116.697426">
+    <ele>2712.7</ele>
+    <name>WR186C</name>
+    <desc><![CDATA[N Fork San Jacinto River]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.834067" lon="-116.716524">
+    <ele>2485.2</ele>
+    <name>SanJacintoWild2</name>
+    <desc><![CDATA[San Jacinto State Park Wilderness, northern boundary. Camping allowed only in designated camping areas, $5 per person permit required, for 5.4 miles to the S.]]></desc>
+    <sym>Forest</sym>
+  </wpt>
+  <wpt lat="33.839059" lon="-116.736294">
+    <ele>2360.9</ele>
+    <name>FullerRidgeTH</name>
+    <desc><![CDATA[Fuller Ridge Trailhead, parking.]]></desc>
+    <sym>Trail Head</sym>
   </wpt>
   <wpt lat="33.839831" lon="-116.736670">
     <ele>2349.9</ele>
@@ -199,17 +775,41 @@
     <desc><![CDATA[Campsite]]></desc>
     <sym>Campground</sym>
   </wpt>
+  <wpt lat="33.840743" lon="-116.738482">
+    <ele>2335.8</ele>
+    <name>RD0191</name>
+    <desc><![CDATA[Black Mountain Road, unpaved.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
   <wpt lat="33.846156" lon="-116.737554">
     <ele>2261.9</ele>
     <name>CS0191B</name>
     <desc><![CDATA[Campsite]]></desc>
     <sym>Campground</sym>
   </wpt>
+  <wpt lat="33.856341" lon="-116.733110">
+    <ele>2087.0</ele>
+    <name>RD0193</name>
+    <desc><![CDATA[Round-about of unpaved roads, small unpaved parking area, possible trailhead for high clearance vehicles.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
   <wpt lat="33.855642" lon="-116.725489">
     <ele>1969.8</ele>
     <name>CS0194</name>
     <desc><![CDATA[Several campsites]]></desc>
     <sym>Campground</sym>
+  </wpt>
+  <wpt lat="33.853687" lon="-116.722852">
+    <ele>1936.9</ele>
+    <name>WRCS194</name>
+    <desc><![CDATA[Seasonal headwaters of the West Fork Snow Creek, campsite, 1/10 mile S of PCT on unmarked use trail.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="33.855115" lon="-116.722632">
+    <ele>1948.6</ele>
+    <name>TR0194</name>
+    <desc><![CDATA[Unmarked use trail to West Fork Snow Creek.]]></desc>
+    <sym>Trail Head</sym>
   </wpt>
   <wpt lat="33.864962" lon="-116.717287">
     <ele>1724.6</ele>
@@ -232,7 +832,7 @@
   <wpt lat="33.867583" lon="-116.691850">
     <ele>993.4</ele>
     <name>CS0202</name>
-    <desc><![CDATA[Campsite at the saddle west of knob.]]></desc>
+    <desc><![CDATA[Campsite at the saddle W of knob.]]></desc>
     <sym>Campground</sym>
   </wpt>
   <wpt lat="33.880786" lon="-116.684002">
@@ -241,77 +841,11 @@
     <desc><![CDATA[Campsite]]></desc>
     <sym>Campground</sym>
   </wpt>
-  <wpt lat="33.693960" lon="-116.681314">
-    <ele>1428.9</ele>
-    <name>DarrenMem-Spt</name>
-    <desc><![CDATA[Pass a small memorial for Darren York who died after becoming ill mountain biking in 2006 - mile 8.6]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="33.752766" lon="-116.721851">
-    <ele>1712.3</ele>
-    <name>DeerSpringsTr</name>
-    <desc><![CDATA[Deer Springs Trail, across road from Idyllwild Nature Center]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.764699" lon="-116.687202">
-    <ele>1956.8</ele>
-    <name>ErnieMaxwellTr</name>
-    <desc><![CDATA[Earnie Maxwell trailhead,  on Fern Valley Rd, just below Humber Park, start of 3.6 mile route to center of Idyllwild.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.690070" lon="-116.609559">
-    <ele>1827.0</ele>
-    <name>FobesRanchTr</name>
-    <desc><![CDATA[Fobes Ranch Trail Junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.697683" lon="-116.683542">
-    <ele>1441.4</ele>
-    <name>Footbridge-Spt</name>
-    <desc><![CDATA[Cross a small wooden footbridge - mile 8.9]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="33.691554" lon="-116.681810">
-    <ele>1406.5</ele>
-    <name>Fork1-Spt</name>
-    <desc><![CDATA[Keep left at the unmarked fork in the trail - mi 8.5]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.696145" lon="-116.682182">
-    <ele>1439.3</ele>
-    <name>Fork2-Spt</name>
-    <desc><![CDATA[Keep left at the unsigned fork - mile 8.8]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="33.839059" lon="-116.736294">
-    <ele>2360.9</ele>
-    <name>FullerRidgeTH</name>
-    <desc><![CDATA[Fuller Ridge Trailhead, parking.<br/>-<br/>As the crow flies, it's 4.3 miles from the Fuller Ridge Trailhead north to the Snow Canyon Road faucet [WR206]. On the PCT it's 15.2 miles. The trail descends 6,040 feet.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.680520" lon="-116.681913">
-    <ele>1353.4</ele>
-    <name>Gate-Spt</name>
-    <desc><![CDATA[Pedestrian gate to Hurkey Campground, next to campsite 130, near Darren York memorial log bench.]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="33.441375" lon="-116.604831">
-    <ele>1255.1</ele>
-    <name>GT0134</name>
-    <desc><![CDATA[Pipe gate]]></desc>
-    <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="33.455982" lon="-116.604871">
-    <ele>1137.9</ele>
-    <name>GT0136</name>
-    <desc><![CDATA[Pipe gate]]></desc>
-    <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="33.622486" lon="-116.564465">
-    <ele>1813.9</ele>
-    <name>GT0158</name>
-    <desc><![CDATA[Gate, fence.]]></desc>
-    <sym>Flag, Green</sym>
+  <wpt lat="33.878122" lon="-116.679006">
+    <ele>527.4</ele>
+    <name>WR206</name>
+    <desc><![CDATA[Snow Canyon Road faucet, campsites 150 feet W, PCT joins paved Snow Creek Road.<br/>---<br/>WATER ALERT: Next southbound water after Snow Canyon Road faucet may be N Fork San Jacinto River Tributary in 19.5 miles.]]></desc>
+    <sym>Water Source</sym>
   </wpt>
   <wpt lat="33.892217" lon="-116.681343">
     <ele>373.7</ele>
@@ -319,551 +853,17 @@
     <desc><![CDATA[Gate, blocks vehicle traffic S on paved road.]]></desc>
     <sym>Flag, Green</sym>
   </wpt>
-  <wpt lat="33.669668" lon="-116.674554">
-    <ele>1329.9</ele>
-    <name>HemetStore</name>
-    <desc><![CDATA[Hemet Store, 6/10 mile SE of entrance to Hurkey Campground on Highway 74]]></desc>
-    <sym>Shopping Center</sym>
-  </wpt>
-  <wpt lat="33.742484" lon="-116.702448">
-    <ele>1692.8</ele>
-    <name>HemstreetPl-EM</name>
-    <desc><![CDATA[Right on paved Hemstreet Pl - mi 2.8]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="33.764664" lon="-116.685855">
-    <ele>1981.6</ele>
-    <name>HumberPark</name>
-    <desc><![CDATA[Humber Park, 2.6 miles west of PCT mile 179.4.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.675452" lon="-116.681963">
-    <ele>1351.1</ele>
-    <name>HurkeyCG</name>
-    <desc><![CDATA[Hurkey Campground entrance, water, payphone, restrooms, coin showers, $20 per night for 6 people.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="33.681657" lon="-116.681554">
-    <ele>1356.2</ele>
-    <name>HurkeyCrk-Spt</name>
-    <desc><![CDATA[Cross Hurkey Creek - mile 7.6]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="33.924240" lon="-116.694547">
-    <ele>407.7</ele>
-    <name>Hwy10</name>
-    <desc><![CDATA[Interstate Highway 10]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="33.745751" lon="-116.714587">
-    <ele>1632.7</ele>
-    <name>Hwy243</name>
-    <desc><![CDATA[Arrive Hwy 243 - mi 3.7]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="33.738847" lon="-116.720485">
-    <ele>1595.2</ele>
-    <name>Hwy243-Spt</name>
-    <desc><![CDATA[Right Highway 243 - mi 13.5]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="33.563127" lon="-116.576750">
-    <ele>1500.7</ele>
-    <name>Hwy74</name>
-    <desc><![CDATA[Highway 74, the Paradise Cafe 1 mile west or the PCT.<br/>-<br/>Idyllwild is 13.5 miles NW on Hwy 74, then 4.5 miles N on Hwy 243. The small town of Anza is 1 mile W on Hwy 74, then 5.8 miles SW on Hwy 371.]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="33.288558" lon="-116.653857">
-    <ele>892.7</ele>
-    <name>Hwy79B</name>
-    <desc><![CDATA[Hwy 79, 2nd crossing, Agua Caliente Creek.]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="33.787250" lon="-116.652988">
-    <ele>2407.6</ele>
-    <name>LawsTr</name>
-    <desc><![CDATA[Laws Trail Junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.812466" lon="-116.644019">
-    <ele>2560.9</ele>
-    <name>LongValleyTr</name>
-    <desc><![CDATA[Long Valley Trail Junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.333701" lon="-116.637942">
-    <ele>1277.0</ele>
-    <name>LostValleyRd</name>
-    <desc><![CDATA[Lost Valley Road, abandoned road.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.800730" lon="-116.705115">
-    <ele>2653.5</ele>
-    <name>MarionMtnTr</name>
-    <desc><![CDATA[Marion Mountain trail junction, Seven Pines Trail junction 100 feet N.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.715676" lon="-116.695629">
-    <ele>1643.3</ele>
-    <name>MayValGate-Spt</name>
-    <desc><![CDATA[Pass under locked Forest Service Gate  - mi 10.6]]></desc>
-    <sym>Toll Booth</sym>
-  </wpt>
-  <wpt lat="33.705907" lon="-116.688968">
-    <ele>1543.7</ele>
-    <name>MayValRd-Spt</name>
-    <desc><![CDATA[Right on unpaved and unmarked May Valley Rd - mi 9.7]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="33.814755" lon="-116.679440">
-    <ele>3298.4</ele>
-    <name>MtSanJacinto</name>
-    <desc><![CDATA[San Jacinto Peak, 3.6 miles E of PCT]]></desc>
-    <sym>Summit</sym>
-  </wpt>
-  <wpt lat="33.745301" lon="-116.713514">
-    <ele>1633.8</ele>
-    <name>NCircleDr-EM</name>
-    <desc><![CDATA[Left on paved North Circle Drive - mi 3.6]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="33.824896" lon="-116.751655">
-    <ele>2197.9</ele>
-    <name>PosesSpg-BMR</name>
-    <desc><![CDATA[Pipe and faucet by Black Mountain Rd - mi 12.8]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="33.701292" lon="-116.683959">
-    <ele>1481.2</ele>
-    <name>Powerline-Spt</name>
-    <desc><![CDATA[Cross under a small power line - mile 9.2]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="33.285073" lon="-116.655414">
-    <ele>891.7</ele>
-    <name>PrivateCG</name>
-    <desc><![CDATA[Private campground]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="33.812997" lon="-116.638541">
-    <ele>2600.8</ele>
-    <name>PSTram</name>
-    <desc><![CDATA[Palm Springs Tram]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.460218" lon="-116.599938">
-    <ele>1103.3</ele>
-    <name>RD0137</name>
-    <desc><![CDATA[Upaved Tule Canyon Truck Trail]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="33.476664" lon="-116.577336">
-    <ele>1069.7</ele>
-    <name>RD0140</name>
-    <desc><![CDATA[Coyote Canyon Rd, unpaved.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="33.499568" lon="-116.570308">
-    <ele>1245.5</ele>
-    <name>RD0143</name>
-    <desc><![CDATA[Unpaved Table Mountain Truck Trail, trail gate.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="33.528188" lon="-116.590782">
-    <ele>1496.3</ele>
-    <name>RD0147</name>
-    <desc><![CDATA[Table Mountain Truck Trail, unpaved, 2nd crossing.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="33.840743" lon="-116.738482">
-    <ele>2335.8</ele>
-    <name>RD0191</name>
-    <desc><![CDATA[Black Mountain Road, unpaved.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="33.856341" lon="-116.733110">
-    <ele>2087.0</ele>
-    <name>RD0193</name>
-    <desc><![CDATA[Round-about of unpaved roads,  small unpaved parking area, possible trailhead for high clearance vehicles.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
   <wpt lat="33.893646" lon="-116.683018">
     <ele>376.5</ele>
     <name>RD0207</name>
     <desc><![CDATA[PCT departs the paved road,]]></desc>
     <sym>Truck</sym>
   </wpt>
-  <wpt lat="33.729244" lon="-116.710578">
-    <ele>1708.7</ele>
-    <name>RdJct-Spt</name>
-    <desc><![CDATA[Keep right at unmarked junction of unpaved roads - mi 12.1]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="33.803601" lon="-116.664091">
-    <ele>2758.4</ele>
-    <name>RoundValley</name>
-    <desc><![CDATA[Round Valley]]></desc>
-    <sym>Park</sym>
-  </wpt>
-  <wpt lat="33.774280" lon="-116.673053">
-    <ele>2473.0</ele>
-    <name>SaddleJct</name>
-    <desc><![CDATA[Saddle Junction, Devils Slide Trail to Humber Park, Idyllwild.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.747578" lon="-116.714376">
-    <ele>1641.9</ele>
-    <name>SanJacCG-BMR</name>
-    <desc><![CDATA[San Jacinto State Park Campground in the town of Idyllwild.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="33.731801" lon="-116.710111">
-    <ele>1693.4</ele>
-    <name>SaunMdwRd-Spt</name>
-    <desc><![CDATA[Right on paved Saunders Meadow Rd - mi 12.3]]></desc>
+  <wpt lat="33.924240" lon="-116.694547">
+    <ele>407.7</ele>
+    <name>Hwy10</name>
+    <desc><![CDATA[Interstate Highway 10]]></desc>
     <sym>Car</sym>
-  </wpt>
-  <wpt lat="33.743423" lon="-116.704700">
-    <ele>1666.2</ele>
-    <name>SCircleDr-EM</name>
-    <desc><![CDATA[Left on paved South Circle Dr - mi 3.0]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="33.814222" lon="-116.678365">
-    <ele>3259.7</ele>
-    <name>SJShelter</name>
-    <desc><![CDATA[Shelter near San Jacinto Peak]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="33.788526" lon="-116.677347">
-    <ele>2740.9</ele>
-    <name>SJTrail</name>
-    <desc><![CDATA[Trail to San Jacinto Peak via Wellman Divide]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.776877" lon="-116.665271">
-    <ele>2436.5</ele>
-    <name>SkunkCabTr</name>
-    <desc><![CDATA[Skunk Cabbage Junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.770339" lon="-116.664696">
-    <ele>2435.7</ele>
-    <name>SkunkLawsTr</name>
-    <desc><![CDATA[Skunk Laws Trail Junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.697877" lon="-116.652228">
-    <ele>1505.8</ele>
-    <name>SpitlerTH-Spt</name>
-    <desc><![CDATA[Spitler Peak trailhead, parking, go left on paved Apple Canyon Road - mi 4.7]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.710008" lon="-116.622516">
-    <ele>2136.3</ele>
-    <name>SpitlerTr</name>
-    <desc><![CDATA[Spitler Trail Junction.<br/>-----<br/>Many thru-hikers reach the San Jacinto Mountains early in the hiking season when snow and ice still cover parts of the trail. In 2005 a PCT hiker died in the San Jacinto's following a snowstorm. Snow often begins on the north side of Apache Peak (mile 169.5) and continues 21 miles through Fuller Ridge. If you reach Apache Peak and are uneasy traveling north you can backtrack 1 mile to the Spitler Peak Trail and hike the Spitler to Idyllwild Alternate shown in the back of this section of Halfmile's maps. Snow melts quickly, so trail reports more than a few days old may not be accurate following warm weather.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.708651" lon="-116.624792">
-    <ele>2004.3</ele>
-    <name>Spring-Spt</name>
-    <desc><![CDATA[Small Spring]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="33.711982" lon="-116.693287">
-    <ele>1604.4</ele>
-    <name>Spring2-Spt</name>
-    <desc><![CDATA[Pass spring and trough on the left - mi 10.2]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="33.717648" lon="-116.697527">
-    <ele>1656.4</ele>
-    <name>SRidgeTr-Spt</name>
-    <desc><![CDATA[Continue past Southridge, Tahquitz Peak trailhead on right - mi 10.7]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.782939" lon="-116.704193">
-    <ele>2452.8</ele>
-    <name>StrawberryJct</name>
-    <desc><![CDATA[Strawberry Junction, Deer Springs Trail to Suicide Rock, Idyllwild.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.743296" lon="-116.702395">
-    <ele>1687.3</ele>
-    <name>StrongDr-EM</name>
-    <desc><![CDATA[Left on paved Strong Dr - 2.9]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="33.769968" lon="-116.696749">
-    <ele>2253.5</ele>
-    <name>SuicideRock</name>
-    <desc><![CDATA[Suicide Rock]]></desc>
-    <sym>Summit</sym>
-  </wpt>
-  <wpt lat="33.740279" lon="-116.702357">
-    <ele>1744.7</ele>
-    <name>TahquitzViewRd-EM</name>
-    <desc><![CDATA[Right on unpaved Tahquitz View Rd]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="33.768201" lon="-116.663562">
-    <ele>2403.1</ele>
-    <name>TqtzMdw</name>
-    <desc><![CDATA[Tahquitz Meadow, usually has water in May and June, 7/10 mile north of PCT mile 177.3.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.755402" lon="-116.677101">
-    <ele>2689.7</ele>
-    <name>TqtzPeak</name>
-    <desc><![CDATA[Tahquitz Peak, 4/10 mile W of PCT.]]></desc>
-    <sym>Summit</sym>
-  </wpt>
-  <wpt lat="33.757497" lon="-116.671598">
-    <ele>2627.1</ele>
-    <name>TqtzPkTr</name>
-    <desc><![CDATA[Tahquitz Peak Trail]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.760705" lon="-116.665620">
-    <ele>2479.1</ele>
-    <name>TqtzValTr</name>
-    <desc><![CDATA[Tahquitz Valley Trail]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.326799" lon="-116.635855">
-    <ele>1242.8</ele>
-    <name>TR0118</name>
-    <desc><![CDATA[Unmarked spur trail going 100 yards south to Lost Creek Road.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.326141" lon="-116.636023">
-    <ele>1227.9</ele>
-    <name>TR0118b</name>
-    <desc><![CDATA[100 yard spur trail from Lost Creek Rd to the PCT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.623103" lon="-116.564014">
-    <ele>1814.2</ele>
-    <name>TR0158</name>
-    <desc><![CDATA[Trail junction for Live Oak Spring and Tunnel Spring, trail gate 250 feet S of junction.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.672365" lon="-116.582038">
-    <ele>2116.2</ele>
-    <name>TR0163</name>
-    <desc><![CDATA[Eagle Spring trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.855115" lon="-116.722632">
-    <ele>1948.6</ele>
-    <name>TR0194</name>
-    <desc><![CDATA[Unmarked use trail to West Fork Snow Creek.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.803041" lon="-116.643474">
-    <ele>2665.4</ele>
-    <name>TrRoundValley</name>
-    <desc><![CDATA[Round Valley Trail Junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.768325" lon="-116.709636">
-    <ele>2106.9</ele>
-    <name>TrSuicideRock</name>
-    <desc><![CDATA[Suicide Rock Trail Junction]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="33.802458" lon="-116.658847">
-    <ele>2739.4</ele>
-    <name>TrWillowCrk</name>
-    <desc><![CDATA[Willow Creek Trail Junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.742927" lon="-116.710988">
-    <ele>1623.6</ele>
-    <name>VillageCntrDr-EM</name>
-    <desc><![CDATA[Right on paved Village Center Dr - mi 3.4]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="33.795005" lon="-116.678192">
-    <ele>2830.9</ele>
-    <name>WA0181</name>
-    <desc><![CDATA[Wellmans Cienaga, 7/10 mile north of PCT mile 181.2.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.679291" lon="-116.679310">
-    <ele>1366.8</ele>
-    <name>WaterTank-Spt</name>
-    <desc><![CDATA[Water Tank N of Hurkey CG, no water for hikers - mile 7.4]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="33.799235" lon="-116.674228">
-    <ele>2957.5</ele>
-    <name>WellmanDiv</name>
-    <desc><![CDATA[Wellman Divide, trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.783687" lon="-116.657237">
-    <ele>2381.0</ele>
-    <name>WillowCreek</name>
-    <desc><![CDATA[Willow Creek]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="33.295565" lon="-116.638654">
-    <ele>911.3</ele>
-    <name>WR113</name>
-    <desc><![CDATA[Agua Caliente Creek, just past picnic tables.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.309273" lon="-116.630542">
-    <ele>972.1</ele>
-    <name>WR115</name>
-    <desc><![CDATA[Agua Caliente Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.317172" lon="-116.626687">
-    <ele>1013.8</ele>
-    <name>WR115B</name>
-    <desc><![CDATA[Agua Caliente Creek, last crossing.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.344277" lon="-116.636958">
-    <ele>1325.5</ele>
-    <name>WR120</name>
-    <desc><![CDATA[Lost Valley Spring, 2/10 mile north of PCT mile 119.6.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.381612" lon="-116.595174">
-    <ele>1541.2</ele>
-    <name>WR127</name>
-    <desc><![CDATA[Chihuahua Valley Rd, unpaved.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.380506" lon="-116.591184">
-    <ele>1548.1</ele>
-    <name>WR127B</name>
-    <desc><![CDATA[Water tank, 2/10 mile east of PCT mile 127.3.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.457890" lon="-116.604818">
-    <ele>1095.0</ele>
-    <name>WR137</name>
-    <desc><![CDATA[Tule Canyon Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.459217" lon="-116.597706">
-    <ele>1060.9</ele>
-    <name>WR137B</name>
-    <desc><![CDATA[Tule Spring, 3/10 mile E of PCT. WATER ALERT: Next northbound water may be the Paradise Cafe in 14.9 miles.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.475362" lon="-116.578381">
-    <ele>1088.0</ele>
-    <name>WR140</name>
-    <desc><![CDATA[Guzzler cistern]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.569052" lon="-116.591406">
-    <ele>1460.5</ele>
-    <name>WR152</name>
-    <desc><![CDATA[Paradise Valley Cafe, water spigot outside, 1 mile west of PCT mile 151.9.<br/>-<br/>The Paradise Valley Cafe accepts hiker resupply packages via USPS, UPS & FedEx. Include ETA on your Package.<br/>(Your Name)<br/>c/o Paradise Valley Cafe<br/>61721 State Highway 74<br/>Mountain Center, CA 92561<br/>-<br/>Cafe phone: 951-659-3663<br/>Hours: open We-Su 8-8 & Mo 8-3; closed Tu<br/>-----<br/> WATER ALERT: Next southbound water may be Tule Spring in 14.9 miles.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.622548" lon="-116.556536">
-    <ele>1657.0</ele>
-    <name>WR158</name>
-    <desc><![CDATA[Live Oak Spring, 1 mile east of PCT mile 158.4.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.622195" lon="-116.567215">
-    <ele>1733.6</ele>
-    <name>WR158b</name>
-    <desc><![CDATA[Tunnel Spring, 3/10 mile W of PCT.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.676726" lon="-116.576572">
-    <ele>1947.1</ele>
-    <name>WR162</name>
-    <desc><![CDATA[Cedar Spring, 1 mile north of PCT mile 162.6.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.669432" lon="-116.581411">
-    <ele>2052.2</ele>
-    <name>WR163</name>
-    <desc><![CDATA[Seasonal Eagle Spring, 3/10 mile south of PCT mile 163.3.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.759820" lon="-116.665583">
-    <ele>2485.8</ele>
-    <name>WR177</name>
-    <desc><![CDATA[Tahquitz Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.786596" lon="-116.689506">
-    <ele>2620.4</ele>
-    <name>WR182</name>
-    <desc><![CDATA[Strawberry Cienaga]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.790617" lon="-116.705444">
-    <ele>2550.8</ele>
-    <name>WR184</name>
-    <desc><![CDATA[Stone Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.800683" lon="-116.698779">
-    <ele>2722.8</ele>
-    <name>WR186</name>
-    <desc><![CDATA[Deer Springs, N Fork San Jacinto River. WATER ALERT: Next northbound water may be the Snow Canyon Road faucet in 20.1 miles.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.807617" lon="-116.697540">
-    <ele>2720.9</ele>
-    <name>WR186B</name>
-    <desc><![CDATA[N Fork San Jacinto River Tributary.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.810660" lon="-116.697426">
-    <ele>2712.7</ele>
-    <name>WR186C</name>
-    <desc><![CDATA[N Fork San Jacinto River]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.878122" lon="-116.679006">
-    <ele>527.4</ele>
-    <name>WR206</name>
-    <desc><![CDATA[Snow Canyon Road faucet, campsites 150 feet W, PCT joins paved Snow Creek Road. WATER ALERT: Next southbound water may be Fork of San Jacinto River Tributary in 20.1 miles.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.480494" lon="-116.574349">
-    <ele>1020.1</ele>
-    <name>WRCS140B</name>
-    <desc><![CDATA[Nance Canyon, seasonal creek, several sandy beach-like campsites downstream from trail crossing.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.719822" lon="-116.620367">
-    <ele>2085.1</ele>
-    <name>WRCS169</name>
-    <desc><![CDATA[Apache Spring, 1/2 mile east of PCT mile 169.2, several large campsites, can be very windy.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.853687" lon="-116.722852">
-    <ele>1936.9</ele>
-    <name>WRCS194</name>
-    <desc><![CDATA[Seasonal headwaters of the West Fork Snow Creek, campsite, 1/10 mile S of PCT on unmarked use trail.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.679008" lon="-116.668667">
-    <ele>1348.3</ele>
-    <name>YellowPst3-Spt</name>
-    <desc><![CDATA[Yellow Post with arrow pointing N to campsite number 3. Campsite is 2/10 mile N of Apple Canyon Road - mile 6.4]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="33.681339" lon="-116.669224">
-    <ele>1352.9</ele>
-    <name>YPCamp3-Spt</name>
-    <desc><![CDATA[Yellow post campsite number 3]]></desc>
-    <sym>Campground</sym>
   </wpt>
   <wpt lat="33.273512" lon="-116.644957">
     <ele>928.3</ele>

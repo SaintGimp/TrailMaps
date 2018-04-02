@@ -13,11 +13,263 @@
           or Lon Cooper <Halfmile@pctmap.net> for all others.]]>
     </desc>
   </metadata>
+  <wpt lat="37.877018" lon="-119.353069">
+    <ele>2620.2</ele>
+    <name>Hwy120</name>
+    <desc><![CDATA[Highway 120]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="37.872699" lon="-119.353435">
+    <ele>2628.7</ele>
+    <name>TuolumneCG</name>
+    <desc><![CDATA[Tuolumne Meadows Campground, walk-in sites, water, 3/10 mile SW of PCT.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="37.874258" lon="-119.356879">
+    <ele>2614.4</ele>
+    <name>TuolumneStore</name>
+    <desc><![CDATA[Tuolumne Meadows has a nearby campground with backpacker sites, store [3/10 mile W of the PCT, surprisingly well stocked], snack bar, outfitter [in the gas station], and a post office [209-372-8236]. The store and post office may not be open early season due to snow.]]></desc>
+    <sym>Shopping Center</sym>
+  </wpt>
   <wpt lat="37.878894" lon="-119.358496">
     <ele>2618.5</ele>
     <name>GT0943</name>
     <desc><![CDATA[Trail gate]]></desc>
     <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="37.878806" lon="-119.365185">
+    <ele>2622.5</ele>
+    <name>JMT0943</name>
+    <desc><![CDATA[John Muir Trail to Yosemite Valley.]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="37.848263" lon="-119.414862">
+    <ele>2875.8</ele>
+    <name>CathedralLkTR</name>
+    <desc><![CDATA[Cathedral Lake trail junction, 4.4 miles S of PCT on the JMT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.793446" lon="-119.433158">
+    <ele>2839.4</ele>
+    <name>CloudsRestTR</name>
+    <desc><![CDATA[Clouds Rest trail junction, 9 miles S of PCT on the JMT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.744124" lon="-119.503772">
+    <ele>2184.1</ele>
+    <name>CloudsRestTR2</name>
+    <desc><![CDATA[2nd trail junction to Clouds Rest, 15.6 miles S of PCT on the JMT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.789654" lon="-119.434616">
+    <ele>2845.1</ele>
+    <name>JMTCS09B</name>
+    <desc><![CDATA[Campsite, 9.4 miles S of PCT on the JMT.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="37.743549" lon="-119.505880">
+    <ele>2163.3</ele>
+    <name>JMTCS15B</name>
+    <desc><![CDATA[Campsite, 15.7 miles S of PCT on the JMT.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="37.744218" lon="-119.508488">
+    <ele>2150.6</ele>
+    <name>JMTCS15C</name>
+    <desc><![CDATA[Campsite, 15.9 miles S of PCT on the JMT.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="37.757382" lon="-119.478607">
+    <ele>2441.4</ele>
+    <name>ForsythTR</name>
+    <desc><![CDATA[Forsyth trail junction, 13.5 miles S of PCT on the JMT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.745071" lon="-119.512716">
+    <ele>2127.6</ele>
+    <name>HalfDomeTR</name>
+    <desc><![CDATA[Half Dome trail junction, 16.2 miles S of PCT on the JMT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.732855" lon="-119.557873">
+    <ele>1228.1</ele>
+    <name>HappyIsle</name>
+    <desc><![CDATA[Happy Isle, paved road, 22.5 miles S of PCT on the JMT.]]></desc>
+    <sym>Ground Transportation</sym>
+  </wpt>
+  <wpt lat="37.872054" lon="-119.370677">
+    <ele>2617.4</ele>
+    <name>HWY120B</name>
+    <desc><![CDATA[Highway 120, paved, 6/10 mile S of PCT on JMT.]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="37.722438" lon="-119.535426">
+    <ele>1831.5</ele>
+    <name>IllilouetteTR</name>
+    <desc><![CDATA[Illilouette trail junction, 19.2 miles S of PCT on the JMT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.756253" lon="-119.478933">
+    <ele>2424.5</ele>
+    <name>MercedLakeTR</name>
+    <desc><![CDATA[Merced Lake trail junction, 13.6 miles S of PCT on the JMT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.731986" lon="-119.515665">
+    <ele>1865.7</ele>
+    <name>MercedLakeTR2</name>
+    <desc><![CDATA[2nd trail junction to Merced Lake, 17.7 miles S of PCT on the JMT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.726253" lon="-119.548618">
+    <ele>1395.6</ele>
+    <name>MistTR</name>
+    <desc><![CDATA[Mist Trail junction, 21.3 miles S of PCT on the JMT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.877958" lon="-119.366126">
+    <ele>2620.0</ele>
+    <name>SodaSpringTR</name>
+    <desc><![CDATA[Soda Spring trail junction, 2/10 mi S of PCT on the JMT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.794764" lon="-119.432298">
+    <ele>2840.7</ele>
+    <name>SunriseCamp</name>
+    <desc><![CDATA[Sunrise High Sierra Trail Camp, backpacker campground, water, 8.9 miles S of PCT on the JMT.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="37.872062" lon="-119.383826">
+    <ele>2621.5</ele>
+    <name>TenayaLakeTR</name>
+    <desc><![CDATA[Tenaya Lake trail junction, 1.6 miles S of PCT on the JMT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.726175" lon="-119.530475">
+    <ele>1821.7</ele>
+    <name>VernalFallsTR</name>
+    <desc><![CDATA[Vernal Falls trail junction, 18.7 miles S of PCT on the JMT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.725028" lon="-119.544958">
+    <ele>1676.3</ele>
+    <name>VernalFallsTR2</name>
+    <desc><![CDATA[2nd trail junction to Vernal Falls, 20 miles S of PCT on the JMT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.871104" lon="-119.371672">
+    <ele>2621.9</ele>
+    <name>VisitorCntrTR</name>
+    <desc><![CDATA[Trail junction to Visitor Center, 7/10 mile S of PCT on the JMT.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.877377" lon="-119.366200">
+    <ele>2618.6</ele>
+    <name>JMTWA01</name>
+    <desc><![CDATA[Tuolumne River, bridge, 3/10 mile S of PCT on the JMT.]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="37.871729" lon="-119.383407">
+    <ele>2620.8</ele>
+    <name>BuddCreek</name>
+    <desc><![CDATA[Budd Creek, bridge, water, Tenaya Lake trail junction 200 feet W, 1.5 miles S of PCT on the JMT.]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="37.862441" lon="-119.404209">
+    <ele>2784.4</ele>
+    <name>CathedralCreek</name>
+    <desc><![CDATA[Cathedral Creek, water, 3 miles S of PCT on the JMT.]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="37.860254" lon="-119.406072">
+    <ele>2841.7</ele>
+    <name>JMTWA03</name>
+    <desc><![CDATA[Trailside spring, 3.3 miles S of PCT on the JMT.]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="37.804870" lon="-119.430113">
+    <ele>2849.7</ele>
+    <name>JMTWA08</name>
+    <desc><![CDATA[Stream, 8 miles S of PCT on the JMT.]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="37.794056" lon="-119.432907">
+    <ele>2839.9</ele>
+    <name>JMTWA09</name>
+    <desc><![CDATA[Seasonal stream, 9 miles S of PCT on the JMT.]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="37.788749" lon="-119.435292">
+    <ele>2836.1</ele>
+    <name>JMTWA09B</name>
+    <desc><![CDATA[Stream, water, 9.4 miles S of PCT on the JMT.]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="37.772092" lon="-119.447094">
+    <ele>2803.7</ele>
+    <name>JMTWA11</name>
+    <desc><![CDATA[Trailside stream, 11 miles S of PCT on the JMT.]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="37.747231" lon="-119.492274">
+    <ele>2293.4</ele>
+    <name>JMTWA14B</name>
+    <desc><![CDATA[Sunrise Creek, 14.8 miles S of PCT on the JMT.]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="37.724722" lon="-119.533102">
+    <ele>1806.8</ele>
+    <name>JMTWA18</name>
+    <desc><![CDATA[Merced River, bridge above Nevada Fall, 18.9 miles S of PCT on the JMT.]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="37.726072" lon="-119.551607">
+    <ele>1337.5</ele>
+    <name>JMTWA21</name>
+    <desc><![CDATA[Merced River, bridge, drinking fountain, restroom nearby, 21.5 miles S of PCT on the JMT.]]></desc>
+    <sym>Drinking Water</sym>
+  </wpt>
+  <wpt lat="37.841264" lon="-119.413576">
+    <ele>2927.4</ele>
+    <name>JMTWACS05</name>
+    <desc><![CDATA[Campsite, 5 miles S of PCT on the JMT.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="37.765272" lon="-119.452951">
+    <ele>2606.3</ele>
+    <name>JMTWACS11B</name>
+    <desc><![CDATA[Seasonal Sunrise Creek, campsite, 11.8 miles S of JMT on the JMT.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="37.751316" lon="-119.482450">
+    <ele>2380.1</ele>
+    <name>JMTWACS14</name>
+    <desc><![CDATA[Campsite, nearby stream, 14.1 miles S of PCT on the JMT.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="37.744321" lon="-119.503274">
+    <ele>2187.1</ele>
+    <name>JMTWACS15</name>
+    <desc><![CDATA[Water, campsites, 15.5 miles S of PCT on the JMT.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="37.733432" lon="-119.515456">
+    <ele>1868.1</ele>
+    <name>JMTWACS17</name>
+    <desc><![CDATA[Little Yosemite Valley Backpacker Campground, 17.6 miles S of PCT on the JMT.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="37.888575" lon="-119.380772">
+    <ele>2627.5</ele>
+    <name>TR0945</name>
+    <desc><![CDATA[Young Lake trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="37.901070" lon="-119.412990">
+    <ele>2698.4</ele>
+    <name>WA0947</name>
+    <desc><![CDATA[Wooden bridge over Tuolumne River.]]></desc>
+    <sym>Trail Head</sym>
   </wpt>
   <wpt lat="37.908138" lon="-119.421127">
     <ele>2430.9</ele>
@@ -37,11 +289,23 @@
     <desc><![CDATA[Trail junction to Glen Aulin campground over a wooden bridge. Water, bear lockers, outhouse nearby.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
+  <wpt lat="37.995943" lon="-119.378818">
+    <ele>2775.5</ele>
+    <name>TR0955</name>
+    <desc><![CDATA[McCabe Lake trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="38.006750" lon="-119.376487">
     <ele>2600.1</ele>
     <name>WA0956</name>
-    <desc><![CDATA[Ford a creek. In dry years this may be the first water north of Glen Aulin.]]></desc>
+    <desc><![CDATA[Ford a creek. In dry years this may be the first water N of Glen Aulin.]]></desc>
     <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.006659" lon="-119.376902">
+    <ele>2600.8</ele>
+    <name>TR0956</name>
+    <desc><![CDATA[Summit Pass, Virginia Pass trail junction.]]></desc>
+    <sym>Trail Head</sym>
   </wpt>
   <wpt lat="38.006909" lon="-119.390535">
     <ele>2667.3</ele>
@@ -55,10 +319,34 @@
     <desc><![CDATA[Miller Lake]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="38.015204" lon="-119.413186">
+    <ele>2590.4</ele>
+    <name>TR0962</name>
+    <desc><![CDATA[Burro Pass trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="38.014178" lon="-119.414449">
     <ele>2583.0</ele>
     <name>WA0962</name>
     <desc><![CDATA[Ford a creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.013507" lon="-119.414945">
+    <ele>2582.5</ele>
+    <name>WA0962B</name>
+    <desc><![CDATA[Small stream]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.010453" lon="-119.419478">
+    <ele>2577.5</ele>
+    <name>WA0962C</name>
+    <desc><![CDATA[Stream next to trail.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.003864" lon="-119.427444">
+    <ele>2574.2</ele>
+    <name>WACS0963</name>
+    <desc><![CDATA[Campsite near small stream.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.004377" lon="-119.434700">
@@ -78,6 +366,30 @@
     <name>WACS0965</name>
     <desc><![CDATA[Last ford of Wilson Creek, small tent site nearby.]]></desc>
     <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.018533" lon="-119.449880">
+    <ele>2896.1</ele>
+    <name>WA0965</name>
+    <desc><![CDATA[Creek near switchback.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.015117" lon="-119.461160">
+    <ele>3086.1</ele>
+    <name>BensonPass</name>
+    <desc><![CDATA[Benson Pass]]></desc>
+    <sym>Summit</sym>
+  </wpt>
+  <wpt lat="38.010865" lon="-119.470878">
+    <ele>2972.9</ele>
+    <name>WA0967</name>
+    <desc><![CDATA[Small trail side creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.008843" lon="-119.479161">
+    <ele>2836.2</ele>
+    <name>CS0968</name>
+    <desc><![CDATA[Small campsite]]></desc>
+    <sym>Campground</sym>
   </wpt>
   <wpt lat="38.008876" lon="-119.479958">
     <ele>2829.5</ele>
@@ -115,6 +427,18 @@
     <desc><![CDATA[Ford a creek]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="38.022795" lon="-119.519657">
+    <ele>2316.7</ele>
+    <name>WA0973</name>
+    <desc><![CDATA[Piute Creek, may be a difficult ford early in the season.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.023130" lon="-119.520415">
+    <ele>2316.8</ele>
+    <name>TR0973</name>
+    <desc><![CDATA[Benson Lake Trail, lake and campsites 4/10 mile SW.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="38.028170" lon="-119.526896">
     <ele>2438.0</ele>
     <name>WA0973B</name>
@@ -133,6 +457,12 @@
     <desc><![CDATA[Small lake]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="38.051488" lon="-119.518058">
+    <ele>2688.9</ele>
+    <name>TR0976</name>
+    <desc><![CDATA[Rock Island Pass, Buckeye Pass trail junctions.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="38.045662" lon="-119.548738">
     <ele>2529.5</ele>
     <name>WA0978</name>
@@ -145,10 +475,40 @@
     <desc><![CDATA[Bear Valley, Yosemite Valley, Pleasant Valley trail junction.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
+  <wpt lat="38.045240" lon="-119.572620">
+    <ele>2919.7</ele>
+    <name>WA0980</name>
+    <desc><![CDATA[Ford Kerrick Creek (sometimes difficult early season).]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.055090" lon="-119.584360">
+    <ele>2537.7</ele>
+    <name>WA0981</name>
+    <desc><![CDATA[Seasonal stream]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.058877" lon="-119.590628">
+    <ele>2362.8</ele>
+    <name>WACS0982</name>
+    <desc><![CDATA[Stream, campsite nearby.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.062640" lon="-119.624270">
+    <ele>1093.6</ele>
+    <name>WA0985</name>
+    <desc><![CDATA[Small lake]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="38.063240" lon="-119.624560">
     <ele>2549.1</ele>
     <name>TR0986</name>
     <desc><![CDATA[Tiltill Valley trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="38.064515" lon="-119.623564">
+    <ele>2555.5</ele>
+    <name>TR0986B</name>
+    <desc><![CDATA[Bond Pass trail junction]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="38.066259" lon="-119.625003">
@@ -160,7 +520,7 @@
   <wpt lat="38.069012" lon="-119.639788">
     <ele>2425.7</ele>
     <name>WACS0987</name>
-    <desc><![CDATA[Wilma Lake (sometimes incorrectly named Wilmer Lake), campsites. This lake has a history of name changes on maps and trail signs. The lake is named after Wilma Seavey, daughter of Clyde L. Seavey.]]></desc>
+    <desc><![CDATA[Wilma Lake [sometimes incorrectly named Wilmer Lake], campsites. This lake has a history of name changes on maps and trail signs. The lake is named after Wilma Seavey, daughter of Clyde L. Seavey.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.073618" lon="-119.646105">
@@ -173,6 +533,24 @@
     <ele>2425.9</ele>
     <name>TR0987</name>
     <desc><![CDATA[Laurel Lake trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="38.088081" lon="-119.633950">
+    <ele>2490.7</ele>
+    <name>TR0989</name>
+    <desc><![CDATA[Tilden Lake trail junction (lake is 1.5 mi E).]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="38.162384" lon="-119.605942">
+    <ele>2742.6</ele>
+    <name>WA0995</name>
+    <desc><![CDATA[Trailside stream]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.169783" lon="-119.601482">
+    <ele>2846.0</ele>
+    <name>TR0996</name>
+    <desc><![CDATA[Bond Pass trail junction]]></desc>
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="38.176955" lon="-119.592308">
@@ -191,6 +569,24 @@
     <ele>2818.4</ele>
     <name>WA0998</name>
     <desc><![CDATA[Lake Harriet]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.189123" lon="-119.569323">
+    <ele>2800.6</ele>
+    <name>WA0998B</name>
+    <desc><![CDATA[Seasonal stream]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.189523" lon="-119.569293">
+    <ele>2797.8</ele>
+    <name>CS0998</name>
+    <desc><![CDATA[Small campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="38.194580" lon="-119.570750">
+    <ele>1002.3</ele>
+    <name>WA0999</name>
+    <desc><![CDATA[Second crossing, Cascade Creek, single log bridge.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.199181" lon="-119.569501">
@@ -223,6 +619,12 @@
     <desc><![CDATA[Creek with a wooden bridge.]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="38.227706" lon="-119.580908">
+    <ele>2621.0</ele>
+    <name>CS1003</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
   <wpt lat="38.230871" lon="-119.580518">
     <ele>2610.5</ele>
     <name>WalkenMdw</name>
@@ -244,7 +646,7 @@
   <wpt lat="38.253412" lon="-119.598261">
     <ele>2762.5</ele>
     <name>WACS1006</name>
-    <desc><![CDATA[Stream, campsites nearby. Last creek northbound in Kennedy Canyon. WATER ALERT: Next northbound water may be Sardine Creek in 10.4 miles.]]></desc>
+    <desc><![CDATA[Stream, campsites nearby. Last creek northbound in Kennedy Canyon.<br/>---<br/>WATER ALERT: Next northbound water after the Last creek northbound in Kennedy Canyon may be Sardine Creek in 10.4 miles.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.251208" lon="-119.606639">
@@ -253,17 +655,17 @@
     <desc><![CDATA[Stream]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="38.245718" lon="-119.614307">
+    <ele>2960.5</ele>
+    <name>TR1007</name>
+    <desc><![CDATA[Emigrant Pass trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="38.260716" lon="-119.614514">
     <ele>3225.6</ele>
     <name>TR1009</name>
     <desc><![CDATA[Leavitt Lake trail junction]]></desc>
     <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.322901" lon="-119.638461">
-    <ele>2998.9</ele>
-    <name>WA1016</name>
-    <desc><![CDATA[Sardine Creek, the first creek after Kennedy Canyon.  WATER ALERT: Next southbound water may be the creek in 10.4 miles.]]></desc>
-    <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.316459" lon="-119.643801">
     <ele>3313.5</ele>
@@ -271,412 +673,10 @@
     <desc><![CDATA[Northern boundary of Emigrant Wilderness.]]></desc>
     <sym>Forest</sym>
   </wpt>
-  <wpt lat="38.245718" lon="-119.614307">
-    <ele>2960.5</ele>
-    <name>TR1007</name>
-    <desc><![CDATA[Emigrant Pass trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.227706" lon="-119.580908">
-    <ele>2621.0</ele>
-    <name>CS1003</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="38.189523" lon="-119.569293">
-    <ele>2797.8</ele>
-    <name>CS0998</name>
-    <desc><![CDATA[Small campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="38.189123" lon="-119.569323">
-    <ele>2800.6</ele>
-    <name>WA0998B</name>
-    <desc><![CDATA[Seasonal stream]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.169783" lon="-119.601482">
-    <ele>2846.0</ele>
-    <name>TR0996</name>
-    <desc><![CDATA[Bond Pass trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.162384" lon="-119.605942">
-    <ele>2742.6</ele>
-    <name>WA0995</name>
-    <desc><![CDATA[Trailside stream]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.088081" lon="-119.633950">
-    <ele>2490.7</ele>
-    <name>TR0989</name>
-    <desc><![CDATA[Tilden Lake trail junction (lake is 1.5 mi E).]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.064515" lon="-119.623564">
-    <ele>2555.5</ele>
-    <name>TR0986B</name>
-    <desc><![CDATA[Bond Pass trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.058877" lon="-119.590628">
-    <ele>2362.8</ele>
-    <name>WACS0982</name>
-    <desc><![CDATA[Stream, campsite nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.051488" lon="-119.518058">
-    <ele>2688.9</ele>
-    <name>TR0976</name>
-    <desc><![CDATA[Rock Island Pass, Buckeye Pass trail junctions.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.023130" lon="-119.520415">
-    <ele>2316.8</ele>
-    <name>TR0973</name>
-    <desc><![CDATA[Benson Lake Trail, lake and campsites 4/10 mile SW.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.022795" lon="-119.519657">
-    <ele>2316.7</ele>
-    <name>WA0973</name>
-    <desc><![CDATA[Piute Creek.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.008843" lon="-119.479161">
-    <ele>2836.2</ele>
-    <name>CS0968</name>
-    <desc><![CDATA[Small campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="38.010865" lon="-119.470878">
-    <ele>2972.9</ele>
-    <name>WA0967</name>
-    <desc><![CDATA[Small trail side creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.018533" lon="-119.449880">
-    <ele>2896.1</ele>
-    <name>WA0965</name>
-    <desc><![CDATA[Creek near switchback.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.003864" lon="-119.427444">
-    <ele>2574.2</ele>
-    <name>WACS0963</name>
-    <desc><![CDATA[Campsite near small stream.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.010453" lon="-119.419478">
-    <ele>2577.5</ele>
-    <name>WA0962C</name>
-    <desc><![CDATA[Stream next to trail.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.013507" lon="-119.414945">
-    <ele>2582.5</ele>
-    <name>WA0962B</name>
-    <desc><![CDATA[Small stream]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.015204" lon="-119.413186">
-    <ele>2590.4</ele>
-    <name>TR0962</name>
-    <desc><![CDATA[Burro Pass trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.006659" lon="-119.376902">
-    <ele>2600.8</ele>
-    <name>TR0956</name>
-    <desc><![CDATA[Summit Pass, Virginia Pass trail junction.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.995943" lon="-119.378818">
-    <ele>2775.5</ele>
-    <name>TR0955</name>
-    <desc><![CDATA[McCabe Lake trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.888575" lon="-119.380772">
-    <ele>2627.5</ele>
-    <name>TR0945</name>
-    <desc><![CDATA[Young Lake trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.848263" lon="-119.414862">
-    <ele>2875.8</ele>
-    <name>CathedralLkTR</name>
-    <desc><![CDATA[Cathedral Lake trail junction, 4.4 miles south of PCT on the JMT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.793446" lon="-119.433158">
-    <ele>2839.4</ele>
-    <name>CloudsRestTR</name>
-    <desc><![CDATA[Clouds Rest trail junction, 9 miles south of PCT on the JMT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.744124" lon="-119.503772">
-    <ele>2184.1</ele>
-    <name>CloudsRestTR2</name>
-    <desc><![CDATA[2nd trail junction to Clouds Rest, 15.6 miles south of PCT on the JMT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.789654" lon="-119.434616">
-    <ele>2845.1</ele>
-    <name>JMTCS09B</name>
-    <desc><![CDATA[Campsite, 9.4 miles south of PCT on the JMT.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="37.743549" lon="-119.505880">
-    <ele>2163.3</ele>
-    <name>JMTCS15B</name>
-    <desc><![CDATA[Campsite, 15.7 miles south of PCT on the JMT.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="37.744218" lon="-119.508488">
-    <ele>2150.6</ele>
-    <name>JMTCS15C</name>
-    <desc><![CDATA[Campsite, 15.9 miles south of PCT on the JMT.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="37.757382" lon="-119.478607">
-    <ele>2441.4</ele>
-    <name>ForsythTR</name>
-    <desc><![CDATA[Forsyth trail junction, 13.5 miles south of PCT on the JMT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.745071" lon="-119.512716">
-    <ele>2127.6</ele>
-    <name>HalfDomeTR</name>
-    <desc><![CDATA[Half Dome trail junction, 16.2 miles south of PCT on the JMT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.732855" lon="-119.557873">
-    <ele>1228.1</ele>
-    <name>HappyIsle</name>
-    <desc><![CDATA[Happy Isle, paved road, 22.5 miles south of PCT on the JMT.]]></desc>
-    <sym>Ground Transportation</sym>
-  </wpt>
-  <wpt lat="37.877018" lon="-119.353069">
-    <ele>2620.2</ele>
-    <name>Hwy120</name>
-    <desc><![CDATA[Highway 120]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="37.872054" lon="-119.370677">
-    <ele>2617.4</ele>
-    <name>HWY120B</name>
-    <desc><![CDATA[Highway 120, paved, 6/10 mile south of PCT on JMT.]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="37.722438" lon="-119.535426">
-    <ele>1831.5</ele>
-    <name>IllilouetteTR</name>
-    <desc><![CDATA[Illilouette trail junction, 19.2 miles south of PCT on the JMT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.756253" lon="-119.478933">
-    <ele>2424.5</ele>
-    <name>MercedLakeTR</name>
-    <desc><![CDATA[Merced Lake trail junction, 13.6 miles south of PCT on the JMT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.731986" lon="-119.515665">
-    <ele>1865.7</ele>
-    <name>MercedLakeTR2</name>
-    <desc><![CDATA[2nd trail junction to Merced Lake, 17.7 miles south of PCT on the JMT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.726253" lon="-119.548618">
-    <ele>1395.6</ele>
-    <name>MistTR</name>
-    <desc><![CDATA[Mist Trail junction, 21.3 miles south of PCT on the JMT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.877958" lon="-119.366126">
-    <ele>2620.0</ele>
-    <name>SodaSpringTR</name>
-    <desc><![CDATA[Soda Spring trail junction, 2/10 mi south of PCT on the JMT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.794764" lon="-119.432298">
-    <ele>2840.7</ele>
-    <name>SunriseCamp</name>
-    <desc><![CDATA[Sunrise High Sierra Trail Camp, backpacker campground, water, 8.9 miles south of PCT on the JMT.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="37.872062" lon="-119.383826">
-    <ele>2621.5</ele>
-    <name>TenayaLakeTR</name>
-    <desc><![CDATA[Tenaya Lake trail junction, 1.6 miles south of PCT on the JMT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.872699" lon="-119.353435">
-    <ele>2628.7</ele>
-    <name>TuolumneCG</name>
-    <desc><![CDATA[Tuolumne Meadows Campground, walk-in sites, water, 3/10 mile SW of PCT mile 942.5.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="37.874258" lon="-119.356879">
-    <ele>2614.4</ele>
-    <name>TuolumneStore</name>
-    <desc><![CDATA[Tuolumne Meadows has a campground, store [3/10 mile W of the PCT, surprisingly well stocked], snack bar, outfitter [in the gas station], and a post office. Tuolumne Meadows Post Office [Open M-F 9-5, Sa 9-12; 209-372-8236]<br/>(Your Name)<br/>c/o General Delivery<br/>Tuolumne Meadows<br/>Yosemite National Park, CA 95389]]></desc>
-    <sym>Shopping Center</sym>
-  </wpt>
-  <wpt lat="37.726175" lon="-119.530475">
-    <ele>1821.7</ele>
-    <name>VernalFallsTR</name>
-    <desc><![CDATA[Vernal Falls trail junction, 18.7 miles south of PCT on the JMT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.725028" lon="-119.544958">
-    <ele>1676.3</ele>
-    <name>VernalFallsTR2</name>
-    <desc><![CDATA[2nd trail junction to Vernal Falls, 20 miles south of PCT on the JMT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.871104" lon="-119.371672">
-    <ele>2621.9</ele>
-    <name>VisitorCntrTR</name>
-    <desc><![CDATA[Trail junction to Visitor Center, 7/10 mile south of PCT on the JMT.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="37.877377" lon="-119.366200">
-    <ele>2618.6</ele>
-    <name>JMTWA01</name>
-    <desc><![CDATA[Tuolumne River, bridge, 3/10 mile south of PCT on the JMT.]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="37.871729" lon="-119.383407">
-    <ele>2620.8</ele>
-    <name>BuddCreek</name>
-    <desc><![CDATA[Budd Creek, bridge, water, Tenaya Lake trail junction 200 feet west, 1.5 miles south of PCT on the JMT.]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="37.862441" lon="-119.404209">
-    <ele>2784.4</ele>
-    <name>CathedralCreek</name>
-    <desc><![CDATA[Cathedral Creek, water, 3 miles south of PCT on the JMT.]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="37.860254" lon="-119.406072">
-    <ele>2841.7</ele>
-    <name>JMTWA03</name>
-    <desc><![CDATA[Trailside spring, 3.3 miles  south of PCT on the JMT.]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="37.804870" lon="-119.430113">
-    <ele>2849.7</ele>
-    <name>JMTWA08</name>
-    <desc><![CDATA[Stream, 8 miles south of PCT on the JMT.]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="37.794056" lon="-119.432907">
-    <ele>2839.9</ele>
-    <name>JMTWA09</name>
-    <desc><![CDATA[Seasonal stream, 9 miles south of PCT on the JMT.]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="37.788749" lon="-119.435292">
-    <ele>2836.1</ele>
-    <name>JMTWA09B</name>
-    <desc><![CDATA[Stream, water, 9.4 miles south of PCT on the JMT.]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="37.772092" lon="-119.447094">
-    <ele>2803.7</ele>
-    <name>JMTWA11</name>
-    <desc><![CDATA[Trailside stream, 11 miles south of PCT on the JMT.]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="37.747231" lon="-119.492274">
-    <ele>2293.4</ele>
-    <name>JMTWA14B</name>
-    <desc><![CDATA[Sunrise Creek, 14.8 miles south of PCT on the JMT.]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="37.724722" lon="-119.533102">
-    <ele>1806.8</ele>
-    <name>JMTWA18</name>
-    <desc><![CDATA[Merced River, bridge above Nevada Fall, 18.9 miles south of PCT on the JMT.]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="37.726072" lon="-119.551607">
-    <ele>1337.5</ele>
-    <name>JMTWA21</name>
-    <desc><![CDATA[Merced River, bridge, drinking fountain, restroom nearby, 21.5 miles south of PCT on the JMT.]]></desc>
-    <sym>Drinking Water</sym>
-  </wpt>
-  <wpt lat="37.841264" lon="-119.413576">
-    <ele>2927.4</ele>
-    <name>JMTWACS05</name>
-    <desc><![CDATA[Campsite, 5 miles south of PCT on the JMT.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="37.765272" lon="-119.452951">
-    <ele>2606.3</ele>
-    <name>JMTWACS11B</name>
-    <desc><![CDATA[Seasonal Sunrise Creek, campsite, 11.8 miles south of JMT on the JMT.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="37.751316" lon="-119.482450">
-    <ele>2380.1</ele>
-    <name>JMTWACS14</name>
-    <desc><![CDATA[Campsite, nearby stream, 14.1 miles south of PCT on the JMT.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="37.744321" lon="-119.503274">
-    <ele>2187.1</ele>
-    <name>JMTWACS15</name>
-    <desc><![CDATA[Water, campsites, 15.5 miles south of PCT on the JMT.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="37.733432" lon="-119.515456">
-    <ele>1868.1</ele>
-    <name>JMTWACS17</name>
-    <desc><![CDATA[Little Yosemite Valley Backpacker Campground, 17.6 miles south of PCT on the JMT.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="38.015117" lon="-119.461160">
-    <ele>3086.1</ele>
-    <name>BensonPass</name>
-    <desc><![CDATA[Benson Pass]]></desc>
-    <sym>Summit</sym>
-  </wpt>
-  <wpt lat="37.878806" lon="-119.365185">
-    <ele>2622.5</ele>
-    <name>JMT0943</name>
-    <desc><![CDATA[John Muir Trail to Yosemite Valley.]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="37.901070" lon="-119.412990">
-    <ele>2698.4</ele>
-    <name>WA0947</name>
-    <desc><![CDATA[Wooden bridge over Tuolumne River.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.045240" lon="-119.572620">
-    <ele>2919.7</ele>
-    <name>WA0980</name>
-    <desc><![CDATA[Ford Rancheria Creek (sometimes difficult early season).]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.055090" lon="-119.584360">
-    <ele>2537.7</ele>
-    <name>WA0981</name>
-    <desc><![CDATA[Seasonal stream]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.062640" lon="-119.624270">
-    <ele>1093.6</ele>
-    <name>WA0985</name>
-    <desc><![CDATA[Small lake]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.194580" lon="-119.570750">
-    <ele>1002.3</ele>
-    <name>WA0999</name>
-    <desc><![CDATA[Second crossing, Cascade Creek, single log bridge.]]></desc>
+  <wpt lat="38.322901" lon="-119.638461">
+    <ele>2998.9</ele>
+    <name>WA1016</name>
+    <desc><![CDATA[Sardine Creek, the first creek after Kennedy Canyon.<br/>---<br/>WATER ALERT: Next southbound water after Sardine Creek may be the creek in 10.4 miles.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="37.877025" lon="-119.353072">

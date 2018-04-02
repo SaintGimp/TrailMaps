@@ -14,7 +14,7 @@
     </desc>
   </metadata>
   <wpt lat="38.327968" lon="-119.637183">
-    <ele>2942.8</ele>
+    <ele>1015.1</ele>
     <name>Hwy108</name>
     <desc><![CDATA[Highway 108, Sonora Pass.]]></desc>
     <sym>Car</sym>
@@ -31,16 +31,58 @@
     <desc><![CDATA[Carson-Iceberg Wilderness boundary]]></desc>
     <sym>Forest</sym>
   </wpt>
+  <wpt lat="38.343547" lon="-119.635744">
+    <ele>3022.1</ele>
+    <name>WA1018</name>
+    <desc><![CDATA[Small creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.346062" lon="-119.638498">
+    <ele>3071.0</ele>
+    <name>WA1019</name>
+    <desc><![CDATA[Small creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.346510" lon="-119.633291">
+    <ele>3145.2</ele>
+    <name>WA1019B</name>
+    <desc><![CDATA[Small creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.356801" lon="-119.625069">
+    <ele>3179.8</ele>
+    <name>WA1021</name>
+    <desc><![CDATA[Small creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="38.361432" lon="-119.623085">
     <ele>3126.8</ele>
     <name>HumboldtToiyabe</name>
     <desc><![CDATA[Carson-Iceberg Wilderness and Humboldt-Toiyabe National Forest boundary.]]></desc>
     <sym>Forest</sym>
   </wpt>
+  <wpt lat="38.371496" lon="-119.632182">
+    <ele>2893.9</ele>
+    <name>WA1022</name>
+    <desc><![CDATA[Stream]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="38.377445" lon="-119.636340">
     <ele>2823.6</ele>
     <name>WA1023</name>
     <desc><![CDATA[Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.385266" lon="-119.641624">
+    <ele>2725.5</ele>
+    <name>WA1024</name>
+    <desc><![CDATA[Stream]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.394041" lon="-119.653497">
+    <ele>2642.6</ele>
+    <name>WACS1025</name>
+    <desc><![CDATA[Creek, small campsite nearby.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.411616" lon="-119.666353">
@@ -53,6 +95,12 @@
     <ele>2646.1</ele>
     <name>WA1027</name>
     <desc><![CDATA[Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.423338" lon="-119.675983">
+    <ele>2691.3</ele>
+    <name>WACS1028</name>
+    <desc><![CDATA[Creek, several campsites nearby.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.438430" lon="-119.679639">
@@ -73,11 +121,23 @@
     <desc><![CDATA[Stream, campsite nearby.]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="38.458515" lon="-119.727067">
+    <ele>2795.9</ele>
+    <name>CS1034</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
   <wpt lat="38.459441" lon="-119.726712">
     <ele>2802.5</ele>
     <name>TR1034</name>
     <desc><![CDATA[Paradise Valley, Golden Canyon trail junction.]]></desc>
     <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="38.465389" lon="-119.720003">
+    <ele>2814.3</ele>
+    <name>CS1035</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
   </wpt>
   <wpt lat="38.467591" lon="-119.723324">
     <ele>2777.1</ele>
@@ -85,11 +145,23 @@
     <desc><![CDATA[Small creek, camping nearby.]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="38.471297" lon="-119.728179">
+    <ele>2729.8</ele>
+    <name>WA1036</name>
+    <desc><![CDATA[Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="38.476975" lon="-119.731350">
     <ele>2764.6</ele>
     <name>TR1036</name>
     <desc><![CDATA[Murray Canyon trail junction.]]></desc>
     <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="38.480282" lon="-119.743796">
+    <ele>2538.8</ele>
+    <name>WACS1038</name>
+    <desc><![CDATA[Creek, campsite nearby.]]></desc>
+    <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.482005" lon="-119.750326">
     <ele>2531.2</ele>
@@ -103,6 +175,12 @@
     <desc><![CDATA[Wolf Creek, campsite nearby.]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="38.498162" lon="-119.770054">
+    <ele>2564.7</ele>
+    <name>TR1041</name>
+    <desc><![CDATA[Highland Lake, Wolf Creek trail junction.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="38.501325" lon="-119.770956">
     <ele>2586.8</ele>
     <name>GT1041</name>
@@ -115,11 +193,29 @@
     <desc><![CDATA[Asa Lake trail junction.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
+  <wpt lat="38.503218" lon="-119.768079">
+    <ele>2597.8</ele>
+    <name>WA1041</name>
+    <desc><![CDATA[Asa Lake outlet.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.504162" lon="-119.768457">
+    <ele>2618.4</ele>
+    <name>WACS1041</name>
+    <desc><![CDATA[Campsites near Asa Lake.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="38.503845" lon="-119.772199">
     <ele>2668.0</ele>
     <name>GT1042</name>
     <desc><![CDATA[Barb wire gate and fallen fence.]]></desc>
     <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="38.504297" lon="-119.773864">
+    <ele>2684.7</ele>
+    <name>CarsonIceberg2</name>
+    <desc><![CDATA[Carson-Iceberg Wilderness boundary]]></desc>
+    <sym>Forest</sym>
   </wpt>
   <wpt lat="38.523292" lon="-119.775446">
     <ele>2777.4</ele>
@@ -132,6 +228,30 @@
     <name>WACS1044</name>
     <desc><![CDATA[Noble Lake, campsite nearby.]]></desc>
     <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.535223" lon="-119.781725">
+    <ele>2560.2</ele>
+    <name>TR1045</name>
+    <desc><![CDATA[Noble Canyon trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="38.533674" lon="-119.782890">
+    <ele>2533.3</ele>
+    <name>WA1046</name>
+    <desc><![CDATA[Noble Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.544487" lon="-119.792276">
+    <ele>2652.8</ele>
+    <name>CS1047</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="38.545948" lon="-119.807391">
+    <ele>2664.8</ele>
+    <name>TR1048</name>
+    <desc><![CDATA[Ebbetts Pass trail junction]]></desc>
+    <sym>Trail Head</sym>
   </wpt>
   <wpt lat="38.545741" lon="-119.811263">
     <ele>2652.2</ele>
@@ -157,16 +277,70 @@
     <desc><![CDATA[Mokelumne Wilderness boundary]]></desc>
     <sym>Forest</sym>
   </wpt>
+  <wpt lat="38.584607" lon="-119.833227">
+    <ele>2581.3</ele>
+    <name>CS1053</name>
+    <desc><![CDATA[Campsite near seasonal Eagle Creek.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="38.596669" lon="-119.821656">
+    <ele>2481.1</ele>
+    <name>WACS1055</name>
+    <desc><![CDATA[Pennsylvania Creek, small campsite nearby.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="38.608909" lon="-119.824400">
     <ele>2560.9</ele>
     <name>WA1057</name>
     <desc><![CDATA[Small creek]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="38.616832" lon="-119.831683">
+    <ele>2637.5</ele>
+    <name>TR1058</name>
+    <desc><![CDATA[Raymond Lake trail junction.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="38.617148" lon="-119.836900">
     <ele>2473.9</ele>
     <name>WA1059</name>
     <desc><![CDATA[Creek from Raymond Lake.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.616917" lon="-119.853106">
+    <ele>2399.0</ele>
+    <name>WACS1060</name>
+    <desc><![CDATA[Tributary of Pleasant Valley Creek, small campsite nearby.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.611770" lon="-119.858410">
+    <ele>2464.0</ele>
+    <name>MokelumneWild2</name>
+    <desc><![CDATA[Mokelumne Wilderness boundary]]></desc>
+    <sym>Forest</sym>
+  </wpt>
+  <wpt lat="38.607603" lon="-119.875220">
+    <ele>2411.7</ele>
+    <name>RD1062</name>
+    <desc><![CDATA[Unpaved Road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="38.606043" lon="-119.876985">
+    <ele>2401.7</ele>
+    <name>RD1062B</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="38.605948" lon="-119.886211">
+    <ele>2396.0</ele>
+    <name>WACS1063</name>
+    <desc><![CDATA[Lilly Pad Lake, a few campsites nearby.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.615595" lon="-119.898441">
+    <ele>2390.7</ele>
+    <name>WA1064</name>
+    <desc><![CDATA[Tamarack Lake outlet]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.621432" lon="-119.907303">
@@ -181,17 +355,71 @@
     <desc><![CDATA[Paved Blue Lakes Road]]></desc>
     <sym>Truck</sym>
   </wpt>
+  <wpt lat="38.647739" lon="-119.952117">
+    <ele>2639.3</ele>
+    <name>RD1070</name>
+    <desc><![CDATA[Unpaved Lost Lakes spur road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="38.649263" lon="-119.957482">
+    <ele>2694.0</ele>
+    <name>CS1070</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
   <wpt lat="38.660564" lon="-119.962622">
     <ele>2703.7</ele>
     <name>RD1071</name>
     <desc><![CDATA[Unpaved road]]></desc>
     <sym>Truck</sym>
   </wpt>
+  <wpt lat="38.664167" lon="-119.972398">
+    <ele>2623.7</ele>
+    <name>WA1072</name>
+    <desc><![CDATA[Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.665261" lon="-119.975092">
+    <ele>2596.2</ele>
+    <name>WACS1073</name>
+    <desc><![CDATA[Creek, campsites nearby.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.671159" lon="-119.977301">
+    <ele>2535.3</ele>
+    <name>CS1073</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="38.671844" lon="-119.977427">
+    <ele>2541.1</ele>
+    <name>WA1073</name>
+    <desc><![CDATA[Creek under some willows.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.683214" lon="-119.983251">
+    <ele>2763.5</ele>
+    <name>CarsonManage</name>
+    <desc><![CDATA[Entering Carson Pass Management Area. Camp only in designated sites, no wood fires, dogs must be kept on leash.]]></desc>
+    <sym>Forest</sym>
+  </wpt>
   <wpt lat="38.685027" lon="-119.987199">
     <ele>2712.6</ele>
     <name>TR1075</name>
     <desc><![CDATA[Winnemucca Lake trail junction]]></desc>
     <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="38.686441" lon="-119.986681">
+    <ele>2699.3</ele>
+    <name>WA1075</name>
+    <desc><![CDATA[Frog Lake. Camping is not permitted at Frog Lake due to shoreline restoration.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.690455" lon="-119.991973">
+    <ele>2625.3</ele>
+    <name>MokelumneWild3</name>
+    <desc><![CDATA[Mokelumne Wilderness boundary]]></desc>
+    <sym>Forest</sym>
   </wpt>
   <wpt lat="38.695867" lon="-119.989674">
     <ele>2618.2</ele>
@@ -211,6 +439,12 @@
     <desc><![CDATA[Pond]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="38.719171" lon="-120.011499">
+    <ele>2557.2</ele>
+    <name>WA1079</name>
+    <desc><![CDATA[Headwaters of the Upper Truckee River]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="38.720776" lon="-120.011960">
     <ele>2557.4</ele>
     <name>MeissCabin</name>
@@ -223,17 +457,47 @@
     <desc><![CDATA[Tahoe Rim Trail joins the Pacific Crest Trail. Round Lake trail junction.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
+  <wpt lat="38.728173" lon="-120.018618">
+    <ele>2539.0</ele>
+    <name>WA1080</name>
+    <desc><![CDATA[Stream]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="38.732662" lon="-120.021223">
     <ele>2536.3</ele>
     <name>WA1081</name>
     <desc><![CDATA[Small lake]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="38.742704" lon="-120.034408">
+    <ele>2637.6</ele>
+    <name>WACS1082</name>
+    <desc><![CDATA[Showers Lake, campsites.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.741221" lon="-120.042892">
+    <ele>2664.6</ele>
+    <name>WA1083</name>
+    <desc><![CDATA[Small creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="38.769430" lon="-120.048917">
+    <ele>2630.5</ele>
+    <name>TR1085</name>
+    <desc><![CDATA[Sayles Canyon trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="38.779587" lon="-120.051816">
     <ele>2596.0</ele>
     <name>TR1086</name>
     <desc><![CDATA[Trail junction to Highway 50.]]></desc>
     <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="38.788312" lon="-120.042351">
+    <ele>2542.2</ele>
+    <name>WACS1087</name>
+    <desc><![CDATA[Small creek, several campsites nearby.]]></desc>
+    <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.798069" lon="-120.036009">
     <ele>2316.0</ele>
@@ -248,9 +512,9 @@
     <sym>Trail Head</sym>
   </wpt>
   <wpt lat="38.822959" lon="-120.039859">
-    <ele>2207.0</ele>
+    <ele>1805.7</ele>
     <name>Hwy50</name>
-    <desc><![CDATA[Highway 50. Overnight camping is prohibited for approximately 4.7 miles from Hwy 50/Echo Summit (mile 1090.76) to the Desolation Wilderness boundary (mile 1095.47).]]></desc>
+    <desc><![CDATA[Highway 50. Overnight camping is prohibited for approximately 4.7 miles from Hwy 50/Echo Summit N to the Desolation Wilderness boundary.]]></desc>
     <sym>Car</sym>
   </wpt>
   <wpt lat="38.834284" lon="-120.042752">
@@ -262,272 +526,8 @@
   <wpt lat="38.834584" lon="-120.043836">
     <ele>2263.6</ele>
     <name>EchoLake</name>
-    <desc><![CDATA[Echo Lake, Echo Chalet store, a small resort [www.echochalet.com] on the PCT with cabins [2 night minimum stay], small store, deli, and pay phone. Echo Lake is open daily during the summer only. The Echo Lake Post Office can no longer receive hiker resupply packages.]]></desc>
+    <desc><![CDATA[Echo Lake, Echo Chalet store, a small resort [echochalet.com] on the PCT with cabins [2 night minimum stay], small store, deli, and pay phone. Echo Lake is open daily during the summer only. The Echo Lake Post Office can no longer receive hiker resupply packages.]]></desc>
     <sym>Shopping Center</sym>
-  </wpt>
-  <wpt lat="38.788312" lon="-120.042351">
-    <ele>2542.2</ele>
-    <name>WACS1087</name>
-    <desc><![CDATA[Small creek, several campsites nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.769430" lon="-120.048917">
-    <ele>2630.5</ele>
-    <name>TR1085</name>
-    <desc><![CDATA[Sayles Canyon trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.741221" lon="-120.042892">
-    <ele>2664.6</ele>
-    <name>WA1083</name>
-    <desc><![CDATA[Small creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.742704" lon="-120.034408">
-    <ele>2637.6</ele>
-    <name>WACS1082</name>
-    <desc><![CDATA[Showers Lake, campsites.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.728173" lon="-120.018618">
-    <ele>2539.0</ele>
-    <name>WA1080</name>
-    <desc><![CDATA[Stream]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.719171" lon="-120.011499">
-    <ele>2557.2</ele>
-    <name>WA1079</name>
-    <desc><![CDATA[Headwaters of the Upper Truckee River]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.690455" lon="-119.991973">
-    <ele>2625.3</ele>
-    <name>MokelumneWild3</name>
-    <desc><![CDATA[Mokelumne Wilderness boundary]]></desc>
-    <sym>Forest</sym>
-  </wpt>
-  <wpt lat="38.686441" lon="-119.986681">
-    <ele>2699.3</ele>
-    <name>WA1075</name>
-    <desc><![CDATA[Frog Lake. Camping is not permitted at Frog Lake due to shoreline restoration.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.683214" lon="-119.983251">
-    <ele>2763.5</ele>
-    <name>CarsonManage</name>
-    <desc><![CDATA[Entering Carson Pass Management Area. Camp only in designated sites, no wood fires, dogs must be kept on leash.]]></desc>
-    <sym>Forest</sym>
-  </wpt>
-  <wpt lat="38.671844" lon="-119.977427">
-    <ele>2541.1</ele>
-    <name>WA1073</name>
-    <desc><![CDATA[Creek under some willows.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.671159" lon="-119.977301">
-    <ele>2535.3</ele>
-    <name>CS1073</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="38.665261" lon="-119.975092">
-    <ele>2596.2</ele>
-    <name>WACS1073</name>
-    <desc><![CDATA[Creek, campsites nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.664167" lon="-119.972398">
-    <ele>2623.7</ele>
-    <name>WA1072</name>
-    <desc><![CDATA[Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.649263" lon="-119.957482">
-    <ele>2694.0</ele>
-    <name>CS1070</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="38.647739" lon="-119.952117">
-    <ele>2639.3</ele>
-    <name>RD1070</name>
-    <desc><![CDATA[Unpaved Lost Lakes spur road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="38.615595" lon="-119.898441">
-    <ele>2390.7</ele>
-    <name>WA1064</name>
-    <desc><![CDATA[Tamarack Lake outlet]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.605948" lon="-119.886211">
-    <ele>2396.0</ele>
-    <name>WACS1063</name>
-    <desc><![CDATA[Lilly Pad Lake, a few campsites nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.606043" lon="-119.876985">
-    <ele>2401.7</ele>
-    <name>RD1062B</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="38.607603" lon="-119.875220">
-    <ele>2411.7</ele>
-    <name>RD1062</name>
-    <desc><![CDATA[Unpaved Road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="38.611770" lon="-119.858410">
-    <ele>2464.0</ele>
-    <name>MokelumneWild2</name>
-    <desc><![CDATA[Mokelumne Wilderness boundary]]></desc>
-    <sym>Forest</sym>
-  </wpt>
-  <wpt lat="38.616917" lon="-119.853106">
-    <ele>2399.0</ele>
-    <name>WACS1060</name>
-    <desc><![CDATA[Tributary of Pleasant Valley Creek, small campsite nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.616832" lon="-119.831683">
-    <ele>2637.5</ele>
-    <name>TR1058</name>
-    <desc><![CDATA[Raymond Lake trail junction.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.596669" lon="-119.821656">
-    <ele>2481.1</ele>
-    <name>WACS1055</name>
-    <desc><![CDATA[Pennsylvania Creek, small campsite nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.584607" lon="-119.833227">
-    <ele>2581.3</ele>
-    <name>CS1053</name>
-    <desc><![CDATA[Campsite near seasonal Eagle Creek.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="38.545948" lon="-119.807391">
-    <ele>2664.8</ele>
-    <name>TR1048</name>
-    <desc><![CDATA[Ebbetts Pass trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.544487" lon="-119.792276">
-    <ele>2652.8</ele>
-    <name>CS1047</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="38.533674" lon="-119.782890">
-    <ele>2533.3</ele>
-    <name>WA1046</name>
-    <desc><![CDATA[Noble Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.535223" lon="-119.781725">
-    <ele>2560.2</ele>
-    <name>TR1045</name>
-    <desc><![CDATA[Noble Canyon trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.504297" lon="-119.773864">
-    <ele>2684.7</ele>
-    <name>CarsonIceberg2</name>
-    <desc><![CDATA[Carson-Iceberg Wilderness boundary]]></desc>
-    <sym>Forest</sym>
-  </wpt>
-  <wpt lat="38.504162" lon="-119.768457">
-    <ele>2618.4</ele>
-    <name>WACS1041</name>
-    <desc><![CDATA[Campsites near Asa Lake.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.503218" lon="-119.768079">
-    <ele>2597.8</ele>
-    <name>WA1041</name>
-    <desc><![CDATA[Asa Lake outlet.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.498162" lon="-119.770054">
-    <ele>2564.7</ele>
-    <name>TR1041</name>
-    <desc><![CDATA[Highland Lake, Wolf Creek trail junction.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="38.480282" lon="-119.743796">
-    <ele>2538.8</ele>
-    <name>WACS1038</name>
-    <desc><![CDATA[Creek, campsite nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.471297" lon="-119.728179">
-    <ele>2729.8</ele>
-    <name>WA1036</name>
-    <desc><![CDATA[Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.465389" lon="-119.720003">
-    <ele>2814.3</ele>
-    <name>CS1035</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="38.458515" lon="-119.727067">
-    <ele>2795.9</ele>
-    <name>CS1034</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="38.423338" lon="-119.675983">
-    <ele>2691.3</ele>
-    <name>WACS1028</name>
-    <desc><![CDATA[Creek, several campsites nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.394041" lon="-119.653497">
-    <ele>2642.6</ele>
-    <name>WACS1025</name>
-    <desc><![CDATA[Creek, small campsite nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.385266" lon="-119.641624">
-    <ele>2725.5</ele>
-    <name>WA1024</name>
-    <desc><![CDATA[Stream]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.371496" lon="-119.632182">
-    <ele>2893.9</ele>
-    <name>WA1022</name>
-    <desc><![CDATA[Stream]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.356801" lon="-119.625069">
-    <ele>3179.8</ele>
-    <name>WA1021</name>
-    <desc><![CDATA[Small creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.346510" lon="-119.633291">
-    <ele>3145.2</ele>
-    <name>WA1019B</name>
-    <desc><![CDATA[Small creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.346062" lon="-119.638498">
-    <ele>3071.0</ele>
-    <name>WA1019</name>
-    <desc><![CDATA[Small creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="38.343547" lon="-119.635744">
-    <ele>3022.1</ele>
-    <name>WA1018</name>
-    <desc><![CDATA[Small creek]]></desc>
-    <sym>Water Source</sym>
   </wpt>
   <wpt lat="38.328921" lon="-119.637121">
     <ele>2928.6</ele>

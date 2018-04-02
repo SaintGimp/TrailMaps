@@ -19,41 +19,17 @@
     <desc><![CDATA[Trail gate and trail register.]]></desc>
     <sym>Flag, Green</sym>
   </wpt>
-  <wpt lat="35.114082" lon="-118.257761">
-    <ele>1318.7</ele>
-    <name>CS0569</name>
-    <desc><![CDATA[Small campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="35.192964" lon="-118.238386">
-    <ele>1825.9</ele>
-    <name>RD0579</name>
-    <desc><![CDATA[Pass junction with jeep road MK13.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="35.196900" lon="-118.234818">
-    <ele>1842.0</ele>
-    <name>WindFarm</name>
-    <desc><![CDATA[Pass near a row of wind turbines.]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="35.199688" lon="-118.229270">
-    <ele>1794.3</ele>
-    <name>RD0580</name>
-    <desc><![CDATA[Cross an unpaved windfarm road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="35.386760" lon="-118.300367">
-    <ele>1929.2</ele>
-    <name>TR0602</name>
-    <desc><![CDATA[Trail junction to Robin Bird Spring]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
   <wpt lat="35.104803" lon="-118.272081">
     <ele>1152.5</ele>
     <name>RD0568</name>
     <desc><![CDATA[Unpaved road and nearby metal gate]]></desc>
     <sym>Truck</sym>
+  </wpt>
+  <wpt lat="35.114082" lon="-118.257761">
+    <ele>1318.7</ele>
+    <name>CS0569</name>
+    <desc><![CDATA[Small campsite]]></desc>
+    <sym>Campground</sym>
   </wpt>
   <wpt lat="35.115011" lon="-118.261114">
     <ele>1397.2</ele>
@@ -85,47 +61,41 @@
     <desc><![CDATA[Small campsite, under a tree.]]></desc>
     <sym>Campground</sym>
   </wpt>
-  <wpt lat="35.300806" lon="-118.267250">
-    <ele>1529.6</ele>
-    <name>CS0593</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
+  <wpt lat="35.157705" lon="-118.255035">
+    <ele>1867.1</ele>
+    <name>RD0575</name>
+    <desc><![CDATA[PCT joins unpaved road MK10 for 4.4 miles.]]></desc>
+    <sym>Truck</sym>
   </wpt>
-  <wpt lat="35.403485" lon="-118.306832">
-    <ele>1987.2</ele>
-    <name>CS0604</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
+  <wpt lat="35.192964" lon="-118.238386">
+    <ele>1825.9</ele>
+    <name>RD0579</name>
+    <desc><![CDATA[Pass junction with jeep road MK13.]]></desc>
+    <sym>Truck</sym>
   </wpt>
-  <wpt lat="35.563925" lon="-118.121878">
-    <ele>2098.5</ele>
-    <name>CS0634</name>
-    <desc><![CDATA[Small campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="35.576462" lon="-118.130016">
-    <ele>2046.0</ele>
-    <name>CS0635</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="35.280317" lon="-118.255801">
-    <ele>1555.4</ele>
-    <name>GT0590</name>
-    <desc><![CDATA[Gate]]></desc>
-    <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="35.457762" lon="-118.171749">
-    <ele>1591.8</ele>
-    <name>Gully0620</name>
-    <desc><![CDATA[Gully to Willow Spring.]]></desc>
+  <wpt lat="35.196900" lon="-118.234818">
+    <ele>1842.0</ele>
+    <name>WindFarm</name>
+    <desc><![CDATA[Pass near a row of wind turbines.]]></desc>
     <sym>Flag, Blue</sym>
   </wpt>
-  <wpt lat="35.336589" lon="-118.285105">
-    <ele>1682.9</ele>
-    <name>HampWPass</name>
-    <desc><![CDATA[Hamp Williams Pass]]></desc>
-    <sym>Summit</sym>
+  <wpt lat="35.196671" lon="-118.232905">
+    <ele>1830.4</ele>
+    <name>RD0579B</name>
+    <desc><![CDATA[PCT departs unpaved road MK10 on a trail.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="35.199688" lon="-118.229270">
+    <ele>1794.3</ele>
+    <name>RD0580</name>
+    <desc><![CDATA[Cross an unpaved windfarm road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="35.225840" lon="-118.234625">
+    <ele>1668.4</ele>
+    <name>WR583</name>
+    <desc><![CDATA[Golden Oaks Spring, paved road nearby.<br/>---<br/>WATER ALERT: Next northbound water after Golden Oaks Spring may be Robin Bird Spring in 18.8 miles. Next southbound water may be Oak Creek in 25.1 miles.]]></desc>
+    <sym>Water Source</sym>
   </wpt>
   <wpt lat="35.235844" lon="-118.240343">
     <ele>1611.9</ele>
@@ -133,17 +103,23 @@
     <desc><![CDATA[Powerline near windfarm.]]></desc>
     <sym>Flag, Green</sym>
   </wpt>
-  <wpt lat="35.157705" lon="-118.255035">
-    <ele>1867.1</ele>
-    <name>RD0575</name>
-    <desc><![CDATA[PCT joins unpaved road MK10 for 4.4 miles.]]></desc>
-    <sym>Truck</sym>
+  <wpt lat="35.280317" lon="-118.255801">
+    <ele>1555.4</ele>
+    <name>GT0590</name>
+    <desc><![CDATA[Gate]]></desc>
+    <sym>Flag, Green</sym>
   </wpt>
-  <wpt lat="35.196671" lon="-118.232905">
-    <ele>1830.4</ele>
-    <name>RD0579B</name>
-    <desc><![CDATA[PCT departs unpaved road MK10 on a trail.]]></desc>
-    <sym>Truck</sym>
+  <wpt lat="35.300806" lon="-118.267250">
+    <ele>1529.6</ele>
+    <name>CS0593</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="35.336589" lon="-118.285105">
+    <ele>1682.9</ele>
+    <name>HampWPass</name>
+    <desc><![CDATA[Hamp Williams Pass]]></desc>
+    <sym>Summit</sym>
   </wpt>
   <wpt lat="35.364931" lon="-118.293900">
     <ele>1717.0</ele>
@@ -157,17 +133,59 @@
     <desc><![CDATA[PCT departs the unpaved road on a trail.]]></desc>
     <sym>Truck</sym>
   </wpt>
+  <wpt lat="35.386760" lon="-118.300367">
+    <ele>1929.2</ele>
+    <name>TR0602</name>
+    <desc><![CDATA[Trail junction to Robin Bird Spring]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="35.387442" lon="-118.301802">
+    <ele>1930.6</ele>
+    <name>WRCS602</name>
+    <desc><![CDATA[Robin Bird Spring, 1/10 mile W of PCT, campsite.<br/>---<br/>WATER ALERT: Next southbound water after Robin Bird Spring may be Golden Oak Spring in 18.8 miles.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="35.390484" lon="-118.299076">
     <ele>2014.4</ele>
     <name>RD0602</name>
     <desc><![CDATA[Unpaved Jawbone Canyon Road]]></desc>
     <sym>Truck</sym>
   </wpt>
+  <wpt lat="35.403485" lon="-118.306832">
+    <ele>1987.2</ele>
+    <name>CS0604</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="35.405254" lon="-118.306815">
+    <ele>1971.0</ele>
+    <name>WR604</name>
+    <desc><![CDATA[Cottonwood Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="35.417094" lon="-118.304679">
     <ele>2047.4</ele>
     <name>RD0605</name>
     <desc><![CDATA[Unpaved road 29S19]]></desc>
     <sym>Truck</sym>
+  </wpt>
+  <wpt lat="35.421111" lon="-118.304627">
+    <ele>2057.3</ele>
+    <name>WR606</name>
+    <desc><![CDATA[Concrete dam and spring.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="35.434233" lon="-118.309612">
+    <ele>1931.6</ele>
+    <name>WR607</name>
+    <desc><![CDATA[Landers Creek, often dry.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="35.444684" lon="-118.314674">
+    <ele>1890.8</ele>
+    <name>WR608</name>
+    <desc><![CDATA[Landers Meadow drainage at 1st Piute Mountain Road crossing.]]></desc>
+    <sym>Water Source</sym>
   </wpt>
   <wpt lat="35.445018" lon="-118.314756">
     <ele>1893.2</ele>
@@ -181,17 +199,41 @@
     <desc><![CDATA[Unpaved road 29S05 to Landers Camp.]]></desc>
     <sym>Truck</sym>
   </wpt>
+  <wpt lat="35.455248" lon="-118.312920">
+    <ele>1904.7</ele>
+    <name>WRCS609</name>
+    <desc><![CDATA[Landers Camp, spring, fire tank, 2/10 mile N of PCT.<br/>---<br/>WATER ALERT: Next northbound water after Landers Camp may be Willow Spring [about 1.4 miles off trail] in 11.1 miles.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="35.456296" lon="-118.278333">
     <ele>2015.1</ele>
     <name>RD0611</name>
     <desc><![CDATA[Piute Mountain Road, 2nd crossing at Harris Grade.]]></desc>
     <sym>Truck</sym>
   </wpt>
+  <wpt lat="35.450703" lon="-118.224090">
+    <ele>1509.8</ele>
+    <name>WR616</name>
+    <desc><![CDATA[Kelso Valley Road, paved N of PCT, unpaved S of PCT.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="35.452907" lon="-118.204413">
     <ele>1387.1</ele>
     <name>RD0618</name>
     <desc><![CDATA[Unpaved Butterbredt Canyon Road.]]></desc>
     <sym>Truck</sym>
+  </wpt>
+  <wpt lat="35.473354" lon="-118.174017">
+    <ele>1381.5</ele>
+    <name>WR620</name>
+    <desc><![CDATA[Willow Spring, 1.6 miles N of PCT, pond, trough.<br/>---<br/>WATER ALERT: Next northbound water after Willow Spring may be Joshua Tree Spring in 43.7 miles. Next water southbound may be Landers Camp in 11.1 miles. See pctwater.com.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="35.457762" lon="-118.171749">
+    <ele>1591.8</ele>
+    <name>Gully0620</name>
+    <desc><![CDATA[Gully to Willow Spring.]]></desc>
+    <sym>Flag, Blue</sym>
   </wpt>
   <wpt lat="35.464182" lon="-118.150104">
     <ele>1610.9</ele>
@@ -229,6 +271,36 @@
     <desc><![CDATA[Dirt bike road SC42.]]></desc>
     <sym>Truck</sym>
   </wpt>
+  <wpt lat="35.552860" lon="-118.133635">
+    <ele>1632.1</ele>
+    <name>RD0631</name>
+    <desc><![CDATA[Bird Spring Pass, unpaved road SC120.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="35.563925" lon="-118.121878">
+    <ele>2098.5</ele>
+    <name>CS0634</name>
+    <desc><![CDATA[Small campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="35.576462" lon="-118.130016">
+    <ele>2046.0</ele>
+    <name>CS0635</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="35.582762" lon="-118.123740">
+    <ele>1907.2</ele>
+    <name>TR0637</name>
+    <desc><![CDATA[Trail junction to Yellow Jacket Spring.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="35.594416" lon="-118.127317">
+    <ele>1866.6</ele>
+    <name>WR637</name>
+    <desc><![CDATA[Yellow Jacket Spring, 7/10 mile NW of PCT.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="35.614318" lon="-118.113240">
     <ele>2036.4</ele>
     <name>RD0641</name>
@@ -241,89 +313,17 @@
     <desc><![CDATA[PCT departs an unpaved road.]]></desc>
     <sym>Truck</sym>
   </wpt>
-  <wpt lat="35.582762" lon="-118.123740">
-    <ele>1907.2</ele>
-    <name>TR0637</name>
-    <desc><![CDATA[Trail junction to Yellow Jacket Spring.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="35.225840" lon="-118.234625">
-    <ele>1668.4</ele>
-    <name>WR583</name>
-    <desc><![CDATA[Golden Oaks Spring, paved road nearby. WATER ALERT: Next northbound water may be Robin Bird Spring in 18.8 miles. Next southbound water may be Oak Creek in 25.1 miles.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.405254" lon="-118.306815">
-    <ele>1971.0</ele>
-    <name>WR604</name>
-    <desc><![CDATA[Cottonwood Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.421111" lon="-118.304627">
-    <ele>2057.3</ele>
-    <name>WR606</name>
-    <desc><![CDATA[Concrete dam and spring.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.434233" lon="-118.309612">
-    <ele>1931.6</ele>
-    <name>WR607</name>
-    <desc><![CDATA[Landers Creek, often dry.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.444684" lon="-118.314674">
-    <ele>1890.8</ele>
-    <name>WR608</name>
-    <desc><![CDATA[Landers Meadow drainage at 1st Piute Mountain Road crossing.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.450703" lon="-118.224090">
-    <ele>1509.8</ele>
-    <name>WR616</name>
-    <desc><![CDATA[Kelso Valley Road, paved N of PCT, unpaved S of PCT.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.473354" lon="-118.174017">
-    <ele>1381.5</ele>
-    <name>WR620</name>
-    <desc><![CDATA[Willow Spring, 1.6 miles N of PCT, pond, trough. WATER ALERT: Next northbound water may be Joshua Tree Spring] in 43.7 miles!! Next water southbound may be Landers Camp in 11.1 miles.<br/>-----<br/>Willow Spring can be reached as a 3.2 mile alternate bypassing 1.9 miles of the PCT. Follow the unsigned gully at PCT mile 620 [wooden PCT posts and Carsonite PCT markers are on either side of this gully] for 1.4 miles N to unpaved Dove Spring Canyon Rd [SC103]. The gully is mostly easy walking, but does have 2 or 3 short boulder scrambles that some hikers will find uncomfortable. After reaching SC103, walk right [SE] for 2/10 mile to reach Willow Spring. From WR620 continue 1.6 miles SE on SC103 to rejoin the PCT at mile 621.9. Skillful navigators can walk cross country east toward WR620 2/10 mile before the gully reaches SC103, shortening the alternate by about 4/10 mile. It can be difficult to find the correct point to exit the gully before reaching SC103 because your view is blocked in the gully.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.552860" lon="-118.133635">
-    <ele>1632.1</ele>
-    <name>RD0631</name>
-    <desc><![CDATA[Bird Spring Pass, unpaved road SC120.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="35.594416" lon="-118.127317">
-    <ele>1866.6</ele>
-    <name>WR637</name>
-    <desc><![CDATA[Yellow Jacket Spring, 7/10 mile NW of PCT.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
   <wpt lat="35.621932" lon="-118.073155">
     <ele>2035.5</ele>
     <name>WR644</name>
-    <desc><![CDATA[McIvers Spring, 2/10 mile E of PCT mile 644.]]></desc>
+    <desc><![CDATA[McIvers Spring, 2/10 mile E of PCT.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="35.663884" lon="-118.037523">
     <ele>1544.8</ele>
     <name>CS0651</name>
-    <desc><![CDATA[Walker Pass Campground. The campground often does not have water. Check www.pctwater.com. One of the 3 spring-fed cisterns 2/10 mile NW of the campground may have water [follow Hwy 178 for 250 yards W from the campground entrance and look to the left] or Canebrake Creek 1.8 miles W on Hwy 178.]]></desc>
+    <desc><![CDATA[Walker Pass Campground, with picnic tables, and outhouse. This campground usually does not have water.<br/>---<br/>Spring-fed cisterns 2/10 mile NW of the campground may have water. Follow Hwy 178 for 250 yards W from the campground entrance and look to the left. Check pctwater.com.]]></desc>
     <sym>Campground</sym>
-  </wpt>
-  <wpt lat="35.387442" lon="-118.301802">
-    <ele>1930.6</ele>
-    <name>WRCS602</name>
-    <desc><![CDATA[Robin Bird Spring, 1/10 mile W of PCT, campsite. WATER ALERT: Next southbound water may be Golden Oak Spring in 18.8 miles.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.455248" lon="-118.312920">
-    <ele>1904.7</ele>
-    <name>WRCS609</name>
-    <desc><![CDATA[Landers Camp, spring, fire tank, 2/10 mile N of PCT mile 608.9. WATER ALERT: Next northbound water may be Willow Spring (about 1.4 miles off trail)  in 11.1 miles.]]></desc>
-    <sym>Water Source</sym>
   </wpt>
   <wpt lat="35.100080" lon="-118.292786">
     <ele>1171.1</ele>

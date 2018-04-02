@@ -13,11 +13,23 @@
           or Lon Cooper <Halfmile@pctmap.net> for all others.]]>
     </desc>
   </metadata>
+  <wpt lat="39.343450" lon="-120.336213">
+    <ele>2194.7</ele>
+    <name>Hwy80</name>
+    <desc><![CDATA[Highway 80]]></desc>
+    <sym>Car</sym>
+  </wpt>
   <wpt lat="39.345150" lon="-120.338359">
     <ele>2206.9</ele>
     <name>TR1157</name>
     <desc><![CDATA[Trail junction to highway rest area.]]></desc>
     <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="39.342671" lon="-120.340220">
+    <ele>2208.0</ele>
+    <name>RestArea1157</name>
+    <desc><![CDATA[Highway 80 rest area, water, picnic tables, and restrooms.]]></desc>
+    <sym>Flag, Blue</sym>
   </wpt>
   <wpt lat="39.350647" lon="-120.352837">
     <ele>2264.9</ele>
@@ -55,6 +67,30 @@
     <desc><![CDATA[Seasonal Basin Peak Spring]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="39.389718" lon="-120.376814">
+    <ele>2470.0</ele>
+    <name>WA1163</name>
+    <desc><![CDATA[Creek at the end of a switchback.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="39.397344" lon="-120.376637">
+    <ele>2304.0</ele>
+    <name>WA1164</name>
+    <desc><![CDATA[Wooden bridge over a seasonal stream. ]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="39.397929" lon="-120.376206">
+    <ele>2306.2</ele>
+    <name>CS1164</name>
+    <desc><![CDATA[Several campsites]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="39.401084" lon="-120.377347">
+    <ele>2313.6</ele>
+    <name>TR1165</name>
+    <desc><![CDATA[Paradise Lake Trail]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="39.410682" lon="-120.397398">
     <ele>2326.3</ele>
     <name>TR1167</name>
@@ -67,11 +103,41 @@
     <desc><![CDATA[White Rock Creek, wooden bridge, several campsites.]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="39.413548" lon="-120.400372">
+    <ele>2329.1</ele>
+    <name>WA1167</name>
+    <desc><![CDATA[Small stream]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="39.415215" lon="-120.402176">
+    <ele>2343.0</ele>
+    <name>RD1167</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="39.417916" lon="-120.402401">
+    <ele>2375.5</ele>
+    <name>RD1168</name>
+    <desc><![CDATA[Unpaved White Rock Lake Road 19N11A.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="39.420870" lon="-120.417171">
+    <ele>2455.0</ele>
+    <name>WA1169</name>
+    <desc><![CDATA[Snowbank spring]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
   <wpt lat="39.423740" lon="-120.419388">
     <ele>2448.2</ele>
     <name>RD1169</name>
     <desc><![CDATA[Unpaved road]]></desc>
     <sym>Truck</sym>
+  </wpt>
+  <wpt lat="39.425492" lon="-120.447956">
+    <ele>2292.9</ele>
+    <name>WACS1172</name>
+    <desc><![CDATA[Seasonal Lacey Creek, campsites nearby, sign says "Always water 3/10 mile downstream."]]></desc>
+    <sym>Water Source</sym>
   </wpt>
   <wpt lat="39.425567" lon="-120.448424">
     <ele>2295.0</ele>
@@ -79,23 +145,29 @@
     <desc><![CDATA[Well graded unpaved road]]></desc>
     <sym>Truck</sym>
   </wpt>
+  <wpt lat="39.439437" lon="-120.464536">
+    <ele>2373.2</ele>
+    <name>CS1175</name>
+    <desc><![CDATA[Small campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
   <wpt lat="39.447321" lon="-120.462231">
     <ele>2323.9</ele>
     <name>RD1176</name>
     <desc><![CDATA[Unpaved road]]></desc>
     <sym>Truck</sym>
   </wpt>
-  <wpt lat="39.469755" lon="-120.494007">
-    <ele>2224.3</ele>
-    <name>TR1179</name>
-    <desc><![CDATA[Mule Ears Creek trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
   <wpt lat="39.470173" lon="-120.493718">
     <ele>2218.1</ele>
     <name>WA1179</name>
     <desc><![CDATA[Mule Ears Creek]]></desc>
     <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="39.469755" lon="-120.494007">
+    <ele>2224.3</ele>
+    <name>TR1179</name>
+    <desc><![CDATA[Mule Ears Creek trail junction]]></desc>
+    <sym>Trail Head</sym>
   </wpt>
   <wpt lat="39.469883" lon="-120.498740">
     <ele>2178.4</ele>
@@ -115,11 +187,59 @@
     <desc><![CDATA[Lasier Meadow trail junction, unpaved road nearby.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
+  <wpt lat="39.502222" lon="-120.528087">
+    <ele>1888.2</ele>
+    <name>RD1184</name>
+    <desc><![CDATA[PCT joins a paved Pass Creek Loop Road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="39.502735" lon="-120.527623">
+    <ele>1881.2</ele>
+    <name>WA1184</name>
+    <desc><![CDATA[Road bridge over a creek.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="39.504162" lon="-120.527150">
+    <ele>1885.8</ele>
+    <name>RD1184B</name>
+    <desc><![CDATA[PCT departs paved Pass Creek Loop road on a trail.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="39.505969" lon="-120.529498">
+    <ele>1889.0</ele>
+    <name>RD1184C</name>
+    <desc><![CDATA[Cross paved Henness Pass Road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="39.509072" lon="-120.532457">
+    <ele>1912.4</ele>
+    <name>WA1184B</name>
+    <desc><![CDATA[Bald Ridge Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="39.513106" lon="-120.540245">
+    <ele>1972.1</ele>
+    <name>CS1185</name>
+    <desc><![CDATA[Several campsites]]></desc>
+    <sym>Campground</sym>
+  </wpt>
   <wpt lat="39.518321" lon="-120.548672">
     <ele>1898.3</ele>
     <name>WA1186</name>
     <desc><![CDATA[Bear Valley Springs trail junction (1/10 mile off trail).]]></desc>
     <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="39.523119" lon="-120.556315">
+    <ele>1886.4</ele>
+    <name>RD1186</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="39.538556" lon="-120.565531">
+    <ele>1693.6</ele>
+    <name>TR1190</name>
+    <desc><![CDATA[Milton Spring trail junction]]></desc>
+    <sym>Trail Head</sym>
   </wpt>
   <wpt lat="39.543565" lon="-120.572586">
     <ele>1596.5</ele>
@@ -151,137 +271,17 @@
     <desc><![CDATA[Haypress Creek Trail number 14E05.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
-  <wpt lat="39.580019" lon="-120.608038">
-    <ele>1402.3</ele>
-    <name>WA1195</name>
-    <desc><![CDATA[North Yuba River, steel bridge.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
   <wpt lat="39.568312" lon="-120.592890">
     <ele>1465.6</ele>
     <name>TR1193B</name>
     <desc><![CDATA[Wild Plum loop trail junction]]></desc>
     <sym>Trail Head</sym>
   </wpt>
-  <wpt lat="39.538556" lon="-120.565531">
-    <ele>1693.6</ele>
-    <name>TR1190</name>
-    <desc><![CDATA[Milton Spring trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="39.523119" lon="-120.556315">
-    <ele>1886.4</ele>
-    <name>RD1186</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="39.513106" lon="-120.540245">
-    <ele>1972.1</ele>
-    <name>CS1185</name>
-    <desc><![CDATA[Several campsites]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="39.509072" lon="-120.532457">
-    <ele>1912.4</ele>
-    <name>WA1184B</name>
-    <desc><![CDATA[Bald Ridge Creek]]></desc>
+  <wpt lat="39.580019" lon="-120.608038">
+    <ele>1402.3</ele>
+    <name>WA1195</name>
+    <desc><![CDATA[North Yuba River, steel bridge.]]></desc>
     <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.505969" lon="-120.529498">
-    <ele>1889.0</ele>
-    <name>RD1184C</name>
-    <desc><![CDATA[Cross paved Henness Pass Road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="39.504162" lon="-120.527150">
-    <ele>1885.8</ele>
-    <name>RD1184B</name>
-    <desc><![CDATA[PCT departs paved Pass Creek Loop road on a trail.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="39.502735" lon="-120.527623">
-    <ele>1881.2</ele>
-    <name>WA1184</name>
-    <desc><![CDATA[Road bridge over a creek.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.502222" lon="-120.528087">
-    <ele>1888.2</ele>
-    <name>RD1184</name>
-    <desc><![CDATA[PCT joins a paved Pass Creek Loop Road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="39.439437" lon="-120.464536">
-    <ele>2373.2</ele>
-    <name>CS1175</name>
-    <desc><![CDATA[Small campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="39.425492" lon="-120.447956">
-    <ele>2292.9</ele>
-    <name>WACS1172</name>
-    <desc><![CDATA[Seasonal Lacey Creek, campsites nearby, sign says "Always water 3/10 mile downstream."]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.420870" lon="-120.417171">
-    <ele>2455.0</ele>
-    <name>WA1169</name>
-    <desc><![CDATA[Snowbank spring]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.417916" lon="-120.402401">
-    <ele>2375.5</ele>
-    <name>RD1168</name>
-    <desc><![CDATA[Unpaved White Rock Lake Road 19N11A.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="39.415215" lon="-120.402176">
-    <ele>2343.0</ele>
-    <name>RD1167</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="39.413548" lon="-120.400372">
-    <ele>2329.1</ele>
-    <name>WA1167</name>
-    <desc><![CDATA[Small stream]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.401084" lon="-120.377347">
-    <ele>2313.6</ele>
-    <name>TR1165</name>
-    <desc><![CDATA[Paradise Lake Trail]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="39.397929" lon="-120.376206">
-    <ele>2306.2</ele>
-    <name>CS1164</name>
-    <desc><![CDATA[Several campsites]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="39.397344" lon="-120.376637">
-    <ele>2304.0</ele>
-    <name>WA1164</name>
-    <desc><![CDATA[Wooden bridge over a seasonal stream. ]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.389718" lon="-120.376814">
-    <ele>2470.0</ele>
-    <name>WA1163</name>
-    <desc><![CDATA[Creek at the end of a switchback.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="39.343450" lon="-120.336213">
-    <ele>2194.7</ele>
-    <name>Hwy80</name>
-    <desc><![CDATA[Highway 80]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="39.342671" lon="-120.340220">
-    <ele>2208.0</ele>
-    <name>RestArea1157</name>
-    <desc><![CDATA[Highway 80 rest area, water, picnic tables, and restrooms.]]></desc>
-    <sym>Flag, Blue</sym>
   </wpt>
   <wpt lat="39.342531" lon="-120.336022">
     <ele>2194.7</ele>

@@ -13,95 +13,11 @@
           or Lon Cooper <Halfmile@pctmap.net> for all others.]]>
     </desc>
   </metadata>
-  <wpt lat="35.773841" lon="-118.029361">
-    <ele>1606.1</ele>
-    <name>WR669B</name>
-    <desc><![CDATA[Another crossing of Spanish Needle Creek.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.776955" lon="-118.027193">
-    <ele>1693.7</ele>
-    <name>WA0670</name>
-    <desc><![CDATA[Another crossing of Spanish Needle Creek.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.782089" lon="-118.022325">
-    <ele>2060.9</ele>
-    <name>CS0673</name>
-    <desc><![CDATA[Small campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="35.803563" lon="-118.011644">
-    <ele>2102.7</ele>
-    <name>CS0676</name>
-    <desc><![CDATA[Several small campsites along a ridge.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="36.013519" lon="-118.132244">
-    <ele>1819.0</ele>
-    <name>GT0701</name>
-    <desc><![CDATA[Trail Gate]]></desc>
-    <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="36.056417" lon="-118.130028">
-    <ele>1884.9</ele>
-    <name>SSierraWild</name>
-    <desc><![CDATA[South Sierra Wilderness boundary]]></desc>
-    <sym>Forest</sym>
-  </wpt>
-  <wpt lat="36.369909" lon="-118.137320">
-    <ele>3158.9</ele>
-    <name>TR0736</name>
-    <desc><![CDATA[Use trail to a seasonal spring.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="36.473713" lon="-118.260188">
-    <ele>3462.7</ele>
-    <name>SequoiaNP</name>
-    <desc><![CDATA[Sequoia National Park boundary]]></desc>
-    <sym>Forest</sym>
-  </wpt>
-  <wpt lat="36.551992" lon="-118.358284">
-    <ele>3145.9</ele>
-    <name>WACSBB0766</name>
-    <desc><![CDATA[Several campsites, bear locker, creek nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="36.413078" lon="-118.139112">
-    <ele>2948.1</ele>
-    <name>TR0742</name>
-    <desc><![CDATA[Trail junction to Diaz Creek, large campsites nearby.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="36.321807" lon="-118.131167">
-    <ele>2728.2</ele>
-    <name>TR0731</name>
-    <desc><![CDATA[Trail junction to a spring.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="36.156901" lon="-118.146354">
-    <ele>2429.7</ele>
-    <name>TR0714</name>
-    <desc><![CDATA[Use trail to spring.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="35.742903" lon="-118.022966">
-    <ele>1670.7</ele>
-    <name>TR0664</name>
-    <desc><![CDATA[Trail junction to Joshua Tree Spring.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
   <wpt lat="35.663090" lon="-118.027350">
-    <ele>1604.5</ele>
+    <ele>2698.4</ele>
     <name>Hwy178</name>
-    <desc><![CDATA[Highway 178, Walker Pass, access to the town of Onyx and Lake Isabella.]]></desc>
+    <desc><![CDATA[Highway 178. Onyx is 17.7 miles W of the PCT, the town of Lake Isabella is 37 miles W of the PCT on Hwy 178.]]></desc>
     <sym>Car</sym>
-  </wpt>
-  <wpt lat="36.453183" lon="-118.215748">
-    <ele>3392.9</ele>
-    <name>CottonwoodPass</name>
-    <desc><![CDATA[Cottonwood Pass and Horseshoe Meadow Trail junction.<br/>-----<br/>Bear canisters are required in most areas from Cottonwood Pass to the northern border of Yosemite National Park. For most hikers, this means carrying a bear canister from Kennedy Meadows to Sonora Pass. See www.sierrawild.gov/bears/]]></desc>
-    <sym>Summit</sym>
   </wpt>
   <wpt lat="35.677905" lon="-118.012192">
     <ele>1879.8</ele>
@@ -121,107 +37,77 @@
     <desc><![CDATA[Campsite]]></desc>
     <sym>Campground</sym>
   </wpt>
-  <wpt lat="36.108537" lon="-118.123951">
-    <ele>2141.4</ele>
-    <name>CS0710</name>
-    <desc><![CDATA[Campsite 200 feet W of trail.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="36.152432" lon="-118.145326">
-    <ele>2437.1</ele>
-    <name>CS0713</name>
-    <desc><![CDATA[Campsite in the trees 500 feet E of PCT near small seasonal creek.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="36.213209" lon="-118.137454">
-    <ele>2522.0</ele>
-    <name>CS0719</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="36.496357" lon="-118.329881">
-    <ele>2936.2</ele>
-    <name>CS0760</name>
-    <desc><![CDATA[Large campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="36.496179" lon="-118.337407">
-    <ele>2901.0</ele>
-    <name>WACSBB0760</name>
-    <desc><![CDATA[Rock Creek, several campsites, bear box.]]></desc>
+  <wpt lat="35.742750" lon="-118.018518">
+    <ele>1711.5</ele>
+    <name>WR664</name>
+    <desc><![CDATA[Stream past a dirt road. ]]></desc>
     <sym>Water Source</sym>
   </wpt>
-  <wpt lat="36.055678" lon="-118.130120">
-    <ele>1881.7</ele>
-    <name>GT0705</name>
-    <desc><![CDATA[Gate]]></desc>
-    <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="36.163495" lon="-118.144350">
-    <ele>2488.3</ele>
-    <name>GT0714</name>
-    <desc><![CDATA[Gate]]></desc>
-    <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="36.139137" lon="-118.140020">
-    <ele>2459.9</ele>
-    <name>HaiweeTR</name>
-    <desc><![CDATA[Haiwee Trail Junction]]></desc>
+  <wpt lat="35.742903" lon="-118.022966">
+    <ele>1670.7</ele>
+    <name>TR0664</name>
+    <desc><![CDATA[Trail junction to Joshua Tree Spring.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
-  <wpt lat="36.447887" lon="-118.168924">
-    <ele>3029.7</ele>
-    <name>HorseshoeMdw</name>
-    <desc><![CDATA[Horseshoe Meadow, 1.7 miles north of the PCT, campground, water, toilet, trash, paved road.]]></desc>
+  <wpt lat="35.741271" lon="-118.024682">
+    <ele>1609.3</ele>
+    <name>WR664B</name>
+    <desc><![CDATA[Joshua Tree Spring<br/>---<br/>WATER ALERT: Next southbound water after Joshua Tree Spring may be Willow Spring in 43.7 miles.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="35.769063" lon="-118.027921">
+    <ele>1556.1</ele>
+    <name>WR669</name>
+    <desc><![CDATA[Spanish Needle Creek, first crossing.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="35.773841" lon="-118.029361">
+    <ele>1606.1</ele>
+    <name>WR669B</name>
+    <desc><![CDATA[Another crossing of Spanish Needle Creek.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="35.776955" lon="-118.027193">
+    <ele>1693.7</ele>
+    <name>WA0670</name>
+    <desc><![CDATA[Another crossing of Spanish Needle Creek.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="35.775679" lon="-118.024998">
+    <ele>1718.3</ele>
+    <name>WR670B</name>
+    <desc><![CDATA[Spanish Needle Creek, forth crossing.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="35.782089" lon="-118.022325">
+    <ele>2060.9</ele>
+    <name>CS0673</name>
+    <desc><![CDATA[Small campsite]]></desc>
     <sym>Campground</sym>
   </wpt>
-  <wpt lat="36.558887" lon="-118.361772">
-    <ele>3285.4</ele>
-    <name>JMT0767</name>
-    <desc><![CDATA[John Muir Trail junction, PCT joins the JMT north from this point.]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="36.054498" lon="-118.130468">
-    <ele>1873.3</ele>
-    <name>KennedyMdwCG</name>
-    <desc><![CDATA[Kennedy Meadows Campground, paved parking area, outhouse, water from spigot or nearby creek, trail register on a post at the road.]]></desc>
+  <wpt lat="35.803563" lon="-118.011644">
+    <ele>2102.7</ele>
+    <name>CS0676</name>
+    <desc><![CDATA[Several small campsites along a ridge.]]></desc>
     <sym>Campground</sym>
   </wpt>
-  <wpt lat="36.018998" lon="-118.123605">
-    <ele>1874.1</ele>
-    <name>KMStore</name>
-    <desc><![CDATA[Kennedy Meadows is a small hiker-friendly community 1/2 mile east of the PCT. Kennedy Meadows has a restaurant, internet cafe and a small general store [559-850-5647] with a grill, laundry, showers, pay phone, and they allow hikers to camp out back. The store accepts hiker resupply packages [$5 ea] sent by USPS or UPS Include ETA on your package.<br/>(Your Name)<br/>c/o Kennedy Meadows General Store<br/>96740 Beach Meadow Road<br/>Inyokern, CA 93527]]></desc>
-    <sym>Shopping Center</sym>
-  </wpt>
-  <wpt lat="36.227402" lon="-118.134708">
-    <ele>2717.5</ele>
-    <name>MonacheMdwTr</name>
-    <desc><![CDATA[Monache Meadow Trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="36.429764" lon="-118.165655">
-    <ele>3168.2</ele>
-    <name>TR0745</name>
-    <desc><![CDATA[Mulkey Pass and Horseshoe Meadow Trail junctions. Horseshoe Meadow, 1.7 miles north of the PCT, campground, water, toilet, trash, paved road.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="36.224206" lon="-118.128890">
-    <ele>2775.4</ele>
-    <name>OlanchaPassTr</name>
-    <desc><![CDATA[Olancha Pass Trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="36.225386" lon="-118.127403">
-    <ele>2800.8</ele>
-    <name>OlanchaPassTr2</name>
-    <desc><![CDATA[Olancha Pass 2nd trail junction]]></desc>
-    <sym>Trail Head</sym>
+  <wpt lat="35.834951" lon="-118.043791">
+    <ele>1688.2</ele>
+    <name>WR681</name>
+    <desc><![CDATA[Chimney Creek, seasonal spring nearby.]]></desc>
+    <sym>Water Source</sym>
   </wpt>
   <wpt lat="35.835773" lon="-118.044029">
     <ele>1694.8</ele>
     <name>RD0681</name>
-    <desc><![CDATA[Unpaved Canebreak Road to Chimney Creek campground 2/10 mile to the east.]]></desc>
+    <desc><![CDATA[Unpaved Canebreak Road to Chimney Creek campground 2/10 mile to the E.]]></desc>
     <sym>Truck</sym>
+  </wpt>
+  <wpt lat="35.854846" lon="-118.063841">
+    <ele>1986.5</ele>
+    <name>WR683</name>
+    <desc><![CDATA[Fox Mill Spring and trough.]]></desc>
+    <sym>Water Source</sym>
   </wpt>
   <wpt lat="35.855975" lon="-118.064440">
     <ele>2005.8</ele>
@@ -234,6 +120,30 @@
     <name>RD0689</name>
     <desc><![CDATA[Unpaved Chimney Basin Road.]]></desc>
     <sym>Truck</sym>
+  </wpt>
+  <wpt lat="35.924663" lon="-118.149306">
+    <ele>1782.0</ele>
+    <name>WR694</name>
+    <desc><![CDATA[Manter Creek, 1st Creek in Rockhouse Basin.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="35.976874" lon="-118.155094">
+    <ele>1752.7</ele>
+    <name>WR699</name>
+    <desc><![CDATA[South Fork Kern River]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="36.013519" lon="-118.132244">
+    <ele>1819.0</ele>
+    <name>GT0701</name>
+    <desc><![CDATA[Trail Gate]]></desc>
+    <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="36.018998" lon="-118.123605">
+    <ele>1874.1</ele>
+    <name>KMStore</name>
+    <desc><![CDATA[Kennedy Meadows is a small hiker-friendly community 1/2 mile E of the PCT. Kennedy Meadows has a restaurant and a small general store [559-850-5647] with a grill, laundry, showers, pay phone, and they allow hikers to camp out back. The store accepts hiker resupply packages [$].]]></desc>
+    <sym>Shopping Center</sym>
   </wpt>
   <wpt lat="36.023648" lon="-118.134152">
     <ele>1831.4</ele>
@@ -253,23 +163,23 @@
     <desc><![CDATA[Second crossing of paved Kennedy Meadows Road.]]></desc>
     <sym>Truck</sym>
   </wpt>
-  <wpt lat="36.478718" lon="-118.271963">
-    <ele>3378.2</ele>
-    <name>TR0755</name>
-    <desc><![CDATA[Rock Creek and Siberian Pass Trail junctions.]]></desc>
-    <sym>Trail Head</sym>
+  <wpt lat="36.054498" lon="-118.130468">
+    <ele>1873.3</ele>
+    <name>KennedyMdwCG</name>
+    <desc><![CDATA[Kennedy Meadows Campground, paved parking area, outhouse, water from spigot or nearby creek, trail register on a post at the road.]]></desc>
+    <sym>Campground</sym>
   </wpt>
-  <wpt lat="36.493896" lon="-118.320373">
-    <ele>3029.6</ele>
-    <name>TR0759</name>
-    <desc><![CDATA[New Army Pass and Lower Rock Creek Trail junctions]]></desc>
-    <sym>Trail Head</sym>
+  <wpt lat="36.055678" lon="-118.130120">
+    <ele>1881.7</ele>
+    <name>GT0705</name>
+    <desc><![CDATA[Gate]]></desc>
+    <sym>Flag, Green</sym>
   </wpt>
-  <wpt lat="36.427120" lon="-118.176308">
-    <ele>3198.1</ele>
-    <name>TR0745B</name>
-    <desc><![CDATA[Second Mulkey Pass and Horseshoe Meadow Trail junctions.]]></desc>
-    <sym>Trail Head</sym>
+  <wpt lat="36.056417" lon="-118.130028">
+    <ele>1884.9</ele>
+    <name>SSierraWild</name>
+    <desc><![CDATA[South Sierra Wilderness boundary]]></desc>
+    <sym>Forest</sym>
   </wpt>
   <wpt lat="36.078951" lon="-118.124061">
     <ele>1916.5</ele>
@@ -283,10 +193,58 @@
     <desc><![CDATA[Seasonal Crag Creek]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="36.108537" lon="-118.123951">
+    <ele>2141.4</ele>
+    <name>CS0710</name>
+    <desc><![CDATA[Campsite 200 feet W of trail.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="36.139137" lon="-118.140020">
+    <ele>2459.9</ele>
+    <name>HaiweeTR</name>
+    <desc><![CDATA[Haiwee Trail Junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="36.152432" lon="-118.145326">
+    <ele>2437.1</ele>
+    <name>CS0713</name>
+    <desc><![CDATA[Campsite in the trees 500 feet E of PCT near small seasonal creek.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="36.156901" lon="-118.146354">
+    <ele>2429.7</ele>
+    <name>TR0714</name>
+    <desc><![CDATA[Use trail to spring.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="36.157011" lon="-118.147351">
     <ele>2414.2</ele>
     <name>WA0714</name>
     <desc><![CDATA[Spring, trough, near Beck Meadow.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="36.163495" lon="-118.144350">
+    <ele>2488.3</ele>
+    <name>GT0714</name>
+    <desc><![CDATA[Gate]]></desc>
+    <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="36.182027" lon="-118.128819">
+    <ele>2387.3</ele>
+    <name>WACS0716</name>
+    <desc><![CDATA[South Fork Kern River, steel bridge, campsite.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="36.213209" lon="-118.137454">
+    <ele>2522.0</ele>
+    <name>CS0719</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="36.214553" lon="-118.137577">
+    <ele>2536.1</ele>
+    <name>WA0719</name>
+    <desc><![CDATA[Cow Creek, campsite.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="36.222656" lon="-118.135364">
@@ -294,6 +252,24 @@
     <name>WACS0720</name>
     <desc><![CDATA[Cow Creek]]></desc>
     <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="36.227402" lon="-118.134708">
+    <ele>2717.5</ele>
+    <name>MonacheMdwTr</name>
+    <desc><![CDATA[Monache Meadow Trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="36.224206" lon="-118.128890">
+    <ele>2775.4</ele>
+    <name>OlanchaPassTr</name>
+    <desc><![CDATA[Olancha Pass Trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="36.225386" lon="-118.127403">
+    <ele>2800.8</ele>
+    <name>OlanchaPassTr2</name>
+    <desc><![CDATA[Olancha Pass 2nd trail junction]]></desc>
+    <sym>Trail Head</sym>
   </wpt>
   <wpt lat="36.232096" lon="-118.121977">
     <ele>2958.8</ele>
@@ -313,16 +289,46 @@
     <desc><![CDATA[Seasonal creek]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="36.321513" lon="-118.131011">
+    <ele>2727.5</ele>
+    <name>WACS0731</name>
+    <desc><![CDATA[Death Canyon Creek, large camping area.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="36.321807" lon="-118.131167">
+    <ele>2728.2</ele>
+    <name>TR0731</name>
+    <desc><![CDATA[Trail junction to a spring.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="36.323956" lon="-118.129786">
     <ele>2750.3</ele>
     <name>WA0731B</name>
-    <desc><![CDATA[Spring, 2/10 mile NE of PCT [better water than Death Canyon Creek].]]></desc>
+    <desc><![CDATA[Spring, 2/10 mile NE of PCT [often better water than Death Canyon Creek].]]></desc>
     <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="36.369909" lon="-118.137320">
+    <ele>3158.9</ele>
+    <name>TR0736</name>
+    <desc><![CDATA[Use trail to a seasonal spring.]]></desc>
+    <sym>Trail Head</sym>
   </wpt>
   <wpt lat="36.373878" lon="-118.134341">
     <ele>3139.1</ele>
     <name>WA0736</name>
     <desc><![CDATA[Seasonal spring, 3/10 mile N of PCT]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="36.413078" lon="-118.139112">
+    <ele>2948.1</ele>
+    <name>TR0742</name>
+    <desc><![CDATA[Trail junction to Diaz Creek, large campsites nearby.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="36.413390" lon="-118.137521">
+    <ele>2934.6</ele>
+    <name>WACS0742</name>
+    <desc><![CDATA[Diaz Creek, campsite, 1/10 mile E of PCT.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="36.428872" lon="-118.148091">
@@ -331,22 +337,76 @@
     <desc><![CDATA[Dutch Meadow, spring.]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="36.447887" lon="-118.168924">
+    <ele>3029.7</ele>
+    <name>HorseshoeMdw</name>
+    <desc><![CDATA[Horseshoe Meadow, 1.7 miles N of the PCT, campground, water, toilet, trash, paved road.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="36.429764" lon="-118.165655">
+    <ele>3168.2</ele>
+    <name>TR0745</name>
+    <desc><![CDATA[Mulkey Pass and Horseshoe Meadow Trail junctions. Horseshoe Meadow, 1.7 miles N of the PCT, campground, water, toilet, trash, paved road.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="36.427120" lon="-118.176308">
+    <ele>3198.1</ele>
+    <name>TR0745B</name>
+    <desc><![CDATA[Second Mulkey Pass and Horseshoe Meadow Trail junctions.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
   <wpt lat="36.432331" lon="-118.195149">
     <ele>3272.9</ele>
     <name>WA0747</name>
     <desc><![CDATA[Poison Meadow Spring]]></desc>
     <sym>Water Source</sym>
   </wpt>
+  <wpt lat="36.453183" lon="-118.215748">
+    <ele>3392.9</ele>
+    <name>CottonwoodPass</name>
+    <desc><![CDATA[Cottonwood Pass and Horseshoe Meadow Trail junction. Bear canisters are required in most areas from Cottonwood Pass to the northern border of Yosemite National Park. For most hikers, this means carrying a bear canister from Kennedy Meadows to Sonora Pass. See sierrawild.gov/bears/]]></desc>
+    <sym>Summit</sym>
+  </wpt>
   <wpt lat="36.454157" lon="-118.225141">
     <ele>3417.8</ele>
     <name>WA0751</name>
-    <desc><![CDATA[Chicken Spring Lake outlet, in dry years the outlet may be dry but the lake will have water.<br/>-----<br/>Water is usually plentiful in the Sierra Nevada sections of the Pacific Crest Trail. Water sources listed here were all checked in July and again late August 2012 (a very dry year). PCT hikers entering the Sierra earlier in the season will find more water sources that what is listed on Halfmile apps or maps.]]></desc>
+    <desc><![CDATA[Chicken Spring Lake outlet, in dry years the outlet may be dry but the nearby lake will have water.<br/>---<br/>Water is usually plentiful in the Sierra Nevada sections of the Pacific Crest Trail. Water sources listed here were all checked in July and again late August 2012 (a very dry year). PCT hikers entering the Sierra earlier in the season will find more water sources that what is listed on Halfmile apps or maps.]]></desc>
     <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="36.473713" lon="-118.260188">
+    <ele>3462.7</ele>
+    <name>SequoiaNP</name>
+    <desc><![CDATA[Sequoia National Park boundary]]></desc>
+    <sym>Forest</sym>
+  </wpt>
+  <wpt lat="36.478718" lon="-118.271963">
+    <ele>3378.2</ele>
+    <name>TR0755</name>
+    <desc><![CDATA[Rock Creek and Siberian Pass Trail junctions.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="36.493896" lon="-118.320373">
+    <ele>3029.6</ele>
+    <name>TR0759</name>
+    <desc><![CDATA[New Army Pass and Lower Rock Creek Trail junctions]]></desc>
+    <sym>Trail Head</sym>
   </wpt>
   <wpt lat="36.494201" lon="-118.322474">
     <ele>2994.7</ele>
     <name>WA0759</name>
     <desc><![CDATA[Good creek before Rock Creek.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="36.496357" lon="-118.329881">
+    <ele>2936.2</ele>
+    <name>CS0760</name>
+    <desc><![CDATA[Large campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="36.496179" lon="-118.337407">
+    <ele>2901.0</ele>
+    <name>WACSBB0760</name>
+    <desc><![CDATA[Rock Creek, several campsites, bear box.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="36.506533" lon="-118.343229">
@@ -355,76 +415,10 @@
     <desc><![CDATA[Guyot Creek]]></desc>
     <sym>Water Source</sym>
   </wpt>
-  <wpt lat="36.182027" lon="-118.128819">
-    <ele>2387.3</ele>
-    <name>WACS0716</name>
-    <desc><![CDATA[South Fork Kern River, steel bridge, campsite.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="36.214553" lon="-118.137577">
-    <ele>2536.1</ele>
-    <name>WA0719</name>
-    <desc><![CDATA[Cow Creek, campsite.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="36.321513" lon="-118.131011">
-    <ele>2727.5</ele>
-    <name>WACS0731</name>
-    <desc><![CDATA[Death Canyon Creek, large camping area.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="36.413390" lon="-118.137521">
-    <ele>2934.6</ele>
-    <name>WACS0742</name>
-    <desc><![CDATA[Diaz Creek, campsite, 1/10 mile E of PCT.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.742750" lon="-118.018518">
-    <ele>1711.5</ele>
-    <name>WR664</name>
-    <desc><![CDATA[Stream past a dirt road. ]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.741271" lon="-118.024682">
-    <ele>1609.3</ele>
-    <name>WR664B</name>
-    <desc><![CDATA[Joshua Tree Spring. WATER ALERT: Next southbound water may be Willow Spring in 43.7 miles.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.769063" lon="-118.027921">
-    <ele>1556.1</ele>
-    <name>WR669</name>
-    <desc><![CDATA[Spanish Needle Creek, first crossing.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.775679" lon="-118.024998">
-    <ele>1718.3</ele>
-    <name>WR670B</name>
-    <desc><![CDATA[Spanish Needle Creek, forth crossing.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.834951" lon="-118.043791">
-    <ele>1688.2</ele>
-    <name>WR681</name>
-    <desc><![CDATA[Chimney Creek, seasonal spring nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.854846" lon="-118.063841">
-    <ele>1986.5</ele>
-    <name>WR683</name>
-    <desc><![CDATA[Fox Mill Spring and trough.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.924663" lon="-118.149306">
-    <ele>1782.0</ele>
-    <name>WR694</name>
-    <desc><![CDATA[Manter Creek, 1st  Creek in Rockhouse Basin.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="35.976874" lon="-118.155094">
-    <ele>1752.7</ele>
-    <name>WR699</name>
-    <desc><![CDATA[South Fork Kern River]]></desc>
+  <wpt lat="36.551992" lon="-118.358284">
+    <ele>3145.9</ele>
+    <name>WACSBB0766</name>
+    <desc><![CDATA[Several campsites, bear locker, creek nearby.]]></desc>
     <sym>Water Source</sym>
   </wpt>
   <wpt lat="36.563886" lon="-118.349365">
@@ -432,6 +426,12 @@
     <name>WACSBB0767B</name>
     <desc><![CDATA[Campsite, water, bear box, Crabtree Ranger, 1 mile NE of PCT.]]></desc>
     <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="36.558887" lon="-118.361772">
+    <ele>3285.4</ele>
+    <name>JMT0767</name>
+    <desc><![CDATA[John Muir Trail junction, PCT joins the JMT north from this point.]]></desc>
+    <sym>Flag, Blue</sym>
   </wpt>
   <wpt lat="35.663089" lon="-118.027357">
     <ele>1604.5</ele>

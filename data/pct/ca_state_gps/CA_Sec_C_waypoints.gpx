@@ -13,707 +13,59 @@
           or Lon Cooper <Halfmile@pctmap.net> for all others.]]>
     </desc>
   </metadata>
-  <wpt lat="34.296734" lon="-116.824116">
-    <ele>2085.1</ele>
-    <name>WR0269</name>
-    <desc><![CDATA[Doble Trail Camp, outhouse, picnic table, water, corral. ]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.294846" lon="-116.839089">
-    <ele>2335.7</ele>
-    <name>RD0271</name>
-    <desc><![CDATA[Unpaved jeep road]]></desc>
+  <wpt lat="33.925549" lon="-116.695072">
+    <ele>415.8</ele>
+    <name>RD0210</name>
+    <desc><![CDATA[Cross paved Tamarack Road.]]></desc>
     <sym>Truck</sym>
   </wpt>
-  <wpt lat="34.283164" lon="-116.910035">
-    <ele>2314.1</ele>
-    <name>RD0278</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.300596" lon="-116.951037">
-    <ele>2318.8</ele>
-    <name>RD0282</name>
-    <desc><![CDATA[Unpaved jeep road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.301366" lon="-116.977870">
-    <ele>2004.7</ele>
-    <name>CS0286</name>
-    <desc><![CDATA[Little Bear Spring trail camp, picnic table, outhouse, corral.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="34.297999" lon="-116.992510">
-    <ele>1968.7</ele>
-    <name>WRCS0287</name>
-    <desc><![CDATA[Creek, campsite nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.280585" lon="-117.012394">
-    <ele>1936.5</ele>
-    <name>RD0289</name>
-    <desc><![CDATA[Unpaved jeep road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.279990" lon="-117.042349">
-    <ele>1715.9</ele>
-    <name>WR0292</name>
-    <desc><![CDATA[Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.275350" lon="-117.049934">
-    <ele>1668.0</ele>
-    <name>WR0292B</name>
-    <desc><![CDATA[Large creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.275399" lon="-117.050789">
-    <ele>1666.9</ele>
-    <name>RD0292</name>
-    <desc><![CDATA[Paved Crab Flats Road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.275125" lon="-117.054256">
-    <ele>1656.9</ele>
-    <name>WRCS0292</name>
-    <desc><![CDATA[Creek, campsites nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.276978" lon="-117.075532">
-    <ele>1589.6</ele>
-    <name>CS0294</name>
-    <desc><![CDATA[Trail camp]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="34.275890" lon="-117.078600">
-    <ele>1611.2</ele>
-    <name>TR0294</name>
-    <desc><![CDATA[OHV trail 1W17 to Big Pine Flat.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="34.277962" lon="-117.086510">
-    <ele>1572.1</ele>
-    <name>TR0295</name>
-    <desc><![CDATA[Hawes Peak trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="34.273972" lon="-117.127887">
-    <ele>1396.3</ele>
-    <name>WR0299</name>
-    <desc><![CDATA[Deep Creek, large bridge.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.274163" lon="-117.128065">
-    <ele>1408.7</ele>
-    <name>TR0299</name>
-    <desc><![CDATA[Splinter's Trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="34.339264" lon="-117.177016">
-    <ele>1073.4</ele>
-    <name>WA0308</name>
-    <desc><![CDATA[Deep Creek hot spring. Camping is not permitted within one mile of Deep Creek. Sometimes this is enforced, especially on weekends near the popular clothing optional hot spring that can be crowded on weekends.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.312309" lon="-117.265540">
-    <ele>1015.8</ele>
-    <name>RD0318B</name>
-    <desc><![CDATA[PCT departs the unpaved road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.311685" lon="-117.271032">
-    <ele>1058.2</ele>
-    <name>RD0319</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.303477" lon="-117.300510">
-    <ele>1037.1</ele>
-    <name>StatePark0322</name>
-    <desc><![CDATA[State park, national forest boundary.]]></desc>
-    <sym>Park</sym>
-  </wpt>
-  <wpt lat="34.305633" lon="-117.308549">
-    <ele>1028.2</ele>
-    <name>RD0323</name>
-    <desc><![CDATA[Paved road to the Silverwood Lake day use parking area.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.306538" lon="-117.312665">
-    <ele>970.5</ele>
-    <name>RD0324</name>
-    <desc><![CDATA[PCT joins an unpaved road toward a bridge over the Silverwood Lake dam outlet.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.308588" lon="-117.315367">
-    <ele>964.9</ele>
-    <name>RD0324B</name>
-    <desc><![CDATA[PCT joins paved Hwy 73 after after crossing smaller road and passing through a small industrial work yard.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.308699" lon="-117.322236">
-    <ele>974.5</ele>
-    <name>MojaveSiphon</name>
-    <desc><![CDATA[Pass the Mojave Siphon Power Plant.]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="34.307965" lon="-117.324110">
-    <ele>975.8</ele>
-    <name>RD0324C</name>
-    <desc><![CDATA[PCT departs the paved road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.288424" lon="-117.344810">
-    <ele>1059.8</ele>
-    <name>PL0328</name>
-    <desc><![CDATA[High voltage power line, unpaved road nearby.]]></desc>
-    <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="34.287663" lon="-117.348119">
-    <ele>1033.8</ele>
-    <name>WR0329</name>
-    <desc><![CDATA[Cleghorn Picnic Area, shade, picnic tables, water, outhouse, trash can, paved road. ]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.287930" lon="-117.355550">
-    <ele>1035.5</ele>
-    <name>Hwy138</name>
-    <desc><![CDATA[Highway 138 overpass.]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="34.288976" lon="-117.367346">
-    <ele>1076.6</ele>
-    <name>RD0330</name>
-    <desc><![CDATA[Paved road to a water tank. No access to water.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.288243" lon="-117.369673">
-    <ele>1090.9</ele>
-    <name>Forest0330</name>
-    <desc><![CDATA[National Forest boundary]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="34.294578" lon="-117.378108">
-    <ele>1271.4</ele>
-    <name>GT0332</name>
-    <desc><![CDATA[Trail gate]]></desc>
-    <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="34.294921" lon="-117.378036">
-    <ele>1271.0</ele>
-    <name>RD0332</name>
-    <desc><![CDATA[PCT joins an unpaved road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.295750" lon="-117.377655">
-    <ele>1259.6</ele>
-    <name>RD0332B</name>
-    <desc><![CDATA[PCT departs the unpaved road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.298685" lon="-117.384568">
-    <ele>1167.2</ele>
-    <name>WR0333</name>
-    <desc><![CDATA[Small seasonal stream]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.317312" lon="-117.432144">
-    <ele>1174.8</ele>
-    <name>PL0338</name>
-    <desc><![CDATA[PCT follows an unpaved road for about 100 yards near a high voltage power line.]]></desc>
-    <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="34.316802" lon="-117.453849">
-    <ele>1021.1</ele>
-    <name>RD0340</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.310298" lon="-117.462045">
-    <ele>953.6</ele>
-    <name>WR0341</name>
-    <desc><![CDATA[Crowder Canyon, small seasonal creek nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.306050" lon="-117.466160">
-    <ele>927.0</ele>
-    <name>TR0342</name>
-    <desc><![CDATA[Side trail to McDonalds, mini-mart, and Best Western Motel at Cajon Pass. The side tail is actually a paved road along a short section of Historic Route 66.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="34.315308" lon="-117.459777">
-    <ele>997.7</ele>
-    <name>PL0341</name>
-    <desc><![CDATA[PCT passes under a high voltage powerline tower.]]></desc>
-    <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="34.315547" lon="-117.457791">
-    <ele>1003.1</ele>
-    <name>RD0341</name>
-    <desc><![CDATA[Cross an unpaved road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.317052" lon="-117.454548">
-    <ele>1020.3</ele>
-    <name>PL0340</name>
+  <wpt lat="33.930274" lon="-116.696839">
+    <ele>440.4</ele>
+    <name>PL0210</name>
     <desc><![CDATA[High voltage power line]]></desc>
     <sym>Flag, Green</sym>
   </wpt>
-  <wpt lat="34.311981" lon="-117.409725">
-    <ele>1093.2</ele>
-    <name>CS0336</name>
-    <desc><![CDATA[Small campsite]]></desc>
-    <sym>Campground</sym>
+  <wpt lat="33.936814" lon="-116.702137">
+    <ele>488.6</ele>
+    <name>RD0211</name>
+    <desc><![CDATA[Unpaved road, PCT register, barbed wire fence nearby.]]></desc>
+    <sym>Truck</sym>
   </wpt>
-  <wpt lat="34.288413" lon="-117.358663">
-    <ele>1061.2</ele>
-    <name>PL0329</name>
-    <desc><![CDATA[High voltage power line.]]></desc>
+  <wpt lat="33.937586" lon="-116.698417">
+    <ele>489.0</ele>
+    <name>ZiggyBear</name>
+    <desc><![CDATA[Trail angels Ziggy and the Bear have closed.]]></desc>
+    <sym>Post Office</sym>
+  </wpt>
+  <wpt lat="33.939028" lon="-116.699192">
+    <ele>501.3</ele>
+    <name>GT0211</name>
+    <desc><![CDATA["Friends of the Desert Mountains" gate blocks the end of paved Boulder Drive.]]></desc>
     <sym>Flag, Green</sym>
   </wpt>
-  <wpt lat="34.288114" lon="-117.355881">
-    <ele>1035.6</ele>
-    <name>RD0329B</name>
-    <desc><![CDATA[PCT departs the paved road.]]></desc>
+  <wpt lat="33.947477" lon="-116.692255">
+    <ele>563.5</ele>
+    <name>RD0212</name>
+    <desc><![CDATA[Two unpaved road next to each other.]]></desc>
     <sym>Truck</sym>
   </wpt>
-  <wpt lat="34.287763" lon="-117.354711">
-    <ele>1035.3</ele>
-    <name>RD0329</name>
-    <desc><![CDATA[PCT joins a paved road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.288375" lon="-117.351046">
-    <ele>1034.0</ele>
-    <name>TR0329</name>
-    <desc><![CDATA[PCT joins a paved bicycle path.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="34.299474" lon="-117.334035">
-    <ele>1038.0</ele>
-    <name>PL0326</name>
-    <desc><![CDATA[High voltage power line.]]></desc>
-    <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="34.300614" lon="-117.332303">
-    <ele>1036.4</ele>
-    <name>RD0325C</name>
-    <desc><![CDATA[PCT departs an unpaved service road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.301239" lon="-117.331726">
-    <ele>1034.4</ele>
-    <name>WR0325</name>
-    <desc><![CDATA[Small trail side beach on the lake.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.302591" lon="-117.331506">
-    <ele>1035.9</ele>
-    <name>RD0325B</name>
-    <desc><![CDATA[PCT joins an unpaved service road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.305286" lon="-117.328981">
-    <ele>1040.6</ele>
-    <name>PL0325</name>
-    <desc><![CDATA[High voltage power line]]></desc>
-    <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="34.305417" lon="-117.330078">
-    <ele>1024.5</ele>
-    <name>RD0325</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.306818" lon="-117.313477">
-    <ele>963.8</ele>
-    <name>WR0324</name>
-    <desc><![CDATA[Bridge over Cedar Springs Dam outlet.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.305877" lon="-117.276203">
-    <ele>1095.9</ele>
-    <name>CS0320</name>
-    <desc><![CDATA[Small campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="34.312386" lon="-117.265187">
-    <ele>1015.2</ele>
-    <name>WRCS0318</name>
-    <desc><![CDATA[Seasonal Grass Valley Creek, campsite nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.316123" lon="-117.265228">
-    <ele>1039.7</ele>
-    <name>RD0318</name>
+  <wpt lat="33.947962" lon="-116.691208">
+    <ele>564.9</ele>
+    <name>RD0212B</name>
     <desc><![CDATA[PCT joins an unpaved road.]]></desc>
     <sym>Truck</sym>
   </wpt>
-  <wpt lat="34.315855" lon="-117.263827">
-    <ele>1027.5</ele>
-    <name>TR0318</name>
-    <desc><![CDATA[ Mojave River Campground trail junction. Campground is 3/4 mile off trail.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="34.341191" lon="-117.236990">
-    <ele>909.9</ele>
-    <name>WR0314</name>
-    <desc><![CDATA[Stream]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.345212" lon="-117.230572">
-    <ele>955.7</ele>
-    <name>MFSpillway</name>
-    <desc><![CDATA[Mojave River Forks Reservoir Spillway, 200 feet NW of PCT. The Reservoir is usually a dry lake bed. In wet years, the trail below the dam [PCT miles 313 - 314] may be flooded. Rangers report the flooded area sometimes has quicksand, so use caution.<br/>As an alternate, you can take the paved path just past the spillway to a road on top of the dam. Follow the road west to Arrowhead Lake Rd, and backtrack east on Hwy 173 to the PCT. This 2.9 mile alternate bypasses 1.3 miles of the PCT.]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="34.344096" lon="-117.195520">
-    <ele>1011.3</ele>
-    <name>Bridge0310</name>
-    <desc><![CDATA[Footbridge painted with rainbow colors.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.340414" lon="-117.190229">
-    <ele>1054.7</ele>
-    <name>WR0309</name>
-    <desc><![CDATA[Small stream]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.309058" lon="-117.139627">
-    <ele>1271.6</ele>
-    <name>Bridge0302</name>
-    <desc><![CDATA[Bridge over a gully. ]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.300652" lon="-117.128246">
-    <ele>1299.5</ele>
-    <name>RD0301</name>
-    <desc><![CDATA[Unpaved road to Deep Creek day use area. Access to Deep Creek.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.272545" lon="-117.097841">
-    <ele>1597.4</ele>
-    <name>WR0296</name>
-    <desc><![CDATA[Piped spring]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.278133" lon="-117.072402">
-    <ele>1591.4</ele>
-    <name>WR0294</name>
-    <desc><![CDATA[Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.278490" lon="-117.063482">
-    <ele>1625.0</ele>
-    <name>CS0293</name>
-    <desc><![CDATA[Large campsite, oak trees, small seasonal stream nearby.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="34.281333" lon="-117.029677">
-    <ele>1855.8</ele>
-    <name>CS0290</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="34.298725" lon="-116.990878">
-    <ele>1978.7</ele>
-    <name>RD0287</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.300281" lon="-116.982171">
-    <ele>1981.9</ele>
-    <name>WR0286</name>
-    <desc><![CDATA[Holcomb Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.300245" lon="-116.981771">
-    <ele>1985.5</ele>
-    <name>RD0286</name>
-    <desc><![CDATA[PCT joins an unpaved road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.296204" lon="-116.945316">
-    <ele>2363.8</ele>
-    <name>RD0281</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.283627" lon="-116.917247">
-    <ele>2301.2</ele>
-    <name>RD0279</name>
-    <desc><![CDATA[Holcomb Valley Road 2N09, paved for about 1/4 mile leading up to PCT junction, dirt road for about 2 miles beyond that S to Hwy 38, unpaved to R of PCT crossing.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.280917" lon="-116.913176">
-    <ele>2339.1</ele>
-    <name>TR0278</name>
-    <desc><![CDATA[Cougar Crest trail junction, keep right. It's easy to overlook the PCT sign and follow the well used Cougar Crest Trail.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="34.281416" lon="-116.907058">
-    <ele>2356.8</ele>
-    <name>RD0277</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.286261" lon="-116.899872">
-    <ele>2351.7</ele>
-    <name>CS0277</name>
-    <desc><![CDATA[Campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="34.290378" lon="-116.883446">
-    <ele>2211.9</ele>
-    <name>WRCS0275</name>
-    <desc><![CDATA[Caribou Creek, small wooden bridge, campsite nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.296820" lon="-116.824853">
-    <ele>2103.8</ele>
-    <name>TR0269</name>
-    <desc><![CDATA[Trail junction to Doble Trail Camp.]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="34.290743" lon="-116.802749">
-    <ele>2081.8</ele>
-    <name>Hwy18</name>
-    <desc><![CDATA[Paved Highway 18, access to Big Bear.]]></desc>
-    <sym>Car</sym>
-  </wpt>
-  <wpt lat="34.279818" lon="-116.778980">
-    <ele>2158.6</ele>
-    <name>RD0264</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.269369" lon="-116.767893">
-    <ele>2067.2</ele>
-    <name>RD0262</name>
-    <desc><![CDATA[Unpaved road 2N02]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.243817" lon="-116.755889">
-    <ele>2174.2</ele>
-    <name>RD0259</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.242457" lon="-116.754594">
-    <ele>2181.0</ele>
-    <name>CS0259</name>
-    <desc><![CDATA[Small campsite]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="34.235930" lon="-116.749428">
-    <ele>2098.5</ele>
-    <name>WR0258B</name>
-    <desc><![CDATA[Arrastre Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.231318" lon="-116.749788">
-    <ele>2148.3</ele>
-    <name>RD0258B</name>
+  <wpt lat="33.948184" lon="-116.689746">
+    <ele>560.9</ele>
+    <name>RD0212C</name>
     <desc><![CDATA[PCT departs the unpaved road.]]></desc>
     <sym>Truck</sym>
   </wpt>
-  <wpt lat="34.230727" lon="-116.749679">
-    <ele>2147.4</ele>
-    <name>WR0258</name>
-    <desc><![CDATA[Arrastre Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.228159" lon="-116.751619">
-    <ele>2175.9</ele>
-    <name>RD0258</name>
-    <desc><![CDATA[PCT joins an unpaved road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.217718" lon="-116.743811">
-    <ele>2272.6</ele>
-    <name>WR0257</name>
-    <desc><![CDATA[Spring 1/2 mile N of Arrastre Camp.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.214728" lon="-116.740094">
-    <ele>2318.1</ele>
-    <name>WRCS0256</name>
-    <desc><![CDATA[Arrastre Trail Camp, Deer Spring, stream 200 feet to the N, picnic table, campsites. WATER ALERT: Next southbound water may be Mission Springs Trail Camp in 16.3 miles.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.207320" lon="-116.730063">
-    <ele>2407.7</ele>
-    <name>RD0255</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.202711" lon="-116.717663">
-    <ele>2632.3</ele>
-    <name>CS0253</name>
-    <desc><![CDATA[Unpaved road, campsite nearby.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="34.191852" lon="-116.716974">
-    <ele>2600.3</ele>
-    <name>RD0252</name>
-    <desc><![CDATA[Unpaved road at Onyx Summit.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.182484" lon="-116.709799">
-    <ele>2558.7</ele>
-    <name>RD0251</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.174630" lon="-116.712568">
-    <ele>2483.4</ele>
-    <name>AnimalCages</name>
-    <desc><![CDATA[Animal cages, exotic animals for film and television. See www.predatorsinaction.com.]]></desc>
-    <sym>Flag, Blue</sym>
-  </wpt>
-  <wpt lat="34.174508" lon="-116.712475">
-    <ele>2482.2</ele>
-    <name>RD0250B</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.174060" lon="-116.712327">
-    <ele>2478.2</ele>
-    <name>RD0250</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.163247" lon="-116.709508">
-    <ele>2556.3</ele>
-    <name>RD0249B</name>
-    <desc><![CDATA[PCT joins an unpaved road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.161814" lon="-116.712041">
-    <ele>2629.9</ele>
-    <name>RD0249</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.148431" lon="-116.711631">
-    <ele>2465.4</ele>
-    <name>RD0246</name>
-    <desc><![CDATA[Unpaved road near the Coon Creek Group Campground.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.144398" lon="-116.726195">
-    <ele>2541.6</ele>
-    <name>RD0245B</name>
-    <desc><![CDATA[PCT departs the unpaved road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.144415" lon="-116.732300">
-    <ele>2587.9</ele>
-    <name>RD0245</name>
-    <desc><![CDATA[PCT joins an unpaved road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.132116" lon="-116.749847">
-    <ele>2474.4</ele>
-    <name>RD0241B</name>
-    <desc><![CDATA[Unpaved road 2E03.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.130970" lon="-116.756670">
-    <ele>2510.1</ele>
-    <name>RD0241</name>
-    <desc><![CDATA[Wide unpaved road]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.126091" lon="-116.759442">
-    <ele>2429.7</ele>
-    <name>RD0240</name>
-    <desc><![CDATA[PCT departs the unpaved road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.125752" lon="-116.758854">
-    <ele>2416.4</ele>
-    <name>WRCS0240</name>
-    <desc><![CDATA[Mission Creek Trail Camp spring, parking, campsites, PCT joins an unpaved road for a short distance. ]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.129060" lon="-116.740858">
-    <ele>2246.6</ele>
-    <name>WRCS0239</name>
-    <desc><![CDATA[Forested Flats Junction, seasonal water, campsites nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.128192" lon="-116.708849">
-    <ele>1867.7</ele>
-    <name>WRCS0235</name>
-    <desc><![CDATA[Creek side camp, small seasonal creek nearby.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.122861" lon="-116.700343">
-    <ele>1786.7</ele>
-    <name>GorgonioWild2</name>
-    <desc><![CDATA[San Gorgonio Wilderness boundary]]></desc>
-    <sym>Forest</sym>
-  </wpt>
-  <wpt lat="34.097104" lon="-116.679340">
-    <ele>1473.5</ele>
-    <name>WRCS0232</name>
-    <desc><![CDATA[Campsite near Mission Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.090920" lon="-116.673008">
-    <ele>1391.0</ele>
-    <name>WRCS0231</name>
-    <desc><![CDATA[Campsite near Mission Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.070725" lon="-116.666115">
-    <ele>1205.5</ele>
-    <name>WRCS0230</name>
-    <desc><![CDATA[Campsite near Mission Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.058155" lon="-116.672882">
-    <ele>1088.9</ele>
-    <name>WR0228</name>
-    <desc><![CDATA[Creek]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.050904" lon="-116.670839">
-    <ele>1028.4</ele>
-    <name>WR0227</name>
-    <desc><![CDATA[Mission Creek Crossing]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="34.043985" lon="-116.657596">
-    <ele>953.4</ele>
-    <name>WRCS0226</name>
-    <desc><![CDATA[Mission Creek Crossing, campsite.]]></desc>
-    <sym>Water Source</sym>
-  </wpt>
-  <wpt lat="33.988110" lon="-116.666956">
-    <ele>837.1</ele>
-    <name>TR0218</name>
-    <desc><![CDATA[Canyon View Loop trail junction]]></desc>
-    <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="33.975354" lon="-116.675194">
-    <ele>857.0</ele>
-    <name>GorgonioWild</name>
-    <desc><![CDATA[San Gorgonio Wilderness boundary]]></desc>
-    <sym>Forest</sym>
-  </wpt>
-  <wpt lat="33.966089" lon="-116.668982">
-    <ele>850.6</ele>
-    <name>RD0215</name>
-    <desc><![CDATA[Unpaved road, barbed wire fence nearby.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="33.957538" lon="-116.664448">
-    <ele>756.6</ele>
-    <name>RD0214</name>
-    <desc><![CDATA[Unpaved road]]></desc>
-    <sym>Truck</sym>
+  <wpt lat="33.949648" lon="-116.684802">
+    <ele>590.9</ele>
+    <name>GT0212</name>
+    <desc><![CDATA[Metal trail gate]]></desc>
+    <sym>Flag, Green</sym>
   </wpt>
   <wpt lat="33.952116" lon="-116.665771">
     <ele>712.7</ele>
@@ -727,53 +79,131 @@
     <desc><![CDATA[Mesa Wind Farm maintenance building.]]></desc>
     <sym>Water Source</sym>
   </wpt>
-  <wpt lat="33.949648" lon="-116.684802">
-    <ele>590.9</ele>
-    <name>GT0212</name>
-    <desc><![CDATA[Metal trail gate]]></desc>
-    <sym>Flag, Green</sym>
+  <wpt lat="33.957538" lon="-116.664448">
+    <ele>756.6</ele>
+    <name>RD0214</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
   </wpt>
-  <wpt lat="33.948184" lon="-116.689746">
-    <ele>560.9</ele>
-    <name>RD0212C</name>
+  <wpt lat="33.966089" lon="-116.668982">
+    <ele>850.6</ele>
+    <name>RD0215</name>
+    <desc><![CDATA[Unpaved road, barbed wire fence nearby.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="33.975354" lon="-116.675194">
+    <ele>857.0</ele>
+    <name>GorgonioWild</name>
+    <desc><![CDATA[San Gorgonio Wilderness boundary]]></desc>
+    <sym>Forest</sym>
+  </wpt>
+  <wpt lat="33.988110" lon="-116.666956">
+    <ele>837.1</ele>
+    <name>TR0218</name>
+    <desc><![CDATA[Canyon View Loop trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.991977" lon="-116.664406">
+    <ele>704.8</ele>
+    <name>WhitewaterTr</name>
+    <desc><![CDATA[Whitewater Preserve trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="33.989219" lon="-116.656203">
+    <ele>673.1</ele>
+    <name>WRCS0219</name>
+    <desc><![CDATA[Whitewater Preserve [wildlandsconservancy.org, 760-325-7222], 6/10 mile E of PCT, shade, water, wading pool, toilets, and free camping for PCT hikers.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.013162" lon="-116.669843">
+    <ele>795.5</ele>
+    <name>WR0220</name>
+    <desc><![CDATA[Whitewater Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.043985" lon="-116.657596">
+    <ele>953.4</ele>
+    <name>WRCS0226</name>
+    <desc><![CDATA[Mission Creek Crossing, campsite.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.050904" lon="-116.670839">
+    <ele>1028.4</ele>
+    <name>WR0227</name>
+    <desc><![CDATA[Mission Creek Crossing]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.058155" lon="-116.672882">
+    <ele>1088.9</ele>
+    <name>WR0228</name>
+    <desc><![CDATA[Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.070725" lon="-116.666115">
+    <ele>1205.5</ele>
+    <name>WRCS0230</name>
+    <desc><![CDATA[Campsite near Mission Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.090920" lon="-116.673008">
+    <ele>1391.0</ele>
+    <name>WRCS0231</name>
+    <desc><![CDATA[Campsite near Mission Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.097104" lon="-116.679340">
+    <ele>1473.5</ele>
+    <name>WRCS0232</name>
+    <desc><![CDATA[Campsite near Mission Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.122861" lon="-116.700343">
+    <ele>1786.7</ele>
+    <name>GorgonioWild2</name>
+    <desc><![CDATA[San Gorgonio Wilderness boundary]]></desc>
+    <sym>Forest</sym>
+  </wpt>
+  <wpt lat="34.128192" lon="-116.708849">
+    <ele>1867.7</ele>
+    <name>WRCS0235</name>
+    <desc><![CDATA[Creek side camp, small seasonal creek nearby.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.129060" lon="-116.740858">
+    <ele>2246.6</ele>
+    <name>WRCS0239</name>
+    <desc><![CDATA[Forested Flats Junction, seasonal water, campsites nearby.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.125752" lon="-116.758854">
+    <ele>2416.4</ele>
+    <name>WRCS0240</name>
+    <desc><![CDATA[Mission Creek Trail Camp spring, parking, campsites, PCT joins an unpaved road for a short distance. ]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.125204" lon="-116.759544">
+    <ele>2428.5</ele>
+    <name>WR0240</name>
+    <desc><![CDATA[Spring and trough near Mission Creek Trail Camp, other spring is usually better.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.125108" lon="-116.756521">
+    <ele>2414.3</ele>
+    <name>WRCS0240B</name>
+    <desc><![CDATA[Mission Creek Trail Camp spring, parking, campsites.<br/>---<br/>WATER ALERT: Next northbound water after Mission Creek Trail Camp spring may be Arrastre Trail Camp in 16.3 miles.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.126091" lon="-116.759442">
+    <ele>2429.7</ele>
+    <name>RD0240</name>
     <desc><![CDATA[PCT departs the unpaved road.]]></desc>
     <sym>Truck</sym>
-  </wpt>
-  <wpt lat="33.947962" lon="-116.691208">
-    <ele>564.9</ele>
-    <name>RD0212B</name>
-    <desc><![CDATA[PCT joins an unpaved road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="33.947477" lon="-116.692255">
-    <ele>563.5</ele>
-    <name>RD0212</name>
-    <desc><![CDATA[Two unpaved road next to each other.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="33.936814" lon="-116.702137">
-    <ele>488.6</ele>
-    <name>RD0211</name>
-    <desc><![CDATA[Unpaved road, PCT register, barbed wire fence nearby.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="33.930274" lon="-116.696839">
-    <ele>440.4</ele>
-    <name>PL0210</name>
-    <desc><![CDATA[High voltage power line]]></desc>
-    <sym>Flag, Green</sym>
   </wpt>
   <wpt lat="34.126787" lon="-116.776656">
     <ele>2438.8</ele>
     <name>AspenGroveTr</name>
     <desc><![CDATA[Aspen Grove trail junction]]></desc>
     <sym>Trail Head</sym>
-  </wpt>
-  <wpt lat="34.278131" lon="-117.083007">
-    <ele>1580.5</ele>
-    <name>CS0295</name>
-    <desc><![CDATA[Bench Trail Camp]]></desc>
-    <sym>Campground</sym>
   </wpt>
   <wpt lat="34.110477" lon="-116.819762">
     <ele>3001.0</ele>
@@ -786,18 +216,6 @@
     <name>C47Crash</name>
     <desc><![CDATA[Plane crash memorial, C-47 crashed in a snowstorm in 1952.]]></desc>
     <sym>Cemetery</sym>
-  </wpt>
-  <wpt lat="34.149350" lon="-116.710567">
-    <ele>2478.3</ele>
-    <name>CS0246</name>
-    <desc><![CDATA[Coon Creek Cabin Group Campground, no water.]]></desc>
-    <sym>Campground</sym>
-  </wpt>
-  <wpt lat="34.264011" lon="-116.910838">
-    <ele>2087.4</ele>
-    <name>CougarCrestTH</name>
-    <desc><![CDATA[Cougar Crest trailhead]]></desc>
-    <sym>Trail Head</sym>
   </wpt>
   <wpt lat="34.121522" lon="-116.793207">
     <ele>2625.6</ele>
@@ -835,53 +253,11 @@
     <desc><![CDATA[Fish Creek Trailhead]]></desc>
     <sym>Trail Head</sym>
   </wpt>
-  <wpt lat="33.939028" lon="-116.699192">
-    <ele>501.3</ele>
-    <name>GT0211</name>
-    <desc><![CDATA["Friends of the Desert Mountains" gate blocks the end of paved Boulder Drive.]]></desc>
-    <sym>Flag, Green</sym>
-  </wpt>
-  <wpt lat="34.336710" lon="-117.245777">
-    <ele>953.2</ele>
-    <name>RD0314</name>
-    <desc><![CDATA[Paved Route 173]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.309107" lon="-117.470368">
-    <ele>936.1</ele>
-    <name>McDonalds</name>
-    <desc><![CDATA[McDonalds Restaurant, 3/10 mile NW of PCT. Mini-mart next door, Best Western Motel nearby.]]></desc>
-    <sym>Restaurant</sym>
-  </wpt>
   <wpt lat="34.099252" lon="-116.824938">
     <ele>3504.9</ele>
     <name>MtSanGorgonio</name>
     <desc><![CDATA[San Gorgonio Peak.]]></desc>
     <sym>Summit</sym>
-  </wpt>
-  <wpt lat="33.925549" lon="-116.695072">
-    <ele>415.8</ele>
-    <name>RD0210</name>
-    <desc><![CDATA[Cross paved Tamarack Road.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.302273" lon="-116.823097">
-    <ele>2091.4</ele>
-    <name>RD0268</name>
-    <desc><![CDATA[Paved road 3N08, power line nearby, near a land fill. ]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.288810" lon="-116.883362">
-    <ele>2214.0</ele>
-    <name>RD0275</name>
-    <desc><![CDATA[Unpaved Van Dusen Canyon Rd. Big Bear City is 2.8 miles SE on this medium clearance unpaved road with some rough spots.]]></desc>
-    <sym>Truck</sym>
-  </wpt>
-  <wpt lat="34.272915" lon="-117.128796">
-    <ele>1405.8</ele>
-    <name>SplintersCabin</name>
-    <desc><![CDATA[Splinters Cabin, outhouse, 1/10 mile SW of PCT.]]></desc>
-    <sym>Flag, Blue</sym>
   </wpt>
   <wpt lat="34.101212" lon="-116.830676">
     <ele>3466.2</ele>
@@ -889,23 +265,419 @@
     <desc><![CDATA[Vivian Creek trail junction, signed San Gorgonio Mtn, Mineshaft Flat.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
-  <wpt lat="33.991977" lon="-116.664406">
-    <ele>704.8</ele>
-    <name>WhitewaterTr</name>
-    <desc><![CDATA[Whitewater Preserve trail junction]]></desc>
+  <wpt lat="34.130970" lon="-116.756670">
+    <ele>2510.1</ele>
+    <name>RD0241</name>
+    <desc><![CDATA[Wide unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.132116" lon="-116.749847">
+    <ele>2474.4</ele>
+    <name>RD0241B</name>
+    <desc><![CDATA[Unpaved road 2E03.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.144415" lon="-116.732300">
+    <ele>2587.9</ele>
+    <name>RD0245</name>
+    <desc><![CDATA[PCT joins an unpaved road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.144398" lon="-116.726195">
+    <ele>2541.6</ele>
+    <name>RD0245B</name>
+    <desc><![CDATA[PCT departs the unpaved road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.148431" lon="-116.711631">
+    <ele>2465.4</ele>
+    <name>RD0246</name>
+    <desc><![CDATA[Unpaved road near the Coon Creek Group Campground.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.149350" lon="-116.710567">
+    <ele>2478.3</ele>
+    <name>CS0246</name>
+    <desc><![CDATA[Coon Creek Cabin Group Campground, no water.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="34.161814" lon="-116.712041">
+    <ele>2629.9</ele>
+    <name>RD0249</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.163247" lon="-116.709508">
+    <ele>2556.3</ele>
+    <name>RD0249B</name>
+    <desc><![CDATA[PCT joins an unpaved road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.174060" lon="-116.712327">
+    <ele>2478.2</ele>
+    <name>RD0250</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.174508" lon="-116.712475">
+    <ele>2482.2</ele>
+    <name>RD0250B</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.174630" lon="-116.712568">
+    <ele>2483.4</ele>
+    <name>AnimalCages</name>
+    <desc><![CDATA[Animal cages, exotic animals for film and television [predatorsinaction.com].]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="34.182484" lon="-116.709799">
+    <ele>2558.7</ele>
+    <name>RD0251</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.191852" lon="-116.716974">
+    <ele>2600.3</ele>
+    <name>RD0252</name>
+    <desc><![CDATA[Unpaved road at Onyx Summit.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.202711" lon="-116.717663">
+    <ele>2632.3</ele>
+    <name>CS0253</name>
+    <desc><![CDATA[Unpaved road, campsite nearby.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="34.207320" lon="-116.730063">
+    <ele>2407.7</ele>
+    <name>RD0255</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.214728" lon="-116.740094">
+    <ele>2318.1</ele>
+    <name>WRCS0256</name>
+    <desc><![CDATA[Arrastre Trail Camp, Deer Spring, stream 200 feet to the N, picnic table, campsites.<br/>---<br/>WATER ALERT: Next southbound water after Arrastre Trail Camp, Deer Spring, may be Mission Springs Trail Camp in 16.3 miles.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.217718" lon="-116.743811">
+    <ele>2272.6</ele>
+    <name>WR0257</name>
+    <desc><![CDATA[Spring 1/2 mile N of Arrastre Camp.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.228159" lon="-116.751619">
+    <ele>2175.9</ele>
+    <name>RD0258</name>
+    <desc><![CDATA[PCT joins an unpaved road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.230727" lon="-116.749679">
+    <ele>2147.4</ele>
+    <name>WR0258</name>
+    <desc><![CDATA[Arrastre Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.231318" lon="-116.749788">
+    <ele>2148.3</ele>
+    <name>RD0258B</name>
+    <desc><![CDATA[PCT departs the unpaved road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.235930" lon="-116.749428">
+    <ele>2098.5</ele>
+    <name>WR0258B</name>
+    <desc><![CDATA[Arrastre Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.242457" lon="-116.754594">
+    <ele>2181.0</ele>
+    <name>CS0259</name>
+    <desc><![CDATA[Small campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="34.243817" lon="-116.755889">
+    <ele>2174.2</ele>
+    <name>RD0259</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.269369" lon="-116.767893">
+    <ele>2067.2</ele>
+    <name>RD0262</name>
+    <desc><![CDATA[Unpaved road 2N02]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.279818" lon="-116.778980">
+    <ele>2158.6</ele>
+    <name>RD0264</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.290743" lon="-116.802749">
+    <ele>2081.8</ele>
+    <name>Hwy18</name>
+    <desc><![CDATA[Paved Highway 18, access to Big Bear.]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="34.302273" lon="-116.823097">
+    <ele>2091.4</ele>
+    <name>RD0268</name>
+    <desc><![CDATA[Paved road 3N08, power line nearby, near a land fill. ]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.296734" lon="-116.824116">
+    <ele>2085.1</ele>
+    <name>WR0269</name>
+    <desc><![CDATA[Doble Trail Camp, outhouse, picnic table, water, corral.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.296820" lon="-116.824853">
+    <ele>2103.8</ele>
+    <name>TR0269</name>
+    <desc><![CDATA[Trail junction to Doble Trail Camp.]]></desc>
     <sym>Trail Head</sym>
   </wpt>
-  <wpt lat="34.013162" lon="-116.669843">
-    <ele>795.5</ele>
-    <name>WR0220</name>
-    <desc><![CDATA[Whitewater Creek]]></desc>
+  <wpt lat="34.294846" lon="-116.839089">
+    <ele>2335.7</ele>
+    <name>RD0271</name>
+    <desc><![CDATA[Unpaved jeep road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.290378" lon="-116.883446">
+    <ele>2211.9</ele>
+    <name>WRCS0275</name>
+    <desc><![CDATA[Caribou Creek, small wooden bridge, campsite nearby.]]></desc>
     <sym>Water Source</sym>
   </wpt>
-  <wpt lat="34.125204" lon="-116.759544">
-    <ele>2428.5</ele>
-    <name>WR0240</name>
-    <desc><![CDATA[Spring and trough near Mission Creek Trail Camp, other spring is usually better.]]></desc>
+  <wpt lat="34.288810" lon="-116.883362">
+    <ele>2214.0</ele>
+    <name>RD0275</name>
+    <desc><![CDATA[Unpaved Van Dusen Canyon Rd. Big Bear City is 2.8 miles SE on this medium clearance unpaved road with some rough spots.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.286261" lon="-116.899872">
+    <ele>2351.7</ele>
+    <name>CS0277</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="34.281416" lon="-116.907058">
+    <ele>2356.8</ele>
+    <name>RD0277</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.264011" lon="-116.910838">
+    <ele>2087.4</ele>
+    <name>CougarCrestTH</name>
+    <desc><![CDATA[Cougar Crest trailhead]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="34.280917" lon="-116.913176">
+    <ele>2339.1</ele>
+    <name>TR0278</name>
+    <desc><![CDATA[Cougar Crest trail junction, keep right. It's easy to overlook the PCT sign and follow the well used Cougar Crest Trail.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="34.283164" lon="-116.910035">
+    <ele>2314.1</ele>
+    <name>RD0278</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.283627" lon="-116.917247">
+    <ele>2301.2</ele>
+    <name>RD0279</name>
+    <desc><![CDATA[Holcomb Valley Road 2N09, paved for about 1/4 mile leading up to PCT junction, dirt road for about 2 miles beyond that S to Hwy 38, unpaved to R of PCT crossing.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.296204" lon="-116.945316">
+    <ele>2363.8</ele>
+    <name>RD0281</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.300596" lon="-116.951037">
+    <ele>2318.8</ele>
+    <name>RD0282</name>
+    <desc><![CDATA[Unpaved jeep road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.301366" lon="-116.977870">
+    <ele>2004.7</ele>
+    <name>CS0286</name>
+    <desc><![CDATA[Little Bear Spring trail camp, picnic table, outhouse, corral.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="34.300245" lon="-116.981771">
+    <ele>1985.5</ele>
+    <name>RD0286</name>
+    <desc><![CDATA[PCT joins an unpaved road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.300281" lon="-116.982171">
+    <ele>1981.9</ele>
+    <name>WR0286</name>
+    <desc><![CDATA[Holcomb Creek]]></desc>
     <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.298725" lon="-116.990878">
+    <ele>1978.7</ele>
+    <name>RD0287</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.297999" lon="-116.992510">
+    <ele>1968.7</ele>
+    <name>WRCS0287</name>
+    <desc><![CDATA[Creek, campsite nearby.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.280585" lon="-117.012394">
+    <ele>1936.5</ele>
+    <name>RD0289</name>
+    <desc><![CDATA[Unpaved jeep road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.281333" lon="-117.029677">
+    <ele>1855.8</ele>
+    <name>CS0290</name>
+    <desc><![CDATA[Campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="34.279990" lon="-117.042349">
+    <ele>1715.9</ele>
+    <name>WR0292</name>
+    <desc><![CDATA[Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.275350" lon="-117.049934">
+    <ele>1668.0</ele>
+    <name>WR0292B</name>
+    <desc><![CDATA[Large creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.275399" lon="-117.050789">
+    <ele>1666.9</ele>
+    <name>RD0292</name>
+    <desc><![CDATA[Paved Crab Flats Road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.275125" lon="-117.054256">
+    <ele>1656.9</ele>
+    <name>WRCS0292</name>
+    <desc><![CDATA[Creek, campsites nearby.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.278490" lon="-117.063482">
+    <ele>1625.0</ele>
+    <name>CS0293</name>
+    <desc><![CDATA[Large campsite, oak trees, small seasonal stream nearby.]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="34.278133" lon="-117.072402">
+    <ele>1591.4</ele>
+    <name>WR0294</name>
+    <desc><![CDATA[Creek]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.276978" lon="-117.075532">
+    <ele>1589.6</ele>
+    <name>CS0294</name>
+    <desc><![CDATA[Trail camp]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="34.275890" lon="-117.078600">
+    <ele>1611.2</ele>
+    <name>TR0294</name>
+    <desc><![CDATA[OHV trail 1W17 to Big Pine Flat.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="34.278131" lon="-117.083007">
+    <ele>1580.5</ele>
+    <name>CS0295</name>
+    <desc><![CDATA[Bench Trail Camp]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="34.277962" lon="-117.086510">
+    <ele>1572.1</ele>
+    <name>TR0295</name>
+    <desc><![CDATA[Hawes Peak trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="34.272545" lon="-117.097841">
+    <ele>1597.4</ele>
+    <name>WR0296</name>
+    <desc><![CDATA[Piped spring]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.273972" lon="-117.127887">
+    <ele>1396.3</ele>
+    <name>WR0299</name>
+    <desc><![CDATA[Deep Creek, large bridge.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.272915" lon="-117.128796">
+    <ele>1405.8</ele>
+    <name>SplintersCabin</name>
+    <desc><![CDATA[Splinters Cabin, outhouse, 1/10 mile SW of PCT.]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="34.274163" lon="-117.128065">
+    <ele>1408.7</ele>
+    <name>TR0299</name>
+    <desc><![CDATA[Splinter's Trail junction]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="34.300652" lon="-117.128246">
+    <ele>1299.5</ele>
+    <name>RD0301</name>
+    <desc><![CDATA[Unpaved road to Deep Creek day use area. Access to Deep Creek.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.309058" lon="-117.139627">
+    <ele>1271.6</ele>
+    <name>Bridge0302</name>
+    <desc><![CDATA[Bridge over a gully. ]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.339264" lon="-117.177016">
+    <ele>1073.4</ele>
+    <name>WA0308</name>
+    <desc><![CDATA[Deep Creek hot spring. ]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.340414" lon="-117.190229">
+    <ele>1054.7</ele>
+    <name>WR0309</name>
+    <desc><![CDATA[Small stream]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.344096" lon="-117.195520">
+    <ele>1011.3</ele>
+    <name>Bridge0310</name>
+    <desc><![CDATA[Footbridge painted with rainbow colors.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.345212" lon="-117.230572">
+    <ele>955.7</ele>
+    <name>MFSpillway</name>
+    <desc><![CDATA[Mojave River Forks Reservoir Spillway, 200 feet NW of PCT. The Reservoir is usually a dry lake bed. In wet years, the trail below the dam may be flooded. Rangers report the flooded area sometimes has quicksand, so use caution.<br/>As an alternate, you can take the paved path just past the spillway to a road on top of the dam. Follow the road W to Arrowhead Lake Rd, and backtrack E on Hwy 173 to the PCT. This 2.9 mile alternate bypasses 1.3 miles of the PCT.]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="34.341191" lon="-117.236990">
+    <ele>909.9</ele>
+    <name>WR0314</name>
+    <desc><![CDATA[Stream]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.336710" lon="-117.245777">
+    <ele>953.2</ele>
+    <name>RD0314</name>
+    <desc><![CDATA[Paved Route 173]]></desc>
+    <sym>Truck</sym>
   </wpt>
   <wpt lat="34.321658" lon="-117.250646">
     <ele>1061.3</ele>
@@ -919,23 +691,251 @@
     <desc><![CDATA[Piped spring]]></desc>
     <sym>Water Source</sym>
   </wpt>
-  <wpt lat="33.989219" lon="-116.656203">
-    <ele>673.1</ele>
-    <name>WRCS0219</name>
-    <desc><![CDATA[The Whitewater Preserve is a hiker-friendly conservation preserve 6/10 mile E of the PCT at the site of an old trout farm. The preserve has running water, shade, toilets, a wading pool, and free camping for PCT hikers. PCT hikers who arrive after the ranger station closes should camp in the open grass area S of the Ranger Station. Check in with the ranger in the morning if staying more than one night.<br/>-<br/>No fires, smoking or alcohol. <br/>-<br/>Preserve phone: 760-325-7222<br/>Website: www.wildlandsconservancy.org]]></desc>
+  <wpt lat="34.315855" lon="-117.263827">
+    <ele>1027.5</ele>
+    <name>TR0318</name>
+    <desc><![CDATA[ Mojave River Campground trail junction. Campground is 3/4 mile off trail.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="34.316123" lon="-117.265228">
+    <ele>1039.7</ele>
+    <name>RD0318</name>
+    <desc><![CDATA[PCT joins an unpaved road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.312386" lon="-117.265187">
+    <ele>1015.2</ele>
+    <name>WRCS0318</name>
+    <desc><![CDATA[Seasonal Grass Valley Creek, campsite nearby.]]></desc>
     <sym>Water Source</sym>
   </wpt>
-  <wpt lat="34.125108" lon="-116.756521">
-    <ele>2414.3</ele>
-    <name>WRCS0240B</name>
-    <desc><![CDATA[Mission Creek Trail Camp spring, parking, campsites. WATER ALERT: Next northbound water may be Arrastre Trail Camp in 16.3 miles.]]></desc>
+  <wpt lat="34.312309" lon="-117.265540">
+    <ele>1015.8</ele>
+    <name>RD0318B</name>
+    <desc><![CDATA[PCT departs the unpaved road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.311685" lon="-117.271032">
+    <ele>1058.2</ele>
+    <name>RD0319</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.305877" lon="-117.276203">
+    <ele>1095.9</ele>
+    <name>CS0320</name>
+    <desc><![CDATA[Small campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="34.303477" lon="-117.300510">
+    <ele>1037.1</ele>
+    <name>StatePark0322</name>
+    <desc><![CDATA[State park, national forest boundary.]]></desc>
+    <sym>Park</sym>
+  </wpt>
+  <wpt lat="34.305633" lon="-117.308549">
+    <ele>1028.2</ele>
+    <name>RD0323</name>
+    <desc><![CDATA[Paved road to the Silverwood Lake day use parking area.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.306538" lon="-117.312665">
+    <ele>970.5</ele>
+    <name>RD0324</name>
+    <desc><![CDATA[PCT joins an unpaved road toward a bridge over the Silverwood Lake dam outlet.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.306818" lon="-117.313477">
+    <ele>963.8</ele>
+    <name>WR0324</name>
+    <desc><![CDATA[Bridge over Cedar Springs Dam outlet.]]></desc>
     <sym>Water Source</sym>
   </wpt>
-  <wpt lat="33.937586" lon="-116.698417">
-    <ele>489.0</ele>
-    <name>ZiggyBear</name>
-    <desc><![CDATA[Ziggy and the Bear are trail angels who live 2/10 mile SE of PCT mile 210.8. Ziggy and the Bear offer water, shade, cowboy camping, Wi-Fi, and they accept hiker resupply packages [$5 each] USPS only:<br/>(Your Name)<br/>c/o Pat Miller<br/>PO Box 826<br/>Cabazon, CA 92230<br/>-<br/>Due to USPS regulations they can not pick up general delivery packages.<br/>-<br/>Phone: 951-849-7506 [8 am - 8 pm only]<br/>Email: whitewatertrailhouse@gmail.com <br/>Website: whitewaterhikerhouse.blogspot.com<br/>-<br/>Smoking, alcohol, animals or drugs are not allowed.<br/>-<br/>Hiker directions: Hike 1.3 miles north of Interstate Highway 10 to GT0211. Exit the PCT on the unmarked side trail and walk east to the house with the flagpole and white fence. Enter at gate in fence.]]></desc>
-    <sym>Post Office</sym>
+  <wpt lat="34.308588" lon="-117.315367">
+    <ele>964.9</ele>
+    <name>RD0324B</name>
+    <desc><![CDATA[PCT joins paved Hwy 73 after after crossing smaller road and passing through a small industrial work yard.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.308699" lon="-117.322236">
+    <ele>974.5</ele>
+    <name>MojaveSiphon</name>
+    <desc><![CDATA[Pass the Mojave Siphon Power Plant.]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="34.307965" lon="-117.324110">
+    <ele>975.8</ele>
+    <name>RD0324C</name>
+    <desc><![CDATA[PCT departs the paved road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.305417" lon="-117.330078">
+    <ele>1024.5</ele>
+    <name>RD0325</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.305286" lon="-117.328981">
+    <ele>1040.6</ele>
+    <name>PL0325</name>
+    <desc><![CDATA[High voltage power line]]></desc>
+    <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="34.302591" lon="-117.331506">
+    <ele>1035.9</ele>
+    <name>RD0325B</name>
+    <desc><![CDATA[PCT joins an unpaved service road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.301239" lon="-117.331726">
+    <ele>1034.4</ele>
+    <name>WR0325</name>
+    <desc><![CDATA[Small trail side beach on the lake.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.300614" lon="-117.332303">
+    <ele>1036.4</ele>
+    <name>RD0325C</name>
+    <desc><![CDATA[PCT departs an unpaved service road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.299474" lon="-117.334035">
+    <ele>1038.0</ele>
+    <name>PL0326</name>
+    <desc><![CDATA[High voltage power line.]]></desc>
+    <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="34.288424" lon="-117.344810">
+    <ele>1059.8</ele>
+    <name>PL0328</name>
+    <desc><![CDATA[High voltage power line, unpaved road nearby.]]></desc>
+    <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="34.287663" lon="-117.348119">
+    <ele>1033.8</ele>
+    <name>WR0329</name>
+    <desc><![CDATA[Cleghorn Picnic Area, shade, picnic tables, water, outhouse, trash can, paved road. ]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.288375" lon="-117.351046">
+    <ele>1034.0</ele>
+    <name>TR0329</name>
+    <desc><![CDATA[PCT joins a paved bicycle path.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="34.287763" lon="-117.354711">
+    <ele>1035.3</ele>
+    <name>RD0329</name>
+    <desc><![CDATA[PCT joins a paved road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.287930" lon="-117.355550">
+    <ele>1035.5</ele>
+    <name>Hwy138</name>
+    <desc><![CDATA[Highway 138 overpass.]]></desc>
+    <sym>Car</sym>
+  </wpt>
+  <wpt lat="34.288114" lon="-117.355881">
+    <ele>1035.6</ele>
+    <name>RD0329B</name>
+    <desc><![CDATA[PCT departs the paved road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.288413" lon="-117.358663">
+    <ele>1061.2</ele>
+    <name>PL0329</name>
+    <desc><![CDATA[High voltage power line.]]></desc>
+    <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="34.288976" lon="-117.367346">
+    <ele>1076.6</ele>
+    <name>RD0330</name>
+    <desc><![CDATA[Paved road to a water tank. No access to water.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.288243" lon="-117.369673">
+    <ele>1090.9</ele>
+    <name>Forest0330</name>
+    <desc><![CDATA[National Forest boundary]]></desc>
+    <sym>Flag, Blue</sym>
+  </wpt>
+  <wpt lat="34.294578" lon="-117.378108">
+    <ele>1271.4</ele>
+    <name>GT0332</name>
+    <desc><![CDATA[Trail gate]]></desc>
+    <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="34.294921" lon="-117.378036">
+    <ele>1271.0</ele>
+    <name>RD0332</name>
+    <desc><![CDATA[PCT joins an unpaved road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.295750" lon="-117.377655">
+    <ele>1259.6</ele>
+    <name>RD0332B</name>
+    <desc><![CDATA[PCT departs the unpaved road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.298685" lon="-117.384568">
+    <ele>1167.2</ele>
+    <name>WR0333</name>
+    <desc><![CDATA[Small seasonal stream]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.311981" lon="-117.409725">
+    <ele>1093.2</ele>
+    <name>CS0336</name>
+    <desc><![CDATA[Small campsite]]></desc>
+    <sym>Campground</sym>
+  </wpt>
+  <wpt lat="34.317312" lon="-117.432144">
+    <ele>1174.8</ele>
+    <name>PL0338</name>
+    <desc><![CDATA[PCT follows an unpaved road for about 100 yards near a high voltage power line.]]></desc>
+    <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="34.316802" lon="-117.453849">
+    <ele>1021.1</ele>
+    <name>RD0340</name>
+    <desc><![CDATA[Unpaved road]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.317052" lon="-117.454548">
+    <ele>1020.3</ele>
+    <name>PL0340</name>
+    <desc><![CDATA[High voltage power line]]></desc>
+    <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="34.315547" lon="-117.457791">
+    <ele>1003.1</ele>
+    <name>RD0341</name>
+    <desc><![CDATA[Cross an unpaved road.]]></desc>
+    <sym>Truck</sym>
+  </wpt>
+  <wpt lat="34.315308" lon="-117.459777">
+    <ele>997.7</ele>
+    <name>PL0341</name>
+    <desc><![CDATA[PCT passes under a high voltage powerline tower.]]></desc>
+    <sym>Flag, Green</sym>
+  </wpt>
+  <wpt lat="34.310298" lon="-117.462045">
+    <ele>953.6</ele>
+    <name>WR0341</name>
+    <desc><![CDATA[Crowder Canyon, small seasonal creek nearby.]]></desc>
+    <sym>Water Source</sym>
+  </wpt>
+  <wpt lat="34.306050" lon="-117.466160">
+    <ele>927.0</ele>
+    <name>TR0342</name>
+    <desc><![CDATA[Side trail to McDonalds, mini-mart, and Best Western Motel at Cajon Pass.]]></desc>
+    <sym>Trail Head</sym>
+  </wpt>
+  <wpt lat="34.309107" lon="-117.470368">
+    <ele>936.1</ele>
+    <name>McDonalds</name>
+    <desc><![CDATA[McDonalds Restaurant, 3/10 mile NW of PCT, mini-mart next door, Best Western Motel nearby.]]></desc>
+    <sym>Restaurant</sym>
   </wpt>
   <wpt lat="33.924524" lon="-116.694668">
     <ele>409.3</ele>
