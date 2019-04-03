@@ -16,6 +16,8 @@ header
             a(href='#{baseMapUrl}/google', data-bind='click: onPillClick') Google
           li(data-bind="css: {active: activeMapName() === 'here'}")
             a(href='#{baseMapUrl}/here', data-bind='click: onPillClick') Here
+          li
+            a(href='https://earth.google.com/web', data-bind='click: onEarthClick') Earth
         
         ul.nav.navbar-nav
           li

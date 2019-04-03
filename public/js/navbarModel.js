@@ -27,6 +27,13 @@ define(["jquery", "mapcontainer", "knockout", "history"], function($, mapContain
       return false;
     };
 
+    self.onEarthClick = function(data, event, done) {
+      var url = "https://earth.google.com/web/" + mapContainer.getGoogleEarthUrlFragment();
+      window.open(url, '_blank');
+
+      return false;
+    };
+
     function showMap(mapName) {
       mapName = mapName.toLowerCase();
       self.activeMapName(mapName);

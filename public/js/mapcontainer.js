@@ -171,6 +171,12 @@ define(["q", "jquery", "trailmaps", "knockout"], function(Q, $, trailmaps, ko) {
     return activeMapName() + "?lat=" + lat + "&lon=" + lon + "&zoom=" + currentContainerView.zoom;
   }
 
+  function getGoogleEarthUrlFragment() {
+    var lat = currentContainerView.center.latitude.toFixed(5);
+    var lon = currentContainerView.center.longitude.toFixed(5);
+    return "@" + lat + "," + lon + ",5000a,0d";
+  }
+
   function getViewOptions() {
     return {
       mapName: activeMapName(),
@@ -188,6 +194,7 @@ define(["q", "jquery", "trailmaps", "knockout"], function(Q, $, trailmaps, ko) {
     showingMap: showingMap,
     activeMapName: activeMapName,
     getUrlFragment: getUrlFragment,
+    getGoogleEarthUrlFragment: getGoogleEarthUrlFragment,
     getViewOptions: getViewOptions,
     addViewChangedListener: addViewChangedListener,
 
