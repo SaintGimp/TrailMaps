@@ -1,4 +1,5 @@
 /*global define: false*/
+/*global trailMaps: false*/
 
 define(["q", "trailmaps", "here_maps_api"], function(Q, trailmaps, H) {
   var hereMap;
@@ -29,9 +30,9 @@ define(["q", "trailmaps", "here_maps_api"], function(Q, trailmaps, H) {
       }
     );
     hereMap.addEventListener("mapviewchangeend", onViewChanged);
-    var ui = H.ui.UI.createDefault(hereMap, defaultLayers);
+    H.ui.UI.createDefault(hereMap, defaultLayers);
     var mapEvents = new H.mapevents.MapEvents(hereMap);
-    var behavior = new H.mapevents.Behavior(mapEvents);
+    new H.mapevents.Behavior(mapEvents);
 
     deferred.resolve();
 

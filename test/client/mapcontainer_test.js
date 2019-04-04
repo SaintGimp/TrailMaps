@@ -136,11 +136,11 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer.js"]
       });
 
       it ("should load new trail data", function() {
-        expect(mapContainer.numberOfServerRequests).to.equal(6);
+        expect(mapContainer.numberOfServerRequests).to.equal(2);
       });
 
       it ("should load a higher detail level", function() {
-        expect(mapContainer.requestedDetailLevel).to.equal(1);
+        expect(mapContainer.requestedDetailLevel).to.equal(6);
       });
 
       after(function() {

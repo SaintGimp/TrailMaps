@@ -1,5 +1,6 @@
 /*global Microsoft: false*/
 /*global google: false*/
+/*global trailMaps: false*/
 
 requirejs.config({
   baseUrl: "/js",

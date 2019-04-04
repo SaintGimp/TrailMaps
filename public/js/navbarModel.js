@@ -27,7 +27,7 @@ define(["jquery", "mapcontainer", "knockout", "history"], function($, mapContain
       return false;
     };
 
-    self.onEarthClick = function(data, event, done) {
+    self.onEarthClick = function() {
       var url = "https://earth.google.com/web/" + mapContainer.getGoogleEarthUrlFragment();
       window.open(url, '_blank');
 

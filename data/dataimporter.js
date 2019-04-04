@@ -1,6 +1,5 @@
 var trackImporter = require("./trackimporter.js");
 var mileMarkerImporter = require("./milemarkerimporter.js");
-var waypointImporter = require("./waypointimporter.js");
 var dataService = require("../domain/dataService.js");
 
 async function dropCollections() {
