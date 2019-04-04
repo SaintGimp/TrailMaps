@@ -1,7 +1,6 @@
 /*global define: false*/
 
-define(["q", "trailmaps", "here_maps_api"], function(Q, trailmaps, nokia) {
-  // TODO: check out http://jhere.net/
+define(["q", "trailmaps", "here_maps_api"], function(Q, trailmaps, H) {
   var hereMap;
   var previousPolyLine;
   var previousMileMarkerCollection;
@@ -15,53 +14,42 @@ define(["q", "trailmaps", "here_maps_api"], function(Q, trailmaps, nokia) {
   function initialize(container, center, zoomLevel, onViewChanged) {
     var deferred = Q.defer();
 
-    nokia.Settings.set("appId", "63ii-nsJjiF97C-K3jqU");
-    nokia.Settings.set("authenticationToken", "FTtFzF5jfEr7iRYgv6tEgg");
-
-    var featureMap = nokia.Features.getFeaturesFromMatrix(["maps"]);
-    nokia.Features.load(featureMap, function() {
-      hereMap = new nokia.maps.map.Display(container, {
-        baseMapType: nokia.maps.map.Display.SATELLITE,
-        components: [
-          new nokia.maps.map.component.Behavior(),
-          new nokia.maps.map.component.ZoomBar(),
-          //new nokia.maps.map.component.Overview(),
-          new nokia.maps.map.component.OverlaysSelector(),
-          new nokia.maps.map.component.TypeSelector(),
-          new nokia.maps.map.component.ScaleBar()
-        ],
-        center: [center.latitude, center.longitude],
-        zoomLevel: zoomLevel
-      });
-
-      hereMap.addListener("mapviewchangeend", onViewChanged, true);
-
-      deferred.resolve();
+    var platform = new H.service.Platform({
+      'app_id': trailMaps.configuration.hereApiId,
+      'app_code': trailMaps.configuration.hereApiCode,
     });
+
+    var defaultLayers = platform.createDefaultLayers();
+    hereMap = new H.Map(
+      container,
+      defaultLayers.satellite.map,
+      {
+        zoom: zoomLevel,
+        center: { lat: center.latitude, lng: center.longitude }
+      }
+    );
+    hereMap.addEventListener("mapviewchangeend", onViewChanged);
+    var ui = H.ui.UI.createDefault(hereMap, defaultLayers);
+    var mapEvents = new H.mapevents.MapEvents(hereMap);
+    var behavior = new H.mapevents.Behavior(mapEvents);
+
+    deferred.resolve();
 
     return deferred.promise;
   }
 
   function displayTrack(track) {
-    var vertices = [];
+    var linestring = new H.geo.LineString();
     $.each(track, function (i, point) {
-      vertices.push(new nokia.maps.geo.Coordinate(point.loc[1], point.loc[0]));
+      linestring.pushPoint({lat: point.loc[1], lng: point.loc[0]});
     });
 
-    var polyLine = new nokia.maps.map.Polyline(
-      vertices,
-      {
-        pen: {
-          strokeColor: "#FF0000",
-          lineWidth: 3
-        }
-      }
-    );
+    var polyLine = new H.map.Polyline(linestring, { style: { strokeColor: "#FF0000", lineWidth: 3 }});
 
     // First add new track, then remove old track
-    hereMap.objects.add(polyLine);
+    hereMap.addObject(polyLine);
     if (previousPolyLine) {
-      hereMap.objects.remove(previousPolyLine);
+      hereMap.removeObject(previousPolyLine);
     }
     previousPolyLine = polyLine;
   }
@@ -69,51 +57,51 @@ define(["q", "trailmaps", "here_maps_api"], function(Q, trailmaps, nokia) {
   function displayMileMarkers(mileMarkers) {
     var newMileMarkerCollection = [];
     $.each(mileMarkers, function (i, mileMarker) {
-      var location = new nokia.maps.geo.Coordinate(mileMarker.loc[1], mileMarker.loc[0]);
-      var options = {
-        icon: mileMarkerContent.replace("%MILE%", mileMarker.mile),
-        anchor: { x: 7, y: 7 }
-      };
-      newMileMarkerCollection.push(new nokia.maps.map.Marker(location, options));
+      var markerText = mileMarkerContent.replace("%MILE%", mileMarker.mile);
+      var icon = new H.map.Icon(markerText, {anchor: { x: 7, y: 7 }});
+      var coordinates = {lat: mileMarker.loc[1], lng: mileMarker.loc[0]};
+      var marker = new H.map.Marker(coordinates, {icon: icon});
+        
+      newMileMarkerCollection.push(marker);
     });
 
-    hereMap.objects.addAll(newMileMarkerCollection);
+    hereMap.addObjects(newMileMarkerCollection);
     if (previousMileMarkerCollection) {
-      hereMap.objects.removeAll(previousMileMarkerCollection);
+      hereMap.removeObjects(previousMileMarkerCollection);
     }
     previousMileMarkerCollection = newMileMarkerCollection;
   }
 
   function getCenter() {
-    var center = hereMap.center;
-    return new trailmaps.Location(center.latitude, center.longitude);
+    var center = hereMap.getCenter();
+    return new trailmaps.Location(center.lat, center.lng);
   }
 
   function getBounds() {
     var bounds = hereMap.getViewBounds();
     var center = bounds.getCenter();
-    return new trailmaps.Rectangle(new trailmaps.Location(center.latitude, center.longitude), bounds.getWidth(), bounds.getHeight());
+    return new trailmaps.Rectangle(new trailmaps.Location(center.lat, center.lng), bounds.getWidth(), bounds.getHeight());
   }
 
   function getZoom() {
-    return hereMap.zoomLevel;
+    return hereMap.getZoom();
   }
 
   function getCenterAndZoom() {
-    var center = hereMap.center;
+    var center = hereMap.getCenter();
     return {
       center: {
-        latitude: center.latitude,
-        longitude: center.longitude
+        latitude: center.lat,
+        longitude: center.lng
       },
-      zoom: hereMap.zoomLevel
+      zoom: hereMap.getZoom()
     };
   }
 
   function setCenterAndZoom(options) {
-    var mapCenter = new nokia.maps.geo.Coordinate(options.center.latitude, options.center.longitude);
+    var mapCenter = {lat: options.center.latitude, lng: options.center.longitude};
     hereMap.setCenter(mapCenter);
-    hereMap.setZoomLevel(options.zoom);
+    hereMap.setZoom(options.zoom);
   }
 
   return {

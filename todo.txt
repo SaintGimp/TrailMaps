@@ -14,6 +14,7 @@ Features:
 - Add crosshair to show the center of the view
 - Make links (optionally?) show a pushpin or similar to show which location was linked
 - Enter trail scouting reports with links to photos, locations, and descriptions
+- Google has a map elevation API - can we use that to show a dynamic elevation under the cursor?
 
 User stories:
 * User can edit an existing waypoint (I think editing only name, to change lat/long create new waypoint?)

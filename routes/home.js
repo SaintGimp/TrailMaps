@@ -27,7 +27,9 @@ exports.maps = function(req, res) {
     // TODO: get these from the request url? Maybe just figure it out on the client?
     baseMapUrl: "/trails/pct/maps",
     waypointsUrl: "/trails/pct/waypoints",
-    googleApiKey: process.env.GOOGLE_API_KEY
+    googleApiKey: process.env.GOOGLE_API_KEY,
+    hereApiId: process.env.HERE_API_ID,
+    hereApiCode: process.env.HERE_API_CODE
   };
 
   res.render("maps", defaults);

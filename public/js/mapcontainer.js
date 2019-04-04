@@ -143,11 +143,12 @@ define(["q", "jquery", "trailmaps", "knockout"], function(Q, $, trailmaps, ko) {
   }
 
   function onViewChanged() {
+    currentContainerView = activeMap.getCenterAndZoom();
+
     if (needToLoadNewData()) {
       loadTrail();
     }
 
-    currentContainerView = activeMap.getCenterAndZoom();
     if (viewChangedListener !== null) {
       viewChangedListener(getViewOptions());
     }

@@ -17,9 +17,12 @@ requirejs.config({
     "typeahead": "lib/typeahead.bundle.min",
     "async": "lib/async",
     "markerwithlabel": "lib/markerwithlabel_packed",
-    "here_maps_api": "https://api.maps.nokia.com/2.2.4/jsl.js?with=maps",
     "knockout": "https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min",
-    "q": "lib/q"
+    "q": "lib/q",
+    "here_maps_core": "http://js.api.here.com/v3/3.0/mapsjs-core",
+    "here_maps_ui": "http://js.api.here.com/v3/3.0/mapsjs-ui",
+    "here_maps_events": "http://js.api.here.com/v3/3.0/mapsjs-mapevents",
+    "here_maps_api": "http://js.api.here.com/v3/3.0/mapsjs-service"
   },
   shim: {
     "bootstrap": {
@@ -35,8 +38,15 @@ requirejs.config({
     "bing_maps_api": {
       exports: "Microsoft"
     },
+    "here_maps_ui": {
+      deps: ["here_maps_core"]
+    },
+    "here_maps_events": {
+      deps: ["here_maps_core"]
+    },
     "here_maps_api": {
-      exports: "nokia"
+      deps: ["here_maps_core", "here_maps_ui", "here_maps_events"],
+      exports: "H"
     },
     "markerwithlabel": {
       deps: ["google_maps_api"]
