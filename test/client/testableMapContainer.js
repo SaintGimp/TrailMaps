@@ -13,11 +13,11 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/fakeMap.js", "q"], functi
 
   function trailResponder(request, trail, queryString) {
     mapContainer.numberOfServerRequests++;
-    var north = parseFloat(/north=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
-    var south = parseFloat(/south=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
-    var east = parseFloat(/east=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
-    var west = parseFloat(/west=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
-    mapContainer.requestedDetailLevel = parseFloat(/detail=([\-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
+    var north = parseFloat(/north=([-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
+    var south = parseFloat(/south=([-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
+    var east = parseFloat(/east=([-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
+    var west = parseFloat(/west=([-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
+    mapContainer.requestedDetailLevel = parseFloat(/detail=([-+]?[0-9]*\.?[0-9]+)/.exec(queryString)[1]);
 
     var data = {
       mileMarkers: [{loc:[west + ((east - west) / 2), south + ((north - south) / 2)], mile:1234}],

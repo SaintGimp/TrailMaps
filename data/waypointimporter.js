@@ -55,9 +55,9 @@ function cleanupName(name) {
   // we remove certain substrings, then we split on certain delimiters to
   // get rid of descriptive text, then we do more replacements.
 
-  name = name.replace(/^Paved\, one lane /, "");
+  name = name.replace(/^Paved, one lane /, "");
 
-  var primaryName = name.split(/\. |\.$|, | - | \(| \[| is |\.\</, 1)[0].trim();
+  var primaryName = name.split(/\. |\.$|, | - | \(| \[| is |\.</, 1)[0].trim();
   
   primaryName = primaryName.replace(/^(Paved |Unpaved |Gravel |Seasonal )/, "");
   primaryName = primaryName.replace(/^Arrive /, "");

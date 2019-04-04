@@ -3,7 +3,9 @@
 /* global requirejs:false */
 /* global chai:false */
 /* global expect:true */
+/* exported expect */
 /* global trailMaps:true */
+/* exported trailMaps */
 
 // TODO: share this somehow with main.js
 
