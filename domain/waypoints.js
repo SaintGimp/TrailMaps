@@ -12,6 +12,9 @@ function makeCollectionName(trailName) {
   return trailName + "_waypoints";
 }
 
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
+}
 exports.getWaypoints = async function(options) {
   var collectionName = makeCollectionName(options.trailName);
   var searchTerms = { };
@@ -23,7 +26,7 @@ exports.getWaypoints = async function(options) {
 
 exports.findByName = async function(options) {
   var collectionName = makeCollectionName(options.trailName);
-  var searchTerms = { name: new RegExp("^" + options.name, "i") };
+  var searchTerms = { name: new RegExp("^" + escapeRegExp(options.name), "i") };
   var projection = { _id: 0, name: 1, loc: 1 };
 
   return await dataService.findOne(collectionName, searchTerms, projection);
