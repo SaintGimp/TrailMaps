@@ -4,6 +4,10 @@
  * Module dependencies.
  */
 
+const appInsights = require("applicationinsights");
+appInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY || "no key");
+appInsights.start();
+
 var express = require("express"),
   app = exports.app = express(),
   path = require("path"),
