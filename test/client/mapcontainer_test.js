@@ -1,9 +1,9 @@
 /* global sinon:false */
 
 // TODO: can we set maps for the test stuff in testem.json?
-define(["jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer.js"], function($, Squire, testableMapContainer) {
-  var sandbox;
+define(["jquery", "/test/client/testableMapContainer.js"], function($, testableMapContainer) {
   var mapContainer;
+  var server;
 
   function initializeDOM() {
     $("#testArea").remove();
@@ -14,21 +14,21 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer.js"]
   }
 
   function initialize(mapName, done) {
-    sandbox = sinon.sandbox.create();
-    sandbox.useFakeServer();
+    server = sinon.createFakeServer();
+    server.respondImmediately = true;
 
     initializeDOM();
-    testableMapContainer.create(mapName, sandbox.server)
+    testableMapContainer.create(mapName, server)
     .done(function(newMapContainer) {
       mapContainer = newMapContainer;
-      sandbox.server.respond();
+      server.respond();
       done();
     });
   }
 
   function cleanup() {
     $("#testArea").remove();
-    sandbox.restore();
+    server.restore();
   }
 
   function verifyMapTrailDataMatchesView(map) {
@@ -85,7 +85,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer.js"]
         initialize("bing", function() {
           mapContainer.showingMap("google")
           .done(function() {
-            sandbox.server.respond();
+            server.respond();
             done();
           });
         });
@@ -130,7 +130,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer.js"]
             center: mapContainer.fakeBingMaps.getCenter(),
             zoom: mapContainer.fakeBingMaps.getZoom() + 1
           });
-          sandbox.server.respond();
+          server.respond();
           done();
         });
       });
@@ -157,7 +157,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer.js"]
             center: newCenter,
             zoom: mapContainer.fakeBingMaps.getZoom()
           });
-          sandbox.server.respond();
+          server.respond();
           done();
         });
       });
@@ -180,7 +180,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer.js"]
             center: newCenter,
             zoom: mapContainer.fakeBingMaps.getZoom()
           });
-          sandbox.server.respond();
+          server.respond();
           done();
         });
       });
@@ -207,7 +207,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer.js"]
           });
           mapContainer.showingMap("google")
           .done(function() {
-            sandbox.server.respond();
+            server.respond();
             done();
           });
         });
@@ -242,7 +242,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer.js"]
           }).done(function() {
             mapContainer.showingMap("bing")
             .done(function() {
-              sandbox.server.respond();
+              server.respond();
               done();
             });
           });
@@ -273,7 +273,7 @@ define(["jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer.js"]
             center: mapContainer.fakeBingMaps.getCenter(),
             zoom: mapContainer.fakeBingMaps.getZoom() + 1
           });
-          sandbox.server.respond();
+          server.respond();
           done();
         });
       });

@@ -2,14 +2,14 @@
 
 define(["q", "jquery", "mapContainer", "createWaypointModel"], function(Q, $, mapContainer, CreateWaypointModel) {
   var createWaypointModel;
-  var sandbox;
   var numberOfServerRequests;
+  var server;
 
   function initialize(done) {
     createWaypointModel = new CreateWaypointModel(mapContainer);
 
-    sandbox = sinon.sandbox.create();
-    sandbox.useFakeServer();
+    server = sinon.createFakeServer();
+    server.respondImmediately = true;
     numberOfServerRequests = 0;
 
     done();
@@ -17,7 +17,7 @@ define(["q", "jquery", "mapContainer", "createWaypointModel"], function(Q, $, ma
 
   function cleanup()
   {
-    sandbox.restore();
+    server.restore();
   }
 
   describe("Waypoints", function() {
@@ -32,9 +32,10 @@ define(["q", "jquery", "mapContainer", "createWaypointModel"], function(Q, $, ma
 
       before(function(done) {
         initialize(function() {
+          server.respondWith("POST", "/api/trails/pct/waypoints", createWaypointResponder);
           createWaypointModel.waypointName("new waypoint");
           createWaypointModel.create();
-          sandbox.server.respond("POST", "/api/trails/pct/waypoints", createWaypointResponder);
+          server.respond();
           done();
         });
       });

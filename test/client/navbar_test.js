@@ -4,23 +4,28 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
   var navbarModel;
   var injector;
   var mapContainer;
-  var sandbox;
+  var server;
   var numberOfServerRequests;
+  var historyStub;
 
   function initializeNavBar(done) {
-    sandbox = sinon.sandbox.create();
-    sandbox.useFakeServer();
+    server = sinon.createFakeServer();
+    server.respondImmediately = true;
     numberOfServerRequests = 0;
 
-    testableMapContainer.create("bing", sandbox.server)
+    testableMapContainer.create("bing", server)
     .done(function(newMapContainer) {
-      sandbox.server.respond();
+      server.respond();
       mapContainer = newMapContainer;
 
+      historyStub = {
+        pushState: sinon.stub(),
+        replaceState: sinon.stub()
+      };
       injector = new Squire();
       injector.mock({
         "mapcontainer": mapContainer,
-        "history": sandbox.stub(window.history)
+        "history": historyStub
       });
 
       injector.require(["navbarModel"], function(NavbarModel) {
@@ -32,17 +37,27 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
 
   function cleanup()
   {
-    sandbox.restore();
+    server.restore();
   }
 
-  function responder(request) {
+  function mileMarkerResponder(request) {
     numberOfServerRequests++;
     request.respond(200, { "Content-Type": "application/json" }, '{ "loc": [ -120, 39 ], "mile": 1234 }');
+  }
+
+  function waypointResponder(request) {
+    numberOfServerRequests++;
+    request.respond(200, { "Content-Type": "application/json" }, '[{ "name": "foo bar", "loc": [ -120, 39 ]}]');
   }
 
   function nullResponder(request) {
     numberOfServerRequests++;
     request.respond(200, { "Content-Type": "application/json" }, "null");
+  }
+
+  function emptyListResponder(request) {
+    numberOfServerRequests++;
+    request.respond(200, { "Content-Type": "application/json" }, "[]");
   }
 
   function typeaheadResponder(request) {
@@ -60,10 +75,11 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
           originalViewOptions = mapContainer.getViewOptions();
           originalUrlFragment = mapContainer.getUrlFragment();
 
+          server.respondWith("/api/trails/pct/milemarkers/1234", mileMarkerResponder);
+
           navbarModel.searchText("1234");
           navbarModel.search();
 
-          sandbox.server.respond("/api/trails/pct/milemarkers/1234", responder);
           done();
         });
       });
@@ -83,11 +99,11 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
 
       it ("should replace the current browser history node with the previous view", function() {
-        expect(history.replaceState.calledWith(originalViewOptions, null, originalUrlFragment)).to.be.ok;
+        expect(historyStub.replaceState.calledWith(originalViewOptions, null, originalUrlFragment)).to.be.ok;
       });
 
       it ("should add the new map view to the browser history", function() {
-        expect(history.pushState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
+        expect(historyStub.pushState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
       });
 
       after(function() {
@@ -101,11 +117,11 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       before(function(done) {
         initializeNavBar(function() {
           originalViewOptions = mapContainer.getViewOptions();
+          server.respondWith("/api/trails/pct/milemarkers/4567", nullResponder);
 
           navbarModel.searchText("4567");
           navbarModel.search();
 
-          sandbox.server.respond("/api/trails/pct/milemarkers/4567", nullResponder);
           done();
         });
       });
@@ -166,10 +182,11 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
     describe("Searching for waypoints", function() {
       before(function(done) {
         initializeNavBar(function() {
+          server.respondWith("/api/trails/pct/waypoints?name=foo%20bar", waypointResponder);
+
           navbarModel.searchText("foo bar");
           navbarModel.search();
-
-          sandbox.server.respond("/api/trails/pct/waypoints/foo%20bar", responder);
+          
           done();
         });
       });
@@ -199,11 +216,11 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       before(function(done) {
         initializeNavBar(function() {
           originalViewOptions = mapContainer.getViewOptions();
+          server.respondWith("/api/trails/pct/waypoints?name=north%20pole", emptyListResponder);
 
           navbarModel.searchText("north pole");
           navbarModel.search();
 
-          sandbox.server.respond("/api/trails/pct/waypoints/north%20pole", nullResponder);
           done();
         });
       });
@@ -226,11 +243,12 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
 
       before(function(done) {
         initializeNavBar(function() {
+          server.respondWith("/api/trails/pct/waypoints/typeahead/foo", typeaheadResponder);
+
           navbarModel.waypointTypeaheadSource("foo", function(data) {
             typeaheadData = data;
           });
 
-          sandbox.server.respond("/api/trails/pct/waypoints/typeahead/foo", typeaheadResponder);
           done();
         });
       });
@@ -251,9 +269,10 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
     describe("Querying for a waypoint typeahead list with non-waypoint text", function() {
       before(function(done) {
         initializeNavBar(function() {
+          server.respondWith("/api/trails/pct/waypoints/typeahead/1234", typeaheadResponder);
+
           navbarModel.waypointTypeaheadSource("1234");
 
-          sandbox.server.respond("/api/trails/pct/waypoints/typeahead/1234", typeaheadResponder);
           done();
         });
       });
@@ -270,9 +289,10 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
     describe("Selecting a typeahead item", function() {
       before(function(done) {
         initializeNavBar(function() {
+          server.respondWith("/api/trails/pct/waypoints?name=foo", waypointResponder);
+
           navbarModel.waypointTypeaheadUpdater("foo");
 
-          sandbox.server.respond("/api/trails/pct/waypoints/foo", responder);
           done();
         });
       });
@@ -304,7 +324,7 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
 
       it ("should replace the current browser history node with the new map name", function() {
-        expect(history.replaceState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
+        expect(historyStub.replaceState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
       });
 
       after(function() {
@@ -332,7 +352,7 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
 
       it ("should replace the current browser history node with the new map name", function() {
-        expect(history.replaceState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
+        expect(historyStub.replaceState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
       });
 
       after(function() {
@@ -351,7 +371,7 @@ define(["q", "jquery", "/test/lib/Squire.js", "/test/client/testableMapContainer
       });
 
       it ("should replace the current browser history node with the new view", function() {
-        expect(history.replaceState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
+        expect(historyStub.replaceState.calledWith(mapContainer.getViewOptions(), null, mapContainer.getUrlFragment())).to.be.ok;
       });
 
       after(function() {

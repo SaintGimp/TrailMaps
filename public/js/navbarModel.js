@@ -109,13 +109,13 @@ define(["jquery", "mapcontainer", "knockout", "history"], function($, mapContain
     }
 
     function gotoWaypoint(waypoint) {
-      var url = "/api/trails/pct/waypoints/" + encodeURIComponent(waypoint);
+      var url = "/api/trails/pct/waypoints?name=" + encodeURIComponent(waypoint);
       $.getJSON(url, function(result) {
-        if (result) {
+        if (result && result.length) {
           changeMapView({
             center: {
-              latitude: result.loc[1],
-              longitude: result.loc[0]
+              latitude: result[0].loc[1],
+              longitude: result[0].loc[0]
             },
             zoom: 14
           });

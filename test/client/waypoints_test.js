@@ -2,14 +2,14 @@
 
 define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel) {
   var waypointsViewModel;
-  var sandbox;
+  var server;
   var numberOfServerRequests;
 
   function initialize(done) {
     waypointsViewModel = new WaypointsViewModel();
 
-    sandbox = sinon.sandbox.create();
-    sandbox.useFakeServer();
+    server = sinon.createFakeServer();
+    server.respondImmediately = true;
     numberOfServerRequests = 0;
 
     done();
@@ -17,7 +17,7 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
 
   function cleanup()
   {
-    sandbox.restore();
+    server.restore();
   }
 
   function getWaypointsResponder(request) {
@@ -34,8 +34,10 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
     describe("Loading data from server", function() {
       before(function(done) {
         initialize(function() {
+          server.respondWith("/api/trails/pct/waypoints", getWaypointsResponder);
+
           waypointsViewModel.loadData();
-          sandbox.server.respond("/api/trails/pct/waypoints", getWaypointsResponder);
+
           done();
         });
       });
@@ -65,14 +67,15 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
     describe("Deleting a waypoint", function() {
       before(function(done) {
         initialize(function() {
+          server.respondWith("/api/trails/pct/waypoints", getWaypointsResponder);
           waypointsViewModel.loadData();
-          sandbox.server.respond("/api/trails/pct/waypoints", getWaypointsResponder);
 
+
+          server.respondWith("DELETE", "/api/trails/pct/waypoints/123", deleteWaypointResponder);
           waypointsViewModel.deleteWaypoint(waypointsViewModel.waypoints()[0])
           .done(function() {
             done();
           });
-          sandbox.server.respond("DELETE", "/api/trails/pct/waypoints/123", deleteWaypointResponder);
         });
       });
 
@@ -93,8 +96,8 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
     describe("Editing a waypoint", function() {
       before(function(done) {
         initialize(function() {
+          server.respondWith("/api/trails/pct/waypoints", getWaypointsResponder);
           waypointsViewModel.loadData();
-          sandbox.server.respond("/api/trails/pct/waypoints", getWaypointsResponder);
 
           waypointsViewModel.edit(waypointsViewModel.waypoints()[0]);
           done();
@@ -113,8 +116,8 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
     describe("Editing a waypoint and then another one", function() {
       before(function(done) {
         initialize(function() {
+          server.respondWith("/api/trails/pct/waypoints", getWaypointsResponder);
           waypointsViewModel.loadData();
-          sandbox.server.respond("/api/trails/pct/waypoints", getWaypointsResponder);
 
           waypointsViewModel.edit(waypointsViewModel.waypoints()[0]);
           waypointsViewModel.waypoints()[0].name("edited");
@@ -151,13 +154,13 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
 
       before(function(done) {
         initialize(function() {
+          server.respondWith("/api/trails/pct/waypoints", getWaypointsResponder);
           waypointsViewModel.loadData();
-          sandbox.server.respond("/api/trails/pct/waypoints", getWaypointsResponder);
 
+          server.respondWith("PUT", "/api/trails/pct/waypoints/123", updateWaypointResponder);
           waypointsViewModel.edit(waypointsViewModel.waypoints()[0]);
           waypointsViewModel.waypoints()[0].name("edited");
           waypointsViewModel.confirmEdit(waypointsViewModel.waypoints()[0]);
-          sandbox.server.respond("PUT", "/api/trails/pct/waypoints/123", updateWaypointResponder);
           done();
         });
       });
@@ -188,8 +191,8 @@ define(["q", "jquery", "waypointsViewModel"], function(Q, $, WaypointsViewModel)
     describe("Canceling a waypoint edit", function() {
       before(function(done) {
         initialize(function() {
+          server.respondWith("/api/trails/pct/waypoints", getWaypointsResponder);
           waypointsViewModel.loadData();
-          sandbox.server.respond("/api/trails/pct/waypoints", getWaypointsResponder);
 
           waypointsViewModel.edit(waypointsViewModel.waypoints()[0]);
           waypointsViewModel.waypoints()[0].name("edited");

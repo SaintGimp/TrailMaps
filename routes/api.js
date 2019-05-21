@@ -16,11 +16,10 @@ function safeHandler(handler) {
 module.exports = function(app) {
   app.get("/api/trails/:trailName/milemarkers/:mile", safeHandler(exports.getMileMarker));
   app.get("/api/trails/:trailName/waypoints/typeahead/:text", safeHandler(exports.getWaypointTypeaheadList));
-  app.get("/api/trails/:trailName/waypoints/:name", safeHandler(exports.getWaypoint));
+  app.get("/api/trails/:trailName/waypoints", safeHandler(exports.getWaypoints));
   app.post("/api/trails/:trailName/waypoints", safeHandler(exports.createWaypoint));
   app.put("/api/trails/:trailName/waypoints/:id", safeHandler(exports.updateWaypoint));
   app.delete("/api/trails/:trailName/waypoints/:id", safeHandler(exports.deleteWaypoint));
-  app.get("/api/trails/:trailName/waypoints", safeHandler(exports.getWaypoints));
   app.get("/api/trails/:trailName", safeHandler(exports.getTrailData));
   app.post("/api/admin/importdata", safeHandler(exports.importdata));
 };
@@ -59,14 +58,25 @@ exports.getWaypointTypeaheadList = async function (req, res) {
   res.json(waypointNames);
 };
 
-exports.getWaypoint = async function (req, res) {
+exports.getWaypoints = async function (req, res) {
   var options = {
     trailName: req.params.trailName,
-    name: req.params.name
+    name: req.query.name
   };
 
-  var waypoint = await waypoints.findByName(options);
-  res.json(waypoint);
+  if (options.name) {
+    var waypoint = await waypoints.findByName(options);
+    if (waypoint) {
+      res.json(Array.of(waypoint));
+    }
+    else {
+      res.json([]);
+    }
+  }
+  else {
+    var waypointList = await waypoints.getWaypoints(options);
+    res.json(waypointList);  
+  }
 };
 
 exports.createWaypoint = async function (req, res) {
@@ -113,15 +123,6 @@ exports.deleteWaypoint = async function (req, res) {
     res.status(404);
   }
   res.send();
-};
-
-exports.getWaypoints = async function (req, res) {
-  var options = {
-    trailName: req.params.trailName,
-  };
-
-  var waypointList = await waypoints.getWaypoints(options);
-  res.json(waypointList);
 };
 
 exports.importdata = async function (req, res) {
