@@ -11,8 +11,8 @@
   "author": "Eric Lee",
   "license": "MIT",
   "engines": {
-    "node": ">=10.15.2 <11.0.0",
-    "npm": ">=6.4.1 <7.0.0"
+    "node": ">=18.20.5 <19.0.0",
+    "npm": ">=10.8.2 <11.0.0"
   },
   "dependencies": {
     "applicationinsights": "^1.3.0",

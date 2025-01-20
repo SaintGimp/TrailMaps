@@ -4,10 +4,6 @@
  * Module dependencies.
  */
 
-const appInsights = require("applicationinsights");
-appInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY || "no key");
-appInsights.start();
-
 var express = require("express"),
   app = exports.app = express(),
   path = require("path"),
@@ -26,10 +22,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(require("method-override")());
 app.use(require("less-middleware")(path.join(__dirname, "public"), {}, {}, {compress: true }));
 app.use(express.static(path.join(__dirname, "public")));
-
-var ai = require("express-ai").loggers(app, process.env.APPINSIGHTS_INSTRUMENTATIONKEY || "no key", true);
-app.use(ai.logRequest);
-app.use(ai.logErrors);
 
 // Routes
 require("./routes");
