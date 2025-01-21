@@ -1,7 +1,4 @@
-const MongoClient = require("mongodb").MongoClient;
-
-var existingDbPromise = null;
-var existingCollectionPromises = [];
+const { MongoClient } = require('mongodb');
 
 function getMongoUrl() {
   if (process.env.MONGO_URI) {
@@ -9,40 +6,26 @@ function getMongoUrl() {
     return process.env.MONGO_URI;
   } else {
     console.log("Connecting to local MongoDB");
-    return "mongodb://localhost:27017/trailmaps";
+    return "mongodb://127.0.0.1:27017/trailmaps";
   }
 }
 
 async function getDb() {
-  if (!existingDbPromise) {
-    console.log("Creating new connection...");
-    existingDbPromise = MongoClient.connect(getMongoUrl());
-  }
+  console.log("Creating new connection...");
+  client = new MongoClient(getMongoUrl());
+  await client.connect();
 
-  return await existingDbPromise;
-}
-
-async function getCollection(db, name) {
-  if (!existingCollectionPromises[name]) {
-    console.log("Getting new collection reference for " + name + "...");
-    existingCollectionPromises[name] = db.collection(name);
-    var collection = await existingCollectionPromises[name];
-    if (!collection) {
-      existingCollectionPromises[name] = await db.createCollection(name);
-    }
-  }
-
-  return await existingCollectionPromises[name];
+  return client.db('trailmaps');
 }
 
 exports.collection = async function(name) {
   var db = await getDb();
-  return await getCollection(db, name);
+  return db.collection(name)
 };
 
 exports.collections = async function() {
   var db = await getDb();
-  return await db.collections();
+  return db.collections();
 };
 
 exports.findArray = async function(collectionName, searchTerms, projection, sort) {
@@ -67,5 +50,5 @@ exports.remove = async function(collectionName, searchTerms) {
 
 exports.insert = async function(collectionName, insertOperation) {
   var collection = await exports.collection(collectionName);
-  return await collection.insert(insertOperation, { w: 1 });
+  return await collection.insertOne(insertOperation);
 };

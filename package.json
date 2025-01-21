@@ -22,7 +22,7 @@
     "jade": "1.11.x",
     "less-middleware": "^3.0.0",
     "method-override": "^3.0.0",
-    "mongodb": "^2.2.36",
+    "mongodb": "^5.8.1",
     "morgan": "^1.9.1",
     "q": "^1.5.1",
     "serve-favicon": "^2.5.0",

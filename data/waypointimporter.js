@@ -173,7 +173,7 @@ async function saveCollection(collection)
   console.log("Saving collection " + collectionName);
 
   var mongoCollection = await dataService.collection(collectionName);
-  return await mongoCollection.insert(collection, {w:1});
+  return await mongoCollection.insertMany(collection);
   // await mongoCollection.ensureIndex({ loc: "2d" }, {w:1});
 }
 
