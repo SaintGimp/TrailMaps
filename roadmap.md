@@ -216,11 +216,9 @@ Current implementation creates a new database connection on every query, which i
 **Risk Level:** High  
 **Goal:** Eliminate outdated frontend framework dependencies
 
-### Decision Point: Framework Selection
+### Selected Approach: Modern Vanilla JavaScript
 
-Three viable options exist for replacing Knockout.js:
-
-#### Option A: Modern Vanilla JS (RECOMMENDED)
+The decision has been made to replace Knockout.js, jQuery, and RequireJS with modern vanilla JavaScript rather than adopting a new framework. This approach is best suited for this application because:
 
 **Rationale:**
 
@@ -229,69 +227,32 @@ Three viable options exist for replacing Knockout.js:
 - No framework dependency overhead
 - Smallest bundle size
 - Easiest to maintain long-term
+- Zero framework lock-in
 
-**Implementation:**
+**Implementation Strategy:**
 
 - Use native Web Components for reusable UI elements
 - ES6 modules for code organization
 - Native Fetch API for AJAX calls
 - Template literals for HTML generation
 - CSS custom properties for theming
+- Modern DOM APIs (querySelector, addEventListener, etc.)
 
-**Pros:**
+**Benefits:**
 
-- Zero framework lock-in
-- Minimal dependencies
-- Fast performance
-- Long-term stability
+- Zero framework lock-in or obsolescence risk
+- Minimal dependencies to maintain
+- Fast performance with small bundle size
+- Long-term stability (browser APIs are standardized)
+- Full control over implementation
+- No build complexity from framework tooling
 
-**Cons:**
+**Trade-offs:**
 
-- More manual DOM manipulation code
-- Less structured than frameworks
-- Fewer third-party components available
-
-#### Option B: React 18+
-
-**Rationale:**
-
-- Most popular framework
-- Excellent ecosystem and tooling
-- Strong TypeScript support
-- Easy to find developers
-
-**Implementation:**
-
-- React 18 with hooks
-- React Router for navigation
-- Context API for state management
-- React components for maps
-
-**Pros:**
-
-- Massive ecosystem
-- Excellent documentation
-- Many available components
-- Industry standard
-
-**Cons:**
-
-- Larger bundle size
-- More complex build setup
-- Overkill for this application's complexity
-- Framework lock-in
-
-#### Option C: Vue 3 or Svelte
-
-**Rationale:**
-
-- Middle ground between vanilla and React
-- Smaller bundle sizes
-- Good developer experience
-
-**Not recommended for this project** - Similar benefits to React but less ecosystem support.
-
-### Recommended Approach: Option A (Vanilla JS)
+- More manual DOM manipulation code required
+- Less opinionated structure than frameworks
+- Fewer third-party UI components available
+- Need to establish own patterns for state management
 
 ### Phase 2.1: Remove Knockout.js
 
@@ -568,10 +529,10 @@ Only after everything else is stable:
 
 **Weeks 5-8: Phase 2 - Frontend Rewrite**
 
-- Remove Knockout.js
-- Remove jQuery
-- Update Bootstrap
-- Replace Typeahead
+- Replace Knockout.js with vanilla JavaScript and Web Components
+- Remove jQuery, use native DOM APIs
+- Update Bootstrap to v5
+- Replace Typeahead with modern solution
 
 **Weeks 9-10: Phase 4 - Dependencies**
 
@@ -705,10 +666,10 @@ If a full rewrite carries too much risk:
 ### After (Target)
 
 - **Backend:** Express 4.x/5.x, Pug 3, Node 22 LTS, npm scripts, native Promises, MongoDB 6
-- **Frontend:** Vanilla JS + Web Components, Bootstrap 5, ES6 modules, modern CSS/Sass
+- **Frontend:** Modern Vanilla JS with Web Components, Bootstrap 5, ES6 modules, modern CSS
 - **Build:** Vite (fast, modern bundler)
 - **Testing:** Vitest/Mocha, Playwright, Chai, Sinon
-- **Optional:** TypeScript, ESLint 9, Prettier
+- **Code Quality:** ESLint 9, Prettier, @types packages
 
 ---
 
@@ -717,8 +678,11 @@ If a full rewrite carries too much risk:
 This modernization roadmap provides a comprehensive, sequential approach to updating the TrailMaps codebase while minimizing risk and maintaining functionality. The most critical updates are:
 
 1. **Security fixes** - Address 13 vulnerabilities including 5 critical
-2. **Remove obsolete frameworks** - Knockout.js, jQuery, RequireJS are the biggest technical debt
+2. **Remove obsolete frameworks** - Replace Knockout.js, jQuery, and RequireJS with modern vanilla JavaScript
 3. **Modern module system** - ES6 modules with Vite bundling
 4. **Updated Node.js** - LTS version with modern APIs
+5. **Code quality tools** - ESLint 9, Prettier, and TypeScript types
+
+The decision to use vanilla JavaScript rather than a framework (React, Vue, etc.) is based on the application's relatively simple scope, the desire to avoid framework lock-in and obsolescence, and the excellent capabilities of modern browser APIs. This approach will result in the smallest bundle size, fastest performance, and easiest long-term maintenance.
 
 By following this phased approach, the codebase will be brought up to current standards, making it easier to maintain, extend, and deploy with confidence. The recommended timeline is 12 weeks for core modernization, with optional enhancements continuing afterward.
