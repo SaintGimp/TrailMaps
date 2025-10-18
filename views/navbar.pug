@@ -11,11 +11,11 @@ header
       .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-pills
           li
-            a(href='#{baseMapUrl}/bing') Bing
+            a(href=baseMapUrl + '/bing') Bing
           li
-            a(href='#{baseMapUrl}/google') Google
+            a(href=baseMapUrl + '/google') Google
           li
-            a(href='#{baseMapUrl}/here') Here
+            a(href=baseMapUrl + '/here') Here
           li
             a(href='https://earth.google.com/web') Earth
         
@@ -29,7 +29,7 @@ header
               li
                 a(href="#createWaypointDialog", role="button", data-toggle="modal") Create new waypoint
               li
-                a(href='#{waypointsUrl}') Edit waypoints
+                a(href=waypointsUrl) Edit waypoints
         
         form.navbar-form.navbar-right(id='searchForm', role='search')
           .form-group
