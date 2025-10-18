@@ -1,29 +1,29 @@
 /*global define: false*/
 
-define(["q", "jquery", "trailmaps", "knockout"], function (Q, $, trailmaps, ko) {
-  var activeMap;
-  var defaultCenter = new trailmaps.Location(
+define(["jquery", "trailmaps"], function ($, trailmaps) {
+  let activeMap;
+  const defaultCenter = new trailmaps.Location(
     trailmaps.configuration.defaultLatitude,
     trailmaps.configuration.defaultLongitude
   );
-  var defaultZoomLevel = trailmaps.configuration.defaultZoom;
-  // The view that the container will work to display, but the map control may be lagging behing
-  var currentContainerView = {
+  const defaultZoomLevel = trailmaps.configuration.defaultZoom;
+  // The view that the container will work to display, but the map control may be lagging behind
+  let currentContainerView = {
     center: defaultCenter,
     zoom: defaultZoomLevel
   };
-  var scrollBoundsMultiple = 2;
-  var trackBoundsMultiple = 3;
-  var scrollBounds = null;
-  var currentTrailData = null;
-  var trailDataZoomLevel = null;
-  var requireFunc;
-  var viewChangedListener = null;
+  const scrollBoundsMultiple = 2;
+  const trackBoundsMultiple = 3;
+  let scrollBounds = null;
+  let currentTrailData = null;
+  let trailDataZoomLevel = null;
+  let requireFunc;
+  let viewChangedListener = null;
 
-  var activeMapName = ko.observable("");
+  let activeMapName = "";
 
   function Map(moduleName, containerName) {
-    var self = this;
+    const self = this;
     self.control = undefined;
 
     self.moduleName = moduleName;
@@ -33,27 +33,25 @@ define(["q", "jquery", "trailmaps", "knockout"], function (Q, $, trailmaps, ko) 
       // never clicks over to that tab, and b) some of them (Google, I'm looking at you) won't
       // init properly when their div is hidden, so we have to wait until it becomes visible
       // to do the init.
-      var deferred = Q.defer();
-
-      if (!self.control) {
-        requireFunc([moduleName], function (createdControl) {
-          self.control = createdControl;
-          var container = $("#" + containerName)[0];
-          self.control
-            .initialize(container, currentContainerView.center, currentContainerView.zoom, onViewChanged)
-            .then(function () {
-              deferred.resolve({ control: self.control, isNew: true });
-            });
-        });
-      } else {
-        deferred.resolve({ control: self.control, isNew: false });
-      }
-
-      return deferred.promise;
+      return new Promise((resolve) => {
+        if (!self.control) {
+          requireFunc([moduleName], function (createdControl) {
+            self.control = createdControl;
+            const container = $("#" + containerName)[0];
+            self.control
+              .initialize(container, currentContainerView.center, currentContainerView.zoom, onViewChanged)
+              .then(function () {
+                resolve({ control: self.control, isNew: true });
+              });
+          });
+        } else {
+          resolve({ control: self.control, isNew: false });
+        }
+      });
     };
   }
 
-  var maps = {
+  const maps = {
     bing: new Map("bingmaps", "bing"),
     google: new Map("googlemaps", "google"),
     here: new Map("heremaps", "here")
@@ -70,7 +68,7 @@ define(["q", "jquery", "trailmaps", "knockout"], function (Q, $, trailmaps, ko) 
   }
 
   function showingMap(mapName) {
-    activeMapName(mapName);
+    activeMapName = mapName;
 
     return maps[mapName].getControl().then(function (controlData) {
       activeMap = controlData.control;
@@ -81,7 +79,7 @@ define(["q", "jquery", "trailmaps", "knockout"], function (Q, $, trailmaps, ko) 
         activeMap.setCenterAndZoom(currentContainerView);
         displayTrail();
       } else {
-        var newView = activeMap.getCenterAndZoom();
+        const newView = activeMap.getCenterAndZoom();
         if (!viewsAreSame(currentContainerView, newView)) {
           activeMap.setCenterAndZoom(currentContainerView);
           displayTrail();
@@ -100,20 +98,20 @@ define(["q", "jquery", "trailmaps", "knockout"], function (Q, $, trailmaps, ko) 
 
   function calculateScrollBounds() {
     // The map bounds adjusts the center if height gets too big so we get the map center directly
-    var mapCenter = activeMap.getCenter();
-    var mapBounds = activeMap.getBounds();
-    var scrollBoundsSize = mapBounds.width * scrollBoundsMultiple;
+    const mapCenter = activeMap.getCenter();
+    const mapBounds = activeMap.getBounds();
+    let scrollBoundsSize = mapBounds.width * scrollBoundsMultiple;
     // We get weird behavior when west goes past -180 and wraps around to +180. We should
-    // probably build a custom rect in that case that"s constrained to west < east, but this
+    // probably build a custom rect in that case that's constrained to west < east, but this
     // will do for now.  The Bing.Location class has a NormalizeLongitude thing that might be of some help.
     scrollBoundsSize = Math.min(scrollBoundsSize, 60);
     scrollBounds = new trailmaps.Rectangle(mapCenter, scrollBoundsSize, scrollBoundsSize);
   }
 
   function calculateTrackBounds() {
-    var mapCenter = activeMap.getCenter();
-    var mapBounds = activeMap.getBounds();
-    var trackBoundsSize = mapBounds.width * trackBoundsMultiple;
+    const mapCenter = activeMap.getCenter();
+    const mapBounds = activeMap.getBounds();
+    let trackBoundsSize = mapBounds.width * trackBoundsMultiple;
     trackBoundsSize = Math.min(trackBoundsSize, 60);
     return new trailmaps.Rectangle(mapCenter, trackBoundsSize, trackBoundsSize);
   }
@@ -125,9 +123,9 @@ define(["q", "jquery", "trailmaps", "knockout"], function (Q, $, trailmaps, ko) 
 
   function loadTrail() {
     calculateScrollBounds();
-    var trackBounds = calculateTrackBounds();
+    const trackBounds = calculateTrackBounds();
 
-    var trailUrl = "/api/trails/pct" + buildUrlParameters(trackBounds);
+    const trailUrl = "/api/trails/pct" + buildUrlParameters(trackBounds);
     trailDataZoomLevel = currentContainerView.zoom;
 
     $.getJSON(trailUrl, null, function (data) {
@@ -137,12 +135,12 @@ define(["q", "jquery", "trailmaps", "knockout"], function (Q, $, trailmaps, ko) 
   }
 
   function buildUrlParameters(trackBounds) {
-    var north = trackBounds.north;
-    var south = trackBounds.south;
-    var east = trackBounds.east;
-    var west = trackBounds.west;
+    const north = trackBounds.north;
+    const south = trackBounds.south;
+    const east = trackBounds.east;
+    const west = trackBounds.west;
 
-    var detail = currentContainerView.zoom;
+    const detail = currentContainerView.zoom;
 
     return "?north=" + north + "&south=" + south + "&east=" + east + "&west=" + west + "&detail=" + detail;
   }
@@ -172,20 +170,20 @@ define(["q", "jquery", "trailmaps", "knockout"], function (Q, $, trailmaps, ko) 
   }
 
   function getUrlFragment() {
-    var lat = currentContainerView.center.latitude.toFixed(5);
-    var lon = currentContainerView.center.longitude.toFixed(5);
-    return activeMapName() + "?lat=" + lat + "&lon=" + lon + "&zoom=" + currentContainerView.zoom;
+    const lat = currentContainerView.center.latitude.toFixed(5);
+    const lon = currentContainerView.center.longitude.toFixed(5);
+    return activeMapName + "?lat=" + lat + "&lon=" + lon + "&zoom=" + currentContainerView.zoom;
   }
 
   function getGoogleEarthUrlFragment() {
-    var lat = currentContainerView.center.latitude.toFixed(5);
-    var lon = currentContainerView.center.longitude.toFixed(5);
+    const lat = currentContainerView.center.latitude.toFixed(5);
+    const lon = currentContainerView.center.longitude.toFixed(5);
     return "@" + lat + "," + lon + ",5000a,0d";
   }
 
   function getViewOptions() {
     return {
-      mapName: activeMapName(),
+      mapName: activeMapName,
       view: currentContainerView
     };
   }
@@ -198,7 +196,7 @@ define(["q", "jquery", "trailmaps", "knockout"], function (Q, $, trailmaps, ko) 
     initialize: initialize,
     setCenterAndZoom: setCenterAndZoom,
     showingMap: showingMap,
-    activeMapName: activeMapName,
+    activeMapName: () => activeMapName,
     getUrlFragment: getUrlFragment,
     getGoogleEarthUrlFragment: getGoogleEarthUrlFragment,
     getViewOptions: getViewOptions,

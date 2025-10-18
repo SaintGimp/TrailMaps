@@ -10,14 +10,14 @@ header
         a.navbar-brand(href='/') Trail Maps
       .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-pills
-          li(data-bind="css: {active: activeMapName() === 'bing'}")
-            a(href='#{baseMapUrl}/bing', data-bind='click: onPillClick') Bing
-          li(data-bind="css: {active: activeMapName() === 'google'}")
-            a(href='#{baseMapUrl}/google', data-bind='click: onPillClick') Google
-          li(data-bind="css: {active: activeMapName() === 'here'}")
-            a(href='#{baseMapUrl}/here', data-bind='click: onPillClick') Here
           li
-            a(href='https://earth.google.com/web', data-bind='click: onEarthClick') Earth
+            a(href='#{baseMapUrl}/bing') Bing
+          li
+            a(href='#{baseMapUrl}/google') Google
+          li
+            a(href='#{baseMapUrl}/here') Here
+          li
+            a(href='https://earth.google.com/web') Earth
         
         ul.nav.navbar-nav
           li
@@ -31,7 +31,6 @@ header
               li
                 a(href='#{waypointsUrl}') Edit waypoints
         
-        form.navbar-form.navbar-right(id='searchForm', role='search' data-bind='submit: search')
+        form.navbar-form.navbar-right(id='searchForm', role='search')
           .form-group
-            // Have to update form elements after each keypress for IE: https://github.com/SteveSanderson/knockout/issues/760
-            input.form-control.input-sm.typeahead(id='searchBox', type='text', autocomplete='off', data-bind='value: searchText, valueUpdate: "afterkeydown"', placeholder='waypoint, mile, or lat/long')
+            input.form-control.input-sm.typeahead(id='searchBox', type='text', autocomplete='off', placeholder='waypoint, mile, or lat/long')

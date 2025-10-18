@@ -1,46 +1,45 @@
-define(["q", "trailmaps", "bing_maps_api"], function (Q, trailmaps, Microsoft) {
-  var bingMap;
-  var trackLayer;
-  var previousPolyLine;
-  var previousMileMarkerLayer;
+define(["trailmaps", "bing_maps_api"], function (trailmaps, Microsoft) {
+  let bingMap;
+  let trackLayer;
+  let previousPolyLine;
+  let previousMileMarkerLayer;
 
-  var mileMarkerContent =
+  const mileMarkerContent =
     "<svg xmlns='http://www.w3.org/2000/svg' width='75' height='14'>" +
     "<polygon points='2,7 7,2 12,7 7,12' style='fill:red;stroke:blue;stroke-width:4' />" +
     "<text x='22' y='12' fill='white' style='font-size:14;font-family:arial;font-weight:bold'>%MILE%</text>" +
     "</svg>";
 
   function initialize(container, center, zoomLevel, onViewChanged) {
-    var deferred = Q.defer();
+    return new Promise((resolve) => {
+      // http://msdn.microsoft.com/en-us/library/gg427609.aspx
+      bingMap = new Microsoft.Maps.Map(container, {
+        credentials: "AiiVGjRyDyDynh0IbGjn7u4ee-6U9F-ZyjnRj5wYEFp_J6kq5HGcMfdd-TYE_6xF",
+        center: new Microsoft.Maps.Location(center.latitude, center.longitude),
+        mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+        zoom: zoomLevel,
+        enableClickableLogo: false,
+        enableSearchLogo: false,
+        inertiaIntensity: 0.5,
+        tileBuffer: 1,
+        showBreadcrumb: false
+      });
 
-    // http://msdn.microsoft.com/en-us/library/gg427609.aspx
-    bingMap = new Microsoft.Maps.Map(container, {
-      credentials: "AiiVGjRyDyDynh0IbGjn7u4ee-6U9F-ZyjnRj5wYEFp_J6kq5HGcMfdd-TYE_6xF",
-      center: new Microsoft.Maps.Location(center.latitude, center.longitude),
-      mapTypeId: Microsoft.Maps.MapTypeId.aerial,
-      zoom: zoomLevel,
-      enableClickableLogo: false,
-      enableSearchLogo: false,
-      inertiaIntensity: 0.5,
-      tileBuffer: 1,
-      showBreadcrumb: false
+      Microsoft.Maps.Events.addHandler(bingMap, "viewchangeend", onViewChanged);
+      trackLayer = new Microsoft.Maps.Layer();
+      bingMap.layers.insert(trackLayer);
+
+      resolve();
     });
-
-    Microsoft.Maps.Events.addHandler(bingMap, "viewchangeend", onViewChanged);
-    trackLayer = new Microsoft.Maps.Layer();
-    bingMap.layers.insert(trackLayer);
-
-    deferred.resolve();
-    return deferred.promise;
   }
 
   function displayTrack(track) {
-    var vertices = [];
-    $.each(track, function (i, point) {
+    const vertices = [];
+    track.forEach(function (point) {
       vertices.push(new Microsoft.Maps.Location(point.loc[1], point.loc[0]));
     });
 
-    var polyLine = new Microsoft.Maps.Polyline(vertices, {
+    const polyLine = new Microsoft.Maps.Polyline(vertices, {
       strokeColor: "red",
       strokeThickness: 3
     });
@@ -54,10 +53,10 @@ define(["q", "trailmaps", "bing_maps_api"], function (Q, trailmaps, Microsoft) {
   }
 
   function displayMileMarkers(mileMarkers) {
-    var newMileMarkerLayer = new Microsoft.Maps.Layer();
-    $.each(mileMarkers, function (i, mileMarker) {
-      var location = new Microsoft.Maps.Location(mileMarker.loc[1], mileMarker.loc[0]);
-      var options = {
+    const newMileMarkerLayer = new Microsoft.Maps.Layer();
+    mileMarkers.forEach(function (mileMarker) {
+      const location = new Microsoft.Maps.Location(mileMarker.loc[1], mileMarker.loc[0]);
+      const options = {
         icon: mileMarkerContent.replace("%MILE%", mileMarker.mile),
         anchor: new Microsoft.Maps.Point(7, 7)
       };
@@ -72,12 +71,12 @@ define(["q", "trailmaps", "bing_maps_api"], function (Q, trailmaps, Microsoft) {
   }
 
   function getCenter() {
-    var center = bingMap.getCenter();
+    const center = bingMap.getCenter();
     return new trailmaps.Location(center.latitude, center.longitude);
   }
 
   function getBounds() {
-    var bounds = bingMap.getBounds();
+    const bounds = bingMap.getBounds();
     return new trailmaps.Rectangle(
       new trailmaps.Location(bounds.center.latitude, bounds.center.longitude),
       bounds.width,
@@ -90,7 +89,7 @@ define(["q", "trailmaps", "bing_maps_api"], function (Q, trailmaps, Microsoft) {
   }
 
   function getCenterAndZoom() {
-    var center = bingMap.getCenter();
+    const center = bingMap.getCenter();
     return {
       center: {
         latitude: center.latitude,
@@ -101,7 +100,7 @@ define(["q", "trailmaps", "bing_maps_api"], function (Q, trailmaps, Microsoft) {
   }
 
   function setCenterAndZoom(options) {
-    var viewOptions = bingMap.getOptions();
+    const viewOptions = bingMap.getOptions();
     viewOptions.center = new Microsoft.Maps.Location(options.center.latitude, options.center.longitude);
     viewOptions.zoom = options.zoom;
     bingMap.setView(viewOptions);

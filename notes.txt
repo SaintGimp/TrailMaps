@@ -72,9 +72,6 @@ https://code.google.com/p/iterm2/wiki/AppleScript
 http://www.iterm2.com/#/section/faq
 http://hints.macworld.com/article.php?story=20070409141256538
 
-*** Knockout
-https://chrome.google.com/webstore/detail/knockoutjs-context-debugg/oddcpmchholgcjgjdnfjmildmlielhof
-
 
 *** Find in Files
 /Users/elee/Projects/GitHub/TrailMaps/,*.js,-/Users/elee/Projects/GitHub/TrailMaps/node_modules/*,-/Users/elee/Projects/GitHub/TrailMaps/test/lib/*,-/Users/elee/Projects/GitHub/TrailMaps/public/js/lib/*,-/Users/elee/Projects/GitHub/TrailMaps/public/bootstrap/*

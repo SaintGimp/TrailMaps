@@ -1,52 +1,80 @@
 /*global define: false*/
 
-define(["jquery", "knockout", "q"], function ($, ko, Q) {
+define(function () {
   return function (mapContainer) {
-    var self = this;
+    const self = this;
     self.mapContainer = mapContainer;
 
-    $("#createWaypointDialog").on("show.bs.modal", function () {
-      self.waypointName("");
-    });
-    $("#createWaypointDialog").on("shown.bs.modal", function () {
-      $("#newWaypointName").focus();
-    });
+    let waypointName = "";
 
-    self.waypointName = ko.observable("");
-
-    self.create = function () {
-      var deferred = Q.defer();
-
-      $.ajax({
-        type: "POST",
-        url: "/api/trails/pct/waypoints",
-        data: JSON.stringify(self.toJS()),
-        processData: false,
-        contentType: "application/json; charset=utf-8",
-        success: function () {
-          self.hide();
-          deferred.resolve(true);
-        },
-        error: function () {
-          self.hide();
-          deferred.resolve(false);
+    // Event listeners for modal
+    const modal = document.getElementById("createWaypointDialog");
+    if (modal) {
+      modal.addEventListener("show.bs.modal", function () {
+        waypointName = "";
+        const input = document.getElementById("newWaypointName");
+        if (input) {
+          input.value = "";
         }
       });
 
-      return deferred.promise;
+      modal.addEventListener("shown.bs.modal", function () {
+        const input = document.getElementById("newWaypointName");
+        if (input) {
+          input.focus();
+        }
+      });
+    }
+
+    self.getWaypointName = () => waypointName;
+    self.setWaypointName = (name) => {
+      waypointName = name;
+      const input = document.getElementById("newWaypointName");
+      if (input) {
+        input.value = name;
+      }
+    };
+
+    self.create = function () {
+      const input = document.getElementById("newWaypointName");
+      if (input) {
+        waypointName = input.value;
+      }
+
+      return fetch("/api/trails/pct/waypoints", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        body: JSON.stringify(self.toJS())
+      })
+        .then((response) => {
+          self.hide();
+          return response.ok;
+        })
+        .catch(() => {
+          self.hide();
+          return false;
+        });
     };
 
     self.toJS = function () {
-      var viewOptions = mapContainer.getViewOptions();
+      const viewOptions = mapContainer.getViewOptions();
       return {
-        name: self.waypointName(),
+        name: waypointName,
         loc: [viewOptions.view.center.longitude, viewOptions.view.center.latitude]
       };
     };
 
     self.hide = function () {
-      if ($("#createWaypointDialog").modal) {
-        $("#createWaypointDialog").modal("hide");
+      const modalElement = document.getElementById("createWaypointDialog");
+      if (modalElement && window.bootstrap) {
+        const modal = window.bootstrap.Modal.getInstance(modalElement);
+        if (modal) {
+          modal.hide();
+        }
+      } else if (window.jQuery && window.jQuery.fn.modal) {
+        window.jQuery("#createWaypointDialog").modal("hide");
       }
     };
   };

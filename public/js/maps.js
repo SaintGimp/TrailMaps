@@ -18,8 +18,6 @@ requirejs.config({
     typeahead: "lib/typeahead.bundle.min",
     async: "lib/async",
     markerwithlabel: "lib/markerwithlabel_packed",
-    knockout: "https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min",
-    q: "lib/q",
     here_maps_core: "http://js.api.here.com/v3/3.0/mapsjs-core",
     here_maps_ui: "http://js.api.here.com/v3/3.0/mapsjs-ui",
     here_maps_events: "http://js.api.here.com/v3/3.0/mapsjs-mapevents",
@@ -29,9 +27,6 @@ requirejs.config({
     bootstrap: {
       deps: ["jquery"],
       exports: "$.fn.popover"
-    },
-    knockout: {
-      deps: ["jquery"]
     },
     typeahead: {
       deps: ["jquery"]
@@ -73,24 +68,60 @@ define("history", function () {
 
 require([
   "jquery",
-  "knockout",
   "bootstrap",
   "typeahead",
   "./trailmaps",
   "./mapcontainer",
   "./navbarModel",
   "./createWaypointModel"
-], function ($, ko, bootstrap, typeAhead, trailMaps, mapContainer, NavbarModel, CreateWaypointModel) {
-  mapContainer.initialize(require, trailMaps.configuration.defaultMapName).done();
-  ko.applyBindings(mapContainer, $("#mapCanvas").get(0));
+], function ($, bootstrap, typeAhead, trailMaps, mapContainer, NavbarModel, CreateWaypointModel) {
+  mapContainer.initialize(require, trailMaps.configuration.defaultMapName).then(() => {
+    // Initialization complete
+  });
 
-  var navbarModel = new NavbarModel();
-  ko.applyBindings(navbarModel, $(".navbar").get(0));
+  const navbarModel = new NavbarModel();
+  const createWaypointModel = new CreateWaypointModel(mapContainer);
 
-  var createWaypointModel = new CreateWaypointModel(mapContainer);
-  ko.applyBindings(createWaypointModel, $("#createWaypointDialog").get(0));
+  // Wire up navbar event handlers
+  const navbarElement = document.querySelector(".navbar");
+  if (navbarElement) {
+    navbarElement.addEventListener("click", function (event) {
+      const target = event.target;
 
-  // TODO: Not sure this is the best place to wire this up but I don't see any better options at the moment
+      // Handle pill clicks
+      if (target.tagName === "A" && target.closest(".navbar-pills")) {
+        navbarModel.onPillClick(event);
+      }
+
+      // Handle Earth link
+      if (target.textContent === "Earth") {
+        navbarModel.onEarthClick(event);
+      }
+    });
+
+    // Handle form submission
+    const searchForm = document.getElementById("searchForm");
+    if (searchForm) {
+      searchForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        navbarModel.search();
+      });
+    }
+  }
+
+  // Wire up create waypoint dialog event handlers
+  const createWaypointDialog = document.getElementById("createWaypointDialog");
+  if (createWaypointDialog) {
+    const createButton = createWaypointDialog.querySelector('button[type="submit"]');
+    if (createButton) {
+      createButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        createWaypointModel.create();
+      });
+    }
+  }
+
+  // Setup typeahead
   $("#searchBox")
     .typeahead(
       {

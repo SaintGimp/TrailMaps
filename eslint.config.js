@@ -21,6 +21,12 @@ module.exports = [
         console: "readonly",
         alert: "readonly",
         prompt: "readonly",
+        confirm: "readonly",
+        setTimeout: "readonly",
+        clearTimeout: "readonly",
+        setInterval: "readonly",
+        clearInterval: "readonly",
+        fetch: "readonly",
 
         // Node
         process: "readonly",

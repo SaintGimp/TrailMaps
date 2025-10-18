@@ -1,103 +1,151 @@
 /*global define: false*/
 /*global trailMaps: false*/
 
-define(["jquery", "mapcontainer", "knockout", "history"], function ($, mapContainer, ko, history) {
+define(["mapcontainer", "history"], function (mapContainer, history) {
   return function () {
-    var self = this;
+    const self = this;
 
-    self.activeMapName = ko.observable(trailMaps.configuration.defaultMapName.toLowerCase());
+    // State
+    let activeMapName = trailMaps.configuration.defaultMapName.toLowerCase();
+    let searchText = "";
+
+    // Map view change listener
     mapContainer.addViewChangedListener(function () {
       replaceCurrentHistoryNode();
     });
 
-    self.onPillClick = function (data, event, done) {
-      var href = event.target.href;
-      var mapName = href.substr(href.lastIndexOf("/") + 1, href.length).toLowerCase();
+    // Public API
+    self.getActiveMapName = () => activeMapName;
+    self.setActiveMapName = (name) => {
+      activeMapName = name;
+      updateActiveMapUI();
+    };
 
-      if (mapName !== self.activeMapName()) {
-        showMap(mapName).done(function () {
+    self.getSearchText = () => searchText;
+    self.setSearchText = (text) => {
+      searchText = text;
+      const searchBox = document.getElementById("searchBox");
+      if (searchBox) {
+        searchBox.value = text;
+      }
+    };
+
+    self.onPillClick = function (event) {
+      event.preventDefault();
+      const href = event.target.href;
+      const mapName = href.substr(href.lastIndexOf("/") + 1, href.length).toLowerCase();
+
+      if (mapName !== activeMapName) {
+        showMap(mapName).then(function () {
           replaceCurrentHistoryNode();
-          if (done) {
-            done();
-          }
         });
       }
-
       return false;
     };
 
-    self.onEarthClick = function () {
-      var url = "https://earth.google.com/web/" + mapContainer.getGoogleEarthUrlFragment();
+    self.onEarthClick = function (event) {
+      event.preventDefault();
+      const url = "https://earth.google.com/web/" + mapContainer.getGoogleEarthUrlFragment();
       window.open(url, "_blank");
-
       return false;
     };
 
     function showMap(mapName) {
       mapName = mapName.toLowerCase();
-      self.activeMapName(mapName);
+      self.setActiveMapName(mapName);
       return mapContainer.showingMap(mapName);
     }
 
+    function updateActiveMapUI() {
+      // Update active pill in navbar
+      const pills = document.querySelectorAll(".navbar-pills li");
+      pills.forEach((pill) => {
+        const link = pill.querySelector("a");
+        if (link) {
+          const href = link.getAttribute("href");
+          if (href && href.endsWith("/" + activeMapName)) {
+            pill.classList.add("active");
+          } else {
+            pill.classList.remove("active");
+          }
+        }
+      });
+
+      // Update map visibility
+      const mapDivs = document.querySelectorAll(".map-control");
+      mapDivs.forEach((div) => {
+        if (div.id === activeMapName) {
+          div.classList.add("active");
+        } else {
+          div.classList.remove("active");
+        }
+      });
+    }
+
     self.restoreHistoryState = function (options) {
-      showMap(options.mapName).done();
+      showMap(options.mapName).then(() => {
+        // Map restored
+      });
       mapContainer.setCenterAndZoom(options.view);
     };
 
-    self.searchText = ko.observable();
-
     self.typeAheadSelected = function (obj, data) {
-      self.searchText(data);
+      self.setSearchText(data);
       self.search();
     };
 
     self.search = function () {
-      var searchText = self.searchText();
-      if (isCoordinates(searchText)) {
-        gotoCoordinates(searchText);
-      } else if (isMileMarker(searchText)) {
-        gotoMileMarker(searchText);
+      const searchBox = document.getElementById("searchBox");
+      const text = searchBox ? searchBox.value : searchText;
+      searchText = text;
+
+      if (isCoordinates(text)) {
+        gotoCoordinates(text);
+      } else if (isMileMarker(text)) {
+        gotoMileMarker(text);
       } else {
-        gotoWaypoint(searchText);
+        gotoWaypoint(text);
       }
     };
 
     self.waypointTypeaheadSource = function (query, process) {
       if (isWaypoint(query)) {
-        var url = "/api/trails/pct/waypoints/typeahead/" + encodeURIComponent(query);
-        return $.getJSON(url, null, function (data) {
-          return process(data);
-        });
+        const url = "/api/trails/pct/waypoints/typeahead/" + encodeURIComponent(query);
+        return fetch(url)
+          .then((response) => response.json())
+          .then((data) => process(data));
       }
     };
 
     self.waypointTypeaheadUpdater = function (item) {
-      self.searchText(item);
+      self.setSearchText(item);
       self.search();
       return item;
     };
 
-    self.coordinatesRegex = /^-?\d*\.?\d+,\s*-?\d*\.?\d+$/;
-    self.numberRegex = /-?\d*\.?\d+/g;
-    self.mileMarkerRegex = /^\d*\.?\d?$/;
+    const coordinatesRegex = /^-?\d*\.?\d+,\s*-?\d*\.?\d+$/;
+    const numberRegex = /-?\d*\.?\d+/g;
+    const mileMarkerRegex = /^\d*\.?\d?$/;
 
     function gotoMileMarker(mileMarker) {
-      var url = "/api/trails/pct/milemarkers/" + mileMarker;
-      $.getJSON(url, function (result) {
-        if (result) {
-          changeMapView({
-            center: {
-              latitude: result.loc[1],
-              longitude: result.loc[0]
-            },
-            zoom: 14
-          });
-        }
-      });
+      const url = "/api/trails/pct/milemarkers/" + mileMarker;
+      fetch(url)
+        .then((response) => response.json())
+        .then((result) => {
+          if (result) {
+            changeMapView({
+              center: {
+                latitude: result.loc[1],
+                longitude: result.loc[0]
+              },
+              zoom: 14
+            });
+          }
+        });
     }
 
     function gotoCoordinates(location) {
-      var numbers = location.match(self.numberRegex);
+      const numbers = location.match(numberRegex);
       changeMapView({
         center: {
           latitude: parseFloat(numbers[0]),
@@ -108,18 +156,20 @@ define(["jquery", "mapcontainer", "knockout", "history"], function ($, mapContai
     }
 
     function gotoWaypoint(waypoint) {
-      var url = "/api/trails/pct/waypoints?name=" + encodeURIComponent(waypoint);
-      $.getJSON(url, function (result) {
-        if (result && result.length) {
-          changeMapView({
-            center: {
-              latitude: result[0].loc[1],
-              longitude: result[0].loc[0]
-            },
-            zoom: 14
-          });
-        }
-      });
+      const url = "/api/trails/pct/waypoints?name=" + encodeURIComponent(waypoint);
+      fetch(url)
+        .then((response) => response.json())
+        .then((result) => {
+          if (result && result.length) {
+            changeMapView({
+              center: {
+                latitude: result[0].loc[1],
+                longitude: result[0].loc[0]
+              },
+              zoom: 14
+            });
+          }
+        });
     }
 
     function changeMapView(options) {
@@ -129,11 +179,11 @@ define(["jquery", "mapcontainer", "knockout", "history"], function ($, mapContai
     }
 
     function isCoordinates(text) {
-      return text.match(self.coordinatesRegex);
+      return text.match(coordinatesRegex);
     }
 
     function isMileMarker(text) {
-      return text.match(self.mileMarkerRegex);
+      return text.match(mileMarkerRegex);
     }
 
     function isWaypoint(text) {
@@ -145,13 +195,16 @@ define(["jquery", "mapcontainer", "knockout", "history"], function ($, mapContai
     };
 
     function replaceCurrentHistoryNode() {
-      var url = mapContainer.getUrlFragment();
+      const url = mapContainer.getUrlFragment();
       history.replaceState(mapContainer.getViewOptions(), null, url);
     }
 
     function addNewHistoryNode() {
-      var url = mapContainer.getUrlFragment();
+      const url = mapContainer.getUrlFragment();
       history.pushState(mapContainer.getViewOptions(), null, url);
     }
+
+    // Initialize UI
+    updateActiveMapUI();
   };
 });

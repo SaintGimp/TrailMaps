@@ -1,37 +1,35 @@
 /*global define: false*/
 /*global MarkerWithLabel: false*/
 
-define(["q", "trailmaps", "google_maps_api", "markerwithlabel"], function (Q, trailmaps, google) {
-  var googleMap;
-  var previousPolyLine;
-  var mileMarkerCollection = [];
+define(["trailmaps", "google_maps_api", "markerwithlabel"], function (trailmaps, google) {
+  let googleMap;
+  let previousPolyLine;
+  const mileMarkerCollection = [];
 
   function initialize(container, center, zoomLevel, onViewChanged) {
-    var deferred = Q.defer();
+    return new Promise((resolve) => {
+      // https://developers.google.com/maps/documentation/javascript/
+      const mapOptions = {
+        center: new google.maps.LatLng(center.latitude, center.longitude),
+        zoom: zoomLevel,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+      };
+      googleMap = new google.maps.Map(container, mapOptions);
 
-    // https://developers.google.com/maps/documentation/javascript/
-    var mapOptions = {
-      center: new google.maps.LatLng(center.latitude, center.longitude),
-      zoom: zoomLevel,
-      mapTypeId: google.maps.MapTypeId.HYBRID
-    };
-    googleMap = new google.maps.Map(container, mapOptions);
-
-    google.maps.event.addListenerOnce(googleMap, "idle", function () {
-      deferred.resolve();
-      google.maps.event.addListener(googleMap, "idle", onViewChanged);
+      google.maps.event.addListenerOnce(googleMap, "idle", function () {
+        resolve();
+        google.maps.event.addListener(googleMap, "idle", onViewChanged);
+      });
     });
-
-    return deferred.promise;
   }
 
   function displayTrack(track) {
-    var vertices = [];
-    $.each(track, function (i, point) {
+    const vertices = [];
+    track.forEach(function (point) {
       vertices.push(new google.maps.LatLng(point.loc[1], point.loc[0]));
     });
 
-    var polyLine = new google.maps.Polyline({
+    const polyLine = new google.maps.Polyline({
       path: vertices,
       strokeColor: "#FF0000",
       strokeOpacity: 1.0,
@@ -52,16 +50,16 @@ define(["q", "trailmaps", "google_maps_api", "markerwithlabel"], function (Q, tr
     });
     mileMarkerCollection.length = 0;
 
-    // TODO: I"d like to use an SVG marker but Google maps doesn"t make that
+    // TODO: I'd like to use an SVG marker but Google maps doesn't make that
     // easy to implement right now in v3.
-    var icon = {
+    const icon = {
       url: "/images/mile_marker.png",
       anchor: new google.maps.Point(12, 12)
     };
 
-    $.each(mileMarkers, function (i, mileMarker) {
-      var location = new google.maps.LatLng(mileMarker.loc[1], mileMarker.loc[0]);
-      var options = {
+    mileMarkers.forEach(function (mileMarker) {
+      const location = new google.maps.LatLng(mileMarker.loc[1], mileMarker.loc[0]);
+      const options = {
         position: location,
         draggable: false,
         raiseOnDrag: false,
@@ -71,21 +69,21 @@ define(["q", "trailmaps", "google_maps_api", "markerwithlabel"], function (Q, tr
         labelClass: "milemarker_text",
         icon: icon
       };
-      var newMileMarker = new MarkerWithLabel(options);
+      const newMileMarker = new MarkerWithLabel(options);
       mileMarkerCollection.push(newMileMarker);
     });
   }
 
   function getCenter() {
-    var center = googleMap.getCenter();
+    const center = googleMap.getCenter();
     return new trailmaps.Location(center.lat(), center.lng());
   }
 
   function getBounds() {
-    var bounds = googleMap.getBounds();
-    var center = bounds.getCenter();
-    var ne = bounds.getNorthEast();
-    var sw = bounds.getSouthWest();
+    const bounds = googleMap.getBounds();
+    const center = bounds.getCenter();
+    const ne = bounds.getNorthEast();
+    const sw = bounds.getSouthWest();
     return new trailmaps.Rectangle(
       new trailmaps.Location(center.lat(), center.lng()),
       ne.lng() - sw.lng(),
@@ -98,7 +96,7 @@ define(["q", "trailmaps", "google_maps_api", "markerwithlabel"], function (Q, tr
   }
 
   function getCenterAndZoom() {
-    var mapCenter = googleMap.getCenter();
+    const mapCenter = googleMap.getCenter();
     return {
       center: {
         latitude: mapCenter.lat(),
@@ -109,7 +107,7 @@ define(["q", "trailmaps", "google_maps_api", "markerwithlabel"], function (Q, tr
   }
 
   function setCenterAndZoom(options) {
-    var mapCenter = new google.maps.LatLng(options.center.latitude, options.center.longitude);
+    const mapCenter = new google.maps.LatLng(options.center.latitude, options.center.longitude);
     googleMap.setCenter(mapCenter);
     googleMap.setZoom(options.zoom);
   }

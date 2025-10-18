@@ -9,6 +9,6 @@ div.modal.fade(id="createWaypointDialog", tabindex="-1")
         form.horizontal-form
           div.form-group
             div.input-group
-              input.form-control(id="newWaypointName", type="text", data-bind="value: waypointName, hasfocus: true,", autocomplete='off', placeholder="Waypoint name...")
+              input.form-control(id="newWaypointName", type="text", autocomplete='off', placeholder="Waypoint name...")
               span.input-group-btn
-                button.btn.btn-primary(type="submit", data-bind="click: $root.create") Create
+                button.btn.btn-primary(type="submit") Create
