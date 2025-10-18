@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "applicationinsights": "^1.3.0",
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.3",
     "coffeescript": "^2.7.0",
-    "express": "^4.16.4",
+    "express": "^4.21.2",
     "express-ai": "^0.6.0",
     "less-middleware": "^3.1.0",
     "method-override": "^3.0.0",
