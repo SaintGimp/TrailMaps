@@ -12,3 +12,4 @@
 - Use semicolons at the end of each statement.
 - Use double quotes for strings.
 - Use functional patterns where possible.
+- Avoid the use of emojis in code files, code comments in files, or documentation files unless specifically requested to use them.

@@ -1,6 +1,6 @@
 /*global define: false*/
 
-define(["jquery", "trailmaps"], function ($, trailmaps) {
+define(["trailmaps"], function (trailmaps) {
   let activeMap;
   const defaultCenter = new trailmaps.Location(
     trailmaps.configuration.defaultLatitude,
@@ -37,7 +37,7 @@ define(["jquery", "trailmaps"], function ($, trailmaps) {
         if (!self.control) {
           requireFunc([moduleName], function (createdControl) {
             self.control = createdControl;
-            const container = $("#" + containerName)[0];
+            const container = document.getElementById(containerName);
             self.control
               .initialize(container, currentContainerView.center, currentContainerView.zoom, onViewChanged)
               .then(function () {
@@ -128,10 +128,15 @@ define(["jquery", "trailmaps"], function ($, trailmaps) {
     const trailUrl = "/api/trails/pct" + buildUrlParameters(trackBounds);
     trailDataZoomLevel = currentContainerView.zoom;
 
-    $.getJSON(trailUrl, null, function (data) {
-      currentTrailData = data;
-      displayTrail();
-    });
+    fetch(trailUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        currentTrailData = data;
+        displayTrail();
+      })
+      .catch((error) => {
+        console.error("Error loading trail data:", error);
+      });
   }
 
   function buildUrlParameters(trackBounds) {

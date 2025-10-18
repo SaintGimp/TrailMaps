@@ -66,6 +66,9 @@ define("history", function () {
   return window.history;
 });
 
+// jQuery is loaded ONLY for Bootstrap 3 and Twitter Typeahead compatibility
+// Most application code now uses vanilla JavaScript
+// jQuery will be fully removed in Phase 2.3 (Bootstrap upgrade) and Phase 2.4 (Typeahead replacement)
 require([
   "jquery",
   "bootstrap",
@@ -125,28 +128,32 @@ require([
     }
   }
 
-  // Setup typeahead
-  $("#searchBox")
-    .typeahead(
-      {
-        hint: true,
-        highlight: true,
-        minLength: 3
-      },
-      {
-        name: "waypoints",
-        source: navbarModel.waypointTypeaheadSource,
-        displayKey: function (value) {
-          return value;
+  // Setup typeahead (requires jQuery for now - will be replaced in Phase 2.4)
+  const searchBox = document.getElementById("searchBox");
+  if (searchBox && $) {
+    $(searchBox)
+      .typeahead(
+        {
+          hint: true,
+          highlight: true,
+          minLength: 3
+        },
+        {
+          name: "waypoints",
+          source: navbarModel.waypointTypeaheadSource,
+          displayKey: function (value) {
+            return value;
+          }
         }
-      }
-    )
-    .bind("typeahead:selected", navbarModel.typeAheadSelected)
-    .keydown(function (event) {
+      )
+      .bind("typeahead:selected", navbarModel.typeAheadSelected);
+
+    searchBox.addEventListener("keydown", function (event) {
       if (event.keyCode === 13) {
         navbarModel.search();
       }
     });
+  }
 
   navbarModel.initializeBrowserHistory();
   window.onpopstate = function (event) {

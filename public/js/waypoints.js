@@ -1,3 +1,5 @@
+// jQuery is loaded ONLY for Bootstrap 3 compatibility
+// Will be removed in Phase 2.3 (Bootstrap upgrade)
 requirejs.config({
   baseUrl: "/js",
   paths: {
