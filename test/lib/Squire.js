@@ -7,7 +7,7 @@ define(function() {
   var toString = Object.prototype.toString;
   
   var isArray = function(arr) {
-    return toString.call(arr) === '[object Array]';
+    return toString.call(arr) === "[object Array]";
   };
   
   var indexOf = function(arr, search) {
@@ -68,7 +68,7 @@ define(function() {
   var idCounter = 0;
   var uniqueId = function(prefix) {
     var id = idCounter++;
-    return 'context' + id;
+    return "context" + id;
   };
 
   var Squire = function() {
@@ -96,18 +96,18 @@ define(function() {
     this.id = uniqueId();
 
     // Default the context
-    if (typeof context === 'undefined') {
-      context = '_'; // Default require.js context
+    if (typeof context === "undefined") {
+      context = "_"; // Default require.js context
     }
 
     context = getContext(context);
 
     if ( ! context) {
-      throw new Error('This context has not been created!');
+      throw new Error("This context has not been created!");
     }
 
     each(context.config, function(property, key) {
-      if (key !== 'deps') {
+      if (key !== "deps") {
         configuration[key] = property;
       }
     });
@@ -119,7 +119,7 @@ define(function() {
 
   Squire.prototype.mock = function(path, mock) {
     var alias;
-    if (typeof path === 'object') {
+    if (typeof path === "object") {
       each(path, function(alias, key) {
         this.mock(key, alias);
       }, this);
@@ -131,7 +131,7 @@ define(function() {
   };
 
   Squire.prototype.store = function(path) {
-    if (path && typeof path === 'string') {
+    if (path && typeof path === "string") {
       this._store.push(path);
     } else if(path && isArray(path)) {
       each(path, function(pathToStore) {
@@ -142,7 +142,7 @@ define(function() {
   };
 
   Squire.prototype.require = function(dependencies, callback, errback) {
-    var magicModuleName = 'mocks';
+    var magicModuleName = "mocks";
     var self = this;
     var path, magicModuleLocation;
 
@@ -183,7 +183,7 @@ define(function() {
   Squire.prototype.clean = function(mock) {
     var path;
 
-    if (mock && typeof mock === 'string') {
+    if (mock && typeof mock === "string") {
       undef(getContext(this.id), mock);
       delete this.mocks[mock];
     } else if(mock && isArray(mock)) {

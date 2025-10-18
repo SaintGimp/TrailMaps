@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient } = require("mongodb");
 
 function getMongoUrl() {
   if (process.env.MONGO_URI) {
@@ -12,15 +12,15 @@ function getMongoUrl() {
 
 async function getDb() {
   console.log("Creating new connection...");
-  client = new MongoClient(getMongoUrl());
+  var client = new MongoClient(getMongoUrl());
   await client.connect();
 
-  return client.db('trailmaps');
+  return client.db("trailmaps");
 }
 
 exports.collection = async function(name) {
   var db = await getDb();
-  return db.collection(name)
+  return db.collection(name);
 };
 
 exports.collections = async function() {
