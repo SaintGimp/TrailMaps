@@ -1,9 +1,11 @@
 var fs = require("fs"),
+  { promisify } = require("util"),
   xml2js = require("xml2js"),
-  Q = require("q"),
   dataService = require("../domain/dataService.js");
 
 var parser = new xml2js.Parser();
+var readFileAsync = promisify(fs.readFile);
+var parseStringAsync = promisify(parser.parseString.bind(parser));
 
 var fileNames = [
   "data/pct/ca_state_gps/CA_Sec_A_waypoints.gpx",
@@ -46,7 +48,7 @@ Array.prototype.append = function(array)
 
 function readFile(fileName) {
   console.log("Reading " + fileName);
-  return Q.nfcall(fs.readFile, __dirname + "/../" + fileName, "utf8");
+  return readFileAsync(__dirname + "/../" + fileName, "utf8");
 }
 
 function cleanupName(name) {
@@ -75,7 +77,7 @@ async function getSequenceNumber(location) {
 async function parseData(waypointXml) {
   console.log("Parsing data");
 
-  var waypointJson = await Q.ninvoke(parser, "parseString", waypointXml);
+  var waypointJson = await parseStringAsync(waypointXml);
   console.log("Converting waypoints");
   var filteredWaypointJson = waypointJson.gpx.wpt.filter(function(waypoint) {
     return !waypoint.name[0].match(/^(?:\d{4}|\d{4}-\d)$/) &&

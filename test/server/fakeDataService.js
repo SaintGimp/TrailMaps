@@ -1,5 +1,3 @@
-var Q = require("q");
-
 var lastCall;
 
 exports.getLastCall = function() { return lastCall; };
@@ -23,11 +21,10 @@ exports.findArray = function(collectionName, searchTerms, projection, sortOrder)
       { name: "bar", loc: [3, 4] }
     ];
 
-    return new Q(dummyData);
+    return Promise.resolve(dummyData);
   } else {
-    return Q.fcall(function() {
+    return Promise.reject(new Error("findArray Oops")).finally(() => {
       exports.shouldErrorOnNextCall = false;
-      throw new Error("findArray Oops");
     });
   }
 };
@@ -48,11 +45,10 @@ exports.findOne = function(collectionName, searchTerms, projection, sortOrder) {
       seq: 4321
     };
 
-    return new Q(dummyData);
+    return Promise.resolve(dummyData);
   } else {
-    return Q.fcall(function() {
+    return Promise.reject(new Error("findOne Oops")).finally(() => {
       exports.shouldErrorOnNextCall = false;
-      throw new Error("findOne Oops");
     });
   }
 };
@@ -66,15 +62,14 @@ exports.update = function(collectionName, searchTerms, updateOperation) {
 
   if (exports.shouldErrorOnNextCall)
   {
-    return Q.fcall(function() {
+    return Promise.reject(new Error("update Oops")).finally(() => {
       exports.shouldErrorOnNextCall = false;
-      throw new Error("update Oops");
     });
   } else if (exports.shouldFailOnNextCall) {
     exports.shouldFailOnNextCall = false;
-    return new Q({ result: { ok: 0 } });
+    return Promise.resolve({ result: { ok: 0 } });
   } else {
-    return new Q({ result: { ok: 1 } });
+    return Promise.resolve({ result: { ok: 1 } });
   }
 };
 
@@ -86,11 +81,10 @@ exports.remove = function(collectionName, searchTerms) {
 
   if (!exports.shouldErrorOnNextCall)
   {
-    return new Q();
+    return Promise.resolve();
   } else {
-    return Q.fcall(function() {
+    return Promise.reject(new Error("remove Oops")).finally(() => {
       exports.shouldErrorOnNextCall = false;
-      throw new Error("remove Oops");
     });
   }
 };
@@ -103,14 +97,13 @@ exports.insert = function(collectionName, insertOperation) {
 
   if (exports.shouldErrorOnNextCall)
   {
-    return Q.fcall(function() {
+    return Promise.reject(new Error("insert Oops")).finally(() => {
       exports.shouldErrorOnNextCall = false;
-      throw new Error("insert Oops");
     });
   } else if (exports.shouldFailOnNextCall) {
     exports.shouldFailOnNextCall = false;
-    return new Q({ result: { ok: 0 } });
+    return Promise.resolve({ result: { ok: 0 } });
   } else {
-    return new Q({ result: { ok: 1 } });
+    return Promise.resolve({ result: { ok: 1 } });
   }
 };

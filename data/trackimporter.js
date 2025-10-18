@@ -1,9 +1,11 @@
 var fs = require("fs"),
+  { promisify } = require("util"),
   xml2js = require("xml2js"),
-  Q = require("q"),
   dataService = require("../domain/dataService.js");
 
 var parser = new xml2js.Parser();
+var readFileAsync = promisify(fs.readFile);
+var parseStringAsync = promisify(parser.parseString.bind(parser));
 
 // TODO: now that the 2015 dataset doesn"t have the "extras"
 // files, we could probably just process all *.gpx files
@@ -49,13 +51,13 @@ Array.prototype.append = function(array)
 
 function readFile(fileName) {
   console.log("Reading " + fileName);
-  return Q.nfcall(fs.readFile, __dirname + "/../" + fileName, "utf8");
+  return readFileAsync(__dirname + "/../" + fileName, "utf8");
 }
 
 async function parseData(trackXml) {
   console.log("Parsing data");
 
-  var trackJson = await Q.ninvoke(parser, "parseString", trackXml);
+  var trackJson = await parseStringAsync(trackXml);
 
   console.log("Converting " + trackJson.gpx.trk[0].name);
   return trackJson.gpx.trk[0].trkseg[0].trkpt.map(function(point) {
