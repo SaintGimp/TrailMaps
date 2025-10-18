@@ -14,3 +14,9 @@ test/lib
 
 # Legacy files
 typings
+
+# Data files (non-standard JSON format)
+data/**/*.json
+
+# Old config files
+test/client/.eslintrc.json
