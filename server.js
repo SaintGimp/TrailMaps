@@ -7,7 +7,8 @@
 var express = require("express"),
   app = exports.app = express(),
   path = require("path"),
-  bodyParser = require("body-parser");
+  bodyParser = require("body-parser"),
+  dataService = require("./domain/dataService.js");
 
 // Configuration
 
@@ -30,8 +31,33 @@ app.use(function(req, res) {
   res.sendStatus(404);
 });
 
-// Start server
-app.listen(app.get("port"), app.get("host"), function(){
-  console.log("Node server version %s", process.version);
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+// Initialize MongoDB connection pool and start server
+async function startServer() {
+  try {
+    await dataService.connect();
+    console.log("MongoDB connection pool established");
+
+    app.listen(app.get("port"), app.get("host"), function(){
+      console.log("Node server version %s", process.version);
+      console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+    });
+
+    // Graceful shutdown
+    process.on("SIGINT", async () => {
+      console.log("\nShutting down gracefully...");
+      await dataService.close();
+      process.exit(0);
+    });
+
+    process.on("SIGTERM", async () => {
+      console.log("\nShutting down gracefully...");
+      await dataService.close();
+      process.exit(0);
+    });
+  } catch (error) {
+    console.error("Failed to connect to MongoDB:", error);
+    process.exit(1);
+  }
+}
+
+startServer();

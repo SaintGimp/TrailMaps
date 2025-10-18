@@ -1,5 +1,9 @@
 const { MongoClient } = require("mongodb");
 
+// Module-level variables for connection pool
+let client = null;
+let db = null;
+
 function getMongoUrl() {
   if (process.env.MONGO_URI) {
     console.log("Connecting to " + process.env.MONGO_URI);
@@ -10,22 +14,60 @@ function getMongoUrl() {
   }
 }
 
-async function getDb() {
-  console.log("Creating new connection...");
-  var client = new MongoClient(getMongoUrl());
-  await client.connect();
+/**
+ * Initialize MongoDB connection pool
+ * Should be called once at application startup
+ */
+exports.connect = async function() {
+  if (client) {
+    return db;
+  }
 
-  return client.db("trailmaps");
+  const url = getMongoUrl();
+  client = new MongoClient(url, {
+    maxPoolSize: 10,
+    minPoolSize: 2,
+    maxIdleTimeMS: 30000,
+    serverSelectionTimeoutMS: 5000,
+    socketTimeoutMS: 45000,
+  });
+
+  await client.connect();
+  db = client.db("trailmaps");
+  
+  return db;
+};
+
+/**
+ * Close MongoDB connection pool
+ * Should be called during graceful shutdown
+ */
+exports.close = async function() {
+  if (client) {
+    await client.close();
+    client = null;
+    db = null;
+    console.log("MongoDB connection pool closed");
+  }
+};
+
+/**
+ * Get database instance
+ * Throws error if not connected
+ */
+function getDb() {
+  if (!db) {
+    throw new Error("Database not initialized. Call connect() first.");
+  }
+  return db;
 }
 
 exports.collection = async function(name) {
-  var db = await getDb();
-  return db.collection(name);
+  return getDb().collection(name);
 };
 
 exports.collections = async function() {
-  var db = await getDb();
-  return db.collections();
+  return getDb().collections();
 };
 
 exports.findArray = async function(collectionName, searchTerms, projection, sort) {
@@ -40,12 +82,12 @@ exports.findOne = async function(collectionName, searchTerms, projection) {
 
 exports.update = async function(collectionName, searchTerms, updateOperation) {
   var collection = await exports.collection(collectionName);
-  return await collection.update(searchTerms, updateOperation, { w: 1 });
+  return await collection.updateOne(searchTerms, updateOperation, { w: 1 });
 };
 
 exports.remove = async function(collectionName, searchTerms) {
   var collection = await exports.collection(collectionName);
-  return await collection.remove(searchTerms);
+  return await collection.deleteMany(searchTerms);
 };
 
 exports.insert = async function(collectionName, insertOperation) {
