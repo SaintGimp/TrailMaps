@@ -2,7 +2,7 @@
 node_modules
 npm-shrinkwrap.json
 
-# Build output
+# Libraries
 public/js/lib
 public/bootstrap
 
@@ -18,5 +18,3 @@ typings
 # Data files (non-standard JSON format)
 data/**/*.json
 
-# Old config files
-test/client/.eslintrc.json
