@@ -14,7 +14,7 @@ var express = require("express"),
 app.set("port", process.env.VMC_APP_PORT || process.env.PORT || 3000);
 app.set("host", process.env.VCAP_APP_HOST || process.env.HOST || "localhost");
 app.set("views", __dirname + "/views");
-app.set("view engine", "jade");
+app.set("view engine", "pug");
 app.use(require("serve-favicon")("public/images/favicon.ico"));
 app.use(require("morgan")("dev"));
 app.use(bodyParser.json());
