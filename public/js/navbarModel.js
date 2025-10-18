@@ -1,22 +1,21 @@
 /*global define: false*/
 /*global trailMaps: false*/
 
-define(["jquery", "mapcontainer", "knockout", "history"], function($, mapContainer, ko, history) {
-  return function() {
+define(["jquery", "mapcontainer", "knockout", "history"], function ($, mapContainer, ko, history) {
+  return function () {
     var self = this;
 
     self.activeMapName = ko.observable(trailMaps.configuration.defaultMapName.toLowerCase());
-    mapContainer.addViewChangedListener(function() {
+    mapContainer.addViewChangedListener(function () {
       replaceCurrentHistoryNode();
     });
 
-    self.onPillClick = function(data, event, done) {
+    self.onPillClick = function (data, event, done) {
       var href = event.target.href;
       var mapName = href.substr(href.lastIndexOf("/") + 1, href.length).toLowerCase();
 
-      if (mapName !== self.activeMapName())
-      {
-        showMap(mapName).done(function() {
+      if (mapName !== self.activeMapName()) {
+        showMap(mapName).done(function () {
           replaceCurrentHistoryNode();
           if (done) {
             done();
@@ -27,9 +26,9 @@ define(["jquery", "mapcontainer", "knockout", "history"], function($, mapContain
       return false;
     };
 
-    self.onEarthClick = function() {
+    self.onEarthClick = function () {
       var url = "https://earth.google.com/web/" + mapContainer.getGoogleEarthUrlFragment();
-      window.open(url, '_blank');
+      window.open(url, "_blank");
 
       return false;
     };
@@ -40,19 +39,19 @@ define(["jquery", "mapcontainer", "knockout", "history"], function($, mapContain
       return mapContainer.showingMap(mapName);
     }
 
-    self.restoreHistoryState = function(options) {
+    self.restoreHistoryState = function (options) {
       showMap(options.mapName).done();
       mapContainer.setCenterAndZoom(options.view);
     };
 
     self.searchText = ko.observable();
 
-    self.typeAheadSelected = function(obj, data) {
+    self.typeAheadSelected = function (obj, data) {
       self.searchText(data);
       self.search();
     };
 
-    self.search = function() {
+    self.search = function () {
       var searchText = self.searchText();
       if (isCoordinates(searchText)) {
         gotoCoordinates(searchText);
@@ -63,7 +62,7 @@ define(["jquery", "mapcontainer", "knockout", "history"], function($, mapContain
       }
     };
 
-    self.waypointTypeaheadSource = function(query, process) {
+    self.waypointTypeaheadSource = function (query, process) {
       if (isWaypoint(query)) {
         var url = "/api/trails/pct/waypoints/typeahead/" + encodeURIComponent(query);
         return $.getJSON(url, null, function (data) {
@@ -72,7 +71,7 @@ define(["jquery", "mapcontainer", "knockout", "history"], function($, mapContain
       }
     };
 
-    self.waypointTypeaheadUpdater = function(item) {
+    self.waypointTypeaheadUpdater = function (item) {
       self.searchText(item);
       self.search();
       return item;
@@ -84,7 +83,7 @@ define(["jquery", "mapcontainer", "knockout", "history"], function($, mapContain
 
     function gotoMileMarker(mileMarker) {
       var url = "/api/trails/pct/milemarkers/" + mileMarker;
-      $.getJSON(url, function(result) {
+      $.getJSON(url, function (result) {
         if (result) {
           changeMapView({
             center: {
@@ -110,7 +109,7 @@ define(["jquery", "mapcontainer", "knockout", "history"], function($, mapContain
 
     function gotoWaypoint(waypoint) {
       var url = "/api/trails/pct/waypoints?name=" + encodeURIComponent(waypoint);
-      $.getJSON(url, function(result) {
+      $.getJSON(url, function (result) {
         if (result && result.length) {
           changeMapView({
             center: {
@@ -141,7 +140,7 @@ define(["jquery", "mapcontainer", "knockout", "history"], function($, mapContain
       return !isCoordinates(text) && !isMileMarker(text);
     }
 
-    self.initializeBrowserHistory = function() {
+    self.initializeBrowserHistory = function () {
       replaceCurrentHistoryNode();
     };
 

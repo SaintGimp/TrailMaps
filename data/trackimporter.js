@@ -44,8 +44,7 @@ var fileNames = [
   "data/pct/wa_state_gps/WA_Sec_L_tracks.gpx"
 ];
 
-Array.prototype.append = function(array)
-{
+Array.prototype.append = function (array) {
   this.push.apply(this, array);
 };
 
@@ -60,9 +59,9 @@ async function parseData(trackXml) {
   var trackJson = await parseStringAsync(trackXml);
 
   console.log("Converting " + trackJson.gpx.trk[0].name);
-  return trackJson.gpx.trk[0].trkseg[0].trkpt.map(function(point) {
+  return trackJson.gpx.trk[0].trkseg[0].trkpt.map(function (point) {
     return {
-      loc: [parseFloat(point.$.lon), parseFloat(point.$.lat)], // MongoDB likes longitude first
+      loc: [parseFloat(point.$.lon), parseFloat(point.$.lat)] // MongoDB likes longitude first
     };
   });
 }
@@ -78,15 +77,15 @@ async function loadTrack() {
   console.log("Loading track files");
   var track = [];
 
-  var loadPromises = fileNames.map(function(fileName) {
+  var loadPromises = fileNames.map(function (fileName) {
     return loadFile(fileName);
   });
   var fileContentSet = await Promise.all(loadPromises);
-  fileContentSet.forEach(function(fileContent) {
+  fileContentSet.forEach(function (fileContent) {
     track.append(fileContent);
   });
 
-  track.forEach(function(point, index) {
+  track.forEach(function (point, index) {
     point.seq = index;
   });
 
@@ -102,11 +101,9 @@ function buildCollections(track) {
   console.log("Building collections");
   var stride = 1;
   var collections = [];
-  for (var detailLevel = 16; detailLevel >= 1; detailLevel--)
-  {
+  for (var detailLevel = 16; detailLevel >= 1; detailLevel--) {
     var collection = new Collection(detailLevel);
-    for (var x = 0; x < track.length; x += stride)
-    {
+    for (var x = 0; x < track.length; x += stride) {
       collection.data.push(track[x]);
     }
     collections.push(collection);
@@ -116,27 +113,26 @@ function buildCollections(track) {
   return collections;
 }
 
-async function writeCollection(collection)
-{
+async function writeCollection(collection) {
   var collectionName = "pct_track" + collection.detailLevel;
   console.log("Writing collection " + collectionName);
 
   var mongoCollection = await dataService.collection(collectionName);
   await mongoCollection.insertMany(collection.data);
-  return await mongoCollection.createIndex({ loc: "2d" }, {w:1});
+  return await mongoCollection.createIndex({ loc: "2d" }, { w: 1 });
 }
 
 async function saveCollections(collections) {
   console.log("Saving collections");
-  
-  var savePromises = collections.map(function(collection) {
+
+  var savePromises = collections.map(function (collection) {
     return writeCollection(collection);
   });
 
   return await Promise.all(savePromises);
 }
 
-exports.import = async function() {
+exports.import = async function () {
   console.log("Importing tracks");
 
   var track = await loadTrack();

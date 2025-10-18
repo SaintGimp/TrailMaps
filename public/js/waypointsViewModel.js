@@ -1,15 +1,15 @@
-define(["jquery", "knockout", "q", "waypointViewModel"], function($, ko, Q, WaypointViewModel) {
-  return function() {
+define(["jquery", "knockout", "q", "waypointViewModel"], function ($, ko, Q, WaypointViewModel) {
+  return function () {
     var self = this;
 
-    self.loadData = function() {
+    self.loadData = function () {
       var deferred = Q.defer();
 
       var url = "/api/trails/pct/waypoints";
-      $.getJSON(url, function(data) {
+      $.getJSON(url, function (data) {
         self.waypoints = ko.observableArray();
 
-        data.forEach(function(element) {
+        data.forEach(function (element) {
           var waypoint = new WaypointViewModel();
           waypoint.fromJS(element);
           self.waypoints.push(waypoint);
@@ -25,9 +25,8 @@ define(["jquery", "knockout", "q", "waypointViewModel"], function($, ko, Q, Wayp
       return deferred.promise;
     };
 
-    self.deleteWaypoint = function(waypoint) {
-      return waypoint.delete()
-      .then(function(success) {
+    self.deleteWaypoint = function (waypoint) {
+      return waypoint.delete().then(function (success) {
         if (success) {
           self.waypoints.remove(waypoint);
         } else {
@@ -38,9 +37,8 @@ define(["jquery", "knockout", "q", "waypointViewModel"], function($, ko, Q, Wayp
 
     self.activeWaypoint = null;
 
-    self.edit = function(waypoint) {
-      if (self.activeWaypoint)
-      {
+    self.edit = function (waypoint) {
+      if (self.activeWaypoint) {
         self.activeWaypoint.cancelEdit();
       }
 
@@ -48,19 +46,19 @@ define(["jquery", "knockout", "q", "waypointViewModel"], function($, ko, Q, Wayp
       waypoint.edit();
     };
 
-    self.confirmEdit = function(waypoint) {
+    self.confirmEdit = function (waypoint) {
       self.activeWaypoint = null;
       waypoint.confirmEdit();
     };
 
-    self.cancelEdit = function(waypoint) {
+    self.cancelEdit = function (waypoint) {
       if (waypoint === self.activeWaypoint) {
         waypoint.cancelEdit();
       }
       self.activeWaypoint = null;
     };
 
-    self.templateName = function(waypoint) {
+    self.templateName = function (waypoint) {
       return waypoint.isEditing() ? "edit-template" : "waypoint-template";
     };
   };

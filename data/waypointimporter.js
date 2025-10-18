@@ -41,8 +41,7 @@ var fileNames = [
   "data/pct/wa_state_gps/WA_Sec_L_waypoints.gpx"
 ];
 
-Array.prototype.append = function(array)
-{
+Array.prototype.append = function (array) {
   this.push.apply(this, array);
 };
 
@@ -60,7 +59,7 @@ function cleanupName(name) {
   name = name.replace(/^Paved, one lane /, "");
 
   var primaryName = name.split(/\. |\.$|, | - | \(| \[| is |\.</, 1)[0].trim();
-  
+
   primaryName = primaryName.replace(/^(Paved |Unpaved |Gravel |Seasonal )/, "");
   primaryName = primaryName.replace(/^Arrive /, "");
   primaryName = primaryName.replace(/Hwy/, "Highway");
@@ -79,8 +78,9 @@ async function parseData(waypointXml) {
 
   var waypointJson = await parseStringAsync(waypointXml);
   console.log("Converting waypoints");
-  var filteredWaypointJson = waypointJson.gpx.wpt.filter(function(waypoint) {
-    return !waypoint.name[0].match(/^(?:\d{4}|\d{4}-\d)$/) &&
+  var filteredWaypointJson = waypointJson.gpx.wpt.filter(function (waypoint) {
+    return (
+      !waypoint.name[0].match(/^(?:\d{4}|\d{4}-\d)$/) &&
       waypoint.desc &&
       !waypoint.desc[0].match(/bivy campsite/i) &&
       !waypoint.desc[0].match(/campsite/i) &&
@@ -125,19 +125,20 @@ async function parseData(waypointXml) {
       !waypoint.desc[0].match(/^Unmarked/) &&
       !waypoint.desc[0].match(/^Unpaved road/) &&
       !waypoint.desc[0].match(/^Water/) &&
-      !waypoint.desc[0].match(/^Wire/);
+      !waypoint.desc[0].match(/^Wire/)
+    );
   });
 
-  var waypoints = filteredWaypointJson.map(function(waypoint) {
+  var waypoints = filteredWaypointJson.map(function (waypoint) {
     return {
       name: cleanupName(waypoint.desc[0]),
       loc: [parseFloat(waypoint.$.lon), parseFloat(waypoint.$.lat)], // MongoDB likes longitude first
       halfmileName: waypoint.name[0],
-      halfmileDescription: waypoint.desc[0],
+      halfmileDescription: waypoint.desc[0]
     };
   });
 
-  var sequencePromises = waypoints.map(async function(waypoint) {
+  var sequencePromises = waypoints.map(async function (waypoint) {
     var sequenceNumber = await getSequenceNumber(waypoint.loc);
     waypoint.seq = sequenceNumber;
     return waypoint;
@@ -157,29 +158,28 @@ async function loadWaypoints() {
   console.log("Loading waypoint files");
   var waypoints = [];
 
-  var loadPromises = fileNames.map(function(fileName) {
+  var loadPromises = fileNames.map(function (fileName) {
     return loadFile(fileName);
   });
 
   var fileContentSet = await Promise.all(loadPromises);
-  fileContentSet.forEach(function(fileContent) {
+  fileContentSet.forEach(function (fileContent) {
     waypoints.append(fileContent);
   });
 
   return waypoints;
 }
 
-async function saveCollection(collection)
-{
+async function saveCollection(collection) {
   var collectionName = "pct_waypoints";
   console.log("Saving collection " + collectionName);
 
   var mongoCollection = await dataService.collection(collectionName);
   await mongoCollection.insertMany(collection);
-  return await mongoCollection.createIndex({ loc: "2d" }, {w:1});
+  return await mongoCollection.createIndex({ loc: "2d" }, { w: 1 });
 }
 
-exports.import = async function() {
+exports.import = async function () {
   console.log("Importing waypoints");
 
   var waypoints = await loadWaypoints();

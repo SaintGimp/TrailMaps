@@ -1,10 +1,10 @@
-define(["jquery", "knockout", "q"], function($, ko, Q) {
-  return function() {
+define(["jquery", "knockout", "q"], function ($, ko, Q) {
+  return function () {
     var self = this;
 
     self.name = ko.observable();
 
-    self.fromJS = function(data) {
+    self.fromJS = function (data) {
       self.id = data._id;
       self.name(data.name);
       self.halfmileDescription = data.halfmileDescription;
@@ -16,12 +16,12 @@ define(["jquery", "knockout", "q"], function($, ko, Q) {
       self.link = "maps/bing?lat=" + self.latitude.toFixed(5) + "&lon=" + self.longitude.toFixed(5) + "&zoom=15";
     };
 
-    self.toJS = function() {
+    self.toJS = function () {
       return {
         name: self.name(),
         loc: [self.longitude, self.latitude],
         seq: self.seq,
-        _id: self.id,
+        _id: self.id
       };
     };
 
@@ -29,12 +29,12 @@ define(["jquery", "knockout", "q"], function($, ko, Q) {
 
     self.originalValues = null;
 
-    self.edit = function() {
+    self.edit = function () {
       self.originalValues = self.toJS();
       self.isEditing(true);
     };
 
-    self.confirmEdit = function() {
+    self.confirmEdit = function () {
       var deferred = Q.defer();
 
       $.ajax({
@@ -43,11 +43,11 @@ define(["jquery", "knockout", "q"], function($, ko, Q) {
         data: JSON.stringify(self.toJS()),
         processData: false,
         contentType: "application/json; charset=utf-8",
-        success: function() {
+        success: function () {
           self.isEditing(false);
           deferred.resolve(true);
         },
-        error: function() {
+        error: function () {
           deferred.resolve(false);
         }
       });
@@ -55,21 +55,21 @@ define(["jquery", "knockout", "q"], function($, ko, Q) {
       return deferred.promise;
     };
 
-    self.cancelEdit = function() {
+    self.cancelEdit = function () {
       self.fromJS(self.originalValues);
       self.isEditing(false);
     };
 
-    self.delete = function() {
+    self.delete = function () {
       var deferred = Q.defer();
 
       $.ajax({
         type: "DELETE",
         url: "/api/trails/pct/waypoints/" + self.id,
-        success: function() {
+        success: function () {
           deferred.resolve(true);
         },
-        error: function() {
+        error: function () {
           deferred.resolve(false);
         }
       });

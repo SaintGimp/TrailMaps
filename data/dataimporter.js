@@ -6,11 +6,11 @@ async function dropCollections() {
   console.log("Dropping collections");
 
   var collections = await dataService.collections();
-  var collectionsToDrop = collections.filter(function(collection) {
+  var collectionsToDrop = collections.filter(function (collection) {
     return collection.collectionName.match(/.*track\d+$/) || collection.collectionName.match(/.*milemarkers\d+$/);
   });
 
-  var dropPromises = collectionsToDrop.map(function(collection) {
+  var dropPromises = collectionsToDrop.map(function (collection) {
     console.log("Dropping " + collection.collectionName);
     return collection.drop();
   });
@@ -18,10 +18,9 @@ async function dropCollections() {
   return await Promise.all(dropPromises);
 }
 
-exports.import = async function() {
+exports.import = async function () {
   console.log("Importing trail data");
 
   await dropCollections();
   await Promise.all([trackImporter.import(), mileMarkerImporter.import()]);
 };
-

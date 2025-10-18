@@ -1,4 +1,4 @@
-define(["q", "trailmaps"], function(Q, trailmaps) {
+define(["q", "trailmaps"], function (Q, trailmaps) {
   function FakeMap() {
     var self = this;
     self.container = undefined;
@@ -8,7 +8,7 @@ define(["q", "trailmaps"], function(Q, trailmaps) {
     self.trackData = undefined;
     self.mileMarkerData = undefined;
 
-    self.initialize = function(container, center, zoomLevel, onViewChanged) {
+    self.initialize = function (container, center, zoomLevel, onViewChanged) {
       self.container = container;
       self.center = center;
       self.zoom = zoomLevel;
@@ -17,34 +17,34 @@ define(["q", "trailmaps"], function(Q, trailmaps) {
       return new Q();
     };
 
-    self.displayTrack = function(track) {
+    self.displayTrack = function (track) {
       self.trackData = track;
     };
 
-    self.displayMileMarkers = function(mileMarkers) {
+    self.displayMileMarkers = function (mileMarkers) {
       self.mileMarkerData = mileMarkers;
     };
 
-    self.getCenter = function() {
+    self.getCenter = function () {
       return self.center;
     };
 
-    self.getBounds = function() {
+    self.getBounds = function () {
       return new trailmaps.Rectangle(self.center, 100 / self.zoom, 100 / self.zoom);
     };
 
-    self.getZoom = function() {
+    self.getZoom = function () {
       return self.zoom;
     };
 
-    self.getCenterAndZoom = function() {
+    self.getCenterAndZoom = function () {
       return {
         center: self.center,
         zoom: self.zoom
       };
     };
 
-    self.setCenterAndZoom = function(options) {
+    self.setCenterAndZoom = function (options) {
       self.center = options.center;
       self.zoom = options.zoom;
       self.viewChangedHandler();

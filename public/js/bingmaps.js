@@ -1,4 +1,4 @@
-define(["q", "trailmaps", "bing_maps_api"], function(Q, trailmaps, Microsoft) {
+define(["q", "trailmaps", "bing_maps_api"], function (Q, trailmaps, Microsoft) {
   var bingMap;
   var trackLayer;
   var previousPolyLine;
@@ -6,8 +6,8 @@ define(["q", "trailmaps", "bing_maps_api"], function(Q, trailmaps, Microsoft) {
 
   var mileMarkerContent =
     "<svg xmlns='http://www.w3.org/2000/svg' width='75' height='14'>" +
-      "<polygon points='2,7 7,2 12,7 7,12' style='fill:red;stroke:blue;stroke-width:4' />" +
-      "<text x='22' y='12' fill='white' style='font-size:14;font-family:arial;font-weight:bold'>%MILE%</text>" +
+    "<polygon points='2,7 7,2 12,7 7,12' style='fill:red;stroke:blue;stroke-width:4' />" +
+    "<text x='22' y='12' fill='white' style='font-size:14;font-family:arial;font-weight:bold'>%MILE%</text>" +
     "</svg>";
 
   function initialize(container, center, zoomLevel, onViewChanged) {
@@ -23,7 +23,7 @@ define(["q", "trailmaps", "bing_maps_api"], function(Q, trailmaps, Microsoft) {
       enableSearchLogo: false,
       inertiaIntensity: 0.5,
       tileBuffer: 1,
-      showBreadcrumb: false,
+      showBreadcrumb: false
     });
 
     Microsoft.Maps.Events.addHandler(bingMap, "viewchangeend", onViewChanged);
@@ -42,7 +42,7 @@ define(["q", "trailmaps", "bing_maps_api"], function(Q, trailmaps, Microsoft) {
 
     var polyLine = new Microsoft.Maps.Polyline(vertices, {
       strokeColor: "red",
-      strokeThickness: 3,
+      strokeThickness: 3
     });
 
     // First add new track, then remove old track
@@ -59,7 +59,7 @@ define(["q", "trailmaps", "bing_maps_api"], function(Q, trailmaps, Microsoft) {
       var location = new Microsoft.Maps.Location(mileMarker.loc[1], mileMarker.loc[0]);
       var options = {
         icon: mileMarkerContent.replace("%MILE%", mileMarker.mile),
-        anchor: new Microsoft.Maps.Point(7, 7),
+        anchor: new Microsoft.Maps.Point(7, 7)
       };
       newMileMarkerLayer.add(new Microsoft.Maps.Pushpin(location, options));
     });
@@ -78,7 +78,11 @@ define(["q", "trailmaps", "bing_maps_api"], function(Q, trailmaps, Microsoft) {
 
   function getBounds() {
     var bounds = bingMap.getBounds();
-    return new trailmaps.Rectangle(new trailmaps.Location(bounds.center.latitude, bounds.center.longitude), bounds.width, bounds.height);
+    return new trailmaps.Rectangle(
+      new trailmaps.Location(bounds.center.latitude, bounds.center.longitude),
+      bounds.width,
+      bounds.height
+    );
   }
 
   function getZoom() {

@@ -1,0 +1,16 @@
+# Dependencies
+node_modules
+npm-shrinkwrap.json
+
+# Build output
+public/js/lib
+public/bootstrap
+
+# Test dependencies
+test/lib
+
+# Logs
+*.log
+
+# Legacy files
+typings

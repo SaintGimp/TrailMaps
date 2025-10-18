@@ -43,8 +43,7 @@ var fileNames = [
 ];
 
 // TODO: is this still necessary or is it built in now?
-Array.prototype.append = function(array)
-{
+Array.prototype.append = function (array) {
   this.push.apply(this, array);
 };
 
@@ -59,10 +58,10 @@ async function parseData(waypointXml) {
   var waypointJson = await parseStringAsync(waypointXml);
 
   console.log("Converting mile markers");
-  var markerJson = waypointJson.gpx.wpt.filter(function(waypoint) {
+  var markerJson = waypointJson.gpx.wpt.filter(function (waypoint) {
     return waypoint.name[0].match(/^(?:\d{4}|\d{4}-\d)$/);
   });
-  var newMarkers = markerJson.map(function(marker) {
+  var newMarkers = markerJson.map(function (marker) {
     var name = marker.name[0].replace("-", ".");
     return {
       loc: [parseFloat(marker.$.lon), parseFloat(marker.$.lat)], // MongoDB likes longitude first
@@ -85,16 +84,16 @@ async function loadMileMarkers() {
   console.log("Loading mile marker files");
   var mileMarkers = [];
 
-  var loadingPromises = fileNames.map(function(fileName) {
+  var loadingPromises = fileNames.map(function (fileName) {
     return loadFile(fileName);
   });
   var fileContentSet = await Promise.all(loadingPromises);
 
-  fileContentSet.forEach(function(fileContent) {
+  fileContentSet.forEach(function (fileContent) {
     mileMarkers.append(fileContent);
   });
 
-  var uniqueMarkers = _.uniq(mileMarkers, true, function(marker) {
+  var uniqueMarkers = _.uniq(mileMarkers, true, function (marker) {
     return marker.mile;
   });
 
@@ -111,11 +110,9 @@ function buildCollections(mileMarkers) {
 
   var stride = 1;
   var collections = [];
-  for (var detailLevel = 14; detailLevel >= 1; detailLevel--)
-  {
+  for (var detailLevel = 14; detailLevel >= 1; detailLevel--) {
     var collection = new Collection(detailLevel);
-    for (var x = 0; x < mileMarkers.length; x += stride)
-    {
+    for (var x = 0; x < mileMarkers.length; x += stride) {
       collection.data.push(mileMarkers[x]);
     }
     collections.push(collection);
@@ -125,8 +122,7 @@ function buildCollections(mileMarkers) {
   return collections;
 }
 
-async function writeCollection(collection)
-{
+async function writeCollection(collection) {
   var collectionName = "pct_milemarkers" + collection.detailLevel;
   console.log("Writing collection " + collectionName);
 
@@ -138,14 +134,14 @@ async function writeCollection(collection)
 
 async function saveCollections(collections) {
   console.log("Saving collections");
-  var savePromises = collections.map(function(collection) {
+  var savePromises = collections.map(function (collection) {
     return writeCollection(collection);
   });
 
   return await Promise.all(savePromises);
 }
 
-exports.import = async function() {
+exports.import = async function () {
   console.log("Importing mile markers");
 
   var mileMarkers = await loadMileMarkers();

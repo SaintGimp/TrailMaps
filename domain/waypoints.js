@@ -2,8 +2,7 @@ var ObjectId = require("mongodb").ObjectId;
 
 var dataService;
 
-module.exports = function(dataServiceToUse)
-{
+module.exports = function (dataServiceToUse) {
   dataService = dataServiceToUse;
   return exports;
 };
@@ -15,16 +14,16 @@ function makeCollectionName(trailName) {
 function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
 }
-exports.getWaypoints = async function(options) {
+exports.getWaypoints = async function (options) {
   var collectionName = makeCollectionName(options.trailName);
-  var searchTerms = { };
+  var searchTerms = {};
   var projection = { _id: 1, name: 1, halfmileDescription: 1, loc: 1, seq: 1 };
   var sortOrder = { seq: 1 };
 
   return await dataService.findArray(collectionName, searchTerms, projection, sortOrder);
 };
 
-exports.findByName = async function(options) {
+exports.findByName = async function (options) {
   var collectionName = makeCollectionName(options.trailName);
   var searchTerms = { name: new RegExp("^" + escapeRegExp(options.name), "i") };
   var projection = { _id: 0, name: 1, loc: 1 };
@@ -32,7 +31,7 @@ exports.findByName = async function(options) {
   return await dataService.findOne(collectionName, searchTerms, projection);
 };
 
-exports.getTypeaheadList = async function(options) {
+exports.getTypeaheadList = async function (options) {
   var collectionName = makeCollectionName(options.trailName);
   var searchTerms = { name: new RegExp(options.text, "i") };
   var projection = { name: 1 };
@@ -44,7 +43,7 @@ exports.getTypeaheadList = async function(options) {
   });
 };
 
-exports.updateById = async function(options) {
+exports.updateById = async function (options) {
   var collectionName = makeCollectionName(options.trailName);
   var searchTerms = { _id: new ObjectId(options.id) };
   var updateOperation = { $set: { name: options.name } };
@@ -53,14 +52,14 @@ exports.updateById = async function(options) {
   return commandResult.result.ok === 1;
 };
 
-exports.deleteById = async function(options) {
+exports.deleteById = async function (options) {
   var collectionName = makeCollectionName(options.trailName);
   var searchTerms = { _id: new ObjectId(options.id) };
 
   return await dataService.remove(collectionName, searchTerms);
 };
 
-exports.create = async function(options) {
+exports.create = async function (options) {
   var collectionName = makeCollectionName(options.trailName);
   var waypoint = options.waypoint;
   waypoint.seq = await getSequenceNumber(waypoint.loc);

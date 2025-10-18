@@ -5,7 +5,7 @@
  */
 
 var express = require("express"),
-  app = exports.app = express(),
+  app = (exports.app = express()),
   path = require("path"),
   bodyParser = require("body-parser"),
   dataService = require("./domain/dataService.js");
@@ -21,13 +21,13 @@ app.use(require("morgan")("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(require("method-override")());
-app.use(require("less-middleware")(path.join(__dirname, "public"), {}, {}, {compress: true }));
+app.use(require("less-middleware")(path.join(__dirname, "public"), {}, {}, { compress: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 require("./routes");
 
-app.use(function(req, res) {
+app.use(function (req, res) {
   res.sendStatus(404);
 });
 
@@ -37,7 +37,7 @@ async function startServer() {
     await dataService.connect();
     console.log("MongoDB connection pool established");
 
-    app.listen(app.get("port"), app.get("host"), function(){
+    app.listen(app.get("port"), app.get("host"), function () {
       console.log("Node server version %s", process.version);
       console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
     });

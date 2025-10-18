@@ -1,6 +1,6 @@
 /* global sinon:false */
 
-define(["q", "jquery", "mapContainer", "createWaypointModel"], function(Q, $, mapContainer, CreateWaypointModel) {
+define(["q", "jquery", "mapContainer", "createWaypointModel"], function (Q, $, mapContainer, CreateWaypointModel) {
   var createWaypointModel;
   var numberOfServerRequests;
   var server;
@@ -15,23 +15,22 @@ define(["q", "jquery", "mapContainer", "createWaypointModel"], function(Q, $, ma
     done();
   }
 
-  function cleanup()
-  {
+  function cleanup() {
     server.restore();
   }
 
-  describe("Waypoints", function() {
-    describe("Creating a waypoint", function() {
+  describe("Waypoints", function () {
+    describe("Creating a waypoint", function () {
       var newWaypointData;
 
       function createWaypointResponder(request) {
-          numberOfServerRequests++;
-          newWaypointData = JSON.parse(request.requestBody);
-          request.respond(200);
+        numberOfServerRequests++;
+        newWaypointData = JSON.parse(request.requestBody);
+        request.respond(200);
       }
 
-      before(function(done) {
-        initialize(function() {
+      before(function (done) {
+        initialize(function () {
           server.respondWith("POST", "/api/trails/pct/waypoints", createWaypointResponder);
           createWaypointModel.waypointName("new waypoint");
           createWaypointModel.create();
@@ -40,18 +39,18 @@ define(["q", "jquery", "mapContainer", "createWaypointModel"], function(Q, $, ma
         });
       });
 
-      it ("should create a waypoint", function() {
+      it("should create a waypoint", function () {
         expect(numberOfServerRequests).to.equal(1);
       });
 
-      it ("should create a naned waypoint at the current location", function() {
+      it("should create a naned waypoint at the current location", function () {
         expect(newWaypointData).to.deep.equal({
           name: "new waypoint",
-          loc: [ mapContainer.defaultCenter.longitude, mapContainer.defaultCenter.latitude ]
+          loc: [mapContainer.defaultCenter.longitude, mapContainer.defaultCenter.latitude]
         });
       });
 
-      after(function() {
+      after(function () {
         cleanup();
       });
     });

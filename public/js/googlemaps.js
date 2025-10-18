@@ -1,7 +1,7 @@
 /*global define: false*/
 /*global MarkerWithLabel: false*/
 
-define(["q", "trailmaps", "google_maps_api", "markerwithlabel"], function(Q, trailmaps, google) {
+define(["q", "trailmaps", "google_maps_api", "markerwithlabel"], function (Q, trailmaps, google) {
   var googleMap;
   var previousPolyLine;
   var mileMarkerCollection = [];
@@ -17,7 +17,7 @@ define(["q", "trailmaps", "google_maps_api", "markerwithlabel"], function(Q, tra
     };
     googleMap = new google.maps.Map(container, mapOptions);
 
-    google.maps.event.addListenerOnce(googleMap, "idle", function() {
+    google.maps.event.addListenerOnce(googleMap, "idle", function () {
       deferred.resolve();
       google.maps.event.addListener(googleMap, "idle", onViewChanged);
     });
@@ -47,7 +47,7 @@ define(["q", "trailmaps", "google_maps_api", "markerwithlabel"], function(Q, tra
   }
 
   function displayMileMarkers(mileMarkers) {
-    mileMarkerCollection.forEach(function(marker) {
+    mileMarkerCollection.forEach(function (marker) {
       marker.setMap(null);
     });
     mileMarkerCollection.length = 0;
@@ -86,7 +86,11 @@ define(["q", "trailmaps", "google_maps_api", "markerwithlabel"], function(Q, tra
     var center = bounds.getCenter();
     var ne = bounds.getNorthEast();
     var sw = bounds.getSouthWest();
-    return new trailmaps.Rectangle(new trailmaps.Location(center.lat(), center.lng()), ne.lng() - sw.lng(), ne.lat() - sw.lat());
+    return new trailmaps.Rectangle(
+      new trailmaps.Location(center.lat(), center.lng()),
+      ne.lng() - sw.lng(),
+      ne.lat() - sw.lat()
+    );
   }
 
   function getZoom() {

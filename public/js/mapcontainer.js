@@ -1,8 +1,11 @@
 /*global define: false*/
 
-define(["q", "jquery", "trailmaps", "knockout"], function(Q, $, trailmaps, ko) {
+define(["q", "jquery", "trailmaps", "knockout"], function (Q, $, trailmaps, ko) {
   var activeMap;
-  var defaultCenter = new trailmaps.Location(trailmaps.configuration.defaultLatitude, trailmaps.configuration.defaultLongitude);
+  var defaultCenter = new trailmaps.Location(
+    trailmaps.configuration.defaultLatitude,
+    trailmaps.configuration.defaultLongitude
+  );
   var defaultZoomLevel = trailmaps.configuration.defaultZoom;
   // The view that the container will work to display, but the map control may be lagging behing
   var currentContainerView = {
@@ -25,7 +28,7 @@ define(["q", "jquery", "trailmaps", "knockout"], function(Q, $, trailmaps, ko) {
 
     self.moduleName = moduleName;
 
-    self.getControl = function() {
+    self.getControl = function () {
       // We lazy-create the map controls so that a) we don't do an expensive init if the user
       // never clicks over to that tab, and b) some of them (Google, I'm looking at you) won't
       // init properly when their div is hidden, so we have to wait until it becomes visible
@@ -33,13 +36,14 @@ define(["q", "jquery", "trailmaps", "knockout"], function(Q, $, trailmaps, ko) {
       var deferred = Q.defer();
 
       if (!self.control) {
-        requireFunc([moduleName], function(createdControl) {
+        requireFunc([moduleName], function (createdControl) {
           self.control = createdControl;
           var container = $("#" + containerName)[0];
-          self.control.initialize(container, currentContainerView.center, currentContainerView.zoom, onViewChanged)
-          .then(function() {
-            deferred.resolve({ control: self.control, isNew: true });
-          });
+          self.control
+            .initialize(container, currentContainerView.center, currentContainerView.zoom, onViewChanged)
+            .then(function () {
+              deferred.resolve({ control: self.control, isNew: true });
+            });
         });
       } else {
         deferred.resolve({ control: self.control, isNew: false });
@@ -50,9 +54,9 @@ define(["q", "jquery", "trailmaps", "knockout"], function(Q, $, trailmaps, ko) {
   }
 
   var maps = {
-    "bing": new Map("bingmaps", "bing"),
-    "google": new Map("googlemaps", "google"),
-    "here": new Map("heremaps", "here"),
+    bing: new Map("bingmaps", "bing"),
+    google: new Map("googlemaps", "google"),
+    here: new Map("heremaps", "here")
   };
 
   function initialize(suppliedRequireFunc, mapName) {
@@ -68,8 +72,7 @@ define(["q", "jquery", "trailmaps", "knockout"], function(Q, $, trailmaps, ko) {
   function showingMap(mapName) {
     activeMapName(mapName);
 
-    return maps[mapName].getControl()
-    .then(function(controlData) {
+    return maps[mapName].getControl().then(function (controlData) {
       activeMap = controlData.control;
 
       if (!currentTrailData) {
@@ -88,9 +91,11 @@ define(["q", "jquery", "trailmaps", "knockout"], function(Q, $, trailmaps, ko) {
   }
 
   function viewsAreSame(view1, view2) {
-    return view1.center.latitude === view2.center.latitude &&
+    return (
+      view1.center.latitude === view2.center.latitude &&
       view1.center.longitude === view2.center.longitude &&
-      view1.zoom === view2.zoom;
+      view1.zoom === view2.zoom
+    );
   }
 
   function calculateScrollBounds() {

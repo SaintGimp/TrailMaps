@@ -1,7 +1,6 @@
 var dataService;
 
-module.exports = function(dataServiceToUse)
-{
+module.exports = function (dataServiceToUse) {
   dataService = dataServiceToUse;
   return exports;
 };
@@ -9,13 +8,16 @@ module.exports = function(dataServiceToUse)
 // TODO: pull this from the data store
 var maxDetailevel = 16;
 
-exports.findByArea = async function(options) {
+exports.findByArea = async function (options) {
   var effectiveDetailLevel = Math.min(options.detailLevel, maxDetailevel);
   var collectionName = options.trailName + "_track" + effectiveDetailLevel;
   var searchTerms = {
-    "loc": {
-      "$within": {
-        "$box": [[parseFloat(options.west), parseFloat(options.south)], [parseFloat(options.east), parseFloat(options.north)]]
+    loc: {
+      $within: {
+        $box: [
+          [parseFloat(options.west), parseFloat(options.south)],
+          [parseFloat(options.east), parseFloat(options.north)]
+        ]
       }
     }
   };

@@ -5,15 +5,15 @@ var trails = require("../domain/trails.js")(dataService);
 var dataImporter = require("../data/dataimporter.js");
 
 function safeHandler(handler) {
-  return function(req, res) {
-    handler(req, res).catch(error => {
+  return function (req, res) {
+    handler(req, res).catch((error) => {
       console.log(error);
       res.status(500).send(error.message);
     });
   };
 }
 
-module.exports = function(app) {
+module.exports = function (app) {
   app.get("/api/trails/:trailName/milemarkers/:mile", safeHandler(exports.getMileMarker));
   app.get("/api/trails/:trailName/waypoints/typeahead/:text", safeHandler(exports.getWaypointTypeaheadList));
   app.get("/api/trails/:trailName/waypoints", safeHandler(exports.getWaypoints));
@@ -68,14 +68,12 @@ exports.getWaypoints = async function (req, res) {
     var waypoint = await waypoints.findByName(options);
     if (waypoint) {
       res.json(Array.of(waypoint));
-    }
-    else {
+    } else {
       res.json([]);
     }
-  }
-  else {
+  } else {
     var waypointList = await waypoints.getWaypoints(options);
-    res.json(waypointList);  
+    res.json(waypointList);
   }
 };
 
@@ -86,11 +84,9 @@ exports.createWaypoint = async function (req, res) {
   };
 
   var success = await waypoints.create(options);
-  if (!success)
-  {
+  if (!success) {
     res.status(500);
-  }
-  else {
+  } else {
     res.status(201);
   }
   res.send();
@@ -104,8 +100,7 @@ exports.updateWaypoint = async function (req, res) {
   };
 
   var success = await waypoints.updateById(options);
-  if (!success)
-  {
+  if (!success) {
     res.status(404);
   }
   res.send();
@@ -118,8 +113,7 @@ exports.deleteWaypoint = async function (req, res) {
   };
 
   var success = await waypoints.deleteById(options);
-  if (!success)
-  {
+  if (!success) {
     res.status(404);
   }
   res.send();
@@ -130,8 +124,7 @@ exports.importdata = async function (req, res) {
     res.connection.setTimeout(0);
     await dataImporter.import();
     res.json("success");
-  }
-  catch (err) {
+  } catch (err) {
     console.log(err);
     res.status(500);
     res.send();
