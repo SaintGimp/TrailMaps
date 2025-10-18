@@ -88,14 +88,18 @@ require([
     navbarElement.addEventListener("click", function (event) {
       const target = event.target;
 
-      // Handle pill clicks
-      if (target.tagName === "A" && target.closest(".navbar-pills")) {
-        navbarModel.onPillClick(event);
+      // Handle Earth link (external link, not a map)
+      if (target.tagName === "A" && target.textContent === "Earth") {
+        navbarModel.onEarthClick(event);
+        return;
       }
 
-      // Handle Earth link
-      if (target.textContent === "Earth") {
-        navbarModel.onEarthClick(event);
+      // Handle map pill clicks (only for bing, google, here)
+      if (target.tagName === "A" && target.closest(".navbar-pills")) {
+        const href = target.getAttribute("href");
+        if (href && (href.includes("/bing") || href.includes("/google") || href.includes("/here"))) {
+          navbarModel.onPillClick(event);
+        }
       }
     });
 
