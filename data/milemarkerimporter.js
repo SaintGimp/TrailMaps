@@ -133,7 +133,7 @@ async function writeCollection(collection)
   var mongoCollection = await dataService.collection(collectionName);
   await mongoCollection.insertMany(collection.data);
   console.log("Wrote collection " + collectionName);
-  return await mongoCollection.ensureIndex({ loc: "2d" });
+  return await mongoCollection.createIndex({ loc: "2d" });
 }
 
 async function saveCollections(collections) {
