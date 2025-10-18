@@ -66,9 +66,9 @@ exports.update = function (collectionName, searchTerms, updateOperation) {
     });
   } else if (exports.shouldFailOnNextCall) {
     exports.shouldFailOnNextCall = false;
-    return Promise.resolve({ result: { ok: 0 } });
+    return Promise.resolve({ acknowledged: true, matchedCount: 0, modifiedCount: 0 });
   } else {
-    return Promise.resolve({ result: { ok: 1 } });
+    return Promise.resolve({ acknowledged: true, matchedCount: 1, modifiedCount: 1 });
   }
 };
 
@@ -99,8 +99,8 @@ exports.insert = function (collectionName, insertOperation) {
     });
   } else if (exports.shouldFailOnNextCall) {
     exports.shouldFailOnNextCall = false;
-    return Promise.resolve({ result: { ok: 0 } });
+    return Promise.resolve({ acknowledged: false, insertedId: null });
   } else {
-    return Promise.resolve({ result: { ok: 1 } });
+    return Promise.resolve({ acknowledged: true, insertedId: "507f1f77bcf86cd799439011" });
   }
 };

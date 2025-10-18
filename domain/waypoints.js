@@ -49,7 +49,7 @@ exports.updateById = async function (options) {
   var updateOperation = { $set: { name: options.name } };
 
   var commandResult = await dataService.update(collectionName, searchTerms, updateOperation);
-  return commandResult.result.ok === 1;
+  return commandResult.acknowledged && commandResult.matchedCount > 0;
 };
 
 exports.deleteById = async function (options) {
@@ -65,7 +65,7 @@ exports.create = async function (options) {
   waypoint.seq = await getSequenceNumber(waypoint.loc);
 
   var commandResult = await dataService.insert(collectionName, waypoint);
-  return commandResult.result.ok === 1;
+  return commandResult.acknowledged && commandResult.insertedId != null;
 };
 
 async function getSequenceNumber(location) {
