@@ -5,8 +5,8 @@
 requirejs.config({
   baseUrl: "/js",
   paths: {
-    jquery: "https://code.jquery.com/jquery-2.2.4.min",
-    bootstrap: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min",
+    // Bootstrap 5 no longer requires jQuery
+    bootstrap: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min",
     // There are multiple issues with more recent versions (e.g. 0.11.1) of Twitter Typeahead.  One, it's incompatible with require.js.
     // To get around that we have to use a fork of Twitter Typeahead that has a fix for compatibility with require.js from here:
     // https://github.com/nikcub/typeahead.
@@ -15,6 +15,7 @@ requirejs.config({
     // https://github.com/bassjobsen/typeahead.js-bootstrap-css to shim the two together,
     // even with old versions of Typehead, but the newest version of Typehead is broken again.  Don't know why yet.
     // Since everything is working ok right now, probably best not to mess with it.
+    // NOTE: Typeahead will be replaced in Phase 2.4
     typeahead: "lib/typeahead.bundle.min",
     async: "lib/async",
     markerwithlabel: "lib/markerwithlabel_packed",
@@ -24,13 +25,6 @@ requirejs.config({
     here_maps_api: "http://js.api.here.com/v3/3.0/mapsjs-service"
   },
   shim: {
-    bootstrap: {
-      deps: ["jquery"],
-      exports: "$.fn.popover"
-    },
-    typeahead: {
-      deps: ["jquery"]
-    },
     bing_maps_api: {
       exports: "Microsoft"
     },
@@ -66,18 +60,15 @@ define("history", function () {
   return window.history;
 });
 
-// jQuery is loaded ONLY for Bootstrap 3 and Twitter Typeahead compatibility
-// Most application code now uses vanilla JavaScript
-// jQuery will be fully removed in Phase 2.3 (Bootstrap upgrade) and Phase 2.4 (Typeahead replacement)
-require([
-  "jquery",
-  "bootstrap",
-  "typeahead",
-  "./trailmaps",
-  "./mapcontainer",
-  "./navbarModel",
-  "./createWaypointModel"
-], function ($, bootstrap, typeAhead, trailMaps, mapContainer, NavbarModel, CreateWaypointModel) {
+// Bootstrap 5 no longer requires jQuery
+// Typeahead temporarily disabled until Phase 2.4 (requires jQuery)
+require(["bootstrap", "./trailmaps", "./mapcontainer", "./navbarModel", "./createWaypointModel"], function (
+  bootstrap,
+  trailMaps,
+  mapContainer,
+  NavbarModel,
+  CreateWaypointModel
+) {
   mapContainer.initialize(require, trailMaps.configuration.defaultMapName).then(() => {
     // Initialization complete
   });
@@ -128,26 +119,12 @@ require([
     }
   }
 
-  // Setup typeahead (requires jQuery for now - will be replaced in Phase 2.4)
+  // Setup typeahead - TEMPORARILY DISABLED until Phase 2.4
+  // Typeahead requires jQuery which we've removed
+  // Will be replaced with a modern autocomplete solution in Phase 2.4
   const searchBox = document.getElementById("searchBox");
-  if (searchBox && $) {
-    $(searchBox)
-      .typeahead(
-        {
-          hint: true,
-          highlight: true,
-          minLength: 3
-        },
-        {
-          name: "waypoints",
-          source: navbarModel.waypointTypeaheadSource,
-          displayKey: function (value) {
-            return value;
-          }
-        }
-      )
-      .bind("typeahead:selected", navbarModel.typeAheadSelected);
-
+  if (searchBox) {
+    // For now, just add basic search functionality without autocomplete
     searchBox.addEventListener("keydown", function (event) {
       if (event.keyCode === 13) {
         navbarModel.search();

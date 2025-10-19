@@ -1,20 +1,12 @@
-// jQuery is loaded ONLY for Bootstrap 3 compatibility
-// Will be removed in Phase 2.3 (Bootstrap upgrade)
+// Bootstrap 5 no longer requires jQuery
 requirejs.config({
   baseUrl: "/js",
   paths: {
-    jquery: "https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min",
-    bootstrap: "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min"
-  },
-  shim: {
-    bootstrap: {
-      deps: ["jquery"],
-      exports: "$.fn.popover"
-    }
+    bootstrap: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min"
   }
 });
 
-require(["jquery", "bootstrap", "waypointsViewModel"], function ($, bootstrap, WaypointsViewModel) {
+require(["bootstrap", "waypointsViewModel"], function (bootstrap, WaypointsViewModel) {
   const waypointsViewModel = new WaypointsViewModel();
   const waypointsContainer = document.getElementById("waypoints");
 

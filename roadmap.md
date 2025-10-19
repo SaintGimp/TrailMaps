@@ -256,45 +256,189 @@ The decision has been made to replace Knockout.js, jQuery, and RequireJS with mo
 
 ### Phase 2.1: Remove Knockout.js
 
-1. Identify all Knockout observables and computed properties
-2. Replace with native JavaScript state management
-3. Replace `data-bind` attributes with event listeners
-4. Migrate view models to plain JavaScript classes/modules
+**Status:** ✅ **COMPLETED**
 
-**Files to Rewrite:**
+Knockout.js has been completely removed and replaced with vanilla JavaScript.
 
-- `public/js/navbarModel.js`
-- `public/js/waypointsViewModel.js`
-- `public/js/waypointViewModel.js`
-- `public/js/createWaypointModel.js`
-- `public/js/knockoutBindingHandlers.js`
+**Completed Changes:**
+
+1. ✅ Replaced all `ko.observable()` with plain JavaScript variables and getter/setter methods
+2. ✅ Removed all `data-bind` attributes from Pug templates
+3. ✅ Replaced two-way data binding with explicit state management
+4. ✅ Converted all view models to use vanilla JavaScript
+5. ✅ Implemented manual DOM rendering for waypoints table
+6. ✅ Removed `knockoutBindingHandlers.js`
+
+**Files Rewritten:**
+
+- ✅ `public/js/navbarModel.js` - Manual UI updates, no observables
+- ✅ `public/js/waypointsViewModel.js` - Plain array instead of observableArray
+- ✅ `public/js/waypointViewModel.js` - Private state variables
+- ✅ `public/js/createWaypointModel.js` - Plain variables
+- ✅ `public/js/maps.js` - Removed Knockout initialization
+- ✅ `public/js/waypoints.js` - Manual DOM rendering
+- ✅ `public/js/knockoutBindingHandlers.js` - Deleted (no longer needed)
+- ✅ All view templates - Removed data-bind attributes
+
+**Additional Fixes Applied:**
+- Q promises → Native promises
+- MongoDB 5.x result format compatibility
+- Pug template interpolation syntax
+- Navigation error handling
 
 ### Phase 2.2: Remove jQuery
 
+**Status:** ✅ **COMPLETED** (Minimal jQuery retained for Bootstrap 3 & Typeahead)
+
+jQuery removed from all application code. Retained only for Bootstrap 3 and Twitter Typeahead compatibility.
+
+**Completed Changes:**
+
 Replace all jQuery usage with vanilla JavaScript equivalents:
 
-- `$.ajax()` → `fetch()`
-- `$('#id')` → `document.querySelector('#id')`
-- `$.each()` → `array.forEach()` or `for...of`
-- `$.extend()` → `Object.assign()` or spread operator
-- Event binding → `addEventListener()`
+- ✅ `$.ajax()` / `$.getJSON()` → `fetch()`
+- ✅ `$('#id')[0]` → `document.getElementById('id')`
+- ✅ `$.each()` → `array.forEach()` or `for...of`
+- ✅ Event binding → `addEventListener()`
+- ✅ DOM manipulation → Native DOM APIs
 
-### Phase 2.3: Update Bootstrap
+**Files Updated:**
 
-Migrate from Bootstrap 3.3.7 to Bootstrap 5.x:
+- ✅ `public/js/mapcontainer.js` - Removed jQuery, using fetch() and native DOM
+- ✅ `public/js/maps.js` - jQuery only for Typeahead plugin
+- ✅ `public/js/createWaypointModel.js` - jQuery only for Bootstrap modal
 
-1. Update Bootstrap dependency to `^5.3.0`
-2. Remove jQuery dependency (Bootstrap 5 is jQuery-free)
-3. Update HTML markup for Bootstrap 5 classes
-4. Update JavaScript components API calls
-5. Migrate from Less to Sass or use Bootstrap's CSS directly
+**Remaining jQuery Usage:**
+- Bootstrap 3 modal control (will be removed in Phase 2.3)
+- Twitter Typeahead initialization (will be removed in Phase 2.4)
 
-**Breaking Changes:**
+### Phase 2.3: Update Bootstrap 3 → 5
 
-- Class name changes (e.g., `.pull-right` → `.float-end`)
-- Dropped IE support
-- New utility classes
-- Different JavaScript initialization
+**Status:** 🔄 **READY TO START**
+
+**Risk Level:** Medium
+
+**Current State Analysis:**
+
+Bootstrap 3.3.7 is currently used for:
+1. **Navbar** - Collapsible navigation with dropdown menu
+2. **Modal dialog** - Create waypoint modal  
+3. **Form controls** - Input styling, buttons, button groups
+4. **Grid system** - Minimal usage (container-fluid)
+5. **Tables** - Waypoints list styling
+6. **Typography** - Basic text styling
+
+**Bootstrap Components in Use:**
+- `.navbar` with collapse functionality (`views/navbar.pug`)
+- `.modal` for waypoint creation dialog (`views/createWaypointDialog.pug`)
+- `.dropdown` for Tools menu
+- `.form-control`, `.btn`, `.btn-group` for forms
+- `.table` for waypoints list (`views/waypoints.pug`)
+
+**Migration Strategy:**
+
+#### Step 1: Update CDN Links (Day 1)
+
+Update `views/layout.pug`:
+```pug
+// Before:
+link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+
+// After:
+link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css')
+```
+
+Update `public/js/maps.js` and `public/js/waypoints.js`:
+```javascript
+// Before:
+bootstrap: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min"
+
+// After:
+bootstrap: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min"
+```
+
+**Remove jQuery dependency from shim** - Bootstrap 5 doesn't require jQuery
+
+#### Step 2: Update Template Markup (Day 1-2)
+
+**Navbar (`views/navbar.pug`):**
+- `.navbar-inverse` → `.navbar-dark .bg-dark`
+- `.navbar-toggle` → `.navbar-toggler`
+- `.icon-bar` → Bootstrap icon or SVG
+- `data-toggle` → `data-bs-toggle`
+- `data-target` → `data-bs-target`
+
+**Modal (`views/createWaypointDialog.pug`):**
+- `data-dismiss` → `data-bs-dismiss`
+- `data-toggle` → `data-bs-toggle`
+- `.close` → `.btn-close`
+
+**Tables (`views/waypoints.pug`):**
+- Most table classes stay the same
+- Update button styling if needed
+
+#### Step 3: Update JavaScript Modal Control (Day 2)
+
+Update `public/js/createWaypointModel.js`:
+
+```javascript
+// Before (Bootstrap 3 + jQuery):
+if (window.jQuery && window.jQuery.fn.modal) {
+  window.jQuery("#createWaypointDialog").modal("hide");
+}
+
+// After (Bootstrap 5 native JS):
+const modalElement = document.getElementById("createWaypointDialog");
+if (modalElement) {
+  const modal = bootstrap.Modal.getInstance(modalElement);
+  if (modal) {
+    modal.hide();
+  }
+}
+```
+
+#### Step 4: Remove jQuery Completely (Day 2-3)
+
+Once Bootstrap 5 is in place, jQuery can be removed:
+
+1. Remove jQuery from RequireJS config
+2. Remove jQuery shim configuration  
+3. Temporarily disable Typeahead or make it work without jQuery until Phase 2.4
+
+#### Step 5: Update Custom CSS (Day 3)
+
+Check `public/stylesheets/app.less`:
+- Review Bootstrap 3-specific class overrides
+- Update to Bootstrap 5 class names
+- Test responsive behavior
+
+#### Step 6: Testing (Day 3-4)
+
+Test all Bootstrap features:
+- ✅ Navbar collapse/expand on mobile
+- ✅ Dropdown menu
+- ✅ Modal dialog open/close
+- ✅ Form styling
+- ✅ Button groups
+- ✅ Table styling
+- ✅ Responsive layout
+
+**Breaking Changes to Watch:**
+
+1. Data attributes: `data-toggle` → `data-bs-toggle`
+2. Colors: `.btn-default` → `.btn-secondary`
+3. Form groups: `.form-group` removed (use margin utilities)
+4. Navbar: Structure changes significantly
+5. JavaScript API: Native JS instead of jQuery
+
+**Estimated Effort:** 3-4 days
+
+**Success Criteria:**
+- All Bootstrap components working
+- No jQuery dependencies
+- Responsive design maintained
+- All tests passing
+- No console errors
 
 ### Phase 2.4: Replace Twitter Typeahead
 

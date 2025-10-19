@@ -67,9 +67,13 @@ define(function () {
     };
 
     self.hide = function () {
-      // Bootstrap 3 requires jQuery for modal control
-      if (window.jQuery && window.jQuery.fn.modal) {
-        window.jQuery("#createWaypointDialog").modal("hide");
+      // Bootstrap 5 uses native JavaScript API
+      const modalElement = document.getElementById("createWaypointDialog");
+      if (modalElement && window.bootstrap) {
+        const modal = window.bootstrap.Modal.getInstance(modalElement);
+        if (modal) {
+          modal.hide();
+        }
       }
     };
   };
