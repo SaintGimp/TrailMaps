@@ -57,17 +57,14 @@ define(["mapcontainer", "history"], function (mapContainer, history) {
     }
 
     function updateActiveMapUI() {
-      // Update active pill in navbar
-      const pills = document.querySelectorAll(".navbar-pills li");
-      pills.forEach((pill) => {
-        const link = pill.querySelector("a");
-        if (link) {
-          const href = link.getAttribute("href");
-          if (href && href.endsWith("/" + activeMapName)) {
-            pill.classList.add("active");
-          } else {
-            pill.classList.remove("active");
-          }
+      // Update active pill in navbar (Bootstrap 5 uses .nav-link for active state)
+      const navLinks = document.querySelectorAll(".nav-pills .nav-link");
+      navLinks.forEach((link) => {
+        const href = link.getAttribute("href");
+        if (href && href.endsWith("/" + activeMapName)) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
         }
       });
 

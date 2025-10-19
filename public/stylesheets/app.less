@@ -2,6 +2,32 @@
 
 body { padding-top: 70px; }
 
+/* Bootstrap 5 nav pills styling to match Bootstrap 3 appearance */
+.nav-pills .nav-link {
+    border-radius: 4px;
+    margin-right: 2px;
+    color: #9d9d9d;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #337ab7;
+    color: #ffffff;
+}
+
+/* Ensure search box has proper sizing */
+#searchBox {
+    width: 200px;
+}
+
+.typeahead.tt-hint {
+    width: 200px;
+}
+
 // http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/
 // The goal is to make a pane that auto-expands to fill the entire viewport except for the header
 #mapCanvas {
@@ -33,14 +59,6 @@ body { padding-top: 70px; }
     top: 25px;
     color: white;
     font-weight: bold;
-}
-
-#searchBox {
-    width: 200px;
-}
-
-.typeahead.tt-hint {
-    width: 200px;
 }
 
 .crosshair {

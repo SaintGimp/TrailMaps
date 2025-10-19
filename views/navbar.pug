@@ -5,19 +5,20 @@ header
       button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarNav.collapse.navbar-collapse
-        ul.nav.navbar-nav.navbar-pills
-          li
-            a(href=baseMapUrl + '/bing') Bing
-          li
-            a(href=baseMapUrl + '/google') Google
-          li
-            a(href=baseMapUrl + '/here') Here
-          li
-            a(href='https://earth.google.com/web') Earth
+        ul.nav.nav-pills.me-auto
+          li.nav-item
+            a.nav-link(href=baseMapUrl + '/bing') Bing
+          li.nav-item
+            a.nav-link(href=baseMapUrl + '/google') Google
+          li.nav-item
+            a.nav-link(href=baseMapUrl + '/here') Here
+          li.nav-item
+            a.nav-link(href='https://earth.google.com/web') Earth
         
         ul.nav.navbar-nav
-          li
-            p.navbar-text.hidden-xs(style='padding-right:15px') |
+          li.nav-item
+            hr.d-lg-none
+            span.nav-link.d-none.d-lg-block.mx-2 |
           li.nav-item.dropdown
             a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false') Tools
             ul.dropdown-menu
@@ -26,6 +27,5 @@ header
               li
                 a.dropdown-item(href=waypointsUrl) Edit waypoints
         
-        form.navbar-form.navbar-right(id='searchForm', role='search')
-          .form-group
-            input.form-control.input-sm.typeahead(id='searchBox', type='text', autocomplete='off', placeholder='waypoint, mile, or lat/long')
+        form.d-flex.ms-auto(id='searchForm' role='search')
+          input.form-control.form-control-sm(id='searchBox' type='text' autocomplete='off' placeholder='waypoint, mile, or lat/long')
