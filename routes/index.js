@@ -7,7 +7,9 @@
  * routes defined in all the files in the routes directory by requiring those files.
  */
 
-var app = require("../server").app;
+import { app } from "../server.js";
+import apiRoutes from "./api.js";
+import homeRoutes from "./home.js";
 
-require("./api")(app);
-require("./home")(app);
+apiRoutes(app);
+homeRoutes(app);

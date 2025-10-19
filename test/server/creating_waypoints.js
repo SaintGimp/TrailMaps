@@ -1,6 +1,8 @@
-var expect = require("chai").expect;
-var fakeDataService = require("./fakeDataService");
-var waypoints = require("../../domain/waypoints")(fakeDataService);
+import { expect } from "chai";
+import * as fakeDataService from "./fakeDataService.js";
+import * as waypoints from "../../domain/waypoints.js";
+
+waypoints.initialize(fakeDataService);
 
 describe("Creating a waypoint", function () {
   var createResult;
@@ -43,7 +45,7 @@ describe("Creating a waypoint", function () {
           location: [1, 2]
         }
       };
-      fakeDataService.shouldFailOnNextCall = true;
+      fakeDataService.state.shouldFailOnNextCall = true;
       createResult = await waypoints.create(options);
     });
 

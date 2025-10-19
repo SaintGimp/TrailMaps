@@ -1,66 +1,66 @@
-/*global Microsoft: false*/
-/*global google: false*/
 /*global trailMaps: false*/
 
-requirejs.config({
-  baseUrl: "/js",
-  paths: {
-    // Bootstrap 5 no longer requires jQuery
-    bootstrap: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min",
-    async: "lib/async",
-    markerwithlabel: "lib/markerwithlabel_packed",
-    here_maps_core: "http://js.api.here.com/v3/3.0/mapsjs-core",
-    here_maps_ui: "http://js.api.here.com/v3/3.0/mapsjs-ui",
-    here_maps_events: "http://js.api.here.com/v3/3.0/mapsjs-mapevents",
-    here_maps_api: "http://js.api.here.com/v3/3.0/mapsjs-service"
-  },
-  shim: {
-    bing_maps_api: {
-      exports: "Microsoft"
-    },
-    here_maps_ui: {
-      deps: ["here_maps_core"]
-    },
-    here_maps_events: {
-      deps: ["here_maps_core"]
-    },
-    here_maps_api: {
-      deps: ["here_maps_core", "here_maps_ui", "here_maps_events"],
-      exports: "H"
-    },
-    markerwithlabel: {
-      deps: ["google_maps_api"]
-    }
-  }
-  // This may be important for IE: http://requirejs.org/docs/api.html#ieloadfail
-  //enforceDefine: true,
-});
+import mapContainer from "./mapcontainer.js";
+import NavbarModel from "./navbarModel.js";
+import CreateWaypointModel from "./createWaypointModel.js";
+import Autocomplete from "./autocomplete.js";
 
-define("bing_maps_api", ["async!https://www.bing.com/api/maps/mapcontrol!callback"], function () {
-  return Microsoft;
-});
+// Load Bootstrap 5 dynamically
+const bootstrapScript = document.createElement("script");
+bootstrapScript.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js";
+document.head.appendChild(bootstrapScript);
 
-define("google_maps_api", [
-  "async!https://maps.googleapis.com/maps/api/js?key=" + trailMaps.configuration.googleApiKey
-], function () {
-  return google;
-});
-
-define("history", function () {
-  return window.history;
-});
-
-require([
-  "bootstrap",
-  "./trailmaps",
-  "./mapcontainer",
-  "./navbarModel",
-  "./createWaypointModel",
-  "./autocomplete"
-], function (bootstrap, trailMaps, mapContainer, NavbarModel, CreateWaypointModel, Autocomplete) {
-  mapContainer.initialize(require, trailMaps.configuration.defaultMapName).then(() => {
-    // Initialization complete
+// Helper function to load external scripts
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+    document.head.appendChild(script);
   });
+}
+
+// Track loaded APIs to avoid reloading
+const loadedAPIs = {
+  bing: false,
+  google: false,
+  here: false
+};
+
+// Load external map APIs as needed
+const mapAPIs = {
+  bing: async () => {
+    if (loadedAPIs.bing) return;
+    window.bingMapsReady = () => {
+      loadedAPIs.bing = true;
+    };
+    await loadScript("https://www.bing.com/api/maps/mapcontrol?callback=bingMapsReady");
+  },
+  google: async () => {
+    if (loadedAPIs.google) return;
+    window.googleMapsReady = () => {
+      loadedAPIs.google = true;
+    };
+    // Load markerwithlabel first, then Google Maps
+    await loadScript("/js/lib/markerwithlabel_packed.js");
+    await loadScript(
+      `https://maps.googleapis.com/maps/api/js?key=${trailMaps.configuration.googleApiKey}&callback=googleMapsReady`
+    );
+  },
+  here: async () => {
+    if (loadedAPIs.here) return;
+    await loadScript("http://js.api.here.com/v3/3.0/mapsjs-core.js");
+    await loadScript("http://js.api.here.com/v3/3.0/mapsjs-service.js");
+    await loadScript("http://js.api.here.com/v3/3.0/mapsjs-ui.js");
+    await loadScript("http://js.api.here.com/v3/3.0/mapsjs-mapevents.js");
+    loadedAPIs.here = true;
+  }
+};
+
+// Initialize the application
+async function initialize() {
+  await mapContainer.initialize(mapAPIs, trailMaps.configuration.defaultMapName);
 
   const navbarModel = new NavbarModel();
   const createWaypointModel = new CreateWaypointModel(mapContainer);
@@ -78,7 +78,7 @@ require([
       }
 
       // Handle map pill clicks (only for bing, google, here)
-      if (target.tagName === "A" && target.closest(".navbar-pills")) {
+      if (target.tagName === "A" && target.closest(".nav-pills")) {
         const href = target.getAttribute("href");
         if (href && (href.includes("/bing") || href.includes("/google") || href.includes("/here"))) {
           navbarModel.onPillClick(event);
@@ -133,4 +133,9 @@ require([
   window.onpopstate = function (event) {
     navbarModel.restoreHistoryState(event.state);
   };
+}
+
+// Start the application
+initialize().catch((error) => {
+  console.error("Failed to initialize application:", error);
 });

@@ -1,8 +1,8 @@
-var fs = require("fs"),
-  { promisify } = require("util"),
-  xml2js = require("xml2js"),
-  _ = require("underscore"),
-  dataService = require("../domain/dataService.js");
+import fs from "fs";
+import { promisify } from "util";
+import xml2js from "xml2js";
+import _ from "underscore";
+import * as dataService from "../domain/dataService.js";
 
 var parser = new xml2js.Parser();
 var readFileAsync = promisify(fs.readFile);
@@ -141,7 +141,7 @@ async function saveCollections(collections) {
   return await Promise.all(savePromises);
 }
 
-exports.import = async function () {
+export async function importMileMarkers() {
   console.log("Importing mile markers");
 
   var mileMarkers = await loadMileMarkers();
@@ -149,4 +149,4 @@ exports.import = async function () {
   await saveCollections(collections);
 
   console.log("Finished importing mile markers");
-};
+}

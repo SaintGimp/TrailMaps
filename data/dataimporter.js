@@ -1,6 +1,6 @@
-var trackImporter = require("./trackimporter.js");
-var mileMarkerImporter = require("./milemarkerimporter.js");
-var dataService = require("../domain/dataService.js");
+import * as trackImporter from "./trackimporter.js";
+import * as mileMarkerImporter from "./milemarkerimporter.js";
+import * as dataService from "../domain/dataService.js";
 
 async function dropCollections() {
   console.log("Dropping collections");
@@ -18,9 +18,13 @@ async function dropCollections() {
   return await Promise.all(dropPromises);
 }
 
-exports.import = async function () {
+export async function importData() {
   console.log("Importing trail data");
 
   await dropCollections();
-  await Promise.all([trackImporter.import(), mileMarkerImporter.import()]);
+  await Promise.all([trackImporter.importTracks(), mileMarkerImporter.importMileMarkers()]);
+}
+
+export default {
+  import: importData
 };

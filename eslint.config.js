@@ -1,8 +1,8 @@
-const js = require("@eslint/js");
-const prettier = require("eslint-plugin-prettier");
-const prettierConfig = require("eslint-config-prettier");
+import js from "@eslint/js";
+import prettier from "eslint-plugin-prettier";
+import prettierConfig from "eslint-config-prettier";
 
-module.exports = [
+export default [
   {
     ignores: ["public/js/lib/**", "test/lib/**", "public/bootstrap/**", "node_modules/**"]
   },
@@ -11,7 +11,7 @@ module.exports = [
   {
     files: ["**/*.js"],
     languageOptions: {
-      ecmaVersion: 2017,
+      ecmaVersion: 2020,
       sourceType: "module",
       globals: {
         // Browser
@@ -48,14 +48,6 @@ module.exports = [
         // Testing
         expect: "readonly",
         sinon: "readonly",
-
-        // AMD
-        define: "readonly",
-        requirejs: "readonly",
-
-        // jQuery
-        $: "readonly",
-        jQuery: "readonly"
       }
     },
     plugins: {

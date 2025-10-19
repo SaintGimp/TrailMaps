@@ -1,6 +1,8 @@
-var expect = require("chai").expect;
-var fakeDataService = require("./fakeDataService");
-var mileMarkers = require("../../domain/milemarkers")(fakeDataService);
+import { expect } from "chai";
+import * as fakeDataService from "./fakeDataService.js";
+import * as mileMarkers from "../../domain/mileMarkers.js";
+
+mileMarkers.initialize(fakeDataService);
 
 describe("Finding mile markers by area", function () {
   var mileMarkerData;
@@ -46,7 +48,7 @@ describe("Finding mile markers by area", function () {
     var errorFromCall;
 
     before(async function () {
-      fakeDataService.shouldErrorOnNextCall = true;
+      fakeDataService.state.shouldErrorOnNextCall = true;
       var options = { trailName: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 20 };
       try {
         await mileMarkers.findByArea(options);

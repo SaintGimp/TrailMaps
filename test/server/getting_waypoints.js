@@ -1,6 +1,8 @@
-var expect = require("chai").expect;
-var fakeDataService = require("./fakeDataService");
-var waypoints = require("../../domain/waypoints")(fakeDataService);
+import { expect } from "chai";
+import * as fakeDataService from "./fakeDataService.js";
+import * as waypoints from "../../domain/waypoints.js";
+
+waypoints.initialize(fakeDataService);
 
 describe("Finding a waypoint by name", function () {
   var foundWaypoint;

@@ -1,6 +1,8 @@
-var expect = require("chai").expect;
-var fakeDataService = require("./fakeDataService");
-var trails = require("../../domain/trails")(fakeDataService);
+import { expect } from "chai";
+import * as fakeDataService from "./fakeDataService.js";
+import * as trails from "../../domain/trails.js";
+
+trails.initialize(fakeDataService);
 
 describe("Finding trail data by area", function () {
   var trailData;
@@ -28,7 +30,7 @@ describe("Finding trail data by area", function () {
     var errorFromCall;
 
     before(async function () {
-      fakeDataService.shouldErrorOnNextCall = true;
+      fakeDataService.state.shouldErrorOnNextCall = true;
       var options = { trailName: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 20 };
       try {
         await trails.findByArea(options);

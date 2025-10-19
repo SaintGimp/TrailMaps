@@ -1,15 +1,19 @@
-var dataService;
-var tracks;
-var mileMarkers;
+import * as tracksModule from "./tracks.js";
+import * as mileMarkersModule from "./mileMarkers.js";
 
-module.exports = function (dataServiceToUse) {
+let dataService;
+let tracks;
+let mileMarkers;
+
+export function initialize(dataServiceToUse) {
   dataService = dataServiceToUse;
-  tracks = require("./tracks")(dataService);
-  mileMarkers = require("./mileMarkers")(dataService);
-  return exports;
-};
+  tracksModule.initialize(dataService);
+  tracks = tracksModule;
+  mileMarkersModule.initialize(dataService);
+  mileMarkers = mileMarkersModule;
+}
 
-exports.findByArea = async function (options) {
+export async function findByArea(options) {
   var tracksPromise = tracks.findByArea(options);
   var mileMarkersPromise = mileMarkers.findByArea(options);
   var trailData = await Promise.all([tracksPromise, mileMarkersPromise]);
@@ -18,4 +22,4 @@ exports.findByArea = async function (options) {
     track: trailData[0],
     mileMarkers: trailData[1]
   };
-};
+}

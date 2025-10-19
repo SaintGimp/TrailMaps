@@ -1,8 +1,18 @@
-var dataService = require("../domain/dataService.js");
-var mileMarkers = require("../domain/mileMarkers.js")(dataService);
-var waypoints = require("../domain/waypoints.js")(dataService);
-var trails = require("../domain/trails.js")(dataService);
-var dataImporter = require("../data/dataimporter.js");
+import dataService from "../domain/dataService.js";
+import * as mileMarkersModule from "../domain/mileMarkers.js";
+import * as waypointsModule from "../domain/waypoints.js";
+import * as trailsModule from "../domain/trails.js";
+import dataImporter from "../data/dataimporter.js";
+
+// Initialize domain modules with dataService
+mileMarkersModule.initialize(dataService);
+const mileMarkers = mileMarkersModule;
+
+waypointsModule.initialize(dataService);
+const waypoints = waypointsModule;
+
+trailsModule.initialize(dataService);
+const trails = trailsModule;
 
 function safeHandler(handler) {
   return function (req, res) {
@@ -13,18 +23,18 @@ function safeHandler(handler) {
   };
 }
 
-module.exports = function (app) {
-  app.get("/api/trails/:trailName/milemarkers/:mile", safeHandler(exports.getMileMarker));
-  app.get("/api/trails/:trailName/waypoints/typeahead/:text", safeHandler(exports.getWaypointTypeaheadList));
-  app.get("/api/trails/:trailName/waypoints", safeHandler(exports.getWaypoints));
-  app.post("/api/trails/:trailName/waypoints", safeHandler(exports.createWaypoint));
-  app.put("/api/trails/:trailName/waypoints/:id", safeHandler(exports.updateWaypoint));
-  app.delete("/api/trails/:trailName/waypoints/:id", safeHandler(exports.deleteWaypoint));
-  app.get("/api/trails/:trailName", safeHandler(exports.getTrailData));
-  app.post("/api/admin/importdata", safeHandler(exports.importdata));
-};
+export default function (app) {
+  app.get("/api/trails/:trailName/milemarkers/:mile", safeHandler(getMileMarker));
+  app.get("/api/trails/:trailName/waypoints/typeahead/:text", safeHandler(getWaypointTypeaheadList));
+  app.get("/api/trails/:trailName/waypoints", safeHandler(getWaypoints));
+  app.post("/api/trails/:trailName/waypoints", safeHandler(createWaypoint));
+  app.put("/api/trails/:trailName/waypoints/:id", safeHandler(updateWaypoint));
+  app.delete("/api/trails/:trailName/waypoints/:id", safeHandler(deleteWaypoint));
+  app.get("/api/trails/:trailName", safeHandler(getTrailData));
+  app.post("/api/admin/importdata", safeHandler(importdata));
+}
 
-exports.getTrailData = async function (req, res) {
+export async function getTrailData(req, res) {
   var options = {
     trailName: req.params.trailName,
     north: req.query.north,
@@ -36,9 +46,9 @@ exports.getTrailData = async function (req, res) {
 
   var trailData = await trails.findByArea(options, res.locals.log);
   res.json(trailData);
-};
+}
 
-exports.getMileMarker = async function (req, res) {
+export async function getMileMarker(req, res) {
   var options = {
     trailName: req.params.trailName,
     mile: parseFloat(req.params.mile)
@@ -46,9 +56,9 @@ exports.getMileMarker = async function (req, res) {
 
   var marker = await mileMarkers.findByValue(options);
   res.json(marker);
-};
+}
 
-exports.getWaypointTypeaheadList = async function (req, res) {
+export async function getWaypointTypeaheadList(req, res) {
   var options = {
     trailName: req.params.trailName,
     text: req.params.text
@@ -56,9 +66,9 @@ exports.getWaypointTypeaheadList = async function (req, res) {
 
   var waypointNames = await waypoints.getTypeaheadList(options);
   res.json(waypointNames);
-};
+}
 
-exports.getWaypoints = async function (req, res) {
+export async function getWaypoints(req, res) {
   var options = {
     trailName: req.params.trailName,
     name: req.query.name
@@ -75,9 +85,9 @@ exports.getWaypoints = async function (req, res) {
     var waypointList = await waypoints.getWaypoints(options);
     res.json(waypointList);
   }
-};
+}
 
-exports.createWaypoint = async function (req, res) {
+export async function createWaypoint(req, res) {
   var options = {
     trailName: req.params.trailName,
     waypoint: req.body
@@ -90,9 +100,9 @@ exports.createWaypoint = async function (req, res) {
     res.status(201);
   }
   res.send();
-};
+}
 
-exports.updateWaypoint = async function (req, res) {
+export async function updateWaypoint(req, res) {
   var options = {
     trailName: req.params.trailName,
     id: req.params.id,
@@ -104,9 +114,9 @@ exports.updateWaypoint = async function (req, res) {
     res.status(404);
   }
   res.send();
-};
+}
 
-exports.deleteWaypoint = async function (req, res) {
+export async function deleteWaypoint(req, res) {
   var options = {
     trailName: req.params.trailName,
     id: req.params.id
@@ -117,9 +127,9 @@ exports.deleteWaypoint = async function (req, res) {
     res.status(404);
   }
   res.send();
-};
+}
 
-exports.importdata = async function (req, res) {
+export async function importdata(req, res) {
   try {
     res.connection.setTimeout(0);
     await dataImporter.import();
@@ -129,4 +139,4 @@ exports.importdata = async function (req, res) {
     res.status(500);
     res.send();
   }
-};
+}

@@ -1,14 +1,13 @@
-var dataService;
+let dataService;
 
-module.exports = function (dataServiceToUse) {
+export function initialize(dataServiceToUse) {
   dataService = dataServiceToUse;
-  return exports;
-};
+}
 
 // TODO: pull this from the data store
 var maxDetailevel = 16;
 
-exports.findByArea = async function (options) {
+export async function findByArea(options) {
   var effectiveDetailLevel = Math.min(options.detailLevel, maxDetailevel);
   var collectionName = options.trailName + "_track" + effectiveDetailLevel;
   var searchTerms = {
@@ -25,4 +24,4 @@ exports.findByArea = async function (options) {
   var sortOrder = { seq: 1 };
 
   return await dataService.findArray(collectionName, searchTerms, projection, sortOrder);
-};
+}

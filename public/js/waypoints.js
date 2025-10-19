@@ -1,4 +1,3 @@
-// Bootstrap 5 no longer requires jQuery
 requirejs.config({
   baseUrl: "/js",
   paths: {

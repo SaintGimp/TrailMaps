@@ -1,4 +1,4 @@
-const { MongoClient } = require("mongodb");
+import { MongoClient } from "mongodb";
 
 // Module-level variables for connection pool
 let client = null;
@@ -18,7 +18,7 @@ function getMongoUrl() {
  * Initialize MongoDB connection pool
  * Should be called once at application startup
  */
-exports.connect = async function () {
+export async function connect() {
   if (client) {
     return db;
   }
@@ -36,20 +36,20 @@ exports.connect = async function () {
   db = client.db("trailmaps");
 
   return db;
-};
+}
 
 /**
  * Close MongoDB connection pool
  * Should be called during graceful shutdown
  */
-exports.close = async function () {
+export async function close() {
   if (client) {
     await client.close();
     client = null;
     db = null;
     console.log("MongoDB connection pool closed");
   }
-};
+}
 
 /**
  * Get database instance
@@ -62,35 +62,47 @@ function getDb() {
   return db;
 }
 
-exports.collection = async function (name) {
+export async function collection(name) {
   return getDb().collection(name);
-};
+}
 
-exports.collections = async function () {
+export async function collections() {
   return getDb().collections();
-};
+}
 
-exports.findArray = async function (collectionName, searchTerms, projection, sort) {
-  var collection = await exports.collection(collectionName);
-  return await collection.find(searchTerms, projection).limit(2000).sort(sort).toArray();
-};
+export async function findArray(collectionName, searchTerms, projection, sort) {
+  var coll = await collection(collectionName);
+  return await coll.find(searchTerms, projection).limit(2000).sort(sort).toArray();
+}
 
-exports.findOne = async function (collectionName, searchTerms, projection) {
-  var collection = await exports.collection(collectionName);
-  return await collection.findOne(searchTerms, projection);
-};
+export async function findOne(collectionName, searchTerms, projection) {
+  var coll = await collection(collectionName);
+  return await coll.findOne(searchTerms, projection);
+}
 
-exports.update = async function (collectionName, searchTerms, updateOperation) {
-  var collection = await exports.collection(collectionName);
-  return await collection.updateOne(searchTerms, updateOperation, { w: 1 });
-};
+export async function update(collectionName, searchTerms, updateOperation) {
+  var coll = await collection(collectionName);
+  return await coll.updateOne(searchTerms, updateOperation, { w: 1 });
+}
 
-exports.remove = async function (collectionName, searchTerms) {
-  var collection = await exports.collection(collectionName);
-  return await collection.deleteMany(searchTerms);
-};
+export async function remove(collectionName, searchTerms) {
+  var coll = await collection(collectionName);
+  return await coll.deleteMany(searchTerms);
+}
 
-exports.insert = async function (collectionName, insertOperation) {
-  var collection = await exports.collection(collectionName);
-  return await collection.insertOne(insertOperation);
+export async function insert(collectionName, insertOperation) {
+  var coll = await collection(collectionName);
+  return await coll.insertOne(insertOperation);
+}
+
+export default {
+  connect,
+  close,
+  collection,
+  collections,
+  findArray,
+  findOne,
+  update,
+  remove,
+  insert
 };

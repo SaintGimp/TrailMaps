@@ -2,20 +2,20 @@
  * GET home page.
  */
 
-module.exports = function (app) {
+export default function (app) {
   app.get("/", function (req, res) {
     res.redirect("/trails/pct/maps/bing");
   });
-  app.get("/trails/pct/maps/:mapName", exports.maps);
-  app.get("/trails/pct/waypoints", exports.waypoints);
-};
+  app.get("/trails/pct/maps/:mapName", maps);
+  app.get("/trails/pct/waypoints", waypoints);
+}
 
 function getValue(queryValue, fallbackValue) {
   var value = parseFloat(queryValue);
   return !isNaN(value) ? value : fallbackValue;
 }
 
-exports.maps = function (req, res) {
+export function maps(req, res) {
   // TODO: 404 if it's not a map name we recognize
   // TODO: allow no map name, default to Bing
   var defaults = {
@@ -32,10 +32,10 @@ exports.maps = function (req, res) {
   };
 
   res.render("maps", defaults);
-};
+}
 
-exports.waypoints = function (req, res) {
+export function waypoints(req, res) {
   // TODO: 404 if it's not a map name we recognize
 
   res.render("waypoints");
-};
+}

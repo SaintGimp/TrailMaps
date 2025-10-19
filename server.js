@@ -4,11 +4,21 @@
  * Module dependencies.
  */
 
-var express = require("express"),
-  app = (exports.app = express()),
-  path = require("path"),
-  bodyParser = require("body-parser"),
-  dataService = require("./domain/dataService.js");
+import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+import bodyParser from "body-parser";
+import serveFavicon from "serve-favicon";
+import morgan from "morgan";
+import methodOverride from "method-override";
+import lessMiddleware from "less-middleware";
+import * as dataService from "./domain/dataService.js";
+
+// ES6 module equivalents of __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export const app = express();
 
 // Configuration
 
@@ -16,16 +26,19 @@ app.set("port", process.env.VMC_APP_PORT || process.env.PORT || 3000);
 app.set("host", process.env.VCAP_APP_HOST || process.env.HOST || "localhost");
 app.set("views", __dirname + "/views");
 app.set("view engine", "pug");
-app.use(require("serve-favicon")("public/images/favicon.ico"));
-app.use(require("morgan")("dev"));
+app.use(serveFavicon("public/images/favicon.ico"));
+app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(require("method-override")());
-app.use(require("less-middleware")(path.join(__dirname, "public"), {}, {}, { compress: true }));
+app.use(methodOverride());
+app.use(lessMiddleware(path.join(__dirname, "public"), {}, {}, { compress: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
-require("./routes");
+import apiRoutes from "./routes/api.js";
+import homeRoutes from "./routes/home.js";
+apiRoutes(app);
+homeRoutes(app);
 
 app.use(function (req, res) {
   res.sendStatus(404);

@@ -1,6 +1,8 @@
-var expect = require("chai").expect;
-var fakeDataService = require("./fakeDataService");
-var waypoints = require("../../domain/waypoints")(fakeDataService);
+import { expect } from "chai";
+import * as fakeDataService from "./fakeDataService.js";
+import * as waypoints from "../../domain/waypoints.js";
+
+waypoints.initialize(fakeDataService);
 
 describe("Updating a waypoint", function () {
   var updateResult;
@@ -31,7 +33,7 @@ describe("Updating a waypoint", function () {
   describe("when updating a nonexistent waypoint", function () {
     before(async function () {
       var options = { trailName: "pct", id: "518203e00174652e7a000003", name: "updated" };
-      fakeDataService.shouldFailOnNextCall = true;
+      fakeDataService.state.shouldFailOnNextCall = true;
       updateResult = await waypoints.updateById(options);
     });
 

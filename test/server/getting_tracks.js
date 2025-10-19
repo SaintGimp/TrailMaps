@@ -1,6 +1,8 @@
-var expect = require("chai").expect;
-var fakeDataService = require("./fakeDataService");
-var tracks = require("../../domain/tracks")(fakeDataService);
+import { expect } from "chai";
+import * as fakeDataService from "./fakeDataService.js";
+import * as tracks from "../../domain/tracks.js";
+
+tracks.initialize(fakeDataService);
 
 describe("Finding track data by area", function () {
   var trackData;
@@ -46,7 +48,7 @@ describe("Finding track data by area", function () {
     var errorFromCall;
 
     before(async function () {
-      fakeDataService.shouldErrorOnNextCall = true;
+      fakeDataService.state.shouldErrorOnNextCall = true;
       var options = { trailName: "pct", north: 50, south: 32, east: -110, west: -125, detailLevel: 20 };
       try {
         await tracks.findByArea(options);

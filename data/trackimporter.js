@@ -1,7 +1,7 @@
-var fs = require("fs"),
-  { promisify } = require("util"),
-  xml2js = require("xml2js"),
-  dataService = require("../domain/dataService.js");
+import fs from "fs";
+import { promisify } from "util";
+import xml2js from "xml2js";
+import * as dataService from "../domain/dataService.js";
 
 var parser = new xml2js.Parser();
 var readFileAsync = promisify(fs.readFile);
@@ -132,7 +132,9 @@ async function saveCollections(collections) {
   return await Promise.all(savePromises);
 }
 
-exports.import = async function () {
+export async function importTracks() {}
+
+export const importFunc = async function () {
   console.log("Importing tracks");
 
   var track = await loadTrack();

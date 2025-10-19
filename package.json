@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Maps for long-distance hiking trails",
   "private": true,
+  "type": "module",
   "main": "server.js",
   "scripts": {
     "test": "npm run test:server",
