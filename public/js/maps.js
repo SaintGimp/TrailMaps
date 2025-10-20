@@ -56,11 +56,11 @@ const mapAPIs = {
   },
   here: async () => {
     if (loadedAPIs.here) return;
-    await loadStylesheet("http://js.api.here.com/v3/3.0/mapsjs-ui.css");
-    await loadScript("http://js.api.here.com/v3/3.0/mapsjs-core.js");
-    await loadScript("http://js.api.here.com/v3/3.0/mapsjs-service.js");
-    await loadScript("http://js.api.here.com/v3/3.0/mapsjs-ui.js");
-    await loadScript("http://js.api.here.com/v3/3.0/mapsjs-mapevents.js");
+    await loadStylesheet("https://js.api.here.com/v3/3.0/mapsjs-ui.css");
+    await loadScript("https://js.api.here.com/v3/3.0/mapsjs-core.js");
+    await loadScript("https://js.api.here.com/v3/3.0/mapsjs-service.js");
+    await loadScript("https://js.api.here.com/v3/3.0/mapsjs-ui.js");
+    await loadScript("https://js.api.here.com/v3/3.0/mapsjs-mapevents.js");
     loadedAPIs.here = true;
   }
 };

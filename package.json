@@ -30,6 +30,7 @@
     "dotenv": "^17.2.3",
     "express": "^4.21.2",
     "express-ai": "^0.6.0",
+    "helmet": "^8.1.0",
     "less-middleware": "^3.1.0",
     "method-override": "^3.0.0",
     "mongodb": "^5.8.1",
