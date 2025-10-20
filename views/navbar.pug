@@ -7,11 +7,11 @@ header
       #navbarNav.collapse.navbar-collapse
         ul.nav.nav-pills
           li.nav-item
-            a.nav-link(href=baseMapUrl + '/azure') Azure
+            a.nav-link(href=baseMapUrl + '/azure', class=defaultMapName === 'azure' ? 'active' : '') Azure
           li.nav-item
-            a.nav-link(href=baseMapUrl + '/google') Google
+            a.nav-link(href=baseMapUrl + '/google', class=defaultMapName === 'google' ? 'active' : '') Google
           li.nav-item
-            a.nav-link(href=baseMapUrl + '/here') Here
+            a.nav-link(href=baseMapUrl + '/here', class=defaultMapName === 'here' ? 'active' : '') Here
           li.nav-item
             a.nav-link(href='https://earth.google.com/web') Earth
         

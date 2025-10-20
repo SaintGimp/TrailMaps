@@ -5,10 +5,10 @@ block body
   include createWaypointDialog
   
   div.contentArea.tab-content(id='mapCanvas')
-    div.contents.map-control.tab-pane(id='azure')
-    div.contents.map-control.tab-pane(id='google')
+    div.contents.map-control.tab-pane(id='azure', class=defaultMapName === 'azure' ? 'active' : '')
+    div.contents.map-control.tab-pane(id='google', class=defaultMapName === 'google' ? 'active' : '')
     // TODO: Here apparently supports canvas for hardware accel?
-    div.contents.map-control.tab-pane(id='here')
+    div.contents.map-control.tab-pane(id='here', class=defaultMapName === 'here' ? 'active' : '')
     div.crosshair
       img(src='/images/crosshair.png')
 
