@@ -1,7 +1,6 @@
 import fs from "fs";
 import { promisify } from "util";
 import xml2js from "xml2js";
-import _ from "underscore";
 import * as dataService from "../domain/dataService.js";
 
 var parser = new xml2js.Parser();
@@ -93,8 +92,14 @@ async function loadMileMarkers() {
     mileMarkers.append(fileContent);
   });
 
-  var uniqueMarkers = _.uniq(mileMarkers, true, function (marker) {
-    return marker.mile;
+  // Get unique markers by mile value
+  var seenMiles = new Set();
+  var uniqueMarkers = mileMarkers.filter(function (marker) {
+    if (seenMiles.has(marker.mile)) {
+      return false;
+    }
+    seenMiles.add(marker.mile);
+    return true;
   });
 
   return uniqueMarkers;
