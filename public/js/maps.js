@@ -28,10 +28,6 @@ function loadScript(src) {
   });
 }
 
-// Load Bootstrap 5 dynamically
-loadStylesheet("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css");
-loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js");
-
 // Track loaded APIs to avoid reloading
 const loadedAPIs = {
   azure: false,
