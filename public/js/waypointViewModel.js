@@ -29,7 +29,7 @@ export default function WaypointViewModel() {
     self.seq = data.seq;
 
     self.location = self.latitude.toFixed(5) + ", " + self.longitude.toFixed(5);
-    self.link = "maps/bing?lat=" + self.latitude.toFixed(5) + "&lon=" + self.longitude.toFixed(5) + "&zoom=15";
+    self.link = "maps/azure?lat=" + self.latitude.toFixed(5) + "&lon=" + self.longitude.toFixed(5) + "&zoom=15";
   };
 
   self.toJS = function () {

@@ -10,9 +10,21 @@ Hosted right now at http://trailmaps.saintgimp.org.
 
 ### Setup
 
+1. Install dependencies:
+
 ```bash
 npm install
 ```
+
+2. Configure environment variables:
+
+Copy `.env.example` to `.env` and add your Azure Maps subscription key:
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` and replace `your-subscription-key-here` with your actual Azure Maps subscription key.
 
 ### Available Scripts
 

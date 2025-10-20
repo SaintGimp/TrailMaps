@@ -4,7 +4,7 @@
 
 - Install deps: `npm install`
 - Start dev server: `node server.js`
-- Retrieve the default landing page on server: `curl -s http://localhost:3000/trails/pct/maps/bing`
+- Retrieve the default landing page on server: `curl -s http://localhost:3000/trails/pct/maps/azure`
 - Run tests: `npm test`
 
 ## Code style

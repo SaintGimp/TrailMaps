@@ -1,1 +1,0 @@
-{"launch_in_ci":["phantomjs"],"test_page":"test/client/runner.html","routes":{"/js":"public/js","/stylesheets":"public/stylesheets","/test":"test"},"src_files":["public/js/*.js","test/client/*.js"],"serve_files":[]}

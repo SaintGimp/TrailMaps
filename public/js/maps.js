@@ -5,10 +5,17 @@ import NavbarModel from "./navbarModel.js";
 import CreateWaypointModel from "./createWaypointModel.js";
 import Autocomplete from "./autocomplete.js";
 
-// Load Bootstrap 5 dynamically
-const bootstrapScript = document.createElement("script");
-bootstrapScript.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js";
-document.head.appendChild(bootstrapScript);
+// Helper function to load external stylesheets
+function loadStylesheet(href) {
+  return new Promise((resolve, reject) => {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = href;
+    link.onload = () => resolve();
+    link.onerror = () => reject(new Error(`Failed to load stylesheet: ${href}`));
+    document.head.appendChild(link);
+  });
+}
 
 // Helper function to load external scripts
 function loadScript(src) {
@@ -21,21 +28,26 @@ function loadScript(src) {
   });
 }
 
+// Load Bootstrap 5 dynamically
+loadStylesheet("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css");
+loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js");
+
 // Track loaded APIs to avoid reloading
 const loadedAPIs = {
-  bing: false,
+  azure: false,
   google: false,
   here: false
 };
 
 // Load external map APIs as needed
 const mapAPIs = {
-  bing: async () => {
-    if (loadedAPIs.bing) return;
-    window.bingMapsReady = () => {
-      loadedAPIs.bing = true;
+  azure: async () => {
+    if (loadedAPIs.azure) return;
+    window.azureMapsReady = () => {
+      loadedAPIs.azure = true;
     };
-    await loadScript("https://www.bing.com/api/maps/mapcontrol?callback=bingMapsReady");
+    await loadStylesheet("https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.css");
+    await loadScript("https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.js");
   },
   google: async () => {
     if (loadedAPIs.google) return;
@@ -50,6 +62,7 @@ const mapAPIs = {
   },
   here: async () => {
     if (loadedAPIs.here) return;
+    await loadStylesheet("http://js.api.here.com/v3/3.0/mapsjs-ui.css");
     await loadScript("http://js.api.here.com/v3/3.0/mapsjs-core.js");
     await loadScript("http://js.api.here.com/v3/3.0/mapsjs-service.js");
     await loadScript("http://js.api.here.com/v3/3.0/mapsjs-ui.js");
@@ -77,10 +90,10 @@ async function initialize() {
         return;
       }
 
-      // Handle map pill clicks (only for bing, google, here)
+      // Handle map pill clicks (only for azure, google, here)
       if (target.tagName === "A" && target.closest(".nav-pills")) {
         const href = target.getAttribute("href");
-        if (href && (href.includes("/bing") || href.includes("/google") || href.includes("/here"))) {
+        if (href && (href.includes("/azure") || href.includes("/google") || href.includes("/here"))) {
           navbarModel.onPillClick(event);
         }
       }

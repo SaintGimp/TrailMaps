@@ -42,7 +42,7 @@ function Map(moduleName, containerName) {
 }
 
 const maps = {
-  bing: new Map("bingmaps", "bing"),
+  azure: new Map("azuremaps", "azure"),
   google: new Map("googlemaps", "google"),
   here: new Map("heremaps", "here")
 };
@@ -101,7 +101,7 @@ function calculateScrollBounds() {
   let scrollBoundsSize = mapBounds.width * scrollBoundsMultiple;
   // We get weird behavior when west goes past -180 and wraps around to +180. We should
   // probably build a custom rect in that case that's constrained to west < east, but this
-  // will do for now.  The Bing.Location class has a NormalizeLongitude thing that might be of some help.
+  // will do for now.  The azure.Location class has a NormalizeLongitude thing that might be of some help.
   scrollBoundsSize = Math.min(scrollBoundsSize, 60);
   scrollBounds = new Rectangle(mapCenter, scrollBoundsSize, scrollBoundsSize);
 }

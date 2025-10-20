@@ -1,5 +1,8 @@
 public/stylesheets/*.css
 
+# Environment variables
+.env
+
 lib-cov
 *.seed
 *.log

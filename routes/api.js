@@ -24,6 +24,7 @@ function safeHandler(handler) {
 }
 
 export default function (app) {
+  app.get("/api/config", getConfig);
   app.get("/api/trails/:trailName/milemarkers/:mile", safeHandler(getMileMarker));
   app.get("/api/trails/:trailName/waypoints/typeahead/:text", safeHandler(getWaypointTypeaheadList));
   app.get("/api/trails/:trailName/waypoints", safeHandler(getWaypoints));
@@ -32,6 +33,12 @@ export default function (app) {
   app.delete("/api/trails/:trailName/waypoints/:id", safeHandler(deleteWaypoint));
   app.get("/api/trails/:trailName", safeHandler(getTrailData));
   app.post("/api/admin/importdata", safeHandler(importdata));
+}
+
+export function getConfig(req, res) {
+  res.json({
+    azureMapsSubscriptionKey: process.env.AZURE_MAPS_SUBSCRIPTION_KEY || ""
+  });
 }
 
 export async function getTrailData(req, res) {

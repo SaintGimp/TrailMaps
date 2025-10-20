@@ -4,7 +4,7 @@
 
 export default function (app) {
   app.get("/", function (req, res) {
-    res.redirect("/trails/pct/maps/bing");
+    res.redirect("/trails/pct/maps/azure");
   });
   app.get("/trails/pct/maps/:mapName", maps);
   app.get("/trails/pct/waypoints", waypoints);
@@ -17,11 +17,11 @@ function getValue(queryValue, fallbackValue) {
 
 export function maps(req, res) {
   // TODO: 404 if it's not a map name we recognize
-  // TODO: allow no map name, default to Bing
+  // TODO: allow no map name, default to azure
   var defaults = {
     defaultMapName: req.params.mapName,
-    defaultLatitude: getValue(req.query.lat, 40.50642708521896),
-    defaultLongitude: getValue(req.query.lon, -121.36087699433327),
+    defaultLatitude: getValue(req.query.lat, 40.50964),
+    defaultLongitude: getValue(req.query.lon, -121.36232),
     defaultZoom: getValue(req.query.zoom, 5),
     // TODO: get these from the request url? Maybe just figure it out on the client?
     baseMapUrl: "/trails/pct/maps",
