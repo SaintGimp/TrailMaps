@@ -37,7 +37,8 @@ export default function (app) {
 
 export function getConfig(req, res) {
   res.json({
-    azureMapsSubscriptionKey: process.env.AZURE_MAPS_SUBSCRIPTION_KEY || ""
+    azureMapsSubscriptionKey: process.env.AZURE_MAPS_SUBSCRIPTION_KEY || "",
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY || ""
   });
 }
 

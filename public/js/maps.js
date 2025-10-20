@@ -43,22 +43,16 @@ const loadedAPIs = {
 const mapAPIs = {
   azure: async () => {
     if (loadedAPIs.azure) return;
-    window.azureMapsReady = () => {
-      loadedAPIs.azure = true;
-    };
     await loadStylesheet("https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.css");
     await loadScript("https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.js");
+    loadedAPIs.azure = true;
   },
   google: async () => {
     if (loadedAPIs.google) return;
-    window.googleMapsReady = () => {
-      loadedAPIs.google = true;
-    };
-    // Load markerwithlabel first, then Google Maps
-    await loadScript("/js/lib/markerwithlabel_packed.js");
-    await loadScript(
-      `https://maps.googleapis.com/maps/api/js?key=${trailMaps.configuration.googleApiKey}&callback=googleMapsReady`
-    );
+    // Load markerwithlabel library for Google Maps
+    await loadScript("https://unpkg.com/@googlemaps/markerwithlabel/dist/index.min.js");
+    // The main Google Maps API will be loaded by googlemaps.js
+    loadedAPIs.google = true;
   },
   here: async () => {
     if (loadedAPIs.here) return;

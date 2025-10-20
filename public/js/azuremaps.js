@@ -1,5 +1,3 @@
-/*global Microsoft: false*/
-
 import { Location, Rectangle } from "./trailmaps.js";
 
 let azureMap;
@@ -7,7 +5,7 @@ let trackDataSource;
 let mileMarkerDataSource;
 let subscriptionKey = null;
 
-const mileMarkerContent =
+const mileMarkerSvgIcon =
   `<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'>
      <polygon points='2,7 7,2 12,7 7,12' style='fill:red;stroke:blue;stroke-width:4' />
    </svg>`;
@@ -64,7 +62,7 @@ async function initialize(container, center, zoomLevel, onViewChanged) {
           strokeWidth: 3
       }));
 
-      azureMap.imageSprite.add('mileMarker', mileMarkerContent).then(function () {
+      azureMap.imageSprite.add('mileMarker', mileMarkerSvgIcon).then(function () {
         mileMarkerDataSource = new atlas.source.DataSource();
         azureMap.sources.add(mileMarkerDataSource);
         azureMap.layers.add(new atlas.layer.SymbolLayer(mileMarkerDataSource, null, {
