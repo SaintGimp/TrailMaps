@@ -15,6 +15,7 @@ import methodOverride from "method-override";
 import lessMiddleware from "less-middleware";
 import helmet from "helmet";
 import * as dataService from "./domain/dataService.js";
+import { generateNonce } from "./middleware/cspNonce.js";
 
 // ES6 module equivalents of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -29,6 +30,9 @@ app.set("host", process.env.VCAP_APP_HOST || process.env.HOST || "localhost");
 app.set("views", __dirname + "/views");
 app.set("view engine", "pug");
 
+// Generate CSP nonce for each request
+app.use(generateNonce);
+
 // Security headers via Helmet
 app.use(
   helmet({
@@ -41,7 +45,7 @@ app.use(
         // Scripts: self, inline with nonce, and external map APIs
         scriptSrc: [
           "'self'",
-          "'unsafe-inline'", // Temporarily allow for inline config scripts
+          (req, res) => `'nonce-${res.locals.cspNonce}'`, // Allow inline scripts with nonce
           "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/", // Bootstrap 5.3.2
           "https://atlas.microsoft.com/sdk/javascript/", // Azure Maps SDK
           "https://maps.googleapis.com", // Google Maps API
