@@ -50,16 +50,19 @@ async function initialize(container, center, zoomLevel, onViewChanged) {
     // https://developers.google.com/maps/documentation/javascript/
     const mapOptions = {
       center: new google.maps.LatLng(center.latitude, center.longitude),
-      zoom: zoomLevel,
-      mapTypeId: google.maps.MapTypeId.HYBRID
+      // Google maps zoom levels are off by one compared to other map providers
+      zoom: zoomLevel + 1,
+      mapTypeId: google.maps.MapTypeId.HYBRID,
+      cameraControl: true,
+      streetViewControl: false
     };
     googleMap = new google.maps.Map(container, mapOptions);
 
     // We listen for the first bounds_changed event to know when the map is ready,
     // then register the onViewChanged listener for future idle events.
     google.maps.event.addListenerOnce(googleMap, "bounds_changed", function() {
-      resolve();
       google.maps.event.addListener(googleMap, "idle", onViewChanged);
+      resolve();
     });
   });
 }
@@ -130,7 +133,8 @@ function getBounds() {
 }
 
 function getZoom() {
-  return googleMap.getZoom();
+  // Google maps zoom levels are off by one compared to other map providers
+  return googleMap.getZoom() - 1;
 }
 
 function getCenterAndZoom() {
@@ -140,14 +144,16 @@ function getCenterAndZoom() {
       latitude: mapCenter.lat(),
       longitude: mapCenter.lng()
     },
-    zoom: googleMap.getZoom()
+    // Google maps zoom levels are off by one compared to other map providers
+    zoom: googleMap.getZoom() - 1
   };
 }
 
 function setCenterAndZoom(options) {
   const mapCenter = new google.maps.LatLng(options.center.latitude, options.center.longitude);
   googleMap.setCenter(mapCenter);
-  googleMap.setZoom(options.zoom);
+  // Google maps zoom levels are off by one compared to other map providers
+  googleMap.setZoom(options.zoom + 1);
 }
 
 export default {

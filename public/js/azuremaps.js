@@ -134,10 +134,10 @@ function getCenterAndZoom() {
 }
 
 function setCenterAndZoom(options) {
-  const viewOptions = azureMap.getOptions();
-  viewOptions.center = new Microsoft.Maps.Location(options.center.latitude, options.center.longitude);
-  viewOptions.zoom = options.zoom;
-  azureMap.setView(viewOptions);
+  azureMap.setCamera({
+    center: new atlas.data.Position(options.center.longitude, options.center.latitude),
+    zoom: options.zoom
+  });
 }
 
 export default {
