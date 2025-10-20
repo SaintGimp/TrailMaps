@@ -47,7 +47,7 @@ export default [
 
         // Testing
         expect: "readonly",
-        sinon: "readonly",
+        sinon: "readonly"
       }
     },
     plugins: {

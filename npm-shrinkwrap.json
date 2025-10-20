@@ -21,7 +21,6 @@
         "morgan": "^1.10.1",
         "pug": "^3.0.3",
         "serve-favicon": "^2.5.0",
-        "underscore": "^1.9.1",
         "xml2js": "^0.6.2"
       },
       "devDependencies": {
@@ -4158,12 +4157,6 @@
       "engines": {
         "node": ">= 0.6"
       }
-    },
-    "node_modules/underscore": {
-      "version": "1.13.7",
-      "resolved": "https://registry.npmjs.org/underscore/-/underscore-1.13.7.tgz",
-      "integrity": "sha512-GMXzWtsc57XAtguZgaQViUOzs0KTkk8ojr3/xAxXLITqf/3EMwxC0inyETfDFjH/Krbhuep0HNbbjI9i/q3F3g==",
-      "license": "MIT"
     },
     "node_modules/undici-types": {
       "version": "6.20.0",

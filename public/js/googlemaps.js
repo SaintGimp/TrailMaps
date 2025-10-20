@@ -1,5 +1,5 @@
 /*global google: false*/
-/*global MarkerWithLabel: false*/
+/*global markerWithLabel: false*/
 
 import { Location, Rectangle } from "./trailmaps.js";
 
@@ -8,12 +8,6 @@ let previousPolyLine;
 const markerElementCollection = [];
 let apiKey;
 let bootstrapInitialized = false;
-
-const mileMarkerSvgIcon =
-  `<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'>
-     <polygon points='2,7 7,2 12,7 7,12' style='fill:red;stroke:blue;stroke-width:4' />
-     <text x='22' y='12' fill='white' style='font-size:14;font-family:arial;font-weight:bold'>%MILE%</text>
-   </svg>`;
 
 async function fetchApiKey() {
   if (!apiKey) {
@@ -32,6 +26,8 @@ async function ensureBootstrapLoaded() {
   await fetchApiKey();
 
   // Google bootstrap loader from https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+  // prettier-ignore
+  // eslint-disable-next-line no-async-promise-executor, no-undef
   (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
     key: apiKey,
     v: "weekly",
@@ -60,7 +56,7 @@ async function initialize(container, center, zoomLevel, onViewChanged) {
 
     // We listen for the first bounds_changed event to know when the map is ready,
     // then register the onViewChanged listener for future idle events.
-    google.maps.event.addListenerOnce(googleMap, "bounds_changed", function() {
+    google.maps.event.addListenerOnce(googleMap, "bounds_changed", function () {
       google.maps.event.addListener(googleMap, "idle", onViewChanged);
       resolve();
     });
@@ -90,7 +86,7 @@ function displayTrack(track) {
 
 function displayMileMarkers(mileMarkers) {
   // Remove existing mile markers
-  markerElementCollection.forEach(function(marker) {
+  markerElementCollection.forEach(function (marker) {
     marker.setMap(null);
   });
   markerElementCollection.length = 0;
