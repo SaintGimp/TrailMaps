@@ -166,7 +166,6 @@ const validateWaypoint = [
 - Log structured data (JSON format)
 - Configure log rotation and retention
 - Add performance metrics logging
-- Integrate with Application Insights more deeply
 
 **Example:**
 ```javascript
@@ -405,7 +404,6 @@ jobs:
 **Effort:** 12-16 hours
 **Impact:** High
 
-- Enhance Application Insights integration
 - Add custom metrics and events
 - Implement health check endpoints
 - Add uptime monitoring
@@ -431,10 +429,6 @@ jobs:
 **Impact:** High
 
 - Update outdated dependencies regularly:
-  - `applicationinsights` (v1.3.0 is very old, current is v2.x)
-  - `underscore` (v1.9.1, consider lodash-es or native JS)
-  - `xml2js` (v0.6.2, current is v0.6.x)
-  - `sinon` (v7.3.2, current is v19.x)
   - `coffeescript` (appears unused, remove?)
 - Set up automated dependency updates (Dependabot)
 - Review security advisories regularly
