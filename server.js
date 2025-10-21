@@ -177,27 +177,35 @@ async function startServer() {
     await dataService.connect();
     console.log("MongoDB connection pool established");
 
-    app.listen(app.get("port"), app.get("host"), function () {
+    const serverInstance = app.listen(app.get("port"), app.get("host"), function () {
       console.log("Node server version %s", process.version);
       console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
     });
 
     // Graceful shutdown
-    process.on("SIGINT", async () => {
-      console.log("\nShutting down gracefully...");
-      await dataService.close();
-      process.exit(0);
-    });
+    const shutdown = async (signal) => {
+      console.log(`\nReceived ${signal}, shutting down gracefully...`);
+      serverInstance.close(async () => {
+        await dataService.close();
+        process.exit(0);
+      });
+    };
 
-    process.on("SIGTERM", async () => {
-      console.log("\nShutting down gracefully...");
-      await dataService.close();
-      process.exit(0);
-    });
+    process.on("SIGINT", () => shutdown("SIGINT"));
+    process.on("SIGTERM", () => shutdown("SIGTERM"));
   } catch (error) {
     console.error("Failed to connect to MongoDB:", error);
     process.exit(1);
   }
 }
 
-startServer();
+// Only start server if this file is run directly (not imported as module)
+// Check if this is the main module by comparing resolved paths
+const isMainModule =
+  process.argv[1] &&
+  (import.meta.url === new URL(process.argv[1], `file://${process.cwd()}/`).href ||
+    import.meta.url.endsWith(process.argv[1].replace(/\\/g, "/")));
+
+if (isMainModule) {
+  startServer();
+}

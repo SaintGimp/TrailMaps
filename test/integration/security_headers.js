@@ -1,16 +1,27 @@
 import { expect } from "chai";
 import { app } from "../../server.js";
+import * as dataService from "../../domain/dataService.js";
 import http from "http";
 
 describe("Security Headers", function () {
   let server;
 
-  before(function (done) {
-    server = app.listen(0, done); // Random available port
+  before(async function () {
+    // Connect to MongoDB before starting server
+    await dataService.connect();
+    // Start HTTP server on random port
+    await new Promise((resolve) => {
+      server = app.listen(0, resolve);
+    });
   });
 
-  after(function (done) {
-    server.close(done);
+  after(async function () {
+    // Close HTTP server
+    await new Promise((resolve) => {
+      server.close(resolve);
+    });
+    // Close MongoDB connection to allow process to exit
+    await dataService.close();
   });
 
   it("should include X-Content-Type-Options header", function (done) {

@@ -8,8 +8,9 @@
   "scripts": {
     "test": "npm run test:server",
     "test:server": "mocha test/server/*.js",
+    "test:integration": "mocha test/integration/*.js --timeout 5000",
     "test:client": "echo 'Client tests require browser environment - see test/client/runner.html'",
-    "test:all": "npm run lint && npm run test:server",
+    "test:all": "npm run lint && npm run test:server && npm run test:integration",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"**/*.{js,json,md}\"",
