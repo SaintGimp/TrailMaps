@@ -45,6 +45,10 @@ app.use(
         // Scripts: self, inline with nonce, and external map APIs
         scriptSrc: [
           "'self'",
+          /**
+           * @param {import("express").Request} req
+           * @param {import("express").Response} res
+           */
           (req, res) => `'nonce-${res.locals.cspNonce}'`, // Allow inline scripts with nonce
           "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/", // Bootstrap 5.3.2
           "https://atlas.microsoft.com/sdk/javascript/", // Azure Maps SDK

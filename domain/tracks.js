@@ -1,5 +1,9 @@
+/** @type {import("./dataService.js")} */
 let dataService;
 
+/**
+ * @param {import("./dataService.js")} dataServiceToUse
+ */
 export function initialize(dataServiceToUse) {
   dataService = dataServiceToUse;
 }
@@ -7,6 +11,10 @@ export function initialize(dataServiceToUse) {
 // TODO: pull this from the data store
 var maxDetailevel = 16;
 
+/**
+ * @param {import("./types.js").BoundingBoxOptions} options
+ * @returns {Promise<import("./types.js").TrackPoint[]>}
+ */
 export async function findByArea(options) {
   var effectiveDetailLevel = Math.min(options.detailLevel, maxDetailevel);
   var collectionName = options.trailName + "_track" + effectiveDetailLevel;
@@ -14,8 +22,8 @@ export async function findByArea(options) {
     loc: {
       $within: {
         $box: [
-          [parseFloat(options.west), parseFloat(options.south)],
-          [parseFloat(options.east), parseFloat(options.north)]
+          [parseFloat(String(options.west)), parseFloat(String(options.south))],
+          [parseFloat(String(options.east)), parseFloat(String(options.north))]
         ]
       }
     }
@@ -23,5 +31,6 @@ export async function findByArea(options) {
   var projection = { _id: 0, loc: 1 };
   var sortOrder = { seq: 1 };
 
+  // @ts-ignore
   return await dataService.findArray(collectionName, searchTerms, projection, sortOrder);
 }

@@ -70,26 +70,57 @@ export async function collections() {
   return getDb().collections();
 }
 
+/**
+ * @param {string} collectionName
+ * @param {import("mongodb").Filter<import("mongodb").Document>} searchTerms
+ * @param {Object} [projection]
+ * @param {import("mongodb").Sort} [sort]
+ * @returns {Promise<import("mongodb").WithId<import("mongodb").Document>[]>}
+ */
 export async function findArray(collectionName, searchTerms, projection, sort) {
   var coll = await collection(collectionName);
+  // @ts-ignore - projection type mismatch with driver but works at runtime
   return await coll.find(searchTerms, projection).limit(2000).sort(sort).toArray();
 }
 
+/**
+ * @param {string} collectionName
+ * @param {import("mongodb").Filter<import("mongodb").Document>} searchTerms
+ * @param {Object} [projection]
+ * @returns {Promise<import("mongodb").WithId<import("mongodb").Document> | null>}
+ */
 export async function findOne(collectionName, searchTerms, projection) {
   var coll = await collection(collectionName);
+  // @ts-ignore - projection type mismatch
   return await coll.findOne(searchTerms, projection);
 }
 
+/**
+ * @param {string} collectionName
+ * @param {import("mongodb").Filter<import("mongodb").Document>} searchTerms
+ * @param {import("mongodb").UpdateFilter<import("mongodb").Document>} updateOperation
+ * @returns {Promise<import("mongodb").UpdateResult>}
+ */
 export async function update(collectionName, searchTerms, updateOperation) {
   var coll = await collection(collectionName);
   return await coll.updateOne(searchTerms, updateOperation, { w: 1 });
 }
 
+/**
+ * @param {string} collectionName
+ * @param {import("mongodb").Filter<import("mongodb").Document>} searchTerms
+ * @returns {Promise<import("mongodb").DeleteResult>}
+ */
 export async function remove(collectionName, searchTerms) {
   var coll = await collection(collectionName);
   return await coll.deleteMany(searchTerms);
 }
 
+/**
+ * @param {string} collectionName
+ * @param {import("mongodb").OptionalUnlessRequiredId<import("mongodb").Document>} insertOperation
+ * @returns {Promise<import("mongodb").InsertOneResult>}
+ */
 export async function insert(collectionName, insertOperation) {
   var coll = await collection(collectionName);
   return await coll.insertOne(insertOperation);

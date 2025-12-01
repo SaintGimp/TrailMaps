@@ -41,11 +41,6 @@ var fileNames = [
   "data/pct/wa_state_gps/WA_Sec_L_waypoints.gpx"
 ];
 
-// TODO: is this still necessary or is it built in now?
-Array.prototype.append = function (array) {
-  this.push.apply(this, array);
-};
-
 function readFile(fileName) {
   console.log("Reading " + fileName);
   return readFileAsync(__dirname + "/../" + fileName, "utf8");
@@ -89,7 +84,7 @@ async function loadMileMarkers() {
   var fileContentSet = await Promise.all(loadingPromises);
 
   fileContentSet.forEach(function (fileContent) {
-    mileMarkers.append(fileContent);
+    mileMarkers.push(...fileContent);
   });
 
   // Get unique markers by mile value

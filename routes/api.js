@@ -1,4 +1,4 @@
-import dataService from "../domain/dataService.js";
+import * as dataService from "../domain/dataService.js";
 import * as mileMarkersModule from "../domain/mileMarkers.js";
 import * as waypointsModule from "../domain/waypoints.js";
 import * as trailsModule from "../domain/trails.js";
@@ -35,6 +35,10 @@ export default function (app) {
   app.post("/api/admin/importdata", safeHandler(importdata));
 }
 
+/**
+ * @param {import("express").Request} req
+ * @param {import("express").Response} res
+ */
 export function getConfig(req, res) {
   res.json({
     azureMapsSubscriptionKey: process.env.AZURE_MAPS_SUBSCRIPTION_KEY || "",
@@ -42,20 +46,29 @@ export function getConfig(req, res) {
   });
 }
 
+/**
+ * @param {import("express").Request} req
+ * @param {import("express").Response} res
+ */
 export async function getTrailData(req, res) {
   var options = {
     trailName: req.params.trailName,
-    north: req.query.north,
-    south: req.query.south,
-    east: req.query.east,
-    west: req.query.west,
-    detailLevel: req.query.detail
+    north: parseFloat(String(req.query.north)),
+    south: parseFloat(String(req.query.south)),
+    east: parseFloat(String(req.query.east)),
+    west: parseFloat(String(req.query.west)),
+    detailLevel: parseInt(String(req.query.detail))
   };
 
+  // @ts-ignore
   var trailData = await trails.findByArea(options, res.locals.log);
   res.json(trailData);
 }
 
+/**
+ * @param {import("express").Request} req
+ * @param {import("express").Response} res
+ */
 export async function getMileMarker(req, res) {
   var options = {
     trailName: req.params.trailName,
@@ -66,6 +79,10 @@ export async function getMileMarker(req, res) {
   res.json(marker);
 }
 
+/**
+ * @param {import("express").Request} req
+ * @param {import("express").Response} res
+ */
 export async function getWaypointTypeaheadList(req, res) {
   var options = {
     trailName: req.params.trailName,
@@ -76,13 +93,17 @@ export async function getWaypointTypeaheadList(req, res) {
   res.json(waypointNames);
 }
 
+/**
+ * @param {import("express").Request} req
+ * @param {import("express").Response} res
+ */
 export async function getWaypoints(req, res) {
   var options = {
     trailName: req.params.trailName,
-    name: req.query.name
+    name: String(req.query.name)
   };
 
-  if (options.name) {
+  if (req.query.name) {
     var waypoint = await waypoints.findByName(options);
     if (waypoint) {
       res.json(Array.of(waypoint));
@@ -95,6 +116,10 @@ export async function getWaypoints(req, res) {
   }
 }
 
+/**
+ * @param {import("express").Request} req
+ * @param {import("express").Response} res
+ */
 export async function createWaypoint(req, res) {
   var options = {
     trailName: req.params.trailName,
@@ -110,6 +135,10 @@ export async function createWaypoint(req, res) {
   res.send();
 }
 
+/**
+ * @param {import("express").Request} req
+ * @param {import("express").Response} res
+ */
 export async function updateWaypoint(req, res) {
   var options = {
     trailName: req.params.trailName,
@@ -124,6 +153,10 @@ export async function updateWaypoint(req, res) {
   res.send();
 }
 
+/**
+ * @param {import("express").Request} req
+ * @param {import("express").Response} res
+ */
 export async function deleteWaypoint(req, res) {
   var options = {
     trailName: req.params.trailName,
@@ -137,6 +170,10 @@ export async function deleteWaypoint(req, res) {
   res.send();
 }
 
+/**
+ * @param {import("express").Request} req
+ * @param {import("express").Response} res
+ */
 export async function importdata(req, res) {
   try {
     res.connection.setTimeout(0);

@@ -1,3 +1,5 @@
+import { ObjectId } from "mongodb";
+
 let lastCall;
 
 export function getLastCall() {
@@ -20,8 +22,8 @@ export function findArray(collectionName, searchTerms, projection, sortOrder) {
 
   if (!state.shouldErrorOnNextCall) {
     var dummyData = [
-      { name: "foo", loc: [1, 2] },
-      { name: "bar", loc: [3, 4] }
+      { _id: new ObjectId("507f1f77bcf86cd799439011"), name: "foo", loc: [1, 2] },
+      { _id: new ObjectId("507f1f77bcf86cd799439012"), name: "bar", loc: [3, 4] }
     ];
 
     return Promise.resolve(dummyData);
@@ -42,6 +44,7 @@ export function findOne(collectionName, searchTerms, projection, sortOrder) {
 
   if (!state.shouldErrorOnNextCall) {
     var dummyData = {
+      _id: new ObjectId("507f1f77bcf86cd799439011"),
       loc: [1, 2],
       name: "1234",
       seq: 4321
@@ -68,9 +71,21 @@ export function update(collectionName, searchTerms, updateOperation) {
     });
   } else if (state.shouldFailOnNextCall) {
     state.shouldFailOnNextCall = false;
-    return Promise.resolve({ acknowledged: true, matchedCount: 0, modifiedCount: 0 });
+    return Promise.resolve({
+      acknowledged: true,
+      matchedCount: 0,
+      modifiedCount: 0,
+      upsertedCount: 0,
+      upsertedId: null
+    });
   } else {
-    return Promise.resolve({ acknowledged: true, matchedCount: 1, modifiedCount: 1 });
+    return Promise.resolve({
+      acknowledged: true,
+      matchedCount: 1,
+      modifiedCount: 1,
+      upsertedCount: 0,
+      upsertedId: null
+    });
   }
 }
 
@@ -81,7 +96,7 @@ export function remove(collectionName, searchTerms) {
   };
 
   if (!state.shouldErrorOnNextCall) {
-    return Promise.resolve();
+    return Promise.resolve({ acknowledged: true, deletedCount: 1 });
   } else {
     return Promise.reject(new Error("remove Oops")).finally(() => {
       state.shouldErrorOnNextCall = false;
@@ -111,6 +126,28 @@ export function initialize() {
   // No-op for compatibility
 }
 
+export async function connect() {
+  return Promise.resolve();
+}
+
+export async function close() {
+  return Promise.resolve();
+}
+
+export async function collection(name) {
+  return Promise.resolve({
+    find: () => ({ limit: () => ({ sort: () => ({ toArray: () => Promise.resolve([]) }) }) }),
+    findOne: () => Promise.resolve(null),
+    updateOne: () => Promise.resolve({ acknowledged: true, matchedCount: 0, modifiedCount: 0 }),
+    deleteMany: () => Promise.resolve({ acknowledged: true, deletedCount: 0 }),
+    insertOne: () => Promise.resolve({ acknowledged: true, insertedId: "fake-id" })
+  });
+}
+
+export async function collections() {
+  return Promise.resolve([]);
+}
+
 export default {
   getLastCall,
   state,
@@ -119,5 +156,9 @@ export default {
   update,
   remove,
   insert,
-  initialize
+  initialize,
+  connect,
+  close,
+  collection,
+  collections
 };

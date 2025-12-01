@@ -41,10 +41,6 @@ var fileNames = [
   "data/pct/wa_state_gps/WA_Sec_L_waypoints.gpx"
 ];
 
-Array.prototype.append = function (array) {
-  this.push.apply(this, array);
-};
-
 function readFile(fileName) {
   console.log("Reading " + fileName);
   return readFileAsync(__dirname + "/../" + fileName, "utf8");
@@ -164,7 +160,7 @@ async function loadWaypoints() {
 
   var fileContentSet = await Promise.all(loadPromises);
   fileContentSet.forEach(function (fileContent) {
-    waypoints.append(fileContent);
+    waypoints.push(...fileContent);
   });
 
   return waypoints;

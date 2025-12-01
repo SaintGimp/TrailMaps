@@ -44,10 +44,6 @@ var fileNames = [
   "data/pct/wa_state_gps/WA_Sec_L_tracks.gpx"
 ];
 
-Array.prototype.append = function (array) {
-  this.push.apply(this, array);
-};
-
 function readFile(fileName) {
   console.log("Reading " + fileName);
   return readFileAsync(__dirname + "/../" + fileName, "utf8");
@@ -82,7 +78,7 @@ async function loadTrack() {
   });
   var fileContentSet = await Promise.all(loadPromises);
   fileContentSet.forEach(function (fileContent) {
-    track.append(fileContent);
+    track.push(...fileContent);
   });
 
   track.forEach(function (point, index) {

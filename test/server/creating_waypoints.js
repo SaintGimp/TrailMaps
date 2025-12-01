@@ -13,7 +13,7 @@ describe("Creating a waypoint", function () {
         trailName: "pct",
         waypoint: {
           name: "new waypoint",
-          location: [1, 2]
+          loc: [1, 2]
         }
       };
       createResult = await waypoints.create(options);
@@ -42,7 +42,7 @@ describe("Creating a waypoint", function () {
         trailName: "pct",
         waypoint: {
           name: "new waypoint",
-          location: [1, 2]
+          loc: [1, 2]
         }
       };
       fakeDataService.state.shouldFailOnNextCall = true;
