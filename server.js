@@ -14,6 +14,7 @@ import morgan from "morgan";
 import methodOverride from "method-override";
 import lessMiddleware from "less-middleware";
 import helmet from "helmet";
+import cors from "cors";
 import * as dataService from "./domain/dataService.js";
 import { generateNonce } from "./middleware/cspNonce.js";
 
@@ -32,6 +33,31 @@ app.set("view engine", "pug");
 
 // Generate CSP nonce for each request
 app.use(generateNonce);
+
+// CORS Configuration
+const allowedOrigins = process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(",") : ["http://localhost:3000"]; // Default for dev
+
+const corsOptions = {
+  /**
+   * @param {string} origin
+   * @param {function(Error | null, boolean=): void} callback
+   */
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 
 // Security headers via Helmet
 app.use(

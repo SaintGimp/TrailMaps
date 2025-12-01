@@ -38,7 +38,19 @@ Edit `.env` and replace `your-subscription-key-here` with your actual Azure Maps
 - `npm run lint:fix` - Lint and auto-fix issues where possible
 - `npm run format` - Format all files with Prettier
 - `npm run format:check` - Check if files are formatted correctly
+- `npm run typecheck` - Validate JSDoc types
+
 
 ### Testing
 
 Server tests run via Mocha. Client tests require opening `test/client/runner.html` in a browser.
+
+### Deployment
+These environment variables need to be set in production:
+* NODE_ENV: set to `production`
+* ALLOWED_ORIGINS: to allow-list the production URL(s).
+* MONGO_URI: the back-end database URI
+* AZURE_MAPS_SUBSCRIPTION_KEY: key for Azure maps
+* GOOGLE_MAPS_API_KEY: key for Google maps
+* HERE_API_ID
+* HERE_API_CODE
