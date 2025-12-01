@@ -15,6 +15,7 @@ import {
   validateWaypointNameQuery,
   handleValidationErrors
 } from "../middleware/validation.js";
+import { apiLimiter, writeLimiter, adminLimiter } from "../middleware/rateLimiter.js";
 
 // Initialize domain modules with dataService
 mileMarkersModule.initialize(dataService);
@@ -36,9 +37,10 @@ function safeHandler(handler) {
 }
 
 export default function (app) {
-  app.get("/api/config", getConfig);
+  app.get("/api/config", apiLimiter, getConfig);
   app.get(
     "/api/trails/:trailName/milemarkers/:mile",
+    apiLimiter,
     validateTrailName,
     validateMile,
     handleValidationErrors,
@@ -46,6 +48,7 @@ export default function (app) {
   );
   app.get(
     "/api/trails/:trailName/waypoints/typeahead/:text",
+    apiLimiter,
     validateTrailName,
     validateText,
     handleValidationErrors,
@@ -53,6 +56,7 @@ export default function (app) {
   );
   app.get(
     "/api/trails/:trailName/waypoints",
+    apiLimiter,
     validateTrailName,
     validateWaypointNameQuery,
     handleValidationErrors,
@@ -60,6 +64,7 @@ export default function (app) {
   );
   app.post(
     "/api/trails/:trailName/waypoints",
+    writeLimiter,
     validateTrailName,
     validateWaypointBody,
     handleValidationErrors,
@@ -67,6 +72,7 @@ export default function (app) {
   );
   app.put(
     "/api/trails/:trailName/waypoints/:id",
+    writeLimiter,
     validateTrailName,
     validateId,
     validateWaypointUpdateBody,
@@ -75,6 +81,7 @@ export default function (app) {
   );
   app.delete(
     "/api/trails/:trailName/waypoints/:id",
+    writeLimiter,
     validateTrailName,
     validateId,
     handleValidationErrors,
@@ -82,13 +89,14 @@ export default function (app) {
   );
   app.get(
     "/api/trails/:trailName",
+    apiLimiter,
     validateTrailName,
     validateCoordinates,
     validateDetail,
     handleValidationErrors,
     safeHandler(getTrailData)
   );
-  app.post("/api/admin/importdata", safeHandler(importdata));
+  app.post("/api/admin/importdata", adminLimiter, safeHandler(importdata));
 }
 
 /**
