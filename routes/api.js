@@ -3,6 +3,18 @@ import * as mileMarkersModule from "../domain/mileMarkers.js";
 import * as waypointsModule from "../domain/waypoints.js";
 import * as trailsModule from "../domain/trails.js";
 import dataImporter from "../data/dataimporter.js";
+import {
+  validateTrailName,
+  validateMile,
+  validateText,
+  validateId,
+  validateCoordinates,
+  validateDetail,
+  validateWaypointBody,
+  validateWaypointUpdateBody,
+  validateWaypointNameQuery,
+  handleValidationErrors
+} from "../middleware/validation.js";
 
 // Initialize domain modules with dataService
 mileMarkersModule.initialize(dataService);
@@ -25,13 +37,57 @@ function safeHandler(handler) {
 
 export default function (app) {
   app.get("/api/config", getConfig);
-  app.get("/api/trails/:trailName/milemarkers/:mile", safeHandler(getMileMarker));
-  app.get("/api/trails/:trailName/waypoints/typeahead/:text", safeHandler(getWaypointTypeaheadList));
-  app.get("/api/trails/:trailName/waypoints", safeHandler(getWaypoints));
-  app.post("/api/trails/:trailName/waypoints", safeHandler(createWaypoint));
-  app.put("/api/trails/:trailName/waypoints/:id", safeHandler(updateWaypoint));
-  app.delete("/api/trails/:trailName/waypoints/:id", safeHandler(deleteWaypoint));
-  app.get("/api/trails/:trailName", safeHandler(getTrailData));
+  app.get(
+    "/api/trails/:trailName/milemarkers/:mile",
+    validateTrailName,
+    validateMile,
+    handleValidationErrors,
+    safeHandler(getMileMarker)
+  );
+  app.get(
+    "/api/trails/:trailName/waypoints/typeahead/:text",
+    validateTrailName,
+    validateText,
+    handleValidationErrors,
+    safeHandler(getWaypointTypeaheadList)
+  );
+  app.get(
+    "/api/trails/:trailName/waypoints",
+    validateTrailName,
+    validateWaypointNameQuery,
+    handleValidationErrors,
+    safeHandler(getWaypoints)
+  );
+  app.post(
+    "/api/trails/:trailName/waypoints",
+    validateTrailName,
+    validateWaypointBody,
+    handleValidationErrors,
+    safeHandler(createWaypoint)
+  );
+  app.put(
+    "/api/trails/:trailName/waypoints/:id",
+    validateTrailName,
+    validateId,
+    validateWaypointUpdateBody,
+    handleValidationErrors,
+    safeHandler(updateWaypoint)
+  );
+  app.delete(
+    "/api/trails/:trailName/waypoints/:id",
+    validateTrailName,
+    validateId,
+    handleValidationErrors,
+    safeHandler(deleteWaypoint)
+  );
+  app.get(
+    "/api/trails/:trailName",
+    validateTrailName,
+    validateCoordinates,
+    validateDetail,
+    handleValidationErrors,
+    safeHandler(getTrailData)
+  );
   app.post("/api/admin/importdata", safeHandler(importdata));
 }
 
