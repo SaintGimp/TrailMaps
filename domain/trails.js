@@ -21,10 +21,10 @@ export function initialize(dataServiceToUse) {
 
 /**
  * @param {import("./types.js").BoundingBoxOptions} options
- * @param {any} [log]
+ * @param {any} [_log]
  * @returns {Promise<import("./types.js").TrailData>}
  */
-export async function findByArea(options, log) {
+export async function findByArea(options, _log) {
   var tracksPromise = tracks.findByArea(options);
   var mileMarkersPromise = mileMarkers.findByArea(options);
   var trailData = await Promise.all([tracksPromise, mileMarkersPromise]);

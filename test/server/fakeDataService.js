@@ -134,7 +134,7 @@ export async function close() {
   return Promise.resolve();
 }
 
-export async function collection(name) {
+export async function collection(_name) {
   return Promise.resolve({
     find: () => ({ limit: () => ({ sort: () => ({ toArray: () => Promise.resolve([]) }) }) }),
     findOne: () => Promise.resolve(null),
