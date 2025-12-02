@@ -26,10 +26,10 @@ describe("Finding mile markers by area", function () {
     });
 
     it("should get data for the specified geographic area", function () {
-      expect(fakeDataService.getLastCall().searchTerms.loc.$within.$box[0][0]).to.equal(-125);
-      expect(fakeDataService.getLastCall().searchTerms.loc.$within.$box[0][1]).to.equal(32);
-      expect(fakeDataService.getLastCall().searchTerms.loc.$within.$box[1][0]).to.equal(-110);
-      expect(fakeDataService.getLastCall().searchTerms.loc.$within.$box[1][1]).to.equal(50);
+      expect(fakeDataService.getLastCall().searchTerms.loc.$geoWithin.$box[0][0]).to.equal(-125);
+      expect(fakeDataService.getLastCall().searchTerms.loc.$geoWithin.$box[0][1]).to.equal(32);
+      expect(fakeDataService.getLastCall().searchTerms.loc.$geoWithin.$box[1][0]).to.equal(-110);
+      expect(fakeDataService.getLastCall().searchTerms.loc.$geoWithin.$box[1][1]).to.equal(50);
     });
   });
 

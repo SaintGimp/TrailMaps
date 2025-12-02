@@ -5,12 +5,12 @@ let client = null;
 let db = null;
 
 function getMongoUrl() {
-  if (process.env.MONGO_URI) {
-    console.log("Connecting to " + process.env.MONGO_URI);
-    return process.env.MONGO_URI;
+  if (process.env.MONGODB_URI) {
+    console.log("Connecting to " + process.env.MONGODB_URI);
+    return process.env.MONGODB_URI;
   } else {
-    console.log("Connecting to local MongoDB");
-    return "mongodb://127.0.0.1:27017/trailmaps";
+    console.log("MongoDB connection string not found in environment variables.");
+    return "";
   }
 }
 

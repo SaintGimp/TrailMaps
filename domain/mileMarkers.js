@@ -28,7 +28,7 @@ export async function findByArea(options) {
   var collectionName = makeCollectionName(options.trailName, effectiveDetailLevel);
   var searchTerms = {
     loc: {
-      $within: {
+      $geoWithin: {
         $box: [
           [parseFloat(String(options.west)), parseFloat(String(options.south))],
           [parseFloat(String(options.east)), parseFloat(String(options.north))]
