@@ -2,6 +2,11 @@ import fs from "fs";
 import { promisify } from "util";
 import xml2js from "xml2js";
 import * as dataService from "../domain/dataService.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 var parser = new xml2js.Parser();
 var readFileAsync = promisify(fs.readFile);
