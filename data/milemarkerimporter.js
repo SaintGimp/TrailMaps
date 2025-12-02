@@ -108,18 +108,13 @@ async function loadMileMarkers() {
   return uniqueMarkers;
 }
 
-function Collection(detailLevel) {
-  this.data = [];
-  this.detailLevel = detailLevel;
-}
-
-function buildCollections(mileMarkers) {
-  console.log("Building collections");
+function buildMileMarkerPoints(mileMarkers) {
+  console.log("Building mile marker points");
 
   var stride = 1;
-  var collections = [];
+  var points = [];
   for (var detailLevel = 14; detailLevel >= 1; detailLevel--) {
-    var collection = new Collection(detailLevel);
+    console.log("Building points for detail level " + detailLevel);
     for (var x = 0; x < mileMarkers.length; x += stride) {
       var item = {
         trailName: "pct",
@@ -127,26 +122,18 @@ function buildCollections(mileMarkers) {
         mile: mileMarkers[x].mile,
         loc: mileMarkers[x].loc
       };
-      collection.data.push(item);
+      points.push(item);
     }
-    collections.push(collection);
     stride *= 2;
   }
 
-  return collections;
+  return points;
 }
 
-async function writeCollection(collection) {
-  console.log("Writing collection for detail level " + collection.detailLevel);
-  for (const item of collection.data) {
+async function saveMileMarkerPoints(points) {
+  console.log("Saving " + points.length + " mile marker points");
+  for (const item of points) {
     await dataService.create("milemarkers", item);
-  }
-}
-
-async function saveCollections(collections) {
-  console.log("Saving collections");
-  for (const collection of collections) {
-    await writeCollection(collection);
   }
 }
 
@@ -154,8 +141,8 @@ export async function importMileMarkers() {
   console.log("Importing mile markers");
 
   var mileMarkers = await loadMileMarkers();
-  var collections = await buildCollections(mileMarkers);
-  await saveCollections(collections);
+  var points = buildMileMarkerPoints(mileMarkers);
+  await saveMileMarkerPoints(points);
 
   console.log("Finished importing mile markers");
 }

@@ -8,11 +8,9 @@ export async function importData() {
 
   await dataService.connect();
 
-  await Promise.all([
-    trackImporter.importTracks(),
-    mileMarkerImporter.importMileMarkers(),
-    waypointImporter.importWaypoints()
-  ]);
+  await trackImporter.importTracks();
+  await mileMarkerImporter.importMileMarkers();
+  await waypointImporter.importWaypoints();
 }
 
 export default {

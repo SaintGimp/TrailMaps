@@ -96,17 +96,12 @@ async function loadTrack() {
   return track;
 }
 
-function Collection(detailLevel) {
-  this.data = [];
-  this.detailLevel = detailLevel;
-}
-
-function buildCollections(track) {
-  console.log("Building collections");
+function buildTrackPoints(track) {
+  console.log("Building track points");
   var stride = 1;
-  var collections = [];
+  var points = [];
   for (var detailLevel = 16; detailLevel >= 1; detailLevel--) {
-    var collection = new Collection(detailLevel);
+    console.log("Building points for detail level " + detailLevel);
     for (var x = 0; x < track.length; x += stride) {
       var item = {
         trailName: "pct",
@@ -114,28 +109,19 @@ function buildCollections(track) {
         seq: track[x].seq,
         loc: track[x].loc
       };
-      collection.data.push(item);
+      points.push(item);
     }
-    collections.push(collection);
     stride *= 2;
   }
 
-  return collections;
+  return points;
 }
 
-async function writeCollection(collection) {
-  console.log("Writing collection for detail level " + collection.detailLevel);
+async function saveTrackPoints(points) {
+  console.log("Saving " + points.length + " track points");
   // Use sequential execution to avoid overwhelming the emulator/service
-  for (const item of collection.data) {
+  for (const item of points) {
     await dataService.create("tracks", item);
-  }
-}
-
-async function saveCollections(collections) {
-  console.log("Saving collections");
-
-  for (const collection of collections) {
-    await writeCollection(collection);
   }
 }
 
@@ -143,8 +129,8 @@ export async function importTracks() {
   console.log("Importing tracks");
 
   var track = await loadTrack();
-  var collections = await buildCollections(track);
-  await saveCollections(collections);
+  var points = buildTrackPoints(track);
+  await saveTrackPoints(points);
 
   console.log("Finished importing tracks");
 }
