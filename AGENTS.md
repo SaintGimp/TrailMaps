@@ -2,13 +2,19 @@
 
 ## Setup commands
 
-- Install deps: `npm install`
+- Install dependencies: `npm install`
 - Start dev server: `node server.js`
+
+## Testing commands
+
 - Retrieve the default landing page on server: `curl -s http://localhost:3000/trails/pct/maps/azure`
-- Run tests: `npm test` (runs unit tests only)
-- Run unit tests: `npm run test:server`
+- Run server unit tests: `npm run test:server`
 - Run integration tests: `npm run test:integration`
-- Run all tests: `npm run test:all` (lints, then unit tests, then integration tests)
+- Run eslint: `npm run lint`
+- Run a JSDoc type check with tsc: `npm run typecheck`
+- Run all tests: `npm run test:all` (runs lint, then type check, then unit tests, then integration tests)
+
+Run all tests (`npm run test:all`) at the end of every task that modifies source code.
 
 ## Code style
 
