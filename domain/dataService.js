@@ -26,8 +26,8 @@ export async function connect() {
     key,
     connectionPolicy: {
       retryOptions: {
-        maxRetryAttemptCount: 100,
-        maxWaitTimeInSeconds: 5 * 60
+        maxRetryAttemptCount: 1000,
+        maxWaitTimeInSeconds: 15 * 60
       }
     }
   };

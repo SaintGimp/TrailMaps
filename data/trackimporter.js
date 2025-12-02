@@ -97,8 +97,8 @@ async function loadTrack() {
 }
 
 // This determines the "importance" of a track point based on its position in the sequence.
-// Index: 0  1  2  3  4  ... 8
-// Level: 1  16 15 16 14 ... 13
+// Index: 0  1  2  3  4  ... 8  ... 32,768
+// Level: 1  16 15 16 14 ... 13 ... 1
 function getDetailLevel(index) {
   if (index === 0) {
     return 1;
@@ -134,8 +134,8 @@ function buildTrackPoints(track) {
 async function saveTrackPoints(points) {
   console.log("Saving " + points.length + " track points");
   // Use sequential execution to avoid overwhelming the emulator/service
-  for (const item of points) {
-    await dataService.create("tracks", item);
+  for (const point of points) {
+    await dataService.create("tracks", point);
   }
 }
 
