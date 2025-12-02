@@ -73,7 +73,7 @@ async function getSequenceNumber(location) {
   // location is GeoJSON Point
   const querySpec = {
     query:
-      "SELECT TOP 10 c.seq, ST_DISTANCE(c.loc, @point) as dist FROM c WHERE c.trailName = 'pct' AND c.detailLevel = 16 AND ST_DISTANCE(c.loc, @point) < 1000",
+      "SELECT TOP 10 c.seq, ST_DISTANCE(c.loc, @point) as dist FROM c WHERE c.trailName = 'pct' AND ST_DISTANCE(c.loc, @point) < 1000",
     parameters: [{ name: "@point", value: location }]
   };
 

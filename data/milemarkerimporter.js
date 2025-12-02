@@ -108,24 +108,29 @@ async function loadMileMarkers() {
   return uniqueMarkers;
 }
 
+function getDetailLevel(index) {
+  if (index === 0) {
+    return 1;
+  }
+  var zeros = 0;
+  while ((index & 1) === 0) {
+    index >>= 1;
+    zeros++;
+  }
+  return Math.max(1, 14 - zeros);
+}
+
 function buildMileMarkerPoints(mileMarkers) {
   console.log("Building mile marker points");
 
-  var stride = 1;
-  var points = [];
-  for (var detailLevel = 14; detailLevel >= 1; detailLevel--) {
-    console.log("Building points for detail level " + detailLevel);
-    for (var x = 0; x < mileMarkers.length; x += stride) {
-      var item = {
-        trailName: "pct",
-        detailLevel: detailLevel,
-        mile: mileMarkers[x].mile,
-        loc: mileMarkers[x].loc
-      };
-      points.push(item);
-    }
-    stride *= 2;
-  }
+  var points = mileMarkers.map(function (m, i) {
+    return {
+      trailName: "pct",
+      detailLevel: getDetailLevel(i),
+      mile: m.mile,
+      loc: m.loc
+    };
+  });
 
   return points;
 }

@@ -38,7 +38,7 @@ export async function findByArea(options) {
 
   const querySpec = {
     query:
-      "SELECT c.loc FROM c WHERE c.trailName = @trailName AND c.detailLevel = @detailLevel AND ST_WITHIN(c.loc, @polygon) ORDER BY c.seq ASC",
+      "SELECT c.loc FROM c WHERE c.trailName = @trailName AND c.detailLevel <= @detailLevel AND ST_WITHIN(c.loc, @polygon) ORDER BY c.seq ASC",
     parameters: [
       { name: "@trailName", value: options.trailName },
       { name: "@detailLevel", value: effectiveDetailLevel },

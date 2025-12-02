@@ -96,23 +96,37 @@ async function loadTrack() {
   return track;
 }
 
+// This determines the "importance" of a track point based on its position in the sequence.
+// Index: 0  1  2  3  4  ... 8
+// Level: 1  16 15 16 14 ... 13
+function getDetailLevel(index) {
+  if (index === 0) {
+    return 1;
+  }
+
+  var zeros = 0;
+
+  // Checks if the last bit is 1 (odd number) or 0 (even number)
+  while ((index & 1) === 0) {
+    // Shifts the bits to the right (divides by 2), effectively moving to the next bit.
+    index >>= 1;
+    // Counts how many times we can divide by 2 before hitting an odd number.
+    zeros++;
+  }
+
+  return Math.max(1, 16 - zeros);
+}
+
 function buildTrackPoints(track) {
   console.log("Building track points");
-  var stride = 1;
-  var points = [];
-  for (var detailLevel = 16; detailLevel >= 1; detailLevel--) {
-    console.log("Building points for detail level " + detailLevel);
-    for (var x = 0; x < track.length; x += stride) {
-      var item = {
-        trailName: "pct",
-        detailLevel: detailLevel,
-        seq: track[x].seq,
-        loc: track[x].loc
-      };
-      points.push(item);
-    }
-    stride *= 2;
-  }
+  var points = track.map(function (t, i) {
+    return {
+      trailName: "pct",
+      detailLevel: getDetailLevel(i),
+      seq: t.seq,
+      loc: t.loc
+    };
+  });
 
   return points;
 }
