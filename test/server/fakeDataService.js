@@ -1,5 +1,3 @@
-import { ObjectId } from "mongodb";
-
 let lastCall;
 
 export function getLastCall() {
@@ -9,116 +7,84 @@ export function getLastCall() {
 // Make these mutable state objects that tests can modify
 export const state = {
   shouldErrorOnNextCall: false,
-  shouldFailOnNextCall: false
+  shouldFailOnNextCall: false,
+  shouldFailOnCreate: false
 };
 
-export function findArray(collectionName, searchTerms, projection, sortOrder) {
+export function query(containerName, querySpec) {
   lastCall = {
-    collectionName: collectionName,
-    searchTerms: searchTerms,
-    projection: projection,
-    sortOrder: sortOrder
+    containerName: containerName,
+    querySpec: querySpec
   };
 
-  if (!state.shouldErrorOnNextCall) {
+  if (state.shouldErrorOnNextCall) {
+    return Promise.reject(new Error("query Oops")).finally(() => {
+      state.shouldErrorOnNextCall = false;
+    });
+  } else if (state.shouldFailOnNextCall) {
+    state.shouldFailOnNextCall = false;
+    return Promise.resolve([]);
+  } else {
     var dummyData = [
-      { _id: new ObjectId("507f1f77bcf86cd799439011"), name: "foo", loc: [1, 2] },
-      { _id: new ObjectId("507f1f77bcf86cd799439012"), name: "bar", loc: [3, 4] }
+      { id: "507f1f77bcf86cd799439011", name: "foo", loc: { type: "Point", coordinates: [1, 2] }, seq: 1, dist: 10 },
+      { id: "507f1f77bcf86cd799439012", name: "bar", loc: { type: "Point", coordinates: [3, 4] }, seq: 2, dist: 20 }
     ];
 
     return Promise.resolve(dummyData);
-  } else {
-    return Promise.reject(new Error("findArray Oops")).finally(() => {
-      state.shouldErrorOnNextCall = false;
-    });
   }
 }
 
-export function findOne(collectionName, searchTerms, projection, sortOrder) {
+export function create(containerName, item) {
   lastCall = {
-    collectionName: collectionName,
-    searchTerms: searchTerms,
-    projection: projection,
-    sortOrder: sortOrder
-  };
-
-  if (!state.shouldErrorOnNextCall) {
-    var dummyData = {
-      _id: new ObjectId("507f1f77bcf86cd799439011"),
-      loc: [1, 2],
-      name: "1234",
-      seq: 4321
-    };
-
-    return Promise.resolve(dummyData);
-  } else {
-    return Promise.reject(new Error("findOne Oops")).finally(() => {
-      state.shouldErrorOnNextCall = false;
-    });
-  }
-}
-
-export function update(collectionName, searchTerms, updateOperation) {
-  lastCall = {
-    collectionName: collectionName,
-    searchTerms: searchTerms,
-    updateOperation: updateOperation
+    containerName: containerName,
+    item: item
   };
 
   if (state.shouldErrorOnNextCall) {
-    return Promise.reject(new Error("update Oops")).finally(() => {
+    return Promise.reject(new Error("create Oops")).finally(() => {
+      state.shouldErrorOnNextCall = false;
+    });
+  } else if (state.shouldFailOnNextCall || state.shouldFailOnCreate) {
+    state.shouldFailOnNextCall = false;
+    state.shouldFailOnCreate = false;
+    return Promise.resolve(null);
+  } else {
+    return Promise.resolve({ ...item, id: "507f1f77bcf86cd799439011" });
+  }
+}
+
+export function replace(containerName, id, item) {
+  lastCall = {
+    containerName: containerName,
+    id: id,
+    item: item
+  };
+
+  if (state.shouldErrorOnNextCall) {
+    return Promise.reject(new Error("replace Oops")).finally(() => {
       state.shouldErrorOnNextCall = false;
     });
   } else if (state.shouldFailOnNextCall) {
     state.shouldFailOnNextCall = false;
-    return Promise.resolve({
-      acknowledged: true,
-      matchedCount: 0,
-      modifiedCount: 0,
-      upsertedCount: 0,
-      upsertedId: null
-    });
+    return Promise.resolve(null);
   } else {
-    return Promise.resolve({
-      acknowledged: true,
-      matchedCount: 1,
-      modifiedCount: 1,
-      upsertedCount: 0,
-      upsertedId: null
-    });
+    return Promise.resolve({ ...item, id: id });
   }
 }
 
-export function remove(collectionName, searchTerms) {
+export function deleteItem(containerName, id, partitionKey) {
   lastCall = {
-    collectionName: collectionName,
-    searchTerms: searchTerms
+    containerName: containerName,
+    id: id,
+    partitionKey: partitionKey
   };
 
   if (!state.shouldErrorOnNextCall) {
-    return Promise.resolve({ acknowledged: true, deletedCount: 1 });
+    return Promise.resolve();
   } else {
-    return Promise.reject(new Error("remove Oops")).finally(() => {
+    return Promise.reject(new Error("deleteItem Oops")).finally(() => {
       state.shouldErrorOnNextCall = false;
     });
-  }
-}
-
-export function insert(collectionName, insertOperation) {
-  lastCall = {
-    collectionName: collectionName,
-    insertOperation: insertOperation
-  };
-
-  if (state.shouldErrorOnNextCall) {
-    return Promise.reject(new Error("insert Oops")).finally(() => {
-      state.shouldErrorOnNextCall = false;
-    });
-  } else if (state.shouldFailOnNextCall) {
-    state.shouldFailOnNextCall = false;
-    return Promise.resolve({ acknowledged: false, insertedId: null });
-  } else {
-    return Promise.resolve({ acknowledged: true, insertedId: "507f1f77bcf86cd799439011" });
   }
 }
 
@@ -134,31 +100,28 @@ export async function close() {
   return Promise.resolve();
 }
 
-export async function collection(_name) {
-  return Promise.resolve({
-    find: () => ({ limit: () => ({ sort: () => ({ toArray: () => Promise.resolve([]) }) }) }),
-    findOne: () => Promise.resolve(null),
-    updateOne: () => Promise.resolve({ acknowledged: true, matchedCount: 0, modifiedCount: 0 }),
-    deleteMany: () => Promise.resolve({ acknowledged: true, deletedCount: 0 }),
-    insertOne: () => Promise.resolve({ acknowledged: true, insertedId: "fake-id" })
-  });
-}
-
-export async function collections() {
-  return Promise.resolve([]);
+export function container(_containerName) {
+  return {
+    items: {
+      query: () => ({ fetchAll: () => Promise.resolve({ resources: [] }) }),
+      create: () => Promise.resolve({ resource: { id: "fake-id" } })
+    },
+    item: () => ({
+      replace: () => Promise.resolve({ resource: { id: "fake-id" } }),
+      delete: () => Promise.resolve()
+    })
+  };
 }
 
 export default {
   getLastCall,
   state,
-  findArray,
-  findOne,
-  update,
-  remove,
-  insert,
+  query,
+  create,
+  replace,
+  deleteItem,
   initialize,
   connect,
   close,
-  collection,
-  collections
+  container
 };

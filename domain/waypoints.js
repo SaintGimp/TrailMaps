@@ -1,5 +1,3 @@
-import { ObjectId } from "mongodb";
-
 /** @typedef {import("./types.js").Waypoint} Waypoint */
 
 /** @type {import("./dataService.js")} */
@@ -13,32 +11,21 @@ export function initialize(dataServiceToUse) {
 }
 
 /**
- * @param {string} trailName
- */
-function makeCollectionName(trailName) {
-  return trailName + "_waypoints";
-}
-
-/**
- * @param {string} string
- */
-function escapeRegExp(string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
-}
-
-/**
  * @param {Object} options
  * @param {string} options.trailName
  * @returns {Promise<Waypoint[]>}
  */
 export async function getWaypoints(options) {
-  var collectionName = makeCollectionName(options.trailName);
-  var searchTerms = {};
-  var projection = { _id: 1, name: 1, halfmileDescription: 1, loc: 1, seq: 1 };
-  var sortOrder = { seq: 1 };
-
-  // @ts-ignore
-  return await dataService.findArray(collectionName, searchTerms, projection, sortOrder);
+  const querySpec = {
+    query: "SELECT * FROM c WHERE c.trailName = @trailName ORDER BY c.seq ASC",
+    parameters: [{ name: "@trailName", value: options.trailName }]
+  };
+  const results = await dataService.query("waypoints", querySpec);
+  return results.map((item) => ({
+    ...item,
+    loc: item.loc.coordinates,
+    _id: item.id // Map Cosmos id to _id for compatibility
+  }));
 }
 
 /**
@@ -48,12 +35,21 @@ export async function getWaypoints(options) {
  * @returns {Promise<Waypoint | null>}
  */
 export async function findByName(options) {
-  var collectionName = makeCollectionName(options.trailName);
-  var searchTerms = { name: new RegExp("^" + escapeRegExp(options.name), "i") };
-  var projection = { _id: 0, name: 1, loc: 1 };
-
-  // @ts-ignore
-  return await dataService.findOne(collectionName, searchTerms, projection);
+  const querySpec = {
+    query: "SELECT * FROM c WHERE c.trailName = @trailName AND STARTSWITH(c.name, @name, true)",
+    parameters: [
+      { name: "@trailName", value: options.trailName },
+      { name: "@name", value: options.name }
+    ]
+  };
+  const results = await dataService.query("waypoints", querySpec);
+  if (results.length === 0) return null;
+  const item = results[0];
+  return {
+    ...item,
+    loc: item.loc.coordinates,
+    _id: item.id
+  };
 }
 
 /**
@@ -63,16 +59,15 @@ export async function findByName(options) {
  * @returns {Promise<string[]>}
  */
 export async function getTypeaheadList(options) {
-  var collectionName = makeCollectionName(options.trailName);
-  var searchTerms = { name: new RegExp(options.text, "i") };
-  var projection = { name: 1 };
-  /** @type {import("mongodb").Sort} */
-  var sortOrder = { name: 1 };
-
-  var matches = await dataService.findArray(collectionName, searchTerms, projection, sortOrder);
-  return matches.map(function (waypoint) {
-    return waypoint.name;
-  });
+  const querySpec = {
+    query: "SELECT c.name FROM c WHERE c.trailName = @trailName AND CONTAINS(c.name, @text, true) ORDER BY c.name ASC",
+    parameters: [
+      { name: "@trailName", value: options.trailName },
+      { name: "@text", value: options.text }
+    ]
+  };
+  const results = await dataService.query("waypoints", querySpec);
+  return results.map((item) => item.name);
 }
 
 /**
@@ -83,25 +78,32 @@ export async function getTypeaheadList(options) {
  * @returns {Promise<boolean>}
  */
 export async function updateById(options) {
-  var collectionName = makeCollectionName(options.trailName);
-  var searchTerms = { _id: new ObjectId(options.id) };
-  var updateOperation = { $set: { name: options.name } };
+  const querySpec = {
+    query: "SELECT * FROM c WHERE c.id = @id AND c.trailName = @trailName",
+    parameters: [
+      { name: "@id", value: options.id },
+      { name: "@trailName", value: options.trailName }
+    ]
+  };
+  const results = await dataService.query("waypoints", querySpec);
+  if (results.length === 0) return false;
 
-  var commandResult = await dataService.update(collectionName, searchTerms, updateOperation);
-  return commandResult.acknowledged && commandResult.matchedCount > 0;
+  const item = results[0];
+  item.name = options.name;
+
+  await dataService.replace("waypoints", options.id, item);
+  return true;
 }
 
 /**
  * @param {Object} options
  * @param {string} options.trailName
  * @param {string} options.id
- * @returns {Promise<import("mongodb").DeleteResult>}
+ * @returns {Promise<{ acknowledged: boolean, deletedCount: number }>}
  */
 export async function deleteById(options) {
-  var collectionName = makeCollectionName(options.trailName);
-  var searchTerms = { _id: new ObjectId(options.id) };
-
-  return await dataService.remove(collectionName, searchTerms);
+  await dataService.deleteItem("waypoints", options.id, options.trailName);
+  return { acknowledged: true, deletedCount: 1 };
 }
 
 /**
@@ -111,19 +113,40 @@ export async function deleteById(options) {
  * @returns {Promise<boolean>}
  */
 export async function create(options) {
-  var collectionName = makeCollectionName(options.trailName);
-  var waypoint = options.waypoint;
-  waypoint.seq = await getSequenceNumber(waypoint.loc);
+  const waypoint = options.waypoint;
+  // waypoint.loc is [lon, lat]
+  const geoJsonLoc = {
+    type: "Point",
+    coordinates: waypoint.loc
+  };
 
-  var commandResult = await dataService.insert(collectionName, waypoint);
-  return commandResult.acknowledged && commandResult.insertedId != null;
+  const seq = await getSequenceNumber(geoJsonLoc);
+
+  const item = {
+    ...waypoint,
+    loc: geoJsonLoc,
+    seq: seq,
+    trailName: options.trailName
+  };
+
+  const resource = await dataService.create("waypoints", item);
+  return !!(resource && resource.id != null);
 }
 
 /**
  * @param {import("./types.js").GeoJSONPoint} location
  */
 async function getSequenceNumber(location) {
-  var trackPoint = await dataService.findOne("pct_track16", { loc: { $near: location } }, { seq: 1 });
-  // @ts-ignore
-  return trackPoint.seq;
+  // location is GeoJSON Point
+  const querySpec = {
+    query:
+      "SELECT TOP 10 c.seq, ST_DISTANCE(c.loc, @point) as dist FROM c WHERE c.trailName = 'pct' AND c.detailLevel = 16 AND ST_DISTANCE(c.loc, @point) < 1000",
+    parameters: [{ name: "@point", value: location }]
+  };
+
+  const results = await dataService.query("tracks", querySpec);
+  if (results.length === 0) return 0;
+
+  results.sort((a, b) => a.dist - b.dist);
+  return results[0].seq;
 }

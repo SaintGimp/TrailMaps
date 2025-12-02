@@ -14,15 +14,15 @@ describe("Updating a waypoint", function () {
     });
 
     it("should update the waypoint in the collection corresponding to the trail name", function () {
-      expect(fakeDataService.getLastCall().collectionName).to.equal("pct_waypoints");
+      expect(fakeDataService.getLastCall().containerName).to.equal("waypoints");
     });
 
     it("should update the waypoint having the given id", function () {
-      expect(fakeDataService.getLastCall().searchTerms._id.toHexString()).to.equal("518203e00174652e7a000003");
+      expect(fakeDataService.getLastCall().id).to.equal("518203e00174652e7a000003");
     });
 
     it("should update the waypoint with the new nane", function () {
-      expect(fakeDataService.getLastCall().updateOperation.$set.name).to.equal("updated");
+      expect(fakeDataService.getLastCall().item.name).to.equal("updated");
     });
 
     it("should indicate success", function () {

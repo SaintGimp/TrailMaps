@@ -18,12 +18,14 @@ describe("Finding a waypoint by name", function () {
     });
 
     it("should get the waypoint from the collection corresponding to the trail name", function () {
-      expect(fakeDataService.getLastCall().collectionName).to.equal("pct_waypoints");
+      expect(fakeDataService.getLastCall().containerName).to.equal("waypoints");
     });
 
     it("should get a waypoint whos name starts with the search text", function () {
-      expect(fakeDataService.getLastCall().searchTerms.name.source).to.equal("^waypoint");
-      expect(fakeDataService.getLastCall().searchTerms.name.ignoreCase).to.be.ok;
+      const params = fakeDataService.getLastCall().querySpec.parameters;
+      const nameParam = params.find((p) => p.name === "@name");
+      expect(nameParam.value).to.equal("waypoint");
+      expect(fakeDataService.getLastCall().querySpec.query).to.contain("STARTSWITH(c.name, @name, true)");
     });
   });
 });
@@ -42,12 +44,14 @@ describe("Getting waypoint typeahead lists", function () {
     });
 
     it("should get the waypoint names from the collection corresponding to the trail name", function () {
-      expect(fakeDataService.getLastCall().collectionName).to.equal("pct_waypoints");
+      expect(fakeDataService.getLastCall().containerName).to.equal("waypoints");
     });
 
     it("should get all waypoints that contain the search text", function () {
-      expect(fakeDataService.getLastCall().searchTerms.name.source).to.equal("foo");
-      expect(fakeDataService.getLastCall().searchTerms.name.ignoreCase).to.be.ok;
+      const params = fakeDataService.getLastCall().querySpec.parameters;
+      const textParam = params.find((p) => p.name === "@text");
+      expect(textParam.value).to.equal("foo");
+      expect(fakeDataService.getLastCall().querySpec.query).to.contain("CONTAINS(c.name, @text, true)");
     });
   });
 });

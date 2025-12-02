@@ -201,11 +201,11 @@ app.use(function (req, res) {
   res.sendStatus(404);
 });
 
-// Initialize MongoDB connection pool and start server
+// Initialize Cosmos DB connection and start server
 async function startServer() {
   try {
     await dataService.connect();
-    console.log("MongoDB connection pool established");
+    console.log("Cosmos DB connection established");
 
     const serverInstance = app.listen(app.get("port"), app.get("host"), function () {
       console.log("Node server version %s", process.version);
@@ -224,7 +224,7 @@ async function startServer() {
     process.on("SIGINT", () => shutdown("SIGINT"));
     process.on("SIGTERM", () => shutdown("SIGTERM"));
   } catch (error) {
-    console.error("Failed to connect to MongoDB:", error);
+    console.error("Failed to connect to Cosmos DB:", error);
     process.exit(1);
   }
 }

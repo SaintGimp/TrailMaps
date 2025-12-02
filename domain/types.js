@@ -5,28 +5,34 @@
  */
 
 /**
- * @typedef {number[]} GeoJSONPoint
+ * @typedef {number[]} LegacyPoint
+ */
+
+/**
+ * @typedef {Object} GeoJSONPoint
+ * @property {string} type
+ * @property {number[]} coordinates
  */
 
 /**
  * @typedef {Object} Waypoint
- * @property {import("mongodb").ObjectId} [_id]
+ * @property {string} [_id]
  * @property {string} name
  * @property {string} [halfmileDescription]
- * @property {GeoJSONPoint} loc
+ * @property {LegacyPoint} loc
  * @property {number} [seq]
  * @property {string} [trailName]
  */
 
 /**
  * @typedef {Object} TrackPoint
- * @property {GeoJSONPoint} loc
+ * @property {LegacyPoint} loc
  * @property {number} [seq]
  */
 
 /**
  * @typedef {Object} MileMarker
- * @property {GeoJSONPoint} loc
+ * @property {LegacyPoint} loc
  * @property {number} mile
  */
 

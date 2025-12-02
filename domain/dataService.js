@@ -1,139 +1,96 @@
-import { MongoClient } from "mongodb";
+import { CosmosClient } from "@azure/cosmos";
+import https from "https";
 
-// Module-level variables for connection pool
 let client = null;
-let db = null;
+let database = null;
 
-function getMongoUrl() {
-  if (process.env.MONGODB_URI) {
-    console.log("Connecting to " + process.env.MONGODB_URI);
-    return process.env.MONGODB_URI;
-  } else {
-    console.log("MongoDB connection string not found in environment variables.");
-    return "";
-  }
-}
-
-/**
- * Initialize MongoDB connection pool
- * Should be called once at application startup
- */
 export async function connect() {
   if (client) {
-    return db;
+    return database;
   }
 
-  const url = getMongoUrl();
-  client = new MongoClient(url, {
-    maxPoolSize: 10,
-    minPoolSize: 2,
-    maxIdleTimeMS: 30000,
-    serverSelectionTimeoutMS: 5000,
-    socketTimeoutMS: 45000
-  });
+  const endpoint = process.env.COSMOS_ENDPOINT;
+  const key = process.env.COSMOS_KEY;
 
-  await client.connect();
-  db = client.db("trailmaps");
-
-  return db;
-}
-
-/**
- * Close MongoDB connection pool
- * Should be called during graceful shutdown
- */
-export async function close() {
-  if (client) {
-    await client.close();
-    client = null;
-    db = null;
-    console.log("MongoDB connection pool closed");
+  if (!endpoint || !key) {
+    throw new Error("Cosmos DB endpoint or key not found in environment variables.");
   }
+
+  console.log("Connecting to Cosmos DB at " + endpoint);
+
+  /** @type {import("@azure/cosmos").CosmosClientOptions} */
+  const clientOptions = { endpoint, key };
+
+  if (endpoint.includes("localhost")) {
+    // Node on Windows doesn't check the trusted root store so we have to disable TLS verification.
+    // Disable TLS verification only for this client (for local emulator), not globally.
+    clientOptions.agent = new https.Agent({ rejectUnauthorized: false });
+  }
+
+  client = new CosmosClient(clientOptions);
+
+  const { database: db } = await client.databases.createIfNotExists({ id: "trailmaps" });
+  database = db;
+
+  // Create containers with partition key /trailName
+  const containers = ["tracks", "milemarkers", "waypoints"];
+  for (const containerId of containers) {
+    const containerDef = {
+      id: containerId,
+      partitionKey: { paths: ["/trailName"] },
+      indexingPolicy: {
+        indexingMode: "consistent",
+        automatic: true,
+        includedPaths: [{ path: "/*" }, { path: "/loc/*", indexes: [{ kind: "Spatial", dataType: "Point" }] }]
+      }
+    };
+    // @ts-ignore
+    await database.containers.createIfNotExists(containerDef);
+  }
+
+  return database;
 }
 
-/**
- * Get database instance
- * Throws error if not connected
- */
-function getDb() {
-  if (!db) {
+export function container(containerName) {
+  if (!database) {
     throw new Error("Database not initialized. Call connect() first.");
   }
-  return db;
+  return database.container(containerName);
 }
 
-export async function collection(name) {
-  return getDb().collection(name);
+export async function query(containerName, querySpec) {
+  const { resources } = await container(containerName).items.query(querySpec).fetchAll();
+  return resources;
 }
 
-export async function collections() {
-  return getDb().collections();
+export async function create(containerName, item) {
+  const { resource } = await container(containerName).items.create(item);
+  return resource;
 }
 
-/**
- * @param {string} collectionName
- * @param {import("mongodb").Filter<import("mongodb").Document>} searchTerms
- * @param {Object} [projection]
- * @param {import("mongodb").Sort} [sort]
- * @returns {Promise<import("mongodb").WithId<import("mongodb").Document>[]>}
- */
-export async function findArray(collectionName, searchTerms, projection, sort) {
-  var coll = await collection(collectionName);
-  // @ts-ignore - projection type mismatch with driver but works at runtime
-  return await coll.find(searchTerms, projection).limit(2000).sort(sort).toArray();
+export async function replace(containerName, id, item) {
+  const { resource } = await container(containerName).item(id, item.trailName).replace(item);
+  return resource;
 }
 
-/**
- * @param {string} collectionName
- * @param {import("mongodb").Filter<import("mongodb").Document>} searchTerms
- * @param {Object} [projection]
- * @returns {Promise<import("mongodb").WithId<import("mongodb").Document> | null>}
- */
-export async function findOne(collectionName, searchTerms, projection) {
-  var coll = await collection(collectionName);
-  // @ts-ignore - projection type mismatch
-  return await coll.findOne(searchTerms, projection);
+export async function deleteItem(containerName, id, partitionKey) {
+  await container(containerName).item(id, partitionKey).delete();
 }
 
-/**
- * @param {string} collectionName
- * @param {import("mongodb").Filter<import("mongodb").Document>} searchTerms
- * @param {import("mongodb").UpdateFilter<import("mongodb").Document>} updateOperation
- * @returns {Promise<import("mongodb").UpdateResult>}
- */
-export async function update(collectionName, searchTerms, updateOperation) {
-  var coll = await collection(collectionName);
-  return await coll.updateOne(searchTerms, updateOperation, { w: 1 });
-}
-
-/**
- * @param {string} collectionName
- * @param {import("mongodb").Filter<import("mongodb").Document>} searchTerms
- * @returns {Promise<import("mongodb").DeleteResult>}
- */
-export async function remove(collectionName, searchTerms) {
-  var coll = await collection(collectionName);
-  return await coll.deleteMany(searchTerms);
-}
-
-/**
- * @param {string} collectionName
- * @param {import("mongodb").OptionalUnlessRequiredId<import("mongodb").Document>} insertOperation
- * @returns {Promise<import("mongodb").InsertOneResult>}
- */
-export async function insert(collectionName, insertOperation) {
-  var coll = await collection(collectionName);
-  return await coll.insertOne(insertOperation);
+export async function close() {
+  if (client) {
+    client.dispose();
+    client = null;
+    database = null;
+  }
 }
 
 export default {
   connect,
-  close,
-  collection,
-  collections,
-  findArray,
-  findOne,
-  update,
-  remove,
-  insert
+  container,
+  query,
+  create,
+  replace,
+  deleteItem,
+  close
 };

@@ -240,7 +240,7 @@ export async function deleteWaypoint(req, res) {
  */
 export async function importdata(req, res) {
   try {
-    res.connection.setTimeout(0);
+    res.socket.setTimeout(0);
     await dataImporter.import();
     res.json("success");
   } catch (err) {

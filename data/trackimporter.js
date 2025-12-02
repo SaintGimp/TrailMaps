@@ -57,7 +57,10 @@ async function parseData(trackXml) {
   console.log("Converting " + trackJson.gpx.trk[0].name);
   return trackJson.gpx.trk[0].trkseg[0].trkpt.map(function (point) {
     return {
-      loc: [parseFloat(point.$.lon), parseFloat(point.$.lat)] // MongoDB likes longitude first
+      loc: {
+        type: "Point",
+        coordinates: [parseFloat(point.$.lon), parseFloat(point.$.lat)]
+      }
     };
   });
 }
@@ -100,7 +103,13 @@ function buildCollections(track) {
   for (var detailLevel = 16; detailLevel >= 1; detailLevel--) {
     var collection = new Collection(detailLevel);
     for (var x = 0; x < track.length; x += stride) {
-      collection.data.push(track[x]);
+      var item = {
+        trailName: "pct",
+        detailLevel: detailLevel,
+        seq: track[x].seq,
+        loc: track[x].loc
+      };
+      collection.data.push(item);
     }
     collections.push(collection);
     stride *= 2;
@@ -110,27 +119,22 @@ function buildCollections(track) {
 }
 
 async function writeCollection(collection) {
-  var collectionName = "pct_track" + collection.detailLevel;
-  console.log("Writing collection " + collectionName);
-
-  var mongoCollection = await dataService.collection(collectionName);
-  await mongoCollection.insertMany(collection.data);
-  return await mongoCollection.createIndex({ loc: "2dsphere" }, { w: 1 });
+  console.log("Writing collection for detail level " + collection.detailLevel);
+  // Use sequential execution to avoid overwhelming the emulator/service
+  for (const item of collection.data) {
+    await dataService.create("tracks", item);
+  }
 }
 
 async function saveCollections(collections) {
   console.log("Saving collections");
 
-  var savePromises = collections.map(function (collection) {
-    return writeCollection(collection);
-  });
-
-  return await Promise.all(savePromises);
+  for (const collection of collections) {
+    await writeCollection(collection);
+  }
 }
 
-export async function importTracks() {}
-
-export const importFunc = async function () {
+export async function importTracks() {
   console.log("Importing tracks");
 
   var track = await loadTrack();
@@ -138,4 +142,4 @@ export const importFunc = async function () {
   await saveCollections(collections);
 
   console.log("Finished importing tracks");
-};
+}

@@ -7,7 +7,7 @@ describe("Security Headers", function () {
   let server;
 
   before(async function () {
-    // Connect to MongoDB before starting server
+    // Connect to Cosmos DB before starting server
     await dataService.connect();
     // Start HTTP server on random port
     await new Promise((resolve) => {
@@ -20,7 +20,7 @@ describe("Security Headers", function () {
     await new Promise((resolve) => {
       server.close(resolve);
     });
-    // Close MongoDB connection to allow process to exit
+    // Close Cosmos DB connection to allow process to exit
     await dataService.close();
   });
 

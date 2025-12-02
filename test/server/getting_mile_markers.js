@@ -18,18 +18,25 @@ describe("Finding mile markers by area", function () {
     });
 
     it("should get data from the collection corresponding to the trail name", function () {
-      expect(fakeDataService.getLastCall().collectionName).to.match(/^pct_milemarkers\d+$/);
+      expect(fakeDataService.getLastCall().containerName).to.equal("milemarkers");
     });
 
     it("should get data from the collection corresponding to the detail level", function () {
-      expect(fakeDataService.getLastCall().collectionName).to.match(/.*5$/);
+      const params = fakeDataService.getLastCall().querySpec.parameters;
+      const detailLevelParam = params.find((p) => p.name === "@detailLevel");
+      expect(detailLevelParam.value).to.equal(5);
     });
 
     it("should get data for the specified geographic area", function () {
-      expect(fakeDataService.getLastCall().searchTerms.loc.$geoWithin.$box[0][0]).to.equal(-125);
-      expect(fakeDataService.getLastCall().searchTerms.loc.$geoWithin.$box[0][1]).to.equal(32);
-      expect(fakeDataService.getLastCall().searchTerms.loc.$geoWithin.$box[1][0]).to.equal(-110);
-      expect(fakeDataService.getLastCall().searchTerms.loc.$geoWithin.$box[1][1]).to.equal(50);
+      const params = fakeDataService.getLastCall().querySpec.parameters;
+      // console.log("Params:", JSON.stringify(params, null, 2));
+      const bboxParam = params.find((p) => p.name === "@polygon");
+      const coords = bboxParam.value.coordinates[0];
+      // Polygon coordinates: [[minLon, minLat], [maxLon, minLat], [maxLon, maxLat], [minLon, maxLat], [minLon, minLat]]
+      expect(coords[0][0]).to.equal(-125); // west
+      expect(coords[0][1]).to.equal(32); // south
+      expect(coords[2][0]).to.equal(-110); // east
+      expect(coords[2][1]).to.equal(50); // north
     });
   });
 
@@ -40,7 +47,9 @@ describe("Finding mile markers by area", function () {
     });
 
     it("should get mile markers from the the collection corresponding to the maximum available detail level", function () {
-      expect(fakeDataService.getLastCall().collectionName).to.match(/.*14$/);
+      const params = fakeDataService.getLastCall().querySpec.parameters;
+      const detailLevelParam = params.find((p) => p.name === "@detailLevel");
+      expect(detailLevelParam.value).to.equal(14);
     });
   });
 
@@ -77,15 +86,19 @@ describe("Finding a mile marker by value", function () {
     });
 
     it("should get the mile marker from the collection corresponding to the trail name", function () {
-      expect(fakeDataService.getLastCall().collectionName).to.match(/^pct_milemarkers\d+$/);
+      expect(fakeDataService.getLastCall().containerName).to.equal("milemarkers");
     });
 
     it("should get the mile marker from the maximum detail level collection", function () {
-      expect(fakeDataService.getLastCall().collectionName).to.match(/.*14$/);
+      const params = fakeDataService.getLastCall().querySpec.parameters;
+      const detailLevelParam = params.find((p) => p.name === "@detailLevel");
+      expect(detailLevelParam.value).to.equal(14);
     });
 
     it("should get the mile marker by value", function () {
-      expect(fakeDataService.getLastCall().searchTerms.mile).to.equal(1234);
+      const params = fakeDataService.getLastCall().querySpec.parameters;
+      const mileParam = params.find((p) => p.name === "@mile");
+      expect(mileParam.value).to.equal(1234);
     });
   });
 });

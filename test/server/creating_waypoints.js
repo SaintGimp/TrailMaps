@@ -20,15 +20,15 @@ describe("Creating a waypoint", function () {
     });
 
     it("should create the waypoint in the collection corresponding to the trail name", function () {
-      expect(fakeDataService.getLastCall().collectionName).to.equal("pct_waypoints");
+      expect(fakeDataService.getLastCall().containerName).to.equal("waypoints");
     });
 
     it("should create the waypoint with the specified attributes", function () {
-      expect(fakeDataService.getLastCall().insertOperation.name).to.equal("new waypoint");
+      expect(fakeDataService.getLastCall().item.name).to.equal("new waypoint");
     });
 
     it("should set the sequence number for the waypoint", function () {
-      expect(fakeDataService.getLastCall().insertOperation.seq).to.equal(4321);
+      expect(fakeDataService.getLastCall().item.seq).to.equal(1);
     });
 
     it("should indicate success", function () {
@@ -45,7 +45,7 @@ describe("Creating a waypoint", function () {
           loc: [1, 2]
         }
       };
-      fakeDataService.state.shouldFailOnNextCall = true;
+      fakeDataService.state.shouldFailOnCreate = true;
       createResult = await waypoints.create(options);
     });
 

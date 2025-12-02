@@ -1,7 +1,7 @@
-var fs = require("fs"),
-  { promisify } = require("util"),
-  xml2js = require("xml2js"),
-  dataService = require("../domain/dataService.js");
+import fs from "fs";
+import { promisify } from "util";
+import xml2js from "xml2js";
+import * as dataService from "../domain/dataService.js";
 
 var parser = new xml2js.Parser();
 var readFileAsync = promisify(fs.readFile);
@@ -65,8 +65,18 @@ function cleanupName(name) {
 }
 
 async function getSequenceNumber(location) {
-  var trackPoint = await dataService.findOne("pct_track16", { loc: { $near: location } }, { seq: 1 });
-  return trackPoint.seq;
+  // location is GeoJSON Point
+  const querySpec = {
+    query:
+      "SELECT TOP 10 c.seq, ST_DISTANCE(c.loc, @point) as dist FROM c WHERE c.trailName = 'pct' AND c.detailLevel = 16 AND ST_DISTANCE(c.loc, @point) < 1000",
+    parameters: [{ name: "@point", value: location }]
+  };
+
+  const results = await dataService.query("tracks", querySpec);
+  if (results.length === 0) return 0;
+
+  results.sort((a, b) => a.dist - b.dist);
+  return results[0].seq;
 }
 
 async function parseData(waypointXml) {
@@ -128,9 +138,13 @@ async function parseData(waypointXml) {
   var waypoints = filteredWaypointJson.map(function (waypoint) {
     return {
       name: cleanupName(waypoint.desc[0]),
-      loc: [parseFloat(waypoint.$.lon), parseFloat(waypoint.$.lat)], // MongoDB likes longitude first
+      loc: {
+        type: "Point",
+        coordinates: [parseFloat(waypoint.$.lon), parseFloat(waypoint.$.lat)]
+      },
       halfmileName: waypoint.name[0],
-      halfmileDescription: waypoint.desc[0]
+      halfmileDescription: waypoint.desc[0],
+      trailName: "pct"
     };
   });
 
@@ -166,20 +180,18 @@ async function loadWaypoints() {
   return waypoints;
 }
 
-async function saveCollection(collection) {
-  var collectionName = "pct_waypoints";
-  console.log("Saving collection " + collectionName);
-
-  var mongoCollection = await dataService.collection(collectionName);
-  await mongoCollection.insertMany(collection);
-  return await mongoCollection.createIndex({ loc: "2dsphere" }, { w: 1 });
+async function saveCollection(waypoints) {
+  console.log("Saving waypoints");
+  for (const waypoint of waypoints) {
+    await dataService.create("waypoints", waypoint);
+  }
 }
 
-exports.import = async function () {
+export async function importWaypoints() {
   console.log("Importing waypoints");
 
   var waypoints = await loadWaypoints();
   await saveCollection(waypoints);
 
   console.log("Finished importing waypoints");
-};
+}

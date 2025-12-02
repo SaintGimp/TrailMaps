@@ -12,11 +12,11 @@ describe("Deleting a waypoint", function () {
     });
 
     it("should delete the waypoint from the collection corresponding to the trail name", function () {
-      expect(fakeDataService.getLastCall().collectionName).to.equal("pct_waypoints");
+      expect(fakeDataService.getLastCall().containerName).to.equal("waypoints");
     });
 
     it("should delete the waypoint with the corresponding id", function () {
-      expect(fakeDataService.getLastCall().searchTerms._id.toHexString()).to.equal("518203e00174652e7a000003");
+      expect(fakeDataService.getLastCall().id).to.equal("518203e00174652e7a000003");
     });
   });
 });

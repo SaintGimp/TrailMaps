@@ -12,35 +12,46 @@ export function initialize(dataServiceToUse) {
 var maxDetailevel = 14;
 
 /**
- * @param {string} trailName
- * @param {number} detailLevel
- */
-function makeCollectionName(trailName, detailLevel) {
-  return trailName + "_milemarkers" + detailLevel;
-}
-
-/**
  * @param {import("./types.js").BoundingBoxOptions} options
  * @returns {Promise<import("./types.js").MileMarker[]>}
  */
 export async function findByArea(options) {
   var effectiveDetailLevel = Math.min(options.detailLevel, maxDetailevel);
-  var collectionName = makeCollectionName(options.trailName, effectiveDetailLevel);
-  var searchTerms = {
-    loc: {
-      $geoWithin: {
-        $box: [
-          [parseFloat(String(options.west)), parseFloat(String(options.south))],
-          [parseFloat(String(options.east)), parseFloat(String(options.north))]
-        ]
-      }
-    }
-  };
-  var projection = { _id: 0, loc: 1, mile: 1 };
-  var sortOrder = { _id: 1 };
 
-  // @ts-ignore
-  return await dataService.findArray(collectionName, searchTerms, projection, sortOrder);
+  const west = parseFloat(String(options.west));
+  const south = parseFloat(String(options.south));
+  const east = parseFloat(String(options.east));
+  const north = parseFloat(String(options.north));
+
+  const polygon = {
+    type: "Polygon",
+    coordinates: [
+      [
+        [west, south],
+        [east, south],
+        [east, north],
+        [west, north],
+        [west, south]
+      ]
+    ]
+  };
+
+  const querySpec = {
+    query:
+      "SELECT c.loc, c.mile FROM c WHERE c.trailName = @trailName AND c.detailLevel = @detailLevel AND ST_WITHIN(c.loc, @polygon) ORDER BY c.mile ASC",
+    parameters: [
+      { name: "@trailName", value: options.trailName },
+      { name: "@detailLevel", value: effectiveDetailLevel },
+      { name: "@polygon", value: polygon }
+    ]
+  };
+
+  const results = await dataService.query("milemarkers", querySpec);
+
+  return results.map((item) => ({
+    loc: item.loc.coordinates,
+    mile: item.mile
+  }));
 }
 
 /**
@@ -50,11 +61,22 @@ export async function findByArea(options) {
  * @returns {Promise<import("./types.js").MileMarker | null>}
  */
 export async function findByValue(options) {
-  var collectionName = makeCollectionName(options.trailName, maxDetailevel);
-  var searchTerms = { mile: options.mile };
-  var projection = { _id: 0, loc: 1, mile: 1 };
-  var sortOrder = { _id: 1 };
+  const querySpec = {
+    query:
+      "SELECT TOP 1 c.loc, c.mile FROM c WHERE c.trailName = @trailName AND c.detailLevel = @detailLevel AND c.mile = @mile",
+    parameters: [
+      { name: "@trailName", value: options.trailName },
+      { name: "@detailLevel", value: maxDetailevel },
+      { name: "@mile", value: options.mile }
+    ]
+  };
 
-  // @ts-ignore
-  return await dataService.findOne(collectionName, searchTerms, projection, sortOrder);
+  const results = await dataService.query("milemarkers", querySpec);
+
+  if (results.length === 0) return null;
+
+  return {
+    loc: results[0].loc.coordinates,
+    mile: results[0].mile
+  };
 }

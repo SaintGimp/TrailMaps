@@ -58,7 +58,10 @@ async function parseData(waypointXml) {
   var newMarkers = markerJson.map(function (marker) {
     var name = marker.name[0].replace("-", ".");
     return {
-      loc: [parseFloat(marker.$.lon), parseFloat(marker.$.lat)], // MongoDB likes longitude first
+      loc: {
+        type: "Point",
+        coordinates: [parseFloat(marker.$.lon), parseFloat(marker.$.lat)]
+      },
       mile: parseFloat(name)
     };
   });
@@ -113,7 +116,13 @@ function buildCollections(mileMarkers) {
   for (var detailLevel = 14; detailLevel >= 1; detailLevel--) {
     var collection = new Collection(detailLevel);
     for (var x = 0; x < mileMarkers.length; x += stride) {
-      collection.data.push(mileMarkers[x]);
+      var item = {
+        trailName: "pct",
+        detailLevel: detailLevel,
+        mile: mileMarkers[x].mile,
+        loc: mileMarkers[x].loc
+      };
+      collection.data.push(item);
     }
     collections.push(collection);
     stride *= 2;
@@ -123,22 +132,17 @@ function buildCollections(mileMarkers) {
 }
 
 async function writeCollection(collection) {
-  var collectionName = "pct_milemarkers" + collection.detailLevel;
-  console.log("Writing collection " + collectionName);
-
-  var mongoCollection = await dataService.collection(collectionName);
-  await mongoCollection.insertMany(collection.data);
-  console.log("Wrote collection " + collectionName);
-  return await mongoCollection.createIndex({ loc: "2dsphere" });
+  console.log("Writing collection for detail level " + collection.detailLevel);
+  for (const item of collection.data) {
+    await dataService.create("milemarkers", item);
+  }
 }
 
 async function saveCollections(collections) {
   console.log("Saving collections");
-  var savePromises = collections.map(function (collection) {
-    return writeCollection(collection);
-  });
-
-  return await Promise.all(savePromises);
+  for (const collection of collections) {
+    await writeCollection(collection);
+  }
 }
 
 export async function importMileMarkers() {

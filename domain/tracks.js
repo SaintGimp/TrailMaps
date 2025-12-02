@@ -17,20 +17,38 @@ var maxDetailevel = 16;
  */
 export async function findByArea(options) {
   var effectiveDetailLevel = Math.min(options.detailLevel, maxDetailevel);
-  var collectionName = options.trailName + "_track" + effectiveDetailLevel;
-  var searchTerms = {
-    loc: {
-      $geoWithin: {
-        $box: [
-          [parseFloat(String(options.west)), parseFloat(String(options.south))],
-          [parseFloat(String(options.east)), parseFloat(String(options.north))]
-        ]
-      }
-    }
-  };
-  var projection = { _id: 0, loc: 1 };
-  var sortOrder = { seq: 1 };
 
-  // @ts-ignore
-  return await dataService.findArray(collectionName, searchTerms, projection, sortOrder);
+  const west = parseFloat(String(options.west));
+  const south = parseFloat(String(options.south));
+  const east = parseFloat(String(options.east));
+  const north = parseFloat(String(options.north));
+
+  const polygon = {
+    type: "Polygon",
+    coordinates: [
+      [
+        [west, south],
+        [east, south],
+        [east, north],
+        [west, north],
+        [west, south]
+      ]
+    ]
+  };
+
+  const querySpec = {
+    query:
+      "SELECT c.loc FROM c WHERE c.trailName = @trailName AND c.detailLevel = @detailLevel AND ST_WITHIN(c.loc, @polygon) ORDER BY c.seq ASC",
+    parameters: [
+      { name: "@trailName", value: options.trailName },
+      { name: "@detailLevel", value: effectiveDetailLevel },
+      { name: "@polygon", value: polygon }
+    ]
+  };
+
+  const results = await dataService.query("tracks", querySpec);
+
+  return results.map((item) => ({
+    loc: item.loc.coordinates
+  }));
 }
