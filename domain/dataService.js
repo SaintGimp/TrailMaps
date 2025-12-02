@@ -19,7 +19,16 @@ export async function connect() {
   console.log("Connecting to Cosmos DB at " + endpoint);
 
   /** @type {import("@azure/cosmos").CosmosClientOptions} */
-  const clientOptions = { endpoint, key };
+  const clientOptions = {
+    endpoint,
+    key,
+    connectionPolicy: {
+      retryOptions: {
+        maxRetryAttemptCount: 100,
+        maxWaitTimeInSeconds: 5 * 60
+      }
+    }
+  };
 
   if (endpoint.includes("localhost")) {
     // Node on Windows doesn't check the trusted root store so we have to disable TLS verification.
