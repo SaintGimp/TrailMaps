@@ -1,6 +1,8 @@
 import { CosmosClient } from "@azure/cosmos";
 import https from "https";
 
+const CONTAINER_IDS = ["tracks", "milemarkers", "waypoints"];
+
 let client = null;
 let database = null;
 
@@ -41,9 +43,14 @@ export async function connect() {
   const { database: db } = await client.databases.createIfNotExists({ id: "trailmaps" });
   database = db;
 
+  await ensureContainers();
+
+  return database;
+}
+
+async function ensureContainers() {
   // Create containers with partition key /trailName
-  const containers = ["tracks", "milemarkers", "waypoints"];
-  for (const containerId of containers) {
+  for (const containerId of CONTAINER_IDS) {
     const containerDef = {
       id: containerId,
       partitionKey: { paths: ["/trailName"] },
@@ -56,8 +63,26 @@ export async function connect() {
     // @ts-ignore
     await database.containers.createIfNotExists(containerDef);
   }
+}
 
-  return database;
+export async function reset() {
+  if (!database) {
+    throw new Error("Database not initialized. Call connect() first.");
+  }
+  for (const containerId of CONTAINER_IDS) {
+    const container = database.container(containerId);
+    try {
+      await container.delete();
+      console.log(`Deleted container ${containerId}`);
+    } catch (e) {
+      if (e.code !== 404) {
+        console.error(`Error deleting container ${containerId}: ${e.message}`);
+        throw e;
+      }
+    }
+  }
+
+  await ensureContainers();
 }
 
 export function container(containerName) {
@@ -101,5 +126,6 @@ export default {
   create,
   replace,
   deleteItem,
-  close
+  close,
+  reset
 };

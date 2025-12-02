@@ -113,6 +113,10 @@ export function container(_containerName) {
   };
 }
 
+export function reset() {
+  return Promise.resolve();
+}
+
 export default {
   getLastCall,
   state,
@@ -123,5 +127,6 @@ export default {
   initialize,
   connect,
   close,
-  container
+  container,
+  reset
 };
