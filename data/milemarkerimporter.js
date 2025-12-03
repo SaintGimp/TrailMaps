@@ -126,7 +126,8 @@ function buildMileMarkerPoints(mileMarkers) {
   var points = mileMarkers.map(function (m, i) {
     return {
       trailName: "pct",
-      detailLevel: getDetailLevel(i),
+      // The last mile marker is given the lowest detail level of 1 so it's always visible
+      detailLevel: i === mileMarkers.length - 1 ? 1 : getDetailLevel(i),
       mile: m.mile,
       loc: m.loc
     };

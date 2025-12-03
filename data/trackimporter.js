@@ -122,7 +122,8 @@ function buildTrackPoints(track) {
   var points = track.map(function (t, i) {
     return {
       trailName: "pct",
-      detailLevel: getDetailLevel(i),
+      // The last point in the track is given the lowest detail level of 1 so it's always visible
+      detailLevel: i === track.length - 1 ? 1 : getDetailLevel(i),
       seq: t.seq,
       loc: t.loc
     };
@@ -136,6 +137,9 @@ async function saveTrackPoints(points) {
   // Use sequential execution to avoid overwhelming the emulator/service
   for (const point of points) {
     await dataService.create("tracks", point);
+    if (point.seq % 1000 === 0) {
+      console.log("  Saved point " + point.seq);
+    }
   }
 }
 
