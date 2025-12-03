@@ -8,9 +8,9 @@ export default function (app) {
   });
   app.get("/trails/pct/maps/:mapName", maps);
   app.get("/trails/pct/waypoints", waypoints);
-  app.get('/health', (req, res) => {  
-    res.status(200).send('Healthy');
-  });    
+  app.get("/health", (req, res) => {
+    res.status(200).send("Healthy");
+  });
 }
 
 function getValue(queryValue, fallbackValue) {

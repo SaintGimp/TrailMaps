@@ -27,7 +27,6 @@ export const app = express();
 // Configuration
 
 app.set("port", process.env.VMC_APP_PORT || process.env.PORT || 3000);
-app.set("host", process.env.VCAP_APP_HOST || process.env.HOST || "localhost");
 app.set("views", __dirname + "/views");
 app.set("view engine", "pug");
 
@@ -207,7 +206,7 @@ async function startServer() {
     await dataService.connect();
     console.log("Cosmos DB connection established");
 
-    const serverInstance = app.listen(app.get("port"), app.get("host"), function () {
+    const serverInstance = app.listen(app.get("port"), function () {
       console.log("Node server version %s", process.version);
       console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
     });
