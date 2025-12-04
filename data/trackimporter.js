@@ -134,13 +134,7 @@ function buildTrackPoints(track) {
 
 async function saveTrackPoints(points) {
   console.log("Saving " + points.length + " track points");
-  // Use sequential execution to avoid overwhelming the emulator/service
-  for (const point of points) {
-    await dataService.create("tracks", point);
-    if (point.seq % 1000 === 0) {
-      console.log("  Saved point " + point.seq);
-    }
-  }
+  await dataService.createBulk("tracks", points);
 }
 
 export async function importTracks() {

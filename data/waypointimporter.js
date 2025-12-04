@@ -186,12 +186,9 @@ async function loadWaypoints() {
 }
 
 async function saveCollection(waypoints) {
-  console.log("Saving waypoints");
-  for (const waypoint of waypoints) {
-    await dataService.create("waypoints", waypoint);
-  }
+  console.log("Saving " + waypoints.length + " waypoints");
+  await dataService.createBulk("waypoints", waypoints);
 }
-
 export async function importWaypoints() {
   console.log("Importing waypoints");
 

@@ -138,9 +138,7 @@ function buildMileMarkerPoints(mileMarkers) {
 
 async function saveMileMarkerPoints(points) {
   console.log("Saving " + points.length + " mile marker points");
-  for (const item of points) {
-    await dataService.create("milemarkers", item);
-  }
+  await dataService.createBulk("milemarkers", points);
 }
 
 export async function importMileMarkers() {

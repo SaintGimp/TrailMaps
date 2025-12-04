@@ -113,6 +113,14 @@ export function container(_containerName) {
   };
 }
 
+export function createBulk(containerName, items) {
+  lastCall = {
+    containerName: containerName,
+    items: items
+  };
+  return Promise.resolve();
+}
+
 export function reset() {
   return Promise.resolve();
 }
@@ -122,6 +130,7 @@ export default {
   state,
   query,
   create,
+  createBulk,
   replace,
   deleteItem,
   initialize,

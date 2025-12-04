@@ -1,5 +1,6 @@
-import { CosmosClient } from "@azure/cosmos";
+import { CosmosClient, BulkOperationType } from "@azure/cosmos";
 import https from "https";
+import crypto from "crypto";
 
 const CONTAINER_IDS = ["tracks", "milemarkers", "waypoints"];
 
@@ -13,6 +14,7 @@ export async function connect() {
 
   const endpoint = process.env.COSMOS_ENDPOINT;
   const key = process.env.COSMOS_KEY;
+  const databaseName = process.env.DATABASE_NAME || "trailmaps";
 
   if (!endpoint || !key) {
     throw new Error("Cosmos DB endpoint or key not found in environment variables.");
@@ -40,7 +42,7 @@ export async function connect() {
 
   client = new CosmosClient(clientOptions);
 
-  const { database: db } = await client.databases.createIfNotExists({ id: "trailmaps" });
+  const { database: db } = await client.databases.createIfNotExists({ id: databaseName });
   database = db;
 
   await ensureContainers();
@@ -100,6 +102,16 @@ export async function query(containerName, querySpec) {
 export async function create(containerName, item) {
   const { resource } = await container(containerName).items.create(item);
   return resource;
+}
+
+export async function createBulk(containerName, items) {
+  const bulkOperations = items.map((item) => ({
+      operationType: BulkOperationType.Create,
+      partitionKey: item.trailName,
+      resourceBody: item.id ? item : { ...item, id: crypto.randomUUID() }
+  }));
+  const response = await container(containerName).items.executeBulkOperations(bulkOperations, { contentResponseOnWriteEnabled: false });
+  return response;
 }
 
 export async function replace(containerName, id, item) {
