@@ -14,10 +14,10 @@ export async function exportWaypoints(trailName) {
 
   const exportedData = allWaypoints.map((wp) => {
     const exportItem = {
-        trailName: trailName,
-        name: wp.name,
-        loc: wp.loc,
-        seq: wp.seq
+      trailName: trailName,
+      name: wp.name,
+      loc: wp.loc,
+      seq: wp.seq
     };
     if (wp.halfmileName) exportItem.halfmileName = wp.halfmileName;
     if (wp.halfmileDescription) exportItem.halfmileDescription = wp.halfmileDescription;

@@ -17,11 +17,11 @@ describe("Finding mile markers by area", function () {
       expect(mileMarkerData).to.have.length(2);
     });
 
-    it("should get data from the collection corresponding to the trail name", function () {
+    it("should get data from the milemarkers container", function () {
       expect(fakeDataService.getLastCall().containerName).to.equal("milemarkers");
     });
 
-    it("should get data from the collection corresponding to the detail level", function () {
+    it("should get data from the correct detail level", function () {
       const params = fakeDataService.getLastCall().querySpec.parameters;
       const detailLevelParam = params.find((p) => p.name === "@detailLevel");
       expect(detailLevelParam.value).to.equal(5);
@@ -46,7 +46,7 @@ describe("Finding mile markers by area", function () {
       mileMarkerData = await mileMarkers.findByArea(options);
     });
 
-    it("should get mile markers from the the collection corresponding to the maximum available detail level", function () {
+    it("should get mile markers from the maximum available detail level", function () {
       const params = fakeDataService.getLastCall().querySpec.parameters;
       const detailLevelParam = params.find((p) => p.name === "@detailLevel");
       expect(detailLevelParam.value).to.equal(14);
@@ -85,14 +85,8 @@ describe("Finding a mile marker by value", function () {
       expect(foundMileMarker).to.exist;
     });
 
-    it("should get the mile marker from the collection corresponding to the trail name", function () {
+    it("should get the mile marker from the milemarkers container", function () {
       expect(fakeDataService.getLastCall().containerName).to.equal("milemarkers");
-    });
-
-    it("should get the mile marker from the maximum detail level collection", function () {
-      const params = fakeDataService.getLastCall().querySpec.parameters;
-      const detailLevelParam = params.find((p) => p.name === "@detailLevel");
-      expect(detailLevelParam.value).to.equal(14);
     });
 
     it("should get the mile marker by value", function () {

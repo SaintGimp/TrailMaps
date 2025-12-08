@@ -62,11 +62,9 @@ export async function findByArea(options) {
  */
 export async function findByValue(options) {
   const querySpec = {
-    query:
-      "SELECT TOP 1 c.loc, c.mile FROM c WHERE c.trailName = @trailName AND c.detailLevel = @detailLevel AND c.mile = @mile",
+    query: "SELECT TOP 1 c.loc, c.mile FROM c WHERE c.trailName = @trailName AND c.mile = @mile",
     parameters: [
       { name: "@trailName", value: options.trailName },
-      { name: "@detailLevel", value: maxDetailevel },
       { name: "@mile", value: options.mile }
     ]
   };

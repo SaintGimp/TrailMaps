@@ -125,6 +125,13 @@ export function reset() {
   return Promise.resolve();
 }
 
+export function resetContainer(containerId) {
+  lastCall = {
+    containerId: containerId
+  };
+  return Promise.resolve();
+}
+
 export default {
   getLastCall,
   state,
@@ -137,5 +144,6 @@ export default {
   connect,
   close,
   container,
-  reset
+  reset,
+  resetContainer
 };
