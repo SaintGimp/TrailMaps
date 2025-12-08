@@ -3,6 +3,7 @@ import * as mileMarkersModule from "../domain/mileMarkers.js";
 import * as waypointsModule from "../domain/waypoints.js";
 import * as trailsModule from "../domain/trails.js";
 import dataImporter from "../data/dataimporter.js";
+import * as waypointExporter from "../data/waypointexporter.js";
 import {
   validateTrailName,
   validateMile,
@@ -97,6 +98,7 @@ export default function (app) {
     safeHandler(getTrailData)
   );
   app.post("/api/admin/importdata", adminLimiter, safeHandler(importdata));
+  app.post("/api/admin/exportwaypoints", adminLimiter, safeHandler(exportWaypoints));
 }
 
 /**
@@ -247,5 +249,20 @@ export async function importdata(req, res) {
     console.log(err);
     res.status(500);
     res.send();
+  }
+}
+
+/**
+ * @param {import("express").Request} req
+ * @param {import("express").Response} res
+ */
+export async function exportWaypoints(req, res) {
+  try {
+    const trailName = "pct";
+    const count = await waypointExporter.exportWaypoints(trailName);
+    res.json({ success: true, count: count });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send(err.message);
   }
 }

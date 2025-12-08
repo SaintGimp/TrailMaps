@@ -7,7 +7,6 @@ export async function importData() {
   console.log("Importing trail data");
 
   await dataService.connect();
-  await dataService.reset();
 
   await trackImporter.importTracks();
   await mileMarkerImporter.importMileMarkers();

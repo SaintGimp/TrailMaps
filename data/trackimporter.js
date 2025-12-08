@@ -97,8 +97,8 @@ async function loadTrack() {
 }
 
 // This determines the "importance" of a track point based on its position in the sequence.
-// Index: 0  1  2  3  4  ... 8  ... 32,768
-// Level: 1  16 15 16 14 ... 13 ... 1
+// Index: 0  1  2  3  4  ... 8  ... 16,384
+// Level: 1  15 14 15 13 ... 12 ... 1
 function getDetailLevel(index) {
   if (index === 0) {
     return 1;
@@ -114,7 +114,7 @@ function getDetailLevel(index) {
     zeros++;
   }
 
-  return Math.max(1, 16 - zeros);
+  return Math.max(1, 15 - zeros);
 }
 
 function buildTrackPoints(track) {
@@ -139,6 +139,7 @@ async function saveTrackPoints(points) {
 
 export async function importTracks() {
   console.log("Importing tracks");
+  await dataService.resetContainer("tracks");
 
   var track = await loadTrack();
   var points = buildTrackPoints(track);

@@ -53,18 +53,22 @@ export async function connect() {
 async function ensureContainers() {
   // Create containers with partition key /trailName
   for (const containerId of CONTAINER_IDS) {
-    const containerDef = {
-      id: containerId,
-      partitionKey: { paths: ["/trailName"] },
-      indexingPolicy: {
-        indexingMode: "consistent",
-        automatic: true,
-        includedPaths: [{ path: "/*" }, { path: "/loc/*", indexes: [{ kind: "Spatial", dataType: "Point" }] }]
-      }
-    };
-    // @ts-ignore
-    await database.containers.createIfNotExists(containerDef);
+    await ensureContainer(containerId);
   }
+}
+
+async function ensureContainer(containerId) {
+  const containerDef = {
+    id: containerId,
+    partitionKey: { paths: ["/trailName"] },
+    indexingPolicy: {
+      indexingMode: "consistent",
+      automatic: true,
+      includedPaths: [{ path: "/*" }, { path: "/loc/*", indexes: [{ kind: "Spatial", dataType: "Point" }] }]
+    }
+  };
+  // @ts-ignore
+  await database.containers.createIfNotExists(containerDef);
 }
 
 export async function reset() {
@@ -72,19 +76,26 @@ export async function reset() {
     throw new Error("Database not initialized. Call connect() first.");
   }
   for (const containerId of CONTAINER_IDS) {
-    const container = database.container(containerId);
-    try {
-      await container.delete();
-      console.log(`Deleted container ${containerId}`);
-    } catch (e) {
-      if (e.code !== 404) {
-        console.error(`Error deleting container ${containerId}: ${e.message}`);
-        throw e;
-      }
+    await resetContainer(containerId);
+  }
+}
+
+export async function resetContainer(containerId) {
+  if (!database) {
+    throw new Error("Database not initialized. Call connect() first.");
+  }
+  const container = database.container(containerId);
+  try {
+    await container.delete();
+    console.log(`Deleted container ${containerId}`);
+  } catch (e) {
+    if (e.code !== 404) {
+      console.error(`Error deleting container ${containerId}: ${e.message}`);
+      throw e;
     }
   }
 
-  await ensureContainers();
+  await ensureContainer(containerId);
 }
 
 export function container(containerName) {
@@ -106,11 +117,13 @@ export async function create(containerName, item) {
 
 export async function createBulk(containerName, items) {
   const bulkOperations = items.map((item) => ({
-      operationType: BulkOperationType.Create,
-      partitionKey: item.trailName,
-      resourceBody: item.id ? item : { ...item, id: crypto.randomUUID() }
+    operationType: BulkOperationType.Create,
+    partitionKey: item.trailName,
+    resourceBody: item.id ? item : { ...item, id: crypto.randomUUID() }
   }));
-  const response = await container(containerName).items.executeBulkOperations(bulkOperations, { contentResponseOnWriteEnabled: false });
+  const response = await container(containerName).items.executeBulkOperations(bulkOperations, {
+    contentResponseOnWriteEnabled: false
+  });
   return response;
 }
 
@@ -139,5 +152,6 @@ export default {
   replace,
   deleteItem,
   close,
-  reset
+  reset,
+  resetContainer
 };

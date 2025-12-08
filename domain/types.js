@@ -18,6 +18,7 @@
  * @typedef {Object} Waypoint
  * @property {string} [_id]
  * @property {string} name
+ * @property {string} [halfmileName]
  * @property {string} [halfmileDescription]
  * @property {LegacyPoint} loc
  * @property {number} [seq]

@@ -143,6 +143,7 @@ async function saveMileMarkerPoints(points) {
 
 export async function importMileMarkers() {
   console.log("Importing mile markers");
+  await dataService.resetContainer("milemarkers");
 
   var mileMarkers = await loadMileMarkers();
   var points = buildMileMarkerPoints(mileMarkers);
