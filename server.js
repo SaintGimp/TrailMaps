@@ -15,6 +15,7 @@ import methodOverride from "method-override";
 import lessMiddleware from "less-middleware";
 import helmet from "helmet";
 import cors from "cors";
+import compression from "compression";
 import * as dataService from "./domain/dataService.js";
 import { generateNonce } from "./middleware/cspNonce.js";
 
@@ -33,6 +34,9 @@ app.set("trust proxy", 1); // Trust the first proxy (Azure App Service)
 
 // Generate CSP nonce for each request
 app.use(generateNonce);
+
+// Compress all responses
+app.use(compression());
 
 // CORS Configuration
 const allowedOrigins = process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(",") : ["http://localhost:3000"]; // Default for dev
