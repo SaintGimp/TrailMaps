@@ -16,8 +16,10 @@ import lessMiddleware from "less-middleware";
 import helmet from "helmet";
 import cors from "cors";
 import compression from "compression";
+import session from "express-session";
 import * as dataService from "./domain/dataService.js";
 import { generateNonce } from "./middleware/cspNonce.js";
+import { requireAuth } from "./middleware/auth.js";
 
 // ES6 module equivalents of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -195,9 +197,37 @@ app.use(methodOverride());
 app.use(lessMiddleware(path.join(__dirname, "public"), {}, {}, { compress: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
+// Session configuration
+const sessionSecret = process.env.SESSION_SECRET;
+if (!sessionSecret && process.env.NODE_ENV === "production") {
+  console.error("SESSION_SECRET environment variable is required in production");
+  process.exit(1);
+}
+
+app.use(
+  session({
+    secret: sessionSecret || "dev-secret-change-in-production",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: process.env.NODE_ENV === "production", // HTTPS only in production
+      httpOnly: true, // Prevent JavaScript access
+      sameSite: "lax", // CSRF protection
+      maxAge: 30 * 24 * 60 * 60 * 1000 // 30 days
+    }
+  })
+);
+
 // Routes
+import authRoutes from "./routes/auth.js";
 import apiRoutes from "./routes/api.js";
 import homeRoutes from "./routes/home.js";
+
+// Auth routes (login page) - no authentication required
+authRoutes(app);
+
+// Protected routes - require authentication
+app.use(requireAuth);
 apiRoutes(app);
 homeRoutes(app);
 

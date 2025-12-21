@@ -5,6 +5,14 @@
  */
 
 /**
+ * Custom session data for authentication
+ * @typedef {Object} CustomSessionData
+ * @property {boolean} [authenticated]
+ * @property {string} [username]
+ * @property {string} [returnTo]
+ */
+
+/**
  * @typedef {number[]} LegacyPoint
  */
 

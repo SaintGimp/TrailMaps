@@ -25,36 +25,20 @@ describe("Compression", function () {
   });
 
   it("should compress responses with gzip", function (done) {
+    // Test compression on the login page (no auth required)
     const options = {
       hostname: "localhost",
       port: server.address().port,
-      path: "/",
+      path: "/login",
       headers: {
         "Accept-Encoding": "gzip"
       }
     };
 
-    http.get(options, (_res) => {
-      // Redirects (302) might not be compressed if they have no body.
-      // Let's check a 200 OK response, e.g., a static file or a page.
-      // The root path / redirects to /trails/pct/maps/azure usually?
-      // Let's try fetching a known page or static asset if possible.
-      // Based on previous tests, /trails/pct/maps/azure returns 200.
-
-      const options2 = {
-        hostname: "localhost",
-        port: server.address().port,
-        path: "/trails/pct/maps/azure",
-        headers: {
-          "Accept-Encoding": "gzip"
-        }
-      };
-
-      http.get(options2, (res2) => {
-        expect(res2.statusCode).to.equal(200);
-        expect(res2.headers["content-encoding"]).to.equal("gzip");
-        done();
-      });
+    http.get(options, (res) => {
+      expect(res.statusCode).to.equal(200);
+      expect(res.headers["content-encoding"]).to.equal("gzip");
+      done();
     });
   });
 });

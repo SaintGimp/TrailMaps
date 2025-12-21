@@ -21,33 +21,8 @@
 - **Action:** Create a `config/` module that validates all required environment variables (DB URI, API Keys, `ALLOWED_ORIGINS`) at startup using a library like `envalid` or `zod`.
 - **Benefit:** Fail-fast behavior prevents runtime configuration crashes.
 
-## Phase 2: DevOps & Developer Experience (Medium Priority)
-*Focus: Make it easy to run, test, and deploy the app anywhere.*
-
-### 2.1 Containerization
-- **Current State:** No Docker configuration.
-- **Action:** Create a production-ready `Dockerfile`.
-- **Action:** Create a `.dockerignore` to exclude `node_modules`, tests, and docs.
-
-### 2.2 Local Development Environment
-- **Current State:** Requires local MongoDB installation. Integration tests fail without it.
-- **Action:** Create `docker-compose.yml` to spin up MongoDB and the App together.
-- **Benefit:** "Works on my machine" guarantee; enables running integration tests easily.
-
-### 2.3 CI/CD Pipeline
-- **Current State:** None.
-- **Action:** Create a GitHub Actions workflow (or similar) to run:
-  1. `npm run lint`
-  2. `npm run typecheck`
-  3. `npm test`
-- **Benefit:** Prevents regressions from being merged.
-
 ## Phase 3: Testing Maturity (Medium Priority)
 *Focus: Increase confidence in changes.*
-
-### 3.1 Fix Integration Tests
-- **Current State:** Integration tests exist but fail due to missing DB connection.
-- **Action:** Update test harness to connect to the Dockerized MongoDB instance or an in-memory MongoDB for testing.
 
 ### 3.2 Client-Side Logic Testing
 - **Current State:** Significant logic in `public/js/` (map handling, waypoints) is untested.
@@ -55,16 +30,6 @@
 
 ## Phase 4: Maintenance & Security (Ongoing)
 
-### 4.1 Dependency Management
-- **Action:** Run `npm audit fix` to resolve known vulnerabilities.
-- **Action:** Review `package.json` for unused dependencies (e.g., `coffeescript` was noted in previous audits).
-
 ### 4.2 Code Cleanup
 - **Action:** Search for and resolve `TODO` comments in the codebase.
 - **Action:** Standardize file naming conventions (camelCase vs snake_case).
-
-## Completed Milestones
-- ✅ **Modernization:** Migrated to ES Modules and Node.js 20+.
-- ✅ **Type Safety:** Implemented JSDoc + TypeScript checking.
-- ✅ **Security:** Implemented Helmet (CSP), CORS, Rate Limiting, and Input Validation.
-- ✅ **Linting:** Standardized with ESLint and Prettier.
