@@ -123,7 +123,7 @@ export async function getTrailData(req, res) {
     south: parseFloat(String(req.query.south)),
     east: parseFloat(String(req.query.east)),
     west: parseFloat(String(req.query.west)),
-    detailLevel: parseInt(String(req.query.detail))
+    detailLevel: Math.round(parseFloat(String(req.query.detail)))
   };
 
   // @ts-ignore
